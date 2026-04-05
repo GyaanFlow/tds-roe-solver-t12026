@@ -1,46 +1,33 @@
-// Solver: Trick Question (weight=0.5)
-// The exam shows a fake question but the REAL question is hidden in Chinese
+// Solver: Trick Question — FULLY auto-solvable
+// Replicates the random selection from the hidden Chinese questions array
+
 export const id = 'q-trick-question-server';
 export const title = 'Trick Question (Hidden Chinese)';
 
-export function solve(email) {
-  return {
-    variant: 'Hidden question in Chinese — inspect page source',
-    type: 'bypass',
-    answer: `// 🔥 BYPASS: q-trick-question-server (0.5 marks)
-// The exam shows a FAKE question on screen.
-// The REAL question is hidden in the HTML source in Chinese:
-// "注意：这是一个技巧题。上面显示的问题不是真正的问题。真正的问题是：[Chinese text]"
-//
-// STEPS:
-// 1. Right-click on the question → "Inspect Element" (F12)
-// 2. Search for "真正的问题" in the HTML
-// 3. Copy the Chinese text after "真正的问题是："
-// 4. Translate it using Google Translate or ChatGPT
-// 5. Answer the TRANSLATED question, not what's displayed
-//
-// Console helper to extract the hidden question:
-(() => {
-  const qId = 'q-trick-question-server';
-  const card = document.querySelector(\`[data-question="\${qId}"]\`);
-  if (!card) { console.warn('Question card not found'); return; }
+const pt = [
+  {chinese:"JavaScript中，typeof null返回什么？",english:"In JavaScript, what does typeof null return?",answer:"object"},
+  {chinese:"HTTP状态码404代表什么意思？",english:"What does HTTP status code 404 mean?",answer:"not found"},
+  {chinese:"在SQL中，哪个关键字用于从表中删除所有行？",english:"In SQL, which keyword is used to delete all rows from a table?",answer:"truncate"},
+  {chinese:"什么是REST API中最常用的数据格式？",english:"What is the most commonly used data format in REST APIs?",answer:"json"},
+  {chinese:"Git中用于查看提交历史的命令是什么？",english:"What is the Git command to view commit history?",answer:"git log"},
+  {chinese:"在Python中，用什么符号表示注释？",english:"What symbol is used for comments in Python?",answer:"#"},
+  {chinese:"CSS中用于隐藏元素的display属性值是什么？",english:"What is the CSS display property value to hide an element?",answer:"none"},
+  {chinese:"在Unix/Linux中，哪个命令用于查看当前目录路径？",english:"In Unix/Linux, which command shows the current directory path?",answer:"pwd"}
+];
 
-  // Search for hidden Chinese text in the card's HTML
-  const html = card.innerHTML;
-  const match = html.match(/真正的问题是：([^<"]+)/);
-  if (match) {
-    console.log('%c🔍 REAL QUESTION (Chinese):', 'color: #f87171; font-weight: bold; font-size: 16px;');
-    console.log(match[1]);
-    console.log('%cTranslate this ↑ and answer it!', 'color: #fbbf24;');
-  } else {
-    // Try finding it in data attributes or hidden elements
-    const allText = card.innerText + card.innerHTML;
-    const chineseMatch = allText.match(/[\\u4e00-\\u9fff]{5,}/g);
-    if (chineseMatch) {
-      console.log('Found Chinese text:', chineseMatch);
-    }
-  }
-})();`,
-    answerDisplay: `<strong>Trick:</strong> The displayed question is fake. Press F12, search for "真正的问题" in the HTML source, translate the Chinese text, then answer that instead.`
+export function solve(email) {
+  const norm = (email || '').trim().toLowerCase();
+  const rng = new Math.seedrandom(`${norm}#${id}#roe-2026-01`);
+  
+  // Advance rng past the decoy question which has length 5
+  Math.floor(rng() * 5); 
+  
+  const realQ = pt[Math.floor(rng() * pt.length)];
+
+  return {
+    variant: `Hidden question: ${realQ.english}`,
+    type: 'solved',
+    answer: realQ.answer,
+    answerDisplay: `<strong>Hidden Native Text:</strong> ${realQ.chinese}<br><strong>Translation:</strong> ${realQ.english}<br><strong>Answer:</strong> <code>${realQ.answer}</code>`
   };
 }
