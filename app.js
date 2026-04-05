@@ -1,25 +1,45 @@
-// TDS ROE Solver — Main Application
-import { solvers } from './solvers/registry.js';
+// TDS Exam Portal — Workspace Application Engine
 
 const emailInput = document.getElementById('emailInput');
 const solveBtn = document.getElementById('solveBtn');
-const loadingEl = document.getElementById('loading');
-const loadingFill = document.getElementById('loadingFill');
-const loadingText = document.getElementById('loadingText');
-const resultsEl = document.getElementById('results');
+const progressPanel = document.getElementById('progressPanel');
+const progressFill = document.getElementById('progressFill');
+const progressText = document.getElementById('progressText');
+const questionNav = document.getElementById('questionNav');
+const navTitle = document.getElementById('navTitle');
 const solverCountEl = document.getElementById('solverCount');
-const copyAllBtn = document.getElementById('copyAllBtn');
+const exportActions = document.getElementById('exportActions');
+const canvas = document.getElementById('canvas');
 const exportMdBtn = document.getElementById('exportMdBtn');
 const exportJsonBtn = document.getElementById('exportJsonBtn');
-const statsStrip = document.getElementById('statsStrip');
-const statTotal = document.getElementById('statTotal');
+const copyAllBtn = document.getElementById('copyAllBtn');
+
+// Stats strip
+const workspaceStats = document.getElementById('workspaceStats');
 const statSolved = document.getElementById('statSolved');
-const statGuide = document.getElementById('statGuide');
 const statBypass = document.getElementById('statBypass');
+const statGuide = document.getElementById('statGuide');
 
-let lastSolvedEmail = '';
+// DOM References
+const nodeSearch = document.getElementById('nodeSearch');
+const connectionText = document.getElementById('connectionText');
+const examSelect = document.getElementById('examSelect');
 
-let allAnswers = [];
+// Workspace Global State
+let workspaceData = {
+  exam: null,
+  email: '',
+  answers: [],
+  meta: {}
+};
+
+// ── Feature: Session Memory (Load) ──
+window.addEventListener('DOMContentLoaded', () => {
+  const savedEmail = localStorage.getItem('tdsEmail');
+  const savedExam = localStorage.getItem('tdsExam');
+  if (savedEmail) emailInput.value = savedEmail;
+  if (savedExam) examSelect.value = savedExam;
+});
 
 function escapeHtml(text) {
   return String(text).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -27,208 +47,242 @@ function escapeHtml(text) {
 
 function copyToClipboard(text, btn) {
   navigator.clipboard.writeText(text).then(() => {
-    const orig = btn.innerHTML;
-    btn.innerHTML = '<i class="bi bi-check-lg"></i> Copied!';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 1500);
+    const orig = btn.innerText;
+    btn.innerText = 'Copied!';
+    setTimeout(() => { btn.innerText = orig; }, 1500);
   });
 }
 
-function getBadgeClass(type) {
-  if (type === 'solved') return 'badge-solved';
-  if (type === 'guide') return 'badge-guide';
-  return 'badge-bypass';
+function getStatusClass(type) {
+  if (type === 'solved') return 'status-solved';
+  if (type === 'guide') return 'status-guide';
+  if (type === 'bypass') return 'status-bypass';
+  return 'status-error';
 }
 
-function getBadgeLabel(type) {
-  if (type === 'solved') return '✓ Auto-Solved';
-  if (type === 'guide') return '📝 Guide';
-  return '⚡ Script';
+function renderSidebarNode(index, title, type) {
+  const node = document.createElement('div');
+  node.className = 'nav-item';
+  node.dataset.idx = index;
+  node.innerHTML = `
+    <span class="nav-item-status ${getStatusClass(type)}"></span>
+    <span class="nav-item-num">Q${index + 1}</span>
+    <span class="nav-item-title">${escapeHtml(title)}</span>
+  `;
+  node.addEventListener('click', () => renderCanvas(index));
+  return node;
 }
 
-function createCard(index, solver, result) {
-  const type = result.type || 'solved';
-  const rows = Math.min(14, Math.max(3, result.answer.split('\n').length + 1));
-  return `
-    <div class="q-card" id="q-${index}" style="animation-delay:${index * 0.06}s">
-      <div class="q-header">
-        <div class="q-header-left">
-          <div class="q-num">${index + 1}</div>
-          <span class="q-title">${escapeHtml(solver.title)}</span>
-        </div>
-        <span class="q-badge ${getBadgeClass(type)}">${getBadgeLabel(type)}</span>
-      </div>
-      <div class="q-body">
-        <div class="variant-info">
-          <i class="bi bi-info-circle"></i> ${escapeHtml(result.variant)}
-        </div>
-        <div class="answer-label"><i class="bi bi-clipboard-data"></i> Answer</div>
-        <textarea class="answer-area" readonly spellcheck="false" rows="${rows}">${escapeHtml(result.answer)}</textarea>
-        ${result.answerDisplay ? `<div class="answer-display">${result.answerDisplay}</div>` : ''}
-      </div>
-      <div class="q-footer">
-        <button class="btn-copy" data-idx="${index}">
-          <i class="bi bi-clipboard"></i> Copy
-        </button>
-      </div>
-    </div>`;
-}
+// ── Feature: Sidebar Search ──
+nodeSearch.addEventListener('input', (e) => {
+  const term = e.target.value.toLowerCase();
+  document.querySelectorAll('.nav-item').forEach(node => {
+    const text = node.innerText.toLowerCase();
+    const type = node.querySelector('.nav-item-status').className;
+    if (text.includes(term) || type.includes(term)) {
+      node.style.display = 'flex';
+    } else {
+      node.style.display = 'none';
+    }
+  });
+});
 
-function createErrorCard(index, solver, error) {
-  return `
-    <div class="q-card error-card" id="q-${index}" style="animation-delay:${index * 0.06}s">
-      <div class="q-header">
-        <div class="q-header-left">
-          <div class="q-num">${index + 1}</div>
-          <span class="q-title">${escapeHtml(solver.title)}</span>
-        </div>
-        <span class="q-badge badge-error">✗ Error</span>
+function renderCanvas(index) {
+  // Update sidebar active state
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+  document.querySelector(`.nav-item[data-idx="${index}"]`)?.classList.add('active');
+
+  const data = workspaceData.answers[index];
+  const typeLabel = data.type === 'solved' ? 'Auto-Solved' : data.type === 'guide' ? 'Manual Guide' : data.type === 'bypass' ? 'Script Bypass' : 'Runtime Error';
+
+  document.getElementById('breadcrumbs').innerHTML = `
+    <span class="crumb">tds-portal</span>
+    <span class="separator">/</span>
+    <span class="crumb">${workspaceData.exam}</span>
+    <span class="separator">/</span>
+    <span class="crumb">Q${index + 1}</span>
+  `;
+
+  // ── Feature: Syntax Highlighting ──
+  let displayCode = escapeHtml(data.answer);
+  let langClass = '';
+  
+  if (data.answer.trim().startsWith('{') || data.answer.trim().startsWith('[')) {
+    langClass = 'language-json';
+  } else if (data.answer.includes('def ') || data.answer.includes('import ') || data.answer.includes('print(')) {
+    langClass = 'language-python';
+  }
+
+  const containerContent = langClass 
+    ? `<pre class="raw-output" style="padding:0;"><code class="${langClass}" style="background:transparent; border:none; box-shadow:none;">${displayCode}</code></pre>`
+    : `<textarea class="raw-output" readonly spellcheck="false">${displayCode}</textarea>`;
+
+  canvas.innerHTML = `
+    <div class="canvas-header">
+      <div class="canvas-label">System Output — ${typeLabel}</div>
+      <h2 class="canvas-title">${escapeHtml(data.title)}</h2>
+      <div class="canvas-variant"><span style="color:var(--text-muted)">›</span> ${escapeHtml(data.variant || 'No variant info')}</div>
+    </div>
+    <div class="canvas-body">
+      <div class="code-container">
+        <button class="copy-trigger" id="copyCurrent">Copy Context</button>
+        ${containerContent}
       </div>
-      <div class="q-body">
-        <div class="error-msg"><i class="bi bi-exclamation-triangle"></i> ${escapeHtml(error.message)}</div>
-      </div>
-    </div>`;
+      ${data.answerDisplay ? `<div class="styled-output">${data.answerDisplay}</div>` : ''}
+    </div>
+  `;
+
+  // Trigger Prism if loaded
+  if (langClass && window.Prism) {
+    Prism.highlightAllUnder(canvas);
+  }
+
+  document.getElementById('copyCurrent').addEventListener('click', (e) => {
+    copyToClipboard(data.answer, e.target);
+  });
 }
 
 window.startSolving = async function() {
   const email = emailInput.value.trim();
-  if (!email) { emailInput.focus(); emailInput.style.borderColor = '#f87171'; return; }
-  emailInput.style.borderColor = '';
+  const currentExam = examSelect.value;
+  
+  if (!email) { emailInput.focus(); emailInput.style.borderColor = 'var(--error)'; return; }
+  emailInput.style.borderColor = 'var(--border)';
 
+  // ── Feature: Session Memory (Save) ──
+  localStorage.setItem('tdsEmail', email);
+  localStorage.setItem('tdsExam', currentExam);
+
+  // Reset UI
   solveBtn.disabled = true;
-  resultsEl.innerHTML = '';
-  allAnswers = [];
-  lastSolvedEmail = email;
-  loadingEl.classList.remove('hidden');
-  statsStrip.classList.remove('hidden');
-  solverCountEl.classList.remove('hidden');
-  copyAllBtn.classList.add('hidden');
+  solveBtn.innerText = 'Initializing...';
+  questionNav.innerHTML = '';
+  canvas.innerHTML = '';
+  exportActions.classList.add('hidden');
+  workspaceStats.classList.add('hidden');
+  nodeSearch.classList.add('hidden');
+  nodeSearch.value = '';
+  navTitle.classList.remove('hidden');
+  progressPanel.classList.remove('hidden');
+  connectionText.innerText = "Execution running...";
+  
+  workspaceData = { exam: currentExam, email: email, answers: [] };
+  let statsTracker = { solved: 0, bypass: 0, guide: 0 };
+  let startTime = performance.now();
 
-  let stats = { solved: 0, guide: 0, bypass: 0 };
-
-  // Build index
-  let html = `<div class="index-panel">
-    <div class="index-header"><i class="bi bi-list-columns"></i> ROE T1 2026 — ${solvers.length} Questions</div>
-    <ul class="index-list">`;
-  for (let i = 0; i < solvers.length; i++) {
-    html += `<a class="index-item" href="#q-${i}">
-      <span class="index-num">${i + 1}</span>
-      ${escapeHtml(solvers[i].title)}
-    </a>`;
-  }
-  html += `</ul></div>`;
-
-  let done = 0;
-  for (const solver of solvers) {
-    const index = solvers.indexOf(solver);
+  try {
+    // Load modules
+    let solvers = [];
     try {
-      const result = await Promise.resolve(solver.solve(email));
-      html += createCard(index, solver, result);
-      const rType = result.type || 'solved';
-      allAnswers.push({ title: solver.title, answer: result.answer, type: rType });
-      if (stats[rType] !== undefined) stats[rType]++;
-    } catch (err) {
-      html += createErrorCard(index, solver, err);
-      allAnswers.push({ title: solver.title, answer: `ERROR: ${err.message}`, type: 'error' });
+      const registryModule = await import(`./solvers/${currentExam}/registry.js`);
+      solvers = registryModule.solvers;
+    } catch(e) {
+      throw new Error(`CRITICAL SYSTEM FAULT: Failed to fetch module registry for ${currentExam}. Target may be missing or corrupt.`);
     }
-    done++;
 
-    // Update UI
-    const pct = Math.round((done / solvers.length) * 100);
-    loadingFill.style.width = `${pct}%`;
-    loadingText.textContent = `Solving ${done}/${solvers.length}...`;
-    statTotal.textContent = done;
-    statSolved.textContent = stats.solved;
-    statGuide.textContent = stats.guide;
-    statBypass.textContent = stats.bypass;
-    solverCountEl.textContent = `${done}/${solvers.length}`;
-    await new Promise(r => setTimeout(r, 30));
-  }
+    let done = 0;
+    
+    for (const solver of solvers) {
+      try {
+        const result = await Promise.resolve(solver.solve(email));
+        workspaceData.answers.push({
+          title: solver.title,
+          answer: result.answer,
+          type: result.type || 'solved',
+          variant: result.variant,
+          answerDisplay: result.answerDisplay
+        });
+      } catch (err) {
+        workspaceData.answers.push({
+          title: solver.title,
+          answer: `ERROR: ${err.message}`,
+          type: 'error',
+          variant: 'Failed to compute during execution loop',
+        });
+      }
 
-  resultsEl.innerHTML = html;
-  loadingEl.classList.add('hidden');
-  solverCountEl.textContent = `${solvers.length}/${solvers.length} ✓`;
-  solveBtn.disabled = false;
-  copyAllBtn.classList.remove('hidden');
-  exportMdBtn.classList.remove('hidden');
-  exportJsonBtn.classList.remove('hidden');
+      const lastType = workspaceData.answers[workspaceData.answers.length - 1].type;
+      if (statsTracker[lastType] !== undefined) statsTracker[lastType]++;
+      
+      done++;
+      progressFill.style.width = `${Math.round((done / solvers.length) * 100)}%`;
+      progressText.innerText = `Compiled ${done} / ${solvers.length} nodes...`;
+      solverCountEl.innerText = done;
+      
+      // Add to sidebar incrementally
+      const latestAns = workspaceData.answers[workspaceData.answers.length - 1];
+      questionNav.appendChild(renderSidebarNode(done - 1, latestAns.title, latestAns.type));
+      
+      await new Promise(r => setTimeout(r, 40));
+    }
 
-  // Bind copy buttons
-  resultsEl.querySelectorAll('.btn-copy').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const idx = parseInt(btn.dataset.idx);
-      copyToClipboard(allAnswers[idx].answer, btn);
+    // Finalize Success
+    const endTime = performance.now();
+    const diffMs = (endTime - startTime).toFixed(1);
+    connectionText.innerText = `Workspace compiled in ${diffMs}ms via local engine`;
+
+    progressPanel.classList.add('hidden');
+    solveBtn.disabled = false;
+    solveBtn.innerText = 'Workspace Active';
+    exportActions.classList.remove('hidden');
+    workspaceStats.classList.remove('hidden');
+    nodeSearch.classList.remove('hidden');
+    
+    statSolved.innerText = statsTracker.solved;
+    statBypass.innerText = statsTracker.bypass;
+    statGuide.innerText = statsTracker.guide;
+    
+    // Render first node automatically
+    if (workspaceData.answers.length > 0) {
+      renderCanvas(0);
+    }
+
+  } catch (fatalError) {
+    // ── Global Error Boundary ──
+    progressPanel.classList.add('hidden');
+    solveBtn.disabled = false;
+    solveBtn.innerText = 'Generate Workspace';
+    connectionText.innerText = 'Connection fault';
+    connectionText.previousElementSibling.className = 'dot error';
+    
+    workspaceData.answers.push({
+      title: 'Global Execution Failure',
+      answer: `CRASH REPORT:\n\n${fatalError.message}\n\nStack Trace:\n${fatalError.stack}`,
+      type: 'error',
+      variant: 'System halted'
     });
-  });
+    questionNav.appendChild(renderSidebarNode(0, 'System Fault', 'error'));
+    renderCanvas(0);
+  }
 };
 
-// Copy All
-copyAllBtn.addEventListener('click', () => {
-  const allText = allAnswers.map((a, i) => `=== Q${i+1}: ${a.title} ===\n${a.answer}`).join('\n\n');
-  copyToClipboard(allText, copyAllBtn);
-});
+document.getElementById('solveBtn').addEventListener('click', window.startSolving);
+emailInput.addEventListener('keydown', e => { if (e.key === 'Enter') window.startSolving(); });
 
-// ── Bulk Export: Markdown ──
-function downloadFile(filename, content, mime = 'text/plain') {
+// ── Exporters ──
+function downloadFile(filename, content, mime) {
   const blob = new Blob([content], { type: mime });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url; a.download = filename;
-  document.body.appendChild(a); a.click();
-  document.body.removeChild(a); URL.revokeObjectURL(url);
+  a.click();
+  URL.revokeObjectURL(url);
 }
 
+copyAllBtn.addEventListener('click', () => {
+  const allText = workspaceData.answers.map((a, i) => `=== Q${i+1}: ${a.title} ===\n${a.answer}`).join('\n\n');
+  copyToClipboard(allText, copyAllBtn);
+});
+
 exportMdBtn.addEventListener('click', () => {
-  const ts = new Date().toISOString().slice(0, 16).replace('T', '_').replace(':', '-');
-  const emailSlug = lastSolvedEmail.split('@')[0] || 'unknown';
-  const stats = { solved: 0, guide: 0, bypass: 0, error: 0 };
-  allAnswers.forEach(a => { if (stats[a.type] !== undefined) stats[a.type]++; });
-
-  let md = `# TDS ROE Solver — Answer Export\n\n`;
-  md += `- **Email:** \`${lastSolvedEmail}\`\n`;
-  md += `- **Date:** ${new Date().toLocaleString()}\n`;
-  md += `- **Questions:** ${allAnswers.length}\n`;
-  md += `- **Auto-Solved:** ${stats.solved} | **Guides:** ${stats.guide} | **Scripts:** ${stats.bypass}\n\n`;
-  md += `---\n\n`;
-
-  allAnswers.forEach((a, i) => {
-    const icon = a.type === 'solved' ? '✅' : a.type === 'guide' ? '📝' : a.type === 'bypass' ? '⚡' : '❌';
-    md += `## Q${i + 1}: ${a.title} ${icon}\n\n`;
-    md += `**Type:** ${a.type}\n\n`;
-    md += `\`\`\`\n${a.answer}\n\`\`\`\n\n`;
-    md += `---\n\n`;
+  let md = `# Workspace Export | ${workspaceData.exam.toUpperCase()}\n`;
+  md += `**Email:** \`${workspaceData.email}\`\n\n---\n\n`;
+  workspaceData.answers.forEach((a, i) => {
+    md += `### [${a.type.toUpperCase()}] Q${i+1}: ${a.title}\n\`\`\`\n${a.answer}\n\`\`\`\n\n`;
   });
-
-  downloadFile(`ROE_Answers_${emailSlug}_${ts}.md`, md, 'text/markdown');
-  const orig = exportMdBtn.innerHTML;
-  exportMdBtn.innerHTML = '<i class="bi bi-check-lg"></i> Downloaded!';
-  setTimeout(() => { exportMdBtn.innerHTML = orig; }, 1500);
+  downloadFile(`workspace_${workspaceData.exam}.md`, md, 'text/markdown');
 });
 
-// ── Bulk Export: JSON ──
 exportJsonBtn.addEventListener('click', () => {
-  const ts = new Date().toISOString().slice(0, 16).replace('T', '_').replace(':', '-');
-  const emailSlug = lastSolvedEmail.split('@')[0] || 'unknown';
-
-  const exportData = {
-    email: lastSolvedEmail,
-    exportedAt: new Date().toISOString(),
-    exam: 'TDS ROE T1 2026',
-    totalQuestions: allAnswers.length,
-    answers: allAnswers.map((a, i) => ({
-      question: i + 1,
-      id: solvers[i]?.id || '',
-      title: a.title,
-      type: a.type,
-      answer: a.answer
-    }))
-  };
-
-  downloadFile(`ROE_Answers_${emailSlug}_${ts}.json`, JSON.stringify(exportData, null, 2), 'application/json');
-  const orig = exportJsonBtn.innerHTML;
-  exportJsonBtn.innerHTML = '<i class="bi bi-check-lg"></i> Downloaded!';
-  setTimeout(() => { exportJsonBtn.innerHTML = orig; }, 1500);
+  downloadFile(`workspace_${workspaceData.exam}.json`, JSON.stringify(workspaceData, null, 2), 'application/json');
 });
-
-// Enter key
-emailInput.addEventListener('keydown', e => { if (e.key === 'Enter') window.startSolving(); });
