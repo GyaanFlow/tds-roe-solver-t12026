@@ -1,0 +1,11 @@
+{
+  "name": "tds-roe-solver",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "devDependencies": {
+    "seedrandom": "^3.0.5"
+  }
+}

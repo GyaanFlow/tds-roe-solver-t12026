@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TDS ROE Solver — IIT Madras Re-Exam Solver</title>
+  <meta name="description" content="Deterministic client-side solver for IIT Madras TDS Re-Exam (ROE). Computes answers locally using seeded RNG.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/seedrandom.min.js"></script>
+</head>
+<body>
+  <!-- Animated background -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="brand-icon">
+          <i class="bi bi-cpu"></i>
+        </div>
+        <span class="brand-text">ROE<span class="brand-accent">Solver</span></span>
+        <span id="solverCount" class="nav-badge hidden">0/0</span>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-ghost hidden" id="exportMdBtn" title="Download answers as Markdown">
+          <i class="bi bi-file-earmark-text"></i>
+          <span>Export .md</span>
+        </button>
+        <button class="btn-ghost hidden" id="exportJsonBtn" title="Download answers as JSON">
+          <i class="bi bi-filetype-json"></i>
+          <span>Export .json</span>
+        </button>
+        <button class="btn-ghost hidden" id="copyAllBtn" title="Copy all answers">
+          <i class="bi bi-clipboard-check"></i>
+          <span>Copy All</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <main>
+    <section id="hero-section">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="bi bi-shield-check"></i>
+          <span>100% Local Computation</span>
+        </div>
+        <h1 class="hero-title">
+          TDS Re-Exam<br>
+          <span class="gradient-text">Solver</span>
+        </h1>
+        <p class="hero-desc">
+          Deterministic answers for IIT Madras TDS ROE — computed entirely in your browser using seeded RNG replication.
+        </p>
+
+        <!-- Input form -->
+        <div class="solver-form">
+          <div class="input-wrapper">
+            <i class="bi bi-envelope-fill input-icon"></i>
+            <input type="email" id="emailInput" placeholder="21f1234567@ds.study.iitm.ac.in" autocomplete="email">
+          </div>
+          <button class="btn-solve" id="solveBtn" onclick="startSolving()">
+            <i class="bi bi-bolt-fill"></i>
+            <span>Solve</span>
+          </button>
+        </div>
+        <p class="hero-footnote">
+          <i class="bi bi-lock-fill"></i> Your email is only used as a seed — nothing leaves your browser.
+        </p>
+      </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <section id="statsStrip" class="hidden">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="bi bi-hash"></i></div>
+        <div class="stat-info">
+          <span class="stat-value" id="statTotal">0</span>
+          <span class="stat-label">Total</span>
+        </div>
+      </div>
+      <div class="stat-card stat-success">
+        <div class="stat-icon"><i class="bi bi-check-circle-fill"></i></div>
+        <div class="stat-info">
+          <span class="stat-value" id="statSolved">0</span>
+          <span class="stat-label">Auto-Solved</span>
+        </div>
+      </div>
+      <div class="stat-card stat-warn">
+        <div class="stat-icon"><i class="bi bi-book-fill"></i></div>
+        <div class="stat-info">
+          <span class="stat-value" id="statGuide">0</span>
+          <span class="stat-label">Guides</span>
+        </div>
+      </div>
+      <div class="stat-card stat-info">
+        <div class="stat-icon"><i class="bi bi-terminal-fill"></i></div>
+        <div class="stat-info">
+          <span class="stat-value" id="statBypass">0</span>
+          <span class="stat-label">Scripts</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Loading -->
+    <section id="loading" class="hidden">
+      <div class="loading-bar">
+        <div class="loading-bar-fill" id="loadingFill"></div>
+      </div>
+      <p class="loading-text" id="loadingText">Solving questions...</p>
+    </section>
+
+    <!-- Results -->
+    <section id="results"></section>
+
+    <footer>
+      <p>ROE Solver — All computations run locally. Built with <i class="bi bi-heart-fill"></i> for IITM students.</p>
+    </footer>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
