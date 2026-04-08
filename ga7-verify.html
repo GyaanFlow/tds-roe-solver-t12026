@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GA7 Solver Verification</title>
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/seedrandom.min.js"></script>
   <style>
     :root {
@@ -71,6 +75,20 @@
       cursor: pointer;
       font-weight: 700;
       margin-top: 12px;
+    }
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .button-row button {
+      flex: 1;
+      margin-top: 0;
+    }
+    .button-row .ghost {
+      background: rgba(15, 23, 42, 0.78);
+      border: 1px solid var(--border);
     }
     button:disabled {
       opacity: 0.6;
@@ -142,7 +160,11 @@
         <h2>Email Batch</h2>
         <p>One email per line. Leave the defaults to stress test a broad sample quickly.</p>
         <textarea id="emailList"></textarea>
-        <button id="runBtn">Run GA7 Verification</button>
+        <div class="button-row">
+          <button id="runBtn">Run GA7 Verification</button>
+          <button id="copyLogBtn" class="ghost" type="button">Copy Failure Log</button>
+          <button id="downloadReportBtn" class="ghost" type="button">Download JSON Report</button>
+        </div>
       </div>
       <div class="panel">
         <h2>Options</h2>

@@ -14,6 +14,10 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/seedrandom.min.js"></script>
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <div id="mobileOverlay" class="mobile-overlay hidden" aria-hidden="true"></div>
@@ -124,6 +128,8 @@
         
         <div class="editor-actions hidden" id="exportActions">
           <button class="btn-ghost" id="copyAllBtn">Copy All</button>
+          <button class="btn-ghost" id="copyDebugBtn">Copy Debug Report</button>
+          <button class="btn-ghost" id="resetUiBtn">Reset UI</button>
           <div class="divider"></div>
           <button class="btn-ghost" id="exportMdBtn">jsonl.md</button>
           <button class="btn-ghost" id="exportJsonBtn">state.json</button>

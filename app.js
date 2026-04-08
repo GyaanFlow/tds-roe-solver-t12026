@@ -13,6 +13,8 @@ const canvas = document.getElementById('canvas');
 const exportMdBtn = document.getElementById('exportMdBtn');
 const exportJsonBtn = document.getElementById('exportJsonBtn');
 const copyAllBtn = document.getElementById('copyAllBtn');
+const copyDebugBtn = document.getElementById('copyDebugBtn');
+const resetUiBtn = document.getElementById('resetUiBtn');
 const workspaceStats = document.getElementById('workspaceStats');
 const statSolved = document.getElementById('statSolved');
 const statBypass = document.getElementById('statBypass');
@@ -97,6 +99,15 @@ function ensureToastRoot() {
   toastRoot.setAttribute('aria-atomic', 'true');
   document.body.appendChild(toastRoot);
   return toastRoot;
+}
+
+function safeTrack(name, data = {}) {
+  if (typeof window.va !== 'function') return;
+  try {
+    window.va('event', { name, data });
+  } catch (_) {
+    // Analytics should never interrupt core solver UX.
+  }
 }
 
 function showToast(message, tone = 'info') {
@@ -211,6 +222,51 @@ function isHtmlDocument(answer) {
 
 function getSelectedAnswer() {
   return workspaceData.answers[selectedQuestionIndex] || null;
+}
+
+function buildDebugReport() {
+  const selectedAnswer = getSelectedAnswer();
+  return {
+    generatedAt: new Date().toISOString(),
+    exam: workspaceData.exam,
+    email: workspaceData.email,
+    selectedQuestionIndex,
+    selectedQuestionTitle: selectedAnswer?.title || null,
+    selectedQuestionType: selectedAnswer?.type || null,
+    summary: {
+      total: workspaceData.answers.length,
+      solved: workspaceData.answers.filter((item) => item.type === 'solved').length,
+      bypass: workspaceData.answers.filter((item) => item.type === 'bypass').length,
+      guide: workspaceData.answers.filter((item) => item.type === 'guide').length,
+      error: workspaceData.answers.filter((item) => item.type === 'error').length,
+    },
+    ui: {
+      rawWrapEnabled,
+      search: nodeSearch.value,
+      openPanels: [...openPanels],
+    },
+    selectedAnswer: selectedAnswer ? {
+      title: selectedAnswer.title,
+      type: selectedAnswer.type,
+      variant: selectedAnswer.variant || null,
+      debug: selectedAnswer.debug || null,
+      answerPreview: String(selectedAnswer.answer || '').slice(0, 1500),
+    } : null,
+  };
+}
+
+function resetStoredUiState() {
+  Object.values(STORAGE_KEYS).forEach((key) => localStorage.removeItem(key));
+  nodeSearch.value = '';
+  selectedQuestionIndex = 0;
+  rawWrapEnabled = true;
+  openPanels = new Set(['Variant', 'Preview', 'Answer', 'Diagnostics']);
+  applySidebarFilter('');
+  if (workspaceData.answers.length) {
+    renderCanvas(0);
+  }
+  showToast('Saved UI state cleared.', 'success');
+  safeTrack('ui_reset', { exam: workspaceData.exam || 'none' });
 }
 
 function isMobileLayout() {
@@ -567,6 +623,10 @@ async function startSolving() {
       populateMobileQuestionPicker();
       renderCanvas(selectedQuestionIndex);
       showToast(`Workspace ready. ${workspaceData.answers.length} questions loaded.`, 'success');
+      safeTrack('workspace_ready', {
+        exam: currentExam,
+        questionCount: workspaceData.answers.length,
+      });
     }
   } catch (fatalError) {
     progressPanel.classList.add('hidden');
@@ -593,6 +653,7 @@ async function startSolving() {
     populateMobileQuestionPicker();
     renderCanvas(0);
     showToast('Workspace initialization failed.', 'error');
+    safeTrack('workspace_failed', { exam: currentExam });
   }
 }
 
@@ -671,7 +732,13 @@ emailInput.addEventListener('input', persistUiState);
 copyAllBtn.addEventListener('click', (event) => {
   const allText = workspaceData.answers.map((answer, index) => `=== Q${index + 1}: ${answer.title} ===\n${answer.answer}`).join('\n\n');
   copyToClipboard(allText, event.currentTarget);
+  safeTrack('copy_all', { exam: workspaceData.exam || 'none', total: workspaceData.answers.length });
 });
+copyDebugBtn.addEventListener('click', (event) => {
+  copyToClipboard(JSON.stringify(buildDebugReport(), null, 2), event.currentTarget);
+  safeTrack('copy_debug_report', { exam: workspaceData.exam || 'none' });
+});
+resetUiBtn.addEventListener('click', resetStoredUiState);
 
 exportMdBtn.addEventListener('click', () => {
   let md = `# Workspace Export | ${String(workspaceData.exam || '').toUpperCase()}\n`;
@@ -681,11 +748,13 @@ exportMdBtn.addEventListener('click', () => {
   });
   downloadFile(`workspace_${workspaceData.exam}.md`, md, 'text/markdown');
   showToast('Markdown export downloaded.', 'success');
+  safeTrack('export_markdown', { exam: workspaceData.exam || 'none', total: workspaceData.answers.length });
 });
 
 exportJsonBtn.addEventListener('click', () => {
   downloadFile(`workspace_${workspaceData.exam}.json`, JSON.stringify(workspaceData, null, 2), 'application/json');
   showToast('JSON export downloaded.', 'success');
+  safeTrack('export_json', { exam: workspaceData.exam || 'none', total: workspaceData.answers.length });
 });
 
 window.addEventListener('resize', syncMobileNavState);

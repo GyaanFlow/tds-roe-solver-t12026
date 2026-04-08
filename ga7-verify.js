@@ -9,6 +9,10 @@ const statFailures = document.getElementById('statFailures');
 const statWarnings = document.getElementById('statWarnings');
 const solverTable = document.getElementById('solverTable');
 const failureLog = document.getElementById('failureLog');
+const copyLogBtn = document.getElementById('copyLogBtn');
+const downloadReportBtn = document.getElementById('downloadReportBtn');
+
+let lastReport = null;
 
 function buildDefaultEmails() {
   const domains = [
@@ -65,6 +69,33 @@ function createSolverStats() {
   );
 }
 
+async function copyText(text, btn) {
+  if (!text) return;
+  const original = btn?.textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+    if (btn) {
+      btn.textContent = 'Copied';
+      window.setTimeout(() => { btn.textContent = original; }, 1400);
+    }
+  } catch {
+    if (btn) {
+      btn.textContent = 'Copy failed';
+      window.setTimeout(() => { btn.textContent = original; }, 1600);
+    }
+  }
+}
+
+function downloadJsonReport(report) {
+  const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.download = `ga7-verification-${Date.now()}.json`;
+  anchor.click();
+  URL.revokeObjectURL(url);
+}
+
 async function runVerification() {
   const requestedLimit = Number(limitInput.value) || 1;
   const emails = parseEmails(emailList.value).slice(0, requestedLimit);
@@ -75,6 +106,8 @@ async function runVerification() {
   let totalWarnings = 0;
 
   runBtn.disabled = true;
+  copyLogBtn.disabled = true;
+  downloadReportBtn.disabled = true;
   failureLog.textContent = 'Running verification...';
   setSummary({ emails: emails.length, runs: 0, failures: 0, warnings: 0 });
 
@@ -109,9 +142,29 @@ async function runVerification() {
   failureLog.textContent = failureLines.length
     ? failureLines.join('\n')
     : 'No verification failures. All wrapped GA7 solvers returned valid output shapes for this email batch.';
+  lastReport = {
+    generatedAt: new Date().toISOString(),
+    emailCount: emails.length,
+    totalRuns,
+    totalFailures,
+    totalWarnings,
+    failures: failureLines,
+    solvers: [...solverStats.values()].map((stat) => ({
+      ...stat,
+      avgMs: stat.runs ? Number((stat.totalMs / stat.runs).toFixed(2)) : null,
+    })),
+  };
   runBtn.disabled = false;
+  copyLogBtn.disabled = false;
+  downloadReportBtn.disabled = false;
 }
 
 emailList.value = buildDefaultEmails().join('\n');
 renderSolverTable(createSolverStats());
 runBtn.addEventListener('click', runVerification);
+copyLogBtn.addEventListener('click', () => copyText(failureLog.textContent, copyLogBtn));
+downloadReportBtn.addEventListener('click', () => {
+  if (lastReport) {
+    downloadJsonReport(lastReport);
+  }
+});

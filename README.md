@@ -19,6 +19,7 @@ The app is designed as a static frontend plus a lightweight local server. It loa
 - Keyboard navigation and sidebar filtering
 - Export to Markdown and JSON
 - GA7 verification page for batch debugging
+- Vercel page-view analytics support
 - Smoke-test script for quick production checks
 
 ## Project Structure
@@ -85,6 +86,7 @@ Included features:
 - per-question health badges with runtime and warning state
 - persistent UI state using `localStorage`
 - mobile drawer navigation and mobile question picker
+- one-click debug report copy for easier issue reporting
 
 Persisted UI state includes:
 
@@ -110,6 +112,15 @@ Recent GA7 hardening includes:
 - stronger runtime validation and diagnostics
 - improved diverging palette handling in `q-colorencoding`
 - more robust prompt-output handling in `q-prompt-reverse`
+
+### Analytics
+
+The app now includes Vercel Web Analytics script hooks for static deployments:
+
+- `index.html`
+- `ga7-verify.html`
+
+When deployed on Vercel with Analytics enabled, page views will be collected automatically.
 
 ## Local Development
 
