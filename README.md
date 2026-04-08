@@ -1,0 +1,203 @@
+# TDS ROE Solver
+
+A local, browser-based workspace for running deterministic helper logic across TDS exam targets.
+
+This repository currently supports:
+
+- `ROE` re-exam workflows
+- `GA7` data-visualization workflows
+
+The app is designed as a static frontend plus a lightweight local server. It loads exam-specific solver registries, executes them for a user email, and presents answers, variants, previews, exports, and diagnostics in a responsive workspace UI.
+
+## Highlights
+
+- Local execution only
+- Modular solver registries per exam
+- Rich per-question diagnostics
+- HTML preview support for renderable answers
+- Mobile-friendly adaptive workspace UI
+- Keyboard navigation and sidebar filtering
+- Export to Markdown and JSON
+- GA7 verification page for batch debugging
+- Smoke-test script for quick production checks
+
+## Project Structure
+
+```text
+.
+├── app.js
+├── style.css
+├── index.html
+├── server.js
+├── check.mjs
+├── ga7-verify.html
+├── ga7-verify.js
+├── solvers/
+│   ├── roe/
+│   └── ga7/
+├── AGENT_CONTEXT.md
+└── README.md
+```
+
+## How It Works
+
+The app flow is straightforward:
+
+1. Select an exam target.
+2. Enter an IITM email.
+3. The app dynamically imports `./solvers/<exam>/registry.js`.
+4. Each solver runs with that email and returns a structured result.
+5. The workspace renders the output, metadata, and health signals.
+
+Typical solver return shape:
+
+```js
+{
+  answer,
+  type,
+  variant,
+  answerDisplay,
+  debug
+}
+```
+
+Common `type` values:
+
+- `solved`
+- `bypass`
+- `guide`
+- `error`
+
+## UI Features
+
+The current UI is designed as a power-user workspace rather than a plain results page.
+
+Included features:
+
+- left-rail question navigation
+- debounced search/filter
+- keyboard question switching
+- collapsible result sections
+- raw-answer wrap toggle
+- HTML preview iframe for document outputs
+- copy actions with fallback clipboard support
+- toast notifications for user feedback
+- per-question health badges with runtime and warning state
+- persistent UI state using `localStorage`
+- mobile drawer navigation and mobile question picker
+
+Persisted UI state includes:
+
+- selected exam
+- email
+- current search text
+- selected question
+- wrap mode
+- opened/closed panels
+
+## GA7 Notes
+
+GA7 has extra tooling for debugging and verification.
+
+Important files:
+
+- `solvers/ga7/runtime.js`
+- `ga7-verify.html`
+- `ga7-verify.js`
+
+Recent GA7 hardening includes:
+
+- stronger runtime validation and diagnostics
+- improved diverging palette handling in `q-colorencoding`
+- more robust prompt-output handling in `q-prompt-reverse`
+
+## Local Development
+
+### Install
+
+```bash
+npm install
+```
+
+### Start the app
+
+```bash
+npm start
+```
+
+Then open:
+
+- `http://localhost:3000/`
+
+For GA7 verification:
+
+- `http://localhost:3000/ga7-verify.html`
+
+### Smoke check
+
+```bash
+npm run check
+```
+
+Expected success output:
+
+```text
+Checks passed: GA7 solvers=15, ROE solvers=15
+```
+
+## Server
+
+`server.js` is a lightweight ESM static server for local use.
+
+It currently provides:
+
+- safe path resolution inside the repo root
+- `GET` and `HEAD` handling
+- explicit content-type mapping
+- importable server helpers for smoke testing
+
+## Solver Development
+
+When adding or editing solvers:
+
+- keep outputs deterministic for the given email
+- return structured results consistently
+- attach useful `debug` metadata whenever possible
+- prefer shared utilities/runtime wrappers over duplicating logic
+- run `npm run check` after meaningful changes
+
+## Handoff / Agent Context
+
+If another engineer or AI agent needs fast repo context, see:
+
+- [AGENT_CONTEXT.md](./AGENT_CONTEXT.md)
+
+That file contains architecture notes, recent fixes, known gaps, and working assumptions.
+
+## Known Next Improvements
+
+Good next upgrades for the project:
+
+- browser E2E coverage
+- compare-two-emails GA7 debugger
+- “run only failed” verification mode
+- stronger accessibility pass
+- offline caching for static assets
+
+## Tech Notes
+
+- Frontend: plain HTML, CSS, and browser JavaScript modules
+- Server: Node.js ESM
+- RNG dependency: `seedrandom`
+
+## Commands
+
+```bash
+npm start
+npm run dev
+npm run check
+```
+
+## License / Usage
+
+Add your preferred license and usage policy here if you want to publish this repository publicly.

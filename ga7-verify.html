@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GA7 Solver Verification</title>
+  <script src="https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/seedrandom.min.js"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111827;
+      --panel: #1f2937;
+      --panel-2: #0f172a;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --ok: #10b981;
+      --warn: #f59e0b;
+      --err: #ef4444;
+      --border: #334155;
+      --accent: #38bdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      background: linear-gradient(135deg, #020617, #111827 45%, #172554);
+      color: var(--text);
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .hero, .panel {
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+    }
+    .hero {
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    h1, h2 { margin: 0 0 12px; }
+    p { color: var(--muted); }
+    .controls {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .panel {
+      padding: 18px;
+    }
+    textarea, input, button {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--panel-2);
+      color: var(--text);
+      padding: 12px 14px;
+      font: inherit;
+    }
+    textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+    button {
+      background: linear-gradient(135deg, #0ea5e9, #2563eb);
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      margin-top: 12px;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: progress;
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .stat {
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(31, 41, 55, 0.92);
+      border: 1px solid var(--border);
+    }
+    .stat .label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+    .stat .value {
+      font-size: 28px;
+      font-weight: 800;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th { color: var(--muted); }
+    .ok { color: var(--ok); }
+    .warn { color: var(--warn); }
+    .err { color: var(--err); }
+    code {
+      background: rgba(51, 65, 85, 0.4);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    .log {
+      white-space: pre-wrap;
+      background: #020617;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      min-height: 120px;
+    }
+    @media (max-width: 900px) {
+      .controls, .summary { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <h1>GA7 Solver Verification</h1>
+      <p>Runs every GA7 solver against a batch of emails, validates output shape, and surfaces warnings or failures with per-question diagnostics.</p>
+    </section>
+
+    <section class="controls">
+      <div class="panel">
+        <h2>Email Batch</h2>
+        <p>One email per line. Leave the defaults to stress test a broad sample quickly.</p>
+        <textarea id="emailList"></textarea>
+        <button id="runBtn">Run GA7 Verification</button>
+      </div>
+      <div class="panel">
+        <h2>Options</h2>
+        <p>Use a smaller or larger run depending on how hard you want to push the local browser check.</p>
+        <label for="limitInput">Limit emails</label>
+        <input id="limitInput" type="number" min="1" max="500" value="40">
+        <div style="margin-top:14px">
+          <strong>Coverage</strong>
+          <p style="margin-top:8px">Each run executes all 15 GA7 solvers for each selected email and records runtime, warnings, and failures.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary">
+      <div class="stat"><div class="label">Emails</div><div class="value" id="statEmails">0</div></div>
+      <div class="stat"><div class="label">Solver Runs</div><div class="value" id="statRuns">0</div></div>
+      <div class="stat"><div class="label">Failures</div><div class="value err" id="statFailures">0</div></div>
+      <div class="stat"><div class="label">Warnings</div><div class="value warn" id="statWarnings">0</div></div>
+    </section>
+
+    <section class="panel" style="margin-bottom:20px">
+      <h2>Per-Solver Summary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Solver</th>
+            <th>Runs</th>
+            <th>Failures</th>
+            <th>Warnings</th>
+            <th>Avg Runtime</th>
+          </tr>
+        </thead>
+        <tbody id="solverTable"></tbody>
+      </table>
+    </section>
+
+    <section class="panel" style="margin-bottom:20px">
+      <h2>Failure Log</h2>
+      <div class="log" id="failureLog">No runs yet.</div>
+    </section>
+  </main>
+
+  <script type="module" src="ga7-verify.js"></script>
+</body>
+</html>

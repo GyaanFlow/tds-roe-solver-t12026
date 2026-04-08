@@ -1,0 +1,60 @@
+{
+  "version": 2,
+  "name": "tds-exam-portal",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains; preload"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(js|css|json|png|jpg|jpeg|svg|webp|woff|woff2)$",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/solvers/(.*)\\.js$",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
