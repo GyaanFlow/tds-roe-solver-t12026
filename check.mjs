@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import seedrandom from 'seedrandom';
 
 const rootDir = process.cwd();
 const serverUrl = 'http://127.0.0.1:3000';
@@ -89,19 +90,7 @@ function installBrowserStubs() {
     }
   });
 
-  if (typeof Math.seedrandom !== 'function') {
-    Math.seedrandom = (seed = '') => {
-      let state = 2166136261 >>> 0;
-      for (const char of String(seed)) {
-        state ^= char.charCodeAt(0);
-        state = Math.imul(state, 16777619) >>> 0;
-      }
-      return () => {
-        state = (Math.imul(state, 1664525) + 1013904223) >>> 0;
-        return state / 4294967296;
-      };
-    };
-  }
+  Math.seedrandom = seedrandom;
 }
 
 function importFresh(relativePath) {
@@ -128,7 +117,8 @@ async function checkServerRoutes() {
       ['/', 200],
       ['/ga7-verify.html', 200],
       ['/style.css', 200],
-      ['/solvers/ga7/registry.js', 200]
+      ['/solvers/ga7/registry.js', 200],
+      ['/solvers/ga8/registry.js', 200]
     ];
 
     for (const [pathname, expectedStatus] of checks) {
@@ -138,6 +128,66 @@ async function checkServerRoutes() {
 
   } finally {
     await new Promise((resolve) => server.close(resolve));
+  }
+}
+
+async function checkGa8OfficialParity(solvers) {
+  const officialIds = [
+    'q-gh-actions-secret-chain',
+    'q-gemini-math-puzzle',
+    'q-fastapi-iris-deploy',
+    'q-hf-spaces-ml-api',
+    'q-docker-hash-verify',
+    'q-mlops-bash-script',
+    'q-precommit-ci-gate',
+    'q-mlops-concepts-quiz',
+    'q-gcp-cloud-run-compute',
+    'q-gcp-cloud-functions-http',
+    'q-gcp-gemini-classification',
+    'q-gcp-cloud-run-ml',
+    'q-gcp-cloud-run-envconfig',
+    'q-gcp-cloud-run-hashapi',
+    'q-gcp-gemini-json-extract'
+  ];
+
+  assert(solvers.length === officialIds.length, `Expected ${officialIds.length} GA8 solvers, got ${solvers.length}.`);
+  assert(
+    solvers.map((solver) => solver.id).join('|') === officialIds.join('|'),
+    'GA8 solver order/IDs no longer match the official Jan 2026 GA8 bundle.'
+  );
+
+  const sampleEmail = '21f1000000@ds.study.iitm.ac.in';
+  const byId = Object.fromEntries(solvers.map((solver) => [solver.id, solver]));
+  const expectedAnswers = {
+    'q-gemini-math-puzzle': '2,3,e0237deb3f1e29',
+    'q-mlops-bash-script': 'DIR:data|FILES:6|HASH:7e392af1',
+    'q-mlops-concepts-quiz': 'b,b,a',
+    'q-gcp-gemini-classification': 'POSITIVE,POSITIVE,POSITIVE,37,ed97ce048af7f6',
+    'q-gcp-gemini-json-extract': 'Elena Nakamura,37,Mumbai,cloud architect,Amazon,cd1ec7d88a85fc'
+  };
+
+  for (const [id, expected] of Object.entries(expectedAnswers)) {
+    const result = await byId[id].solve(sampleEmail);
+    assert(result.answer === expected, `${id} sample answer drifted. Expected "${expected}", got "${result.answer}".`);
+  }
+
+  const expectedSnippets = {
+    'q-gh-actions-secret-chain': ['MY_SECRET = 787586a9046b', 'verify-hash-0cc8a1af', '|8c1fdd99eb'],
+    'q-fastapi-iris-deploy': ['sl=7.2&sw=3.4&pl=3.5&pw=1.1', '"prediction": 1', '"class_name": "versicolor"'],
+    'q-docker-hash-verify': ['n_estimators = 60', 'random_state = 68', 'test_size = 0.2'],
+    'q-gcp-cloud-run-compute': ['{"a": 13, "b": 13}', '"verify": "d1db4bc30e"'],
+    'q-gcp-cloud-functions-http': ['"text": "docker-observability-monitoring-registry-deployment"', '"verify": "74e87adfaf1f"'],
+    'q-gcp-cloud-run-ml': ['sl=7.2&sw=3.7&pl=3.6&pw=0.9', '"prediction": 1', '"confidence": 1.0'],
+    'q-gcp-cloud-run-envconfig': ['THEME_COLOR = crimson', 'APP_MODE = production', 'BUILD_NUMBER = 464', '"config_hash": "c2c7a5cf5881"'],
+    'q-gcp-cloud-run-hashapi': ['"text": "epsilon-build"', '"salt": "1700"', '"salted_sha256": "ce552aafd18b703a"']
+  };
+
+  for (const [id, snippets] of Object.entries(expectedSnippets)) {
+    const result = await byId[id].solve(sampleEmail);
+    const output = `${result.answer}\n${result.answerDisplay || ''}`;
+    for (const snippet of snippets) {
+      assert(output.includes(snippet), `${id} sample output missing official seeded snippet: ${snippet}`);
+    }
   }
 }
 
@@ -153,13 +203,16 @@ async function main() {
 
   const ga7Registry = await importFresh('solvers/ga7/registry.js');
   const roeRegistry = await importFresh('solvers/roe/registry.js');
+  const ga8Registry = await importFresh('solvers/ga8/registry.js');
 
   assert(Array.isArray(ga7Registry.solvers) && ga7Registry.solvers.length > 0, 'GA7 registry did not load solvers.');
   assert(Array.isArray(roeRegistry.solvers) && roeRegistry.solvers.length > 0, 'ROE registry did not load solvers.');
+  assert(Array.isArray(ga8Registry.solvers) && ga8Registry.solvers.length > 0, 'GA8 registry did not load solvers.');
+  await checkGa8OfficialParity(ga8Registry.solvers);
 
   await checkServerRoutes();
 
-  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}`);
+  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}`);
 }
 
 main().catch((error) => {
