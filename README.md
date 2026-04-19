@@ -6,6 +6,7 @@ This repository currently supports:
 
 - `ROE` re-exam workflows
 - `GA7` data-visualization workflows
+- `GA8` MLOps / cloud-deployment workflows
 
 The app is designed as a static frontend plus a lightweight local server. It loads exam-specific solver registries, executes them for a user email, and presents answers, variants, previews, exports, and diagnostics in a responsive workspace UI.
 
@@ -35,7 +36,8 @@ The app is designed as a static frontend plus a lightweight local server. It loa
 ├── ga7-verify.js
 ├── solvers/
 │   ├── roe/
-│   └── ga7/
+│   ├── ga7/
+│   └── ga8/
 ├── AGENT_CONTEXT.md
 └── README.md
 ```
@@ -113,6 +115,44 @@ Recent GA7 hardening includes:
 - improved diverging palette handling in `q-colorencoding`
 - more robust prompt-output handling in `q-prompt-reverse`
 
+## GA8 Notes
+
+GA8 covers MLOps, cloud deployments, and Gemini API questions.
+
+### Solver Files (15 questions)
+
+| # | File | Question Topic |
+|---|------|----------------|
+| 1 | `q-gh-actions.js` | GitHub Actions secret chain |
+| 2 | `q-gemini-math.js` | Gemini math puzzle |
+| 3 | `q-fastapi-iris.js` | FastAPI Iris deployment |
+| 4 | `q-hf-spaces.js` | HuggingFace Spaces ML API |
+| 5 | `q-docker-verify.js` | Docker hash verification |
+| 6 | `q-bash-script.js` | MLOps bash script |
+| 7 | `q-precommit.js` | Pre-commit CI gate |
+| 8 | `q-mlops-quiz.js` | MLOps concepts quiz |
+| 9 | `q-cloud-run-compute.js` | GCP Cloud Run compute |
+| 10 | `q-cloud-functions.js` | GCP Cloud Functions HTTP |
+| 11 | `q-gemini-classify.js` | GCP Gemini classification |
+| 12 | `q-cloud-run-ml.js` | GCP Cloud Run ML |
+| 13 | `q-cloud-run-envconfig.js` | GCP Cloud Run env config |
+| 14 | `q-cloud-run-hashapi.js` | GCP Cloud Run hash API |
+| 15 | `q-gemini-extract.js` | GCP Gemini JSON extraction |
+
+### Shared Modules
+
+- `solvers/ga8/registry.js` — ordered solver list
+- `solvers/ga8/runtime.js` — shared execution wrapper with timing, validation, and debug metadata
+- `solvers/ga8/utils.js` — shared helpers (email normalization, etc.)
+
+### Bonus: Q16 One-Shot Solver
+
+When the GA8 exam is selected, a 16th bonus question is appended by `app.js` (via `buildGa8BonusNode()`). This is a browser console script that intercepts the exam submission payload (`JSON.stringify` override), sets all scores to their maximum weights, fills missing answers, and unlocks save/check buttons. It is a guide-type entry — users paste it into the browser console on the exam page.
+
+### GA8 Weight Map
+
+The exact per-question weight mapping is defined in `GA8_BONUS_WEIGHTS` at the top of the `buildGa8BonusNode` section in `app.js`. Total mapped marks: **23.5**.
+
 ### Analytics
 
 The app now includes Vercel Web Analytics script hooks for static deployments:
@@ -153,7 +193,7 @@ npm run check
 Expected success output:
 
 ```text
-Checks passed: GA7 solvers=15, ROE solvers=15
+Checks passed: GA7 solvers=15, GA8 solvers=15, ROE solvers=15
 ```
 
 ## Server
