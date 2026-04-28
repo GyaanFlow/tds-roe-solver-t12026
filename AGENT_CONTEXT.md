@@ -10,6 +10,7 @@ Current supported targets:
 - `roe`
 - `ga7`
 - `ga8`
+- `p2` — Project 2 Part B (Discourse KB Analysis)
 
 The app runs locally in the browser, loads a solver registry for the selected exam, executes each solver for a user email, and renders answers plus diagnostics.
 
@@ -135,6 +136,100 @@ const GA8_BONUS_WEIGHTS = {
 };
 ```
 
+## P2 Part B Notes (Discourse KB Solver)
+
+P2 Part B Q4 is the IITM Discourse forum KB analysis task. The user gets 50 unique questions about solved topics across 14 course categories. Answers must be exact (counts, usernames, post IDs, compound formats like `7-184532`).
+
+### Architecture
+
+- `solvers/p2/registry.js` — single solver entry for the KB solver
+- `solvers/p2/runtime.js` — execution wrapper (mirrors GA8 pattern, also calls `registerInteractive()` for DOM-interactive solvers)
+- `solvers/p2/utils.js` — email normalization
+- `solvers/p2/parse-tasks.js` — universal task parser with validation
+- `solvers/p2/handlers.js` — 11 query type handlers, fully defensive
+- `solvers/p2/q-discourse-kb.js` — main solver module with interactive guide UI
+- `solvers/p2/compact_facts.json` — ~12MB precomputed snapshot (frozen 2026-04-25, 20571 topics, 14 categories)
+
+### Data Format (`compact_facts.json`)
+
+Keyed by category name. Each category has an array of topic objects:
+
+```json
+{
+  "topic_id": 23473,
+  "title": "Getting Started with Ubuntu...",
+  "tags": ["week-1"],
+  "created_at": "2021-12-28T09:52:47.530Z",
+  "op_username": "PUNEET",
+  "reply_count": 16,
+  "latest_reply_post_id": 72065,
+  "accepted_post_id": 72044,
+  "accepted_username": "shriaviator",
+  "posts": [
+    { "id": 72013, "u": "PUNEET", "c": "2021-12-28T09:52:47.715Z", "l": 1 }
+  ]
+}
+```
+
+Posts use compact keys: `id` = post ID, `u` = username, `c` = created_at ISO, `l` = like count.
+
+### 11 Query Types
+
+| Type | Returns |
+|------|---------|  
+| `accepted_post_id` | Post ID of accepted answer for a specific topic |
+| `reply_count_compound` | `replyCount-latestReplyPostId` |
+| `total_posts` | Count of posts in date range |
+| `aggregate_likes` | Sum of likes in date range |
+| `tag_count` | Topics with a specific tag in date range |
+| `tag_count_compound` | `count-latestTopicId` for tagged topics |
+| `top_liked_user` | Username with most total likes in date range |
+| `top_replier` | Username with most replies (non-OP) in date range |
+| `top_answer_author` | Username with most accepted answers in date range |
+| `unique_creators` | Count of unique topic creators in date range |
+| `unique_creators_compound` | `uniqueCount-latestTopicId` |
+
+### Robustness Features (Production-Ready)
+
+**Parser (`parse-tasks.js`):**
+- `normalizeQuotes()` — converts all Unicode curly/smart quotes to straight quotes before regex matching
+- 5-pass `findTopicByTitle()` — exact → exact+date → case-insensitive → whitespace-normalized → relaxed (any op)
+- Full `validate()` function — checks missing/extra/duplicate task numbers, missing params, unknown categories
+- Category detection fallback chain: line header → "in the X Discourse category" → body scan for known category names
+- Type detection fallback: if body parsing fails, retries against full block text
+
+**Handlers (`handlers.js`):**
+- Every handler guards against missing params with early `MISSING_PARAMS` return
+- All array accesses guarded (`f.posts || []`, `f.tags || []`)
+- Like accumulation uses `(q.l || 0)` for safety
+- `inRange()` returns `false` when start/end are undefined (prevents silent bad matches)
+- Missing tasks 1-50 automatically filled with `"MISSING"` in output
+
+**Solver UI (`q-discourse-kb.js`):**
+- Separate parse-error handling (shown to user before handler execution)
+- Validation warnings displayed in dedicated amber panel
+- Color-coded stats badges (green ≥45, yellow ≥35, red <35)
+- Performance timer shown in log
+
+### Interactive UI Pattern
+
+The P2 solver is a **guide-type** interactive solver (unlike GA8 solvers that auto-compute from email):
+
+1. On workspace init, it fetches `compact_facts.json` (~12MB, cached after first load)
+2. Returns a guide with an embedded interactive HTML UI in `answerDisplay`
+3. The user pastes their 50 tasks into the textarea in the "Rendered Notes" panel
+4. Clicking "Solve All Tasks" parses, validates, and solves all tasks in-browser
+5. Results are shown as JSON ready to copy-paste to the grader
+
+Global handlers (`window._p2bSolve`, `window._p2bCopy`) are registered on the window object for onclick interactivity.
+
+### Vercel Deployment
+
+- `compact_facts.json` is served as a static asset under `/solvers/p2/compact_facts.json`
+- The existing `vercel.json` cache rules apply (immutable cache for `.json` files — fine since data is frozen at 2026-04-25)
+- No server-side logic needed — everything runs client-side
+- Tested: all 11 handler types produce real answers against the 20571-topic cache
+
 ## UI Improvements Already Applied
 
 The UI in `app.js` and `style.css` has been substantially improved.
@@ -201,7 +296,7 @@ npm run check
 Current expected success output:
 
 ```text
-Checks passed: GA7 solvers=15, GA8 solvers=15, ROE solvers=15
+Checks passed: GA7 solvers=15, GA8 solvers=15, ROE solvers=15, P2 solvers=1
 ```
 
 The smoke check covers:
