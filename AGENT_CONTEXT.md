@@ -273,14 +273,15 @@ The UI in `app.js` and `style.css` has been substantially improved.
 
 ### Workspace UX
 
+- **Dynamic Welcome Screen**: Reads `tds-config.json` on startup to easily update term info each semester.
+- **Glassmorphism & Aesthetics**: Custom dark scrollbars, `backdrop-filter: blur(12px)` headers, tactile buttons, and pulsing progress bars.
 - Collapsible sections for answer panels
 - Copy buttons with fallback clipboard path
 - HTML answer preview iframe
-- Keyboard navigation with arrow keys
+- Keyboard navigation with arrow keys and focus-visible rings
 - Debounced sidebar filtering
 - Mobile question picker
-- Mobile drawer navigation
-- Better responsive layout and touch scrolling
+- **Mobile Drawer Navigation**: `#sidebar` is a full-height fixed drawer, and `.sidebar-content` utilizes natural document-flow scrolling to fix previous touch-event traps.
 
 ### Recent State and Feedback Improvements
 

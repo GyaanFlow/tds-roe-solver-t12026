@@ -77,6 +77,8 @@ The current UI is designed as a power-user workspace rather than a plain results
 
 Included features:
 
+- **Dynamic Welcome Screen**: Reads `tds-config.json` on startup to easily update term info each semester.
+- **Glassmorphism & Aesthetics**: Custom dark scrollbars, `backdrop-filter: blur(12px)` headers, tactile buttons, and pulsing progress bars.
 - left-rail question navigation
 - debounced search/filter
 - keyboard question switching
@@ -87,7 +89,7 @@ Included features:
 - toast notifications for user feedback
 - per-question health badges with runtime and warning state
 - persistent UI state using `localStorage`
-- mobile drawer navigation and mobile question picker
+- **Mobile Drawer Navigation**: `#sidebar` is a full-height fixed drawer, and `.sidebar-content` utilizes natural document-flow scrolling to fix previous touch-event traps.
 - one-click debug report copy for easier issue reporting
 
 Persisted UI state includes:
