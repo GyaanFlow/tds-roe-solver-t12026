@@ -68,6 +68,7 @@ function installBrowserStubs() {
     writable: true,
     value: globalThis.document || {
       body: { appendChild() {}, removeChild() {} },
+      head: { appendChild() {} },
       createElement() { return makeElement(); },
       getElementById() { return makeElement(); },
       querySelector() { return null; },
@@ -204,15 +205,17 @@ async function main() {
   const ga7Registry = await importFresh('solvers/ga7/registry.js');
   const roeRegistry = await importFresh('solvers/roe/registry.js');
   const ga8Registry = await importFresh('solvers/ga8/registry.js');
+  const p2Registry = await importFresh('solvers/p2/registry.js');
 
   assert(Array.isArray(ga7Registry.solvers) && ga7Registry.solvers.length > 0, 'GA7 registry did not load solvers.');
   assert(Array.isArray(roeRegistry.solvers) && roeRegistry.solvers.length > 0, 'ROE registry did not load solvers.');
   assert(Array.isArray(ga8Registry.solvers) && ga8Registry.solvers.length > 0, 'GA8 registry did not load solvers.');
+  assert(Array.isArray(p2Registry.solvers) && p2Registry.solvers.length === 2, 'P2 registry should have exactly 2 solvers (Q3 + Q4).');
   await checkGa8OfficialParity(ga8Registry.solvers);
 
   await checkServerRoutes();
 
-  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}`);
+  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}`);
 }
 
 main().catch((error) => {

@@ -11,7 +11,7 @@ import { parseText, validate, KNOWN_CATEGORIES } from './parse-tasks.js';
 import { HANDLERS } from './handlers.js';
 
 export const id = 'p2b-q4-discourse-kb';
-export const title = 'Discourse KB Solver (50 Tasks)';
+export const title = 'Q4: Discourse KB Solver (50 Tasks)';
 
 // ─── Data Loading ───────────────────────────────────────────────────
 

@@ -9,5 +9,8 @@
   },
   "devDependencies": {
     "seedrandom": "^3.0.5"
+  },
+  "dependencies": {
+    "jsqr": "^1.4.0"
   }
 }

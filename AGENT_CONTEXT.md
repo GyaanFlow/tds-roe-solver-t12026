@@ -2,6 +2,20 @@
 
 This file is a quick handoff for future AI agents working in this repository.
 
+## Knowledge Graph (graphify)
+
+This project has a **graphify knowledge graph** at `graphify-out/`.
+
+**Before answering architecture or cross-module questions:**
+1. Read `graphify-out/GRAPH_REPORT.md` for god nodes, community structure, and surprising connections
+2. Use `graphify query "<question>"` for BFS/DFS traversal of the graph
+3. Use `graphify path "<A>" "<B>"` to find shortest path between two nodes
+4. Use `graphify explain "<concept>"` for plain-language node explanations
+5. After modifying code files, run `graphify update .` to keep the graph current (AST-only, free)
+
+**Graph stats:** 475 nodes · 889 edges · 28 communities · 87% EXTRACTED edges
+**God nodes:** `rng()` (38 edges), `normalizeEmail()` (26 edges), `renderCanvas()` (17 edges)
+
 ## Project Purpose
 
 `tds-roe-solver` is a local static web workspace for IITM TDS exam helpers.
@@ -10,7 +24,7 @@ Current supported targets:
 - `roe`
 - `ga7`
 - `ga8`
-- `p2` — Project 2 Part B (Discourse KB Analysis)
+- `p2` — Project 2 Part B (Q3: QR Forensics + Q4: Discourse KB)
 
 The app runs locally in the browser, loads a solver registry for the selected exam, executes each solver for a user email, and renders answers plus diagnostics.
 
@@ -136,18 +150,33 @@ const GA8_BONUS_WEIGHTS = {
 };
 ```
 
-## P2 Part B Notes (Discourse KB Solver)
+## P2 Part B Notes
+
+### P2 Q3: QR Forensics — Solana Devnet Tracer
+
+Interactive guide solver that automates the damaged-QR assignment:
+1. Parses SVG QR (406×406, 14px modules, offset 56,56, grid 21×21 Version 1)
+2. Repairs top-left diagonal damage by restoring fixed patterns (finders, separators, timing, dark module)
+3. Decodes 7-character fragment via jsQR (loaded from CDN)
+4. Reconstructs masked Solana devnet signature (replaces `-------` placeholder)
+5. Fetches transaction via Solana RPC (`getTransaction` with `jsonParsed` encoding)
+6. Extracts `from`, `to`, `amount` — uses balance-diff method (postBalances - preBalances for recipient), NOT instruction lamports
+
+- `solvers/p2/q-qr-forensics.js` — complete solver with embedded UI
+
+### P2 Q4: Discourse KB Solver (50 Tasks)
 
 P2 Part B Q4 is the IITM Discourse forum KB analysis task. The user gets 50 unique questions about solved topics across 14 course categories. Answers must be exact (counts, usernames, post IDs, compound formats like `7-184532`).
 
 ### Architecture
 
-- `solvers/p2/registry.js` — single solver entry for the KB solver
+- `solvers/p2/registry.js` — 2 solver entries (Q3 QR Forensics + Q4 Discourse KB)
 - `solvers/p2/runtime.js` — execution wrapper (mirrors GA8 pattern, also calls `registerInteractive()` for DOM-interactive solvers)
 - `solvers/p2/utils.js` — email normalization
+- `solvers/p2/q-qr-forensics.js` — Q3 QR repair + Solana tracer (interactive guide)
 - `solvers/p2/parse-tasks.js` — universal task parser with validation
 - `solvers/p2/handlers.js` — 11 query type handlers, fully defensive
-- `solvers/p2/q-discourse-kb.js` — main solver module with interactive guide UI
+- `solvers/p2/q-discourse-kb.js` — Q4 main solver module with interactive guide UI
 - `solvers/p2/compact_facts.json` — ~12MB precomputed snapshot (frozen 2026-04-25, 20571 topics, 14 categories)
 
 ### Data Format (`compact_facts.json`)
@@ -296,7 +325,7 @@ npm run check
 Current expected success output:
 
 ```text
-Checks passed: GA7 solvers=15, GA8 solvers=15, ROE solvers=15, P2 solvers=1
+Checks passed: GA7 solvers=15, GA8 solvers=15, ROE solvers=15, P2 solvers=2
 ```
 
 The smoke check covers:
@@ -331,6 +360,7 @@ Do not assume it is versioned in this repository.
 - Do not revert user changes unless explicitly asked.
 - Prefer `apply_patch` for edits.
 - Prefer `npm run check` after meaningful changes.
+- After code changes, run `graphify update .` to keep the knowledge graph current.
 
 ## Quick Start
 
@@ -344,3 +374,81 @@ Then open:
 - `http://localhost:3000/`
 - `http://localhost:3000/ga7-verify.html`
 
+## How to Start a New AI Conversation (Optimal Prompt)
+
+Copy-paste this as your **first message** in any new AI coding session:
+
+```
+Read these files in order before doing anything:
+1. AGENT_CONTEXT.md — project intent, design decisions, architecture
+2. graphify-out/GRAPH_REPORT.md — god nodes, communities, cross-module connections
+
+Then confirm you understand the structure. Do NOT read individual source files until needed.
+```
+
+This gives the AI **complete structural understanding** in ~18KB instead of reading all 66 files (~45K words).
+
+### Context Hierarchy (What to Read When)
+
+| Priority | File | Read When | Cost |
+|----------|------|-----------|------|
+| 1st | `AGENT_CONTEXT.md` | Every conversation start | ~13KB |
+| 2nd | `graphify-out/GRAPH_REPORT.md` | Architecture/cross-module questions | ~6KB |
+| 3rd | `graphify query "<question>"` | Specific code tracing questions | On-demand |
+| 4th | Individual source files | Only when editing specific code | Per-file |
+
+### For Specific Tasks, Add Context to Prompt
+
+**Adding a new exam solver (e.g., GA9):**
+```
+Read AGENT_CONTEXT.md and graphify-out/GRAPH_REPORT.md.
+Then read solvers/ga8/registry.js for the pattern to follow.
+I need a new GA9 solver module.
+```
+
+**Debugging a specific solver:**
+```
+Read AGENT_CONTEXT.md and graphify-out/GRAPH_REPORT.md.
+Run: graphify explain "normalizeEmail"
+Then fix the issue in solvers/ga7/q-colorencoding.js
+```
+
+**UI changes:**
+```
+Read AGENT_CONTEXT.md (UI section) and graphify-out/GRAPH_REPORT.md.
+Focus on Community 3 (app.js UI cluster).
+```
+
+## Maintenance Rules (Keep Context Updated)
+
+After completing any feature or significant change, the AI agent MUST:
+
+### 1. Update Graphify (Always)
+```bash
+graphify update .
+```
+This re-extracts the AST and regenerates `GRAPH_REPORT.md`, `graph.json`, and `graph.html`. Free, ~2 seconds.
+
+### 2. Update AGENT_CONTEXT.md (When Needed)
+
+Update this file when:
+- ✅ New exam target added (update "Current supported targets" list)
+- ✅ New solver files created (update solver architecture section)
+- ✅ Design decisions changed (update relevant notes section)
+- ✅ New UI patterns introduced (update UI section)
+- ✅ Known gaps resolved or new gaps found (update gaps list)
+
+Do NOT update for:
+- ❌ Bug fixes within existing solvers
+- ❌ Minor refactors that don't change architecture
+- ❌ CSS-only changes
+
+### 3. Checklist for New Feature Completion
+
+```
+□ Code complete and tested
+□ npm run check passes
+□ graphify update .  (rebuild knowledge graph)
+□ AGENT_CONTEXT.md updated if architecture changed
+□ Commit with descriptive message
+```

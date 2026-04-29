@@ -1,0 +1,6 @@
+node_modules/
+.git/
+discourse-cache/
+discourse-target-cache/
+graphify-out/
+*.json
