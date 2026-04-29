@@ -506,6 +506,8 @@ body {
 @media (max-width: 760px) {
   body {
     overflow: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
   #workspace {
@@ -514,6 +516,7 @@ body {
     width: 100%;
     height: auto;
     min-height: 100vh;
+    overflow: visible;
   }
 
   #sidebar {
@@ -557,7 +560,17 @@ body {
 
   .editor-canvas {
     padding: 16px;
-    overflow-y: auto;
+    overflow-y: visible;
+    overflow-x: hidden;
+    overscroll-behavior: auto;
+    min-height: auto;
+    flex: none;
+  }
+
+  #editor {
+    height: auto;
+    min-height: auto;
+    overflow: visible;
   }
 
   .canvas-title {
@@ -605,10 +618,6 @@ body {
 
   #sidebar.mobile-open {
     transform: translateX(0);
-  }
-
-  #editor {
-    min-height: calc(100vh - 0px);
   }
 }
 
