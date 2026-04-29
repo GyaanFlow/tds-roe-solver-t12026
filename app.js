@@ -80,6 +80,29 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
   ensureToastRoot();
+
+  // Fetch dynamic configuration for the welcome screen
+  fetch('tds-config.json')
+    .then(res => res.json())
+    .then(config => {
+      if (config.termTitle) {
+        const titleEl = document.getElementById('welcomeTitle');
+        if (titleEl && titleEl.firstChild) titleEl.firstChild.nodeValue = config.termTitle + ' ';
+      }
+      if (config.termVersion) {
+        const versionEl = document.getElementById('welcomeVersion');
+        if (versionEl) versionEl.innerText = config.termVersion;
+      }
+      if (config.termDescription) {
+        const descEl = document.getElementById('welcomeDescription');
+        if (descEl) descEl.innerText = config.termDescription;
+      }
+      if (config.instructions) {
+        const instEl = document.getElementById('welcomeInstructions');
+        if (instEl) instEl.innerText = config.instructions;
+      }
+    })
+    .catch(err => console.warn('Could not load tds-config.json', err));
 });
 
 function persistUiState() {
