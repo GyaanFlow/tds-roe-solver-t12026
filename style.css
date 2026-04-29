@@ -537,7 +537,7 @@ body {
   }
 
   .sidebar-content {
-    max-height: 42vh;
+    max-height: none;
     padding: 16px;
     gap: 18px;
   }
