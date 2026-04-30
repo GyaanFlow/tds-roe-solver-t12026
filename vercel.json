@@ -30,7 +30,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(js|css|json|png|jpg|jpeg|svg|webp|woff|woff2)$",
+      "source": "/(.*)\\.(png|jpg|jpeg|svg|webp|woff|woff2)$",
       "headers": [
         {
           "key": "Cache-Control",
@@ -39,11 +39,11 @@
       ]
     },
     {
-      "source": "/solvers/(.*)\\.js$",
+      "source": "/(.*)\\.(js|css|json)$",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=3600, stale-while-revalidate=86400"
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     }
