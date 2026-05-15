@@ -1,0 +1,2660 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 597014,
+        "name": "Aman Kumar",
+        "username": "Aman_Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png",
+        "created_at": "2025-02-19T11:38:09.343Z",
+        "cooked": "<p>In Quiz 1 Pyq Session, it said that in this question screenshot pasted below we have to keep in mind that error word will at once only in a line, My question is that it can be Error01 or Error: or multiple Error words in a line<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/e/ae505ea858f7e73eeaf233f17eb321e9c40f719f.jpeg\" data-download-href=\"/uploads/short-url/oS3gOKtLiQvhiJnvI5Bcp6xe2mz.jpeg?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/e/ae505ea858f7e73eeaf233f17eb321e9c40f719f_2_667x500.jpeg\" alt=\"image\" data-base62-sha1=\"oS3gOKtLiQvhiJnvI5Bcp6xe2mz\" width=\"667\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/e/ae505ea858f7e73eeaf233f17eb321e9c40f719f_2_667x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/e/ae505ea858f7e73eeaf233f17eb321e9c40f719f.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/e/ae505ea858f7e73eeaf233f17eb321e9c40f719f.jpeg 2x\" data-dominant-color=\"949494\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">810×607 61 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\nHow do we know that we have to suppose what in these questions</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-02-20T09:01:34.449Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 2,
+        "reads": 53,
+        "readers_count": 52,
+        "score": 25.6,
+        "yours": false,
+        "topic_id": 167705,
+        "topic_slug": "assumptions-in-sc-quiz-1-questions",
+        "display_username": "Aman Kumar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 5,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21642,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/1",
+        "user_cakedate": "2023-09-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 597058,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-02-19T12:46:10.853Z",
+        "cooked": "<p>Yes, you are correct.</p>\n<p>If you want to count number of <code>lines</code> that have “ERROR”, options (a) and (d) are correct.</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">grep -c ERROR filename\n</code></pre>\n<p>and</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">grep ERROR filename | wc -l\n</code></pre>\n<p>However if you want to count the number of occurences (counting multiples occurences per line as well) we should do:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">grep -o ERROR filename | wc -l\n</code></pre>\n<p>This works because <code>-o</code> will print only the match and each match on separate lines, which then is passed to <code>wc</code> to count the number of lines in output, which is same as the number of matches.</p>\n<aside class=\"quote group-ds-students quote-modified\" data-username=\"Aman_Kumar\" data-post=\"1\" data-topic=\"167705\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/48/83620_2.png\" class=\"avatar\"> Aman_Kumar:</div>\n<blockquote>\n<p>Similarly there was also a question about string matching but in that there was not grep command so it was told that we have to suppose this thing if there is grep then only we have to consider using ‘’ escape character else it will be wrong</p>\n</blockquote>\n</aside>\n<p>Your framing is very ambiguous, I would recommend pasting the question here so we can understand your doubt and guide you.</p>\n<p>Regards,<br>\nSayan</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-02-19T12:46:10.853Z",
+        "reply_count": 2,
+        "reply_to_post_number": null,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 48,
+        "readers_count": 47,
+        "score": 34.6,
+        "yours": false,
+        "topic_id": 167705,
+        "topic_slug": "assumptions-in-sc-quiz-1-questions",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/2",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597070,
+        "name": "Aman Kumar",
+        "username": "Aman_Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png",
+        "created_at": "2025-02-19T12:48:56.803Z",
+        "cooked": "<p>I will edit it in more readable manner</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-02-19T12:48:56.803Z",
+        "reply_count": 0,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 44,
+        "readers_count": 43,
+        "score": 8.8,
+        "yours": false,
+        "topic_id": 167705,
+        "topic_slug": "assumptions-in-sc-quiz-1-questions",
+        "display_username": "Aman Kumar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21642,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/3",
+        "user_cakedate": "2023-09-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597077,
+        "name": "Aman Kumar",
+        "username": "Aman_Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png",
+        "created_at": "2025-02-19T12:56:24.194Z",
+        "cooked": "<p>So sir it means those options were wrong</p>\n<p>I will add a message to discussion section in that site question</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-02-19T12:57:07.124Z",
+        "reply_count": 1,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 41,
+        "readers_count": 40,
+        "score": 13.2,
+        "yours": false,
+        "topic_id": 167705,
+        "topic_slug": "assumptions-in-sc-quiz-1-questions",
+        "display_username": "Aman Kumar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21642,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/4",
+        "user_cakedate": "2023-09-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597079,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-02-19T13:00:04.654Z",
+        "cooked": "<p>If the question only requires to count lines, then they are correct.</p>\n<p>In the absence of a competing option, (a) and (d) are the most (and equally) correct options. Usually when in doubt, choose the most correct options.</p>\n<p>However I agree the clarification should be present whether to count lines or occurences.</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-02-19T13:00:04.654Z",
+        "reply_count": 1,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 40,
+        "readers_count": 39,
+        "score": 13,
+        "yours": false,
+        "topic_id": 167705,
+        "topic_slug": "assumptions-in-sc-quiz-1-questions",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 21642,
+          "username": "Aman_Kumar",
+          "name": "Aman Kumar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/5",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597088,
+        "name": "Aman Kumar",
+        "username": "Aman_Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png",
+        "created_at": "2025-02-19T13:08:03.738Z",
+        "cooked": "<p>Sir it is written in question</p>\n<pre><code class=\"lang-auto\">count the number of occurrences of the word \"ERROR\" in the file\n</code></pre>\n<p>Related to this I want to ask one more thing</p>\n<p>What if it asks</p>\n<pre><code class=\"lang-auto\">count the number of occurrences of the string \"ERROR\" in the file\n</code></pre>\n<p>Then if the file contains <code>Error</code> or <code>Error:</code> or <code>Error230</code>, do we have to count all those occurrences as it is said to be string not a word. As word is a combination of letters separated with spaces.</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-02-19T13:08:03.738Z",
+        "reply_count": 1,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 34,
+        "readers_count": 33,
+        "score": 11.8,
+        "yours": false,
+        "topic_id": 167705,
+        "topic_slug": "assumptions-in-sc-quiz-1-questions",
+        "display_username": "Aman Kumar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21642,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/6",
+        "user_cakedate": "2023-09-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597102,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-02-19T13:49:21.330Z",
+        "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Aman_Kumar\" data-post=\"6\" data-topic=\"167705\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/48/83620_2.png\" class=\"avatar\"> Aman_Kumar:</div>\n<blockquote>\n<p>Sir it is written in question</p>\n<pre><code class=\"lang-auto\">count the number of occurrences of the word \"ERROR\" in the file\n</code></pre>\n</blockquote>\n</aside>\n<p>If this is present in the question explicitly then yes, the options are incorrect.<br>\nIt should be <code>grep -o ERROR filename | wc -l</code> to do the same.</p>\n<aside class=\"quote group-ds-students\" data-username=\"Aman_Kumar\" data-post=\"6\" data-topic=\"167705\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/48/83620_2.png\" class=\"avatar\"> Aman_Kumar:</div>\n<blockquote>\n<p>Related to this I want to ask one more thing</p>\n<p>What if it asks</p>\n<pre><code class=\"lang-auto\">count the number of occurrences of the string \"ERROR\" in the file\n</code></pre>\n<p>Then if the file contains <code>Error</code> or <code>Error:</code> or <code>Error230</code>, do we have to count all those occurrences as it is said to be string not a word. As word is a combination of letters separated with spaces.</p>\n</blockquote>\n</aside>\n<p>You are correct, a word is a sequence of word characters (<code>\\w</code>) surrounded by word boundary (<code>\\b</code>). So ideally when asked to match a <code>word</code> we should either use <code>-w</code> flag with grep, or manually surround the search with <code>\\b</code> on both sides or <code>\\&lt;</code> and <code>\\&gt;</code> on left and right. However for <code>string</code> or <code>pattern</code>, this would not be required.</p>\n<p>However, in most cases, the evaluator might have just meant <code>string</code> when saying <code>word</code>. Again, use the same principle, when in doubt mark the most correct option. If there are options with and without <code>\\b</code> or <code>-w</code>, and they ask to match <code>word</code>, then choose the one with <code>-w</code> or <code>\\b</code>. However if there is only one valid option and it does not have <code>\\b</code> or <code>-w</code>, then choose that anyway.</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-02-19T13:49:21.330Z",
+        "reply_count": 1,
+        "reply_to_post_number": 6,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 30,
+        "readers_count": 29,
+        "score": 41,
+        "yours": false,
+        "topic_id": 167705,
+        "topic_slug": "assumptions-in-sc-quiz-1-questions",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/7",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597103,
+        "name": "Aman Kumar",
+        "username": "Aman_Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png",
+        "created_at": "2025-02-19T13:51:07.979Z",
+        "cooked": "<p>Thank you sir for the clarification</p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-02-19T13:51:07.979Z",
+        "reply_count": 0,
+        "reply_to_post_number": 7,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 31,
+        "readers_count": 30,
+        "score": 6.2,
+        "yours": false,
+        "topic_id": 167705,
+        "topic_slug": "assumptions-in-sc-quiz-1-questions",
+        "display_username": "Aman Kumar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21642,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/8",
+        "user_cakedate": "2023-09-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      597014,
+      597058,
+      597070,
+      597077,
+      597079,
+      597088,
+      597102,
+      597103
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      431
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 48,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 7,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 246,
+      "name": "diploma-level",
+      "slug": "diploma-level"
+    },
+    {
+      "id": 285,
+      "name": "quiz-1",
+      "slug": "quiz-1"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Assumptions in SC Quiz 1 Questions",
+  "id": 167705,
+  "title": "Assumptions in SC Quiz 1 Questions",
+  "posts_count": 8,
+  "created_at": "2025-02-19T11:38:09.130Z",
+  "views": 62,
+  "reply_count": 6,
+  "like_count": 3,
+  "last_posted_at": "2025-02-19T13:51:07.979Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "assumptions-in-sc-quiz-1-questions",
+  "category_id": 36,
+  "word_count": 659,
+  "deleted_at": null,
+  "user_id": 21642,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/e/ae505ea858f7e73eeaf233f17eb321e9c40f719f.jpeg",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_167705",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 8,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 2,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 810,
+      "height": 607,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/e/ae505ea858f7e73eeaf233f17eb321e9c40f719f.jpeg"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "Quiz 1: Question 171",
+      "id": 139046,
+      "title": "Quiz 1: Question 171",
+      "slug": "quiz-1-question-171",
+      "posts_count": 5,
+      "reply_count": 0,
+      "highest_post_number": 5,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/b/cb1dc0ddfb8c1cdf2ebbe3026074733ede61233e.png",
+      "created_at": "2024-07-09T05:10:13.616Z",
+      "last_posted_at": "2024-07-09T13:22:17.361Z",
+      "bumped": true,
+      "bumped_at": "2024-07-09T13:10:57.827Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 285,
+          "name": "quiz-1",
+          "slug": "quiz-1"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 10,
+      "views": 94,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 5,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 14561,
+            "username": "hemjadli",
+            "name": "Hemendra Sharma",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hemjadli/{size}/66975_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 1172,
+            "username": "tarang96",
+            "name": "Pansuriya Tarang Bharatbhai ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tarang96/{size}/101402_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 17065,
+            "username": "22F3002354",
+            "name": "Yash Rastogi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "SC Doubt",
+      "id": 194032,
+      "title": "SC Doubt",
+      "slug": "sc-doubt",
+      "posts_count": 7,
+      "reply_count": 5,
+      "highest_post_number": 7,
+      "image_url": null,
+      "created_at": "2025-12-20T19:56:57.266Z",
+      "last_posted_at": "2025-12-23T08:08:12.628Z",
+      "bumped": true,
+      "bumped_at": "2025-12-23T08:08:12.628Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 133,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 35917,
+            "username": "24f2005383",
+            "name": "Akankshya Sinha",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2005383/{size}/111211_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 25731,
+            "username": "Mrinal.exe",
+            "name": "Mrinal",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal.exe/{size}/151669_2.png",
+            "primary_group_name": "ds-students",
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "System Commands Mock question clarification",
+      "id": 189861,
+      "title": "System Commands Mock question clarification",
+      "slug": "system-commands-mock-question-clarification",
+      "posts_count": 8,
+      "reply_count": 5,
+      "highest_post_number": 9,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/5/05e8e818a58479677c50774e775c551222539d56_2_1024x741.png",
+      "created_at": "2025-10-23T04:34:24.725Z",
+      "last_posted_at": "2025-10-28T14:32:26.214Z",
+      "bumped": true,
+      "bumped_at": "2025-10-28T14:32:26.214Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        },
+        {
+          "id": 285,
+          "name": "quiz-1",
+          "slug": "quiz-1"
+        },
+        {
+          "id": 145,
+          "name": "mock",
+          "slug": "mock"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 5,
+      "views": 109,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38178,
+            "username": "Jatin-Gera",
+            "name": "Jatin Gera",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jatin-gera/{size}/142338_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 452,
+            "username": "republicgamer01",
+            "name": "Abdul Rahman",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/republicgamer01/{size}/1759_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 19426,
+            "username": "23f1000917",
+            "name": "Person",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/58956e/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Mock Question",
+      "id": 154115,
+      "title": "Mock Question",
+      "slug": "mock-question",
+      "posts_count": 6,
+      "reply_count": 4,
+      "highest_post_number": 6,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/0/a023824370dc1fdd6cc3c0fdc256f8f9d4c9330e_2_1024x634.png",
+      "created_at": "2024-10-27T02:41:57.012Z",
+      "last_posted_at": "2024-10-27T04:16:56.487Z",
+      "bumped": true,
+      "bumped_at": "2024-10-27T04:16:56.487Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 15,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16223,
+            "username": "22f3001166",
+            "name": "Dalyodh Singh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001166/{size}/142932_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "An appeal to the team regarding clear question wording",
+      "id": 198139,
+      "title": "An appeal to the team regarding clear question wording",
+      "slug": "an-appeal-to-the-team-regarding-clear-question-wording",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/f/efa77a66a61f25e1166ebd330eec64a786a417e7_2_1024x464.png",
+      "created_at": "2026-03-09T12:11:04.150Z",
+      "last_posted_at": "2026-03-09T14:21:59.363Z",
+      "bumped": true,
+      "bumped_at": "2026-03-09T14:21:59.363Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 31,
+          "name": "quiz",
+          "slug": "quiz"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 52,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 37539,
+            "username": "Baskaran_Nadar",
+            "name": "Baskaran Nadar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 14366,
+            "username": "22f2001554",
+            "name": "Ishan Shishodiya",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 2,
+    "username": "sayan",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+    "excerpt": "<p>Yes, you are correct.</p>\n<p>If you want to count number of <code>lines</code> that have “ERROR”, options (a) and (d) are correct.</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">grep -c ERROR filename\n</code></pre>\n<p>and</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">grep ERROR filename | wc -l\n</code></pre>\n<p>However if you want to count the number of occurences (counting multiples occurences per line as well) we should do:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">grep -o ERROR filename | wc -l\n</code></pre>\n<p>This works because <code>-o</code> will print only the match and each match on separate lines, which then is passed to <code>wc</code> to count the number of lines in output, which is same as the number of matches.</p>\n<aside class=\"quote group-ds-students quote-modified\" data-username=\"Aman_Kumar\" data-post=\"1\" data-topic=\"167705\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/48/83620_2.png\" class=\"avatar\"> Aman_Kumar:</div>\n<blockquote>\n<p>Similarly there was also a question about string matching but in that there was not grep command so it was told that we have to suppose this thing if there is grep then only we have to consider using ‘’ escape character else it will be wrong</p>\n</blockquote>\n</aside>\n<p>Your framing is very ambiguous, I would recommend pasting the question here so we can understand your doubt and guide you.</p>\n<p>Regards,<br>\nSayan</p>",
+    "accepter_name": null,
+    "accepter_username": "Aman_Kumar"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 21642,
+        "username": "Aman_Kumar",
+        "name": "Aman Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png",
+        "post_count": 5,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "post_count": 3,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      }
+    ],
+    "created_by": {
+      "id": 21642,
+      "username": "Aman_Kumar",
+      "name": "Aman Kumar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png"
+    },
+    "last_poster": {
+      "id": 21642,
+      "username": "Aman_Kumar",
+      "name": "Aman Kumar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 597014,
+      "name": "Aman Kumar",
+      "username": "Aman_Kumar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png",
+      "created_at": "2025-02-19T11:38:09.343Z",
+      "cooked": "<p>In Quiz 1 Pyq Session, it said that in this question screenshot pasted below we have to keep in mind that error word will at once only in a line, My question is that it can be Error01 or Error: or multiple Error words in a line<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/e/ae505ea858f7e73eeaf233f17eb321e9c40f719f.jpeg\" data-download-href=\"/uploads/short-url/oS3gOKtLiQvhiJnvI5Bcp6xe2mz.jpeg?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/e/ae505ea858f7e73eeaf233f17eb321e9c40f719f_2_667x500.jpeg\" alt=\"image\" data-base62-sha1=\"oS3gOKtLiQvhiJnvI5Bcp6xe2mz\" width=\"667\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/e/ae505ea858f7e73eeaf233f17eb321e9c40f719f_2_667x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/e/ae505ea858f7e73eeaf233f17eb321e9c40f719f.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/e/ae505ea858f7e73eeaf233f17eb321e9c40f719f.jpeg 2x\" data-dominant-color=\"949494\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">810×607 61 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\nHow do we know that we have to suppose what in these questions</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-02-20T09:01:34.449Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 53,
+      "readers_count": 52,
+      "score": 25.6,
+      "yours": false,
+      "topic_id": 167705,
+      "topic_slug": "assumptions-in-sc-quiz-1-questions",
+      "display_username": "Aman Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 5,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21642,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/1",
+      "user_cakedate": "2023-09-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 597058,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-02-19T12:46:10.853Z",
+      "cooked": "<p>Yes, you are correct.</p>\n<p>If you want to count number of <code>lines</code> that have “ERROR”, options (a) and (d) are correct.</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">grep -c ERROR filename\n</code></pre>\n<p>and</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">grep ERROR filename | wc -l\n</code></pre>\n<p>However if you want to count the number of occurences (counting multiples occurences per line as well) we should do:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">grep -o ERROR filename | wc -l\n</code></pre>\n<p>This works because <code>-o</code> will print only the match and each match on separate lines, which then is passed to <code>wc</code> to count the number of lines in output, which is same as the number of matches.</p>\n<aside class=\"quote group-ds-students quote-modified\" data-username=\"Aman_Kumar\" data-post=\"1\" data-topic=\"167705\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/48/83620_2.png\" class=\"avatar\"> Aman_Kumar:</div>\n<blockquote>\n<p>Similarly there was also a question about string matching but in that there was not grep command so it was told that we have to suppose this thing if there is grep then only we have to consider using ‘’ escape character else it will be wrong</p>\n</blockquote>\n</aside>\n<p>Your framing is very ambiguous, I would recommend pasting the question here so we can understand your doubt and guide you.</p>\n<p>Regards,<br>\nSayan</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-02-19T12:46:10.853Z",
+      "reply_count": 2,
+      "reply_to_post_number": null,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 48,
+      "readers_count": 47,
+      "score": 34.6,
+      "yours": false,
+      "topic_id": 167705,
+      "topic_slug": "assumptions-in-sc-quiz-1-questions",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/2",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597070,
+      "name": "Aman Kumar",
+      "username": "Aman_Kumar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png",
+      "created_at": "2025-02-19T12:48:56.803Z",
+      "cooked": "<p>I will edit it in more readable manner</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-02-19T12:48:56.803Z",
+      "reply_count": 0,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 44,
+      "readers_count": 43,
+      "score": 8.8,
+      "yours": false,
+      "topic_id": 167705,
+      "topic_slug": "assumptions-in-sc-quiz-1-questions",
+      "display_username": "Aman Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21642,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/3",
+      "user_cakedate": "2023-09-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597077,
+      "name": "Aman Kumar",
+      "username": "Aman_Kumar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png",
+      "created_at": "2025-02-19T12:56:24.194Z",
+      "cooked": "<p>So sir it means those options were wrong</p>\n<p>I will add a message to discussion section in that site question</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-02-19T12:57:07.124Z",
+      "reply_count": 1,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 41,
+      "readers_count": 40,
+      "score": 13.2,
+      "yours": false,
+      "topic_id": 167705,
+      "topic_slug": "assumptions-in-sc-quiz-1-questions",
+      "display_username": "Aman Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21642,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/4",
+      "user_cakedate": "2023-09-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597079,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-02-19T13:00:04.654Z",
+      "cooked": "<p>If the question only requires to count lines, then they are correct.</p>\n<p>In the absence of a competing option, (a) and (d) are the most (and equally) correct options. Usually when in doubt, choose the most correct options.</p>\n<p>However I agree the clarification should be present whether to count lines or occurences.</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-02-19T13:00:04.654Z",
+      "reply_count": 1,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 40,
+      "readers_count": 39,
+      "score": 13,
+      "yours": false,
+      "topic_id": 167705,
+      "topic_slug": "assumptions-in-sc-quiz-1-questions",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 21642,
+        "username": "Aman_Kumar",
+        "name": "Aman Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/5",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597088,
+      "name": "Aman Kumar",
+      "username": "Aman_Kumar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png",
+      "created_at": "2025-02-19T13:08:03.738Z",
+      "cooked": "<p>Sir it is written in question</p>\n<pre><code class=\"lang-auto\">count the number of occurrences of the word \"ERROR\" in the file\n</code></pre>\n<p>Related to this I want to ask one more thing</p>\n<p>What if it asks</p>\n<pre><code class=\"lang-auto\">count the number of occurrences of the string \"ERROR\" in the file\n</code></pre>\n<p>Then if the file contains <code>Error</code> or <code>Error:</code> or <code>Error230</code>, do we have to count all those occurrences as it is said to be string not a word. As word is a combination of letters separated with spaces.</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-02-19T13:08:03.738Z",
+      "reply_count": 1,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 34,
+      "readers_count": 33,
+      "score": 11.8,
+      "yours": false,
+      "topic_id": 167705,
+      "topic_slug": "assumptions-in-sc-quiz-1-questions",
+      "display_username": "Aman Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21642,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/6",
+      "user_cakedate": "2023-09-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597102,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-02-19T13:49:21.330Z",
+      "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Aman_Kumar\" data-post=\"6\" data-topic=\"167705\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/48/83620_2.png\" class=\"avatar\"> Aman_Kumar:</div>\n<blockquote>\n<p>Sir it is written in question</p>\n<pre><code class=\"lang-auto\">count the number of occurrences of the word \"ERROR\" in the file\n</code></pre>\n</blockquote>\n</aside>\n<p>If this is present in the question explicitly then yes, the options are incorrect.<br>\nIt should be <code>grep -o ERROR filename | wc -l</code> to do the same.</p>\n<aside class=\"quote group-ds-students\" data-username=\"Aman_Kumar\" data-post=\"6\" data-topic=\"167705\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/48/83620_2.png\" class=\"avatar\"> Aman_Kumar:</div>\n<blockquote>\n<p>Related to this I want to ask one more thing</p>\n<p>What if it asks</p>\n<pre><code class=\"lang-auto\">count the number of occurrences of the string \"ERROR\" in the file\n</code></pre>\n<p>Then if the file contains <code>Error</code> or <code>Error:</code> or <code>Error230</code>, do we have to count all those occurrences as it is said to be string not a word. As word is a combination of letters separated with spaces.</p>\n</blockquote>\n</aside>\n<p>You are correct, a word is a sequence of word characters (<code>\\w</code>) surrounded by word boundary (<code>\\b</code>). So ideally when asked to match a <code>word</code> we should either use <code>-w</code> flag with grep, or manually surround the search with <code>\\b</code> on both sides or <code>\\&lt;</code> and <code>\\&gt;</code> on left and right. However for <code>string</code> or <code>pattern</code>, this would not be required.</p>\n<p>However, in most cases, the evaluator might have just meant <code>string</code> when saying <code>word</code>. Again, use the same principle, when in doubt mark the most correct option. If there are options with and without <code>\\b</code> or <code>-w</code>, and they ask to match <code>word</code>, then choose the one with <code>-w</code> or <code>\\b</code>. However if there is only one valid option and it does not have <code>\\b</code> or <code>-w</code>, then choose that anyway.</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-02-19T13:49:21.330Z",
+      "reply_count": 1,
+      "reply_to_post_number": 6,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 30,
+      "readers_count": 29,
+      "score": 41,
+      "yours": false,
+      "topic_id": 167705,
+      "topic_slug": "assumptions-in-sc-quiz-1-questions",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/7",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597103,
+      "name": "Aman Kumar",
+      "username": "Aman_Kumar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aman_kumar/{size}/83620_2.png",
+      "created_at": "2025-02-19T13:51:07.979Z",
+      "cooked": "<p>Thank you sir for the clarification</p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-02-19T13:51:07.979Z",
+      "reply_count": 0,
+      "reply_to_post_number": 7,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 31,
+      "readers_count": 30,
+      "score": 6.2,
+      "yours": false,
+      "topic_id": 167705,
+      "topic_slug": "assumptions-in-sc-quiz-1-questions",
+      "display_username": "Aman Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21642,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assumptions-in-sc-quiz-1-questions/167705/8",
+      "user_cakedate": "2023-09-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

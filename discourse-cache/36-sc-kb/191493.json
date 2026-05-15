@@ -1,0 +1,2495 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 698107,
+        "name": "~",
+        "username": "23f2000539",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png",
+        "created_at": "2025-11-15T09:25:08.083Z",
+        "cooked": "<p>I wanted to ask for some guidance regarding the <strong>OPPE for System Commands</strong>. I’ve heard that scoring well in this component can be a bit challenging, so I wanted to know how we can prepare effectively for it.</p>\n<p>If anyone could share <strong>useful resources, reference materials, or preparation tips</strong> that helped them, it would be really helpful.<br>\nAny suggestions on what topics to focus on or how to practice system commands properly would also be appreciated.</p>\n<p>Thank you in advance for your support!</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 6,
+        "updated_at": "2025-11-15T09:25:08.083Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 156,
+        "readers_count": 155,
+        "score": 30.8,
+        "yours": false,
+        "topic_id": 191493,
+        "topic_slug": "need-help-regarding-the-resources-for-oppe",
+        "display_username": "~",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-oppe-syllabus/191515/18",
+            "internal": true,
+            "reflection": true,
+            "title": "Regarding OPPE syllabus",
+            "clicks": 1
+          }
+        ],
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 17291,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-regarding-the-resources-for-oppe/191493/1",
+        "user_cakedate": "2023-06-03",
+        "user_birthdate": "1904-08-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 698281,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2025-11-15T18:41:39.451Z",
+        "cooked": "<p>The more you practice the better you get. The reason why everyone feels OPPE is tough because with 1 week of practice you cannot pass it as there are many commands with lots of options (flag). The best way to score well is regular practice.</p>\n<p>Sharing the below as a fellow student -</p>\n<p>Key things to practice <strong>personal experience</strong> but not limited to the below -</p>\n<ul>\n<li>Regex (most important)</li>\n<li>File manipulation</li>\n<li>Reading from a file</li>\n<li>Search patterns (Grep)</li>\n<li>Sed</li>\n<li>Awk</li>\n<li>sort, uniq, tr, cut etc.</li>\n<li>ps, sleep, kill, variables etc.</li>\n<li>using mathematical expressions in bash scripts, bc calculator, etc.</li>\n<li>command line utilities such as find<br>\n(not an exhaustive list)</li>\n</ul>\n<p>You can practice at</p>\n<ul>\n<li>hackerank if you want command-wise practice → <a href=\"https://www.hackerrank.com/domains/shell?filters%5Bdifficulty%5D%5B%5D=easy&amp;filters%5Bdifficulty%5D%5B%5D=medium\" rel=\"noopener nofollow ugc\">link</a></li>\n<li>vm has many questions such as q-grep, practice, oppe etc</li>\n</ul>\n<p>This doesn’t mean that you should not study from Week 1-9. You should study &amp; practice all the concepts!</p>\n<p>Note:- I am not endorsing any platform. I simply used to practice for my oppe as well and found it useful that’s why I am sharing this.</p>\n<p>How I used to practice?</p>\n<p>Create a file of your interest preferably a csv (eg if you are interested in sports let say then get 20-40 lines csv file with 6-9 columns) try to manipulate it in different way → maybe sorting, unique entries, deleting line, computing average, maxmium value, minimum etc. That way you’ll get a good grasp of concepts.</p>\n<p>Practice well you’ll do good don’t worry!</p>\n<p>Thanks &amp; Regards,<br>\nSwati Jain</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 6,
+        "updated_at": "2025-12-06T15:10:45.361Z",
+        "reply_count": 2,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 3,
+        "reads": 157,
+        "readers_count": 156,
+        "score": 160.8,
+        "yours": false,
+        "topic_id": 191493,
+        "topic_slug": "need-help-regarding-the-resources-for-oppe",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://www.hackerrank.com/domains/shell?filters%5Bdifficulty%5D%5B%5D=easy&filters%5Bdifficulty%5D%5B%5D=medium",
+            "internal": false,
+            "reflection": false,
+            "clicks": 40
+          },
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-oppe-syllabus/191515/7",
+            "internal": true,
+            "reflection": true,
+            "title": "Regarding OPPE syllabus",
+            "clicks": 4
+          }
+        ],
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 7,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-regarding-the-resources-for-oppe/191493/2",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 7
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 7,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 698625,
+        "name": "~",
+        "username": "23f2000539",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png",
+        "created_at": "2025-11-16T06:27:34.494Z",
+        "cooked": "<p>Thanks a lot , this is the best explanation I’ve got . I’ll surely follow whatever you have told and will come back to tell you how it all went .<br>\nWell again , thank you <img src=\"https://emoji.discourse-cdn.com/google/smile.png?v=15\" title=\":smile:\" class=\"emoji\" alt=\":smile:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 6,
+        "updated_at": "2025-11-16T06:27:46.855Z",
+        "reply_count": 0,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 5,
+        "reads": 140,
+        "readers_count": 139,
+        "score": 67.6,
+        "yours": false,
+        "topic_id": 191493,
+        "topic_slug": "need-help-regarding-the-resources-for-oppe",
+        "display_username": "~",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 6563,
+          "username": "21f3000759",
+          "name": "Swati Jain",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 17291,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-regarding-the-resources-for-oppe/191493/3",
+        "user_cakedate": "2023-06-03",
+        "user_birthdate": "1904-08-18",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 702320,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2025-11-27T09:20:38.013Z",
+        "cooked": "<p>Here is the list of commands that the course covers - <a href=\"https://drive.google.com/drive/folders/1AIgTmL8nYxNfXXdT-jBkYOQ7xusCyLqs\" class=\"inline-onebox\" rel=\"noopener nofollow ugc\">Summary - Google Drive</a></p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 6,
+        "updated_at": "2025-11-27T09:20:59.793Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 126,
+        "readers_count": 125,
+        "score": 39.8,
+        "yours": false,
+        "topic_id": 191493,
+        "topic_slug": "need-help-regarding-the-resources-for-oppe",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://drive.google.com/drive/folders/1AIgTmL8nYxNfXXdT-jBkYOQ7xusCyLqs",
+            "internal": false,
+            "reflection": false,
+            "title": "Summary - Google Drive",
+            "clicks": 67
+          }
+        ],
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-regarding-the-resources-for-oppe/191493/4",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 706428,
+        "name": "~",
+        "username": "23f2000539",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png",
+        "created_at": "2025-12-06T15:02:53.268Z",
+        "cooked": "<p>Greetings Mam , I hope you are doing good .</p>\n<p>I did follow the pattern you stated but maybe my practice wasn’t enough , I was only able to solve 1 question correctly and as for the other one only some test cases were passed . I couldn’t build the logic and went completely blank .</p>\n<p>Is there any other way to prepare for re-oppe ? Please guide mam , I heard the re-oppe is going to be more difficult .</p>\n<p>Warm Regards ,<br>\nMadhvi</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 6,
+        "updated_at": "2025-12-06T15:02:53.268Z",
+        "reply_count": 1,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 78,
+        "readers_count": 77,
+        "score": 20.2,
+        "yours": false,
+        "topic_id": 191493,
+        "topic_slug": "need-help-regarding-the-resources-for-oppe",
+        "display_username": "~",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 6563,
+          "username": "21f3000759",
+          "name": "Swati Jain",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 17291,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-regarding-the-resources-for-oppe/191493/5",
+        "user_cakedate": "2023-06-03",
+        "user_birthdate": "1904-08-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 706430,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2025-12-06T15:08:03.768Z",
+        "cooked": "<p>Hello Madhvi,</p>\n<p>I am good &amp; hope you are too.</p>\n<p>The best idea is to check where you went wrong? Was it just exam fear? Or you didn’t grasp some concepts? Which ones exactly? Work upon those!</p>\n<p>The key is to identify “where you failed”<br>\nsyntax? practice more - see the solution to a question and type it without seeing it once that way you remember it!<br>\nlogic? break a complex problem into smaller parts and build upon it<br>\nfile manipulation? practice those!</p>\n<p>If you practice in enough you will do good!</p>\n<p>I mentioned the commands that does not mean you should know only those but also have a grasp the concepts from Week 1-9</p>\n<p>Thanks &amp; Regards,<br>\nSwati Jain</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 6,
+        "updated_at": "2025-12-06T15:09:19.774Z",
+        "reply_count": 0,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 4,
+        "reads": 76,
+        "readers_count": 75,
+        "score": 65,
+        "yours": false,
+        "topic_id": 191493,
+        "topic_slug": "need-help-regarding-the-resources-for-oppe",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 17291,
+          "username": "23f2000539",
+          "name": "~",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-regarding-the-resources-for-oppe/191493/6",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      698107,
+      698281,
+      698625,
+      702320,
+      706428,
+      706430
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      162
+    ],
+    [
+      4,
+      150
+    ],
+    [
+      5,
+      141
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 47,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 6,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 364,
+      "name": "term3-2025",
+      "slug": "term3-2025"
+    },
+    {
+      "id": 44,
+      "name": "extra-resources",
+      "slug": "extra-resources"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Need Help regarding the Resources for OPPE",
+  "id": 191493,
+  "title": "Need Help regarding the Resources for OPPE",
+  "posts_count": 6,
+  "created_at": "2025-11-15T09:25:07.868Z",
+  "views": 312,
+  "reply_count": 3,
+  "like_count": 11,
+  "last_posted_at": "2025-12-06T15:08:03.768Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "need-help-regarding-the-resources-for-oppe",
+  "category_id": 36,
+  "word_count": 608,
+  "deleted_at": null,
+  "user_id": 17291,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": null,
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_191493",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 6,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 2,
+  "show_read_indicator": false,
+  "thumbnails": null,
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "About OPPE preparation",
+      "id": 199892,
+      "title": "About OPPE preparation",
+      "slug": "about-oppe-preparation",
+      "posts_count": 14,
+      "reply_count": 6,
+      "highest_post_number": 14,
+      "image_url": null,
+      "created_at": "2026-03-28T07:07:36.752Z",
+      "last_posted_at": "2026-04-17T08:43:30.651Z",
+      "bumped": true,
+      "bumped_at": "2026-04-17T08:43:30.651Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 14,
+      "views": 376,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 39752,
+            "username": "Mantasa",
+            "name": "Mantasha fatma",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mantasa/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 39529,
+            "username": "Gurkirat",
+            "name": "Gurkirat Singh",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 44315,
+            "username": "starfury9",
+            "name": "Pragati ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/starfury9/{size}/119814_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Advice/Tip for oppe",
+      "id": 185128,
+      "title": "Advice/Tip for oppe",
+      "slug": "advice-tip-for-oppe",
+      "posts_count": 4,
+      "reply_count": 2,
+      "highest_post_number": 5,
+      "image_url": null,
+      "created_at": "2025-08-17T12:45:23.895Z",
+      "last_posted_at": "2025-08-18T09:48:16.276Z",
+      "bumped": true,
+      "bumped_at": "2025-08-18T09:48:16.276Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 4,
+      "views": 175,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 23186,
+            "username": "23f3000159",
+            "name": "Abhishek Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3000159/{size}/99011_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 42973,
+            "username": "24f3004946",
+            "name": "Soumyadip Hazari",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004946/{size}/132540_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Regarding OPPE syllabus",
+      "id": 191515,
+      "title": "Regarding OPPE syllabus",
+      "slug": "regarding-oppe-syllabus",
+      "posts_count": 17,
+      "reply_count": 9,
+      "highest_post_number": 18,
+      "image_url": null,
+      "created_at": "2025-11-15T16:11:41.846Z",
+      "last_posted_at": "2025-12-01T20:04:40.064Z",
+      "bumped": true,
+      "bumped_at": "2025-12-01T22:58:02.047Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 242,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 33117,
+            "username": "24f1002789",
+            "name": "Tantuvardhan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002789/{size}/112079_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 44718,
+            "username": "Pranay260604",
+            "name": "Pranay Aggarwal",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pranay260604/{size}/120022_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 16301,
+            "username": "22f3000671",
+            "name": "Prakhar Arora",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000671/{size}/148470_2.png",
+            "primary_group_name": "ds-students",
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 17291,
+            "username": "23f2000539",
+            "name": "~",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "OPPE Related",
+      "id": 39528,
+      "title": "OPPE Related",
+      "slug": "oppe-related",
+      "posts_count": 19,
+      "reply_count": 12,
+      "highest_post_number": 19,
+      "image_url": null,
+      "created_at": "2022-03-15T16:31:14.139Z",
+      "last_posted_at": "2022-03-28T19:08:35.756Z",
+      "bumped": true,
+      "bumped_at": "2022-03-28T19:08:35.756Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 11,
+      "views": 202,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 2,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 4989,
+            "username": "JayitaGupta",
+            "name": "Jayita Gupta",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jayitagupta/{size}/15597_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 984,
+            "username": "Rajkishore",
+            "name": "Rajkishore  Nandi ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rajkishore/{size}/67024_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 4048,
+            "username": "Navdeep",
+            "name": "Navdeep",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/navdeep/{size}/14176_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 4353,
+            "username": "Ayan_Nandi",
+            "name": "Ayan Nandi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ayan_nandi/{size}/169_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 1144,
+            "username": "Mufeed",
+            "name": "Mufeed",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mufeed/{size}/66_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Additional Resource for OPPE Preparation",
+      "id": 125528,
+      "title": "Additional Resource for OPPE Preparation",
+      "slug": "additional-resource-for-oppe-preparation",
+      "posts_count": 13,
+      "reply_count": 8,
+      "highest_post_number": 13,
+      "image_url": null,
+      "created_at": "2024-03-30T12:00:16.929Z",
+      "last_posted_at": "2024-03-31T15:14:50.899Z",
+      "bumped": true,
+      "bumped_at": "2024-03-31T15:14:50.899Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 296,
+          "name": "oppe-2",
+          "slug": "oppe-2"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 23,
+      "views": 231,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 9,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 12103,
+            "username": "22f1001680",
+            "name": "Rahul Yadav",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1001680/{size}/68092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 15118,
+            "username": "DARSHU",
+            "name": "DARSHAN GANATRA",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/darshu/{size}/12560_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 17597,
+            "username": "22f3000757",
+            "name": "Anshu Raj",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000757/{size}/67246_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": true,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 2,
+    "username": "21f3000759",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+    "excerpt": "<p>The more you practice the better you get. The reason why everyone feels OPPE is tough because with 1 week of practice you cannot pass it as there are many commands with lots of options (flag). The best way to score well is regular practice.</p>\n<p>Sharing the below as a fellow student -</p>\n<p>Key things to practice <strong>personal experience</strong> but not limited to the below -</p>\n<ul>\n<li>Regex (most important)</li>\n<li>File manipulation</li>\n<li>Reading from a file</li>\n<li>Search patterns (Grep)</li>\n<li>Sed</li>\n<li>Awk</li>\n<li>sort, uniq, tr, cut etc.</li>\n<li>ps, sleep, kill, variables etc.</li>\n<li>using mathematical expressions in bash scripts, bc calculator, etc.</li>\n<li>command line utilities such as find<br>\n(not an exhaustive list)</li>\n</ul>\n<p>You can practice at</p>\n<ul>\n<li>hackerank if you want command-wise practice → <a href=\"https://www.hackerrank.com/domains/shell?filters%5Bdifficulty%5D%5B%5D=easy&amp;filters%5Bdifficulty%5D%5B%5D=medium\" rel=\"noopener nofollow ugc\">link</a></li>\n<li>vm has many questions such as q-grep, practice, oppe etc</li>\n</ul>\n<p>This doesn’t mean that you should not study from Week 1-9. You should study &amp; practice all the concepts!</p>\n<p>Note:- I am not endorsing any platform. I simply used to practice for my oppe as well and found it useful that’s why I am sharing this.</p>\n<p>How I used to practice?</p>\n<p>Create a file of your interest preferably a csv (eg if you are interested in sports let say then get 20-40 lines csv file with 6-9 columns) try to manipulate it in different way → maybe sorting, unique entries, deleting line, computing average, maxmium value, minimum etc. That way you’ll get a good grasp of concepts.</p>\n<p>Practice well you’ll do good don’t worry!</p>\n<p>Thanks &amp; Regards,<br>\nSwati Jain</p>",
+    "accepter_name": null,
+    "accepter_username": "23f2000539"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 2
+      },
+      {
+        "id": 17291,
+        "username": "23f2000539",
+        "name": "~",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 17291,
+      "username": "23f2000539",
+      "name": "~",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png"
+    },
+    "last_poster": {
+      "id": 6563,
+      "username": "21f3000759",
+      "name": "Swati Jain",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+    },
+    "links": [
+      {
+        "url": "https://drive.google.com/drive/folders/1AIgTmL8nYxNfXXdT-jBkYOQ7xusCyLqs",
+        "title": "Summary - Google Drive",
+        "internal": false,
+        "attachment": false,
+        "reflection": false,
+        "clicks": 67,
+        "user_id": 6563,
+        "domain": "drive.google.com",
+        "root_domain": "google.com"
+      },
+      {
+        "url": "https://www.hackerrank.com/domains/shell?filters%5Bdifficulty%5D%5B%5D=easy&filters%5Bdifficulty%5D%5B%5D=medium",
+        "title": null,
+        "internal": false,
+        "attachment": false,
+        "reflection": false,
+        "clicks": 40,
+        "user_id": 6563,
+        "domain": "www.hackerrank.com",
+        "root_domain": "hackerrank.com"
+      },
+      {
+        "url": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-oppe-syllabus/191515/7",
+        "title": "Regarding OPPE syllabus",
+        "internal": true,
+        "attachment": false,
+        "reflection": true,
+        "clicks": 4,
+        "user_id": 6563,
+        "domain": "discourse.onlinedegree.iitm.ac.in",
+        "root_domain": "iitm.ac.in"
+      },
+      {
+        "url": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-oppe-syllabus/191515/18",
+        "title": "Regarding OPPE syllabus",
+        "internal": true,
+        "attachment": false,
+        "reflection": true,
+        "clicks": 1,
+        "user_id": 17291,
+        "domain": "discourse.onlinedegree.iitm.ac.in",
+        "root_domain": "iitm.ac.in"
+      }
+    ]
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 698107,
+      "name": "~",
+      "username": "23f2000539",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png",
+      "created_at": "2025-11-15T09:25:08.083Z",
+      "cooked": "<p>I wanted to ask for some guidance regarding the <strong>OPPE for System Commands</strong>. I’ve heard that scoring well in this component can be a bit challenging, so I wanted to know how we can prepare effectively for it.</p>\n<p>If anyone could share <strong>useful resources, reference materials, or preparation tips</strong> that helped them, it would be really helpful.<br>\nAny suggestions on what topics to focus on or how to practice system commands properly would also be appreciated.</p>\n<p>Thank you in advance for your support!</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 6,
+      "updated_at": "2025-11-15T09:25:08.083Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 156,
+      "readers_count": 155,
+      "score": 30.8,
+      "yours": false,
+      "topic_id": 191493,
+      "topic_slug": "need-help-regarding-the-resources-for-oppe",
+      "display_username": "~",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-oppe-syllabus/191515/18",
+          "internal": true,
+          "reflection": true,
+          "title": "Regarding OPPE syllabus",
+          "clicks": 1
+        }
+      ],
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17291,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-regarding-the-resources-for-oppe/191493/1",
+      "user_cakedate": "2023-06-03",
+      "user_birthdate": "1904-08-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 698281,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2025-11-15T18:41:39.451Z",
+      "cooked": "<p>The more you practice the better you get. The reason why everyone feels OPPE is tough because with 1 week of practice you cannot pass it as there are many commands with lots of options (flag). The best way to score well is regular practice.</p>\n<p>Sharing the below as a fellow student -</p>\n<p>Key things to practice <strong>personal experience</strong> but not limited to the below -</p>\n<ul>\n<li>Regex (most important)</li>\n<li>File manipulation</li>\n<li>Reading from a file</li>\n<li>Search patterns (Grep)</li>\n<li>Sed</li>\n<li>Awk</li>\n<li>sort, uniq, tr, cut etc.</li>\n<li>ps, sleep, kill, variables etc.</li>\n<li>using mathematical expressions in bash scripts, bc calculator, etc.</li>\n<li>command line utilities such as find<br>\n(not an exhaustive list)</li>\n</ul>\n<p>You can practice at</p>\n<ul>\n<li>hackerank if you want command-wise practice → <a href=\"https://www.hackerrank.com/domains/shell?filters%5Bdifficulty%5D%5B%5D=easy&amp;filters%5Bdifficulty%5D%5B%5D=medium\" rel=\"noopener nofollow ugc\">link</a></li>\n<li>vm has many questions such as q-grep, practice, oppe etc</li>\n</ul>\n<p>This doesn’t mean that you should not study from Week 1-9. You should study &amp; practice all the concepts!</p>\n<p>Note:- I am not endorsing any platform. I simply used to practice for my oppe as well and found it useful that’s why I am sharing this.</p>\n<p>How I used to practice?</p>\n<p>Create a file of your interest preferably a csv (eg if you are interested in sports let say then get 20-40 lines csv file with 6-9 columns) try to manipulate it in different way → maybe sorting, unique entries, deleting line, computing average, maxmium value, minimum etc. That way you’ll get a good grasp of concepts.</p>\n<p>Practice well you’ll do good don’t worry!</p>\n<p>Thanks &amp; Regards,<br>\nSwati Jain</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 6,
+      "updated_at": "2025-12-06T15:10:45.361Z",
+      "reply_count": 2,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 3,
+      "reads": 157,
+      "readers_count": 156,
+      "score": 160.8,
+      "yours": false,
+      "topic_id": 191493,
+      "topic_slug": "need-help-regarding-the-resources-for-oppe",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://www.hackerrank.com/domains/shell?filters%5Bdifficulty%5D%5B%5D=easy&filters%5Bdifficulty%5D%5B%5D=medium",
+          "internal": false,
+          "reflection": false,
+          "clicks": 40
+        },
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-oppe-syllabus/191515/7",
+          "internal": true,
+          "reflection": true,
+          "title": "Regarding OPPE syllabus",
+          "clicks": 4
+        }
+      ],
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 7,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-regarding-the-resources-for-oppe/191493/2",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 7
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 7,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 698625,
+      "name": "~",
+      "username": "23f2000539",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png",
+      "created_at": "2025-11-16T06:27:34.494Z",
+      "cooked": "<p>Thanks a lot , this is the best explanation I’ve got . I’ll surely follow whatever you have told and will come back to tell you how it all went .<br>\nWell again , thank you <img src=\"https://emoji.discourse-cdn.com/google/smile.png?v=15\" title=\":smile:\" class=\"emoji\" alt=\":smile:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 6,
+      "updated_at": "2025-11-16T06:27:46.855Z",
+      "reply_count": 0,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 5,
+      "reads": 140,
+      "readers_count": 139,
+      "score": 67.6,
+      "yours": false,
+      "topic_id": 191493,
+      "topic_slug": "need-help-regarding-the-resources-for-oppe",
+      "display_username": "~",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17291,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-regarding-the-resources-for-oppe/191493/3",
+      "user_cakedate": "2023-06-03",
+      "user_birthdate": "1904-08-18",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 702320,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2025-11-27T09:20:38.013Z",
+      "cooked": "<p>Here is the list of commands that the course covers - <a href=\"https://drive.google.com/drive/folders/1AIgTmL8nYxNfXXdT-jBkYOQ7xusCyLqs\" class=\"inline-onebox\" rel=\"noopener nofollow ugc\">Summary - Google Drive</a></p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 6,
+      "updated_at": "2025-11-27T09:20:59.793Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 126,
+      "readers_count": 125,
+      "score": 39.8,
+      "yours": false,
+      "topic_id": 191493,
+      "topic_slug": "need-help-regarding-the-resources-for-oppe",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://drive.google.com/drive/folders/1AIgTmL8nYxNfXXdT-jBkYOQ7xusCyLqs",
+          "internal": false,
+          "reflection": false,
+          "title": "Summary - Google Drive",
+          "clicks": 67
+        }
+      ],
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-regarding-the-resources-for-oppe/191493/4",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 706428,
+      "name": "~",
+      "username": "23f2000539",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png",
+      "created_at": "2025-12-06T15:02:53.268Z",
+      "cooked": "<p>Greetings Mam , I hope you are doing good .</p>\n<p>I did follow the pattern you stated but maybe my practice wasn’t enough , I was only able to solve 1 question correctly and as for the other one only some test cases were passed . I couldn’t build the logic and went completely blank .</p>\n<p>Is there any other way to prepare for re-oppe ? Please guide mam , I heard the re-oppe is going to be more difficult .</p>\n<p>Warm Regards ,<br>\nMadhvi</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 6,
+      "updated_at": "2025-12-06T15:02:53.268Z",
+      "reply_count": 1,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 78,
+      "readers_count": 77,
+      "score": 20.2,
+      "yours": false,
+      "topic_id": 191493,
+      "topic_slug": "need-help-regarding-the-resources-for-oppe",
+      "display_username": "~",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17291,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-regarding-the-resources-for-oppe/191493/5",
+      "user_cakedate": "2023-06-03",
+      "user_birthdate": "1904-08-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 706430,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2025-12-06T15:08:03.768Z",
+      "cooked": "<p>Hello Madhvi,</p>\n<p>I am good &amp; hope you are too.</p>\n<p>The best idea is to check where you went wrong? Was it just exam fear? Or you didn’t grasp some concepts? Which ones exactly? Work upon those!</p>\n<p>The key is to identify “where you failed”<br>\nsyntax? practice more - see the solution to a question and type it without seeing it once that way you remember it!<br>\nlogic? break a complex problem into smaller parts and build upon it<br>\nfile manipulation? practice those!</p>\n<p>If you practice in enough you will do good!</p>\n<p>I mentioned the commands that does not mean you should know only those but also have a grasp the concepts from Week 1-9</p>\n<p>Thanks &amp; Regards,<br>\nSwati Jain</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 6,
+      "updated_at": "2025-12-06T15:09:19.774Z",
+      "reply_count": 0,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 4,
+      "reads": 76,
+      "readers_count": 75,
+      "score": 65,
+      "yours": false,
+      "topic_id": 191493,
+      "topic_slug": "need-help-regarding-the-resources-for-oppe",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 17291,
+        "username": "23f2000539",
+        "name": "~",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-regarding-the-resources-for-oppe/191493/6",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

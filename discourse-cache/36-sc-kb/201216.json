@@ -1,0 +1,3672 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 753761,
+        "name": "Baskaran Nadar",
+        "username": "Baskaran_Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+        "created_at": "2026-04-10T11:47:03.765Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/22f2001554\">@22f2001554</a></p>\n<p>BPT4 is not yet visible.</p>\n<p>Week10 GrPA1 is interesting. Will such questions which takes lot of time come up in OPPE ?</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 13,
+        "updated_at": "2026-04-10T11:47:03.765Z",
+        "reply_count": 4,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 68,
+        "readers_count": 67,
+        "score": 33.6,
+        "yours": false,
+        "topic_id": 201216,
+        "topic_slug": "good-question-w10-grpa1",
+        "display_username": "Baskaran Nadar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 37539,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/good-question-w10-grpa1/201216/1",
+        "user_cakedate": "2024-09-22",
+        "user_birthdate": "1904-04-03",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 753767,
+        "name": "Mrinal",
+        "username": "Mrinal.exe",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal.exe/{size}/151669_2.png",
+        "created_at": "2026-04-10T11:59:54.852Z",
+        "cooked": "<ol>\n<li>They’ll send an announcement when the BPT 4 is released.</li>\n<li>Usually the questions in OPPEs are not this complicated/big.</li>\n</ol>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 13,
+        "updated_at": "2026-04-10T11:59:54.852Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 68,
+        "readers_count": 67,
+        "score": 28.6,
+        "yours": false,
+        "topic_id": 201216,
+        "topic_slug": "good-question-w10-grpa1",
+        "display_username": "Mrinal",
+        "primary_group_name": "ds-students",
+        "flair_name": null,
+        "flair_url": null,
+        "flair_bg_color": null,
+        "flair_color": null,
+        "flair_group_id": null,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 25731,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/good-question-w10-grpa1/201216/2",
+        "user_cakedate": "2024-01-29",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 753787,
+        "name": "Ishan Shishodiya",
+        "username": "22f2001554",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "created_at": "2026-04-10T12:29:48.129Z",
+        "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Baskaran_Nadar\" data-post=\"1\" data-topic=\"201216\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/48/150150_2.png\" class=\"avatar\"> Baskaran_Nadar:</div>\n<blockquote>\n<p>Will such questions which takes lot of time come up in OPPE ?</p>\n</blockquote>\n</aside>\n<p>That’s kind of a person-specific question. A question which you can solve in a few minutes might take me an hour. Usually OPPE questions are well-balanced and test your fundamentals and problem solving capabilities. The more you practice the better.</p>\n<p>Solve some 80-90 of the 135 questions on your course VM and you’d be golden.</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 13,
+        "updated_at": "2026-04-10T12:29:48.129Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 66,
+        "readers_count": 65,
+        "score": 13.2,
+        "yours": false,
+        "topic_id": 201216,
+        "topic_slug": "good-question-w10-grpa1",
+        "display_username": "Ishan Shishodiya",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 14366,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/good-question-w10-grpa1/201216/3",
+        "user_cakedate": "2022-09-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 753807,
+        "name": "Gurkirat Singh",
+        "username": "Gurkirat",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+        "created_at": "2026-04-10T13:13:29.443Z",
+        "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Baskaran_Nadar\" data-post=\"1\" data-topic=\"201216\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/48/150150_2.png\" class=\"avatar\"> Baskaran_Nadar:</div>\n<blockquote>\n<p>BPT4 is not yet visible.</p>\n</blockquote>\n</aside>\n<p>Its out now btw.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/d/0da7da8c10cb894114ccb65d15a9898937600c62.png\" data-download-href=\"/uploads/short-url/1WNPAf1EIlZtIuS3NE5nzdUY9ZU.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/d/0da7da8c10cb894114ccb65d15a9898937600c62_2_690x406.png\" alt=\"image\" data-base62-sha1=\"1WNPAf1EIlZtIuS3NE5nzdUY9ZU\" width=\"690\" height=\"406\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/d/0da7da8c10cb894114ccb65d15a9898937600c62_2_690x406.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/d/0da7da8c10cb894114ccb65d15a9898937600c62_2_1035x609.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/d/0da7da8c10cb894114ccb65d15a9898937600c62.png 2x\" data-dominant-color=\"F8F8F8\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1097×646 47.2 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 13,
+        "updated_at": "2026-04-10T13:13:29.443Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 63,
+        "readers_count": 62,
+        "score": 17.6,
+        "yours": false,
+        "topic_id": 201216,
+        "topic_slug": "good-question-w10-grpa1",
+        "display_username": "Gurkirat Singh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Know-it-All",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 39529,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/good-question-w10-grpa1/201216/4",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 753935,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2026-04-10T20:02:06.568Z",
+        "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Baskaran_Nadar\" data-post=\"1\" data-topic=\"201216\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/48/150150_2.png\" class=\"avatar\"> Baskaran_Nadar:</div>\n<blockquote>\n<p>Week10 GrPA1 is interesting. Will such questions which takes lot of time come up in OPPE ?</p>\n</blockquote>\n</aside>\n<p>No, also OPPE syllabus is Week 1 to 9!</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 13,
+        "updated_at": "2026-04-10T20:02:06.568Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 54,
+        "readers_count": 53,
+        "score": 15.8,
+        "yours": false,
+        "topic_id": 201216,
+        "topic_slug": "good-question-w10-grpa1",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/good-question-w10-grpa1/201216/5",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 754110,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2026-04-11T11:24:27.034Z",
+        "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Baskaran_Nadar\" data-post=\"1\" data-topic=\"201216\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/48/150150_2.png\" class=\"avatar\"> Baskaran_Nadar:</div>\n<blockquote>\n<p>Will such questions which takes lot of time come up in OPPE</p>\n</blockquote>\n</aside>\n<p>Not in the first (default) slot at least.</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 13,
+        "updated_at": "2026-04-11T11:24:27.034Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 51,
+        "readers_count": 50,
+        "score": 40.2,
+        "yours": false,
+        "topic_id": 201216,
+        "topic_slug": "good-question-w10-grpa1",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/good-question-w10-grpa1/201216/6",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "open_mouth",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 754113,
+        "name": "Baskaran Nadar",
+        "username": "Baskaran_Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+        "created_at": "2026-04-11T11:27:36.213Z",
+        "cooked": "<p>Thank you.<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/2/d29f56b3105b3bad4f07f6c599217ff4efd57d58.png\" data-download-href=\"/uploads/short-url/u3fEjPrtTCOVPMRbmiiRccKwddu.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/2/d29f56b3105b3bad4f07f6c599217ff4efd57d58.png\" alt=\"image\" data-base62-sha1=\"u3fEjPrtTCOVPMRbmiiRccKwddu\" width=\"690\" height=\"239\" data-dominant-color=\"4F2F45\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">697×242 5.68 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 13,
+        "updated_at": "2026-04-11T11:27:36.213Z",
+        "reply_count": 0,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 51,
+        "readers_count": 50,
+        "score": 10.2,
+        "yours": false,
+        "topic_id": 201216,
+        "topic_slug": "good-question-w10-grpa1",
+        "display_username": "Baskaran Nadar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 39529,
+          "username": "Gurkirat",
+          "name": "Gurkirat Singh",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 37539,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/good-question-w10-grpa1/201216/7",
+        "user_cakedate": "2024-09-22",
+        "user_birthdate": "1904-04-03",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 754676,
+        "name": "Baskaran Nadar",
+        "username": "Baskaran_Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+        "created_at": "2026-04-13T07:37:06.391Z",
+        "cooked": "<p>While I am able to extract and synthesize the data from multiple files locally to construct the output file, the instructions on the portal leave several points unclear.</p>\n<p>How will the portal evaluate or test my code?<br>\nWill all the <code>ocr_xxxx.txt</code> files be available to the code on the portal?<br>\nWhat command will be used to execute the code?</p>\n<p>For example, will it be something like <code>bash script.sh 5</code> to generate the output for card number 5?</p>\n<p>Or are we expected to generate outputs for all available card numbers at once?</p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 13,
+        "updated_at": "2026-04-13T07:37:06.391Z",
+        "reply_count": 0,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 45,
+        "readers_count": 44,
+        "score": 9,
+        "yours": false,
+        "topic_id": 201216,
+        "topic_slug": "good-question-w10-grpa1",
+        "display_username": "Baskaran Nadar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 6563,
+          "username": "21f3000759",
+          "name": "Swati Jain",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 37539,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/good-question-w10-grpa1/201216/8",
+        "user_cakedate": "2024-09-22",
+        "user_birthdate": "1904-04-03",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 754685,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2026-04-13T07:51:38.078Z",
+        "cooked": "<p>You can read the public test case input examples to understand. Those input are used to make your environment ready before your <code>script</code> is called.</p>\n<p>Like this:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">read offset\nread ofile\n\nif [[ $offset -ne 0 ]]; then\n  cno=${ofile##*_}\n  cno=${cno%.txt}\n  cno=$((cno+offset))\n  ofile=\"shopping_bill_$cno.txt\"\nfi\n\n  while read file; do\n    [[ $file == \"EOF\" ]] &amp;&amp; break\n    while read line; do\n      [[ $line == \"EOF\" ]] &amp;&amp; break\n      echo $line\n    done &gt; $file\n  done\n\nscript \n\ncat \"$ofile\"\n</code></pre>\n<p>Your script should generate all files, however only one file per test case will be evaluated (which is the 2nd line of input).</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 13,
+        "updated_at": "2026-04-13T08:03:24.837Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 45,
+        "readers_count": 44,
+        "score": 14,
+        "yours": false,
+        "topic_id": 201216,
+        "topic_slug": "good-question-w10-grpa1",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/good-question-w10-grpa1/201216/9",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 754783,
+        "name": "Baskaran Nadar",
+        "username": "Baskaran_Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+        "created_at": "2026-04-13T10:10:39.755Z",
+        "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/3/737f641574ba207acea5c79fdba3f7264b684898.png\" data-download-href=\"/uploads/short-url/gtJQgkAjdOOKMtkQ5SR3u2gw33i.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/3/737f641574ba207acea5c79fdba3f7264b684898_2_690x436.png\" alt=\"image\" data-base62-sha1=\"gtJQgkAjdOOKMtkQ5SR3u2gw33i\" width=\"690\" height=\"436\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/3/737f641574ba207acea5c79fdba3f7264b684898_2_690x436.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/3/737f641574ba207acea5c79fdba3f7264b684898_2_1035x654.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/3/737f641574ba207acea5c79fdba3f7264b684898.png 2x\" data-dominant-color=\"FAF8F9\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1269×802 45.6 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>unable to capture the input !</p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 13,
+        "updated_at": "2026-04-13T10:10:39.755Z",
+        "reply_count": 1,
+        "reply_to_post_number": 9,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 40,
+        "readers_count": 39,
+        "score": 13,
+        "yours": false,
+        "topic_id": 201216,
+        "topic_slug": "good-question-w10-grpa1",
+        "display_username": "Baskaran Nadar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 37539,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/good-question-w10-grpa1/201216/10",
+        "user_cakedate": "2024-09-22",
+        "user_birthdate": "1904-04-03",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 754787,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2026-04-13T10:21:44.019Z",
+        "cooked": "<p>You are not supposed to paste this into your script, that is how the portal runs your script. You dont have to do any of this.</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 13,
+        "updated_at": "2026-04-13T10:21:44.019Z",
+        "reply_count": 1,
+        "reply_to_post_number": 10,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 38,
+        "readers_count": 37,
+        "score": 12.6,
+        "yours": false,
+        "topic_id": 201216,
+        "topic_slug": "good-question-w10-grpa1",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 37539,
+          "username": "Baskaran_Nadar",
+          "name": "Baskaran Nadar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/good-question-w10-grpa1/201216/11",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 754814,
+        "name": "Baskaran Nadar",
+        "username": "Baskaran_Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+        "created_at": "2026-04-13T10:53:58.529Z",
+        "cooked": "<p>in my script, how do i extract, which card number the question is interested in and cat that file to the out put ?</p>\n<p>I am creating all the bills ( 30 files) .</p>\n<p>Is there any input from stdin ? or bash shell command like</p>\n<p>bash script 5 ?</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 13,
+        "updated_at": "2026-04-13T10:53:58.529Z",
+        "reply_count": 1,
+        "reply_to_post_number": 11,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 37,
+        "readers_count": 36,
+        "score": 12.4,
+        "yours": false,
+        "topic_id": 201216,
+        "topic_slug": "good-question-w10-grpa1",
+        "display_username": "Baskaran Nadar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 37539,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/good-question-w10-grpa1/201216/12",
+        "user_cakedate": "2024-09-22",
+        "user_birthdate": "1904-04-03",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 754823,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2026-04-13T11:10:33.792Z",
+        "cooked": "<p>Please read the input and the code i sent above carefully, the answer already lies there.</p>\n<p>Your script (<code>script</code>) does not know which file to output, it should always output all files, the evaluator code (which i shared above) selects which file to check for per test case, the how is explained in the code.</p>\n<p>You need to:</p>\n<ul>\n<li>assume all input files exist in current working directory</li>\n<li>write the script correctly</li>\n<li>output all files as expected (not just one of them)</li>\n</ul>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 13,
+        "updated_at": "2026-04-13T11:10:33.792Z",
+        "reply_count": 0,
+        "reply_to_post_number": 12,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 34,
+        "readers_count": 33,
+        "score": 6.8,
+        "yours": false,
+        "topic_id": 201216,
+        "topic_slug": "good-question-w10-grpa1",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 37539,
+          "username": "Baskaran_Nadar",
+          "name": "Baskaran Nadar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/good-question-w10-grpa1/201216/13",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      753761,
+      753767,
+      753787,
+      753807,
+      753935,
+      754110,
+      754113,
+      754676,
+      754685,
+      754783,
+      754787,
+      754814,
+      754823
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      16
+    ],
+    [
+      6,
+      15
+    ],
+    [
+      8,
+      14
+    ],
+    [
+      10,
+      13
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 47,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 6,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 365,
+      "name": "term1-2026",
+      "slug": "term1-2026"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Good question W10 GrPA1",
+  "id": 201216,
+  "title": "Good question W10 GrPA1",
+  "posts_count": 13,
+  "created_at": "2026-04-10T11:47:03.597Z",
+  "views": 122,
+  "reply_count": 6,
+  "like_count": 3,
+  "last_posted_at": "2026-04-13T11:10:33.792Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "good-question-w10-grpa1",
+  "category_id": 36,
+  "word_count": 562,
+  "deleted_at": null,
+  "user_id": 37539,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": null,
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_201216",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 13,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 5,
+  "participant_count": 6,
+  "show_read_indicator": false,
+  "thumbnails": null,
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "RE-OPPE: Question 2",
+      "id": 143896,
+      "title": "RE-OPPE: Question 2",
+      "slug": "re-oppe-question-2",
+      "posts_count": 11,
+      "reply_count": 4,
+      "highest_post_number": 14,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/e/7e276d6b0cf26a1c83ce1cd8f8f1218998dfed5b.png",
+      "created_at": "2024-08-25T06:02:47.681Z",
+      "last_posted_at": "2024-08-25T11:36:12.412Z",
+      "bumped": true,
+      "bumped_at": "2024-08-25T11:36:12.412Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        },
+        {
+          "id": 321,
+          "name": "term2-2024",
+          "slug": "term2-2024"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 11,
+      "views": 118,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 3,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 7094,
+            "username": "21f3000931",
+            "name": "Dushyant Singh Bhadauriya",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000931/{size}/717_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 3158,
+            "username": "yoganandam",
+            "name": "YOGANANDAM S",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/yoganandam/{size}/28739_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 17065,
+            "username": "22F3002354",
+            "name": "Yash Rastogi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 6147,
+            "username": "Subendu",
+            "name": "Subendu Gorai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 24953,
+            "username": "23f3004197",
+            "name": "Mayank Poddar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3004197/{size}/158755_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "moderator_CourseTA",
+            "flair_url": "handshake-angle",
+            "flair_group_id": 232,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "OPPE (2-4) Batch 1 Q1 Doubt",
+      "id": 96585,
+      "title": "OPPE (2-4) Batch 1 Q1 Doubt",
+      "slug": "oppe-2-4-batch-1-q1-doubt",
+      "posts_count": 25,
+      "reply_count": 18,
+      "highest_post_number": 27,
+      "image_url": null,
+      "created_at": "2023-07-24T17:40:10.849Z",
+      "last_posted_at": "2023-07-29T18:59:16.991Z",
+      "bumped": true,
+      "bumped_at": "2023-07-29T18:59:08.132Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 35,
+      "views": 259,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 5929,
+            "username": "VivekTheGreat1",
+            "name": "Vivek Sivaramakrishnan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/vivekthegreat1/{size}/84026_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 3651,
+            "username": "santhanam",
+            "name": "B Santhanakrishnan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/santhanam/{size}/743_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 3071,
+            "username": "AllanPais",
+            "name": "Allan Pais",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/allanpais/{size}/14261_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 1815,
+            "username": "Pavan",
+            "name": "Pavan  Nandyala",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pavan/{size}/840_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 7521,
+            "username": "Prabuddh_Mathur",
+            "name": "Prabuddh Mathur",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prabuddh_mathur/{size}/13042_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week 10 GrPA1",
+      "id": 170032,
+      "title": "Week 10 GrPA1",
+      "slug": "week-10-grpa1",
+      "posts_count": 1,
+      "reply_count": 0,
+      "highest_post_number": 1,
+      "image_url": null,
+      "created_at": "2025-03-15T13:58:03.954Z",
+      "last_posted_at": "2025-03-15T13:58:04.158Z",
+      "bumped": true,
+      "bumped_at": "2025-03-16T05:39:53.989Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 23,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest single",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 32942,
+            "username": "24f1001824",
+            "name": "Gautam",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1001824/{size}/121735_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Evaluation Problem",
+      "id": 185033,
+      "title": "Evaluation Problem",
+      "slug": "evaluation-problem",
+      "posts_count": 9,
+      "reply_count": 3,
+      "highest_post_number": 9,
+      "image_url": null,
+      "created_at": "2025-08-16T16:06:25.849Z",
+      "last_posted_at": "2025-08-19T01:01:26.824Z",
+      "bumped": true,
+      "bumped_at": "2025-08-19T01:01:26.824Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 227,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 29162,
+            "username": "DSGIE",
+            "name": "MOHIT KUMAR",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/dsgie/{size}/127570_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 32376,
+            "username": "24F2002325_ADITYA_AR",
+            "name": "Aditya Aryan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2002325_aditya_ar/{size}/66756_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 43027,
+            "username": "24f3004979",
+            "name": "Madhav Rimal",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004979/{size}/149010_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 4564,
+            "username": "Rahulagarwalla",
+            "name": "Rahul",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rahulagarwalla/{size}/722_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week 10 GrPA filename input",
+      "id": 192776,
+      "title": "Week 10 GrPA filename input",
+      "slug": "week-10-grpa-filename-input",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": null,
+      "created_at": "2025-12-03T07:54:24.433Z",
+      "last_posted_at": "2025-12-03T08:22:32.561Z",
+      "bumped": true,
+      "bumped_at": "2025-12-03T08:22:32.561Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        },
+        {
+          "id": 12,
+          "name": "week-10",
+          "slug": "week-10"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 24,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest single",
+          "description": "Original Poster, Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 43795,
+            "username": "24f3003891",
+            "name": "Anirudh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003891/{size}/134319_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 2,
+    "username": "Mrinal.exe",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal.exe/{size}/151669_2.png",
+    "excerpt": "<ol>\n<li>They’ll send an announcement when the BPT 4 is released.</li>\n<li>Usually the questions in OPPEs are not this complicated/big.</li>\n</ol>",
+    "accepter_name": null,
+    "accepter_username": "21f3000759"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 37539,
+        "username": "Baskaran_Nadar",
+        "name": "Baskaran Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+        "post_count": 5,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 2
+      },
+      {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "post_count": 4,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      },
+      {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 25731,
+        "username": "Mrinal.exe",
+        "name": "Mrinal",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal.exe/{size}/151669_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": null,
+        "flair_url": null,
+        "flair_color": null,
+        "flair_bg_color": null,
+        "flair_group_id": null,
+        "trust_level": 1
+      },
+      {
+        "id": 39529,
+        "username": "Gurkirat",
+        "name": "Gurkirat Singh",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 2
+      }
+    ],
+    "created_by": {
+      "id": 37539,
+      "username": "Baskaran_Nadar",
+      "name": "Baskaran Nadar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png"
+    },
+    "last_poster": {
+      "id": 348,
+      "username": "sayan",
+      "name": "Sayan Ghosh",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 753761,
+      "name": "Baskaran Nadar",
+      "username": "Baskaran_Nadar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+      "created_at": "2026-04-10T11:47:03.765Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/22f2001554\">@22f2001554</a></p>\n<p>BPT4 is not yet visible.</p>\n<p>Week10 GrPA1 is interesting. Will such questions which takes lot of time come up in OPPE ?</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 13,
+      "updated_at": "2026-04-10T11:47:03.765Z",
+      "reply_count": 4,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 68,
+      "readers_count": 67,
+      "score": 33.6,
+      "yours": false,
+      "topic_id": 201216,
+      "topic_slug": "good-question-w10-grpa1",
+      "display_username": "Baskaran Nadar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37539,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/good-question-w10-grpa1/201216/1",
+      "user_cakedate": "2024-09-22",
+      "user_birthdate": "1904-04-03",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 753767,
+      "name": "Mrinal",
+      "username": "Mrinal.exe",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal.exe/{size}/151669_2.png",
+      "created_at": "2026-04-10T11:59:54.852Z",
+      "cooked": "<ol>\n<li>They’ll send an announcement when the BPT 4 is released.</li>\n<li>Usually the questions in OPPEs are not this complicated/big.</li>\n</ol>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 13,
+      "updated_at": "2026-04-10T11:59:54.852Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 68,
+      "readers_count": 67,
+      "score": 28.6,
+      "yours": false,
+      "topic_id": 201216,
+      "topic_slug": "good-question-w10-grpa1",
+      "display_username": "Mrinal",
+      "primary_group_name": "ds-students",
+      "flair_name": null,
+      "flair_url": null,
+      "flair_bg_color": null,
+      "flair_color": null,
+      "flair_group_id": null,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 25731,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/good-question-w10-grpa1/201216/2",
+      "user_cakedate": "2024-01-29",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 753787,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-04-10T12:29:48.129Z",
+      "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Baskaran_Nadar\" data-post=\"1\" data-topic=\"201216\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/48/150150_2.png\" class=\"avatar\"> Baskaran_Nadar:</div>\n<blockquote>\n<p>Will such questions which takes lot of time come up in OPPE ?</p>\n</blockquote>\n</aside>\n<p>That’s kind of a person-specific question. A question which you can solve in a few minutes might take me an hour. Usually OPPE questions are well-balanced and test your fundamentals and problem solving capabilities. The more you practice the better.</p>\n<p>Solve some 80-90 of the 135 questions on your course VM and you’d be golden.</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 13,
+      "updated_at": "2026-04-10T12:29:48.129Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 66,
+      "readers_count": 65,
+      "score": 13.2,
+      "yours": false,
+      "topic_id": 201216,
+      "topic_slug": "good-question-w10-grpa1",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/good-question-w10-grpa1/201216/3",
+      "user_cakedate": "2022-09-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 753807,
+      "name": "Gurkirat Singh",
+      "username": "Gurkirat",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+      "created_at": "2026-04-10T13:13:29.443Z",
+      "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Baskaran_Nadar\" data-post=\"1\" data-topic=\"201216\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/48/150150_2.png\" class=\"avatar\"> Baskaran_Nadar:</div>\n<blockquote>\n<p>BPT4 is not yet visible.</p>\n</blockquote>\n</aside>\n<p>Its out now btw.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/d/0da7da8c10cb894114ccb65d15a9898937600c62.png\" data-download-href=\"/uploads/short-url/1WNPAf1EIlZtIuS3NE5nzdUY9ZU.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/d/0da7da8c10cb894114ccb65d15a9898937600c62_2_690x406.png\" alt=\"image\" data-base62-sha1=\"1WNPAf1EIlZtIuS3NE5nzdUY9ZU\" width=\"690\" height=\"406\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/d/0da7da8c10cb894114ccb65d15a9898937600c62_2_690x406.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/d/0da7da8c10cb894114ccb65d15a9898937600c62_2_1035x609.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/d/0da7da8c10cb894114ccb65d15a9898937600c62.png 2x\" data-dominant-color=\"F8F8F8\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1097×646 47.2 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 13,
+      "updated_at": "2026-04-10T13:13:29.443Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 63,
+      "readers_count": 62,
+      "score": 17.6,
+      "yours": false,
+      "topic_id": 201216,
+      "topic_slug": "good-question-w10-grpa1",
+      "display_username": "Gurkirat Singh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Know-it-All",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 39529,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/good-question-w10-grpa1/201216/4",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 753935,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2026-04-10T20:02:06.568Z",
+      "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Baskaran_Nadar\" data-post=\"1\" data-topic=\"201216\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/48/150150_2.png\" class=\"avatar\"> Baskaran_Nadar:</div>\n<blockquote>\n<p>Week10 GrPA1 is interesting. Will such questions which takes lot of time come up in OPPE ?</p>\n</blockquote>\n</aside>\n<p>No, also OPPE syllabus is Week 1 to 9!</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 13,
+      "updated_at": "2026-04-10T20:02:06.568Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 54,
+      "readers_count": 53,
+      "score": 15.8,
+      "yours": false,
+      "topic_id": 201216,
+      "topic_slug": "good-question-w10-grpa1",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/good-question-w10-grpa1/201216/5",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 754110,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2026-04-11T11:24:27.034Z",
+      "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Baskaran_Nadar\" data-post=\"1\" data-topic=\"201216\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/48/150150_2.png\" class=\"avatar\"> Baskaran_Nadar:</div>\n<blockquote>\n<p>Will such questions which takes lot of time come up in OPPE</p>\n</blockquote>\n</aside>\n<p>Not in the first (default) slot at least.</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 13,
+      "updated_at": "2026-04-11T11:24:27.034Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 51,
+      "readers_count": 50,
+      "score": 40.2,
+      "yours": false,
+      "topic_id": 201216,
+      "topic_slug": "good-question-w10-grpa1",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/good-question-w10-grpa1/201216/6",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "open_mouth",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 754113,
+      "name": "Baskaran Nadar",
+      "username": "Baskaran_Nadar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+      "created_at": "2026-04-11T11:27:36.213Z",
+      "cooked": "<p>Thank you.<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/2/d29f56b3105b3bad4f07f6c599217ff4efd57d58.png\" data-download-href=\"/uploads/short-url/u3fEjPrtTCOVPMRbmiiRccKwddu.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/2/d29f56b3105b3bad4f07f6c599217ff4efd57d58.png\" alt=\"image\" data-base62-sha1=\"u3fEjPrtTCOVPMRbmiiRccKwddu\" width=\"690\" height=\"239\" data-dominant-color=\"4F2F45\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">697×242 5.68 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 13,
+      "updated_at": "2026-04-11T11:27:36.213Z",
+      "reply_count": 0,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 51,
+      "readers_count": 50,
+      "score": 10.2,
+      "yours": false,
+      "topic_id": 201216,
+      "topic_slug": "good-question-w10-grpa1",
+      "display_username": "Baskaran Nadar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 39529,
+        "username": "Gurkirat",
+        "name": "Gurkirat Singh",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37539,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/good-question-w10-grpa1/201216/7",
+      "user_cakedate": "2024-09-22",
+      "user_birthdate": "1904-04-03",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 754676,
+      "name": "Baskaran Nadar",
+      "username": "Baskaran_Nadar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+      "created_at": "2026-04-13T07:37:06.391Z",
+      "cooked": "<p>While I am able to extract and synthesize the data from multiple files locally to construct the output file, the instructions on the portal leave several points unclear.</p>\n<p>How will the portal evaluate or test my code?<br>\nWill all the <code>ocr_xxxx.txt</code> files be available to the code on the portal?<br>\nWhat command will be used to execute the code?</p>\n<p>For example, will it be something like <code>bash script.sh 5</code> to generate the output for card number 5?</p>\n<p>Or are we expected to generate outputs for all available card numbers at once?</p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 13,
+      "updated_at": "2026-04-13T07:37:06.391Z",
+      "reply_count": 0,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 45,
+      "readers_count": 44,
+      "score": 9,
+      "yours": false,
+      "topic_id": 201216,
+      "topic_slug": "good-question-w10-grpa1",
+      "display_username": "Baskaran Nadar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37539,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/good-question-w10-grpa1/201216/8",
+      "user_cakedate": "2024-09-22",
+      "user_birthdate": "1904-04-03",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 754685,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2026-04-13T07:51:38.078Z",
+      "cooked": "<p>You can read the public test case input examples to understand. Those input are used to make your environment ready before your <code>script</code> is called.</p>\n<p>Like this:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">read offset\nread ofile\n\nif [[ $offset -ne 0 ]]; then\n  cno=${ofile##*_}\n  cno=${cno%.txt}\n  cno=$((cno+offset))\n  ofile=\"shopping_bill_$cno.txt\"\nfi\n\n  while read file; do\n    [[ $file == \"EOF\" ]] &amp;&amp; break\n    while read line; do\n      [[ $line == \"EOF\" ]] &amp;&amp; break\n      echo $line\n    done &gt; $file\n  done\n\nscript \n\ncat \"$ofile\"\n</code></pre>\n<p>Your script should generate all files, however only one file per test case will be evaluated (which is the 2nd line of input).</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 13,
+      "updated_at": "2026-04-13T08:03:24.837Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 45,
+      "readers_count": 44,
+      "score": 14,
+      "yours": false,
+      "topic_id": 201216,
+      "topic_slug": "good-question-w10-grpa1",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/good-question-w10-grpa1/201216/9",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 754783,
+      "name": "Baskaran Nadar",
+      "username": "Baskaran_Nadar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+      "created_at": "2026-04-13T10:10:39.755Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/3/737f641574ba207acea5c79fdba3f7264b684898.png\" data-download-href=\"/uploads/short-url/gtJQgkAjdOOKMtkQ5SR3u2gw33i.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/3/737f641574ba207acea5c79fdba3f7264b684898_2_690x436.png\" alt=\"image\" data-base62-sha1=\"gtJQgkAjdOOKMtkQ5SR3u2gw33i\" width=\"690\" height=\"436\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/3/737f641574ba207acea5c79fdba3f7264b684898_2_690x436.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/3/737f641574ba207acea5c79fdba3f7264b684898_2_1035x654.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/3/737f641574ba207acea5c79fdba3f7264b684898.png 2x\" data-dominant-color=\"FAF8F9\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1269×802 45.6 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>unable to capture the input !</p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 13,
+      "updated_at": "2026-04-13T10:10:39.755Z",
+      "reply_count": 1,
+      "reply_to_post_number": 9,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 40,
+      "readers_count": 39,
+      "score": 13,
+      "yours": false,
+      "topic_id": 201216,
+      "topic_slug": "good-question-w10-grpa1",
+      "display_username": "Baskaran Nadar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37539,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/good-question-w10-grpa1/201216/10",
+      "user_cakedate": "2024-09-22",
+      "user_birthdate": "1904-04-03",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 754787,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2026-04-13T10:21:44.019Z",
+      "cooked": "<p>You are not supposed to paste this into your script, that is how the portal runs your script. You dont have to do any of this.</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 13,
+      "updated_at": "2026-04-13T10:21:44.019Z",
+      "reply_count": 1,
+      "reply_to_post_number": 10,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 38,
+      "readers_count": 37,
+      "score": 12.6,
+      "yours": false,
+      "topic_id": 201216,
+      "topic_slug": "good-question-w10-grpa1",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 37539,
+        "username": "Baskaran_Nadar",
+        "name": "Baskaran Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/good-question-w10-grpa1/201216/11",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 754814,
+      "name": "Baskaran Nadar",
+      "username": "Baskaran_Nadar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+      "created_at": "2026-04-13T10:53:58.529Z",
+      "cooked": "<p>in my script, how do i extract, which card number the question is interested in and cat that file to the out put ?</p>\n<p>I am creating all the bills ( 30 files) .</p>\n<p>Is there any input from stdin ? or bash shell command like</p>\n<p>bash script 5 ?</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 13,
+      "updated_at": "2026-04-13T10:53:58.529Z",
+      "reply_count": 1,
+      "reply_to_post_number": 11,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 37,
+      "readers_count": 36,
+      "score": 12.4,
+      "yours": false,
+      "topic_id": 201216,
+      "topic_slug": "good-question-w10-grpa1",
+      "display_username": "Baskaran Nadar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37539,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/good-question-w10-grpa1/201216/12",
+      "user_cakedate": "2024-09-22",
+      "user_birthdate": "1904-04-03",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 754823,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2026-04-13T11:10:33.792Z",
+      "cooked": "<p>Please read the input and the code i sent above carefully, the answer already lies there.</p>\n<p>Your script (<code>script</code>) does not know which file to output, it should always output all files, the evaluator code (which i shared above) selects which file to check for per test case, the how is explained in the code.</p>\n<p>You need to:</p>\n<ul>\n<li>assume all input files exist in current working directory</li>\n<li>write the script correctly</li>\n<li>output all files as expected (not just one of them)</li>\n</ul>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 13,
+      "updated_at": "2026-04-13T11:10:33.792Z",
+      "reply_count": 0,
+      "reply_to_post_number": 12,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 34,
+      "readers_count": 33,
+      "score": 6.8,
+      "yours": false,
+      "topic_id": 201216,
+      "topic_slug": "good-question-w10-grpa1",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 37539,
+        "username": "Baskaran_Nadar",
+        "name": "Baskaran Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/good-question-w10-grpa1/201216/13",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

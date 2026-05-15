@@ -1,0 +1,1429 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 705214,
+        "name": "Anirudh",
+        "username": "24f3003891",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003891/{size}/134319_2.png",
+        "created_at": "2025-12-03T07:54:24.641Z",
+        "cooked": "<p>What is the input source for receiving the file name?</p>\n<p>I’ve tried</p>\n<pre><code class=\"lang-auto\">INPUT_LINES=$(cat)\n</code></pre>\n<p>and</p>\n<pre><code class=\"lang-auto\">read INPUT_LINES\n</code></pre>\n<p>but no input seems to be coming from std input.</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 2,
+        "updated_at": "2025-12-03T07:54:24.641Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 22,
+        "readers_count": 21,
+        "score": 4.4,
+        "yours": false,
+        "topic_id": 192776,
+        "topic_slug": "week-10-grpa-filename-input",
+        "display_username": "Anirudh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 43795,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/week-10-grpa-filename-input/192776/1",
+        "user_cakedate": "2025-01-14",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 705226,
+        "name": "Anirudh",
+        "username": "24f3003891",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003891/{size}/134319_2.png",
+        "created_at": "2025-12-03T08:22:32.561Z",
+        "cooked": "<p>Found the issue. I have been putting</p>\n<pre><code class=\"lang-auto\">exit 0\n</code></pre>\n<p>at the end of all my submissions - this is also causing the evaluation script to exit before it can cat out the required file (I think).</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 2,
+        "updated_at": "2025-12-03T08:22:32.561Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 21,
+        "readers_count": 20,
+        "score": 4.2,
+        "yours": false,
+        "topic_id": 192776,
+        "topic_slug": "week-10-grpa-filename-input",
+        "display_username": "Anirudh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 43795,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/week-10-grpa-filename-input/192776/2",
+        "user_cakedate": "2025-01-14",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      705214,
+      705226
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      145
+    ],
+    [
+      2,
+      144
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 47,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 6,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 364,
+      "name": "term3-2025",
+      "slug": "term3-2025"
+    },
+    {
+      "id": 12,
+      "name": "week-10",
+      "slug": "week-10"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Week 10 GrPA filename input",
+  "id": 192776,
+  "title": "Week 10 GrPA filename input",
+  "posts_count": 2,
+  "created_at": "2025-12-03T07:54:24.433Z",
+  "views": 24,
+  "reply_count": 0,
+  "like_count": 0,
+  "last_posted_at": "2025-12-03T08:22:32.561Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "week-10-grpa-filename-input",
+  "category_id": 36,
+  "word_count": 63,
+  "deleted_at": null,
+  "user_id": 43795,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": null,
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_192776",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 2,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 1,
+  "show_read_indicator": false,
+  "thumbnails": null,
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "Week5 GrPA 3: Unable to read inputs",
+      "id": 107330,
+      "title": "Week5 GrPA 3: Unable to read inputs",
+      "slug": "week5-grpa-3-unable-to-read-inputs",
+      "posts_count": 3,
+      "reply_count": 1,
+      "highest_post_number": 3,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/6/c69cb82203a7b01a1eeddf6aa1b82123707bb008_2_1024x484.png",
+      "created_at": "2023-10-22T17:45:08.977Z",
+      "last_posted_at": "2023-10-22T18:28:47.354Z",
+      "bumped": true,
+      "bumped_at": "2023-10-22T18:28:47.354Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 270,
+          "name": "graded-assignment",
+          "slug": "graded-assignment"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 23,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 7974,
+            "username": "Arun2",
+            "name": "Arun",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/arun2/{size}/27130_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 14635,
+            "username": "22f3000061",
+            "name": "Arjith A R",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000061/{size}/12643_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week-2 GrPa-2 My Response is matching with solution but no marks",
+      "id": 95241,
+      "title": "Week-2 GrPa-2 My Response is matching with solution but no marks",
+      "slug": "week-2-grpa-2-my-response-is-matching-with-solution-but-no-marks",
+      "posts_count": 6,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/5/d5ba17f962ce5b6637b7f8af25643cf3d2c47047_2_1024x512.png",
+      "created_at": "2023-07-14T14:14:46.748Z",
+      "last_posted_at": "2023-07-17T09:08:08.207Z",
+      "bumped": true,
+      "bumped_at": "2023-07-17T09:08:08.207Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 37,
+          "name": "operational",
+          "slug": "operational"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 41,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 7370,
+            "username": "soumyak",
+            "name": "Soumyak Dutta",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/soumyak/{size}/73767_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 12,
+            "username": "santhanakrishnan",
+            "name": "Santhana Krishnan S",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/santhanakrishnan/{size}/179_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week 7 GrPA 4",
+      "id": 139882,
+      "title": "Week 7 GrPA 4",
+      "slug": "week-7-grpa-4",
+      "posts_count": 20,
+      "reply_count": 6,
+      "highest_post_number": 20,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/9/6/965ea678869f5d4c4c2d469c5ab65ee3f788dba1.png",
+      "created_at": "2024-07-15T13:59:00.377Z",
+      "last_posted_at": "2024-07-28T18:23:54.570Z",
+      "bumped": true,
+      "bumped_at": "2024-07-28T18:07:34.417Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 15,
+      "views": 196,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16469,
+            "username": "22f3001421",
+            "name": "SHIVADHARSHAN S",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 17065,
+            "username": "22F3002354",
+            "name": "Yash Rastogi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 14561,
+            "username": "hemjadli",
+            "name": "Hemendra Sharma",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hemjadli/{size}/66975_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 13696,
+            "username": "22f1001957",
+            "name": "NEELANJAN MAZUMDER",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1001957/{size}/14944_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 7266,
+            "username": "21f3001113",
+            "name": "Arnajit Chakraborty",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001113/{size}/13686_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week 5 GrPA 2-B: 8 private test cases passing out of 9",
+      "id": 66834,
+      "title": "Week 5 GrPA 2-B: 8 private test cases passing out of 9",
+      "slug": "week-5-grpa-2-b-8-private-test-cases-passing-out-of-9",
+      "posts_count": 6,
+      "reply_count": 3,
+      "highest_post_number": 7,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/b/7/b7578ecc0f4d4067e47d9a827d49810ba7da5814_2_879x1024.jpeg",
+      "created_at": "2022-10-07T05:21:52.609Z",
+      "last_posted_at": "2022-10-08T17:17:19.620Z",
+      "bumped": true,
+      "bumped_at": "2022-10-08T17:17:19.620Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 7,
+          "name": "week-5",
+          "slug": "week-5"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 92,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 3639,
+            "username": "vishnupraharshan",
+            "name": "Vishnu P",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/vishnupraharshan/{size}/93_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 12,
+            "username": "santhanakrishnan",
+            "name": "Santhana Krishnan S",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/santhanakrishnan/{size}/179_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 11460,
+            "username": "22dp1000120",
+            "name": "d",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22dp1000120/{size}/22006_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 8861,
+            "username": "Krishan2207",
+            "name": "Krishan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/krishan2207/{size}/12402_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week 5 GrPA 2-B: Issue with inputs",
+      "id": 107325,
+      "title": "Week 5 GrPA 2-B: Issue with inputs",
+      "slug": "week-5-grpa-2-b-issue-with-inputs",
+      "posts_count": 1,
+      "reply_count": 0,
+      "highest_post_number": 1,
+      "image_url": null,
+      "created_at": "2023-10-22T16:57:27.899Z",
+      "last_posted_at": "2023-10-22T16:57:28.044Z",
+      "bumped": true,
+      "bumped_at": "2023-10-22T16:57:28.044Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 35,
+          "name": "error",
+          "slug": "error"
+        },
+        {
+          "id": 270,
+          "name": "graded-assignment",
+          "slug": "graded-assignment"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 33,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest single",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 7974,
+            "username": "Arun2",
+            "name": "Arun",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/arun2/{size}/27130_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 2,
+    "username": "24f3003891",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003891/{size}/134319_2.png",
+    "excerpt": "<p>Found the issue. I have been putting</p>\n<pre><code class=\"lang-auto\">exit 0\n</code></pre>\n<p>at the end of all my submissions - this is also causing the evaluation script to exit before it can cat out the required file (I think).</p>",
+    "accepter_name": null,
+    "accepter_username": "21f3000759"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 43795,
+        "username": "24f3003891",
+        "name": "Anirudh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003891/{size}/134319_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 43795,
+      "username": "24f3003891",
+      "name": "Anirudh",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003891/{size}/134319_2.png"
+    },
+    "last_poster": {
+      "id": 43795,
+      "username": "24f3003891",
+      "name": "Anirudh",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003891/{size}/134319_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 705214,
+      "name": "Anirudh",
+      "username": "24f3003891",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003891/{size}/134319_2.png",
+      "created_at": "2025-12-03T07:54:24.641Z",
+      "cooked": "<p>What is the input source for receiving the file name?</p>\n<p>I’ve tried</p>\n<pre><code class=\"lang-auto\">INPUT_LINES=$(cat)\n</code></pre>\n<p>and</p>\n<pre><code class=\"lang-auto\">read INPUT_LINES\n</code></pre>\n<p>but no input seems to be coming from std input.</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 2,
+      "updated_at": "2025-12-03T07:54:24.641Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 22,
+      "readers_count": 21,
+      "score": 4.4,
+      "yours": false,
+      "topic_id": 192776,
+      "topic_slug": "week-10-grpa-filename-input",
+      "display_username": "Anirudh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 43795,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/week-10-grpa-filename-input/192776/1",
+      "user_cakedate": "2025-01-14",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 705226,
+      "name": "Anirudh",
+      "username": "24f3003891",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003891/{size}/134319_2.png",
+      "created_at": "2025-12-03T08:22:32.561Z",
+      "cooked": "<p>Found the issue. I have been putting</p>\n<pre><code class=\"lang-auto\">exit 0\n</code></pre>\n<p>at the end of all my submissions - this is also causing the evaluation script to exit before it can cat out the required file (I think).</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 2,
+      "updated_at": "2025-12-03T08:22:32.561Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 21,
+      "readers_count": 20,
+      "score": 4.2,
+      "yours": false,
+      "topic_id": 192776,
+      "topic_slug": "week-10-grpa-filename-input",
+      "display_username": "Anirudh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 43795,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/week-10-grpa-filename-input/192776/2",
+      "user_cakedate": "2025-01-14",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    }
+  ]
+}

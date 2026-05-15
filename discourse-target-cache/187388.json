@@ -1,0 +1,3390 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 675674,
+        "name": "Priyanshi Dixit",
+        "username": "Priyanshi_Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+        "created_at": "2025-09-19T14:40:18.611Z",
+        "cooked": "<p>Hey,</p>\n<p>I just want to know about OPPE exams. How will these exams be conducted?</p>\n<p>I got mail about it  (Grading policy for python) but understand a little. Anyone pls explain..</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 11,
+        "updated_at": "2025-09-19T14:40:18.611Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 5,
+        "reads": 69,
+        "readers_count": 68,
+        "score": 68.8,
+        "yours": false,
+        "topic_id": 187388,
+        "topic_slug": "about-oppe-exams",
+        "display_username": "Priyanshi Dixit",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 50546,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/about-oppe-exams/187388/1",
+        "user_cakedate": "2025-09-16",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 675701,
+        "name": "BHAVEN",
+        "username": "24f3000936",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png",
+        "created_at": "2025-09-19T14:47:34.772Z",
+        "cooked": "<p>The OPPE (Online Proctored Programming Exam) is an online exam. It is a programming exam wherein you would have to solve the programming questions in the invigilation of the proctor via camera. Further in the course you would be given GRPAs (Graded Programming Assignments), the format of the questions in the OPPE would be same as the GRPAs.</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 11,
+        "updated_at": "2025-09-19T14:47:34.772Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 65,
+        "readers_count": 64,
+        "score": 33,
+        "yours": false,
+        "topic_id": 187388,
+        "topic_slug": "about-oppe-exams",
+        "display_username": "BHAVEN",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 39630,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/about-oppe-exams/187388/2",
+        "user_cakedate": "2024-10-04",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675713,
+        "name": "Priyanshi Dixit",
+        "username": "Priyanshi_Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+        "created_at": "2025-09-19T15:06:35.649Z",
+        "cooked": "<p>during exam we have to keep open camera?</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 11,
+        "updated_at": "2025-09-19T15:06:35.649Z",
+        "reply_count": 1,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 59,
+        "readers_count": 58,
+        "score": 61.8,
+        "yours": false,
+        "topic_id": 187388,
+        "topic_slug": "about-oppe-exams",
+        "display_username": "Priyanshi Dixit",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 39630,
+          "username": "24f3000936",
+          "name": "BHAVEN",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 3,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 50546,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/about-oppe-exams/187388/3",
+        "user_cakedate": "2025-09-16",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 3
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 3,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675724,
+        "name": "Jay prakash prasad kushwaha",
+        "username": "24f3003875jppk",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003875jppk/{size}/123124_2.png",
+        "created_at": "2025-09-19T15:36:58.435Z",
+        "cooked": "<p>yes</p>\n<p>you have to join through g-meet in mobile and a exam link provide by iitm</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 11,
+        "updated_at": "2025-09-19T15:36:58.435Z",
+        "reply_count": 0,
+        "reply_to_post_number": 3,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 54,
+        "readers_count": 53,
+        "score": 45.8,
+        "yours": false,
+        "topic_id": 187388,
+        "topic_slug": "about-oppe-exams",
+        "display_username": "Jay prakash prasad kushwaha",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 50546,
+          "username": "Priyanshi_Dixit",
+          "name": "Priyanshi Dixit",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 43573,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/about-oppe-exams/187388/4",
+        "user_cakedate": "2025-01-12",
+        "user_birthdate": "1904-10-15",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          },
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675727,
+        "name": "Priyanshi Dixit",
+        "username": "Priyanshi_Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+        "created_at": "2025-09-19T15:48:26.681Z",
+        "cooked": "<p>Thanks both of uh.…<img src=\"https://emoji.discourse-cdn.com/google/grinning_face_with_smiling_eyes.png?v=14\" title=\":grinning_face_with_smiling_eyes:\" class=\"emoji\" alt=\":grinning_face_with_smiling_eyes:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 11,
+        "updated_at": "2025-09-19T15:56:27.984Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 53,
+        "readers_count": 52,
+        "score": 40.6,
+        "yours": false,
+        "topic_id": 187388,
+        "topic_slug": "about-oppe-exams",
+        "display_username": "Priyanshi Dixit",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 50546,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/about-oppe-exams/187388/5",
+        "user_cakedate": "2025-09-16",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675737,
+        "name": "Shakti Pratap Singh ",
+        "username": "SHAKTI_25f2006301",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/shakti_25f2006301/{size}/143190_2.png",
+        "created_at": "2025-09-19T16:13:01.179Z",
+        "cooked": "<p>We should join the g meet via mobile and laptop both with same id ??</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 11,
+        "updated_at": "2025-09-19T16:13:01.179Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 50,
+        "readers_count": 49,
+        "score": 30,
+        "yours": false,
+        "topic_id": 187388,
+        "topic_slug": "about-oppe-exams",
+        "display_username": "Shakti Pratap Singh ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 50717,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/about-oppe-exams/187388/6",
+        "user_cakedate": "2025-09-16",
+        "user_birthdate": "1904-02-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675741,
+        "name": "Priyanshi Dixit",
+        "username": "Priyanshi_Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+        "created_at": "2025-09-19T16:16:12.480Z",
+        "cooked": "<p><img src=\"https://emoji.discourse-cdn.com/google/backhand_index_pointing_right.png?v=14\" title=\":backhand_index_pointing_right:\" class=\"emoji\" alt=\":backhand_index_pointing_right:\" loading=\"lazy\" width=\"20\" height=\"20\"> <a href=\"https://docs.google.com/document/u/3/d/e/2PACX-1vQoGjiRLm9R6dxnLcxd3D39tYdTP8vugjZtuFmDDtShRB0MBURxmGdyk4A6N6jiMv8YsiY6ToAoSaki/pub\" rel=\"noopener nofollow ugc\">SOP for Students - PgmQuiz (T12024)</a></p>\n<p>Here u can find full info..</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 11,
+        "updated_at": "2025-09-19T16:16:12.480Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 49,
+        "readers_count": 48,
+        "score": 39.8,
+        "yours": false,
+        "topic_id": 187388,
+        "topic_slug": "about-oppe-exams",
+        "display_username": "Priyanshi Dixit",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://docs.google.com/document/u/3/d/e/2PACX-1vQoGjiRLm9R6dxnLcxd3D39tYdTP8vugjZtuFmDDtShRB0MBURxmGdyk4A6N6jiMv8YsiY6ToAoSaki/pub",
+            "internal": false,
+            "reflection": false,
+            "title": "SOP for Students - PgmQuiz (T12024)",
+            "clicks": 8
+          }
+        ],
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 50546,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/about-oppe-exams/187388/7",
+        "user_cakedate": "2025-09-16",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675742,
+        "name": "BHAVEN",
+        "username": "24f3000936",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png",
+        "created_at": "2025-09-19T16:16:44.278Z",
+        "cooked": "<p>You have to join the gmeet only with your mobile device using your student email ID.</p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 11,
+        "updated_at": "2025-09-19T16:16:44.278Z",
+        "reply_count": 2,
+        "reply_to_post_number": 6,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 50,
+        "readers_count": 49,
+        "score": 35,
+        "yours": false,
+        "topic_id": 187388,
+        "topic_slug": "about-oppe-exams",
+        "display_username": "BHAVEN",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 50717,
+          "username": "SHAKTI_25f2006301",
+          "name": "Shakti Pratap Singh ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/shakti_25f2006301/{size}/143190_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 39630,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/about-oppe-exams/187388/8",
+        "user_cakedate": "2024-10-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675743,
+        "name": "Shakti Pratap Singh ",
+        "username": "SHAKTI_25f2006301",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/shakti_25f2006301/{size}/143190_2.png",
+        "created_at": "2025-09-19T16:18:06.292Z",
+        "cooked": "<p>Thanks for your help bro.</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 11,
+        "updated_at": "2025-09-19T16:18:06.292Z",
+        "reply_count": 0,
+        "reply_to_post_number": 8,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 47,
+        "readers_count": 46,
+        "score": 24.4,
+        "yours": false,
+        "topic_id": 187388,
+        "topic_slug": "about-oppe-exams",
+        "display_username": "Shakti Pratap Singh ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 39630,
+          "username": "24f3000936",
+          "name": "BHAVEN",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 50717,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/about-oppe-exams/187388/9",
+        "user_cakedate": "2025-09-16",
+        "user_birthdate": "1904-02-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675756,
+        "name": "Avni Dhiman",
+        "username": "25f1001239AVNIDHIMAN",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f1001239avnidhiman/{size}/119958_2.png",
+        "created_at": "2025-09-19T16:53:08.592Z",
+        "cooked": "<p>So we have to use 2 devices… Mobile(for gmeet) and laptop (for exam)??</p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 11,
+        "updated_at": "2025-09-19T16:53:08.592Z",
+        "reply_count": 1,
+        "reply_to_post_number": 8,
+        "quote_count": 0,
+        "incoming_link_count": 2,
+        "reads": 44,
+        "readers_count": 43,
+        "score": 38.8,
+        "yours": false,
+        "topic_id": 187388,
+        "topic_slug": "about-oppe-exams",
+        "display_username": "Avni Dhiman",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 39630,
+          "username": "24f3000936",
+          "name": "BHAVEN",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 43809,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/about-oppe-exams/187388/10",
+        "user_cakedate": "2025-01-14",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675779,
+        "name": "BHAVEN",
+        "username": "24f3000936",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png",
+        "created_at": "2025-09-19T18:10:08.966Z",
+        "cooked": "<p>Yes, you got that right.</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 11,
+        "updated_at": "2025-09-19T18:10:08.966Z",
+        "reply_count": 0,
+        "reply_to_post_number": 10,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 43,
+        "readers_count": 42,
+        "score": 38.6,
+        "yours": false,
+        "topic_id": 187388,
+        "topic_slug": "about-oppe-exams",
+        "display_username": "BHAVEN",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 43809,
+          "username": "25f1001239AVNIDHIMAN",
+          "name": "Avni Dhiman",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f1001239avnidhiman/{size}/119958_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 39630,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/about-oppe-exams/187388/11",
+        "user_cakedate": "2024-10-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      675674,
+      675701,
+      675713,
+      675724,
+      675727,
+      675737,
+      675741,
+      675742,
+      675743,
+      675756,
+      675779
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      219
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "PPA-3 solution",
+      "id": 202515,
+      "title": "PPA-3 solution",
+      "slug": "ppa-3-solution",
+      "posts_count": 4,
+      "reply_count": 1,
+      "highest_post_number": 4,
+      "image_url": null,
+      "created_at": "2026-04-26T18:58:16.204Z",
+      "last_posted_at": "2026-04-26T20:11:09.075Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T20:11:09.075Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 7,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 47387,
+            "username": "25f2000510",
+            "name": "Sayed Abiha Abul Hasan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2000510/{size}/119801_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "PYqs for OPPE-2 Python",
+      "id": 202516,
+      "title": "PYqs for OPPE-2 Python",
+      "slug": "pyqs-for-oppe-2-python",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": null,
+      "created_at": "2026-04-26T19:18:02.398Z",
+      "last_posted_at": "2026-04-26T19:56:34.716Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T19:56:34.716Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 6,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 56474,
+            "username": "25f3002735",
+            "name": "Aamir",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/f17d59/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "PPA-1 Solution",
+      "id": 202514,
+      "title": "PPA-1 Solution",
+      "slug": "ppa-1-solution",
+      "posts_count": 1,
+      "reply_count": 0,
+      "highest_post_number": 1,
+      "image_url": null,
+      "created_at": "2026-04-26T18:51:19.212Z",
+      "last_posted_at": "2026-04-26T18:51:19.374Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:51:19.374Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 4,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest single",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 47387,
+            "username": "25f2000510",
+            "name": "Sayed Abiha Abul Hasan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2000510/{size}/119801_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe result related query",
+      "id": 202495,
+      "title": "Oppe result related query",
+      "slug": "oppe-result-related-query",
+      "posts_count": 4,
+      "reply_count": 2,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/7/676201f5c22b7eee7f1673038360f3615706cbd2_2_460x1024.jpeg",
+      "created_at": "2026-04-26T13:45:02.580Z",
+      "last_posted_at": "2026-04-26T14:07:11.728Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T14:07:11.728Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 339,
+          "name": "term3-2024",
+          "slug": "term3-2024"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 37,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 30749,
+            "username": "24f2002652",
+            "name": "Yashaswee mrinal jha ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2002652/{size}/125481_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe clearance",
+      "id": 202411,
+      "title": "Oppe clearance",
+      "slug": "oppe-clearance",
+      "posts_count": 6,
+      "reply_count": 2,
+      "highest_post_number": 6,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/4/9420a7e6546f171bf30f0b5049091e0bbfdf4f88_2_459x1024.jpeg",
+      "created_at": "2026-04-26T03:56:45.449Z",
+      "last_posted_at": "2026-04-26T10:27:05.020Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T10:27:05.020Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 4,
+      "views": 61,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 39782,
+            "username": "Omkar7",
+            "name": "Omkar gudla",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/omkar7/{size}/113203_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 23318,
+            "username": "23f2001123",
+            "name": "Anshu Rajbhar ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2001123/{size}/110382_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 57115,
+            "username": "25f3006372",
+            "name": "Raihan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f3006372/{size}/161245_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 341,
+      "name": "term2-2025",
+      "slug": "term2-2025"
+    },
+    {
+      "id": 20,
+      "name": "intropython",
+      "slug": "intropython"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "About OPPE exams",
+  "id": 187388,
+  "title": "About OPPE exams",
+  "posts_count": 11,
+  "created_at": "2025-09-19T14:40:18.427Z",
+  "views": 95,
+  "reply_count": 6,
+  "like_count": 18,
+  "last_posted_at": "2025-09-19T18:10:08.966Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "about-oppe-exams",
+  "category_id": 25,
+  "word_count": 197,
+  "deleted_at": null,
+  "user_id": 50546,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": null,
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_187388",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 11,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 5,
+  "show_read_indicator": false,
+  "thumbnails": null,
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "We know nothing about oppe",
+      "id": 122212,
+      "title": "We know nothing about oppe",
+      "slug": "we-know-nothing-about-oppe",
+      "posts_count": 4,
+      "reply_count": 0,
+      "highest_post_number": 4,
+      "image_url": null,
+      "created_at": "2024-02-26T09:28:21.673Z",
+      "last_posted_at": "2024-02-26T15:05:06.570Z",
+      "bumped": true,
+      "bumped_at": "2024-02-26T15:05:06.570Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 4,
+      "views": 105,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 25148,
+            "username": "23f3004043",
+            "name": "Achyuta Sai Ghanta",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3004043/{size}/67652_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 17066,
+            "username": "23f1000966",
+            "name": "Aryan Thakur",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000966/{size}/67154_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 15475,
+            "username": "22f3002293",
+            "name": "Rajat Goel",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002293/{size}/92210_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 22224,
+            "username": "Sagan",
+            "name": "Sagandeep Kaur",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sagan/{size}/146753_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "When is OPPE1 and OPPE2?",
+      "id": 116634,
+      "title": "When is OPPE1 and OPPE2?",
+      "slug": "when-is-oppe1-and-oppe2",
+      "posts_count": 10,
+      "reply_count": 6,
+      "highest_post_number": 10,
+      "image_url": null,
+      "created_at": "2024-01-31T05:11:46.309Z",
+      "last_posted_at": "2024-01-31T12:55:22.506Z",
+      "bumped": true,
+      "bumped_at": "2024-01-31T12:55:22.506Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 20,
+          "name": "intropython",
+          "slug": "intropython"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 6,
+      "views": 187,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 25245,
+            "username": "23f3004167",
+            "name": "Shivateja Keerthi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3004167/{size}/67329_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 21295,
+            "username": "23f2003056",
+            "name": "Vibhaw Singh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003056/{size}/137465_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 11,
+            "username": "Karthik_POD",
+            "name": "Karthik Thiagarajan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/karthik_pod/{size}/95387_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 933,
+            "username": "Anand",
+            "name": "Anand Iyer",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/anand/{size}/1555_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 25285,
+            "username": "23f3003282",
+            "name": "Urvashi Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003282/{size}/74030_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "About oppe 1?",
+      "id": 122206,
+      "title": "About oppe 1?",
+      "slug": "about-oppe-1",
+      "posts_count": 12,
+      "reply_count": 6,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2024-02-26T08:47:13.112Z",
+      "last_posted_at": "2024-02-27T12:02:56.959Z",
+      "bumped": true,
+      "bumped_at": "2024-02-27T12:02:56.959Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 24,
+          "name": "guidelines",
+          "slug": "guidelines"
+        },
+        {
+          "id": 20,
+          "name": "intropython",
+          "slug": "intropython"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 10,
+      "views": 142,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 3,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 26434,
+            "username": "23f2004109",
+            "name": "NIkshay Sejwal",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004109/{size}/68095_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 17066,
+            "username": "23f1000966",
+            "name": "Aryan Thakur",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000966/{size}/67154_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 24866,
+            "username": "23f3003612",
+            "name": "Ezhilram E",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/9fc348/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 17812,
+            "username": "anoophaneefa",
+            "name": "Anoop Haneefa Ponnakkal",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/anoophaneefa/{size}/77558_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 22224,
+            "username": "Sagan",
+            "name": "Sagandeep Kaur",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sagan/{size}/146753_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Doubts regarding OPPE 1",
+      "id": 94590,
+      "title": "Doubts regarding OPPE 1",
+      "slug": "doubts-regarding-oppe-1",
+      "posts_count": 9,
+      "reply_count": 6,
+      "highest_post_number": 9,
+      "image_url": null,
+      "created_at": "2023-07-09T12:31:25.387Z",
+      "last_posted_at": "2023-07-11T16:57:25.585Z",
+      "bumped": true,
+      "bumped_at": "2023-07-09T16:56:30.562Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 4,
+      "views": 103,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 19959,
+            "username": "akashravi04",
+            "name": "Akash Ravindran",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/akashravi04/{size}/66772_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 15626,
+            "username": "Puja",
+            "name": "Puja Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puja/{size}/69895_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 20877,
+            "username": "bs21b038",
+            "name": "TRIPURARI NAGA KEERTHANA",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/b/a698b9/{size}.png",
+            "primary_group_name": "smail_students",
+            "flair_name": "smail_students",
+            "flair_url": "bezier-curve",
+            "flair_group_id": 445,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": -1,
+            "username": "system",
+            "name": "system",
+            "avatar_template": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/1X/d0988fb0a41c4d4a461fb3b436a91070f23e866e.jpeg",
+            "admin": true,
+            "moderator": true,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe 1 and 2 exam",
+      "id": 118827,
+      "title": "Oppe 1 and 2 exam",
+      "slug": "oppe-1-and-2-exam",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2024-02-10T08:48:55.234Z",
+      "last_posted_at": "2024-02-10T16:47:45.122Z",
+      "bumped": true,
+      "bumped_at": "2024-02-10T16:47:45.122Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 37,
+          "name": "operational",
+          "slug": "operational"
+        },
+        {
+          "id": 20,
+          "name": "intropython",
+          "slug": "intropython"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 68,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 22639,
+            "username": "23f2003456",
+            "name": "E.Varshini",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003456/{size}/72745_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 933,
+            "username": "Anand",
+            "name": "Anand Iyer",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/anand/{size}/1555_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 21533,
+            "username": "23f2005067",
+            "name": "Sudhanshu Shekhar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2005067/{size}/85957_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 2,
+    "username": "24f3000936",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png",
+    "excerpt": "<p>The OPPE (Online Proctored Programming Exam) is an online exam. It is a programming exam wherein you would have to solve the programming questions in the invigilation of the proctor via camera. Further in the course you would be given GRPAs (Graded Programming Assignments), the format of the questions in the OPPE would be same as the GRPAs.</p>",
+    "accepter_name": null,
+    "accepter_username": "Priyanshi_Dixit"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 50546,
+        "username": "Priyanshi_Dixit",
+        "name": "Priyanshi Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+        "post_count": 4,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 39630,
+        "username": "24f3000936",
+        "name": "BHAVEN",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 50717,
+        "username": "SHAKTI_25f2006301",
+        "name": "Shakti Pratap Singh ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/shakti_25f2006301/{size}/143190_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 43809,
+        "username": "25f1001239AVNIDHIMAN",
+        "name": "Avni Dhiman",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f1001239avnidhiman/{size}/119958_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 43573,
+        "username": "24f3003875jppk",
+        "name": "Jay prakash prasad kushwaha",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003875jppk/{size}/123124_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 50546,
+      "username": "Priyanshi_Dixit",
+      "name": "Priyanshi Dixit",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png"
+    },
+    "last_poster": {
+      "id": 39630,
+      "username": "24f3000936",
+      "name": "BHAVEN",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png"
+    },
+    "links": [
+      {
+        "url": "https://docs.google.com/document/u/3/d/e/2PACX-1vQoGjiRLm9R6dxnLcxd3D39tYdTP8vugjZtuFmDDtShRB0MBURxmGdyk4A6N6jiMv8YsiY6ToAoSaki/pub",
+        "title": "SOP for Students - PgmQuiz (T12024)",
+        "internal": false,
+        "attachment": false,
+        "reflection": false,
+        "clicks": 8,
+        "user_id": 50546,
+        "domain": "docs.google.com",
+        "root_domain": "google.com"
+      }
+    ]
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 675674,
+      "name": "Priyanshi Dixit",
+      "username": "Priyanshi_Dixit",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+      "created_at": "2025-09-19T14:40:18.611Z",
+      "cooked": "<p>Hey,</p>\n<p>I just want to know about OPPE exams. How will these exams be conducted?</p>\n<p>I got mail about it  (Grading policy for python) but understand a little. Anyone pls explain..</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 11,
+      "updated_at": "2025-09-19T14:40:18.611Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 5,
+      "reads": 69,
+      "readers_count": 68,
+      "score": 68.8,
+      "yours": false,
+      "topic_id": 187388,
+      "topic_slug": "about-oppe-exams",
+      "display_username": "Priyanshi Dixit",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50546,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/about-oppe-exams/187388/1",
+      "user_cakedate": "2025-09-16",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 675701,
+      "name": "BHAVEN",
+      "username": "24f3000936",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png",
+      "created_at": "2025-09-19T14:47:34.772Z",
+      "cooked": "<p>The OPPE (Online Proctored Programming Exam) is an online exam. It is a programming exam wherein you would have to solve the programming questions in the invigilation of the proctor via camera. Further in the course you would be given GRPAs (Graded Programming Assignments), the format of the questions in the OPPE would be same as the GRPAs.</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 11,
+      "updated_at": "2025-09-19T14:47:34.772Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 65,
+      "readers_count": 64,
+      "score": 33,
+      "yours": false,
+      "topic_id": 187388,
+      "topic_slug": "about-oppe-exams",
+      "display_username": "BHAVEN",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 39630,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/about-oppe-exams/187388/2",
+      "user_cakedate": "2024-10-04",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675713,
+      "name": "Priyanshi Dixit",
+      "username": "Priyanshi_Dixit",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+      "created_at": "2025-09-19T15:06:35.649Z",
+      "cooked": "<p>during exam we have to keep open camera?</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 11,
+      "updated_at": "2025-09-19T15:06:35.649Z",
+      "reply_count": 1,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 59,
+      "readers_count": 58,
+      "score": 61.8,
+      "yours": false,
+      "topic_id": 187388,
+      "topic_slug": "about-oppe-exams",
+      "display_username": "Priyanshi Dixit",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 39630,
+        "username": "24f3000936",
+        "name": "BHAVEN",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 3,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50546,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/about-oppe-exams/187388/3",
+      "user_cakedate": "2025-09-16",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 3
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 3,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675724,
+      "name": "Jay prakash prasad kushwaha",
+      "username": "24f3003875jppk",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003875jppk/{size}/123124_2.png",
+      "created_at": "2025-09-19T15:36:58.435Z",
+      "cooked": "<p>yes</p>\n<p>you have to join through g-meet in mobile and a exam link provide by iitm</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 11,
+      "updated_at": "2025-09-19T15:36:58.435Z",
+      "reply_count": 0,
+      "reply_to_post_number": 3,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 54,
+      "readers_count": 53,
+      "score": 45.8,
+      "yours": false,
+      "topic_id": 187388,
+      "topic_slug": "about-oppe-exams",
+      "display_username": "Jay prakash prasad kushwaha",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 50546,
+        "username": "Priyanshi_Dixit",
+        "name": "Priyanshi Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 43573,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/about-oppe-exams/187388/4",
+      "user_cakedate": "2025-01-12",
+      "user_birthdate": "1904-10-15",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        },
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675727,
+      "name": "Priyanshi Dixit",
+      "username": "Priyanshi_Dixit",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+      "created_at": "2025-09-19T15:48:26.681Z",
+      "cooked": "<p>Thanks both of uh.…<img src=\"https://emoji.discourse-cdn.com/google/grinning_face_with_smiling_eyes.png?v=14\" title=\":grinning_face_with_smiling_eyes:\" class=\"emoji\" alt=\":grinning_face_with_smiling_eyes:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 11,
+      "updated_at": "2025-09-19T15:56:27.984Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 53,
+      "readers_count": 52,
+      "score": 40.6,
+      "yours": false,
+      "topic_id": 187388,
+      "topic_slug": "about-oppe-exams",
+      "display_username": "Priyanshi Dixit",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50546,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/about-oppe-exams/187388/5",
+      "user_cakedate": "2025-09-16",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675737,
+      "name": "Shakti Pratap Singh ",
+      "username": "SHAKTI_25f2006301",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/shakti_25f2006301/{size}/143190_2.png",
+      "created_at": "2025-09-19T16:13:01.179Z",
+      "cooked": "<p>We should join the g meet via mobile and laptop both with same id ??</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 11,
+      "updated_at": "2025-09-19T16:13:01.179Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 50,
+      "readers_count": 49,
+      "score": 30,
+      "yours": false,
+      "topic_id": 187388,
+      "topic_slug": "about-oppe-exams",
+      "display_username": "Shakti Pratap Singh ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50717,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/about-oppe-exams/187388/6",
+      "user_cakedate": "2025-09-16",
+      "user_birthdate": "1904-02-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675741,
+      "name": "Priyanshi Dixit",
+      "username": "Priyanshi_Dixit",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+      "created_at": "2025-09-19T16:16:12.480Z",
+      "cooked": "<p><img src=\"https://emoji.discourse-cdn.com/google/backhand_index_pointing_right.png?v=14\" title=\":backhand_index_pointing_right:\" class=\"emoji\" alt=\":backhand_index_pointing_right:\" loading=\"lazy\" width=\"20\" height=\"20\"> <a href=\"https://docs.google.com/document/u/3/d/e/2PACX-1vQoGjiRLm9R6dxnLcxd3D39tYdTP8vugjZtuFmDDtShRB0MBURxmGdyk4A6N6jiMv8YsiY6ToAoSaki/pub\" rel=\"noopener nofollow ugc\">SOP for Students - PgmQuiz (T12024)</a></p>\n<p>Here u can find full info..</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 11,
+      "updated_at": "2025-09-19T16:16:12.480Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 49,
+      "readers_count": 48,
+      "score": 39.8,
+      "yours": false,
+      "topic_id": 187388,
+      "topic_slug": "about-oppe-exams",
+      "display_username": "Priyanshi Dixit",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://docs.google.com/document/u/3/d/e/2PACX-1vQoGjiRLm9R6dxnLcxd3D39tYdTP8vugjZtuFmDDtShRB0MBURxmGdyk4A6N6jiMv8YsiY6ToAoSaki/pub",
+          "internal": false,
+          "reflection": false,
+          "title": "SOP for Students - PgmQuiz (T12024)",
+          "clicks": 8
+        }
+      ],
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50546,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/about-oppe-exams/187388/7",
+      "user_cakedate": "2025-09-16",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675742,
+      "name": "BHAVEN",
+      "username": "24f3000936",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png",
+      "created_at": "2025-09-19T16:16:44.278Z",
+      "cooked": "<p>You have to join the gmeet only with your mobile device using your student email ID.</p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 11,
+      "updated_at": "2025-09-19T16:16:44.278Z",
+      "reply_count": 2,
+      "reply_to_post_number": 6,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 50,
+      "readers_count": 49,
+      "score": 35,
+      "yours": false,
+      "topic_id": 187388,
+      "topic_slug": "about-oppe-exams",
+      "display_username": "BHAVEN",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 50717,
+        "username": "SHAKTI_25f2006301",
+        "name": "Shakti Pratap Singh ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/shakti_25f2006301/{size}/143190_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 39630,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/about-oppe-exams/187388/8",
+      "user_cakedate": "2024-10-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675743,
+      "name": "Shakti Pratap Singh ",
+      "username": "SHAKTI_25f2006301",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/shakti_25f2006301/{size}/143190_2.png",
+      "created_at": "2025-09-19T16:18:06.292Z",
+      "cooked": "<p>Thanks for your help bro.</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 11,
+      "updated_at": "2025-09-19T16:18:06.292Z",
+      "reply_count": 0,
+      "reply_to_post_number": 8,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 47,
+      "readers_count": 46,
+      "score": 24.4,
+      "yours": false,
+      "topic_id": 187388,
+      "topic_slug": "about-oppe-exams",
+      "display_username": "Shakti Pratap Singh ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 39630,
+        "username": "24f3000936",
+        "name": "BHAVEN",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50717,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/about-oppe-exams/187388/9",
+      "user_cakedate": "2025-09-16",
+      "user_birthdate": "1904-02-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675756,
+      "name": "Avni Dhiman",
+      "username": "25f1001239AVNIDHIMAN",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f1001239avnidhiman/{size}/119958_2.png",
+      "created_at": "2025-09-19T16:53:08.592Z",
+      "cooked": "<p>So we have to use 2 devices… Mobile(for gmeet) and laptop (for exam)??</p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 11,
+      "updated_at": "2025-09-19T16:53:08.592Z",
+      "reply_count": 1,
+      "reply_to_post_number": 8,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 44,
+      "readers_count": 43,
+      "score": 38.8,
+      "yours": false,
+      "topic_id": 187388,
+      "topic_slug": "about-oppe-exams",
+      "display_username": "Avni Dhiman",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 39630,
+        "username": "24f3000936",
+        "name": "BHAVEN",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 43809,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/about-oppe-exams/187388/10",
+      "user_cakedate": "2025-01-14",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675779,
+      "name": "BHAVEN",
+      "username": "24f3000936",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000936/{size}/110916_2.png",
+      "created_at": "2025-09-19T18:10:08.966Z",
+      "cooked": "<p>Yes, you got that right.</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 11,
+      "updated_at": "2025-09-19T18:10:08.966Z",
+      "reply_count": 0,
+      "reply_to_post_number": 10,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 43,
+      "readers_count": 42,
+      "score": 38.6,
+      "yours": false,
+      "topic_id": 187388,
+      "topic_slug": "about-oppe-exams",
+      "display_username": "BHAVEN",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 43809,
+        "username": "25f1001239AVNIDHIMAN",
+        "name": "Avni Dhiman",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f1001239avnidhiman/{size}/119958_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 39630,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/about-oppe-exams/187388/11",
+      "user_cakedate": "2024-10-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

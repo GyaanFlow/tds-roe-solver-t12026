@@ -1,0 +1,1897 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 747604,
+        "name": "SHUBHAM CHAKRABORTY",
+        "username": "23f2003481",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003481/{size}/92120_2.png",
+        "created_at": "2026-03-31T16:13:42.629Z",
+        "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/a/0af8581e06dbb61cf4e5475edf012a8315acbe10.png\" data-download-href=\"/uploads/short-url/1z2QGjfVQKN4iXLWTP7FLTW9gpa.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/a/0af8581e06dbb61cf4e5475edf012a8315acbe10_2_438x500.png\" alt=\"image\" data-base62-sha1=\"1z2QGjfVQKN4iXLWTP7FLTW9gpa\" width=\"438\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/a/0af8581e06dbb61cf4e5475edf012a8315acbe10_2_438x500.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/a/0af8581e06dbb61cf4e5475edf012a8315acbe10_2_657x750.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/a/0af8581e06dbb61cf4e5475edf012a8315acbe10_2_876x1000.png 2x\" data-dominant-color=\"F7F4F5\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">898×1023 43.2 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\nCommand -</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">grep -E \"su\" myauth.log | \ngrep \"opened for user.*(student)\" | \ncut -d \" \" -f11 |\nwhile read var; do\n  echo \"$val\\n\\n\"\ndone\n</code></pre>\n<p>I did this and the output is comming well but because of extra space at bottom it is getting wrong nut i implemented o tried the way i need to use grep and other commands So how can i enhance it more <a class=\"mention\" href=\"/u/hemalatha\">@hemalatha</a>  <a class=\"mention\" href=\"/u/atulps\">@AtulPS</a></p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 4,
+        "updated_at": "2026-04-01T11:49:28.968Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 24,
+        "readers_count": 23,
+        "score": 9.8,
+        "yours": false,
+        "topic_id": 200179,
+        "topic_slug": "doubt-related-to-week-5-ppa-7",
+        "display_username": "SHUBHAM CHAKRABORTY",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 3,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21442,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/doubt-related-to-week-5-ppa-7/200179/1",
+        "user_cakedate": "2023-09-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 748009,
+        "name": "Ishan Shishodiya",
+        "username": "22f2001554",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "created_at": "2026-04-01T12:06:30.794Z",
+        "cooked": "<p>Can you reshare your command? The command you shared doesn’t seem to give the output the image you posted shows. I tried to fix the markdown highlighting in your post so it might be the culprit.</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 4,
+        "updated_at": "2026-04-01T12:06:30.794Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 2,
+        "reads": 18,
+        "readers_count": 17,
+        "score": 18.6,
+        "yours": false,
+        "topic_id": 200179,
+        "topic_slug": "doubt-related-to-week-5-ppa-7",
+        "display_username": "Ishan Shishodiya",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 14366,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/doubt-related-to-week-5-ppa-7/200179/3",
+        "user_cakedate": "2022-09-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 748019,
+        "name": "SHUBHAM CHAKRABORTY",
+        "username": "23f2003481",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003481/{size}/92120_2.png",
+        "created_at": "2026-04-01T12:25:55.663Z",
+        "cooked": "<p>grep -E “su” myauth.log |<br>\ngrep “opened for user.*(student)” |<br>\ncut -d \" \" -f11 |<br>\nwhile read var; do<br>\necho “$val\\n\\n”<br>\ndone</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 4,
+        "updated_at": "2026-04-01T12:25:55.663Z",
+        "reply_count": 1,
+        "reply_to_post_number": 3,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 18,
+        "readers_count": 17,
+        "score": 8.6,
+        "yours": false,
+        "topic_id": 200179,
+        "topic_slug": "doubt-related-to-week-5-ppa-7",
+        "display_username": "SHUBHAM CHAKRABORTY",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 14366,
+          "username": "22f2001554",
+          "name": "Ishan Shishodiya",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21442,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/doubt-related-to-week-5-ppa-7/200179/4",
+        "user_cakedate": "2023-09-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 748022,
+        "name": "Ishan Shishodiya",
+        "username": "22f2001554",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "created_at": "2026-04-01T12:32:28.030Z",
+        "cooked": "<p>Your code doesn’t seem to work the way you showed. Anyways, the issue it that you’re looking for the wrong lines.</p>\n<p>What you’re looking for -</p>\n<pre data-code-wrap=\"txt\"><code class=\"lang-txt\">Jan 21 21:46:27 IITMBSC su: pam_unix(su:session): session opened for user guest by student(uid=1002)\n</code></pre>\n<p>What to actually match -</p>\n<pre data-code-wrap=\"txt\"><code class=\"lang-txt\">Jan 21 21:46:49 IITMBSC su: (to student) student on pts/4\n</code></pre>\n<p>Now try extracting the part inside the brackets in these lines.</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 4,
+        "updated_at": "2026-04-01T12:35:23.206Z",
+        "reply_count": 0,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 17,
+        "readers_count": 16,
+        "score": 18.4,
+        "yours": false,
+        "topic_id": 200179,
+        "topic_slug": "doubt-related-to-week-5-ppa-7",
+        "display_username": "Ishan Shishodiya",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 21442,
+          "username": "23f2003481",
+          "name": "SHUBHAM CHAKRABORTY",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003481/{size}/92120_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 14366,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/doubt-related-to-week-5-ppa-7/200179/5",
+        "user_cakedate": "2022-09-04",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      747604,
+      748009,
+      748019,
+      748022
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      26
+    ],
+    [
+      2,
+      25
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 47,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 6,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 365,
+      "name": "term1-2026",
+      "slug": "term1-2026"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Doubt related to Week 5 PPA 7",
+  "id": 200179,
+  "title": "Doubt related to Week 5 PPA 7",
+  "posts_count": 4,
+  "created_at": "2026-03-31T16:13:42.472Z",
+  "views": 32,
+  "reply_count": 2,
+  "like_count": 1,
+  "last_posted_at": "2026-04-01T12:32:28.030Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "doubt-related-to-week-5-ppa-7",
+  "category_id": 36,
+  "word_count": 209,
+  "deleted_at": null,
+  "user_id": 21442,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/a/0af8581e06dbb61cf4e5475edf012a8315acbe10.png",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_200179",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 5,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 2,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 898,
+      "height": 1023,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/a/0af8581e06dbb61cf4e5475edf012a8315acbe10.png"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "System Command Week - 5 PPA",
+      "id": 30894,
+      "title": "System Command Week - 5 PPA",
+      "slug": "system-command-week-5-ppa",
+      "posts_count": 5,
+      "reply_count": 2,
+      "highest_post_number": 5,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/4/b/4bacf615758bbc8283667f784ef780feb0e182cf_2_1023x601.png",
+      "created_at": "2022-01-27T08:52:21.156Z",
+      "last_posted_at": "2022-01-27T16:07:37.382Z",
+      "bumped": true,
+      "bumped_at": "2022-01-27T16:07:37.382Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 7,
+          "name": "week-5",
+          "slug": "week-5"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 155,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 483,
+            "username": "Mehak",
+            "name": "Mehak",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mehak/{size}/634_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 3806,
+            "username": "Nitish",
+            "name": "Nitish Agarwal",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/nitish/{size}/31377_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 1269,
+            "username": "dream",
+            "name": "Swapnadeep Pradhan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/dream/{size}/12385_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Doubt in PPA 5.6 Of Week 5",
+      "id": 156745,
+      "title": "Doubt in PPA 5.6 Of Week 5",
+      "slug": "doubt-in-ppa-5-6-of-week-5",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/b/2/b2eb4c2e4117a475987c910eaedceafcde64ae68_2_1024x407.png",
+      "created_at": "2024-11-18T06:13:09.633Z",
+      "last_posted_at": "2024-11-18T13:11:15.710Z",
+      "bumped": true,
+      "bumped_at": "2024-11-18T13:11:15.710Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 16,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 19414,
+            "username": "Louis",
+            "name": "Sumedhik Bandyopadhyay",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/louis/{size}/67731_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week 1-5 Refresher PPA 5",
+      "id": 83917,
+      "title": "Week 1-5 Refresher PPA 5",
+      "slug": "week-1-5-refresher-ppa-5",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 5,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/4/64533651aadc02ab92e409b0ac1eb6a0a7444338_2_1024x768.jpeg",
+      "created_at": "2023-04-11T13:07:39.233Z",
+      "last_posted_at": "2024-03-12T14:18:16.688Z",
+      "bumped": true,
+      "bumped_at": "2024-03-12T14:18:16.688Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 75,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 6460,
+            "username": "Utkarsh_Shukla",
+            "name": "Utkarsh Shukla",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/u/6bbea6/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 714,
+            "username": "prass",
+            "name": "Sanjaykumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prass/{size}/40_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 14816,
+            "username": "22f2001125",
+            "name": "Hasmukh Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001125/{size}/16824_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week 1-5 Refresher Problem Solutions",
+      "id": 109594,
+      "title": "Week 1-5 Refresher Problem Solutions",
+      "slug": "week-1-5-refresher-problem-solutions",
+      "posts_count": 6,
+      "reply_count": 4,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2023-11-17T15:51:21.136Z",
+      "last_posted_at": "2023-12-06T05:32:08.885Z",
+      "bumped": true,
+      "bumped_at": "2023-12-06T05:32:08.885Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 7,
+      "views": 123,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 14392,
+            "username": "22f2000627",
+            "name": "Shivani",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2000627/{size}/13055_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 16809,
+            "username": "Parnikaa",
+            "name": "Parnikaa",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/parnikaa/{size}/92888_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 18006,
+            "username": "23f1001897",
+            "name": "Fazlur",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1001897/{size}/77454_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 8725,
+            "username": "22f1000120",
+            "name": "Ritwik Trivedi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000120/{size}/119261_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 12082,
+            "username": "PremKumarGupta",
+            "name": "Prem Kumar Gupta ",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/p/b5ac83/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week 1-5 refresher ppa3",
+      "id": 80641,
+      "title": "Week 1-5 refresher ppa3",
+      "slug": "week-1-5-refresher-ppa3",
+      "posts_count": 11,
+      "reply_count": 8,
+      "highest_post_number": 11,
+      "image_url": null,
+      "created_at": "2023-03-09T02:56:45.405Z",
+      "last_posted_at": "2023-03-13T03:57:14.998Z",
+      "bumped": true,
+      "bumped_at": "2023-03-13T03:57:14.998Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 7,
+          "name": "week-5",
+          "slug": "week-5"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 114,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 9169,
+            "username": "21f3003123",
+            "name": "Lalit Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 714,
+            "username": "prass",
+            "name": "Sanjaykumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prass/{size}/40_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 4233,
+            "username": "srisai",
+            "name": "srinath",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/srisai/{size}/189_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 976,
+            "username": "nikunj_rabadiya",
+            "name": "Rabadiya Nikunj Vinodbhai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/nikunj_rabadiya/{size}/23292_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 3049,
+            "username": "rahul19",
+            "name": "Rahul Pudipeddi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rahul19/{size}/6417_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 5,
+    "username": "22f2001554",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+    "excerpt": "<p>Your code doesn’t seem to work the way you showed. Anyways, the issue it that you’re looking for the wrong lines.</p>\n<p>What you’re looking for -</p>\n<pre data-code-wrap=\"txt\"><code class=\"lang-txt\">Jan 21 21:46:27 IITMBSC su: pam_unix(su:session): session opened for user guest by student(uid=1002)\n</code></pre>\n<p>What to actually match -</p>\n<pre data-code-wrap=\"txt\"><code class=\"lang-txt\">Jan 21 21:46:49 IITMBSC su: (to student) student on pts/4\n</code></pre>\n<p>Now try extracting the part inside the brackets in these lines.</p>",
+    "accepter_name": null,
+    "accepter_username": "23f2003481"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 21442,
+        "username": "23f2003481",
+        "name": "SHUBHAM CHAKRABORTY",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003481/{size}/92120_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 21442,
+      "username": "23f2003481",
+      "name": "SHUBHAM CHAKRABORTY",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003481/{size}/92120_2.png"
+    },
+    "last_poster": {
+      "id": 14366,
+      "username": "22f2001554",
+      "name": "Ishan Shishodiya",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 747604,
+      "name": "SHUBHAM CHAKRABORTY",
+      "username": "23f2003481",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003481/{size}/92120_2.png",
+      "created_at": "2026-03-31T16:13:42.629Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/a/0af8581e06dbb61cf4e5475edf012a8315acbe10.png\" data-download-href=\"/uploads/short-url/1z2QGjfVQKN4iXLWTP7FLTW9gpa.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/a/0af8581e06dbb61cf4e5475edf012a8315acbe10_2_438x500.png\" alt=\"image\" data-base62-sha1=\"1z2QGjfVQKN4iXLWTP7FLTW9gpa\" width=\"438\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/a/0af8581e06dbb61cf4e5475edf012a8315acbe10_2_438x500.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/a/0af8581e06dbb61cf4e5475edf012a8315acbe10_2_657x750.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/a/0af8581e06dbb61cf4e5475edf012a8315acbe10_2_876x1000.png 2x\" data-dominant-color=\"F7F4F5\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">898×1023 43.2 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\nCommand -</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">grep -E \"su\" myauth.log | \ngrep \"opened for user.*(student)\" | \ncut -d \" \" -f11 |\nwhile read var; do\n  echo \"$val\\n\\n\"\ndone\n</code></pre>\n<p>I did this and the output is comming well but because of extra space at bottom it is getting wrong nut i implemented o tried the way i need to use grep and other commands So how can i enhance it more <a class=\"mention\" href=\"/u/hemalatha\">@hemalatha</a>  <a class=\"mention\" href=\"/u/atulps\">@AtulPS</a></p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 4,
+      "updated_at": "2026-04-01T11:49:28.968Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 24,
+      "readers_count": 23,
+      "score": 9.8,
+      "yours": false,
+      "topic_id": 200179,
+      "topic_slug": "doubt-related-to-week-5-ppa-7",
+      "display_username": "SHUBHAM CHAKRABORTY",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21442,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/doubt-related-to-week-5-ppa-7/200179/1",
+      "user_cakedate": "2023-09-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 748009,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-04-01T12:06:30.794Z",
+      "cooked": "<p>Can you reshare your command? The command you shared doesn’t seem to give the output the image you posted shows. I tried to fix the markdown highlighting in your post so it might be the culprit.</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 4,
+      "updated_at": "2026-04-01T12:06:30.794Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 18,
+      "readers_count": 17,
+      "score": 18.6,
+      "yours": false,
+      "topic_id": 200179,
+      "topic_slug": "doubt-related-to-week-5-ppa-7",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/doubt-related-to-week-5-ppa-7/200179/3",
+      "user_cakedate": "2022-09-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 748019,
+      "name": "SHUBHAM CHAKRABORTY",
+      "username": "23f2003481",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003481/{size}/92120_2.png",
+      "created_at": "2026-04-01T12:25:55.663Z",
+      "cooked": "<p>grep -E “su” myauth.log |<br>\ngrep “opened for user.*(student)” |<br>\ncut -d \" \" -f11 |<br>\nwhile read var; do<br>\necho “$val\\n\\n”<br>\ndone</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 4,
+      "updated_at": "2026-04-01T12:25:55.663Z",
+      "reply_count": 1,
+      "reply_to_post_number": 3,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 18,
+      "readers_count": 17,
+      "score": 8.6,
+      "yours": false,
+      "topic_id": 200179,
+      "topic_slug": "doubt-related-to-week-5-ppa-7",
+      "display_username": "SHUBHAM CHAKRABORTY",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21442,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/doubt-related-to-week-5-ppa-7/200179/4",
+      "user_cakedate": "2023-09-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 748022,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-04-01T12:32:28.030Z",
+      "cooked": "<p>Your code doesn’t seem to work the way you showed. Anyways, the issue it that you’re looking for the wrong lines.</p>\n<p>What you’re looking for -</p>\n<pre data-code-wrap=\"txt\"><code class=\"lang-txt\">Jan 21 21:46:27 IITMBSC su: pam_unix(su:session): session opened for user guest by student(uid=1002)\n</code></pre>\n<p>What to actually match -</p>\n<pre data-code-wrap=\"txt\"><code class=\"lang-txt\">Jan 21 21:46:49 IITMBSC su: (to student) student on pts/4\n</code></pre>\n<p>Now try extracting the part inside the brackets in these lines.</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 4,
+      "updated_at": "2026-04-01T12:35:23.206Z",
+      "reply_count": 0,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 17,
+      "readers_count": 16,
+      "score": 18.4,
+      "yours": false,
+      "topic_id": 200179,
+      "topic_slug": "doubt-related-to-week-5-ppa-7",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 21442,
+        "username": "23f2003481",
+        "name": "SHUBHAM CHAKRABORTY",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003481/{size}/92120_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/doubt-related-to-week-5-ppa-7/200179/5",
+      "user_cakedate": "2022-09-04",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    }
+  ]
+}

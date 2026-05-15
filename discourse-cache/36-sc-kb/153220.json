@@ -1,0 +1,2309 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 545268,
+        "name": "Tushar Verma",
+        "username": "TusharVerma",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/t/4af34b/{size}.png",
+        "created_at": "2024-10-22T00:38:06.799Z",
+        "cooked": "<p>Hi,</p>\n<p>Can you please explain why  file1 and file2 are empty when <code>wc</code> fails? This is not the case when <code>wc</code> succeeds. Pls refer to the image below.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/656a7e3a70d210bdc126b1e68db54e51d3455187.png\" data-download-href=\"/uploads/short-url/etanRuXfpE5YPKifyvy3AfDCllZ.png?dl=1\" title=\"Screenshot from 2024-10-22 06-04-26\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/5/656a7e3a70d210bdc126b1e68db54e51d3455187_2_690x388.png\" alt=\"Screenshot from 2024-10-22 06-04-26\" data-base62-sha1=\"etanRuXfpE5YPKifyvy3AfDCllZ\" width=\"690\" height=\"388\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/5/656a7e3a70d210bdc126b1e68db54e51d3455187_2_690x388.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/656a7e3a70d210bdc126b1e68db54e51d3455187.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/656a7e3a70d210bdc126b1e68db54e51d3455187.png 2x\" data-dominant-color=\"333532\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot from 2024-10-22 06-04-26</span><span class=\"informations\">966×544 49.5 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Thanks and regards,<br>\nTushar Verma</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 6,
+        "updated_at": "2024-10-22T07:41:24.931Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 32,
+        "readers_count": 31,
+        "score": 26.4,
+        "yours": false,
+        "topic_id": 153220,
+        "topic_slug": "why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe",
+        "display_username": "Tushar Verma",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 7527,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe/153220/1",
+        "user_cakedate": "2021-09-23",
+        "user_birthdate": "1904-06-07",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 545402,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2024-10-22T07:31:39.468Z",
+        "cooked": "<p>Let me simplify the code to make it easier to understand:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">~ (15) &gt; echo \"hello\" | tee file1 | wc -l\n1\n~ (16) &gt; cat file1\n───────┬─────────────────────────────────────────────────────────────────────────────────────\n       │ File: file1\n───────┼─────────────────────────────────────────────────────────────────────────────────────\n   1   │ hello\n───────┴─────────────────────────────────────────────────────────────────────────────────────\n~ (16) &gt; echo \"hello\" | tee file1 | wc -lo\nwc: invalid option -- 'o'\nTry 'wc --help' for more information.\n                                                                                           1\n~ (16) &gt; cat file1\n───────┬─────────────────────────────────────────────────────────────────────────────────────\n       │ File: file1   &lt;EMPTY&gt;\n───────┴─────────────────────────────────────────────────────────────────────────────────────\n~ (16) &gt;\n</code></pre>\n<p>Pipes send data line by line into the next command. Some command such as <code>grep</code>, <code>sed</code>, <code>wc</code> etc work on a line by line basis, that is, they start processing a line as soon as it comes from the stdin, they do not wait for the entire input to finish and then start. Pipes also are <code>blocking</code> in nature, meaning the sender will wait till the receiver is ready and has received one line to send the next line.</p>\n<p><code>wc</code> when ran with a wrong argument even refuses to read the first line from <code>stdin</code>, which is actually a pipe. It terminates, since the flag used is wrong.</p>\n<p>This sends a <code>SIGPIPE</code> signal from the reader <code>wc</code> to the writer <code>tee</code> of the pipe.<br>\nUsually when a <code>SIGPIPE</code> signal is sent, the process terminates, since it knows that whatever it wants to output, there is no one there to read it (on the right of the pipe).</p>\n<p><code>tee</code> also works line by line, and since it cannot output the first line to its stdout, it doesn’t write it to the files either and terminates.</p>\n<p>Read more about it <a href=\"https://medium.com/@bjlee72/read-and-sigpipe-fe7a6d8c7f78\" rel=\"noopener nofollow ugc\">here</a></p>\n<p>Hope it helps,<br>\nThank you for bringing up good conceptual questions in this forum, hope it helps others too.</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 6,
+        "updated_at": "2024-10-22T07:33:31.358Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 26,
+        "readers_count": 25,
+        "score": 40.2,
+        "yours": false,
+        "topic_id": 153220,
+        "topic_slug": "why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://medium.com/@bjlee72/read-and-sigpipe-fe7a6d8c7f78",
+            "internal": false,
+            "reflection": false,
+            "title": "Read and SIGPIPE. About 20 years ago when I was building… | by Byungjoon Lee | Medium",
+            "clicks": 2
+          }
+        ],
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe/153220/2",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 545410,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2024-10-22T07:41:25.037Z",
+        "cooked": "<p>Added <a class=\"hashtag-cooked\" href=\"/tag/clarification\" data-type=\"tag\" data-slug=\"clarification\" data-id=\"39\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>clarification</span></a></p>",
+        "post_number": 3,
+        "post_type": 3,
+        "posts_count": 6,
+        "updated_at": "2024-10-22T07:41:25.037Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 22,
+        "readers_count": 21,
+        "score": 4.4,
+        "yours": false,
+        "topic_id": 153220,
+        "topic_slug": "why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "action_code": "tags_changed",
+        "post_url": "/t/why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe/153220/3",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 545711,
+        "name": "Tushar Verma",
+        "username": "TusharVerma",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/t/4af34b/{size}.png",
+        "created_at": "2024-10-23T02:38:12.867Z",
+        "cooked": "<p>Thank you for the detailed explanation.</p>\n<aside class=\"quote group-ds-students\" data-username=\"sayan\" data-post=\"2\" data-topic=\"153220\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/48/112713_2.png\" class=\"avatar\"> sayan:</div>\n<blockquote>\n<p><code>wc</code> when ran with a wrong argument even refuses to read the first line from <code>stdin</code>, which is actually a pipe. It terminates, since the flag used is wrong.</p>\n<p>This sends a <code>SIGPIPE</code> signal from the reader <code>wc</code> to the writer <code>tee</code> of the pipe.</p>\n</blockquote>\n</aside>\n<aside class=\"quote group-ds-students\" data-username=\"sayan\" data-post=\"2\" data-topic=\"153220\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/48/112713_2.png\" class=\"avatar\"> sayan:</div>\n<blockquote>\n<p><code>tee</code> also works line by line, and since it cannot output the first line to its stdout, it doesn’t write it to the files either and terminates.</p>\n</blockquote>\n</aside>\n<p>So basically, <code>wc -lo</code> being an invalid command sends SIGPIPE to tee and the process terminates. No lines are read by <code>wc</code>.</p>\n<p><strong>Question1</strong><br>\nHowever for <code>wc -lo</code> to run, <code>tee</code> must finish and send an output (stdout), since these are in a pipe. stdout for <code>tee</code> points to the files and <code>wc</code>. So the files should have data written in them. But they don’t. Why?</p>\n<p><strong>Question2</strong><br>\nSIGPIPE is sent incase of <code>wc -lo</code> but not incase of  <code>ls \\blah</code> i.e, <br><br>\n<code>ls $HOME \\blah | tee file1 file2 |  ls \\blah</code> <br> doesn’t give a SIGPIPE. Files are populated in this case.</p>\n<p>I assume this is because <code>ls</code> ran successfully although it didn’t have anything to show since <code>\\blah</code> doesn’t exist.<br>\nDoes that mean -<br>\n<code>ls: cannot access '\\blah': No  such file or directory</code> <br>is not an error message? It would not have a 0 return code (i think it will have a return code 2). Despite having non-zero return code, SIGPIPE is not sent. Could you pls shed some light on this?</p>\n<p>I hope I could articulate my question well, pls let me know if more info is needed.</p>\n<p>Thanks and regards,<br>\nTushar Verma</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 6,
+        "updated_at": "2024-10-23T02:38:12.867Z",
+        "reply_count": 1,
+        "reply_to_post_number": 2,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 19,
+        "readers_count": 18,
+        "score": 8.8,
+        "yours": false,
+        "topic_id": 153220,
+        "topic_slug": "why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe",
+        "display_username": "Tushar Verma",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 7527,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe/153220/4",
+        "user_cakedate": "2021-09-23",
+        "user_birthdate": "1904-06-07",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 545918,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2024-10-23T11:06:40.682Z",
+        "cooked": "<p>Great doubts.</p>\n<aside class=\"quote group-ds-students\" data-username=\"TusharVerma\" data-post=\"4\" data-topic=\"153220\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/t/4af34b/48.png\" class=\"avatar\"> TusharVerma:</div>\n<blockquote>\n<p><strong>Question1</strong><br>\nHowever for <code>wc -lo</code> to run, <code>tee</code> must finish and send an output (stdout), since these are in a pipe. stdout for <code>tee</code> points to the files and <code>wc</code>. So the files should have data written in them. But they don’t. Why?</p>\n</blockquote>\n</aside>\n<p>Your understanding of pipes is not correct.</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">tee | wc\n</code></pre>\n<p>does not mean <code>tee</code> runs, does its job, finishes, then output everything to <code>wc</code> and <code>wc</code> starts.<br>\nAs I mentioned in my original reply, pipes redirect output line by line, it does not store entire output in memory waiting for the program to finish and then passing on. It is literally as if the command’s output is attached to the next command’s input with a PVC pipe. It does not run one by one in a blocking manner.</p>\n<p>(side note, this is the reason the infamous <a href=\"https://en.wikipedia.org/wiki/Fork_bomb\" rel=\"noopener nofollow ugc\">fork bomb</a> <code>:(){ : | : &amp; }</code> works.)</p>\n<p>Bash runs both the <code>tee</code> command and <code>wc</code> commands, and ties <code>tee</code>’s output to <code>wc</code>’s input. (stdout and stdin).</p>\n<p><code>tee</code> can only run for even one line if the reciever of the pipe (<code>wc</code>) is ready to read the first line.</p>\n<p>You can verify this yourself, or refer to this small demo I came up with:</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7.jpeg\" data-download-href=\"/uploads/short-url/fYWb6RN61ZYRrHA6osI214IUTpd.jpeg?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7_2_668x500.jpeg\" alt=\"image\" data-base62-sha1=\"fYWb6RN61ZYRrHA6osI214IUTpd\" width=\"668\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7_2_668x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7_2_1002x750.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7_2_1336x1000.jpeg 2x\" data-dominant-color=\"252835\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1630×1220 101 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>You can observe that we have created two scripts.<br>\n<code>sender.sh</code> simply prints <span class=\"math\">0</span> to <span class=\"math\">5</span> to the stdout with a one second delay after each number.</p>\n<p>If we run this directly using <code>./sender.sh</code> we see it prints one number at a time.</p>\n<p>If we want to first run <code>sender.sh</code>, get its entire output and then pass it to the <code>receiver.sh</code>, we can run it as follows:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">❯ input=$(./sender.sh)\n❯ ./reciever.sh &lt;&lt;&lt; \"$input\"\n0\n1\n2\n3\n4\n</code></pre>\n<p>Observe that the first command takes 5 seconds with no output, and then the second command runs instantly and prints all the numbers.</p>\n<p>However, now we are redirecting its output to <code>receiver.sh</code>, which is a script that simply prints what came to its <code>stdin</code> to its <code>stdout</code>, its an stream <strong>identity</strong> process.</p>\n<p>But observe that when we run <code>sender.sh | receiver.sh</code> that the output is printing each number one by one,  and not all at once.</p>\n<p>This proves that both the processes are running paralelly, and the fast process automatically is <code>blocked</code> and waits till the slow process produces a new line for the consumer to consume.</p>\n<p>Thus <code>wc</code> does not run after <code>tee</code> is ran, they are run parallely, and as <code>wc</code> has wrong arguments it dies and closes the pipe, this causes <code>tee</code> to die prematurely as no one is reading what it is writing (as per previous reply).</p>\n<aside class=\"quote group-ds-students\" data-username=\"TusharVerma\" data-post=\"4\" data-topic=\"153220\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/t/4af34b/48.png\" class=\"avatar\"> TusharVerma:</div>\n<blockquote>\n<p><strong>Question2</strong><br>\nSIGPIPE is sent incase of <code>wc -lo</code> but not incase of <code>ls \\blah</code> i.e,</p>\n</blockquote>\n</aside>\n<p>It is mostly speed and luck, as I said the processes are run paralelly, so if <code>tee</code> writes the first line before <code>ls</code> sends SIPIPE then it is stored, however if <code>tee</code> is slower than the SIGPIPE sent by <code>ls</code> then it wont write any line to output.</p>\n<p>Try this (and play around with this)</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">~ (17) &gt; for i in {1..10}; do echo $i; sleep 1; done | tee file | ls \\blah\nls: cannot access 'blah': No such file or directory\n                                                                                           2\n~ (17) &gt; cat file\n───────┬─────────────────────────────────────────────────────────────────────────────────────\n       │ File: file   &lt;EMPTY&gt;\n───────┴─────────────────────────────────────────────────────────────────────────────────────\n</code></pre>\n<p>The sender is slow, thus the SIGPIPE stops <code>tee</code> from saving anything.</p>\n<p>However,</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">~ (17) &gt; for i in {1..10}; do echo $i; sleep 1; done | tee file | ls /\nbin   dev  home  lib32  libx32      media  opt   root  sbin  srv  tmp  var\nboot  etc  lib   lib64  lost+found  mnt    proc  run   snap  sys  usr\n~ (17) &gt; cat file\n───────┬─────────────────────────────────────────────────────────────────────────────────────\n       │ File: file\n───────┼─────────────────────────────────────────────────────────────────────────────────────\n   1   │ 1\n───────┴─────────────────────────────────────────────────────────────────────────────────────\n</code></pre>\n<p>Here we are printing all contents of <code>/</code>, which takes some time, so <code>ls</code> terminates after the first <code>1</code> is printed. Observe the script still sleeps for 1 second. but the later numbers are not printed because <code>ls</code> still terminates (<code>ls</code> does not read <code>stdin</code> so it will simply do its job or printing whatever directory is in the args, sucess or error, and then terminate) and when <code>ls</code> terminates again the PIPE is broken so a <code>SIGPIPE</code> is sent to <code>tee</code> and inturn, to the producer, so the for loop stops.</p>\n<p>Hope this clarifies the doubts. These are really interesting doubts and a very common misconception when starting out with shell. Glad these are being discussed.</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 6,
+        "updated_at": "2024-10-23T11:09:22.003Z",
+        "reply_count": 1,
+        "reply_to_post_number": 4,
+        "quote_count": 1,
+        "incoming_link_count": 1,
+        "reads": 14,
+        "readers_count": 13,
+        "score": 57.8,
+        "yours": false,
+        "topic_id": 153220,
+        "topic_slug": "why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Fork_bomb",
+            "internal": false,
+            "reflection": false,
+            "title": "Fork bomb - Wikipedia",
+            "clicks": 0
+          }
+        ],
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 3,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe/153220/5",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 3
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 3,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 549266,
+        "name": "Tushar Verma",
+        "username": "TusharVerma",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/t/4af34b/{size}.png",
+        "created_at": "2024-10-30T14:08:34.609Z",
+        "cooked": "<p>Hi <a class=\"mention\" href=\"/u/sayan\">@sayan</a>,</p>\n<p>Thanks for such detail explanations. Really appreciate it.<br>\nIt’s awesome to know about such intricacies of Linux.</p>\n<p>“The more I learn, the more I realize how much I don’t know.\" <img src=\"https://emoji.discourse-cdn.com/google/slight_smile.png?v=12\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 6,
+        "updated_at": "2024-10-30T14:08:34.609Z",
+        "reply_count": 0,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 8,
+        "readers_count": 7,
+        "score": 16.6,
+        "yours": false,
+        "topic_id": 153220,
+        "topic_slug": "why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe",
+        "display_username": "Tushar Verma",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 7527,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe/153220/6",
+        "user_cakedate": "2021-09-23",
+        "user_birthdate": "1904-06-07",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      545268,
+      545402,
+      545410,
+      545711,
+      545918,
+      549266
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      552
+    ],
+    [
+      4,
+      551
+    ],
+    [
+      5,
+      550
+    ],
+    [
+      6,
+      543
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 48,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 7,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 5,
+      "name": "week-3",
+      "slug": "week-3"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Why does a failing command stop the command before it in pipes? (SIGPIPE)",
+  "id": 153220,
+  "title": "Why does a failing command stop the command before it in pipes? (SIGPIPE)",
+  "posts_count": 6,
+  "created_at": "2024-10-22T00:38:06.591Z",
+  "views": 59,
+  "reply_count": 3,
+  "like_count": 7,
+  "last_posted_at": "2024-10-30T14:08:34.609Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe",
+  "category_id": 36,
+  "word_count": 1388,
+  "deleted_at": null,
+  "user_id": 7527,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/656a7e3a70d210bdc126b1e68db54e51d3455187.png",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_153220",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 6,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 2,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 966,
+      "height": 544,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/656a7e3a70d210bdc126b1e68db54e51d3455187.png"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "Week -3 GrA, Q9",
+      "id": 65834,
+      "title": "Week -3 GrA, Q9",
+      "slug": "week-3-gra-q9",
+      "posts_count": 4,
+      "reply_count": 2,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/9/991a60b8d90c4ce4294667af354d8a0ed0ab6ef0_2_460x1024.jpeg",
+      "created_at": "2022-09-26T02:33:26.641Z",
+      "last_posted_at": "2022-09-26T06:30:17.229Z",
+      "bumped": true,
+      "bumped_at": "2022-09-26T06:30:17.229Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 5,
+          "name": "week-3",
+          "slug": "week-3"
+        },
+        {
+          "id": 28,
+          "name": "graded-question",
+          "slug": "graded-question"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 42,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 7771,
+            "username": "21f1002877",
+            "name": "User",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/58956e/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 12,
+            "username": "santhanakrishnan",
+            "name": "Santhana Krishnan S",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/santhanakrishnan/{size}/179_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Doubt in ls -l and ls | tee",
+      "id": 29158,
+      "title": "Doubt in ls -l and ls | tee",
+      "slug": "doubt-in-ls-l-and-ls-tee",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": null,
+      "created_at": "2022-01-19T14:28:37.567Z",
+      "last_posted_at": "2022-01-19T14:37:17.784Z",
+      "bumped": true,
+      "bumped_at": "2022-01-19T14:37:17.784Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 5,
+          "name": "week-3",
+          "slug": "week-3"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 48,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 2975,
+            "username": "rishikasingh",
+            "name": "Rishika Singh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rishikasingh/{size}/13959_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 12,
+            "username": "santhanakrishnan",
+            "name": "Santhana Krishnan S",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/santhanakrishnan/{size}/179_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Need detailed solution please",
+      "id": 73513,
+      "title": "Need detailed solution please",
+      "slug": "need-detailed-solution-please",
+      "posts_count": 3,
+      "reply_count": 1,
+      "highest_post_number": 3,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/8/a/8a4317039a4165ee5737924e7b05c8d3f12e0856.jpeg",
+      "created_at": "2022-12-12T14:09:11.645Z",
+      "last_posted_at": "2022-12-16T17:06:14.558Z",
+      "bumped": true,
+      "bumped_at": "2022-12-16T17:06:14.558Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 82,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 3800,
+            "username": "satish",
+            "name": "Satish",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/s/aca169/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 12,
+            "username": "santhanakrishnan",
+            "name": "Santhana Krishnan S",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/santhanakrishnan/{size}/179_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 2447,
+            "username": "SSapui",
+            "name": "SANJIB SAPUI",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ssapui/{size}/45_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Doubt about the command",
+      "id": 28774,
+      "title": "Doubt about the command",
+      "slug": "doubt-about-the-command",
+      "posts_count": 4,
+      "reply_count": 2,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/b/2be0728c10975c2c22eae06098f240c334e30df3.png",
+      "created_at": "2022-01-18T03:48:21.702Z",
+      "last_posted_at": "2022-02-20T16:13:57.525Z",
+      "bumped": true,
+      "bumped_at": "2022-02-20T16:13:57.525Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 42,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 3645,
+            "username": "kiran_mk",
+            "name": "Kiran M K",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/k/a698b9/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 1689,
+            "username": "ckg",
+            "name": "Cherian George",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ckg/{size}/19464_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 82,
+            "username": "Yogesh",
+            "name": "Yogesh Kumar",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/y/49beb7/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Writing error and output to same file",
+      "id": 197115,
+      "title": "Writing error and output to same file",
+      "slug": "writing-error-and-output-to-same-file",
+      "posts_count": 4,
+      "reply_count": 1,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/0/405b397725f7e112ccebb9fbfbec8b58449f326c.png",
+      "created_at": "2026-02-24T07:35:11.659Z",
+      "last_posted_at": "2026-02-24T10:54:33.375Z",
+      "bumped": true,
+      "bumped_at": "2026-02-24T10:54:33.375Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 5,
+          "name": "week-3",
+          "slug": "week-3"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 31,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 18728,
+            "username": "23f2001959",
+            "name": "ManIsh k",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2001959/{size}/151852_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 5,
+    "username": "sayan",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+    "excerpt": "<p>Great doubts.</p>\n<aside class=\"quote group-ds-students\" data-username=\"TusharVerma\" data-post=\"4\" data-topic=\"153220\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/t/4af34b/48.png\" class=\"avatar\"> TusharVerma:</div>\n<blockquote>\n<p><strong>Question1</strong><br>\nHowever for <code>wc -lo</code> to run, <code>tee</code> must finish and send an output (stdout), since these are in a pipe. stdout for <code>tee</code> points to the files and <code>wc</code>. So the files should have data written in them. But they don’t. Why?</p>\n</blockquote>\n</aside>\n<p>Your understanding of pipes is not correct.</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">tee | wc\n</code></pre>\n<p>does not mean <code>tee</code> runs, does its job, finishes, then output everything to <code>wc</code> and <code>wc</code> starts.<br>\nAs I mentioned in my original reply, pipes redirect output line by line, it does not store entire output in memory waiting for the program to finish and then passing on. It is literally as if the command’s output is attached to the next command’s input with a PVC pipe. It does not run one by one in a blocking manner.</p>\n<p>(side note, this is the reason the infamous <a href=\"https://en.wikipedia.org/wiki/Fork_bomb\" rel=\"noopener nofollow ugc\">fork bomb</a> <code>:(){ : | : &amp; }</code> works.)</p>\n<p>Bash runs both the <code>tee</code> command and <code>wc</code> commands, and ties <code>tee</code>’s output to <code>wc</code>’s input. (stdout and stdin).</p>\n<p><code>tee</code> can only run for even one line if the reciever of the pipe (<code>wc</code>) is ready to read the first line.</p>\n<p>You can verify this yourself, or refer to this small demo I came up with:</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7.jpeg\" data-download-href=\"/uploads/short-url/fYWb6RN61ZYRrHA6osI214IUTpd.jpeg?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7_2_668x500.jpeg\" alt=\"image\" data-base62-sha1=\"fYWb6RN61ZYRrHA6osI214IUTpd\" width=\"668\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7_2_668x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7_2_1002x750.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7_2_1336x1000.jpeg 2x\" data-dominant-color=\"252835\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1630×1220 101 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>You can observe that we have created two scripts.<br>\n<code>sender.sh</code> simply prints <span class=\"math\">0</span> to <span class=\"math\">5</span> to the stdout with a one second delay after each number.</p>\n<p>If we run this directly using <code>./sender.sh</code> we see it prints one number at a time.</p>\n<p>If we want to first run <code>sender.sh</code>, get its entire output and then pass it to the <code>receiver.sh</code>, we can run it as follows:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">❯ input=$(./sender.sh)\n❯ ./reciever.sh &lt;&lt;&lt; \"$input\"\n0\n1\n2\n3\n4\n</code></pre>\n<p>Observe that the first command takes 5 seconds with no output, and then the second command runs instantly and prints all the numbers.</p>\n<p>However, now we are redirecting its output to <code>receiver.sh</code>, which is a script that simply prints what came to its <code>stdin</code> to its <code>stdout</code>, its an stream <strong>identity</strong> process.</p>\n<p>But observe that when we run <code>sender.sh | receiver.sh</code> that the output is printing each number one by one,  and not all at once.</p>\n<p>This proves that both the processes are running paralelly, and the fast process automatically is <code>blocked</code> and waits till the slow process produces a new line for the consumer to consume.</p>\n<p>Thus <code>wc</code> does not run after <code>tee</code> is ran, they are run parallely, and as <code>wc</code> has wrong arguments it dies and closes the pipe, this causes <code>tee</code> to die prematurely as no one is reading what it is writing (as per previous reply).</p>\n<aside class=\"quote group-ds-students\" data-username=\"TusharVerma\" data-post=\"4\" data-topic=\"153220\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/t/4af34b/48.png\" class=\"avatar\"> TusharVerma:</div>\n<blockquote>\n<p><strong>Question2</strong><br>\nSIGPIPE is sent incase of <code>wc -lo</code> but not incase of <code>ls \\blah</code> i.e,</p>\n</blockquote>\n</aside>\n<p>It is mostly speed and luck, as I said the processes are run paralelly, so if <code>tee</code> writes the first line before <code>ls</code> sends SIPIPE then it is stored, however if <code>tee</code> is slower than the SIGPIPE sent by <code>ls</code> then it wont write any line to output.</p>\n<p>Try this (and play around with this)</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">~ (17) &gt; for i in {1..10}; do echo $i; sleep 1; done | tee file | ls \\blah\nls: cannot access 'blah': No such file or directory\n                                                                                           2\n~ (17) &gt; cat file\n───────┬─────────────────────────────────────────────────────────────────────────────────────\n       │ File: file   &lt;EMPTY&gt;\n───────┴─────────────────────────────────────────────────────────────────────────────────────\n</code></pre>\n<p>The sender is slow, thus the SIGPIPE stops <code>tee</code> from saving anything.</p>\n<p>However,</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">~ (17) &gt; for i in {1..10}; do echo $i; sleep 1; done | tee file | ls /\nbin   dev  home  lib32  libx32      media  opt   root  sbin  srv  tmp  var\nboot  etc  lib   lib64  lost+found  mnt    proc  run   snap  sys  usr\n~ (17) &gt; cat file\n───────┬─────────────────────────────────────────────────────────────────────────────────────\n       │ File: file\n───────┼─────────────────────────────────────────────────────────────────────────────────────\n   1   │ 1\n───────┴─────────────────────────────────────────────────────────────────────────────────────\n</code></pre>\n<p>Here we are printing all contents of <code>/</code>, which takes some time, so <code>ls</code> terminates after the first <code>1</code> is printed. Observe the script still sleeps for 1 second. but the later numbers are not printed because <code>ls</code> still terminates (<code>ls</code> does not read <code>stdin</code> so it will simply do its job or printing whatever directory is in the args, sucess or error, and then terminate) and when <code>ls</code> terminates again the PIPE is broken so a <code>SIGPIPE</code> is sent to <code>tee</code> and inturn, to the producer, so the for loop stops.</p>\n<p>Hope this clarifies the doubts. These are really interesting doubts and a very common misconception when starting out with shell. Glad these are being discussed.</p>",
+    "accepter_name": null,
+    "accepter_username": "somsubhra"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 7527,
+        "username": "TusharVerma",
+        "name": "Tushar Verma",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/t/4af34b/{size}.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "post_count": 2,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      }
+    ],
+    "created_by": {
+      "id": 7527,
+      "username": "TusharVerma",
+      "name": "Tushar Verma",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/t/4af34b/{size}.png"
+    },
+    "last_poster": {
+      "id": 7527,
+      "username": "TusharVerma",
+      "name": "Tushar Verma",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/t/4af34b/{size}.png"
+    },
+    "links": [
+      {
+        "url": "https://medium.com/@bjlee72/read-and-sigpipe-fe7a6d8c7f78",
+        "title": "Read and SIGPIPE. About 20 years ago when I was building… | by Byungjoon Lee | Medium",
+        "internal": false,
+        "attachment": false,
+        "reflection": false,
+        "clicks": 2,
+        "user_id": 348,
+        "domain": "medium.com",
+        "root_domain": "medium.com"
+      }
+    ]
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 545268,
+      "name": "Tushar Verma",
+      "username": "TusharVerma",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/t/4af34b/{size}.png",
+      "created_at": "2024-10-22T00:38:06.799Z",
+      "cooked": "<p>Hi,</p>\n<p>Can you please explain why  file1 and file2 are empty when <code>wc</code> fails? This is not the case when <code>wc</code> succeeds. Pls refer to the image below.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/656a7e3a70d210bdc126b1e68db54e51d3455187.png\" data-download-href=\"/uploads/short-url/etanRuXfpE5YPKifyvy3AfDCllZ.png?dl=1\" title=\"Screenshot from 2024-10-22 06-04-26\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/5/656a7e3a70d210bdc126b1e68db54e51d3455187_2_690x388.png\" alt=\"Screenshot from 2024-10-22 06-04-26\" data-base62-sha1=\"etanRuXfpE5YPKifyvy3AfDCllZ\" width=\"690\" height=\"388\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/5/656a7e3a70d210bdc126b1e68db54e51d3455187_2_690x388.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/656a7e3a70d210bdc126b1e68db54e51d3455187.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/656a7e3a70d210bdc126b1e68db54e51d3455187.png 2x\" data-dominant-color=\"333532\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot from 2024-10-22 06-04-26</span><span class=\"informations\">966×544 49.5 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Thanks and regards,<br>\nTushar Verma</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 6,
+      "updated_at": "2024-10-22T07:41:24.931Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 32,
+      "readers_count": 31,
+      "score": 26.4,
+      "yours": false,
+      "topic_id": 153220,
+      "topic_slug": "why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe",
+      "display_username": "Tushar Verma",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 7527,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe/153220/1",
+      "user_cakedate": "2021-09-23",
+      "user_birthdate": "1904-06-07",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 545402,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2024-10-22T07:31:39.468Z",
+      "cooked": "<p>Let me simplify the code to make it easier to understand:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">~ (15) &gt; echo \"hello\" | tee file1 | wc -l\n1\n~ (16) &gt; cat file1\n───────┬─────────────────────────────────────────────────────────────────────────────────────\n       │ File: file1\n───────┼─────────────────────────────────────────────────────────────────────────────────────\n   1   │ hello\n───────┴─────────────────────────────────────────────────────────────────────────────────────\n~ (16) &gt; echo \"hello\" | tee file1 | wc -lo\nwc: invalid option -- 'o'\nTry 'wc --help' for more information.\n                                                                                           1\n~ (16) &gt; cat file1\n───────┬─────────────────────────────────────────────────────────────────────────────────────\n       │ File: file1   &lt;EMPTY&gt;\n───────┴─────────────────────────────────────────────────────────────────────────────────────\n~ (16) &gt;\n</code></pre>\n<p>Pipes send data line by line into the next command. Some command such as <code>grep</code>, <code>sed</code>, <code>wc</code> etc work on a line by line basis, that is, they start processing a line as soon as it comes from the stdin, they do not wait for the entire input to finish and then start. Pipes also are <code>blocking</code> in nature, meaning the sender will wait till the receiver is ready and has received one line to send the next line.</p>\n<p><code>wc</code> when ran with a wrong argument even refuses to read the first line from <code>stdin</code>, which is actually a pipe. It terminates, since the flag used is wrong.</p>\n<p>This sends a <code>SIGPIPE</code> signal from the reader <code>wc</code> to the writer <code>tee</code> of the pipe.<br>\nUsually when a <code>SIGPIPE</code> signal is sent, the process terminates, since it knows that whatever it wants to output, there is no one there to read it (on the right of the pipe).</p>\n<p><code>tee</code> also works line by line, and since it cannot output the first line to its stdout, it doesn’t write it to the files either and terminates.</p>\n<p>Read more about it <a href=\"https://medium.com/@bjlee72/read-and-sigpipe-fe7a6d8c7f78\" rel=\"noopener nofollow ugc\">here</a></p>\n<p>Hope it helps,<br>\nThank you for bringing up good conceptual questions in this forum, hope it helps others too.</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 6,
+      "updated_at": "2024-10-22T07:33:31.358Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 26,
+      "readers_count": 25,
+      "score": 40.2,
+      "yours": false,
+      "topic_id": 153220,
+      "topic_slug": "why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://medium.com/@bjlee72/read-and-sigpipe-fe7a6d8c7f78",
+          "internal": false,
+          "reflection": false,
+          "title": "Read and SIGPIPE. About 20 years ago when I was building… | by Byungjoon Lee | Medium",
+          "clicks": 2
+        }
+      ],
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe/153220/2",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 545410,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2024-10-22T07:41:25.037Z",
+      "cooked": "<p>Added <a class=\"hashtag-cooked\" href=\"/tag/clarification\" data-type=\"tag\" data-slug=\"clarification\" data-id=\"39\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>clarification</span></a></p>",
+      "post_number": 3,
+      "post_type": 3,
+      "posts_count": 6,
+      "updated_at": "2024-10-22T07:41:25.037Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 22,
+      "readers_count": 21,
+      "score": 4.4,
+      "yours": false,
+      "topic_id": 153220,
+      "topic_slug": "why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "action_code": "tags_changed",
+      "post_url": "/t/why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe/153220/3",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 545711,
+      "name": "Tushar Verma",
+      "username": "TusharVerma",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/t/4af34b/{size}.png",
+      "created_at": "2024-10-23T02:38:12.867Z",
+      "cooked": "<p>Thank you for the detailed explanation.</p>\n<aside class=\"quote group-ds-students\" data-username=\"sayan\" data-post=\"2\" data-topic=\"153220\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/48/112713_2.png\" class=\"avatar\"> sayan:</div>\n<blockquote>\n<p><code>wc</code> when ran with a wrong argument even refuses to read the first line from <code>stdin</code>, which is actually a pipe. It terminates, since the flag used is wrong.</p>\n<p>This sends a <code>SIGPIPE</code> signal from the reader <code>wc</code> to the writer <code>tee</code> of the pipe.</p>\n</blockquote>\n</aside>\n<aside class=\"quote group-ds-students\" data-username=\"sayan\" data-post=\"2\" data-topic=\"153220\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/48/112713_2.png\" class=\"avatar\"> sayan:</div>\n<blockquote>\n<p><code>tee</code> also works line by line, and since it cannot output the first line to its stdout, it doesn’t write it to the files either and terminates.</p>\n</blockquote>\n</aside>\n<p>So basically, <code>wc -lo</code> being an invalid command sends SIGPIPE to tee and the process terminates. No lines are read by <code>wc</code>.</p>\n<p><strong>Question1</strong><br>\nHowever for <code>wc -lo</code> to run, <code>tee</code> must finish and send an output (stdout), since these are in a pipe. stdout for <code>tee</code> points to the files and <code>wc</code>. So the files should have data written in them. But they don’t. Why?</p>\n<p><strong>Question2</strong><br>\nSIGPIPE is sent incase of <code>wc -lo</code> but not incase of  <code>ls \\blah</code> i.e, <br><br>\n<code>ls $HOME \\blah | tee file1 file2 |  ls \\blah</code> <br> doesn’t give a SIGPIPE. Files are populated in this case.</p>\n<p>I assume this is because <code>ls</code> ran successfully although it didn’t have anything to show since <code>\\blah</code> doesn’t exist.<br>\nDoes that mean -<br>\n<code>ls: cannot access '\\blah': No  such file or directory</code> <br>is not an error message? It would not have a 0 return code (i think it will have a return code 2). Despite having non-zero return code, SIGPIPE is not sent. Could you pls shed some light on this?</p>\n<p>I hope I could articulate my question well, pls let me know if more info is needed.</p>\n<p>Thanks and regards,<br>\nTushar Verma</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 6,
+      "updated_at": "2024-10-23T02:38:12.867Z",
+      "reply_count": 1,
+      "reply_to_post_number": 2,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 19,
+      "readers_count": 18,
+      "score": 8.8,
+      "yours": false,
+      "topic_id": 153220,
+      "topic_slug": "why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe",
+      "display_username": "Tushar Verma",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 7527,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe/153220/4",
+      "user_cakedate": "2021-09-23",
+      "user_birthdate": "1904-06-07",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 545918,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2024-10-23T11:06:40.682Z",
+      "cooked": "<p>Great doubts.</p>\n<aside class=\"quote group-ds-students\" data-username=\"TusharVerma\" data-post=\"4\" data-topic=\"153220\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/t/4af34b/48.png\" class=\"avatar\"> TusharVerma:</div>\n<blockquote>\n<p><strong>Question1</strong><br>\nHowever for <code>wc -lo</code> to run, <code>tee</code> must finish and send an output (stdout), since these are in a pipe. stdout for <code>tee</code> points to the files and <code>wc</code>. So the files should have data written in them. But they don’t. Why?</p>\n</blockquote>\n</aside>\n<p>Your understanding of pipes is not correct.</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">tee | wc\n</code></pre>\n<p>does not mean <code>tee</code> runs, does its job, finishes, then output everything to <code>wc</code> and <code>wc</code> starts.<br>\nAs I mentioned in my original reply, pipes redirect output line by line, it does not store entire output in memory waiting for the program to finish and then passing on. It is literally as if the command’s output is attached to the next command’s input with a PVC pipe. It does not run one by one in a blocking manner.</p>\n<p>(side note, this is the reason the infamous <a href=\"https://en.wikipedia.org/wiki/Fork_bomb\" rel=\"noopener nofollow ugc\">fork bomb</a> <code>:(){ : | : &amp; }</code> works.)</p>\n<p>Bash runs both the <code>tee</code> command and <code>wc</code> commands, and ties <code>tee</code>’s output to <code>wc</code>’s input. (stdout and stdin).</p>\n<p><code>tee</code> can only run for even one line if the reciever of the pipe (<code>wc</code>) is ready to read the first line.</p>\n<p>You can verify this yourself, or refer to this small demo I came up with:</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7.jpeg\" data-download-href=\"/uploads/short-url/fYWb6RN61ZYRrHA6osI214IUTpd.jpeg?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7_2_668x500.jpeg\" alt=\"image\" data-base62-sha1=\"fYWb6RN61ZYRrHA6osI214IUTpd\" width=\"668\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7_2_668x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7_2_1002x750.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/0/70040fd6b0e11a2534656a41de9db583d7ffcbb7_2_1336x1000.jpeg 2x\" data-dominant-color=\"252835\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1630×1220 101 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>You can observe that we have created two scripts.<br>\n<code>sender.sh</code> simply prints <span class=\"math\">0</span> to <span class=\"math\">5</span> to the stdout with a one second delay after each number.</p>\n<p>If we run this directly using <code>./sender.sh</code> we see it prints one number at a time.</p>\n<p>If we want to first run <code>sender.sh</code>, get its entire output and then pass it to the <code>receiver.sh</code>, we can run it as follows:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">❯ input=$(./sender.sh)\n❯ ./reciever.sh &lt;&lt;&lt; \"$input\"\n0\n1\n2\n3\n4\n</code></pre>\n<p>Observe that the first command takes 5 seconds with no output, and then the second command runs instantly and prints all the numbers.</p>\n<p>However, now we are redirecting its output to <code>receiver.sh</code>, which is a script that simply prints what came to its <code>stdin</code> to its <code>stdout</code>, its an stream <strong>identity</strong> process.</p>\n<p>But observe that when we run <code>sender.sh | receiver.sh</code> that the output is printing each number one by one,  and not all at once.</p>\n<p>This proves that both the processes are running paralelly, and the fast process automatically is <code>blocked</code> and waits till the slow process produces a new line for the consumer to consume.</p>\n<p>Thus <code>wc</code> does not run after <code>tee</code> is ran, they are run parallely, and as <code>wc</code> has wrong arguments it dies and closes the pipe, this causes <code>tee</code> to die prematurely as no one is reading what it is writing (as per previous reply).</p>\n<aside class=\"quote group-ds-students\" data-username=\"TusharVerma\" data-post=\"4\" data-topic=\"153220\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/t/4af34b/48.png\" class=\"avatar\"> TusharVerma:</div>\n<blockquote>\n<p><strong>Question2</strong><br>\nSIGPIPE is sent incase of <code>wc -lo</code> but not incase of <code>ls \\blah</code> i.e,</p>\n</blockquote>\n</aside>\n<p>It is mostly speed and luck, as I said the processes are run paralelly, so if <code>tee</code> writes the first line before <code>ls</code> sends SIPIPE then it is stored, however if <code>tee</code> is slower than the SIGPIPE sent by <code>ls</code> then it wont write any line to output.</p>\n<p>Try this (and play around with this)</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">~ (17) &gt; for i in {1..10}; do echo $i; sleep 1; done | tee file | ls \\blah\nls: cannot access 'blah': No such file or directory\n                                                                                           2\n~ (17) &gt; cat file\n───────┬─────────────────────────────────────────────────────────────────────────────────────\n       │ File: file   &lt;EMPTY&gt;\n───────┴─────────────────────────────────────────────────────────────────────────────────────\n</code></pre>\n<p>The sender is slow, thus the SIGPIPE stops <code>tee</code> from saving anything.</p>\n<p>However,</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">~ (17) &gt; for i in {1..10}; do echo $i; sleep 1; done | tee file | ls /\nbin   dev  home  lib32  libx32      media  opt   root  sbin  srv  tmp  var\nboot  etc  lib   lib64  lost+found  mnt    proc  run   snap  sys  usr\n~ (17) &gt; cat file\n───────┬─────────────────────────────────────────────────────────────────────────────────────\n       │ File: file\n───────┼─────────────────────────────────────────────────────────────────────────────────────\n   1   │ 1\n───────┴─────────────────────────────────────────────────────────────────────────────────────\n</code></pre>\n<p>Here we are printing all contents of <code>/</code>, which takes some time, so <code>ls</code> terminates after the first <code>1</code> is printed. Observe the script still sleeps for 1 second. but the later numbers are not printed because <code>ls</code> still terminates (<code>ls</code> does not read <code>stdin</code> so it will simply do its job or printing whatever directory is in the args, sucess or error, and then terminate) and when <code>ls</code> terminates again the PIPE is broken so a <code>SIGPIPE</code> is sent to <code>tee</code> and inturn, to the producer, so the for loop stops.</p>\n<p>Hope this clarifies the doubts. These are really interesting doubts and a very common misconception when starting out with shell. Glad these are being discussed.</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 6,
+      "updated_at": "2024-10-23T11:09:22.003Z",
+      "reply_count": 1,
+      "reply_to_post_number": 4,
+      "quote_count": 1,
+      "incoming_link_count": 1,
+      "reads": 14,
+      "readers_count": 13,
+      "score": 57.8,
+      "yours": false,
+      "topic_id": 153220,
+      "topic_slug": "why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Fork_bomb",
+          "internal": false,
+          "reflection": false,
+          "title": "Fork bomb - Wikipedia",
+          "clicks": 0
+        }
+      ],
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 3,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe/153220/5",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 3
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 3,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 549266,
+      "name": "Tushar Verma",
+      "username": "TusharVerma",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/t/4af34b/{size}.png",
+      "created_at": "2024-10-30T14:08:34.609Z",
+      "cooked": "<p>Hi <a class=\"mention\" href=\"/u/sayan\">@sayan</a>,</p>\n<p>Thanks for such detail explanations. Really appreciate it.<br>\nIt’s awesome to know about such intricacies of Linux.</p>\n<p>“The more I learn, the more I realize how much I don’t know.\" <img src=\"https://emoji.discourse-cdn.com/google/slight_smile.png?v=12\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 6,
+      "updated_at": "2024-10-30T14:08:34.609Z",
+      "reply_count": 0,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 8,
+      "readers_count": 7,
+      "score": 16.6,
+      "yours": false,
+      "topic_id": 153220,
+      "topic_slug": "why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe",
+      "display_username": "Tushar Verma",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 7527,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/why-does-a-failing-command-stop-the-command-before-it-in-pipes-sigpipe/153220/6",
+      "user_cakedate": "2021-09-23",
+      "user_birthdate": "1904-06-07",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

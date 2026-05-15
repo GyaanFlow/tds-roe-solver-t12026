@@ -1,0 +1,2456 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 705205,
+        "name": "Tantuvardhan",
+        "username": "24f1002789",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002789/{size}/112079_2.png",
+        "created_at": "2025-12-03T07:18:30.501Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/21f3000759\">@21f3000759</a> <a class=\"mention\" href=\"/u/sayan\">@sayan</a></p>\n<p>Getting error on passing the below script as solution for NPPE 4</p>\n<pre data-code-wrap=\"sed\"><code class=\"lang-sed\">s/Developer/Senior Developer/g\ns/[0-9][0-9],  //\n</code></pre>\n<p>Please help with the solution</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 7,
+        "updated_at": "2025-12-06T09:10:26.456Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 72,
+        "readers_count": 71,
+        "score": 19.4,
+        "yours": false,
+        "topic_id": 192774,
+        "topic_slug": "nppe-4-help",
+        "display_username": "Tantuvardhan",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 5,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 33117,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-4-help/192774/1",
+        "user_cakedate": "2024-06-05",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 705208,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-12-03T07:22:14.722Z",
+        "cooked": "<p>Read the question carefully, the script is run with <code>-n</code> flag.</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 7,
+        "updated_at": "2025-12-03T07:22:14.722Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 71,
+        "readers_count": 70,
+        "score": 14.2,
+        "yours": false,
+        "topic_id": 192774,
+        "topic_slug": "nppe-4-help",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-4-help/192774/2",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 706264,
+        "name": "Janhvi Agarwal",
+        "username": "22f3002799",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/ad7895/{size}.png",
+        "created_at": "2025-12-05T15:58:52.141Z",
+        "cooked": "<p>this is my sed file employees.sed (if any could verify that it contains the correct script)<br>\nand then this is what the vm shows my file contains (it adds an extra backslash)</p>\n<p>and i dont know if this the reason the test cases are failing</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/7/27cc46c77ee1a8070a894693f095fb0dc642327a.jpeg\" data-download-href=\"/uploads/short-url/5G4hsONMlKHO5X8j2wNxCZznEkG.jpeg?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/2/7/27cc46c77ee1a8070a894693f095fb0dc642327a_2_370x499.jpeg\" alt=\"image\" data-base62-sha1=\"5G4hsONMlKHO5X8j2wNxCZznEkG\" width=\"370\" height=\"499\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/2/7/27cc46c77ee1a8070a894693f095fb0dc642327a_2_370x499.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/2/7/27cc46c77ee1a8070a894693f095fb0dc642327a_2_555x748.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/7/27cc46c77ee1a8070a894693f095fb0dc642327a.jpeg 2x\" data-dominant-color=\"353735\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">645×870 126 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 7,
+        "updated_at": "2025-12-06T09:10:04.528Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 22,
+        "readers_count": 21,
+        "score": 4.4,
+        "yours": false,
+        "topic_id": 192774,
+        "topic_slug": "nppe-4-help",
+        "display_username": "Janhvi Agarwal",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 20669,
+        "hidden": false,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-4-help/192774/5",
+        "user_cakedate": "2023-06-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 706071,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-12-05T16:11:09.623Z",
+        "cooked": "<p>Please read the instructions in the question. It is clearly mentioned that your script is called with -n flag. So unless you explicitly print lines, your sed output will be empty.</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 7,
+        "updated_at": "2025-12-06T09:10:04.497Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 102,
+        "readers_count": 101,
+        "score": 40.4,
+        "yours": false,
+        "topic_id": 192774,
+        "topic_slug": "nppe-4-help",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-4-help/192774/6",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 706074,
+        "name": "Farhan",
+        "username": "MohdFarhan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mohdfarhan/{size}/121211_2.png",
+        "created_at": "2025-12-05T16:24:03.283Z",
+        "cooked": "<p>Bro, write your script in employees.sed, then do synchro eval .</p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 7,
+        "updated_at": "2025-12-06T09:10:04.494Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 95,
+        "readers_count": 94,
+        "score": 19,
+        "yours": false,
+        "topic_id": 192774,
+        "topic_slug": "nppe-4-help",
+        "display_username": "Farhan",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 38850,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-4-help/192774/8",
+        "user_cakedate": "2024-09-26",
+        "user_birthdate": "1904-02-09",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 706154,
+        "name": "Meesam Malik Khursheed Ahmed",
+        "username": "22f1001620",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/aca169/{size}.png",
+        "created_at": "2025-12-06T05:40:41.230Z",
+        "cooked": "<p>did you get the solution</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 7,
+        "updated_at": "2025-12-06T09:10:04.492Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 75,
+        "readers_count": 74,
+        "score": 15,
+        "yours": false,
+        "topic_id": 192774,
+        "topic_slug": "nppe-4-help",
+        "display_username": "Meesam Malik Khursheed Ahmed",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 13982,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-4-help/192774/9",
+        "user_cakedate": "2022-08-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 706417,
+        "name": "Prakhar Arora",
+        "username": "22f3000671",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000671/{size}/148470_2.png",
+        "created_at": "2025-12-06T14:49:19.696Z",
+        "cooked": "<p>Dear student,</p>\n<p>The most common problem student face here, is that the sed command is used as <code>sed -n</code> meaning no implicit printing. Try printing the pattern space yourself, most probably this is what is causing the issue.</p>\n<p>REMARK: IN EXAMINATION PAY ATTENTION TO ALL THE SMALL DETAILS:</p>\n<ol>\n<li>HOW THE SCRIPT IS GOING TO RUN?</li>\n<li>WHERE IS THE INPUT COMING FROM, stdin or input file in pwd or cmd line arguments?</li>\n<li>WHERE TO SHOW OUTPUT, stdout or print to a file?</li>\n<li>DOES ERROR NEED TO BE REDIRECTED SOMEWHERE?<br>\nand many other subtle informations.</li>\n</ol>\n<p>Even if your logic or script is right but you haven’t taken this into account, a few of your test cases will fail. So pay attention here.</p>\n<p>All the best!</p>\n<p>Thank you<br>\nPrakahr Arora<br>\nTeching Assistant for System Commands</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 7,
+        "updated_at": "2025-12-06T14:49:19.696Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 31,
+        "readers_count": 30,
+        "score": 6.2,
+        "yours": false,
+        "topic_id": 192774,
+        "topic_slug": "nppe-4-help",
+        "display_username": "Prakhar Arora",
+        "primary_group_name": "ds-students",
+        "flair_name": null,
+        "flair_url": null,
+        "flair_bg_color": null,
+        "flair_color": null,
+        "flair_group_id": null,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16301,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-4-help/192774/12",
+        "user_cakedate": "2023-01-26",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      705205,
+      705208,
+      706264,
+      706071,
+      706074,
+      706154,
+      706417
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      145
+    ],
+    [
+      3,
+      142
+    ],
+    [
+      7,
+      141
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 48,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 7,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 364,
+      "name": "term3-2025",
+      "slug": "term3-2025"
+    },
+    {
+      "id": 206,
+      "name": "oppe",
+      "slug": "oppe"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "NPPE 4 help",
+  "id": 192774,
+  "title": "NPPE 4 help",
+  "posts_count": 7,
+  "created_at": "2025-12-03T07:18:30.206Z",
+  "views": 114,
+  "reply_count": 1,
+  "like_count": 2,
+  "last_posted_at": "2025-12-06T14:49:19.696Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "nppe-4-help",
+  "category_id": 36,
+  "word_count": 276,
+  "deleted_at": null,
+  "user_id": 33117,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": null,
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_192774",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 12,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 6,
+  "show_read_indicator": false,
+  "thumbnails": null,
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "Help understanding the issue in NPPE 4",
+      "id": 184532,
+      "title": "Help understanding the issue in NPPE 4",
+      "slug": "help-understanding-the-issue-in-nppe-4",
+      "posts_count": 14,
+      "reply_count": 9,
+      "highest_post_number": 15,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/b/8/b84e277189c3b8d52f402af904a23856a5fd7710_2_853x1024.png",
+      "created_at": "2025-08-10T06:08:56.967Z",
+      "last_posted_at": "2025-08-16T12:42:38.422Z",
+      "bumped": true,
+      "bumped_at": "2025-08-16T12:42:38.422Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 294,
+          "name": "nppe",
+          "slug": "nppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 11,
+      "views": 146,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 25461,
+            "username": "23f3003513",
+            "name": "Aniruddha Jagdale",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003513/{size}/68296_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 21545,
+            "username": "praneeth31",
+            "name": "Thumula Praneeth Rao",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/praneeth31/{size}/67560_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 16751,
+            "username": "22f3002925",
+            "name": "sandeepkumar sudhakar surkute",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Nppe 2.2.1.1",
+      "id": 158201,
+      "title": "Nppe 2.2.1.1",
+      "slug": "nppe-2-2-1-1",
+      "posts_count": 4,
+      "reply_count": 2,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/b/ebc3f2214de9fa9d8aec120fff79e996ce7348d9_2_1024x99.png",
+      "created_at": "2024-12-06T07:45:55.080Z",
+      "last_posted_at": "2024-12-07T04:28:59.350Z",
+      "bumped": true,
+      "bumped_at": "2024-12-07T04:28:59.350Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 294,
+          "name": "nppe",
+          "slug": "nppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 92,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 21449,
+            "username": "23f2003824",
+            "name": "Shrijan kumar ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003824/{size}/68148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Nppe_4 solution",
+      "id": 184956,
+      "title": "Nppe_4 solution",
+      "slug": "nppe-4-solution",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": null,
+      "created_at": "2025-08-15T17:09:24.979Z",
+      "last_posted_at": "2025-08-15T18:57:03.556Z",
+      "bumped": true,
+      "bumped_at": "2025-08-15T18:57:03.556Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 294,
+          "name": "nppe",
+          "slug": "nppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 86,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 29768,
+            "username": "Jhanavi",
+            "name": "JHANAVI K C",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jhanavi/{size}/75383_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "NPPE: solution code general syntax",
+      "id": 111552,
+      "title": "NPPE: solution code general syntax",
+      "slug": "nppe-solution-code-general-syntax",
+      "posts_count": 8,
+      "reply_count": 6,
+      "highest_post_number": 8,
+      "image_url": null,
+      "created_at": "2023-12-09T03:05:38.256Z",
+      "last_posted_at": "2023-12-09T12:32:35.806Z",
+      "bumped": true,
+      "bumped_at": "2023-12-09T12:32:35.806Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 294,
+          "name": "nppe",
+          "slug": "nppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 9,
+      "views": 72,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 9038,
+            "username": "21f3002157",
+            "name": "Aparna Arun",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3002157/{size}/13890_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 6234,
+            "username": "21f200858_MananT",
+            "name": "Manan Tilwani",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f200858_manant/{size}/1103_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 7974,
+            "username": "Arun2",
+            "name": "Arun",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/arun2/{size}/27130_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 14054,
+            "username": "michael",
+            "name": "Almichael Raza",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/michael/{size}/46318_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "NPPE scripts not getting evaluated. How to resolve",
+      "id": 170998,
+      "title": "NPPE scripts not getting evaluated. How to resolve",
+      "slug": "nppe-scripts-not-getting-evaluated-how-to-resolve",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/4/9/4925a20f8fbb8b1035afd6c80216a898ea72eb23_2_1024x576.jpeg",
+      "created_at": "2025-03-26T11:44:07.244Z",
+      "last_posted_at": "2025-03-26T12:38:32.605Z",
+      "bumped": true,
+      "bumped_at": "2025-03-26T12:38:32.605Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 39,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 18617,
+            "username": "Shashwat1107",
+            "name": "Shashwat",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/shashwat1107/{size}/66894_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 12,
+    "username": "22f3000671",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000671/{size}/148470_2.png",
+    "excerpt": "<p>Dear student,</p>\n<p>The most common problem student face here, is that the sed command is used as <code>sed -n</code> meaning no implicit printing. Try printing the pattern space yourself, most probably this is what is causing the issue.</p>\n<p>REMARK: IN EXAMINATION PAY ATTENTION TO ALL THE SMALL DETAILS:</p>\n<ol>\n<li>HOW THE SCRIPT IS GOING TO RUN?</li>\n<li>WHERE IS THE INPUT COMING FROM, stdin or input file in pwd or cmd line arguments?</li>\n<li>WHERE TO SHOW OUTPUT, stdout or print to a file?</li>\n<li>DOES ERROR NEED TO BE REDIRECTED SOMEWHERE?<br>\nand many other subtle informations.</li>\n</ol>\n<p>Even if your logic or script is right but you haven’t taken this into account, a few of your test cases will fail. So pay attention here.</p>\n<p>All the best!</p>\n<p>Thank you<br>\nPrakahr Arora<br>\nTeching Assistant for System Commands</p>",
+    "accepter_name": null,
+    "accepter_username": "21f3000759"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "post_count": 2,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      },
+      {
+        "id": 16301,
+        "username": "22f3000671",
+        "name": "Prakhar Arora",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000671/{size}/148470_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": null,
+        "flair_url": null,
+        "flair_color": null,
+        "flair_bg_color": null,
+        "flair_group_id": null,
+        "trust_level": 1
+      },
+      {
+        "id": 20669,
+        "username": "22f3002799",
+        "name": "Janhvi Agarwal",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/ad7895/{size}.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      },
+      {
+        "id": 33117,
+        "username": "24f1002789",
+        "name": "Tantuvardhan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002789/{size}/112079_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 13982,
+        "username": "22f1001620",
+        "name": "Meesam Malik Khursheed Ahmed",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/aca169/{size}.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 38850,
+        "username": "MohdFarhan",
+        "name": "Farhan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mohdfarhan/{size}/121211_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 33117,
+      "username": "24f1002789",
+      "name": "Tantuvardhan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002789/{size}/112079_2.png"
+    },
+    "last_poster": {
+      "id": 16301,
+      "username": "22f3000671",
+      "name": "Prakhar Arora",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000671/{size}/148470_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 705205,
+      "name": "Tantuvardhan",
+      "username": "24f1002789",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002789/{size}/112079_2.png",
+      "created_at": "2025-12-03T07:18:30.501Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/21f3000759\">@21f3000759</a> <a class=\"mention\" href=\"/u/sayan\">@sayan</a></p>\n<p>Getting error on passing the below script as solution for NPPE 4</p>\n<pre data-code-wrap=\"sed\"><code class=\"lang-sed\">s/Developer/Senior Developer/g\ns/[0-9][0-9],  //\n</code></pre>\n<p>Please help with the solution</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 7,
+      "updated_at": "2025-12-06T09:10:26.456Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 72,
+      "readers_count": 71,
+      "score": 19.4,
+      "yours": false,
+      "topic_id": 192774,
+      "topic_slug": "nppe-4-help",
+      "display_username": "Tantuvardhan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 5,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 33117,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-4-help/192774/1",
+      "user_cakedate": "2024-06-05",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 705208,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-12-03T07:22:14.722Z",
+      "cooked": "<p>Read the question carefully, the script is run with <code>-n</code> flag.</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 7,
+      "updated_at": "2025-12-03T07:22:14.722Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 71,
+      "readers_count": 70,
+      "score": 14.2,
+      "yours": false,
+      "topic_id": 192774,
+      "topic_slug": "nppe-4-help",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-4-help/192774/2",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 706264,
+      "name": "Janhvi Agarwal",
+      "username": "22f3002799",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/ad7895/{size}.png",
+      "created_at": "2025-12-05T15:58:52.141Z",
+      "cooked": "<p>this is my sed file employees.sed (if any could verify that it contains the correct script)<br>\nand then this is what the vm shows my file contains (it adds an extra backslash)</p>\n<p>and i dont know if this the reason the test cases are failing</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/7/27cc46c77ee1a8070a894693f095fb0dc642327a.jpeg\" data-download-href=\"/uploads/short-url/5G4hsONMlKHO5X8j2wNxCZznEkG.jpeg?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/2/7/27cc46c77ee1a8070a894693f095fb0dc642327a_2_370x499.jpeg\" alt=\"image\" data-base62-sha1=\"5G4hsONMlKHO5X8j2wNxCZznEkG\" width=\"370\" height=\"499\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/2/7/27cc46c77ee1a8070a894693f095fb0dc642327a_2_370x499.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/2/7/27cc46c77ee1a8070a894693f095fb0dc642327a_2_555x748.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/7/27cc46c77ee1a8070a894693f095fb0dc642327a.jpeg 2x\" data-dominant-color=\"353735\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">645×870 126 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 7,
+      "updated_at": "2025-12-06T09:10:04.528Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 22,
+      "readers_count": 21,
+      "score": 4.4,
+      "yours": false,
+      "topic_id": 192774,
+      "topic_slug": "nppe-4-help",
+      "display_username": "Janhvi Agarwal",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 20669,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-4-help/192774/5",
+      "user_cakedate": "2023-06-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 706071,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-12-05T16:11:09.623Z",
+      "cooked": "<p>Please read the instructions in the question. It is clearly mentioned that your script is called with -n flag. So unless you explicitly print lines, your sed output will be empty.</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 7,
+      "updated_at": "2025-12-06T09:10:04.497Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 102,
+      "readers_count": 101,
+      "score": 40.4,
+      "yours": false,
+      "topic_id": 192774,
+      "topic_slug": "nppe-4-help",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-4-help/192774/6",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 706074,
+      "name": "Farhan",
+      "username": "MohdFarhan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mohdfarhan/{size}/121211_2.png",
+      "created_at": "2025-12-05T16:24:03.283Z",
+      "cooked": "<p>Bro, write your script in employees.sed, then do synchro eval .</p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 7,
+      "updated_at": "2025-12-06T09:10:04.494Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 95,
+      "readers_count": 94,
+      "score": 19,
+      "yours": false,
+      "topic_id": 192774,
+      "topic_slug": "nppe-4-help",
+      "display_username": "Farhan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 38850,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-4-help/192774/8",
+      "user_cakedate": "2024-09-26",
+      "user_birthdate": "1904-02-09",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 706154,
+      "name": "Meesam Malik Khursheed Ahmed",
+      "username": "22f1001620",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/aca169/{size}.png",
+      "created_at": "2025-12-06T05:40:41.230Z",
+      "cooked": "<p>did you get the solution</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 7,
+      "updated_at": "2025-12-06T09:10:04.492Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 75,
+      "readers_count": 74,
+      "score": 15,
+      "yours": false,
+      "topic_id": 192774,
+      "topic_slug": "nppe-4-help",
+      "display_username": "Meesam Malik Khursheed Ahmed",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13982,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-4-help/192774/9",
+      "user_cakedate": "2022-08-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 706417,
+      "name": "Prakhar Arora",
+      "username": "22f3000671",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000671/{size}/148470_2.png",
+      "created_at": "2025-12-06T14:49:19.696Z",
+      "cooked": "<p>Dear student,</p>\n<p>The most common problem student face here, is that the sed command is used as <code>sed -n</code> meaning no implicit printing. Try printing the pattern space yourself, most probably this is what is causing the issue.</p>\n<p>REMARK: IN EXAMINATION PAY ATTENTION TO ALL THE SMALL DETAILS:</p>\n<ol>\n<li>HOW THE SCRIPT IS GOING TO RUN?</li>\n<li>WHERE IS THE INPUT COMING FROM, stdin or input file in pwd or cmd line arguments?</li>\n<li>WHERE TO SHOW OUTPUT, stdout or print to a file?</li>\n<li>DOES ERROR NEED TO BE REDIRECTED SOMEWHERE?<br>\nand many other subtle informations.</li>\n</ol>\n<p>Even if your logic or script is right but you haven’t taken this into account, a few of your test cases will fail. So pay attention here.</p>\n<p>All the best!</p>\n<p>Thank you<br>\nPrakahr Arora<br>\nTeching Assistant for System Commands</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 7,
+      "updated_at": "2025-12-06T14:49:19.696Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 31,
+      "readers_count": 30,
+      "score": 6.2,
+      "yours": false,
+      "topic_id": 192774,
+      "topic_slug": "nppe-4-help",
+      "display_username": "Prakhar Arora",
+      "primary_group_name": "ds-students",
+      "flair_name": null,
+      "flair_url": null,
+      "flair_bg_color": null,
+      "flair_color": null,
+      "flair_group_id": null,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16301,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-4-help/192774/12",
+      "user_cakedate": "2023-01-26",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    }
+  ]
+}

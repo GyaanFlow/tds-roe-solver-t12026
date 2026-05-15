@@ -1,0 +1,4286 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 500632,
+        "name": "Pritish Bhapkar",
+        "username": "Pritish",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png",
+        "created_at": "2024-07-13T14:34:32.720Z",
+        "cooked": "<p>Hello,</p>\n<p>I have a concern regarding the Biweekly Practice Tests (BPT) for the system commands course.</p>\n<p>Due to some login issues and project commitments, I forgot to submit the first two BPTs. I recently received an email stating the eligibility criteria for the end term exam: an average score of at least 40/100 from the best 7 out of the first 9 weekly assessments (objective and programming) and successfully attempting at least 3 out of the first 4 BPTs.</p>\n<p>Upon checking the grading document, I see that there are 5 BPTs scheduled as follows: June 15, June 29, July 13, July 27, and August 10, 2024.</p>\n<p>My concern is:</p>\n<ol>\n<li>If I submit the last 3 BPTs, will I still be eligible for the end term exam?</li>\n<li>The first two BPTs are still accessible, and I can submit them even though the deadline has passed. If I provide correct answers, will these submissions count towards my eligibility?</li>\n</ol>\n<p>Thank you for your assistance.</p>\n<p>Best regards,<br>\nPritish</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-07-27T02:11:23.022Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 12,
+        "reads": 269,
+        "readers_count": 268,
+        "score": 173.8,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Pritish Bhapkar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 3,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 4,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 32745,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/1",
+        "user_cakedate": "2024-06-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 4
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 4,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 500698,
+        "name": "Pritish Bhapkar",
+        "username": "Pritish",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png",
+        "created_at": "2024-07-13T17:29:45.735Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a> <a class=\"mention\" href=\"/u/sushil1\">@sushil1</a> could you please help me with above concerns?</p>\n<p>In grading document, I see that there are 5 BPTs scheduled so it possible that 3 out of 5 will be considered for eligibility instead of 3 out of  4?</p>\n<p>As mentioned above, first two BPT are still accessible even though it’s deadline is passed, so that I submitted both the BPT Today(after deadline). Could one of it considered?</p>\n<p>Now I will complete remaining 3 BPT within stipulated time frame.</p>\n<p>Thank you,<br>\nPritish</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-07-13T17:29:45.735Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 234,
+        "readers_count": 233,
+        "score": 66.8,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Pritish Bhapkar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 32745,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/2",
+        "user_cakedate": "2024-06-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 500742,
+        "name": "Yash Rastogi",
+        "username": "22F3002354",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+        "created_at": "2024-07-14T02:11:50.889Z",
+        "cooked": "<p>Can you move this to the System Commands course category.<br>\nDo submit all the BPTs regardless of the resolution taken.</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-07-14T02:11:50.889Z",
+        "reply_count": 1,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 219,
+        "readers_count": 218,
+        "score": 48.8,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Yash Rastogi",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 32745,
+          "username": "Pritish",
+          "name": "Pritish Bhapkar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 17065,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/3",
+        "user_cakedate": "2023-04-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 500751,
+        "name": "Pritish Bhapkar",
+        "username": "Pritish",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png",
+        "created_at": "2024-07-14T02:58:48.231Z",
+        "cooked": "<p>From <a class=\"hashtag-cooked\" href=\"/c/general/75\" data-type=\"category\" data-slug=\"general\" data-id=\"75\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>General</span></a> to <a class=\"hashtag-cooked\" href=\"/c/courses/sc-kb/36\" data-type=\"category\" data-slug=\"sc-kb\" data-id=\"36\" data-ref=\"courses:sc-kb\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>System Commands</span></a></p>",
+        "post_number": 4,
+        "post_type": 3,
+        "posts_count": 21,
+        "updated_at": "2024-07-14T02:58:48.231Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 207,
+        "readers_count": 206,
+        "score": 41.4,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Pritish Bhapkar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 32745,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "action_code": "category_changed",
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/4",
+        "user_cakedate": "2024-06-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 500752,
+        "name": "Pritish Bhapkar",
+        "username": "Pritish",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png",
+        "created_at": "2024-07-14T02:58:48.378Z",
+        "cooked": "<p>Removed <a class=\"hashtag-cooked\" href=\"/tag/system-commands\" data-type=\"tag\" data-slug=\"system-commands\" data-id=\"273\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>system-commands</span></a></p>",
+        "post_number": 5,
+        "post_type": 3,
+        "posts_count": 21,
+        "updated_at": "2024-07-14T02:58:48.378Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 205,
+        "readers_count": 204,
+        "score": 41,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Pritish Bhapkar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 32745,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "action_code": "tags_changed",
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/5",
+        "user_cakedate": "2024-06-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 500755,
+        "name": "Pritish Bhapkar",
+        "username": "Pritish",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png",
+        "created_at": "2024-07-14T03:02:32.990Z",
+        "cooked": "<p>What about the deadline and criteria as mentioned above, is it considered as first submission of initial 2 BPT’s was not done before deadline?</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-07-14T03:02:32.990Z",
+        "reply_count": 0,
+        "reply_to_post_number": 3,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 199,
+        "readers_count": 198,
+        "score": 39.8,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Pritish Bhapkar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 17065,
+          "username": "22F3002354",
+          "name": "Yash Rastogi",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 32745,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/6",
+        "user_cakedate": "2024-06-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 501063,
+        "name": "Pritish Bhapkar",
+        "username": "Pritish",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png",
+        "created_at": "2024-07-14T15:19:23.757Z",
+        "cooked": "<p>Hello <a class=\"mention\" href=\"/u/sushil1\">@sushil1</a> ,</p>\n<p>Could you please look into this?</p>\n<p>Thanking you,<br>\nPritish</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-07-14T15:19:23.757Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 191,
+        "readers_count": 190,
+        "score": 58.2,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Pritish Bhapkar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 32745,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/7",
+        "user_cakedate": "2024-06-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 501780,
+        "name": "Akash Kumar",
+        "username": "akashkunwar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/akashkunwar/{size}/45300_2.png",
+        "created_at": "2024-07-15T13:24:43.665Z",
+        "cooked": "<p>I missed the initial BPT notifications for the System Commands course due to my heavy course load, projects, and a full-time internship. I only saw the BPT 3 email recently and realized that we need to complete 3 out of 4 BPTs to qualify for the end-term exam.</p>\n<p>I suggest updating future BPT notifications in the announcement section or clearly on the portal since many students, including myself, miss these emails due to the high volume.</p>\n<p>I assure you I will complete the remaining BPTs. Please consider making an exception this one time to allow students like me and many more who didn’t attempt last 2 BPTs to meet the criteria with just 2 BPTs instead of 3 or consider any 3 BPTs from 5 BPTs so can become eligible.</p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-07-16T02:40:22.543Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 4,
+        "reads": 167,
+        "readers_count": 166,
+        "score": 158.4,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Akash Kumar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 3,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 7,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 14172,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/8",
+        "user_cakedate": "2022-09-02",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 7
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 7,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 501545,
+        "name": "Pansuriya Tarang Bharatbhai ",
+        "username": "tarang96",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tarang96/{size}/101402_2.png",
+        "created_at": "2024-07-15T13:39:57.548Z",
+        "cooked": "<p>tagging TA  <a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a>  Sir.</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-07-16T02:40:22.507Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 184,
+        "readers_count": 183,
+        "score": 66.8,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Pansuriya Tarang Bharatbhai ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 1172,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/9",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-05-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 501798,
+        "name": "Gayathri",
+        "username": "gayathri_srinii",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/gayathri_srinii/{size}/105662_2.png",
+        "created_at": "2024-07-15T16:16:23.797Z",
+        "cooked": "<p>This is to inform about a situation regarding the BPT tests for the IIT course.</p>\n<p>Due to unforeseen circumstances, my friends and I were unable to attend the first two BPTs. We understand that it is mandatory to attend any 3 out of the first 4 BPTs, and we are concerned about fulfilling this requirement.</p>\n<p>We kindly request ann assistance in addressing this situation. We are committed to completing the necessary assessments and would appreciate any guidance or options you can provide to help us meet the course requirements.</p>\n<p>Please assist me by replying or you can email me to my official ID.</p>\n<p>Gayathri Srinivasan<br>\n21f3002753</p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-07-16T02:55:03.063Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 163,
+        "readers_count": 162,
+        "score": 77.6,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Gayathri",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 3,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 14955,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/10",
+        "user_cakedate": "2022-09-09",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 3
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 3,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 501718,
+        "name": "Hareesh Raveendran",
+        "username": "21f3002487",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3002487/{size}/14275_2.png",
+        "created_at": "2024-07-15T18:23:57.740Z",
+        "cooked": "<p>Same here. I missed the emails for the first two due to the sheer volume I got during that time. An announcement on the course page itself like for graded assignments would be greatly appreciated as we are not logged into the VM all the time. I hope an exception will be made for this term.</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-07-16T02:55:03.027Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 3,
+        "reads": 166,
+        "readers_count": 165,
+        "score": 63.2,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Hareesh Raveendran",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 8051,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/11",
+        "user_cakedate": "2021-12-28",
+        "user_birthdate": "1904-09-12",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 501777,
+        "name": "Akshay",
+        "username": "22f3000876",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/898d66/{size}.png",
+        "created_at": "2024-07-16T02:10:05.086Z",
+        "cooked": "<p>I too missed 2 BPTs Sir</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-07-16T02:55:03.026Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 158,
+        "readers_count": 157,
+        "score": 46.6,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Akshay",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 3,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 17380,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/12",
+        "user_cakedate": "2023-06-03",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 501778,
+        "name": "Akshay",
+        "username": "22f3000876",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/898d66/{size}.png",
+        "created_at": "2024-07-16T02:13:07.626Z",
+        "cooked": "<p>I Blindly Followed Grading Document of System Commands , Where deadline for BPTs is Different from Mailed deadlines</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-07-16T02:55:03.024Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 158,
+        "readers_count": 157,
+        "score": 31.6,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Akshay",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 17380,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/13",
+        "user_cakedate": "2023-06-03",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 501785,
+        "name": "Discourse Staff",
+        "username": "pds_staff",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pds_staff/{size}/71791_2.png",
+        "created_at": "2024-07-16T02:48:11.232Z",
+        "cooked": "<p>Added <a class=\"hashtag-cooked\" href=\"/tag/bpt\" data-type=\"tag\" data-slug=\"bpt\" data-id=\"338\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>bpt</span></a>, <a class=\"hashtag-cooked\" href=\"/tag/grading\" data-type=\"tag\" data-slug=\"grading\" data-id=\"319\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>grading</span></a>, <a class=\"hashtag-cooked\" href=\"/tag/operational\" data-type=\"tag\" data-slug=\"operational\" data-id=\"37\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>operational</span></a> and removed <a class=\"hashtag-cooked\" href=\"/tag/clarification\" data-type=\"tag\" data-slug=\"clarification\" data-id=\"39\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>clarification</span></a></p>",
+        "post_number": 14,
+        "post_type": 3,
+        "posts_count": 21,
+        "updated_at": "2024-07-16T02:55:03.022Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 153,
+        "readers_count": 152,
+        "score": 35.6,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Discourse Staff",
+        "primary_group_name": null,
+        "flair_name": null,
+        "flair_url": null,
+        "flair_bg_color": null,
+        "flair_color": null,
+        "flair_group_id": null,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "pod-admin",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": true,
+        "admin": true,
+        "staff": true,
+        "user_id": 13670,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "action_code": "tags_changed",
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/14",
+        "user_cakedate": "2022-05-17",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 501923,
+        "name": "Akash Kumar",
+        "username": "akashkunwar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/akashkunwar/{size}/45300_2.png",
+        "created_at": "2024-07-16T07:11:28.805Z",
+        "cooked": "<p>Many people including me missed first 2 BPTs because of new it’s new concept please consider 3 from all 5 BPTs rather than from first 4 BPTs for the first and last time.</p>",
+        "post_number": 15,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-07-16T07:11:28.805Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 150,
+        "readers_count": 149,
+        "score": 35,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Akash Kumar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 14172,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/15",
+        "user_cakedate": "2022-09-02",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 504118,
+        "name": "Pankaj",
+        "username": "22f2000310",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2000310/{size}/13977_2.png",
+        "created_at": "2024-07-20T19:05:49.098Z",
+        "cooked": "<p>I also missed BPT 1 and 2</p>",
+        "post_number": 16,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-07-20T19:05:49.098Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 114,
+        "readers_count": 113,
+        "score": 22.8,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Pankaj",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 13996,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/16",
+        "user_cakedate": "2022-08-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 506253,
+        "name": "Harshita Juneja",
+        "username": "junejaharshita",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/junejaharshita/{size}/16824_2.png",
+        "created_at": "2024-07-26T18:16:10.100Z",
+        "cooked": "<p>Please I request to consider the eligibility criteria for end term in system commands. Due to overwhelming emails I missed my first two BPTs and according to the criteria I won’t be able to sit in end term. Please it will be of great help if you re-consider the criteria and make it to 3 out of 5 BPTs instead of 3 out of first 4BPTs.<br>\nThankyou</p>",
+        "post_number": 17,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-07-27T02:10:42.760Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 99,
+        "readers_count": 98,
+        "score": 49.8,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Harshita Juneja",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 13239,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/17",
+        "user_cakedate": "2022-05-03",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 509660,
+        "name": "Yash Rastogi",
+        "username": "22F3002354",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+        "created_at": "2024-08-02T04:38:57.474Z",
+        "cooked": "<p>A post was merged into an existing topic: <a href=\"/t/missed-all-bpt/141566/3\">Missed all BPT</a></p>",
+        "post_number": 18,
+        "post_type": 3,
+        "posts_count": 21,
+        "updated_at": "2024-08-02T04:38:57.474Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 86,
+        "readers_count": 85,
+        "score": 17.2,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Yash Rastogi",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/missed-all-bpt/141566/3",
+            "internal": true,
+            "reflection": false,
+            "title": "Missed all BPT",
+            "clicks": 2
+          }
+        ],
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 17065,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "action_code": "split_topic",
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/18",
+        "user_cakedate": "2023-04-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 511197,
+        "name": "Yash Rastogi",
+        "username": "22F3002354",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+        "created_at": "2024-08-06T07:46:39.804Z",
+        "cooked": "<p>The end term eligibility criteria is now any 3 out of the 5 BPTs.</p>",
+        "post_number": 19,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2024-08-06T07:46:39.804Z",
+        "reply_count": 0,
+        "reply_to_post_number": 15,
+        "quote_count": 0,
+        "incoming_link_count": 3,
+        "reads": 72,
+        "readers_count": 71,
+        "score": 59.4,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Yash Rastogi",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 14172,
+          "username": "akashkunwar",
+          "name": "Akash Kumar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/akashkunwar/{size}/45300_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 17065,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/19",
+        "user_cakedate": "2023-04-27",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          },
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 745055,
+        "name": "Sharvesh Gopal",
+        "username": "sharvesh279",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/s/ee7513/{size}.png",
+        "created_at": "2026-03-27T16:45:32.235Z",
+        "cooked": "<p>What happened after that? Did anything change? Cuz I am in the same situation right now.</p>",
+        "post_number": 20,
+        "post_type": 1,
+        "posts_count": 21,
+        "updated_at": "2026-03-27T16:45:32.235Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 24,
+        "readers_count": 23,
+        "score": 9.8,
+        "yours": false,
+        "topic_id": 139625,
+        "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+        "display_username": "Sharvesh Gopal",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 59202,
+        "hidden": false,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/20",
+        "user_cakedate": "2026-03-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      500632,
+      500698,
+      500742,
+      500751,
+      500752,
+      500755,
+      501063,
+      501780,
+      501545,
+      501798,
+      501718,
+      501777,
+      501778,
+      501785,
+      501923,
+      504118,
+      506253,
+      509660,
+      511197,
+      745055,
+      745069
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      652
+    ],
+    [
+      7,
+      651
+    ],
+    [
+      8,
+      650
+    ],
+    [
+      16,
+      645
+    ],
+    [
+      17,
+      639
+    ],
+    [
+      18,
+      633
+    ],
+    [
+      19,
+      629
+    ],
+    [
+      20,
+      30
+    ]
+  ],
+  "tags": [
+    {
+      "id": 37,
+      "name": "operational",
+      "slug": "operational"
+    },
+    {
+      "id": 319,
+      "name": "grading",
+      "slug": "grading"
+    },
+    {
+      "id": 338,
+      "name": "bpt",
+      "slug": "bpt"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Missed initial BPT | Requesting for Change in End term eligibility",
+  "id": 139625,
+  "title": "Missed initial BPT | Requesting for Change in End term eligibility",
+  "posts_count": 21,
+  "created_at": "2024-07-13T14:34:32.637Z",
+  "views": 415,
+  "reply_count": 4,
+  "like_count": 24,
+  "last_posted_at": "2026-03-27T17:12:20.366Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+  "category_id": 36,
+  "word_count": 849,
+  "deleted_at": null,
+  "user_id": 32745,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": null,
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_139625",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 21,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 11,
+  "show_read_indicator": false,
+  "thumbnails": null,
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": null,
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 19,
+    "username": "22F3002354",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+    "excerpt": "<p>The end term eligibility criteria is now any 3 out of the 5 BPTs.</p>",
+    "accepter_name": null,
+    "accepter_username": "Pritish"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 32745,
+        "username": "Pritish",
+        "name": "Pritish Bhapkar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png",
+        "post_count": 4,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 17380,
+        "username": "22f3000876",
+        "name": "Akshay",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/898d66/{size}.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 17065,
+        "username": "22F3002354",
+        "name": "Yash Rastogi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 14172,
+        "username": "akashkunwar",
+        "name": "Akash Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/akashkunwar/{size}/45300_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 14955,
+        "username": "gayathri_srinii",
+        "name": "Gayathri",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/gayathri_srinii/{size}/105662_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 1172,
+        "username": "tarang96",
+        "name": "Pansuriya Tarang Bharatbhai ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tarang96/{size}/101402_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 8051,
+        "username": "21f3002487",
+        "name": "Hareesh Raveendran",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3002487/{size}/14275_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 13996,
+        "username": "22f2000310",
+        "name": "Pankaj",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2000310/{size}/13977_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 13239,
+        "username": "junejaharshita",
+        "name": "Harshita Juneja",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/junejaharshita/{size}/16824_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 59202,
+        "username": "sharvesh279",
+        "name": "Sharvesh Gopal",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/s/ee7513/{size}.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      }
+    ],
+    "created_by": {
+      "id": 32745,
+      "username": "Pritish",
+      "name": "Pritish Bhapkar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png"
+    },
+    "last_poster": {
+      "id": 14366,
+      "username": "22f2001554",
+      "name": "Ishan Shishodiya",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+    },
+    "links": [
+      {
+        "url": "https://discourse.onlinedegree.iitm.ac.in/t/missed-all-bpt/141566/3",
+        "title": "Missed all BPT",
+        "internal": true,
+        "attachment": false,
+        "reflection": false,
+        "clicks": 2,
+        "user_id": 17065,
+        "domain": "discourse.onlinedegree.iitm.ac.in",
+        "root_domain": "iitm.ac.in"
+      }
+    ]
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 500632,
+      "name": "Pritish Bhapkar",
+      "username": "Pritish",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png",
+      "created_at": "2024-07-13T14:34:32.720Z",
+      "cooked": "<p>Hello,</p>\n<p>I have a concern regarding the Biweekly Practice Tests (BPT) for the system commands course.</p>\n<p>Due to some login issues and project commitments, I forgot to submit the first two BPTs. I recently received an email stating the eligibility criteria for the end term exam: an average score of at least 40/100 from the best 7 out of the first 9 weekly assessments (objective and programming) and successfully attempting at least 3 out of the first 4 BPTs.</p>\n<p>Upon checking the grading document, I see that there are 5 BPTs scheduled as follows: June 15, June 29, July 13, July 27, and August 10, 2024.</p>\n<p>My concern is:</p>\n<ol>\n<li>If I submit the last 3 BPTs, will I still be eligible for the end term exam?</li>\n<li>The first two BPTs are still accessible, and I can submit them even though the deadline has passed. If I provide correct answers, will these submissions count towards my eligibility?</li>\n</ol>\n<p>Thank you for your assistance.</p>\n<p>Best regards,<br>\nPritish</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-07-27T02:11:23.022Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 12,
+      "reads": 269,
+      "readers_count": 268,
+      "score": 173.8,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Pritish Bhapkar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 4,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 32745,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/1",
+      "user_cakedate": "2024-06-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 4
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 4,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 500698,
+      "name": "Pritish Bhapkar",
+      "username": "Pritish",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png",
+      "created_at": "2024-07-13T17:29:45.735Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a> <a class=\"mention\" href=\"/u/sushil1\">@sushil1</a> could you please help me with above concerns?</p>\n<p>In grading document, I see that there are 5 BPTs scheduled so it possible that 3 out of 5 will be considered for eligibility instead of 3 out of  4?</p>\n<p>As mentioned above, first two BPT are still accessible even though it’s deadline is passed, so that I submitted both the BPT Today(after deadline). Could one of it considered?</p>\n<p>Now I will complete remaining 3 BPT within stipulated time frame.</p>\n<p>Thank you,<br>\nPritish</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-07-13T17:29:45.735Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 234,
+      "readers_count": 233,
+      "score": 66.8,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Pritish Bhapkar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 32745,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/2",
+      "user_cakedate": "2024-06-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 500742,
+      "name": "Yash Rastogi",
+      "username": "22F3002354",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+      "created_at": "2024-07-14T02:11:50.889Z",
+      "cooked": "<p>Can you move this to the System Commands course category.<br>\nDo submit all the BPTs regardless of the resolution taken.</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-07-14T02:11:50.889Z",
+      "reply_count": 1,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 219,
+      "readers_count": 218,
+      "score": 48.8,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Yash Rastogi",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 32745,
+        "username": "Pritish",
+        "name": "Pritish Bhapkar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17065,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/3",
+      "user_cakedate": "2023-04-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 500751,
+      "name": "Pritish Bhapkar",
+      "username": "Pritish",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png",
+      "created_at": "2024-07-14T02:58:48.231Z",
+      "cooked": "<p>From <a class=\"hashtag-cooked\" href=\"/c/general/75\" data-type=\"category\" data-slug=\"general\" data-id=\"75\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>General</span></a> to <a class=\"hashtag-cooked\" href=\"/c/courses/sc-kb/36\" data-type=\"category\" data-slug=\"sc-kb\" data-id=\"36\" data-ref=\"courses:sc-kb\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>System Commands</span></a></p>",
+      "post_number": 4,
+      "post_type": 3,
+      "posts_count": 21,
+      "updated_at": "2024-07-14T02:58:48.231Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 207,
+      "readers_count": 206,
+      "score": 41.4,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Pritish Bhapkar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 32745,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "action_code": "category_changed",
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/4",
+      "user_cakedate": "2024-06-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 500752,
+      "name": "Pritish Bhapkar",
+      "username": "Pritish",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png",
+      "created_at": "2024-07-14T02:58:48.378Z",
+      "cooked": "<p>Removed <a class=\"hashtag-cooked\" href=\"/tag/system-commands\" data-type=\"tag\" data-slug=\"system-commands\" data-id=\"273\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>system-commands</span></a></p>",
+      "post_number": 5,
+      "post_type": 3,
+      "posts_count": 21,
+      "updated_at": "2024-07-14T02:58:48.378Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 205,
+      "readers_count": 204,
+      "score": 41,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Pritish Bhapkar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 32745,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "action_code": "tags_changed",
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/5",
+      "user_cakedate": "2024-06-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 500755,
+      "name": "Pritish Bhapkar",
+      "username": "Pritish",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png",
+      "created_at": "2024-07-14T03:02:32.990Z",
+      "cooked": "<p>What about the deadline and criteria as mentioned above, is it considered as first submission of initial 2 BPT’s was not done before deadline?</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-07-14T03:02:32.990Z",
+      "reply_count": 0,
+      "reply_to_post_number": 3,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 199,
+      "readers_count": 198,
+      "score": 39.8,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Pritish Bhapkar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 17065,
+        "username": "22F3002354",
+        "name": "Yash Rastogi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 32745,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/6",
+      "user_cakedate": "2024-06-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 501063,
+      "name": "Pritish Bhapkar",
+      "username": "Pritish",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritish/{size}/81489_2.png",
+      "created_at": "2024-07-14T15:19:23.757Z",
+      "cooked": "<p>Hello <a class=\"mention\" href=\"/u/sushil1\">@sushil1</a> ,</p>\n<p>Could you please look into this?</p>\n<p>Thanking you,<br>\nPritish</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-07-14T15:19:23.757Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 191,
+      "readers_count": 190,
+      "score": 58.2,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Pritish Bhapkar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 32745,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/7",
+      "user_cakedate": "2024-06-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 501780,
+      "name": "Akash Kumar",
+      "username": "akashkunwar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/akashkunwar/{size}/45300_2.png",
+      "created_at": "2024-07-15T13:24:43.665Z",
+      "cooked": "<p>I missed the initial BPT notifications for the System Commands course due to my heavy course load, projects, and a full-time internship. I only saw the BPT 3 email recently and realized that we need to complete 3 out of 4 BPTs to qualify for the end-term exam.</p>\n<p>I suggest updating future BPT notifications in the announcement section or clearly on the portal since many students, including myself, miss these emails due to the high volume.</p>\n<p>I assure you I will complete the remaining BPTs. Please consider making an exception this one time to allow students like me and many more who didn’t attempt last 2 BPTs to meet the criteria with just 2 BPTs instead of 3 or consider any 3 BPTs from 5 BPTs so can become eligible.</p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-07-16T02:40:22.543Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 4,
+      "reads": 167,
+      "readers_count": 166,
+      "score": 158.4,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Akash Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 7,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14172,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/8",
+      "user_cakedate": "2022-09-02",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 7
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 7,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 501545,
+      "name": "Pansuriya Tarang Bharatbhai ",
+      "username": "tarang96",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tarang96/{size}/101402_2.png",
+      "created_at": "2024-07-15T13:39:57.548Z",
+      "cooked": "<p>tagging TA  <a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a>  Sir.</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-07-16T02:40:22.507Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 184,
+      "readers_count": 183,
+      "score": 66.8,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Pansuriya Tarang Bharatbhai ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 1172,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/9",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-05-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 501798,
+      "name": "Gayathri",
+      "username": "gayathri_srinii",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/gayathri_srinii/{size}/105662_2.png",
+      "created_at": "2024-07-15T16:16:23.797Z",
+      "cooked": "<p>This is to inform about a situation regarding the BPT tests for the IIT course.</p>\n<p>Due to unforeseen circumstances, my friends and I were unable to attend the first two BPTs. We understand that it is mandatory to attend any 3 out of the first 4 BPTs, and we are concerned about fulfilling this requirement.</p>\n<p>We kindly request ann assistance in addressing this situation. We are committed to completing the necessary assessments and would appreciate any guidance or options you can provide to help us meet the course requirements.</p>\n<p>Please assist me by replying or you can email me to my official ID.</p>\n<p>Gayathri Srinivasan<br>\n21f3002753</p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-07-16T02:55:03.063Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 163,
+      "readers_count": 162,
+      "score": 77.6,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Gayathri",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 3,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14955,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/10",
+      "user_cakedate": "2022-09-09",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 3
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 3,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 501718,
+      "name": "Hareesh Raveendran",
+      "username": "21f3002487",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3002487/{size}/14275_2.png",
+      "created_at": "2024-07-15T18:23:57.740Z",
+      "cooked": "<p>Same here. I missed the emails for the first two due to the sheer volume I got during that time. An announcement on the course page itself like for graded assignments would be greatly appreciated as we are not logged into the VM all the time. I hope an exception will be made for this term.</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-07-16T02:55:03.027Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 3,
+      "reads": 166,
+      "readers_count": 165,
+      "score": 63.2,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Hareesh Raveendran",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8051,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/11",
+      "user_cakedate": "2021-12-28",
+      "user_birthdate": "1904-09-12",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 501777,
+      "name": "Akshay",
+      "username": "22f3000876",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/898d66/{size}.png",
+      "created_at": "2024-07-16T02:10:05.086Z",
+      "cooked": "<p>I too missed 2 BPTs Sir</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-07-16T02:55:03.026Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 158,
+      "readers_count": 157,
+      "score": 46.6,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Akshay",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17380,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/12",
+      "user_cakedate": "2023-06-03",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 501778,
+      "name": "Akshay",
+      "username": "22f3000876",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/898d66/{size}.png",
+      "created_at": "2024-07-16T02:13:07.626Z",
+      "cooked": "<p>I Blindly Followed Grading Document of System Commands , Where deadline for BPTs is Different from Mailed deadlines</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-07-16T02:55:03.024Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 158,
+      "readers_count": 157,
+      "score": 31.6,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Akshay",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17380,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/13",
+      "user_cakedate": "2023-06-03",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 501785,
+      "name": "Discourse Staff",
+      "username": "pds_staff",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pds_staff/{size}/71791_2.png",
+      "created_at": "2024-07-16T02:48:11.232Z",
+      "cooked": "<p>Added <a class=\"hashtag-cooked\" href=\"/tag/bpt\" data-type=\"tag\" data-slug=\"bpt\" data-id=\"338\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>bpt</span></a>, <a class=\"hashtag-cooked\" href=\"/tag/grading\" data-type=\"tag\" data-slug=\"grading\" data-id=\"319\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>grading</span></a>, <a class=\"hashtag-cooked\" href=\"/tag/operational\" data-type=\"tag\" data-slug=\"operational\" data-id=\"37\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>operational</span></a> and removed <a class=\"hashtag-cooked\" href=\"/tag/clarification\" data-type=\"tag\" data-slug=\"clarification\" data-id=\"39\"><span class=\"hashtag-icon-placeholder\"><svg class=\"fa d-icon d-icon-square-full svg-icon svg-node\"><use href=\"#square-full\"></use></svg></span><span>clarification</span></a></p>",
+      "post_number": 14,
+      "post_type": 3,
+      "posts_count": 21,
+      "updated_at": "2024-07-16T02:55:03.022Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 153,
+      "readers_count": 152,
+      "score": 35.6,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Discourse Staff",
+      "primary_group_name": null,
+      "flair_name": null,
+      "flair_url": null,
+      "flair_bg_color": null,
+      "flair_color": null,
+      "flair_group_id": null,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "pod-admin",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": true,
+      "admin": true,
+      "staff": true,
+      "user_id": 13670,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "action_code": "tags_changed",
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/14",
+      "user_cakedate": "2022-05-17",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 501923,
+      "name": "Akash Kumar",
+      "username": "akashkunwar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/akashkunwar/{size}/45300_2.png",
+      "created_at": "2024-07-16T07:11:28.805Z",
+      "cooked": "<p>Many people including me missed first 2 BPTs because of new it’s new concept please consider 3 from all 5 BPTs rather than from first 4 BPTs for the first and last time.</p>",
+      "post_number": 15,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-07-16T07:11:28.805Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 150,
+      "readers_count": 149,
+      "score": 35,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Akash Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14172,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/15",
+      "user_cakedate": "2022-09-02",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 504118,
+      "name": "Pankaj",
+      "username": "22f2000310",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2000310/{size}/13977_2.png",
+      "created_at": "2024-07-20T19:05:49.098Z",
+      "cooked": "<p>I also missed BPT 1 and 2</p>",
+      "post_number": 16,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-07-20T19:05:49.098Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 114,
+      "readers_count": 113,
+      "score": 22.8,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Pankaj",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13996,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/16",
+      "user_cakedate": "2022-08-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 506253,
+      "name": "Harshita Juneja",
+      "username": "junejaharshita",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/junejaharshita/{size}/16824_2.png",
+      "created_at": "2024-07-26T18:16:10.100Z",
+      "cooked": "<p>Please I request to consider the eligibility criteria for end term in system commands. Due to overwhelming emails I missed my first two BPTs and according to the criteria I won’t be able to sit in end term. Please it will be of great help if you re-consider the criteria and make it to 3 out of 5 BPTs instead of 3 out of first 4BPTs.<br>\nThankyou</p>",
+      "post_number": 17,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-07-27T02:10:42.760Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 99,
+      "readers_count": 98,
+      "score": 49.8,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Harshita Juneja",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13239,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/17",
+      "user_cakedate": "2022-05-03",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 509660,
+      "name": "Yash Rastogi",
+      "username": "22F3002354",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+      "created_at": "2024-08-02T04:38:57.474Z",
+      "cooked": "<p>A post was merged into an existing topic: <a href=\"/t/missed-all-bpt/141566/3\">Missed all BPT</a></p>",
+      "post_number": 18,
+      "post_type": 3,
+      "posts_count": 21,
+      "updated_at": "2024-08-02T04:38:57.474Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 86,
+      "readers_count": 85,
+      "score": 17.2,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Yash Rastogi",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/missed-all-bpt/141566/3",
+          "internal": true,
+          "reflection": false,
+          "title": "Missed all BPT",
+          "clicks": 2
+        }
+      ],
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17065,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "action_code": "split_topic",
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/18",
+      "user_cakedate": "2023-04-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 511197,
+      "name": "Yash Rastogi",
+      "username": "22F3002354",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+      "created_at": "2024-08-06T07:46:39.804Z",
+      "cooked": "<p>The end term eligibility criteria is now any 3 out of the 5 BPTs.</p>",
+      "post_number": 19,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2024-08-06T07:46:39.804Z",
+      "reply_count": 0,
+      "reply_to_post_number": 15,
+      "quote_count": 0,
+      "incoming_link_count": 3,
+      "reads": 72,
+      "readers_count": 71,
+      "score": 59.4,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Yash Rastogi",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 14172,
+        "username": "akashkunwar",
+        "name": "Akash Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/akashkunwar/{size}/45300_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17065,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/19",
+      "user_cakedate": "2023-04-27",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        },
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 745055,
+      "name": "Sharvesh Gopal",
+      "username": "sharvesh279",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/s/ee7513/{size}.png",
+      "created_at": "2026-03-27T16:45:32.235Z",
+      "cooked": "<p>What happened after that? Did anything change? Cuz I am in the same situation right now.</p>",
+      "post_number": 20,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2026-03-27T16:45:32.235Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 24,
+      "readers_count": 23,
+      "score": 9.8,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Sharvesh Gopal",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 59202,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/20",
+      "user_cakedate": "2026-03-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 745069,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-03-27T17:12:20.366Z",
+      "cooked": "<p>The end term eligibility criteria only depends on Weekly Assignments now. BPTs are for OPPE eligibility. If your average for the first three BPTs is less than 40% then you won’t be eligible for the OPPE and will have to retake the OPPE next term.</p>",
+      "post_number": 21,
+      "post_type": 1,
+      "posts_count": 21,
+      "updated_at": "2026-03-27T17:12:20.366Z",
+      "reply_count": 0,
+      "reply_to_post_number": 20,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 24,
+      "readers_count": 23,
+      "score": 4.8,
+      "yours": false,
+      "topic_id": 139625,
+      "topic_slug": "missed-initial-bpt-requesting-for-change-in-end-term-eligibility",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 59202,
+        "username": "sharvesh279",
+        "name": "Sharvesh Gopal",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/s/ee7513/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/missed-initial-bpt-requesting-for-change-in-end-term-eligibility/139625/21",
+      "user_cakedate": "2022-09-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

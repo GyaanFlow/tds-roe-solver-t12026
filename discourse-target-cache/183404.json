@@ -1,0 +1,2863 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 656484,
+        "name": "Adul P R",
+        "username": "24f1000965",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1000965/{size}/67139_2.png",
+        "created_at": "2025-07-27T19:44:39.167Z",
+        "cooked": "<p>Could you please explain these question from week 7 GA, why its aggregation and not filtering in Q 3,4,13,14.<br>\nwhen there is a if condition its obviously filtering the elements from rest with the provided condition. please explain why aggregation is correct else please provide marks for the respective option .</p>\n<p><a class=\"mention\" href=\"/u/kubra_7\">@kubra_7</a> <a class=\"mention\" href=\"/u/livin\">@livin</a> <a class=\"mention\" href=\"/u/manidipa2001\">@Manidipa2001</a> <a class=\"mention\" href=\"/u/piyushw\">@PiyushW</a></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/e/5e4bedf3950237e5efd9d074946aa5a7338153b1.png\" data-download-href=\"/uploads/short-url/dsbyKg7DuOFR1AkYrm59cNcaoLv.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/e/5e4bedf3950237e5efd9d074946aa5a7338153b1_2_523x500.png\" alt=\"image\" data-base62-sha1=\"dsbyKg7DuOFR1AkYrm59cNcaoLv\" width=\"523\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/e/5e4bedf3950237e5efd9d074946aa5a7338153b1_2_523x500.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/e/5e4bedf3950237e5efd9d074946aa5a7338153b1_2_784x750.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/e/5e4bedf3950237e5efd9d074946aa5a7338153b1.png 2x\" data-dominant-color=\"FDFDFD\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1023×978 23 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/b/ab361aa6994f33ec0e84bad9bf362f631b6756be.png\" data-download-href=\"/uploads/short-url/oqBz1GTPOpLvizIH1pnk65OLuEe.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/b/ab361aa6994f33ec0e84bad9bf362f631b6756be_2_359x500.png\" alt=\"image\" data-base62-sha1=\"oqBz1GTPOpLvizIH1pnk65OLuEe\" width=\"359\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/b/ab361aa6994f33ec0e84bad9bf362f631b6756be_2_359x500.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/b/ab361aa6994f33ec0e84bad9bf362f631b6756be_2_538x750.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/b/ab361aa6994f33ec0e84bad9bf362f631b6756be.png 2x\" data-dominant-color=\"FCFCFC\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">673×935 19.9 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-27T19:44:39.167Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 41,
+        "readers_count": 40,
+        "score": 13.2,
+        "yours": false,
+        "topic_id": 183404,
+        "topic_slug": "week-7-ga-doubts",
+        "display_username": "Adul P R",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 27872,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/week-7-ga-doubts/183404/1",
+        "user_cakedate": "2024-02-20",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 656533,
+        "name": "Livin Nector",
+        "username": "livin",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png",
+        "created_at": "2025-07-28T04:15:01.102Z",
+        "cooked": "<p>Filtering is a task were the input is a list of values and the output is another list of values with some values selected based on a criteria.</p>\n<p>It has to be filtering and aggregation.</p>\n<p>If we break it down both the function, we are filtering the list and then getting the first/last element of the list which is aggregation, will update those.</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-28T04:15:01.102Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 31,
+        "readers_count": 30,
+        "score": 11.2,
+        "yours": false,
+        "topic_id": 183404,
+        "topic_slug": "week-7-ga-doubts",
+        "display_username": "Livin Nector",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course_Team",
+        "title_is_group": true,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21370,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/week-7-ga-doubts/183404/2",
+        "user_cakedate": "2023-08-11",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 656602,
+        "name": "Diptanshu Suraj dube",
+        "username": "24f3000618",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+        "created_at": "2025-07-28T06:11:38.141Z",
+        "cooked": "<p>then why are not partially correct?<br>\n<a class=\"mention\" href=\"/u/livin\">@livin</a></p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-28T06:12:24.404Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 27,
+        "readers_count": 26,
+        "score": 10.4,
+        "yours": false,
+        "topic_id": 183404,
+        "topic_slug": "week-7-ga-doubts",
+        "display_username": "Diptanshu Suraj dube",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 38103,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/week-7-ga-doubts/183404/3",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 656604,
+        "name": "Livin Nector",
+        "username": "livin",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png",
+        "created_at": "2025-07-28T06:13:02.042Z",
+        "cooked": "<p>It should be, we will update the answer.</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-28T06:13:02.042Z",
+        "reply_count": 2,
+        "reply_to_post_number": 3,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 26,
+        "readers_count": 25,
+        "score": 15.2,
+        "yours": false,
+        "topic_id": 183404,
+        "topic_slug": "week-7-ga-doubts",
+        "display_username": "Livin Nector",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course_Team",
+        "title_is_group": true,
+        "reply_to_user": {
+          "id": 38103,
+          "username": "24f3000618",
+          "name": "Diptanshu Suraj dube",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21370,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/week-7-ga-doubts/183404/4",
+        "user_cakedate": "2023-08-11",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 656608,
+        "name": "Diptanshu Suraj dube",
+        "username": "24f3000618",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+        "created_at": "2025-07-28T06:14:43.372Z",
+        "cooked": "<p>ok thank you for your help</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-28T06:14:43.372Z",
+        "reply_count": 0,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 2,
+        "reads": 25,
+        "readers_count": 24,
+        "score": 15,
+        "yours": false,
+        "topic_id": 183404,
+        "topic_slug": "week-7-ga-doubts",
+        "display_username": "Diptanshu Suraj dube",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 21370,
+          "username": "livin",
+          "name": "Livin Nector",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 38103,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/week-7-ga-doubts/183404/5",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 657626,
+        "name": "Adul P R",
+        "username": "24f1000965",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1000965/{size}/67139_2.png",
+        "created_at": "2025-07-29T19:45:17.328Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/livin\">@livin</a> you didn’t update for question 3 and question 4 !</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-29T19:45:17.328Z",
+        "reply_count": 0,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 24,
+        "readers_count": 23,
+        "score": 4.8,
+        "yours": false,
+        "topic_id": 183404,
+        "topic_slug": "week-7-ga-doubts",
+        "display_username": "Adul P R",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 21370,
+          "username": "livin",
+          "name": "Livin Nector",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 27872,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/week-7-ga-doubts/183404/6",
+        "user_cakedate": "2024-02-20",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 659149,
+        "name": "Om Narayan Singh",
+        "username": "22f2001266",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png",
+        "created_at": "2025-08-02T07:38:00.585Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/livin\">@livin</a> Sir , According to me, getting the first / last element is not combining (aggregating) multiple values into one by taking into account all the values like sum ,max etc.  Isn’t it just selection based on index rather than aggregation of multiple inputs ?</p>\n<p>Please clarify am I wrong?</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-08-02T07:38:00.585Z",
+        "reply_count": 2,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 23,
+        "readers_count": 22,
+        "score": 14.6,
+        "yours": false,
+        "topic_id": 183404,
+        "topic_slug": "week-7-ga-doubts",
+        "display_username": "Om Narayan Singh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 21370,
+          "username": "livin",
+          "name": "Livin Nector",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 14104,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/week-7-ga-doubts/183404/7",
+        "user_cakedate": "2022-09-02",
+        "user_birthdate": "1904-07-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 659987,
+        "name": "Om Narayan Singh",
+        "username": "22f2001266",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png",
+        "created_at": "2025-08-04T21:44:34.174Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/livin\">@livin</a> Please if you can explain and clarify my doubt, it would be great.</p>\n<p>I also posted about these doubts in my post but did not get any response.</p>\n<aside class=\"quote quote-modified\" data-post=\"1\" data-topic=\"183102\">\n  <div class=\"title\">\n    <div class=\"quote-controls\"></div>\n    <img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/48/87231_2.png\" class=\"avatar\">\n    <div class=\"quote-title__text-content\">\n      <a href=\"https://discourse.onlinedegree.iitm.ac.in/t/regarding-doubts-in-the-week-7-ga-answer-showing-on-portal/183102\">Regarding doubts in the Week 7 GA Answer showing on Portal</a> <a class=\"badge-category__wrapper \" href=\"/c/courses/python-kb/25\"><span data-category-id=\"25\" style=\"--category-badge-color: #0088CC; --category-badge-text-color: #FFFFFF; --parent-category-badge-color: #3AB54A;\" data-parent-category-id=\"9\" data-drop-close=\"true\" class=\"badge-category --has-parent\" title=\"This category is created to address subject-specific queries related to Introduction to Programming in Python\"><span class=\"badge-category__name\">Programming in Python</span></span></a>\n    </div>\n  </div>\n  <blockquote>\n    Respected Instructors and TAs, \nIn the Week 7 GA answers , I have some doubts. \nDoubt 1 : \n <a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/2/b2a85810e7696a3053167b70745955de82ecd29e.png\" data-download-href=\"/uploads/short-url/putFeHaJZ5EWUXGqvE5yl0NG9XM.png?dl=1\" title=\"Screenshot 2025-07-24 193311\" rel=\"noopener nofollow ugc\">[Screenshot 2025-07-24 193311]</a> \nAccording to me , The expression “if a in word” selects only certain items based on a condition. This is a classic filtering operation. \nAggregation combines multiple elements into a single value (e.g., sum, count). next() retrieves the first element, not a reduction or aggregation over all elements. So, shouldn’t Filtering be the correct option here? \nDoubt 2 : \n <a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/0/40eb3781302ac56d9011fe7c5ab1ef6d888ce11a.png\" data-download-href=\"/uploads/short-url/9givu1vt44hHwxTHtHxZ6Lrj9vY.png?dl=1\" title=\"Screenshot 2025-07-24 193616\" rel=\"noopener nofollow ugc\">[Screensh…</a>\n  </blockquote>\n</aside>\n",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-08-04T21:45:51.139Z",
+        "reply_count": 0,
+        "reply_to_post_number": 7,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 21,
+        "readers_count": 20,
+        "score": 4.2,
+        "yours": false,
+        "topic_id": 183404,
+        "topic_slug": "week-7-ga-doubts",
+        "display_username": "Om Narayan Singh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-doubts-in-the-week-7-ga-answer-showing-on-portal/183102",
+            "internal": true,
+            "reflection": false,
+            "title": "Regarding doubts in the Week 7 GA Answer showing on Portal",
+            "clicks": 0
+          }
+        ],
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 14104,
+          "username": "22f2001266",
+          "name": "Om Narayan Singh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 14104,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/week-7-ga-doubts/183404/8",
+        "user_cakedate": "2022-09-02",
+        "user_birthdate": "1904-07-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 660064,
+        "name": "Livin Nector",
+        "username": "livin",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png",
+        "created_at": "2025-08-05T05:57:31.206Z",
+        "cooked": "<p>Max and min also just selects the value.</p>\n<p>What aggregation does is takes collection of values as input and returns a single value. Any function that does this is an aggregation function.</p>\n<pre data-code-wrap=\"python\"><code class=\"lang-python\">def select_first(items):\n  for item in items:\n    return item\n\ndef select_last(items):\n  for item in items:\n    pass\n  return item\n\n\n</code></pre>\n<p>As you can see, you can implement these functions with a loop based implementation also you can implement these with <code>reduce</code> based implementations.</p>\n<pre data-code-wrap=\"python\"><code class=\"lang-python\">from functools import reduce\n\nselect_first = lambda x: reduce(lambda a,b: a, x)\nselect_last = lambda x: reduce(lambda a,b: b, x)\n</code></pre>\n<p>Thus these are adhering to the aggregation logic.</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-08-05T05:57:31.206Z",
+        "reply_count": 0,
+        "reply_to_post_number": 7,
+        "quote_count": 0,
+        "incoming_link_count": 5,
+        "reads": 20,
+        "readers_count": 19,
+        "score": 29,
+        "yours": false,
+        "topic_id": 183404,
+        "topic_slug": "week-7-ga-doubts",
+        "display_username": "Livin Nector",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course_Team",
+        "title_is_group": true,
+        "reply_to_user": {
+          "id": 14104,
+          "username": "22f2001266",
+          "name": "Om Narayan Singh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21370,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/week-7-ga-doubts/183404/9",
+        "user_cakedate": "2023-08-11",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      656484,
+      656533,
+      656602,
+      656604,
+      656608,
+      657626,
+      659149,
+      659987,
+      660064
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      273
+    ],
+    [
+      6,
+      271
+    ],
+    [
+      7,
+      268
+    ],
+    [
+      8,
+      265
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "PPA-3 solution",
+      "id": 202515,
+      "title": "PPA-3 solution",
+      "slug": "ppa-3-solution",
+      "posts_count": 4,
+      "reply_count": 1,
+      "highest_post_number": 4,
+      "image_url": null,
+      "created_at": "2026-04-26T18:58:16.204Z",
+      "last_posted_at": "2026-04-26T20:11:09.075Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T20:11:09.075Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 7,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 47387,
+            "username": "25f2000510",
+            "name": "Sayed Abiha Abul Hasan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2000510/{size}/119801_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "PYqs for OPPE-2 Python",
+      "id": 202516,
+      "title": "PYqs for OPPE-2 Python",
+      "slug": "pyqs-for-oppe-2-python",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": null,
+      "created_at": "2026-04-26T19:18:02.398Z",
+      "last_posted_at": "2026-04-26T19:56:34.716Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T19:56:34.716Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 6,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 56474,
+            "username": "25f3002735",
+            "name": "Aamir",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/f17d59/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "PPA-1 Solution",
+      "id": 202514,
+      "title": "PPA-1 Solution",
+      "slug": "ppa-1-solution",
+      "posts_count": 1,
+      "reply_count": 0,
+      "highest_post_number": 1,
+      "image_url": null,
+      "created_at": "2026-04-26T18:51:19.212Z",
+      "last_posted_at": "2026-04-26T18:51:19.374Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:51:19.374Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 4,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest single",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 47387,
+            "username": "25f2000510",
+            "name": "Sayed Abiha Abul Hasan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2000510/{size}/119801_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe result related query",
+      "id": 202495,
+      "title": "Oppe result related query",
+      "slug": "oppe-result-related-query",
+      "posts_count": 4,
+      "reply_count": 2,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/7/676201f5c22b7eee7f1673038360f3615706cbd2_2_460x1024.jpeg",
+      "created_at": "2026-04-26T13:45:02.580Z",
+      "last_posted_at": "2026-04-26T14:07:11.728Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T14:07:11.728Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 339,
+          "name": "term3-2024",
+          "slug": "term3-2024"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 37,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 30749,
+            "username": "24f2002652",
+            "name": "Yashaswee mrinal jha ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2002652/{size}/125481_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe clearance",
+      "id": 202411,
+      "title": "Oppe clearance",
+      "slug": "oppe-clearance",
+      "posts_count": 6,
+      "reply_count": 2,
+      "highest_post_number": 6,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/4/9420a7e6546f171bf30f0b5049091e0bbfdf4f88_2_459x1024.jpeg",
+      "created_at": "2026-04-26T03:56:45.449Z",
+      "last_posted_at": "2026-04-26T10:27:05.020Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T10:27:05.020Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 4,
+      "views": 61,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 39782,
+            "username": "Omkar7",
+            "name": "Omkar gudla",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/omkar7/{size}/113203_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 23318,
+            "username": "23f2001123",
+            "name": "Anshu Rajbhar ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2001123/{size}/110382_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 57115,
+            "username": "25f3006372",
+            "name": "Raihan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f3006372/{size}/161245_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 245,
+      "name": "foundation-level",
+      "slug": "foundation-level"
+    },
+    {
+      "id": 341,
+      "name": "term2-2025",
+      "slug": "term2-2025"
+    },
+    {
+      "id": 201,
+      "name": "course-selection",
+      "slug": "course-selection"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Week 7 GA doubts",
+  "id": 183404,
+  "title": "Week 7 GA doubts",
+  "posts_count": 9,
+  "created_at": "2025-07-27T19:44:38.889Z",
+  "views": 76,
+  "reply_count": 6,
+  "like_count": 0,
+  "last_posted_at": "2025-08-05T05:57:31.206Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "week-7-ga-doubts",
+  "category_id": 25,
+  "word_count": 367,
+  "deleted_at": null,
+  "user_id": 27872,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/e/5e4bedf3950237e5efd9d074946aa5a7338153b1.png",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_183404",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 9,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 4,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 1023,
+      "height": 978,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/e/5e4bedf3950237e5efd9d074946aa5a7338153b1.png"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "Regarding doubts in the Week 7 GA Answer showing on Portal",
+      "id": 183102,
+      "title": "Regarding doubts in the Week 7 GA Answer showing on Portal",
+      "slug": "regarding-doubts-in-the-week-7-ga-answer-showing-on-portal",
+      "posts_count": 4,
+      "reply_count": 1,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/b/2/b2a85810e7696a3053167b70745955de82ecd29e_2_1024x920.png",
+      "created_at": "2025-07-24T14:20:12.417Z",
+      "last_posted_at": "2025-08-02T06:37:15.411Z",
+      "bumped": true,
+      "bumped_at": "2025-08-02T06:37:15.411Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 35,
+          "name": "error",
+          "slug": "error"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 56,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 14104,
+            "username": "22f2001266",
+            "name": "Om Narayan Singh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 46089,
+            "username": "25f1002455",
+            "name": "Neeru Goyal ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f1002455/{size}/121803_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Unable to find justification of provided answer for question 18 of Week 3 graded assignment",
+      "id": 189417,
+      "title": "Unable to find justification of provided answer for question 18 of Week 3 graded assignment",
+      "slug": "unable-to-find-justification-of-provided-answer-for-question-18-of-week-3-graded-assignment",
+      "posts_count": 13,
+      "reply_count": 7,
+      "highest_post_number": 13,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/a/ca639138fca4bfb6bc77aeb1c054f30f3fa90aaa.jpeg",
+      "created_at": "2025-10-16T04:39:47.968Z",
+      "last_posted_at": "2026-03-05T06:37:45.497Z",
+      "bumped": true,
+      "bumped_at": "2026-03-05T06:37:45.497Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        },
+        {
+          "id": 37,
+          "name": "operational",
+          "slug": "operational"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 11,
+      "views": 139,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 2,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 52326,
+            "username": "25f2008630",
+            "name": "Suman Paul",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/eb8c5e/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 34486,
+            "username": "hardik0",
+            "name": "Hardik  Saini",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hardik0/{size}/66917_2.png",
+            "primary_group_name": "25t2_ma1002",
+            "flair_name": "25t2_ma1002",
+            "flair_group_id": 593,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 36907,
+            "username": "Praveen1",
+            "name": "Praveen Mishra ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/praveen1/{size}/111576_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 21370,
+            "username": "livin",
+            "name": "Livin Nector",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 45245,
+            "username": "onu",
+            "name": "green tea",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/onu/{size}/158139_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "The aftermath of Week-7 (Graded Assignment)",
+      "id": 191341,
+      "title": "The aftermath of Week-7 (Graded Assignment)",
+      "slug": "the-aftermath-of-week-7-graded-assignment",
+      "posts_count": 6,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2025-11-13T02:27:27.232Z",
+      "last_posted_at": "2025-12-02T06:57:00.845Z",
+      "bumped": true,
+      "bumped_at": "2025-12-02T06:57:00.845Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 125,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 37656,
+            "username": "Tanzeel",
+            "name": "Tanzeel Ahmed",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tanzeel/{size}/111421_2.png",
+            "primary_group_name": "es-students",
+            "flair_name": "es-students",
+            "flair_url": "bolt",
+            "flair_group_id": 293,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 50732,
+            "username": "Preethy",
+            "name": "Preethy Parthasarathy",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/preethy/{size}/143098_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 37539,
+            "username": "Baskaran_Nadar",
+            "name": "Baskaran Nadar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 30932,
+            "username": "iamayush",
+            "name": "Ayush Dutta",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iamayush/{size}/100397_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Python GA7 doubts",
+      "id": 200332,
+      "title": "Python GA7 doubts",
+      "slug": "python-ga7-doubts",
+      "posts_count": 14,
+      "reply_count": 9,
+      "highest_post_number": 14,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/b/abeaf8d37db92674d921e39d36b43cde0115fbe8.png",
+      "created_at": "2026-04-02T12:19:29.032Z",
+      "last_posted_at": "2026-04-02T13:25:01.347Z",
+      "bumped": true,
+      "bumped_at": "2026-04-02T13:25:01.347Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 20,
+      "views": 45,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 45245,
+            "username": "onu",
+            "name": "green tea",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/onu/{size}/158139_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 50546,
+            "username": "Priyanshi_Dixit",
+            "name": "Priyanshi Dixit",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 36907,
+            "username": "Praveen1",
+            "name": "Praveen Mishra ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/praveen1/{size}/111576_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 42676,
+            "username": "iitm_student",
+            "name": "Anupam ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitm_student/{size}/147334_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Unable to find justification of provided answer for question 23 of Week 3 graded assignment",
+      "id": 189422,
+      "title": "Unable to find justification of provided answer for question 23 of Week 3 graded assignment",
+      "slug": "unable-to-find-justification-of-provided-answer-for-question-23-of-week-3-graded-assignment",
+      "posts_count": 4,
+      "reply_count": 2,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/f/2/f2eb0963d08b10656cad8290bb62e7b6aaaa9f10_2_1024x560.jpeg",
+      "created_at": "2025-10-16T05:14:22.307Z",
+      "last_posted_at": "2025-10-23T07:08:16.335Z",
+      "bumped": true,
+      "bumped_at": "2025-10-23T07:08:16.335Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 87,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 52326,
+            "username": "25f2008630",
+            "name": "Suman Paul",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/eb8c5e/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 30080,
+            "username": "KaustubhIsMyName",
+            "name": "Kaustubh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaustubhismyname/{size}/70051_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 37656,
+            "username": "Tanzeel",
+            "name": "Tanzeel Ahmed",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tanzeel/{size}/111421_2.png",
+            "primary_group_name": "es-students",
+            "flair_name": "es-students",
+            "flair_url": "bolt",
+            "flair_group_id": 293,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 2,
+    "username": "livin",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png",
+    "excerpt": "<p>Filtering is a task were the input is a list of values and the output is another list of values with some values selected based on a criteria.</p>\n<p>It has to be filtering and aggregation.</p>\n<p>If we break it down both the function, we are filtering the list and then getting the first/last element of the list which is aggregation, will update those.</p>",
+    "accepter_name": null,
+    "accepter_username": "kubra_7"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 21370,
+        "username": "livin",
+        "name": "Livin Nector",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png",
+        "post_count": 3,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      },
+      {
+        "id": 38103,
+        "username": "24f3000618",
+        "name": "Diptanshu Suraj dube",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 27872,
+        "username": "24f1000965",
+        "name": "Adul P R",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1000965/{size}/67139_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 14104,
+        "username": "22f2001266",
+        "name": "Om Narayan Singh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 27872,
+      "username": "24f1000965",
+      "name": "Adul P R",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1000965/{size}/67139_2.png"
+    },
+    "last_poster": {
+      "id": 21370,
+      "username": "livin",
+      "name": "Livin Nector",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 656484,
+      "name": "Adul P R",
+      "username": "24f1000965",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1000965/{size}/67139_2.png",
+      "created_at": "2025-07-27T19:44:39.167Z",
+      "cooked": "<p>Could you please explain these question from week 7 GA, why its aggregation and not filtering in Q 3,4,13,14.<br>\nwhen there is a if condition its obviously filtering the elements from rest with the provided condition. please explain why aggregation is correct else please provide marks for the respective option .</p>\n<p><a class=\"mention\" href=\"/u/kubra_7\">@kubra_7</a> <a class=\"mention\" href=\"/u/livin\">@livin</a> <a class=\"mention\" href=\"/u/manidipa2001\">@Manidipa2001</a> <a class=\"mention\" href=\"/u/piyushw\">@PiyushW</a></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/e/5e4bedf3950237e5efd9d074946aa5a7338153b1.png\" data-download-href=\"/uploads/short-url/dsbyKg7DuOFR1AkYrm59cNcaoLv.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/e/5e4bedf3950237e5efd9d074946aa5a7338153b1_2_523x500.png\" alt=\"image\" data-base62-sha1=\"dsbyKg7DuOFR1AkYrm59cNcaoLv\" width=\"523\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/e/5e4bedf3950237e5efd9d074946aa5a7338153b1_2_523x500.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/e/5e4bedf3950237e5efd9d074946aa5a7338153b1_2_784x750.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/e/5e4bedf3950237e5efd9d074946aa5a7338153b1.png 2x\" data-dominant-color=\"FDFDFD\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1023×978 23 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/b/ab361aa6994f33ec0e84bad9bf362f631b6756be.png\" data-download-href=\"/uploads/short-url/oqBz1GTPOpLvizIH1pnk65OLuEe.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/b/ab361aa6994f33ec0e84bad9bf362f631b6756be_2_359x500.png\" alt=\"image\" data-base62-sha1=\"oqBz1GTPOpLvizIH1pnk65OLuEe\" width=\"359\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/b/ab361aa6994f33ec0e84bad9bf362f631b6756be_2_359x500.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/b/ab361aa6994f33ec0e84bad9bf362f631b6756be_2_538x750.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/b/ab361aa6994f33ec0e84bad9bf362f631b6756be.png 2x\" data-dominant-color=\"FCFCFC\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">673×935 19.9 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-27T19:44:39.167Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 41,
+      "readers_count": 40,
+      "score": 13.2,
+      "yours": false,
+      "topic_id": 183404,
+      "topic_slug": "week-7-ga-doubts",
+      "display_username": "Adul P R",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 27872,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/week-7-ga-doubts/183404/1",
+      "user_cakedate": "2024-02-20",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 656533,
+      "name": "Livin Nector",
+      "username": "livin",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png",
+      "created_at": "2025-07-28T04:15:01.102Z",
+      "cooked": "<p>Filtering is a task were the input is a list of values and the output is another list of values with some values selected based on a criteria.</p>\n<p>It has to be filtering and aggregation.</p>\n<p>If we break it down both the function, we are filtering the list and then getting the first/last element of the list which is aggregation, will update those.</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-28T04:15:01.102Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 31,
+      "readers_count": 30,
+      "score": 11.2,
+      "yours": false,
+      "topic_id": 183404,
+      "topic_slug": "week-7-ga-doubts",
+      "display_username": "Livin Nector",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course_Team",
+      "title_is_group": true,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21370,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/week-7-ga-doubts/183404/2",
+      "user_cakedate": "2023-08-11",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 656602,
+      "name": "Diptanshu Suraj dube",
+      "username": "24f3000618",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+      "created_at": "2025-07-28T06:11:38.141Z",
+      "cooked": "<p>then why are not partially correct?<br>\n<a class=\"mention\" href=\"/u/livin\">@livin</a></p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-28T06:12:24.404Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 27,
+      "readers_count": 26,
+      "score": 10.4,
+      "yours": false,
+      "topic_id": 183404,
+      "topic_slug": "week-7-ga-doubts",
+      "display_username": "Diptanshu Suraj dube",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 38103,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/week-7-ga-doubts/183404/3",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 656604,
+      "name": "Livin Nector",
+      "username": "livin",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png",
+      "created_at": "2025-07-28T06:13:02.042Z",
+      "cooked": "<p>It should be, we will update the answer.</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-28T06:13:02.042Z",
+      "reply_count": 2,
+      "reply_to_post_number": 3,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 26,
+      "readers_count": 25,
+      "score": 15.2,
+      "yours": false,
+      "topic_id": 183404,
+      "topic_slug": "week-7-ga-doubts",
+      "display_username": "Livin Nector",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course_Team",
+      "title_is_group": true,
+      "reply_to_user": {
+        "id": 38103,
+        "username": "24f3000618",
+        "name": "Diptanshu Suraj dube",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21370,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/week-7-ga-doubts/183404/4",
+      "user_cakedate": "2023-08-11",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 656608,
+      "name": "Diptanshu Suraj dube",
+      "username": "24f3000618",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+      "created_at": "2025-07-28T06:14:43.372Z",
+      "cooked": "<p>ok thank you for your help</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-28T06:14:43.372Z",
+      "reply_count": 0,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 25,
+      "readers_count": 24,
+      "score": 15,
+      "yours": false,
+      "topic_id": 183404,
+      "topic_slug": "week-7-ga-doubts",
+      "display_username": "Diptanshu Suraj dube",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 21370,
+        "username": "livin",
+        "name": "Livin Nector",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 38103,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/week-7-ga-doubts/183404/5",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 657626,
+      "name": "Adul P R",
+      "username": "24f1000965",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1000965/{size}/67139_2.png",
+      "created_at": "2025-07-29T19:45:17.328Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/livin\">@livin</a> you didn’t update for question 3 and question 4 !</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-29T19:45:17.328Z",
+      "reply_count": 0,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 24,
+      "readers_count": 23,
+      "score": 4.8,
+      "yours": false,
+      "topic_id": 183404,
+      "topic_slug": "week-7-ga-doubts",
+      "display_username": "Adul P R",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 21370,
+        "username": "livin",
+        "name": "Livin Nector",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 27872,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/week-7-ga-doubts/183404/6",
+      "user_cakedate": "2024-02-20",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 659149,
+      "name": "Om Narayan Singh",
+      "username": "22f2001266",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png",
+      "created_at": "2025-08-02T07:38:00.585Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/livin\">@livin</a> Sir , According to me, getting the first / last element is not combining (aggregating) multiple values into one by taking into account all the values like sum ,max etc.  Isn’t it just selection based on index rather than aggregation of multiple inputs ?</p>\n<p>Please clarify am I wrong?</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-08-02T07:38:00.585Z",
+      "reply_count": 2,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 23,
+      "readers_count": 22,
+      "score": 14.6,
+      "yours": false,
+      "topic_id": 183404,
+      "topic_slug": "week-7-ga-doubts",
+      "display_username": "Om Narayan Singh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 21370,
+        "username": "livin",
+        "name": "Livin Nector",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14104,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/week-7-ga-doubts/183404/7",
+      "user_cakedate": "2022-09-02",
+      "user_birthdate": "1904-07-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 659987,
+      "name": "Om Narayan Singh",
+      "username": "22f2001266",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png",
+      "created_at": "2025-08-04T21:44:34.174Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/livin\">@livin</a> Please if you can explain and clarify my doubt, it would be great.</p>\n<p>I also posted about these doubts in my post but did not get any response.</p>\n<aside class=\"quote quote-modified\" data-post=\"1\" data-topic=\"183102\">\n  <div class=\"title\">\n    <div class=\"quote-controls\"></div>\n    <img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/48/87231_2.png\" class=\"avatar\">\n    <div class=\"quote-title__text-content\">\n      <a href=\"https://discourse.onlinedegree.iitm.ac.in/t/regarding-doubts-in-the-week-7-ga-answer-showing-on-portal/183102\">Regarding doubts in the Week 7 GA Answer showing on Portal</a> <a class=\"badge-category__wrapper \" href=\"/c/courses/python-kb/25\"><span data-category-id=\"25\" style=\"--category-badge-color: #0088CC; --category-badge-text-color: #FFFFFF; --parent-category-badge-color: #3AB54A;\" data-parent-category-id=\"9\" data-drop-close=\"true\" class=\"badge-category --has-parent\" title=\"This category is created to address subject-specific queries related to Introduction to Programming in Python\"><span class=\"badge-category__name\">Programming in Python</span></span></a>\n    </div>\n  </div>\n  <blockquote>\n    Respected Instructors and TAs, \nIn the Week 7 GA answers , I have some doubts. \nDoubt 1 : \n <a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/2/b2a85810e7696a3053167b70745955de82ecd29e.png\" data-download-href=\"/uploads/short-url/putFeHaJZ5EWUXGqvE5yl0NG9XM.png?dl=1\" title=\"Screenshot 2025-07-24 193311\" rel=\"noopener nofollow ugc\">[Screenshot 2025-07-24 193311]</a> \nAccording to me , The expression “if a in word” selects only certain items based on a condition. This is a classic filtering operation. \nAggregation combines multiple elements into a single value (e.g., sum, count). next() retrieves the first element, not a reduction or aggregation over all elements. So, shouldn’t Filtering be the correct option here? \nDoubt 2 : \n <a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/0/40eb3781302ac56d9011fe7c5ab1ef6d888ce11a.png\" data-download-href=\"/uploads/short-url/9givu1vt44hHwxTHtHxZ6Lrj9vY.png?dl=1\" title=\"Screenshot 2025-07-24 193616\" rel=\"noopener nofollow ugc\">[Screensh…</a>\n  </blockquote>\n</aside>\n",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-08-04T21:45:51.139Z",
+      "reply_count": 0,
+      "reply_to_post_number": 7,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 21,
+      "readers_count": 20,
+      "score": 4.2,
+      "yours": false,
+      "topic_id": 183404,
+      "topic_slug": "week-7-ga-doubts",
+      "display_username": "Om Narayan Singh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-doubts-in-the-week-7-ga-answer-showing-on-portal/183102",
+          "internal": true,
+          "reflection": false,
+          "title": "Regarding doubts in the Week 7 GA Answer showing on Portal",
+          "clicks": 0
+        }
+      ],
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 14104,
+        "username": "22f2001266",
+        "name": "Om Narayan Singh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14104,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/week-7-ga-doubts/183404/8",
+      "user_cakedate": "2022-09-02",
+      "user_birthdate": "1904-07-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 660064,
+      "name": "Livin Nector",
+      "username": "livin",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/livin/{size}/67152_2.png",
+      "created_at": "2025-08-05T05:57:31.206Z",
+      "cooked": "<p>Max and min also just selects the value.</p>\n<p>What aggregation does is takes collection of values as input and returns a single value. Any function that does this is an aggregation function.</p>\n<pre data-code-wrap=\"python\"><code class=\"lang-python\">def select_first(items):\n  for item in items:\n    return item\n\ndef select_last(items):\n  for item in items:\n    pass\n  return item\n\n\n</code></pre>\n<p>As you can see, you can implement these functions with a loop based implementation also you can implement these with <code>reduce</code> based implementations.</p>\n<pre data-code-wrap=\"python\"><code class=\"lang-python\">from functools import reduce\n\nselect_first = lambda x: reduce(lambda a,b: a, x)\nselect_last = lambda x: reduce(lambda a,b: b, x)\n</code></pre>\n<p>Thus these are adhering to the aggregation logic.</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-08-05T05:57:31.206Z",
+      "reply_count": 0,
+      "reply_to_post_number": 7,
+      "quote_count": 0,
+      "incoming_link_count": 5,
+      "reads": 20,
+      "readers_count": 19,
+      "score": 29,
+      "yours": false,
+      "topic_id": 183404,
+      "topic_slug": "week-7-ga-doubts",
+      "display_username": "Livin Nector",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course_Team",
+      "title_is_group": true,
+      "reply_to_user": {
+        "id": 14104,
+        "username": "22f2001266",
+        "name": "Om Narayan Singh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21370,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/week-7-ga-doubts/183404/9",
+      "user_cakedate": "2023-08-11",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

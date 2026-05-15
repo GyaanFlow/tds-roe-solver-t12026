@@ -1,0 +1,1709 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 645927,
+        "name": "Mohan Siva Sanjay Bhimaneni",
+        "username": "24f1002200",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002200/{size}/66814_2.png",
+        "created_at": "2025-07-01T11:06:13.254Z",
+        "cooked": "<p>Below is a PPA from week 5:</p>\n<blockquote>\n<p>Given a shell variable <code>month</code> supposed to contain a string value corresponding to some calendar month. Use the <code>cal</code> command to create a file named as <code>X.txt</code> where <code>X</code> is the string value in the variable <code>month</code>. Your command should also create a file named <code>error.txt</code> that should contain the error message if the string <code>month</code> does not correspond to any calendar month. Create all the files in the current working directory.</p>\n<p>For example:</p>\n<ol>\n<li>If the variable <code>month</code> contains the string “nov”, your solution should create a file named <code>nov.txt</code> containing the calendar of november month and <code>error.txt</code> should be empty.</li>\n<li>And if the variable <code>month</code> contains the string “garbage”, your solution should create a file named <code>error.txt</code> containing the error from cal command and <code>garbage.txt</code> should be empty.</li>\n</ol>\n</blockquote>\n<p>Here are the test case results of a correct solution:<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/3/b3fe59d608f0d05d504183873492dad6983a80e2.png\" data-download-href=\"/uploads/short-url/pGipvZnsv1Wxg30Jqz89fUyyLV8.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/3/b3fe59d608f0d05d504183873492dad6983a80e2.png\" alt=\"image\" data-base62-sha1=\"pGipvZnsv1Wxg30Jqz89fUyyLV8\" width=\"244\" height=\"434\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">244×434 6.8 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>The year is wrong, since the test cases were old. I had to change the date of the system to get this right.<br>\nI request you to please keep the test cases up to date so that we do not have to face such technical problems.<br>\nThank you..<img src=\"https://emoji.discourse-cdn.com/google/slight_smile.png?v=14\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 3,
+        "updated_at": "2025-07-11T14:03:59.735Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 17,
+        "readers_count": 16,
+        "score": 18.4,
+        "yours": false,
+        "topic_id": 180702,
+        "topic_slug": "test-cases-are-old-for-ppa-week-5",
+        "display_username": "Mohan Siva Sanjay Bhimaneni",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 4,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 30066,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/test-cases-are-old-for-ppa-week-5/180702/1",
+        "user_cakedate": "2024-06-02",
+        "user_birthdate": "1904-08-07",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 646172,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-07-02T05:04:31.889Z",
+        "cooked": "<p>This is not a configuration issue Mohan.</p>\n<p>You can output the calendar of any month and any year, without changing the date of the system. The question tests your ability to debug, and read the documentation to find the solution.</p>\n<p>I would urge you to explore how to solve this purely by using the <code>date</code> command with appropriate arguments.</p>\n<p>Regards,<br>\nSayan</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 3,
+        "updated_at": "2025-07-02T05:04:31.889Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 14,
+        "readers_count": 13,
+        "score": 7.8,
+        "yours": false,
+        "topic_id": 180702,
+        "topic_slug": "test-cases-are-old-for-ppa-week-5",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/test-cases-are-old-for-ppa-week-5/180702/3",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 646234,
+        "name": "Mohan Siva Sanjay Bhimaneni",
+        "username": "24f1002200",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002200/{size}/66814_2.png",
+        "created_at": "2025-07-02T06:46:52.538Z",
+        "cooked": "<p>That is true, and not my point.<br>\nI am sorry for the miscommunication. I did not mean the system date has to be changed, I had to add an extra argument “-d 2023-01” to the cal command to get the test cases right.<br>\nAlso, the question did not mention any details about the specific year to be displayed, so people assume it is the present year. So, all I am asking is to include the year in the question, or change the test cases</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 3,
+        "updated_at": "2025-07-02T06:46:52.538Z",
+        "reply_count": 0,
+        "reply_to_post_number": 3,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 13,
+        "readers_count": 12,
+        "score": 17.6,
+        "yours": false,
+        "topic_id": 180702,
+        "topic_slug": "test-cases-are-old-for-ppa-week-5",
+        "display_username": "Mohan Siva Sanjay Bhimaneni",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 30066,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/test-cases-are-old-for-ppa-week-5/180702/4",
+        "user_cakedate": "2024-06-02",
+        "user_birthdate": "1904-08-07",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      645927,
+      646172,
+      646234
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      299
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 48,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 7,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 341,
+      "name": "term2-2025",
+      "slug": "term2-2025"
+    },
+    {
+      "id": 269,
+      "name": "practice-assignment",
+      "slug": "practice-assignment"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Test cases are old for PPA (Week 5)",
+  "id": 180702,
+  "title": "Test cases are old for PPA (Week 5)",
+  "posts_count": 3,
+  "created_at": "2025-07-01T11:06:12.932Z",
+  "views": 25,
+  "reply_count": 1,
+  "like_count": 2,
+  "last_posted_at": "2025-07-02T06:46:52.538Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "test-cases-are-old-for-ppa-week-5",
+  "category_id": 36,
+  "word_count": 353,
+  "deleted_at": null,
+  "user_id": 30066,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/3/b3fe59d608f0d05d504183873492dad6983a80e2.png",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_180702",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 4,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 2,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 244,
+      "height": 434,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/3/b3fe59d608f0d05d504183873492dad6983a80e2.png"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "Week-3 PPA Q-2",
+      "id": 78628,
+      "title": "Week-3 PPA Q-2",
+      "slug": "week-3-ppa-q-2",
+      "posts_count": 3,
+      "reply_count": 1,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2023-02-21T07:03:42.416Z",
+      "last_posted_at": "2023-02-21T09:12:53.675Z",
+      "bumped": true,
+      "bumped_at": "2023-02-21T09:12:53.675Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 35,
+          "name": "error",
+          "slug": "error"
+        },
+        {
+          "id": 5,
+          "name": "week-3",
+          "slug": "week-3"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 43,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 5317,
+            "username": "S_NIRANJAN",
+            "name": "S NIRANJAN",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/s_niranjan/{size}/461_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 6980,
+            "username": "21f2001180",
+            "name": "Pushpak Ruhil",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f2001180/{size}/56758_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week 3 PPA 2",
+      "id": 28351,
+      "title": "Week 3 PPA 2",
+      "slug": "week-3-ppa-2",
+      "posts_count": 9,
+      "reply_count": 6,
+      "highest_post_number": 9,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/8/3/83a1c328fc4dcb64101683c969d5213a03c740b3_2_1024x388.png",
+      "created_at": "2022-01-15T14:16:42.286Z",
+      "last_posted_at": "2022-10-15T09:32:41.533Z",
+      "bumped": true,
+      "bumped_at": "2022-10-15T09:32:41.533Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 5,
+          "name": "week-3",
+          "slug": "week-3"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 10,
+      "views": 197,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 2330,
+            "username": "ishikaminocha",
+            "name": "Ishika Minocha",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishikaminocha/{size}/424_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 3147,
+            "username": "Manishiit",
+            "name": "Manish Kumar",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/m/71c47a/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 1206,
+            "username": "coderRKJ",
+            "name": "Rahul Kurian Jacob",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/coderrkj/{size}/495_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 2517,
+            "username": "hasandemon12",
+            "name": "Mohammed Hassan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hasandemon12/{size}/634_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 3247,
+            "username": "sourabhwarrier",
+            "name": "‎",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sourabhwarrier/{size}/132565_2.png",
+            "primary_group_name": "Alumni_Students",
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "PPA 2 week3",
+      "id": 50717,
+      "title": "PPA 2 week3",
+      "slug": "ppa-2-week3",
+      "posts_count": 3,
+      "reply_count": 1,
+      "highest_post_number": 3,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/f/8/f8ec1ac17168efc2ad51573f522f8bdff2042204_2_1024x631.png",
+      "created_at": "2022-05-28T16:23:53.275Z",
+      "last_posted_at": "2023-02-26T06:04:36.474Z",
+      "bumped": true,
+      "bumped_at": "2023-02-26T06:06:49.573Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 99,
+          "name": "ppa",
+          "slug": "ppa"
+        },
+        {
+          "id": 5,
+          "name": "week-3",
+          "slug": "week-3"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 5,
+      "views": 89,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12352,
+            "username": "Anusha_T_S",
+            "name": "Anusha T S",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/anusha_t_s/{size}/35902_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 294,
+            "username": "cacklouncle",
+            "name": "पीयूष अग्रवाल / Piyush Agrawal",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/cacklouncle/{size}/61608_2.png",
+            "primary_group_name": "Alumni_Students",
+            "flair_name": "Alumni_Students",
+            "flair_url": "code-branch",
+            "flair_group_id": 580,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 11562,
+            "username": "22dp1000082",
+            "name": "Harshdeep Singh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22dp1000082/{size}/14828_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "What changes should I make in this bash command?",
+      "id": 96166,
+      "title": "What changes should I make in this bash command?",
+      "slug": "what-changes-should-i-make-in-this-bash-command",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/d/cdf934fce2df7bc7d9d193f88a58bcec485e3f62_2_1024x605.jpeg",
+      "created_at": "2023-07-22T06:29:19.711Z",
+      "last_posted_at": "2023-07-22T06:49:05.610Z",
+      "bumped": true,
+      "bumped_at": "2023-07-22T06:49:05.610Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 35,
+          "name": "error",
+          "slug": "error"
+        },
+        {
+          "id": 27,
+          "name": "activity-question",
+          "slug": "activity-question"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 25,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12548,
+            "username": "Lakshay_Sharma1",
+            "name": "Lakshay Sharma",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/lakshay_sharma1/{size}/1219_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 7166,
+            "username": "Kishar_Nath",
+            "name": "Kishar Kr  Nath",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/k/7ba0ec/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 7521,
+            "username": "Prabuddh_Mathur",
+            "name": "Prabuddh Mathur",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prabuddh_mathur/{size}/13042_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week 3 PPA2",
+      "id": 135545,
+      "title": "Week 3 PPA2",
+      "slug": "week-3-ppa2",
+      "posts_count": 4,
+      "reply_count": 2,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/e/9eaa3267ea554a70880556b01243d134f828ca90_2_1023x495.png",
+      "created_at": "2024-06-20T09:42:47.719Z",
+      "last_posted_at": "2024-06-21T17:30:31.044Z",
+      "bumped": true,
+      "bumped_at": "2024-06-21T17:30:31.044Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 146,
+          "name": "miscellaneous",
+          "slug": "miscellaneous"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 49,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 7225,
+            "username": "21f2001357",
+            "name": "Shree Kant Prasad Byahut",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f2001357/{size}/68_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 12077,
+            "username": "22f1000734",
+            "name": "Varun Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000734/{size}/161030_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 1172,
+            "username": "tarang96",
+            "name": "Pansuriya Tarang Bharatbhai ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tarang96/{size}/101402_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 3,
+    "username": "sayan",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+    "excerpt": "<p>This is not a configuration issue Mohan.</p>\n<p>You can output the calendar of any month and any year, without changing the date of the system. The question tests your ability to debug, and read the documentation to find the solution.</p>\n<p>I would urge you to explore how to solve this purely by using the <code>date</code> command with appropriate arguments.</p>\n<p>Regards,<br>\nSayan</p>",
+    "accepter_name": null,
+    "accepter_username": "21f3000759"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 30066,
+        "username": "24f1002200",
+        "name": "Mohan Siva Sanjay Bhimaneni",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002200/{size}/66814_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "post_count": 1,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      }
+    ],
+    "created_by": {
+      "id": 30066,
+      "username": "24f1002200",
+      "name": "Mohan Siva Sanjay Bhimaneni",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002200/{size}/66814_2.png"
+    },
+    "last_poster": {
+      "id": 30066,
+      "username": "24f1002200",
+      "name": "Mohan Siva Sanjay Bhimaneni",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002200/{size}/66814_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 645927,
+      "name": "Mohan Siva Sanjay Bhimaneni",
+      "username": "24f1002200",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002200/{size}/66814_2.png",
+      "created_at": "2025-07-01T11:06:13.254Z",
+      "cooked": "<p>Below is a PPA from week 5:</p>\n<blockquote>\n<p>Given a shell variable <code>month</code> supposed to contain a string value corresponding to some calendar month. Use the <code>cal</code> command to create a file named as <code>X.txt</code> where <code>X</code> is the string value in the variable <code>month</code>. Your command should also create a file named <code>error.txt</code> that should contain the error message if the string <code>month</code> does not correspond to any calendar month. Create all the files in the current working directory.</p>\n<p>For example:</p>\n<ol>\n<li>If the variable <code>month</code> contains the string “nov”, your solution should create a file named <code>nov.txt</code> containing the calendar of november month and <code>error.txt</code> should be empty.</li>\n<li>And if the variable <code>month</code> contains the string “garbage”, your solution should create a file named <code>error.txt</code> containing the error from cal command and <code>garbage.txt</code> should be empty.</li>\n</ol>\n</blockquote>\n<p>Here are the test case results of a correct solution:<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/3/b3fe59d608f0d05d504183873492dad6983a80e2.png\" data-download-href=\"/uploads/short-url/pGipvZnsv1Wxg30Jqz89fUyyLV8.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/3/b3fe59d608f0d05d504183873492dad6983a80e2.png\" alt=\"image\" data-base62-sha1=\"pGipvZnsv1Wxg30Jqz89fUyyLV8\" width=\"244\" height=\"434\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">244×434 6.8 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>The year is wrong, since the test cases were old. I had to change the date of the system to get this right.<br>\nI request you to please keep the test cases up to date so that we do not have to face such technical problems.<br>\nThank you..<img src=\"https://emoji.discourse-cdn.com/google/slight_smile.png?v=14\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 3,
+      "updated_at": "2025-07-11T14:03:59.735Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 17,
+      "readers_count": 16,
+      "score": 18.4,
+      "yours": false,
+      "topic_id": 180702,
+      "topic_slug": "test-cases-are-old-for-ppa-week-5",
+      "display_username": "Mohan Siva Sanjay Bhimaneni",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 4,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 30066,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/test-cases-are-old-for-ppa-week-5/180702/1",
+      "user_cakedate": "2024-06-02",
+      "user_birthdate": "1904-08-07",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 646172,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-07-02T05:04:31.889Z",
+      "cooked": "<p>This is not a configuration issue Mohan.</p>\n<p>You can output the calendar of any month and any year, without changing the date of the system. The question tests your ability to debug, and read the documentation to find the solution.</p>\n<p>I would urge you to explore how to solve this purely by using the <code>date</code> command with appropriate arguments.</p>\n<p>Regards,<br>\nSayan</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 3,
+      "updated_at": "2025-07-02T05:04:31.889Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 14,
+      "readers_count": 13,
+      "score": 7.8,
+      "yours": false,
+      "topic_id": 180702,
+      "topic_slug": "test-cases-are-old-for-ppa-week-5",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/test-cases-are-old-for-ppa-week-5/180702/3",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 646234,
+      "name": "Mohan Siva Sanjay Bhimaneni",
+      "username": "24f1002200",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002200/{size}/66814_2.png",
+      "created_at": "2025-07-02T06:46:52.538Z",
+      "cooked": "<p>That is true, and not my point.<br>\nI am sorry for the miscommunication. I did not mean the system date has to be changed, I had to add an extra argument “-d 2023-01” to the cal command to get the test cases right.<br>\nAlso, the question did not mention any details about the specific year to be displayed, so people assume it is the present year. So, all I am asking is to include the year in the question, or change the test cases</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 3,
+      "updated_at": "2025-07-02T06:46:52.538Z",
+      "reply_count": 0,
+      "reply_to_post_number": 3,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 13,
+      "readers_count": 12,
+      "score": 17.6,
+      "yours": false,
+      "topic_id": 180702,
+      "topic_slug": "test-cases-are-old-for-ppa-week-5",
+      "display_username": "Mohan Siva Sanjay Bhimaneni",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 30066,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/test-cases-are-old-for-ppa-week-5/180702/4",
+      "user_cakedate": "2024-06-02",
+      "user_birthdate": "1904-08-07",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

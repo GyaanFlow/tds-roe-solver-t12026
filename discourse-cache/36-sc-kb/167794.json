@@ -1,0 +1,3396 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 597340,
+        "name": "Amitabha",
+        "username": "Amitabhab",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+        "created_at": "2025-02-20T09:20:07.958Z",
+        "cooked": "<p><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/3/c3c25b712b8ee94dfd870fc575e09a274c2a3eb7_2_690x33.png\" alt=\"image\" data-base62-sha1=\"rVLvW4OEhojRDbGpQFlnfpLEPJR\" width=\"690\" height=\"33\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/3/c3c25b712b8ee94dfd870fc575e09a274c2a3eb7_2_690x33.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/3/c3c25b712b8ee94dfd870fc575e09a274c2a3eb7.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/3/c3c25b712b8ee94dfd870fc575e09a274c2a3eb7.png 2x\" data-dominant-color=\"3B1C32\"></p>\n<p>why  <code>echo https://www.example.com/page1 | cut -d/ -f3 | grep -v 'WWW\\.' </code><br>\nis  matching full <code>www.example.com</code> not  only <code>www</code>.<br>\nIf  I  make  <code>grep -E  'WWW\\.' </code> why  it  is  not  selecting  anything</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-02-20T16:18:21.832Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 26,
+        "readers_count": 25,
+        "score": 10.2,
+        "yours": false,
+        "topic_id": 167794,
+        "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+        "display_username": "Amitabha",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 3,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6940,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/1",
+        "user_cakedate": "2021-09-08",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 597345,
+        "name": "Amitabha",
+        "username": "Amitabhab",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+        "created_at": "2025-02-20T09:30:07.948Z",
+        "cooked": "<p>Got  it<br>\nI  some how  confused  between  <code>-v</code> and  <code>-o</code></p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-02-20T09:37:25.992Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 25,
+        "readers_count": 24,
+        "score": 5,
+        "yours": false,
+        "topic_id": 167794,
+        "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+        "display_username": "Amitabha",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6940,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/2",
+        "user_cakedate": "2021-09-08",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597350,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-02-20T09:44:01.299Z",
+        "cooked": "<p>Few things</p>\n<ol>\n<li>As you mentioned, <code>-v</code> is for inverse matching, whereas <code>-o</code> is for printing only the match</li>\n<li>Grep is case sensitive. <code>WWW</code> won’t match <code>www</code>. It prints for <code>-v</code> exactly due to this, as it doesn’t match.</li>\n</ol>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-02-20T09:44:01.299Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 25,
+        "readers_count": 24,
+        "score": 10,
+        "yours": false,
+        "topic_id": 167794,
+        "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/3",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597351,
+        "name": "Amitabha",
+        "username": "Amitabhab",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+        "created_at": "2025-02-20T09:45:34.302Z",
+        "cooked": "<p>cut  -d/ f2    why  it  return  nothing or  empty  string</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-02-20T09:45:34.302Z",
+        "reply_count": 1,
+        "reply_to_post_number": 3,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 23,
+        "readers_count": 22,
+        "score": 9.6,
+        "yours": false,
+        "topic_id": 167794,
+        "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+        "display_username": "Amitabha",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6940,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/4",
+        "user_cakedate": "2021-09-08",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597399,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-02-20T12:14:02.383Z",
+        "cooked": "<p><code>cut -d/ -f2</code> is not returning empty string. It is returning the domain name.</p>\n<p>The <code>grep</code> is removing all rows which does not match.</p>\n<p>Remove the <code>grep</code> from command to confirm.</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-02-20T12:14:02.383Z",
+        "reply_count": 1,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 20,
+        "readers_count": 19,
+        "score": 9,
+        "yours": false,
+        "topic_id": 167794,
+        "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 6940,
+          "username": "Amitabhab",
+          "name": "Amitabha",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/5",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597432,
+        "name": "Amitabha",
+        "username": "Amitabhab",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+        "created_at": "2025-02-20T13:38:22.063Z",
+        "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/9/a96b0786bc321f4ccd9c859543e65958ea64bd03.png\" data-download-href=\"/uploads/short-url/oaK07rEJxNn577RY2BAW96F3Iqf.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/9/a96b0786bc321f4ccd9c859543e65958ea64bd03_2_690x119.png\" alt=\"image\" data-base62-sha1=\"oaK07rEJxNn577RY2BAW96F3Iqf\" width=\"690\" height=\"119\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/9/a96b0786bc321f4ccd9c859543e65958ea64bd03_2_690x119.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/9/a96b0786bc321f4ccd9c859543e65958ea64bd03.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/9/a96b0786bc321f4ccd9c859543e65958ea64bd03.png 2x\" data-dominant-color=\"37192F\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">801×139 22.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\nThis  is  what  I  get , Am I  missing  something?</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-02-20T13:38:22.063Z",
+        "reply_count": 0,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 16,
+        "readers_count": 15,
+        "score": 3.2,
+        "yours": false,
+        "topic_id": 167794,
+        "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+        "display_username": "Amitabha",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6940,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/6",
+        "user_cakedate": "2021-09-08",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597433,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-02-20T13:39:13.881Z",
+        "cooked": "<p>My bad, I misread <code>-f2</code> as <code>-f3</code>.</p>\n<p>Yes it expected to be empty cause there is nothing between the first and second slash</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-02-20T13:39:13.881Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 16,
+        "readers_count": 15,
+        "score": 8.2,
+        "yours": false,
+        "topic_id": 167794,
+        "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/7",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597444,
+        "name": "Amitabha",
+        "username": "Amitabhab",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+        "created_at": "2025-02-20T14:01:19.449Z",
+        "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb.png\" data-download-href=\"/uploads/short-url/p9ifvh8YLSYo5ShRBOaXYKbF2zx.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb_2_690x491.png\" alt=\"image\" data-base62-sha1=\"p9ifvh8YLSYo5ShRBOaXYKbF2zx\" width=\"690\" height=\"491\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb_2_690x491.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb_2_1035x736.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb.png 2x\" data-dominant-color=\"F8F4F2\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1075×766 86.5 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>second  question<br>\ngrep -v  “(WWW\\.)”    ------ produce  the  same  effect ?<br>\nIf  yes  then  what  is  the  difference?</p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-02-20T14:02:01.200Z",
+        "reply_count": 1,
+        "reply_to_post_number": 7,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 16,
+        "readers_count": 15,
+        "score": 8.2,
+        "yours": false,
+        "topic_id": 167794,
+        "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+        "display_username": "Amitabha",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6940,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/8",
+        "user_cakedate": "2021-09-08",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597508,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-02-20T16:17:36.807Z",
+        "cooked": "<ol>\n<li>yes, it ignores all the lines that have <code>www</code> in the domain.</li>\n<li>No, as i mentioned grep is case sensitive.</li>\n</ol>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-02-20T16:17:36.807Z",
+        "reply_count": 1,
+        "reply_to_post_number": 8,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 15,
+        "readers_count": 14,
+        "score": 23,
+        "yours": false,
+        "topic_id": 167794,
+        "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 6940,
+          "username": "Amitabhab",
+          "name": "Amitabha",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/9",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597617,
+        "name": "Amitabha",
+        "username": "Amitabhab",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+        "created_at": "2025-02-21T03:35:22.065Z",
+        "cooked": "<p>thanks  for  clarifying  the  doubt</p>\n<p>I  have  only  one  question  left<br>\ngrep -v “(www.)”    and  grep -v ‘www.’</p>\n<p>Are  there  any  difference on  result?<br>\nMY  question is    why you  choose  ‘www.’  but  not  not “(www.)”:<br>\nAlso  confuse  when we  use ’  ’ and  when  \" \"</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-02-21T03:35:22.065Z",
+        "reply_count": 1,
+        "reply_to_post_number": 9,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 14,
+        "readers_count": 13,
+        "score": 7.8,
+        "yours": false,
+        "topic_id": 167794,
+        "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+        "display_username": "Amitabha",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6940,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/11",
+        "user_cakedate": "2021-09-08",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597675,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-02-21T05:46:48.924Z",
+        "cooked": "<p>If using <code>-E</code> then they are same.<br>\nOtherwise it matches a literal pair of parentheses. You can use <code>\\(</code> and <code>\\)</code> to escape them, again, then they are same.</p>\n<p>It is used for grouping the expression, please go through <a href=\"https://drive.google.com/file/d/14CB1UNUDJaOWqiOQwD5sRghO0cF_I89O/view\" rel=\"noopener nofollow ugc\">navigating linux 6.3.6</a> to understand how grouping works and how it is used in <strong>back-references</strong>.</p>\n<aside class=\"quote group-ds-students\" data-username=\"Amitabhab\" data-post=\"11\" data-topic=\"167794\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/48/16794_2.png\" class=\"avatar\"> Amitabhab:</div>\n<blockquote>\n<p>Also confuse when we use ’ ’ and when \" \"</p>\n</blockquote>\n</aside>\n<p>This has nothing to do with <code>grep</code>, this is how <code>bash</code> works. Variables are expanded inside <code>\" \"</code> so we stick to <code>' '</code> so that all strings are passed as is to <code>grep</code>.</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-02-21T05:46:48.924Z",
+        "reply_count": 1,
+        "reply_to_post_number": 11,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 11,
+        "readers_count": 10,
+        "score": 22.2,
+        "yours": false,
+        "topic_id": 167794,
+        "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://drive.google.com/file/d/14CB1UNUDJaOWqiOQwD5sRghO0cF_I89O/view",
+            "internal": false,
+            "reflection": false,
+            "clicks": 0
+          }
+        ],
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/12",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597684,
+        "name": "Amitabha",
+        "username": "Amitabhab",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+        "created_at": "2025-02-21T05:51:17.445Z",
+        "cooked": "<p>Thanks.<br>\nGreat  explanation.</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-02-21T05:51:17.445Z",
+        "reply_count": 0,
+        "reply_to_post_number": 12,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 11,
+        "readers_count": 10,
+        "score": 2.2,
+        "yours": false,
+        "topic_id": 167794,
+        "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+        "display_username": "Amitabha",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6940,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/13",
+        "user_cakedate": "2021-09-08",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      597340,
+      597345,
+      597350,
+      597351,
+      597399,
+      597432,
+      597433,
+      597444,
+      597508,
+      597617,
+      597675,
+      597684
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      430
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 48,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 7,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 6,
+      "name": "week-4",
+      "slug": "week-4"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Grep -&gt; invert matching, print only match, and case sensitivity",
+  "id": 167794,
+  "title": "Grep -> invert matching, print only match, and case sensitivity",
+  "posts_count": 12,
+  "created_at": "2025-02-20T09:20:07.789Z",
+  "views": 32,
+  "reply_count": 8,
+  "like_count": 2,
+  "last_posted_at": "2025-02-21T05:51:17.445Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+  "category_id": 36,
+  "word_count": 364,
+  "deleted_at": null,
+  "user_id": 6940,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/3/c3c25b712b8ee94dfd870fc575e09a274c2a3eb7.png",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_167794",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 13,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 2,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 936,
+      "height": 46,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/3/c3c25b712b8ee94dfd870fc575e09a274c2a3eb7.png"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "Doubt in PYQ",
+      "id": 98067,
+      "title": "Doubt in PYQ",
+      "slug": "doubt-in-pyq",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/8/f/8ffe75d18a4ffdac2f0ea4d5a82e9adc389fa5b6_2_928x1024.jpeg",
+      "created_at": "2023-08-05T11:47:17.095Z",
+      "last_posted_at": "2023-08-05T14:00:27.744Z",
+      "bumped": true,
+      "bumped_at": "2023-08-05T14:00:27.744Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 31,
+          "name": "quiz",
+          "slug": "quiz"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 30,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 8807,
+            "username": "21f3002138",
+            "name": "Janani",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3002138/{size}/18985_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 7521,
+            "username": "Prabuddh_Mathur",
+            "name": "Prabuddh Mathur",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prabuddh_mathur/{size}/13042_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week4 grpa3",
+      "id": 68788,
+      "title": "Week4 grpa3",
+      "slug": "week4-grpa3",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/e/5ed433555b8fd697f6abb58b7ef68d970c54fcde.png",
+      "created_at": "2022-10-26T15:03:00.891Z",
+      "last_posted_at": "2022-10-27T13:29:58.179Z",
+      "bumped": true,
+      "bumped_at": "2022-10-27T13:29:58.179Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 6,
+          "name": "week-4",
+          "slug": "week-4"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 35,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 1281,
+            "username": "priyanshu_singh",
+            "name": "priyanshu  singh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshu_singh/{size}/383_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 12,
+            "username": "santhanakrishnan",
+            "name": "Santhana Krishnan S",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/santhanakrishnan/{size}/179_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "06-March-2023 NPPE- Problem 4",
+      "id": 80554,
+      "title": "06-March-2023 NPPE- Problem 4",
+      "slug": "06-march-2023-nppe-problem-4",
+      "posts_count": 10,
+      "reply_count": 8,
+      "highest_post_number": 10,
+      "image_url": null,
+      "created_at": "2023-03-08T08:15:53.855Z",
+      "last_posted_at": "2023-03-09T14:54:06.151Z",
+      "bumped": true,
+      "bumped_at": "2023-03-09T14:54:06.151Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 70,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 4233,
+            "username": "srisai",
+            "name": "srinath",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/srisai/{size}/189_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 2429,
+            "username": "sabitskar",
+            "name": "Sabit sundar Kar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sabitskar/{size}/540_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 714,
+            "username": "prass",
+            "name": "Sanjaykumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prass/{size}/40_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week 4: GrPA 1",
+      "id": 78333,
+      "title": "Week 4: GrPA 1",
+      "slug": "week-4-grpa-1",
+      "posts_count": 4,
+      "reply_count": 1,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/2/52446c75d39ab0b7a8b9d8eb127815e0b4da61db.png",
+      "created_at": "2023-02-18T18:16:33.630Z",
+      "last_posted_at": "2023-02-19T11:38:06.711Z",
+      "bumped": true,
+      "bumped_at": "2023-02-19T11:38:06.711Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 6,
+          "name": "week-4",
+          "slug": "week-4"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 59,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 14964,
+            "username": "Rk24012003",
+            "name": "Raghav Kapil",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rk24012003/{size}/13733_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 11937,
+            "username": "theknight",
+            "name": "Vikas Anil Kataria",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/theknight/{size}/58236_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 714,
+            "username": "prass",
+            "name": "Sanjaykumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prass/{size}/40_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week 4 Graded Assignment-4 Question 3 clarification",
+      "id": 166670,
+      "title": "Week 4 Graded Assignment-4 Question 3 clarification",
+      "slug": "week-4-graded-assignment-4-question-3-clarification",
+      "posts_count": 8,
+      "reply_count": 2,
+      "highest_post_number": 8,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/5/55875b5460d18bb1a63d8bee849faa65bc6f21bd_2_1024x591.png",
+      "created_at": "2025-02-09T18:55:15.179Z",
+      "last_posted_at": "2025-02-15T17:46:24.019Z",
+      "bumped": true,
+      "bumped_at": "2025-02-15T17:46:24.019Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 146,
+          "name": "miscellaneous",
+          "slug": "miscellaneous"
+        },
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 7,
+      "views": 82,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 30035,
+            "username": "rsuresh100",
+            "name": "Suresh Babu Rangarajan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rsuresh100/{size}/104737_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 18617,
+            "username": "Shashwat1107",
+            "name": "Shashwat",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/shashwat1107/{size}/66894_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 8,
+    "username": "Amitabhab",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+    "excerpt": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb.png\" data-download-href=\"/uploads/short-url/p9ifvh8YLSYo5ShRBOaXYKbF2zx.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb_2_690x491.png\" alt=\"image\" data-base62-sha1=\"p9ifvh8YLSYo5ShRBOaXYKbF2zx\" width=\"690\" height=\"491\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb_2_690x491.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb_2_1035x736.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb.png 2x\" data-dominant-color=\"F8F4F2\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1075×766 86.5 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>second  question<br>\ngrep -v  “(WWW\\.)”    ------ produce  the  same  effect ?<br>\nIf  yes  then  what  is  the  difference?</p>",
+    "accepter_name": null,
+    "accepter_username": "Amitabhab"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 6940,
+        "username": "Amitabhab",
+        "name": "Amitabha",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+        "post_count": 7,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "post_count": 5,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      }
+    ],
+    "created_by": {
+      "id": 6940,
+      "username": "Amitabhab",
+      "name": "Amitabha",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png"
+    },
+    "last_poster": {
+      "id": 6940,
+      "username": "Amitabhab",
+      "name": "Amitabha",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 597340,
+      "name": "Amitabha",
+      "username": "Amitabhab",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+      "created_at": "2025-02-20T09:20:07.958Z",
+      "cooked": "<p><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/3/c3c25b712b8ee94dfd870fc575e09a274c2a3eb7_2_690x33.png\" alt=\"image\" data-base62-sha1=\"rVLvW4OEhojRDbGpQFlnfpLEPJR\" width=\"690\" height=\"33\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/3/c3c25b712b8ee94dfd870fc575e09a274c2a3eb7_2_690x33.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/3/c3c25b712b8ee94dfd870fc575e09a274c2a3eb7.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/3/c3c25b712b8ee94dfd870fc575e09a274c2a3eb7.png 2x\" data-dominant-color=\"3B1C32\"></p>\n<p>why  <code>echo https://www.example.com/page1 | cut -d/ -f3 | grep -v 'WWW\\.' </code><br>\nis  matching full <code>www.example.com</code> not  only <code>www</code>.<br>\nIf  I  make  <code>grep -E  'WWW\\.' </code> why  it  is  not  selecting  anything</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-02-20T16:18:21.832Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 26,
+      "readers_count": 25,
+      "score": 10.2,
+      "yours": false,
+      "topic_id": 167794,
+      "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+      "display_username": "Amitabha",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6940,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/1",
+      "user_cakedate": "2021-09-08",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 597345,
+      "name": "Amitabha",
+      "username": "Amitabhab",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+      "created_at": "2025-02-20T09:30:07.948Z",
+      "cooked": "<p>Got  it<br>\nI  some how  confused  between  <code>-v</code> and  <code>-o</code></p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-02-20T09:37:25.992Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 25,
+      "readers_count": 24,
+      "score": 5,
+      "yours": false,
+      "topic_id": 167794,
+      "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+      "display_username": "Amitabha",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6940,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/2",
+      "user_cakedate": "2021-09-08",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597350,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-02-20T09:44:01.299Z",
+      "cooked": "<p>Few things</p>\n<ol>\n<li>As you mentioned, <code>-v</code> is for inverse matching, whereas <code>-o</code> is for printing only the match</li>\n<li>Grep is case sensitive. <code>WWW</code> won’t match <code>www</code>. It prints for <code>-v</code> exactly due to this, as it doesn’t match.</li>\n</ol>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-02-20T09:44:01.299Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 25,
+      "readers_count": 24,
+      "score": 10,
+      "yours": false,
+      "topic_id": 167794,
+      "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/3",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597351,
+      "name": "Amitabha",
+      "username": "Amitabhab",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+      "created_at": "2025-02-20T09:45:34.302Z",
+      "cooked": "<p>cut  -d/ f2    why  it  return  nothing or  empty  string</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-02-20T09:45:34.302Z",
+      "reply_count": 1,
+      "reply_to_post_number": 3,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 23,
+      "readers_count": 22,
+      "score": 9.6,
+      "yours": false,
+      "topic_id": 167794,
+      "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+      "display_username": "Amitabha",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6940,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/4",
+      "user_cakedate": "2021-09-08",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597399,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-02-20T12:14:02.383Z",
+      "cooked": "<p><code>cut -d/ -f2</code> is not returning empty string. It is returning the domain name.</p>\n<p>The <code>grep</code> is removing all rows which does not match.</p>\n<p>Remove the <code>grep</code> from command to confirm.</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-02-20T12:14:02.383Z",
+      "reply_count": 1,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 20,
+      "readers_count": 19,
+      "score": 9,
+      "yours": false,
+      "topic_id": 167794,
+      "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 6940,
+        "username": "Amitabhab",
+        "name": "Amitabha",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/5",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597432,
+      "name": "Amitabha",
+      "username": "Amitabhab",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+      "created_at": "2025-02-20T13:38:22.063Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/9/a96b0786bc321f4ccd9c859543e65958ea64bd03.png\" data-download-href=\"/uploads/short-url/oaK07rEJxNn577RY2BAW96F3Iqf.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/9/a96b0786bc321f4ccd9c859543e65958ea64bd03_2_690x119.png\" alt=\"image\" data-base62-sha1=\"oaK07rEJxNn577RY2BAW96F3Iqf\" width=\"690\" height=\"119\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/9/a96b0786bc321f4ccd9c859543e65958ea64bd03_2_690x119.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/9/a96b0786bc321f4ccd9c859543e65958ea64bd03.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/9/a96b0786bc321f4ccd9c859543e65958ea64bd03.png 2x\" data-dominant-color=\"37192F\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">801×139 22.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\nThis  is  what  I  get , Am I  missing  something?</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-02-20T13:38:22.063Z",
+      "reply_count": 0,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 16,
+      "readers_count": 15,
+      "score": 3.2,
+      "yours": false,
+      "topic_id": 167794,
+      "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+      "display_username": "Amitabha",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6940,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/6",
+      "user_cakedate": "2021-09-08",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597433,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-02-20T13:39:13.881Z",
+      "cooked": "<p>My bad, I misread <code>-f2</code> as <code>-f3</code>.</p>\n<p>Yes it expected to be empty cause there is nothing between the first and second slash</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-02-20T13:39:13.881Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 16,
+      "readers_count": 15,
+      "score": 8.2,
+      "yours": false,
+      "topic_id": 167794,
+      "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/7",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597444,
+      "name": "Amitabha",
+      "username": "Amitabhab",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+      "created_at": "2025-02-20T14:01:19.449Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb.png\" data-download-href=\"/uploads/short-url/p9ifvh8YLSYo5ShRBOaXYKbF2zx.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb_2_690x491.png\" alt=\"image\" data-base62-sha1=\"p9ifvh8YLSYo5ShRBOaXYKbF2zx\" width=\"690\" height=\"491\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb_2_690x491.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb_2_1035x736.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/0/b0434fde8f42e74aa674754b4282e7c7eaf61ecb.png 2x\" data-dominant-color=\"F8F4F2\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1075×766 86.5 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>second  question<br>\ngrep -v  “(WWW\\.)”    ------ produce  the  same  effect ?<br>\nIf  yes  then  what  is  the  difference?</p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-02-20T14:02:01.200Z",
+      "reply_count": 1,
+      "reply_to_post_number": 7,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 16,
+      "readers_count": 15,
+      "score": 8.2,
+      "yours": false,
+      "topic_id": 167794,
+      "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+      "display_username": "Amitabha",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6940,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/8",
+      "user_cakedate": "2021-09-08",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597508,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-02-20T16:17:36.807Z",
+      "cooked": "<ol>\n<li>yes, it ignores all the lines that have <code>www</code> in the domain.</li>\n<li>No, as i mentioned grep is case sensitive.</li>\n</ol>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-02-20T16:17:36.807Z",
+      "reply_count": 1,
+      "reply_to_post_number": 8,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 15,
+      "readers_count": 14,
+      "score": 23,
+      "yours": false,
+      "topic_id": 167794,
+      "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 6940,
+        "username": "Amitabhab",
+        "name": "Amitabha",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/9",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597617,
+      "name": "Amitabha",
+      "username": "Amitabhab",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+      "created_at": "2025-02-21T03:35:22.065Z",
+      "cooked": "<p>thanks  for  clarifying  the  doubt</p>\n<p>I  have  only  one  question  left<br>\ngrep -v “(www.)”    and  grep -v ‘www.’</p>\n<p>Are  there  any  difference on  result?<br>\nMY  question is    why you  choose  ‘www.’  but  not  not “(www.)”:<br>\nAlso  confuse  when we  use ’  ’ and  when  \" \"</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-02-21T03:35:22.065Z",
+      "reply_count": 1,
+      "reply_to_post_number": 9,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 14,
+      "readers_count": 13,
+      "score": 7.8,
+      "yours": false,
+      "topic_id": 167794,
+      "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+      "display_username": "Amitabha",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6940,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/11",
+      "user_cakedate": "2021-09-08",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597675,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-02-21T05:46:48.924Z",
+      "cooked": "<p>If using <code>-E</code> then they are same.<br>\nOtherwise it matches a literal pair of parentheses. You can use <code>\\(</code> and <code>\\)</code> to escape them, again, then they are same.</p>\n<p>It is used for grouping the expression, please go through <a href=\"https://drive.google.com/file/d/14CB1UNUDJaOWqiOQwD5sRghO0cF_I89O/view\" rel=\"noopener nofollow ugc\">navigating linux 6.3.6</a> to understand how grouping works and how it is used in <strong>back-references</strong>.</p>\n<aside class=\"quote group-ds-students\" data-username=\"Amitabhab\" data-post=\"11\" data-topic=\"167794\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/48/16794_2.png\" class=\"avatar\"> Amitabhab:</div>\n<blockquote>\n<p>Also confuse when we use ’ ’ and when \" \"</p>\n</blockquote>\n</aside>\n<p>This has nothing to do with <code>grep</code>, this is how <code>bash</code> works. Variables are expanded inside <code>\" \"</code> so we stick to <code>' '</code> so that all strings are passed as is to <code>grep</code>.</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-02-21T05:46:48.924Z",
+      "reply_count": 1,
+      "reply_to_post_number": 11,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 11,
+      "readers_count": 10,
+      "score": 22.2,
+      "yours": false,
+      "topic_id": 167794,
+      "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://drive.google.com/file/d/14CB1UNUDJaOWqiOQwD5sRghO0cF_I89O/view",
+          "internal": false,
+          "reflection": false,
+          "clicks": 0
+        }
+      ],
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/12",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597684,
+      "name": "Amitabha",
+      "username": "Amitabhab",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+      "created_at": "2025-02-21T05:51:17.445Z",
+      "cooked": "<p>Thanks.<br>\nGreat  explanation.</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-02-21T05:51:17.445Z",
+      "reply_count": 0,
+      "reply_to_post_number": 12,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 11,
+      "readers_count": 10,
+      "score": 2.2,
+      "yours": false,
+      "topic_id": 167794,
+      "topic_slug": "grep-invert-matching-print-only-match-and-case-sensitivity",
+      "display_username": "Amitabha",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6940,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/grep-invert-matching-print-only-match-and-case-sensitivity/167794/13",
+      "user_cakedate": "2021-09-08",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

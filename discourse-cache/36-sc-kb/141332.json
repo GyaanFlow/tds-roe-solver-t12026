@@ -1,0 +1,4838 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 507213,
+        "name": "SHIVADHARSHAN S",
+        "username": "22f3001421",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+        "created_at": "2024-07-28T11:59:27.815Z",
+        "cooked": "<p>BPT-4.1 question, public test case pass and private test cases don’t<br>\nspecifically, the first private test case seems to be a file that is accessible, so i copied that file to check if my code works, and it seems to work fine<br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/3/c/3cf5d197ac669dc17b79fbd5197748eb98131c98.png\" alt=\"image\" data-base62-sha1=\"8HhjmTj7fRICCKKIkkohPXCSO9i\" width=\"682\" height=\"428\"></p>\n<p><s>BPT-4.2 private test case 3 seems to never pass with one file read as unknown by my script. but all the other ranges don’t throw error in the test case</s> <strong>edit :found the corner case</strong></p>\n<p>BPT-4.3 and BPT-4.4 both use SED but Sed lecture is still not available in the portal. this issue started with GRPA 7 with questions asked from sed, till now no lecture on sed is available.</p>\n<p>Please look into all this. <a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a></p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-07-28T12:13:03.988Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 4,
+        "reads": 120,
+        "readers_count": 119,
+        "score": 104,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "SHIVADHARSHAN S",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 4,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16469,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/1",
+        "user_cakedate": "2023-01-27",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 4
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 4,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 508194,
+        "name": "golla giridhara maanas",
+        "username": "manas",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manas/{size}/14302_2.png",
+        "created_at": "2024-07-29T07:28:20.495Z",
+        "cooked": "<p>+1 same problem here</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-07-29T07:28:20.495Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 110,
+        "readers_count": 109,
+        "score": 37,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "golla giridhara maanas",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 1176,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/2",
+        "user_cakedate": "2021-04-28",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 508303,
+        "name": "Deep Kevin Luthra",
+        "username": "21f3001584",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001584/{size}/14198_2.png",
+        "created_at": "2024-07-29T11:14:00.121Z",
+        "cooked": "<p>Since both bpt and grpa have questions on sed, week 8 might be on sed.<br>\nYou can go through this lecture.</p><div class=\"youtube-onebox lazy-video-container\" data-video-id=\"uCJjZ3cbaAw\" data-video-title=\"stream editor sed\" data-video-start-time=\"\" data-provider-name=\"youtube\">\n  <a href=\"https://www.youtube.com/watch?v=uCJjZ3cbaAw\" target=\"_blank\" class=\"video-thumbnail\" rel=\"noopener nofollow ugc\">\n    <img class=\"youtube-thumbnail\" src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/8/c85deea3ea242d083951eaa5b8f3e50c00d8e521.jpeg\" title=\"stream editor sed\" data-dominant-color=\"F8F8F8\" width=\"690\" height=\"388\">\n  </a>\n</div>\n",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-07-29T11:14:25.402Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 2,
+        "reads": 107,
+        "readers_count": 106,
+        "score": 31.4,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "Deep Kevin Luthra",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://www.youtube.com/watch?v=uCJjZ3cbaAw",
+            "internal": false,
+            "reflection": false,
+            "clicks": 1
+          }
+        ],
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 11563,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/3",
+        "user_cakedate": "2022-01-20",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 508902,
+        "name": "Deep Kevin Luthra",
+        "username": "21f3001584",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001584/{size}/14198_2.png",
+        "created_at": "2024-07-29T12:38:52.156Z",
+        "cooked": "<p>The private test cases for the third question in BPT4 seems to be without any arguments for the options. The question does not state how we should handle these cases.<br>\nThey also expect an output but without having provided any input argument for the -i option. Can someone else confirm?</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/e/7e41aa9bb332156de9a133251f968db1fe31b5b6.png\" data-download-href=\"/uploads/short-url/i0UQL8oNx2gcjCBaNaNYKGyV4RU.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/e/7e41aa9bb332156de9a133251f968db1fe31b5b6.png\" alt=\"image\" data-base62-sha1=\"i0UQL8oNx2gcjCBaNaNYKGyV4RU\" width=\"690\" height=\"364\" data-dominant-color=\"130E0E\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">778×411 9.81 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/6/06c56de86fe329cc4020c55b07d6da3757c7976f.png\" data-download-href=\"/uploads/short-url/XTR1pMtMNaRM3clz1XVqv200xN.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/6/06c56de86fe329cc4020c55b07d6da3757c7976f.png\" alt=\"image\" data-base62-sha1=\"XTR1pMtMNaRM3clz1XVqv200xN\" width=\"356\" height=\"499\" data-dominant-color=\"202020\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">403×566 5.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-07-30T16:45:49.445Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 81,
+        "readers_count": 80,
+        "score": 16.2,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "Deep Kevin Luthra",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 11563,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/4",
+        "user_cakedate": "2022-01-20",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 508644,
+        "name": "SHIVADHARSHAN S",
+        "username": "22f3001421",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+        "created_at": "2024-07-30T06:41:24.275Z",
+        "cooked": "<p>Can someone give pointers for the first question. I am not sure what’s going wrong</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-07-30T16:45:49.410Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 92,
+        "readers_count": 91,
+        "score": 23.4,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "SHIVADHARSHAN S",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16469,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/5",
+        "user_cakedate": "2023-01-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 508691,
+        "name": "SHIVADHARSHAN S",
+        "username": "22f3001421",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+        "created_at": "2024-07-30T08:34:40.416Z",
+        "cooked": "<p>Yes i am facing this issue, has this been resolved?</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-07-30T16:45:49.406Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 91,
+        "readers_count": 90,
+        "score": 23.2,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "SHIVADHARSHAN S",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16469,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/6",
+        "user_cakedate": "2023-01-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 508722,
+        "name": "Deep Kevin Luthra",
+        "username": "21f3001584",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001584/{size}/14198_2.png",
+        "created_at": "2024-07-30T09:46:50.901Z",
+        "cooked": "<p>Still present for me.</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-07-30T16:45:49.403Z",
+        "reply_count": 0,
+        "reply_to_post_number": 6,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 90,
+        "readers_count": 89,
+        "score": 18,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "Deep Kevin Luthra",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 16469,
+          "username": "22f3001421",
+          "name": "SHIVADHARSHAN S",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 11563,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/7",
+        "user_cakedate": "2022-01-20",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 508758,
+        "name": "Vineet ",
+        "username": "23dp3000017",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23dp3000017/{size}/67267_2.png",
+        "created_at": "2024-07-30T11:31:50.200Z",
+        "cooked": "<p>similar problem for me. how do we access the files in the private test cases?</p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-07-30T16:45:49.402Z",
+        "reply_count": 0,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 93,
+        "readers_count": 92,
+        "score": 18.6,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "Vineet ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 16469,
+          "username": "22f3001421",
+          "name": "SHIVADHARSHAN S",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 23680,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/8",
+        "user_cakedate": "2023-10-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 508853,
+        "name": "SHIVADHARSHAN S",
+        "username": "22f3001421",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+        "created_at": "2024-07-30T15:40:18.125Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/sushil1\">@sushil1</a> <a class=\"mention\" href=\"/u/subendu\">@Subendu</a>  please check the private test cases of question 1 and 3</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-07-30T16:45:49.401Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 94,
+        "readers_count": 93,
+        "score": 23.8,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "SHIVADHARSHAN S",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16469,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/9",
+        "user_cakedate": "2023-01-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 508898,
+        "name": "Yash Rastogi",
+        "username": "22F3002354",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+        "created_at": "2024-07-30T16:43:42.687Z",
+        "cooked": "<p>BPT4 clarification:</p>\n<ul>\n<li>Q1 &amp; Q3 private cases are mis-configured.</li>\n<li>Q4: question statement has slight issue in sample output.txt and the example command.</li>\n</ul>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-07-30T16:45:49.399Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 91,
+        "readers_count": 90,
+        "score": 28.2,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "Yash Rastogi",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 17065,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/10",
+        "user_cakedate": "2023-04-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 508960,
+        "name": "SHIVADHARSHAN S",
+        "username": "22f3001421",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+        "created_at": "2024-07-31T01:26:54.210Z",
+        "cooked": "<p>So, it will not be considered for evaluation right?</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-07-31T01:26:54.210Z",
+        "reply_count": 1,
+        "reply_to_post_number": 10,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 85,
+        "readers_count": 84,
+        "score": 27,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "SHIVADHARSHAN S",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 17065,
+          "username": "22F3002354",
+          "name": "Yash Rastogi",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16469,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/11",
+        "user_cakedate": "2023-01-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 508969,
+        "name": "Yash Rastogi",
+        "username": "22F3002354",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+        "created_at": "2024-07-31T03:09:51.734Z",
+        "cooked": "<p>It will be considered for evaluation, the private test cases will be updated.</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-07-31T03:09:51.734Z",
+        "reply_count": 3,
+        "reply_to_post_number": 11,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 87,
+        "readers_count": 86,
+        "score": 32.4,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "Yash Rastogi",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 16469,
+          "username": "22f3001421",
+          "name": "SHIVADHARSHAN S",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 17065,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/12",
+        "user_cakedate": "2023-04-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 508970,
+        "name": "Hari Venkataraman",
+        "username": "22f2001398",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png",
+        "created_at": "2024-07-31T03:11:28.886Z",
+        "cooked": "<p>Ok thank you. Kindly inform when the private test cases are updated.</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-07-31T03:11:28.886Z",
+        "reply_count": 0,
+        "reply_to_post_number": 12,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 87,
+        "readers_count": 86,
+        "score": 17.4,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "Hari Venkataraman",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 17065,
+          "username": "22F3002354",
+          "name": "Yash Rastogi",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 15047,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/13",
+        "user_cakedate": "2022-09-11",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 509276,
+        "name": "SHIVADHARSHAN S",
+        "username": "22f3001421",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+        "created_at": "2024-07-31T17:47:47.474Z",
+        "cooked": "<p>If so, when is the deadline, Btw, the question 1 is still having problems</p>",
+        "post_number": 14,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-07-31T17:47:47.474Z",
+        "reply_count": 1,
+        "reply_to_post_number": 12,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 81,
+        "readers_count": 80,
+        "score": 21.2,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "SHIVADHARSHAN S",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 17065,
+          "username": "22F3002354",
+          "name": "Yash Rastogi",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16469,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/14",
+        "user_cakedate": "2023-01-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 510115,
+        "name": "SHIVADHARSHAN S",
+        "username": "22f3001421",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+        "created_at": "2024-08-03T03:24:46.578Z",
+        "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/8/5866d6108bf6f2cd8d827fa6a8d1474ebc6efbb4.png\" data-download-href=\"/uploads/short-url/cC2lgbxqhq8wNIm9owyDpGw04Wo.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/8/5866d6108bf6f2cd8d827fa6a8d1474ebc6efbb4.png\" alt=\"image\" data-base62-sha1=\"cC2lgbxqhq8wNIm9owyDpGw04Wo\" width=\"690\" height=\"266\" data-dominant-color=\"3D122F\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">734×284 25.8 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>The question says, file name will be given, as you can see, the output of head command is redirected as inputs furthermore, the files doesn’t exist.</p>\n<p>Please look into this <a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a></p>",
+        "post_number": 15,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-08-03T03:24:46.578Z",
+        "reply_count": 0,
+        "reply_to_post_number": 14,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 81,
+        "readers_count": 80,
+        "score": 16.2,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "SHIVADHARSHAN S",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 16469,
+          "username": "22f3001421",
+          "name": "SHIVADHARSHAN S",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16469,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/15",
+        "user_cakedate": "2023-01-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 510164,
+        "name": "Rohini ",
+        "username": "22f3001419",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/439d5e/{size}.png",
+        "created_at": "2024-08-03T05:55:22.132Z",
+        "cooked": "<p>I have a similar problem. I am  posting my submission report here.</p>\n<h2><a name=\"p-510164-bpt4_problem_1-sat-aug-3-054503-am-utc-2024-1\" class=\"anchor\" href=\"#p-510164-bpt4_problem_1-sat-aug-3-054503-am-utc-2024-1\" aria-label=\"Heading link\"></a>BPT4_problem_1: Sat Aug  3 05:45:03 AM UTC 2024</h2>\n<h2><a name=\"p-510164-optse2001bpt4_problem_1publictest_case_1-pass-optse2001bpt4_problem_1publictest_case_1-optse2001bpt4_problem_1publictest_case_2-pass-optse2001bpt4_problem_1publictest_case_2-public-testcases-passed-22-public-test-cases-evaluation-successful-public-test-cases-submission-successful-privatetest-case-1-passed-privatetest-case-2head-cannot-open-name_hextxt-for-reading-no-such-file-or-directory-1c1-devfd63-passed-2\" class=\"anchor\" href=\"#p-510164-optse2001bpt4_problem_1publictest_case_1-pass-optse2001bpt4_problem_1publictest_case_1-optse2001bpt4_problem_1publictest_case_2-pass-optse2001bpt4_problem_1publictest_case_2-public-testcases-passed-22-public-test-cases-evaluation-successful-public-test-cases-submission-successful-privatetest-case-1-passed-privatetest-case-2head-cannot-open-name_hextxt-for-reading-no-such-file-or-directory-1c1-devfd63-passed-2\" aria-label=\"Heading link\"></a> → /opt/se2001/BPT4_problem_1/public/test_case_1<br>\nPASS: /opt/se2001/BPT4_problem_1/public/test_case_1<br>\n → /opt/se2001/BPT4_problem_1/public/test_case_2<br>\nPASS: /opt/se2001/BPT4_problem_1/public/test_case_2<br>\nPublic Testcases Passed: 2/2<br>\nPublic Test Cases: Evaluation successful.<br>\nPublic Test Cases: Submission successful.<br>\n → private/test case 1 [PASSED]<br>\n → private/test case 2head: cannot open ‘name_hex.txt’ for reading: No such file or directory<br>\n1c1<br>\n&lt; /dev/fd/63 PASSED</h2>\n<blockquote>\n<p>/dev/fd/61 PASSED<br>\n[FAILED]<br>\n → private/test case 3head: cannot open ‘name_hex.txt’ for reading: No such file or directory<br>\n1c1<br>\n&lt; /dev/fd/63 FAILED</p>\n</blockquote>\n<hr>\n<blockquote>\n<p>/dev/fd/61 PASSED<br>\n[FAILED]<br>\nPrivate Testcases Passed: 1/3<br>\nPrivate Test Cases: Evaluation failed!<br>\nPrivate Test Cases: Submission successful.</p>\n</blockquote>\n<p>Please check this.<br>\nRohini Chaubal<br>\n22f3001419</p>",
+        "post_number": 16,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-08-03T05:55:22.132Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 82,
+        "readers_count": 81,
+        "score": 26.4,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "Rohini ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21492,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/16",
+        "user_cakedate": "2023-09-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 510183,
+        "name": "Rohini ",
+        "username": "22f3001419",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/439d5e/{size}.png",
+        "created_at": "2024-08-03T06:24:14.289Z",
+        "cooked": "<p>Sir , i have similar issues with BPT4_problem_2.  I am posting below:</p>\n<h2><a name=\"p-510183-bpt4_problem_2-sat-aug-3-062028-am-utc-2024-1\" class=\"anchor\" href=\"#p-510183-bpt4_problem_2-sat-aug-3-062028-am-utc-2024-1\" aria-label=\"Heading link\"></a>BPT4_problem_2: Sat Aug  3 06:20:28 AM UTC 2024</h2>\n<p> → /opt/se2001/BPT4_problem_2/public/test_case_1<br>\nPASS: /opt/se2001/BPT4_problem_2/public/test_case_1<br>\n → /opt/se2001/BPT4_problem_2/public/test_case_2<br>\nPASS: /opt/se2001/BPT4_problem_2/public/test_case_2<br>\nPublic Testcases Passed: 2/2<br>\nPublic Test Cases: Evaluation successful.<br>\nPublic Test Cases: Submission successful.<br>\n → private/test case 1environment: line 201: ./script.sh: Permission denied<br>\n1,5d0<br>\n&lt; Report:<br>\n&lt; Image file: 0<br>\n&lt; Document file: 5<br>\n&lt; Compressed file: 0<br>\n&lt; Unknown file type: 0<br>\n[FAILED]<br>\n → private/test case 2environment: line 201: ./script.sh: Permission denied<br>\n1,5d0<br>\n&lt; Report:<br>\n&lt; Image file: 1<br>\n&lt; Document file: 1<br>\n&lt; Compressed file: 1<br>\n&lt; Unknown file type: 2<br>\n[FAILED]<br>\n → private/test case 3environment: line 201: ./script.sh: Permission denied<br>\n1,5d0<br>\n&lt; Report:<br>\n&lt; Image file: 0<br>\n&lt; Document file: 0<br>\n&lt; Compressed file: 0<br>\n&lt; Unknown file type: 0<br>\n[FAILED]<br>\n → private/test case 4environment: line 201: ./script.sh: Permission denied<br>\n1,5d0<br>\n&lt; Report:<br>\n&lt; Image file: 0<br>\n&lt; Document file: 0<br>\n&lt; Compressed file: 5<br>\n&lt; Unknown file type: 0<br>\n[FAILED]<br>\nPrivate Testcases Passed: 0/4<br>\nPrivate Test Cases: Evaluation failed!<br>\nPrivate Test Cases: Submission successful.<br>\n22f3001419@se2001:~/se2001/BPT4_problem_2$</p>\n<p>when I run the command synchro eval , it passes both public cases but in private cases it says permission denied.</p>\n<p>Rohini Chaubal<br>\n22f3001419</p>",
+        "post_number": 17,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-08-03T06:24:14.289Z",
+        "reply_count": 1,
+        "reply_to_post_number": 16,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 83,
+        "readers_count": 82,
+        "score": 21.6,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "Rohini ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 21492,
+          "username": "22f3001419",
+          "name": "Rohini ",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/439d5e/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21492,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/17",
+        "user_cakedate": "2023-09-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 510247,
+        "name": "SHIVADHARSHAN S",
+        "username": "22f3001421",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+        "created_at": "2024-08-03T07:53:02.142Z",
+        "cooked": "<p>Check the permissions on script.sh</p>",
+        "post_number": 18,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-08-03T07:53:02.142Z",
+        "reply_count": 0,
+        "reply_to_post_number": 17,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 79,
+        "readers_count": 78,
+        "score": 15.8,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "SHIVADHARSHAN S",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 21492,
+          "username": "22f3001419",
+          "name": "Rohini ",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/439d5e/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16469,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/18",
+        "user_cakedate": "2023-01-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 510944,
+        "name": "Pansuriya Tarang Bharatbhai ",
+        "username": "tarang96",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tarang96/{size}/101402_2.png",
+        "created_at": "2024-08-05T14:49:16.521Z",
+        "cooked": "<p>Sir, Now that the Problem 1 issues have been resolved, I am still facing issues in problems 3 and 4 ? have those been resolved or not? Please inform us so that we can try different ways to solve those if the issues are in my code.<br>\nI am hoping for a quick reply as the deadline is tomorrow.<br>\nThanks.</p>",
+        "post_number": 19,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-08-05T14:49:16.521Z",
+        "reply_count": 3,
+        "reply_to_post_number": 12,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 67,
+        "readers_count": 66,
+        "score": 28.4,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "Pansuriya Tarang Bharatbhai ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 17065,
+          "username": "22F3002354",
+          "name": "Yash Rastogi",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 1172,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/19",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-05-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 510946,
+        "name": "SHIVADHARSHAN S",
+        "username": "22f3001421",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+        "created_at": "2024-08-05T14:53:34.083Z",
+        "cooked": "<p>All problems seem to be solved for me</p>",
+        "post_number": 20,
+        "post_type": 1,
+        "posts_count": 27,
+        "updated_at": "2024-08-05T14:53:34.083Z",
+        "reply_count": 0,
+        "reply_to_post_number": 19,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 67,
+        "readers_count": 66,
+        "score": 18.4,
+        "yours": false,
+        "topic_id": 141332,
+        "topic_slug": "query-regarding-the-bpt-4-questions",
+        "display_username": "SHIVADHARSHAN S",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 1172,
+          "username": "tarang96",
+          "name": "Pansuriya Tarang Bharatbhai ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tarang96/{size}/101402_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16469,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/query-regarding-the-bpt-4-questions/141332/20",
+        "user_cakedate": "2023-01-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      507213,
+      508194,
+      508303,
+      508902,
+      508644,
+      508691,
+      508722,
+      508758,
+      508853,
+      508898,
+      508960,
+      508969,
+      508970,
+      509276,
+      510115,
+      510164,
+      510183,
+      510247,
+      510944,
+      510946,
+      510958,
+      511078,
+      511294,
+      511291,
+      511270,
+      511275,
+      511287
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      637
+    ],
+    [
+      3,
+      636
+    ],
+    [
+      6,
+      635
+    ],
+    [
+      14,
+      634
+    ],
+    [
+      15,
+      632
+    ],
+    [
+      19,
+      629
+    ],
+    [
+      24,
+      628
+    ]
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Query regarding the BPT-4 questions",
+  "id": 141332,
+  "title": "Query regarding the BPT-4 questions",
+  "posts_count": 27,
+  "created_at": "2024-07-28T11:59:27.628Z",
+  "views": 274,
+  "reply_count": 13,
+  "like_count": 7,
+  "last_posted_at": "2024-08-06T14:27:06.884Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "query-regarding-the-bpt-4-questions",
+  "category_id": 36,
+  "word_count": 1211,
+  "deleted_at": null,
+  "user_id": 16469,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/3/c/3cf5d197ac669dc17b79fbd5197748eb98131c98.png",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_141332",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 28,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 13,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 682,
+      "height": 428,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/3/c/3cf5d197ac669dc17b79fbd5197748eb98131c98.png"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": null,
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 21,
+    "username": "22F3002354",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+    "excerpt": "<p>All issues have been resolved except slight issues in wording of a couple of questions.</p>",
+    "accepter_name": null,
+    "accepter_username": "22F3002354"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 16469,
+        "username": "22f3001421",
+        "name": "SHIVADHARSHAN S",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+        "post_count": 9,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 17065,
+        "username": "22F3002354",
+        "name": "Yash Rastogi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 11563,
+        "username": "21f3001584",
+        "name": "Deep Kevin Luthra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001584/{size}/14198_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 12462,
+        "username": "Dibakash",
+        "name": "Dibakash Baruah",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/d/22d042/{size}.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 21492,
+        "username": "22f3001419",
+        "name": "Rohini ",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/439d5e/{size}.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 1176,
+        "username": "manas",
+        "name": "golla giridhara maanas",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manas/{size}/14302_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 5471,
+        "username": "nabeel26",
+        "name": "Nabeel",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/nabeel26/{size}/297_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 14561,
+        "username": "hemjadli",
+        "name": "Hemendra Sharma",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hemjadli/{size}/66975_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 23680,
+        "username": "23dp3000017",
+        "name": "Vineet ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23dp3000017/{size}/67267_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 15137,
+        "username": "Ashwadhi",
+        "name": "22f2000771",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ashwadhi/{size}/12612_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 1172,
+        "username": "tarang96",
+        "name": "Pansuriya Tarang Bharatbhai ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tarang96/{size}/101402_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 7266,
+        "username": "21f3001113",
+        "name": "Arnajit Chakraborty",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001113/{size}/13686_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 15047,
+        "username": "22f2001398",
+        "name": "Hari Venkataraman",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 16469,
+      "username": "22f3001421",
+      "name": "SHIVADHARSHAN S",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png"
+    },
+    "last_poster": {
+      "id": 12462,
+      "username": "Dibakash",
+      "name": "Dibakash Baruah",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/d/22d042/{size}.png"
+    },
+    "links": [
+      {
+        "url": "https://www.youtube.com/watch?v=uCJjZ3cbaAw",
+        "title": null,
+        "internal": false,
+        "attachment": false,
+        "reflection": false,
+        "clicks": 1,
+        "user_id": 11563,
+        "domain": "www.youtube.com",
+        "root_domain": "youtube.com"
+      }
+    ]
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 507213,
+      "name": "SHIVADHARSHAN S",
+      "username": "22f3001421",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+      "created_at": "2024-07-28T11:59:27.815Z",
+      "cooked": "<p>BPT-4.1 question, public test case pass and private test cases don’t<br>\nspecifically, the first private test case seems to be a file that is accessible, so i copied that file to check if my code works, and it seems to work fine<br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/3/c/3cf5d197ac669dc17b79fbd5197748eb98131c98.png\" alt=\"image\" data-base62-sha1=\"8HhjmTj7fRICCKKIkkohPXCSO9i\" width=\"682\" height=\"428\"></p>\n<p><s>BPT-4.2 private test case 3 seems to never pass with one file read as unknown by my script. but all the other ranges don’t throw error in the test case</s> <strong>edit :found the corner case</strong></p>\n<p>BPT-4.3 and BPT-4.4 both use SED but Sed lecture is still not available in the portal. this issue started with GRPA 7 with questions asked from sed, till now no lecture on sed is available.</p>\n<p>Please look into all this. <a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a></p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-07-28T12:13:03.988Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 4,
+      "reads": 120,
+      "readers_count": 119,
+      "score": 104,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "SHIVADHARSHAN S",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 4,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16469,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/1",
+      "user_cakedate": "2023-01-27",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 4
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 4,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 508194,
+      "name": "golla giridhara maanas",
+      "username": "manas",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manas/{size}/14302_2.png",
+      "created_at": "2024-07-29T07:28:20.495Z",
+      "cooked": "<p>+1 same problem here</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-07-29T07:28:20.495Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 110,
+      "readers_count": 109,
+      "score": 37,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "golla giridhara maanas",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 1176,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/2",
+      "user_cakedate": "2021-04-28",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 508303,
+      "name": "Deep Kevin Luthra",
+      "username": "21f3001584",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001584/{size}/14198_2.png",
+      "created_at": "2024-07-29T11:14:00.121Z",
+      "cooked": "<p>Since both bpt and grpa have questions on sed, week 8 might be on sed.<br>\nYou can go through this lecture.</p><div class=\"youtube-onebox lazy-video-container\" data-video-id=\"uCJjZ3cbaAw\" data-video-title=\"stream editor sed\" data-video-start-time=\"\" data-provider-name=\"youtube\">\n  <a href=\"https://www.youtube.com/watch?v=uCJjZ3cbaAw\" target=\"_blank\" class=\"video-thumbnail\" rel=\"noopener nofollow ugc\">\n    <img class=\"youtube-thumbnail\" src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/8/c85deea3ea242d083951eaa5b8f3e50c00d8e521.jpeg\" title=\"stream editor sed\" data-dominant-color=\"F8F8F8\" width=\"690\" height=\"388\">\n  </a>\n</div>\n",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-07-29T11:14:25.402Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 107,
+      "readers_count": 106,
+      "score": 31.4,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Deep Kevin Luthra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://www.youtube.com/watch?v=uCJjZ3cbaAw",
+          "internal": false,
+          "reflection": false,
+          "clicks": 1
+        }
+      ],
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 11563,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/3",
+      "user_cakedate": "2022-01-20",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 508902,
+      "name": "Deep Kevin Luthra",
+      "username": "21f3001584",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001584/{size}/14198_2.png",
+      "created_at": "2024-07-29T12:38:52.156Z",
+      "cooked": "<p>The private test cases for the third question in BPT4 seems to be without any arguments for the options. The question does not state how we should handle these cases.<br>\nThey also expect an output but without having provided any input argument for the -i option. Can someone else confirm?</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/e/7e41aa9bb332156de9a133251f968db1fe31b5b6.png\" data-download-href=\"/uploads/short-url/i0UQL8oNx2gcjCBaNaNYKGyV4RU.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/e/7e41aa9bb332156de9a133251f968db1fe31b5b6.png\" alt=\"image\" data-base62-sha1=\"i0UQL8oNx2gcjCBaNaNYKGyV4RU\" width=\"690\" height=\"364\" data-dominant-color=\"130E0E\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">778×411 9.81 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/6/06c56de86fe329cc4020c55b07d6da3757c7976f.png\" data-download-href=\"/uploads/short-url/XTR1pMtMNaRM3clz1XVqv200xN.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/6/06c56de86fe329cc4020c55b07d6da3757c7976f.png\" alt=\"image\" data-base62-sha1=\"XTR1pMtMNaRM3clz1XVqv200xN\" width=\"356\" height=\"499\" data-dominant-color=\"202020\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">403×566 5.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-07-30T16:45:49.445Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 81,
+      "readers_count": 80,
+      "score": 16.2,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Deep Kevin Luthra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 11563,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/4",
+      "user_cakedate": "2022-01-20",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 508644,
+      "name": "SHIVADHARSHAN S",
+      "username": "22f3001421",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+      "created_at": "2024-07-30T06:41:24.275Z",
+      "cooked": "<p>Can someone give pointers for the first question. I am not sure what’s going wrong</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-07-30T16:45:49.410Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 92,
+      "readers_count": 91,
+      "score": 23.4,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "SHIVADHARSHAN S",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16469,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/5",
+      "user_cakedate": "2023-01-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 508691,
+      "name": "SHIVADHARSHAN S",
+      "username": "22f3001421",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+      "created_at": "2024-07-30T08:34:40.416Z",
+      "cooked": "<p>Yes i am facing this issue, has this been resolved?</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-07-30T16:45:49.406Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 91,
+      "readers_count": 90,
+      "score": 23.2,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "SHIVADHARSHAN S",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16469,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/6",
+      "user_cakedate": "2023-01-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 508722,
+      "name": "Deep Kevin Luthra",
+      "username": "21f3001584",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001584/{size}/14198_2.png",
+      "created_at": "2024-07-30T09:46:50.901Z",
+      "cooked": "<p>Still present for me.</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-07-30T16:45:49.403Z",
+      "reply_count": 0,
+      "reply_to_post_number": 6,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 90,
+      "readers_count": 89,
+      "score": 18,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Deep Kevin Luthra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 16469,
+        "username": "22f3001421",
+        "name": "SHIVADHARSHAN S",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 11563,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/7",
+      "user_cakedate": "2022-01-20",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 508758,
+      "name": "Vineet ",
+      "username": "23dp3000017",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23dp3000017/{size}/67267_2.png",
+      "created_at": "2024-07-30T11:31:50.200Z",
+      "cooked": "<p>similar problem for me. how do we access the files in the private test cases?</p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-07-30T16:45:49.402Z",
+      "reply_count": 0,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 93,
+      "readers_count": 92,
+      "score": 18.6,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Vineet ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 16469,
+        "username": "22f3001421",
+        "name": "SHIVADHARSHAN S",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23680,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/8",
+      "user_cakedate": "2023-10-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 508853,
+      "name": "SHIVADHARSHAN S",
+      "username": "22f3001421",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+      "created_at": "2024-07-30T15:40:18.125Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/sushil1\">@sushil1</a> <a class=\"mention\" href=\"/u/subendu\">@Subendu</a>  please check the private test cases of question 1 and 3</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-07-30T16:45:49.401Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 94,
+      "readers_count": 93,
+      "score": 23.8,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "SHIVADHARSHAN S",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16469,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/9",
+      "user_cakedate": "2023-01-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 508898,
+      "name": "Yash Rastogi",
+      "username": "22F3002354",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+      "created_at": "2024-07-30T16:43:42.687Z",
+      "cooked": "<p>BPT4 clarification:</p>\n<ul>\n<li>Q1 &amp; Q3 private cases are mis-configured.</li>\n<li>Q4: question statement has slight issue in sample output.txt and the example command.</li>\n</ul>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-07-30T16:45:49.399Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 91,
+      "readers_count": 90,
+      "score": 28.2,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Yash Rastogi",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17065,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/10",
+      "user_cakedate": "2023-04-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 508960,
+      "name": "SHIVADHARSHAN S",
+      "username": "22f3001421",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+      "created_at": "2024-07-31T01:26:54.210Z",
+      "cooked": "<p>So, it will not be considered for evaluation right?</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-07-31T01:26:54.210Z",
+      "reply_count": 1,
+      "reply_to_post_number": 10,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 85,
+      "readers_count": 84,
+      "score": 27,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "SHIVADHARSHAN S",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 17065,
+        "username": "22F3002354",
+        "name": "Yash Rastogi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16469,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/11",
+      "user_cakedate": "2023-01-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 508969,
+      "name": "Yash Rastogi",
+      "username": "22F3002354",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+      "created_at": "2024-07-31T03:09:51.734Z",
+      "cooked": "<p>It will be considered for evaluation, the private test cases will be updated.</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-07-31T03:09:51.734Z",
+      "reply_count": 3,
+      "reply_to_post_number": 11,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 87,
+      "readers_count": 86,
+      "score": 32.4,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Yash Rastogi",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 16469,
+        "username": "22f3001421",
+        "name": "SHIVADHARSHAN S",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17065,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/12",
+      "user_cakedate": "2023-04-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 508970,
+      "name": "Hari Venkataraman",
+      "username": "22f2001398",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png",
+      "created_at": "2024-07-31T03:11:28.886Z",
+      "cooked": "<p>Ok thank you. Kindly inform when the private test cases are updated.</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-07-31T03:11:28.886Z",
+      "reply_count": 0,
+      "reply_to_post_number": 12,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 87,
+      "readers_count": 86,
+      "score": 17.4,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Hari Venkataraman",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 17065,
+        "username": "22F3002354",
+        "name": "Yash Rastogi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 15047,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/13",
+      "user_cakedate": "2022-09-11",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 509276,
+      "name": "SHIVADHARSHAN S",
+      "username": "22f3001421",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+      "created_at": "2024-07-31T17:47:47.474Z",
+      "cooked": "<p>If so, when is the deadline, Btw, the question 1 is still having problems</p>",
+      "post_number": 14,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-07-31T17:47:47.474Z",
+      "reply_count": 1,
+      "reply_to_post_number": 12,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 81,
+      "readers_count": 80,
+      "score": 21.2,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "SHIVADHARSHAN S",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 17065,
+        "username": "22F3002354",
+        "name": "Yash Rastogi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16469,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/14",
+      "user_cakedate": "2023-01-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 510115,
+      "name": "SHIVADHARSHAN S",
+      "username": "22f3001421",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+      "created_at": "2024-08-03T03:24:46.578Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/8/5866d6108bf6f2cd8d827fa6a8d1474ebc6efbb4.png\" data-download-href=\"/uploads/short-url/cC2lgbxqhq8wNIm9owyDpGw04Wo.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/8/5866d6108bf6f2cd8d827fa6a8d1474ebc6efbb4.png\" alt=\"image\" data-base62-sha1=\"cC2lgbxqhq8wNIm9owyDpGw04Wo\" width=\"690\" height=\"266\" data-dominant-color=\"3D122F\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">734×284 25.8 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>The question says, file name will be given, as you can see, the output of head command is redirected as inputs furthermore, the files doesn’t exist.</p>\n<p>Please look into this <a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a></p>",
+      "post_number": 15,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-08-03T03:24:46.578Z",
+      "reply_count": 0,
+      "reply_to_post_number": 14,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 81,
+      "readers_count": 80,
+      "score": 16.2,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "SHIVADHARSHAN S",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 16469,
+        "username": "22f3001421",
+        "name": "SHIVADHARSHAN S",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16469,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/15",
+      "user_cakedate": "2023-01-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 510164,
+      "name": "Rohini ",
+      "username": "22f3001419",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/439d5e/{size}.png",
+      "created_at": "2024-08-03T05:55:22.132Z",
+      "cooked": "<p>I have a similar problem. I am  posting my submission report here.</p>\n<h2><a name=\"p-510164-bpt4_problem_1-sat-aug-3-054503-am-utc-2024-1\" class=\"anchor\" href=\"#p-510164-bpt4_problem_1-sat-aug-3-054503-am-utc-2024-1\" aria-label=\"Heading link\"></a>BPT4_problem_1: Sat Aug  3 05:45:03 AM UTC 2024</h2>\n<h2><a name=\"p-510164-optse2001bpt4_problem_1publictest_case_1-pass-optse2001bpt4_problem_1publictest_case_1-optse2001bpt4_problem_1publictest_case_2-pass-optse2001bpt4_problem_1publictest_case_2-public-testcases-passed-22-public-test-cases-evaluation-successful-public-test-cases-submission-successful-privatetest-case-1-passed-privatetest-case-2head-cannot-open-name_hextxt-for-reading-no-such-file-or-directory-1c1-devfd63-passed-2\" class=\"anchor\" href=\"#p-510164-optse2001bpt4_problem_1publictest_case_1-pass-optse2001bpt4_problem_1publictest_case_1-optse2001bpt4_problem_1publictest_case_2-pass-optse2001bpt4_problem_1publictest_case_2-public-testcases-passed-22-public-test-cases-evaluation-successful-public-test-cases-submission-successful-privatetest-case-1-passed-privatetest-case-2head-cannot-open-name_hextxt-for-reading-no-such-file-or-directory-1c1-devfd63-passed-2\" aria-label=\"Heading link\"></a> → /opt/se2001/BPT4_problem_1/public/test_case_1<br>\nPASS: /opt/se2001/BPT4_problem_1/public/test_case_1<br>\n → /opt/se2001/BPT4_problem_1/public/test_case_2<br>\nPASS: /opt/se2001/BPT4_problem_1/public/test_case_2<br>\nPublic Testcases Passed: 2/2<br>\nPublic Test Cases: Evaluation successful.<br>\nPublic Test Cases: Submission successful.<br>\n → private/test case 1 [PASSED]<br>\n → private/test case 2head: cannot open ‘name_hex.txt’ for reading: No such file or directory<br>\n1c1<br>\n&lt; /dev/fd/63 PASSED</h2>\n<blockquote>\n<p>/dev/fd/61 PASSED<br>\n[FAILED]<br>\n → private/test case 3head: cannot open ‘name_hex.txt’ for reading: No such file or directory<br>\n1c1<br>\n&lt; /dev/fd/63 FAILED</p>\n</blockquote>\n<hr>\n<blockquote>\n<p>/dev/fd/61 PASSED<br>\n[FAILED]<br>\nPrivate Testcases Passed: 1/3<br>\nPrivate Test Cases: Evaluation failed!<br>\nPrivate Test Cases: Submission successful.</p>\n</blockquote>\n<p>Please check this.<br>\nRohini Chaubal<br>\n22f3001419</p>",
+      "post_number": 16,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-08-03T05:55:22.132Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 82,
+      "readers_count": 81,
+      "score": 26.4,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Rohini ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21492,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/16",
+      "user_cakedate": "2023-09-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 510183,
+      "name": "Rohini ",
+      "username": "22f3001419",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/439d5e/{size}.png",
+      "created_at": "2024-08-03T06:24:14.289Z",
+      "cooked": "<p>Sir , i have similar issues with BPT4_problem_2.  I am posting below:</p>\n<h2><a name=\"p-510183-bpt4_problem_2-sat-aug-3-062028-am-utc-2024-1\" class=\"anchor\" href=\"#p-510183-bpt4_problem_2-sat-aug-3-062028-am-utc-2024-1\" aria-label=\"Heading link\"></a>BPT4_problem_2: Sat Aug  3 06:20:28 AM UTC 2024</h2>\n<p> → /opt/se2001/BPT4_problem_2/public/test_case_1<br>\nPASS: /opt/se2001/BPT4_problem_2/public/test_case_1<br>\n → /opt/se2001/BPT4_problem_2/public/test_case_2<br>\nPASS: /opt/se2001/BPT4_problem_2/public/test_case_2<br>\nPublic Testcases Passed: 2/2<br>\nPublic Test Cases: Evaluation successful.<br>\nPublic Test Cases: Submission successful.<br>\n → private/test case 1environment: line 201: ./script.sh: Permission denied<br>\n1,5d0<br>\n&lt; Report:<br>\n&lt; Image file: 0<br>\n&lt; Document file: 5<br>\n&lt; Compressed file: 0<br>\n&lt; Unknown file type: 0<br>\n[FAILED]<br>\n → private/test case 2environment: line 201: ./script.sh: Permission denied<br>\n1,5d0<br>\n&lt; Report:<br>\n&lt; Image file: 1<br>\n&lt; Document file: 1<br>\n&lt; Compressed file: 1<br>\n&lt; Unknown file type: 2<br>\n[FAILED]<br>\n → private/test case 3environment: line 201: ./script.sh: Permission denied<br>\n1,5d0<br>\n&lt; Report:<br>\n&lt; Image file: 0<br>\n&lt; Document file: 0<br>\n&lt; Compressed file: 0<br>\n&lt; Unknown file type: 0<br>\n[FAILED]<br>\n → private/test case 4environment: line 201: ./script.sh: Permission denied<br>\n1,5d0<br>\n&lt; Report:<br>\n&lt; Image file: 0<br>\n&lt; Document file: 0<br>\n&lt; Compressed file: 5<br>\n&lt; Unknown file type: 0<br>\n[FAILED]<br>\nPrivate Testcases Passed: 0/4<br>\nPrivate Test Cases: Evaluation failed!<br>\nPrivate Test Cases: Submission successful.<br>\n22f3001419@se2001:~/se2001/BPT4_problem_2$</p>\n<p>when I run the command synchro eval , it passes both public cases but in private cases it says permission denied.</p>\n<p>Rohini Chaubal<br>\n22f3001419</p>",
+      "post_number": 17,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-08-03T06:24:14.289Z",
+      "reply_count": 1,
+      "reply_to_post_number": 16,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 83,
+      "readers_count": 82,
+      "score": 21.6,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Rohini ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 21492,
+        "username": "22f3001419",
+        "name": "Rohini ",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/439d5e/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21492,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/17",
+      "user_cakedate": "2023-09-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 510247,
+      "name": "SHIVADHARSHAN S",
+      "username": "22f3001421",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+      "created_at": "2024-08-03T07:53:02.142Z",
+      "cooked": "<p>Check the permissions on script.sh</p>",
+      "post_number": 18,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-08-03T07:53:02.142Z",
+      "reply_count": 0,
+      "reply_to_post_number": 17,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 79,
+      "readers_count": 78,
+      "score": 15.8,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "SHIVADHARSHAN S",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 21492,
+        "username": "22f3001419",
+        "name": "Rohini ",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/439d5e/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16469,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/18",
+      "user_cakedate": "2023-01-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 510944,
+      "name": "Pansuriya Tarang Bharatbhai ",
+      "username": "tarang96",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tarang96/{size}/101402_2.png",
+      "created_at": "2024-08-05T14:49:16.521Z",
+      "cooked": "<p>Sir, Now that the Problem 1 issues have been resolved, I am still facing issues in problems 3 and 4 ? have those been resolved or not? Please inform us so that we can try different ways to solve those if the issues are in my code.<br>\nI am hoping for a quick reply as the deadline is tomorrow.<br>\nThanks.</p>",
+      "post_number": 19,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-08-05T14:49:16.521Z",
+      "reply_count": 3,
+      "reply_to_post_number": 12,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 67,
+      "readers_count": 66,
+      "score": 28.4,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Pansuriya Tarang Bharatbhai ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 17065,
+        "username": "22F3002354",
+        "name": "Yash Rastogi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 1172,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/19",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-05-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 510946,
+      "name": "SHIVADHARSHAN S",
+      "username": "22f3001421",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+      "created_at": "2024-08-05T14:53:34.083Z",
+      "cooked": "<p>All problems seem to be solved for me</p>",
+      "post_number": 20,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-08-05T14:53:34.083Z",
+      "reply_count": 0,
+      "reply_to_post_number": 19,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 67,
+      "readers_count": 66,
+      "score": 18.4,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "SHIVADHARSHAN S",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 1172,
+        "username": "tarang96",
+        "name": "Pansuriya Tarang Bharatbhai ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tarang96/{size}/101402_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16469,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/20",
+      "user_cakedate": "2023-01-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 510958,
+      "name": "Yash Rastogi",
+      "username": "22F3002354",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+      "created_at": "2024-08-05T15:09:00.792Z",
+      "cooked": "<p>All issues have been resolved except slight issues in wording of a couple of questions.</p>",
+      "post_number": 21,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-08-05T15:10:30.307Z",
+      "reply_count": 1,
+      "reply_to_post_number": 19,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 64,
+      "readers_count": 63,
+      "score": 32.8,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Yash Rastogi",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 1172,
+        "username": "tarang96",
+        "name": "Pansuriya Tarang Bharatbhai ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tarang96/{size}/101402_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17065,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/21",
+      "user_cakedate": "2023-04-27",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 511078,
+      "name": "22f2000771",
+      "username": "Ashwadhi",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ashwadhi/{size}/12612_2.png",
+      "created_at": "2024-08-05T15:52:20.074Z",
+      "cooked": "<p>While using synchro eval for BPT4 problem 2, it says “no such file or directory”. But when i provide the public test case inputs directly to the script, it is giving the correct output. I am facing a similar issue in problem 1. Is this due to a problem in the evaluation?  <a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/2/7262f105cef61e5f00c5bc2857967aa1e87ece0e.png\" data-download-href=\"/uploads/short-url/gjUpAPiXSTKJvYYoEsmGyuClzFs.png?dl=1\" title=\"Screenshot 2024-08-05 211756\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/2/7262f105cef61e5f00c5bc2857967aa1e87ece0e.png\" alt=\"Screenshot 2024-08-05 211756\" data-base62-sha1=\"gjUpAPiXSTKJvYYoEsmGyuClzFs\" width=\"690\" height=\"169\" data-dominant-color=\"121413\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2024-08-05 211756</span><span class=\"informations\">2179×536 23.1 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/2/c27a9d8299f84dac21f420c91fb3e9de6d5e480d.png\" data-download-href=\"/uploads/short-url/rKrkxrmaB1WxnULYSW5SfGE0mrH.png?dl=1\" title=\"Screenshot 2024-08-05 211825\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/2/c27a9d8299f84dac21f420c91fb3e9de6d5e480d_2_618x499.png\" alt=\"Screenshot 2024-08-05 211825\" data-base62-sha1=\"rKrkxrmaB1WxnULYSW5SfGE0mrH\" width=\"618\" height=\"499\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/2/c27a9d8299f84dac21f420c91fb3e9de6d5e480d_2_618x499.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/2/c27a9d8299f84dac21f420c91fb3e9de6d5e480d_2_927x748.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/2/c27a9d8299f84dac21f420c91fb3e9de6d5e480d_2_1236x998.png 2x\" data-dominant-color=\"121212\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2024-08-05 211825</span><span class=\"informations\">2038×1648 111 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 22,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-08-06T02:02:20.390Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 4,
+      "reads": 52,
+      "readers_count": 51,
+      "score": 30.4,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "22f2000771",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 15137,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/22",
+      "user_cakedate": "2022-09-13",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 511294,
+      "name": "Nabeel",
+      "username": "nabeel26",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/nabeel26/{size}/297_2.png",
+      "created_at": "2024-08-05T20:11:14.669Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/8/7807e8ef5f769dc4bd6f47f9ce6cccabdf946e15.png\" data-download-href=\"/uploads/short-url/h7Qf5pbZEI52wXjdvW2hA2vVdTD.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/8/7807e8ef5f769dc4bd6f47f9ce6cccabdf946e15.png\" alt=\"image\" data-base62-sha1=\"h7Qf5pbZEI52wXjdvW2hA2vVdTD\" width=\"512\" height=\"500\" data-dominant-color=\"181B18\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">819×799 30.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>My private cases are not passing even though the code is correct.<br>\nWhat could be the problem?<br>\nHas anyone solved this problem?</p>",
+      "post_number": 23,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-08-06T14:42:33.839Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 42,
+      "readers_count": 41,
+      "score": 23.4,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Nabeel",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 5471,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/23",
+      "user_cakedate": "2021-05-10",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 511291,
+      "name": "Hemendra Sharma",
+      "username": "hemjadli",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hemjadli/{size}/66975_2.png",
+      "created_at": "2024-08-06T12:56:14.717Z",
+      "cooked": "<p>Hi,</p>\n<p>BPT4 problem 4 I am struggling with replacing the second instance of the word “error” in lines matching the pattern hexadecimal at the beginning of the line.</p>\n<p>in sed script I used /[[:xdigit:]]{8}/ {s/error/issue/2}</p>\n<p>but it is not working. I tried various other methods but not work.</p>",
+      "post_number": 25,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-08-06T14:42:33.808Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 43,
+      "readers_count": 42,
+      "score": 8.6,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Hemendra Sharma",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14561,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/25",
+      "user_cakedate": "2022-09-07",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 511270,
+      "name": "Arnajit Chakraborty",
+      "username": "21f3001113",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001113/{size}/13686_2.png",
+      "created_at": "2024-08-06T13:48:17.311Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a> <a class=\"mention\" href=\"/u/subendu\">@Subendu</a></p>\n<p>I have encountered with the test cases for <strong>Problem 4 in the BPT4</strong>. After reviewing the test cases and their expected outputs, I noticed some discrepancies that are causing confusion in validating my solution.</p>\n<h3><a name=\"p-511270-issue-description-1\" class=\"anchor\" href=\"#p-511270-issue-description-1\" aria-label=\"Heading link\"></a>Issue Description:</h3>\n<ul>\n<li>The expected output provided for the test cases does not align with the results generated by my implementation based on the problem statement.</li>\n<li>Specifically, the problem seems to be with the handling of hexadecimal codes and subsequent text processing, which affects the correctness of the test cases.</li>\n<li>It seems that the replacement of the second occurrence of “error” with “issue” is not functioning as intended.</li>\n</ul>\n<p>Could you please review the test cases for Problem 4 and provide clarification or corrections as needed? Your assistance would greatly help in resolving this issue and ensuring that the validation of solutions is accurate.</p>\n<p>Thank you very much for your attention to this matter.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/7/5723a25082ffdfc23371a89d9481db1a2784e029.png\" data-download-href=\"/uploads/short-url/cqRSTTMOplvuAQfMrXIkKoacctP.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/7/5723a25082ffdfc23371a89d9481db1a2784e029.png\" alt=\"image\" data-base62-sha1=\"cqRSTTMOplvuAQfMrXIkKoacctP\" width=\"686\" height=\"500\" data-dominant-color=\"37122B\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1362×992 35.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 26,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-08-06T14:42:33.807Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 52,
+      "readers_count": 51,
+      "score": 10.4,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Arnajit Chakraborty",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 7266,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/26",
+      "user_cakedate": "2021-09-14",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 511275,
+      "name": "Dibakash Baruah",
+      "username": "Dibakash",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/d/22d042/{size}.png",
+      "created_at": "2024-08-06T14:05:04.197Z",
+      "cooked": "<p>Dear Sir,</p>\n<p>In my case for BPT4_problem_1, the public test case evaluations were successful but the private test case evaluations failed.   It feels like there is some configuration issue.</p>\n<p>Kindly confirm if I can consider this as the correct submission as in one of the replies it was mentioned that there’s some misconfiguration in private test cases for BPT4_problem_1.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/7/d702d1e452bedaa47e8d8d8c7767f33c0d5e7e10.png\" data-download-href=\"/uploads/short-url/uG4Hg5pfpo6YjEUqehn1guSRdmg.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/7/d702d1e452bedaa47e8d8d8c7767f33c0d5e7e10.png\" alt=\"image\" data-base62-sha1=\"uG4Hg5pfpo6YjEUqehn1guSRdmg\" width=\"633\" height=\"499\" data-dominant-color=\"3A182F\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">673×531 17.2 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 27,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-08-06T14:42:33.805Z",
+      "reply_count": 0,
+      "reply_to_post_number": 21,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 47,
+      "readers_count": 46,
+      "score": 9.4,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Dibakash Baruah",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 17065,
+        "username": "22F3002354",
+        "name": "Yash Rastogi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 12462,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/27",
+      "user_cakedate": "2022-05-01",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 511287,
+      "name": "Dibakash Baruah",
+      "username": "Dibakash",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/d/22d042/{size}.png",
+      "created_at": "2024-08-06T14:27:06.884Z",
+      "cooked": "<p>Including the private test cases too? Please confirm if private test cases need to pass as well along with public test cases.</p>",
+      "post_number": 28,
+      "post_type": 1,
+      "posts_count": 27,
+      "updated_at": "2024-08-06T14:42:33.803Z",
+      "reply_count": 0,
+      "reply_to_post_number": 19,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 45,
+      "readers_count": 44,
+      "score": 9,
+      "yours": false,
+      "topic_id": 141332,
+      "topic_slug": "query-regarding-the-bpt-4-questions",
+      "display_username": "Dibakash Baruah",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 1172,
+        "username": "tarang96",
+        "name": "Pansuriya Tarang Bharatbhai ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tarang96/{size}/101402_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 12462,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/query-regarding-the-bpt-4-questions/141332/28",
+      "user_cakedate": "2022-05-01",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

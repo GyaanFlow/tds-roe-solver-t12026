@@ -1,0 +1,1442 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 721348,
+        "name": "Sakshi Kaushalkumar Soni",
+        "username": "24f2002971",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2002971/{size}/119245_2.png",
+        "created_at": "2026-02-12T22:25:17.445Z",
+        "cooked": "<p>I accidently by entering rm file* deleted all the files which also included README.md file. I tried to login again to terminal but I am not getting the content of README.md. It is constantly showing me the below error. Please help to resolve this issue. I want to get all the deleted files. <a class=\"mention\" href=\"/u/21f3000759\">@21f3000759</a> <a class=\"mention\" href=\"/u/hemalatha\">@hemalatha</a> <a class=\"mention\" href=\"/u/mrinal.exe\">@Mrinal.exe</a> <a class=\"mention\" href=\"/u/afnan_pod\">@Afnan_POD</a> <a class=\"mention\" href=\"/u/22f3000671\">@22f3000671</a></p>\n<p><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/f/3/f38d8039265b18e6034df066dcf5ac8ae0e70280.png\" alt=\"image\" data-base62-sha1=\"yKzbKAw6mgSNLVX49CcVNYHKjny\" width=\"690\" height=\"41\" data-dominant-color=\"1F211D\"></p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 2,
+        "updated_at": "2026-02-12T22:25:17.445Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 2,
+        "reads": 43,
+        "readers_count": 42,
+        "score": 18.6,
+        "yours": false,
+        "topic_id": 196052,
+        "topic_slug": "deleted-readme-md",
+        "display_username": "Sakshi Kaushalkumar Soni",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 30295,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/deleted-readme-md/196052/1",
+        "user_cakedate": "2024-06-02",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 721351,
+        "name": "Sarthak Jalota",
+        "username": "SarthakJalota",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sarthakjalota/{size}/142961_2.png",
+        "created_at": "2026-02-13T01:06:29.003Z",
+        "cooked": "<p>Looks like the README.md present in <code>$HOME</code> is a symbolic link to <code>/opt/se2001/README.md</code><br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/1/61d69f28bf1f1658ebc5575f9da4ab3249d22c43_2_690x32.png\" alt=\"image\" data-base62-sha1=\"dXw8EnSZFIrlBFmW3rWvdtNRAd5\" width=\"690\" height=\"32\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/1/61d69f28bf1f1658ebc5575f9da4ab3249d22c43_2_690x32.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/1/61d69f28bf1f1658ebc5575f9da4ab3249d22c43_2_1035x48.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/1/61d69f28bf1f1658ebc5575f9da4ab3249d22c43.png 2x\" data-dominant-color=\"081A0B\"></p>\n<p>You can check the original file</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">batcat /opt/se2001/README.md\n</code></pre>\n<p>Then, you can restore the symlink with this</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">ln -s /opt/se2001/README.md ~/README.md\n</code></pre>\n<p>As noted in the README FAQs:</p>\n<ul>\n<li>\n<p>I don’t have the directory <code>se2001</code> in my home directory. What should I do?</p>\n<ul>\n<li>Create the directory with <code>mkdir ~/se2001</code></li>\n</ul>\n</li>\n<li>\n<p>I accidentally deleted my entire home directory including my <code>.bashrc</code> and now my prompt is changed. What should I do?</p>\n<ul>\n<li>Copy the <code>.bashrc</code>, <code>.profile</code>, and <code>.bash_logout</code> files from <code>/etc/skel/</code> to your home directory.</li>\n</ul>\n</li>\n</ul>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 2,
+        "updated_at": "2026-02-13T01:06:29.003Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 41,
+        "readers_count": 40,
+        "score": 38.2,
+        "yours": false,
+        "topic_id": 196052,
+        "topic_slug": "deleted-readme-md",
+        "display_username": "Sarthak Jalota",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 37259,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/deleted-readme-md/196052/2",
+        "user_cakedate": "2024-09-22",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          },
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      721348,
+      721351
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      73
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 47,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 6,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 365,
+      "name": "term1-2026",
+      "slug": "term1-2026"
+    },
+    {
+      "id": 37,
+      "name": "operational",
+      "slug": "operational"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Deleted README.md",
+  "id": 196052,
+  "title": "Deleted README.md",
+  "posts_count": 2,
+  "created_at": "2026-02-12T22:25:17.309Z",
+  "views": 46,
+  "reply_count": 0,
+  "like_count": 2,
+  "last_posted_at": "2026-02-13T01:06:29.003Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "deleted-readme-md",
+  "category_id": 36,
+  "word_count": 179,
+  "deleted_at": null,
+  "user_id": 30295,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/f/3/f38d8039265b18e6034df066dcf5ac8ae0e70280.png",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_196052",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 2,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 2,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 835,
+      "height": 50,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/f/3/f38d8039265b18e6034df066dcf5ac8ae0e70280.png"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "Removed README.md file by mistake, what to do?",
+      "id": 122929,
+      "title": "Removed README.md file by mistake, what to do?",
+      "slug": "removed-readme-md-file-by-mistake-what-to-do",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 5,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/8/a868186fbdc142c9cc2c769cacfafc8b9bcd6a8d_2_1024x575.png",
+      "created_at": "2024-03-04T13:53:39.772Z",
+      "last_posted_at": "2024-03-05T04:44:07.039Z",
+      "bumped": true,
+      "bumped_at": "2024-03-05T04:44:07.039Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 297,
+          "name": "vm-task",
+          "slug": "vm-task"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 64,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 13039,
+            "username": "22f1001934",
+            "name": "Shubham Tiwari",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1001934/{size}/85560_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Batcat README.md not opening",
+      "id": 164173,
+      "title": "Batcat README.md not opening",
+      "slug": "batcat-readme-md-not-opening",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/c/9c7de7bc4df8ddce3e972e8f0c912f9240de59e4_2_1024x568.png",
+      "created_at": "2025-01-18T11:17:27.715Z",
+      "last_posted_at": "2025-01-19T16:57:27.234Z",
+      "bumped": true,
+      "bumped_at": "2025-01-19T16:57:27.234Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 37,
+          "name": "operational",
+          "slug": "operational"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 82,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 24512,
+            "username": "Itz_Rupayan",
+            "name": "rupayan dey",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/itz_rupayan/{size}/84578_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 7771,
+            "username": "21f1002877",
+            "name": "User",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/58956e/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Recreation of the .bashrc file",
+      "id": 109076,
+      "title": "Recreation of the .bashrc file",
+      "slug": "recreation-of-the-bashrc-file",
+      "posts_count": 3,
+      "reply_count": 1,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2023-11-09T13:22:33.874Z",
+      "last_posted_at": "2023-11-09T15:08:17.328Z",
+      "bumped": true,
+      "bumped_at": "2023-11-09T15:08:17.328Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 23,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 8990,
+            "username": "22f1000233",
+            "name": "Soumyadeep Maji",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000233/{size}/82592_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 7974,
+            "username": "Arun2",
+            "name": "Arun",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/arun2/{size}/27130_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "After logging into the VM, files are not visible",
+      "id": 151782,
+      "title": "After logging into the VM, files are not visible",
+      "slug": "after-logging-into-the-vm-files-are-not-visible",
+      "posts_count": 15,
+      "reply_count": 8,
+      "highest_post_number": 15,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/3/5/351b1da2ee401e95e15443e901aa3d171f8323a6.png",
+      "created_at": "2024-10-09T14:13:46.972Z",
+      "last_posted_at": "2024-10-10T15:55:22.906Z",
+      "bumped": true,
+      "bumped_at": "2024-10-10T15:55:22.906Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 297,
+          "name": "vm-task",
+          "slug": "vm-task"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 52,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 29970,
+            "username": "24f1002825",
+            "name": "Vihaan Bhambhani",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002825/{size}/68806_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 15853,
+            "username": "somsubhra",
+            "name": "Somsubhra/সোমশুভ্র",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/s/c2a13f/{size}.png",
+            "primary_group_name": "ds-students",
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 3230,
+            "username": "shriaviator",
+            "name": "Srinivas Chilukuri",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/s/59ef9b/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "Community-TA",
+            "flair_url": "handshake-angle",
+            "flair_bg_color": "717BF7",
+            "flair_color": "6BEE3D",
+            "flair_group_id": 89,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Created two se2001 file in home directory by mistake",
+      "id": 123141,
+      "title": "Created two se2001 file in home directory by mistake",
+      "slug": "created-two-se2001-file-in-home-directory-by-mistake",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/f/1/f19eb233527384b65b3e05800394bebf4c7ec3da_2_1024x206.jpeg",
+      "created_at": "2024-03-06T13:50:26.250Z",
+      "last_posted_at": "2024-03-06T13:55:53.406Z",
+      "bumped": true,
+      "bumped_at": "2024-03-06T13:55:53.406Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 37,
+          "name": "operational",
+          "slug": "operational"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 35,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 14508,
+            "username": "22dp3000039",
+            "name": "Ramakrishna Hegde",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22dp3000039/{size}/13697_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 2,
+    "username": "SarthakJalota",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sarthakjalota/{size}/142961_2.png",
+    "excerpt": "<p>Looks like the README.md present in <code>$HOME</code> is a symbolic link to <code>/opt/se2001/README.md</code><br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/1/61d69f28bf1f1658ebc5575f9da4ab3249d22c43_2_690x32.png\" alt=\"image\" data-base62-sha1=\"dXw8EnSZFIrlBFmW3rWvdtNRAd5\" width=\"690\" height=\"32\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/1/61d69f28bf1f1658ebc5575f9da4ab3249d22c43_2_690x32.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/1/61d69f28bf1f1658ebc5575f9da4ab3249d22c43_2_1035x48.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/1/61d69f28bf1f1658ebc5575f9da4ab3249d22c43.png 2x\" data-dominant-color=\"081A0B\"></p>\n<p>You can check the original file</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">batcat /opt/se2001/README.md\n</code></pre>\n<p>Then, you can restore the symlink with this</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">ln -s /opt/se2001/README.md ~/README.md\n</code></pre>\n<p>As noted in the README FAQs:</p>\n<ul>\n<li>\n<p>I don’t have the directory <code>se2001</code> in my home directory. What should I do?</p>\n<ul>\n<li>Create the directory with <code>mkdir ~/se2001</code></li>\n</ul>\n</li>\n<li>\n<p>I accidentally deleted my entire home directory including my <code>.bashrc</code> and now my prompt is changed. What should I do?</p>\n<ul>\n<li>Copy the <code>.bashrc</code>, <code>.profile</code>, and <code>.bash_logout</code> files from <code>/etc/skel/</code> to your home directory.</li>\n</ul>\n</li>\n</ul>",
+    "accepter_name": null,
+    "accepter_username": "24f2002971"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 37259,
+        "username": "SarthakJalota",
+        "name": "Sarthak Jalota",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sarthakjalota/{size}/142961_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 30295,
+        "username": "24f2002971",
+        "name": "Sakshi Kaushalkumar Soni",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2002971/{size}/119245_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 30295,
+      "username": "24f2002971",
+      "name": "Sakshi Kaushalkumar Soni",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2002971/{size}/119245_2.png"
+    },
+    "last_poster": {
+      "id": 37259,
+      "username": "SarthakJalota",
+      "name": "Sarthak Jalota",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sarthakjalota/{size}/142961_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 721348,
+      "name": "Sakshi Kaushalkumar Soni",
+      "username": "24f2002971",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2002971/{size}/119245_2.png",
+      "created_at": "2026-02-12T22:25:17.445Z",
+      "cooked": "<p>I accidently by entering rm file* deleted all the files which also included README.md file. I tried to login again to terminal but I am not getting the content of README.md. It is constantly showing me the below error. Please help to resolve this issue. I want to get all the deleted files. <a class=\"mention\" href=\"/u/21f3000759\">@21f3000759</a> <a class=\"mention\" href=\"/u/hemalatha\">@hemalatha</a> <a class=\"mention\" href=\"/u/mrinal.exe\">@Mrinal.exe</a> <a class=\"mention\" href=\"/u/afnan_pod\">@Afnan_POD</a> <a class=\"mention\" href=\"/u/22f3000671\">@22f3000671</a></p>\n<p><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/f/3/f38d8039265b18e6034df066dcf5ac8ae0e70280.png\" alt=\"image\" data-base62-sha1=\"yKzbKAw6mgSNLVX49CcVNYHKjny\" width=\"690\" height=\"41\" data-dominant-color=\"1F211D\"></p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 2,
+      "updated_at": "2026-02-12T22:25:17.445Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 43,
+      "readers_count": 42,
+      "score": 18.6,
+      "yours": false,
+      "topic_id": 196052,
+      "topic_slug": "deleted-readme-md",
+      "display_username": "Sakshi Kaushalkumar Soni",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 30295,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/deleted-readme-md/196052/1",
+      "user_cakedate": "2024-06-02",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 721351,
+      "name": "Sarthak Jalota",
+      "username": "SarthakJalota",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sarthakjalota/{size}/142961_2.png",
+      "created_at": "2026-02-13T01:06:29.003Z",
+      "cooked": "<p>Looks like the README.md present in <code>$HOME</code> is a symbolic link to <code>/opt/se2001/README.md</code><br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/1/61d69f28bf1f1658ebc5575f9da4ab3249d22c43_2_690x32.png\" alt=\"image\" data-base62-sha1=\"dXw8EnSZFIrlBFmW3rWvdtNRAd5\" width=\"690\" height=\"32\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/1/61d69f28bf1f1658ebc5575f9da4ab3249d22c43_2_690x32.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/1/61d69f28bf1f1658ebc5575f9da4ab3249d22c43_2_1035x48.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/1/61d69f28bf1f1658ebc5575f9da4ab3249d22c43.png 2x\" data-dominant-color=\"081A0B\"></p>\n<p>You can check the original file</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">batcat /opt/se2001/README.md\n</code></pre>\n<p>Then, you can restore the symlink with this</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">ln -s /opt/se2001/README.md ~/README.md\n</code></pre>\n<p>As noted in the README FAQs:</p>\n<ul>\n<li>\n<p>I don’t have the directory <code>se2001</code> in my home directory. What should I do?</p>\n<ul>\n<li>Create the directory with <code>mkdir ~/se2001</code></li>\n</ul>\n</li>\n<li>\n<p>I accidentally deleted my entire home directory including my <code>.bashrc</code> and now my prompt is changed. What should I do?</p>\n<ul>\n<li>Copy the <code>.bashrc</code>, <code>.profile</code>, and <code>.bash_logout</code> files from <code>/etc/skel/</code> to your home directory.</li>\n</ul>\n</li>\n</ul>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 2,
+      "updated_at": "2026-02-13T01:06:29.003Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 41,
+      "readers_count": 40,
+      "score": 38.2,
+      "yours": false,
+      "topic_id": 196052,
+      "topic_slug": "deleted-readme-md",
+      "display_username": "Sarthak Jalota",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37259,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/deleted-readme-md/196052/2",
+      "user_cakedate": "2024-09-22",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        },
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    }
+  ]
+}

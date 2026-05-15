@@ -1,0 +1,4961 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 755744,
+        "name": "Piyush Singh ",
+        "username": "24f2000396",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2000396/{size}/143872_2.png",
+        "created_at": "2026-04-15T04:59:22.237Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/mrinal.exe\">@Mrinal.exe</a> , <a class=\"mention\" href=\"/u/21f3000759\">@21f3000759</a><br>\nI created a setup.sh script (with the help of an LLM) to make it easier for me to solve BPT1 problems, since I find it difficult to read the question and write code in the same terminal at the same time.<br>\nIs it allowed to use such a pre-written setup script during OPPE exams, or is it considered restricted?</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/f/6/f648aead830b1bfa73ea7d4ac668c7a429be41fd.jpeg\" data-download-href=\"/uploads/short-url/z8Jb5Kv78v6UPp1mMXeZLsBcSuN.jpeg?dl=1\" title=\"Screenshot 2026-04-15 at 10.10.59 AM\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/f/6/f648aead830b1bfa73ea7d4ac668c7a429be41fd_2_533x500.jpeg\" alt=\"Screenshot 2026-04-15 at 10.10.59 AM\" data-base62-sha1=\"z8Jb5Kv78v6UPp1mMXeZLsBcSuN\" width=\"533\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/f/6/f648aead830b1bfa73ea7d4ac668c7a429be41fd_2_533x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/f/6/f648aead830b1bfa73ea7d4ac668c7a429be41fd_2_799x750.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/f/6/f648aead830b1bfa73ea7d4ac668c7a429be41fd_2_1066x1000.jpeg 2x\" data-dominant-color=\"2F3131\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2026-04-15 at 10.10.59 AM</span><span class=\"informations\">1308×1226 121 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-15T04:59:22.237Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 5,
+        "reads": 91,
+        "readers_count": 90,
+        "score": 17.4,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Piyush Singh ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 30007,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/1",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 755746,
+        "name": "Ishan Shishodiya",
+        "username": "22f2001554",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "created_at": "2026-04-15T05:10:21.308Z",
+        "cooked": "<p>Usage of <code>tmux</code> is allowed in BPTs and OPPEs. You don’t need to create a custom setup just to use <code>tmux</code>, you can check <a href=\"https://gist.github.com/slyofzero/a3febe5729b54b31f5e97a30315c1295\" class=\"inline-onebox\" rel=\"noopener nofollow ugc\">tmux_Hotkeys.md · GitHub</a> for a cheatsheet on tmux hotkeys.</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-15T05:10:58.010Z",
+        "reply_count": 2,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 90,
+        "readers_count": 89,
+        "score": 42,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Ishan Shishodiya",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://gist.github.com/slyofzero/a3febe5729b54b31f5e97a30315c1295",
+            "internal": false,
+            "reflection": false,
+            "title": "tmux_Hotkeys.md · GitHub",
+            "clicks": 7
+          }
+        ],
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 14366,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/2",
+        "user_cakedate": "2022-09-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 755752,
+        "name": "Piyush Singh ",
+        "username": "24f2000396",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2000396/{size}/143872_2.png",
+        "created_at": "2026-04-15T05:23:43.922Z",
+        "cooked": "<p>Thank you for the clarification<br>\nSince tmux usage is allowed in OPPEs,  can I use my setup.sh  file just to automatically start and configure tmux instead of setting it up manually every time?</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-15T05:23:43.922Z",
+        "reply_count": 1,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 87,
+        "readers_count": 86,
+        "score": 21.4,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Piyush Singh ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 14366,
+          "username": "22f2001554",
+          "name": "Ishan Shishodiya",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 30007,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/3",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 755754,
+        "name": "Ishan Shishodiya",
+        "username": "22f2001554",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "created_at": "2026-04-15T05:27:38.526Z",
+        "cooked": "<p>I won’t recommend that. During OPPEs copying and pasting external scripts can be viewed as cheating and be flagged by the proctor or the screen monitoring system.</p>\n<p>It’s better if you use hotkeys instead.</p>\n<ul>\n<li><code>tmux</code> to run tmux</li>\n<li><code>Ctrl + b, %</code> to split the windows vertically into panes</li>\n<li><code>Ctrl + b, &lt;-</code> to go to the left pane</li>\n<li><code>Ctrl + b, -&gt;</code> to go to the right pane</li>\n</ul>\n<aside class=\"quote group-ds-students\" data-username=\"22f2001554\" data-post=\"2\" data-topic=\"201583\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/48/141946_2.png\" class=\"avatar\"> 22f2001554:</div>\n<blockquote>\n<p>you can check <a href=\"https://gist.github.com/slyofzero/a3febe5729b54b31f5e97a30315c1295\" rel=\"noopener nofollow ugc\">tmux_Hotkeys.md · GitHub</a></p>\n</blockquote>\n</aside>\n<p>Note - First press <code>Ctrl + b</code> then press any of the hotkeys given in the gist.</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-15T05:28:44.071Z",
+        "reply_count": 0,
+        "reply_to_post_number": 3,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 85,
+        "readers_count": 84,
+        "score": 31,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Ishan Shishodiya",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 30007,
+          "username": "24f2000396",
+          "name": "Piyush Singh ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2000396/{size}/143872_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 14366,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/4",
+        "user_cakedate": "2022-09-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 755760,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2026-04-15T05:39:37.233Z",
+        "cooked": "<p>Hopefully you have gone through the video on TMUX in portal.</p>\n<p>Link: <a href=\"https://seek.study.iitm.ac.in/courses/ns_26t1_se2001?id=207\">https://seek.study.iitm.ac.in/courses/ns_26t1_se2001?id=207</a></p>\n<p>You are expected to be familiar with <code>tmux</code>. Yes you can use <code>tmux</code>, you can also configure the <code>tmux.conf</code> file as per your requirement (an example is given in the video objectives).</p>\n<p>During OPPE, the VM will grant you login access one hour before the exam starts (at 5pm), at that moment you can go ahead and configure any user settings you want such as this tmux configuration, or <code>.bashrc</code> aliases and shortcuts. You can also <code>scp</code> this script if you want (but looking at your script, I dont find it scalable, better to configure your tmux conf correctly instead) before the exam starts.</p>\n<p>You can find <code>.bashrc</code> tips and tricks <a href=\"https://www.youtube.com/watch?v=QTdF-vG0Q90\">here</a>.</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-15T05:39:37.233Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 79,
+        "readers_count": 78,
+        "score": 49.8,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://seek.study.iitm.ac.in/courses/ns_26t1_se2001?id=207",
+            "internal": false,
+            "reflection": false,
+            "title": "Nptel Seekh",
+            "clicks": 8
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=QTdF-vG0Q90",
+            "internal": false,
+            "reflection": false,
+            "clicks": 8
+          }
+        ],
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/5",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 755778,
+        "name": "Diptanshu Suraj dube",
+        "username": "24f3000618",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+        "created_at": "2026-04-15T06:16:27.617Z",
+        "cooked": "<p>Is the SC oppe conducted on VM or the seek portal? where is this mentioned can someone tell me?</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-15T06:16:27.617Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 74,
+        "readers_count": 73,
+        "score": 18.8,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Diptanshu Suraj dube",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 38103,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/6",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 755780,
+        "name": "Gurkirat Singh",
+        "username": "Gurkirat",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+        "created_at": "2026-04-15T06:17:45.383Z",
+        "cooked": "<aside class=\"quote group-ds-students\" data-username=\"24f3000618\" data-post=\"6\" data-topic=\"201583\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/48/118648_2.png\" class=\"avatar\"> 24f3000618:</div>\n<blockquote>\n<p>Is the SC oppe conducted on VM or the seek portal?</p>\n</blockquote>\n</aside>\n<aside class=\"quote group-ds-students\" data-username=\"21f3000759\" data-post=\"3\" data-topic=\"200932\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/48/23528_2.png\" class=\"avatar\"><a href=\"/t/200932/3\">On another topic</a></div>\n<blockquote>\n<p>You have to solve the OPPE questions on OPPE vm (similar in design &amp; everything to course vm only difference is that it has a different hostname). Access will be given one week before OPPE and you can do NPPE (mock exam), there to check for any issues.</p>\n</blockquote>\n</aside>\n<p>TA replied on a similar doubt.</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-15T06:17:45.383Z",
+        "reply_count": 1,
+        "reply_to_post_number": 6,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 73,
+        "readers_count": 72,
+        "score": 33.6,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Gurkirat Singh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/basic-doubt-about-oppe/200932/3",
+            "internal": true,
+            "reflection": false,
+            "title": "Where will OPPE be conducted?",
+            "clicks": 0
+          }
+        ],
+        "read": false,
+        "user_title": "Know-it-All",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 39529,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/7",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 755783,
+        "name": "Diptanshu Suraj dube",
+        "username": "24f3000618",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+        "created_at": "2026-04-15T06:22:05.941Z",
+        "cooked": "<p>Thanks! I didn’t know that they should mention this in some doc(grading policy or some thing so that the students don’t get confused.</p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-15T06:22:05.941Z",
+        "reply_count": 0,
+        "reply_to_post_number": 7,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 66,
+        "readers_count": 65,
+        "score": 12.4,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Diptanshu Suraj dube",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 39529,
+          "username": "Gurkirat",
+          "name": "Gurkirat Singh",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 38103,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/8",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 755911,
+        "name": "Baskaran Nadar",
+        "username": "Baskaran_Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+        "created_at": "2026-04-15T08:25:22.860Z",
+        "cooked": "<p>Is VM different from the one that we currently use?</p>\n<p>If so, do we need to generate a new public key using ssh-keygen for the new server and save it in server before the exam starts ?</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-15T08:25:22.860Z",
+        "reply_count": 1,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 60,
+        "readers_count": 59,
+        "score": 16.4,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Baskaran Nadar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 37539,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/9",
+        "user_cakedate": "2024-09-22",
+        "user_birthdate": "1904-04-03",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 755940,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2026-04-15T09:04:30.826Z",
+        "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Baskaran_Nadar\" data-post=\"9\" data-topic=\"201583\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/48/150150_2.png\" class=\"avatar\"> Baskaran_Nadar:</div>\n<blockquote>\n<p>Is VM different from the one that we currently use?</p>\n</blockquote>\n</aside>\n<p>Yes, OPPE VM will be different.</p>\n<aside class=\"quote group-ds-students\" data-username=\"Baskaran_Nadar\" data-post=\"9\" data-topic=\"201583\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/48/150150_2.png\" class=\"avatar\"> Baskaran_Nadar:</div>\n<blockquote>\n<p>If so, do we need to generate a new public key using ssh-keygen for the new server and save it in server before the exam starts ?</p>\n</blockquote>\n</aside>\n<p>No, you don’t have to generate new public key. You can paste your existing public key (will show the process in Friday’s TA session). You will get access to it 1 week before to check if everything is working fine &amp; you have to do NPPE (mock) there.</p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-15T09:04:30.826Z",
+        "reply_count": 1,
+        "reply_to_post_number": 9,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 61,
+        "readers_count": 60,
+        "score": 31.6,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/basic-doubt-about-oppe/200932/6",
+            "internal": true,
+            "reflection": true,
+            "title": "Where will OPPE be conducted?",
+            "clicks": 0
+          }
+        ],
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/10",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 757085,
+        "name": "Baskaran Nadar",
+        "username": "Baskaran_Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+        "created_at": "2026-04-16T12:27:25.354Z",
+        "cooked": "<p>Do we have access to the cheat sheets provided in the seek portal for Bash, sed &amp; awk ?</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-16T12:27:25.354Z",
+        "reply_count": 1,
+        "reply_to_post_number": 10,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 47,
+        "readers_count": 46,
+        "score": 13.8,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Baskaran Nadar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 6563,
+          "username": "21f3000759",
+          "name": "Swati Jain",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 37539,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/11",
+        "user_cakedate": "2024-09-22",
+        "user_birthdate": "1904-04-03",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 757090,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2026-04-16T12:38:04.279Z",
+        "cooked": "<p>No. You can refer to man and info pages.</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-16T12:38:04.279Z",
+        "reply_count": 1,
+        "reply_to_post_number": 11,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 47,
+        "readers_count": 46,
+        "score": 28.8,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 37539,
+          "username": "Baskaran_Nadar",
+          "name": "Baskaran Nadar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/12",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "open_mouth",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 757139,
+        "name": "Diptanshu Suraj dube",
+        "username": "24f3000618",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+        "created_at": "2026-04-16T15:19:04.658Z",
+        "cooked": "<p>will the cheat sheet be entirely unavaliable this time?</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-16T15:19:04.658Z",
+        "reply_count": 1,
+        "reply_to_post_number": 12,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 39,
+        "readers_count": 38,
+        "score": 12,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Diptanshu Suraj dube",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 38103,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/13",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 757343,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2026-04-17T08:47:24.397Z",
+        "cooked": "<p>Cheatsheets will not be present in exam portal and accessing them will be treated as malpractice.</p>",
+        "post_number": 14,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-17T08:47:24.397Z",
+        "reply_count": 2,
+        "reply_to_post_number": 13,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 31,
+        "readers_count": 30,
+        "score": 15.2,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 38103,
+          "username": "24f3000618",
+          "name": "Diptanshu Suraj dube",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/14",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 757344,
+        "name": "Diptanshu Suraj dube",
+        "username": "24f3000618",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+        "created_at": "2026-04-17T08:48:36.553Z",
+        "cooked": "<p>got it thank you for the reply</p>",
+        "post_number": 15,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-17T08:48:36.553Z",
+        "reply_count": 0,
+        "reply_to_post_number": 14,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 31,
+        "readers_count": 30,
+        "score": 20.2,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Diptanshu Suraj dube",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 6563,
+          "username": "21f3000759",
+          "name": "Swati Jain",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 38103,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/15",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 757357,
+        "name": "Baskaran Nadar",
+        "username": "Baskaran_Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+        "created_at": "2026-04-17T09:08:17.541Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/8/d876cbe0df6bee67c3f263cce41fd577c0fef388.png\" data-download-href=\"/uploads/short-url/uSVEwWdE5Uaoqkc3v8QLJtAiP7W.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/8/d876cbe0df6bee67c3f263cce41fd577c0fef388_2_690x368.png\" alt=\"image\" data-base62-sha1=\"uSVEwWdE5Uaoqkc3v8QLJtAiP7W\" width=\"690\" height=\"368\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/8/d876cbe0df6bee67c3f263cce41fd577c0fef388_2_690x368.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/8/d876cbe0df6bee67c3f263cce41fd577c0fef388_2_1035x552.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/8/d876cbe0df6bee67c3f263cce41fd577c0fef388.png 2x\" data-dominant-color=\"321529\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1363×727 69.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>I use WSL/Ubuntu terminal to login VM. Instead of VMs tmux, I prefer the split option of WSL which allows me to view two terminal side by side and supports mouse.</p>\n<p>Yes, that would mean I will have two login sessions in VM; even under tmux, it would amount to be multiple sessions.</p>\n<p>Can I continue to use this split screen or do you guy want me to start learning those keystrokes for tmux ?</p>",
+        "post_number": 16,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-17T09:08:17.541Z",
+        "reply_count": 2,
+        "reply_to_post_number": 14,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 32,
+        "readers_count": 31,
+        "score": 15.4,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Baskaran Nadar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 6563,
+          "username": "21f3000759",
+          "name": "Swati Jain",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 37539,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/16",
+        "user_cakedate": "2024-09-22",
+        "user_birthdate": "1904-04-03",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 757361,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2026-04-17T09:13:27.500Z",
+        "cooked": "<p>Yes, you can use but tmux is encouraged!</p>",
+        "post_number": 17,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-17T09:13:27.500Z",
+        "reply_count": 0,
+        "reply_to_post_number": 16,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 32,
+        "readers_count": 31,
+        "score": 5.4,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 37539,
+          "username": "Baskaran_Nadar",
+          "name": "Baskaran Nadar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/17",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 757365,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2026-04-17T09:29:41.346Z",
+        "cooked": "<p>Also, <code>tmux</code> provides the added advantage that if you lose your network connection mid exam, your unsaved changes in script file will not be lost, you can simply re-ssh and do <code>tmux a</code> to attach to last session.</p>",
+        "post_number": 18,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-04-17T09:29:41.346Z",
+        "reply_count": 0,
+        "reply_to_post_number": 16,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 31,
+        "readers_count": 30,
+        "score": 35.2,
+        "yours": false,
+        "topic_id": 201583,
+        "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 37539,
+          "username": "Baskaran_Nadar",
+          "name": "Baskaran Nadar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/18",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          },
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      755744,
+      755746,
+      755752,
+      755754,
+      755760,
+      755778,
+      755780,
+      755783,
+      755911,
+      755940,
+      757085,
+      757090,
+      757139,
+      757343,
+      757344,
+      757357,
+      757361,
+      757365
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      12
+    ],
+    [
+      9,
+      11
+    ],
+    [
+      11,
+      10
+    ],
+    [
+      14,
+      9
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 47,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 6,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 365,
+      "name": "term1-2026",
+      "slug": "term1-2026"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Is It Allowed to Use a Custom setup.sh Script During OPPE?",
+  "id": 201583,
+  "title": "Is It Allowed to Use a Custom setup.sh Script During OPPE?",
+  "posts_count": 18,
+  "created_at": "2026-04-15T04:59:22.085Z",
+  "views": 137,
+  "reply_count": 14,
+  "like_count": 10,
+  "last_posted_at": "2026-04-17T09:29:41.346Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+  "category_id": 36,
+  "word_count": 852,
+  "deleted_at": null,
+  "user_id": 30007,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/f/6/f648aead830b1bfa73ea7d4ac668c7a429be41fd_2_1024x959.jpeg",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_201583",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 18,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 99,
+  "participant_count": 7,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 1308,
+      "height": 1226,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/f/6/f648aead830b1bfa73ea7d4ac668c7a429be41fd.jpeg"
+    },
+    {
+      "max_width": 1024,
+      "max_height": 1024,
+      "width": 1024,
+      "height": 959,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/f/6/f648aead830b1bfa73ea7d4ac668c7a429be41fd_2_1024x959.jpeg"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "OPPE VM window setup",
+      "id": 180464,
+      "title": "OPPE VM window setup",
+      "slug": "oppe-vm-window-setup",
+      "posts_count": 4,
+      "reply_count": 2,
+      "highest_post_number": 5,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/b/1/b1ca637b72e44e4768304a5a4e6742ce2d9dfb0a_2_1024x551.png",
+      "created_at": "2025-06-28T13:33:13.753Z",
+      "last_posted_at": "2025-07-16T20:02:41.278Z",
+      "bumped": true,
+      "bumped_at": "2025-07-16T20:02:41.278Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 74,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 30633,
+            "username": "24f1002249",
+            "name": "Divyanshu",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002249/{size}/67569_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 7521,
+            "username": "Prabuddh_Mathur",
+            "name": "Prabuddh Mathur",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prabuddh_mathur/{size}/13042_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Important dates for BPT, NPPE, and OPPE",
+      "id": 169105,
+      "title": "Important dates for BPT, NPPE, and OPPE",
+      "slug": "important-dates-for-bpt-nppe-and-oppe",
+      "posts_count": 127,
+      "reply_count": 61,
+      "highest_post_number": 136,
+      "image_url": null,
+      "created_at": "2025-03-03T17:33:29.586Z",
+      "last_posted_at": "2025-03-31T18:08:56.140Z",
+      "bumped": true,
+      "bumped_at": "2025-03-31T18:08:56.140Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        },
+        {
+          "id": 338,
+          "name": "bpt",
+          "slug": "bpt"
+        },
+        {
+          "id": 294,
+          "name": "nppe",
+          "slug": "nppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 42,
+      "views": 1645,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 8,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 6940,
+            "username": "Amitabhab",
+            "name": "Amitabha",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amitabhab/{size}/16794_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 21968,
+            "username": "23f2003958",
+            "name": "Kartik",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003958/{size}/130387_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 7771,
+            "username": "21f1002877",
+            "name": "User",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/58956e/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 21075,
+            "username": "23f2002478",
+            "name": "ROMA YADAV",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2002478/{size}/66974_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Mega Thread - OPPE FAQs and PYQs",
+      "id": 201785,
+      "title": "Mega Thread - OPPE FAQs and PYQs",
+      "slug": "mega-thread-oppe-faqs-and-pyqs",
+      "posts_count": 176,
+      "reply_count": 146,
+      "highest_post_number": 189,
+      "image_url": null,
+      "created_at": "2026-04-17T12:26:16.423Z",
+      "last_posted_at": "2026-04-26T16:02:21.415Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T15:51:26.854Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": true,
+      "unpinned": null,
+      "excerpt": "Hello all, \n\nRe-attempt - 2nd May, 2026, 6:00 p.m. to 8:00 p.m. IST (+5:30  GMT) \n[Chance given automatically, if you score less than 40 AND WERE PRESENT AND MADE A SUBMISSION]\n\nThe first reply to this post links all the&hellip;",
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 67,
+      "views": 1938,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 10,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 38404,
+            "username": "24f3000060",
+            "name": "Kumuda",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000060/{size}/133771_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 31902,
+            "username": "Jessica05",
+            "name": "Jessica Malik",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jessica05/{size}/111259_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Doubts regarding VM setup in OPPE",
+      "id": 192810,
+      "title": "Doubts regarding VM setup in OPPE",
+      "slug": "doubts-regarding-vm-setup-in-oppe",
+      "posts_count": 4,
+      "reply_count": 1,
+      "highest_post_number": 4,
+      "image_url": null,
+      "created_at": "2025-12-03T20:11:09.462Z",
+      "last_posted_at": "2025-12-04T10:41:23.209Z",
+      "bumped": true,
+      "bumped_at": "2025-12-04T10:41:23.209Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 98,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 37927,
+            "username": "Joe17",
+            "name": "Agnivesh Jyotiraditya Kannankara",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/j/c4cdca/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "SC OPPE Important Topics and Clarification",
+      "id": 141526,
+      "title": "SC OPPE Important Topics and Clarification",
+      "slug": "sc-oppe-important-topics-and-clarification",
+      "posts_count": 22,
+      "reply_count": 11,
+      "highest_post_number": 22,
+      "image_url": null,
+      "created_at": "2024-07-30T02:56:43.732Z",
+      "last_posted_at": "2024-08-17T16:15:26.500Z",
+      "bumped": true,
+      "bumped_at": "2024-08-17T16:15:26.500Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        },
+        {
+          "id": 321,
+          "name": "term2-2024",
+          "slug": "term2-2024"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 4,
+      "views": 759,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 35511,
+            "username": "21f1007006",
+            "name": "Abin Raju",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f1007006/{size}/66858_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 17065,
+            "username": "22F3002354",
+            "name": "Yash Rastogi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 21948,
+            "username": "23f2004752",
+            "name": "Ansh bansal",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004752/{size}/68296_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 12093,
+            "username": "22f1001877",
+            "name": "Adnan Mustafa",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1001877/{size}/12612_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 23680,
+            "username": "23dp3000017",
+            "name": "Vineet ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23dp3000017/{size}/67267_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 2,
+    "username": "22f2001554",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+    "excerpt": "<p>Usage of <code>tmux</code> is allowed in BPTs and OPPEs. You don’t need to create a custom setup just to use <code>tmux</code>, you can check <a href=\"https://gist.github.com/slyofzero/a3febe5729b54b31f5e97a30315c1295\" class=\"inline-onebox\" rel=\"noopener nofollow ugc\">tmux_Hotkeys.md · GitHub</a> for a cheatsheet on tmux hotkeys.</p>",
+    "accepter_name": null,
+    "accepter_username": "24f2000396"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 38103,
+        "username": "24f3000618",
+        "name": "Diptanshu Suraj dube",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+        "post_count": 4,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "post_count": 3,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      },
+      {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 2
+      },
+      {
+        "id": 37539,
+        "username": "Baskaran_Nadar",
+        "name": "Baskaran Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 2
+      },
+      {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 30007,
+        "username": "24f2000396",
+        "name": "Piyush Singh ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2000396/{size}/143872_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 39529,
+        "username": "Gurkirat",
+        "name": "Gurkirat Singh",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 30007,
+      "username": "24f2000396",
+      "name": "Piyush Singh ",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2000396/{size}/143872_2.png"
+    },
+    "last_poster": {
+      "id": 348,
+      "username": "sayan",
+      "name": "Sayan Ghosh",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+    },
+    "links": [
+      {
+        "url": "https://seek.study.iitm.ac.in/courses/ns_26t1_se2001?id=207",
+        "title": "Nptel Seekh",
+        "internal": false,
+        "attachment": false,
+        "reflection": false,
+        "clicks": 8,
+        "user_id": 348,
+        "domain": "seek.study.iitm.ac.in",
+        "root_domain": "iitm.ac.in"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=QTdF-vG0Q90",
+        "title": null,
+        "internal": false,
+        "attachment": false,
+        "reflection": false,
+        "clicks": 8,
+        "user_id": 348,
+        "domain": "www.youtube.com",
+        "root_domain": "youtube.com"
+      },
+      {
+        "url": "https://gist.github.com/slyofzero/a3febe5729b54b31f5e97a30315c1295",
+        "title": "tmux_Hotkeys.md · GitHub",
+        "internal": false,
+        "attachment": false,
+        "reflection": false,
+        "clicks": 7,
+        "user_id": 14366,
+        "domain": "gist.github.com",
+        "root_domain": "github.com"
+      }
+    ]
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 755744,
+      "name": "Piyush Singh ",
+      "username": "24f2000396",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2000396/{size}/143872_2.png",
+      "created_at": "2026-04-15T04:59:22.237Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/mrinal.exe\">@Mrinal.exe</a> , <a class=\"mention\" href=\"/u/21f3000759\">@21f3000759</a><br>\nI created a setup.sh script (with the help of an LLM) to make it easier for me to solve BPT1 problems, since I find it difficult to read the question and write code in the same terminal at the same time.<br>\nIs it allowed to use such a pre-written setup script during OPPE exams, or is it considered restricted?</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/f/6/f648aead830b1bfa73ea7d4ac668c7a429be41fd.jpeg\" data-download-href=\"/uploads/short-url/z8Jb5Kv78v6UPp1mMXeZLsBcSuN.jpeg?dl=1\" title=\"Screenshot 2026-04-15 at 10.10.59 AM\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/f/6/f648aead830b1bfa73ea7d4ac668c7a429be41fd_2_533x500.jpeg\" alt=\"Screenshot 2026-04-15 at 10.10.59 AM\" data-base62-sha1=\"z8Jb5Kv78v6UPp1mMXeZLsBcSuN\" width=\"533\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/f/6/f648aead830b1bfa73ea7d4ac668c7a429be41fd_2_533x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/f/6/f648aead830b1bfa73ea7d4ac668c7a429be41fd_2_799x750.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/f/6/f648aead830b1bfa73ea7d4ac668c7a429be41fd_2_1066x1000.jpeg 2x\" data-dominant-color=\"2F3131\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2026-04-15 at 10.10.59 AM</span><span class=\"informations\">1308×1226 121 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-15T04:59:22.237Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 5,
+      "reads": 91,
+      "readers_count": 90,
+      "score": 17.4,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Piyush Singh ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 30007,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/1",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 755746,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-04-15T05:10:21.308Z",
+      "cooked": "<p>Usage of <code>tmux</code> is allowed in BPTs and OPPEs. You don’t need to create a custom setup just to use <code>tmux</code>, you can check <a href=\"https://gist.github.com/slyofzero/a3febe5729b54b31f5e97a30315c1295\" class=\"inline-onebox\" rel=\"noopener nofollow ugc\">tmux_Hotkeys.md · GitHub</a> for a cheatsheet on tmux hotkeys.</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-15T05:10:58.010Z",
+      "reply_count": 2,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 90,
+      "readers_count": 89,
+      "score": 42,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://gist.github.com/slyofzero/a3febe5729b54b31f5e97a30315c1295",
+          "internal": false,
+          "reflection": false,
+          "title": "tmux_Hotkeys.md · GitHub",
+          "clicks": 7
+        }
+      ],
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/2",
+      "user_cakedate": "2022-09-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 755752,
+      "name": "Piyush Singh ",
+      "username": "24f2000396",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2000396/{size}/143872_2.png",
+      "created_at": "2026-04-15T05:23:43.922Z",
+      "cooked": "<p>Thank you for the clarification<br>\nSince tmux usage is allowed in OPPEs,  can I use my setup.sh  file just to automatically start and configure tmux instead of setting it up manually every time?</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-15T05:23:43.922Z",
+      "reply_count": 1,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 87,
+      "readers_count": 86,
+      "score": 21.4,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Piyush Singh ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 30007,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/3",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 755754,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-04-15T05:27:38.526Z",
+      "cooked": "<p>I won’t recommend that. During OPPEs copying and pasting external scripts can be viewed as cheating and be flagged by the proctor or the screen monitoring system.</p>\n<p>It’s better if you use hotkeys instead.</p>\n<ul>\n<li><code>tmux</code> to run tmux</li>\n<li><code>Ctrl + b, %</code> to split the windows vertically into panes</li>\n<li><code>Ctrl + b, &lt;-</code> to go to the left pane</li>\n<li><code>Ctrl + b, -&gt;</code> to go to the right pane</li>\n</ul>\n<aside class=\"quote group-ds-students\" data-username=\"22f2001554\" data-post=\"2\" data-topic=\"201583\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/48/141946_2.png\" class=\"avatar\"> 22f2001554:</div>\n<blockquote>\n<p>you can check <a href=\"https://gist.github.com/slyofzero/a3febe5729b54b31f5e97a30315c1295\" rel=\"noopener nofollow ugc\">tmux_Hotkeys.md · GitHub</a></p>\n</blockquote>\n</aside>\n<p>Note - First press <code>Ctrl + b</code> then press any of the hotkeys given in the gist.</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-15T05:28:44.071Z",
+      "reply_count": 0,
+      "reply_to_post_number": 3,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 85,
+      "readers_count": 84,
+      "score": 31,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 30007,
+        "username": "24f2000396",
+        "name": "Piyush Singh ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2000396/{size}/143872_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/4",
+      "user_cakedate": "2022-09-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 755760,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2026-04-15T05:39:37.233Z",
+      "cooked": "<p>Hopefully you have gone through the video on TMUX in portal.</p>\n<p>Link: <a href=\"https://seek.study.iitm.ac.in/courses/ns_26t1_se2001?id=207\">https://seek.study.iitm.ac.in/courses/ns_26t1_se2001?id=207</a></p>\n<p>You are expected to be familiar with <code>tmux</code>. Yes you can use <code>tmux</code>, you can also configure the <code>tmux.conf</code> file as per your requirement (an example is given in the video objectives).</p>\n<p>During OPPE, the VM will grant you login access one hour before the exam starts (at 5pm), at that moment you can go ahead and configure any user settings you want such as this tmux configuration, or <code>.bashrc</code> aliases and shortcuts. You can also <code>scp</code> this script if you want (but looking at your script, I dont find it scalable, better to configure your tmux conf correctly instead) before the exam starts.</p>\n<p>You can find <code>.bashrc</code> tips and tricks <a href=\"https://www.youtube.com/watch?v=QTdF-vG0Q90\">here</a>.</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-15T05:39:37.233Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 79,
+      "readers_count": 78,
+      "score": 49.8,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://seek.study.iitm.ac.in/courses/ns_26t1_se2001?id=207",
+          "internal": false,
+          "reflection": false,
+          "title": "Nptel Seekh",
+          "clicks": 8
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=QTdF-vG0Q90",
+          "internal": false,
+          "reflection": false,
+          "clicks": 8
+        }
+      ],
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/5",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 755778,
+      "name": "Diptanshu Suraj dube",
+      "username": "24f3000618",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+      "created_at": "2026-04-15T06:16:27.617Z",
+      "cooked": "<p>Is the SC oppe conducted on VM or the seek portal? where is this mentioned can someone tell me?</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-15T06:16:27.617Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 74,
+      "readers_count": 73,
+      "score": 18.8,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Diptanshu Suraj dube",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 38103,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/6",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 755780,
+      "name": "Gurkirat Singh",
+      "username": "Gurkirat",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+      "created_at": "2026-04-15T06:17:45.383Z",
+      "cooked": "<aside class=\"quote group-ds-students\" data-username=\"24f3000618\" data-post=\"6\" data-topic=\"201583\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/48/118648_2.png\" class=\"avatar\"> 24f3000618:</div>\n<blockquote>\n<p>Is the SC oppe conducted on VM or the seek portal?</p>\n</blockquote>\n</aside>\n<aside class=\"quote group-ds-students\" data-username=\"21f3000759\" data-post=\"3\" data-topic=\"200932\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/48/23528_2.png\" class=\"avatar\"><a href=\"/t/200932/3\">On another topic</a></div>\n<blockquote>\n<p>You have to solve the OPPE questions on OPPE vm (similar in design &amp; everything to course vm only difference is that it has a different hostname). Access will be given one week before OPPE and you can do NPPE (mock exam), there to check for any issues.</p>\n</blockquote>\n</aside>\n<p>TA replied on a similar doubt.</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-15T06:17:45.383Z",
+      "reply_count": 1,
+      "reply_to_post_number": 6,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 73,
+      "readers_count": 72,
+      "score": 33.6,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Gurkirat Singh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/basic-doubt-about-oppe/200932/3",
+          "internal": true,
+          "reflection": false,
+          "title": "Where will OPPE be conducted?",
+          "clicks": 0
+        }
+      ],
+      "read": false,
+      "user_title": "Know-it-All",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 39529,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/7",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 755783,
+      "name": "Diptanshu Suraj dube",
+      "username": "24f3000618",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+      "created_at": "2026-04-15T06:22:05.941Z",
+      "cooked": "<p>Thanks! I didn’t know that they should mention this in some doc(grading policy or some thing so that the students don’t get confused.</p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-15T06:22:05.941Z",
+      "reply_count": 0,
+      "reply_to_post_number": 7,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 66,
+      "readers_count": 65,
+      "score": 12.4,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Diptanshu Suraj dube",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 39529,
+        "username": "Gurkirat",
+        "name": "Gurkirat Singh",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 38103,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/8",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 755911,
+      "name": "Baskaran Nadar",
+      "username": "Baskaran_Nadar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+      "created_at": "2026-04-15T08:25:22.860Z",
+      "cooked": "<p>Is VM different from the one that we currently use?</p>\n<p>If so, do we need to generate a new public key using ssh-keygen for the new server and save it in server before the exam starts ?</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-15T08:25:22.860Z",
+      "reply_count": 1,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 60,
+      "readers_count": 59,
+      "score": 16.4,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Baskaran Nadar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37539,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/9",
+      "user_cakedate": "2024-09-22",
+      "user_birthdate": "1904-04-03",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 755940,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2026-04-15T09:04:30.826Z",
+      "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Baskaran_Nadar\" data-post=\"9\" data-topic=\"201583\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/48/150150_2.png\" class=\"avatar\"> Baskaran_Nadar:</div>\n<blockquote>\n<p>Is VM different from the one that we currently use?</p>\n</blockquote>\n</aside>\n<p>Yes, OPPE VM will be different.</p>\n<aside class=\"quote group-ds-students\" data-username=\"Baskaran_Nadar\" data-post=\"9\" data-topic=\"201583\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/48/150150_2.png\" class=\"avatar\"> Baskaran_Nadar:</div>\n<blockquote>\n<p>If so, do we need to generate a new public key using ssh-keygen for the new server and save it in server before the exam starts ?</p>\n</blockquote>\n</aside>\n<p>No, you don’t have to generate new public key. You can paste your existing public key (will show the process in Friday’s TA session). You will get access to it 1 week before to check if everything is working fine &amp; you have to do NPPE (mock) there.</p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-15T09:04:30.826Z",
+      "reply_count": 1,
+      "reply_to_post_number": 9,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 61,
+      "readers_count": 60,
+      "score": 31.6,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/basic-doubt-about-oppe/200932/6",
+          "internal": true,
+          "reflection": true,
+          "title": "Where will OPPE be conducted?",
+          "clicks": 0
+        }
+      ],
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/10",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 757085,
+      "name": "Baskaran Nadar",
+      "username": "Baskaran_Nadar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+      "created_at": "2026-04-16T12:27:25.354Z",
+      "cooked": "<p>Do we have access to the cheat sheets provided in the seek portal for Bash, sed &amp; awk ?</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-16T12:27:25.354Z",
+      "reply_count": 1,
+      "reply_to_post_number": 10,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 47,
+      "readers_count": 46,
+      "score": 13.8,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Baskaran Nadar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37539,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/11",
+      "user_cakedate": "2024-09-22",
+      "user_birthdate": "1904-04-03",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 757090,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2026-04-16T12:38:04.279Z",
+      "cooked": "<p>No. You can refer to man and info pages.</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-16T12:38:04.279Z",
+      "reply_count": 1,
+      "reply_to_post_number": 11,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 47,
+      "readers_count": 46,
+      "score": 28.8,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 37539,
+        "username": "Baskaran_Nadar",
+        "name": "Baskaran Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/12",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "open_mouth",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 757139,
+      "name": "Diptanshu Suraj dube",
+      "username": "24f3000618",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+      "created_at": "2026-04-16T15:19:04.658Z",
+      "cooked": "<p>will the cheat sheet be entirely unavaliable this time?</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-16T15:19:04.658Z",
+      "reply_count": 1,
+      "reply_to_post_number": 12,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 39,
+      "readers_count": 38,
+      "score": 12,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Diptanshu Suraj dube",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 38103,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/13",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 757343,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2026-04-17T08:47:24.397Z",
+      "cooked": "<p>Cheatsheets will not be present in exam portal and accessing them will be treated as malpractice.</p>",
+      "post_number": 14,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-17T08:47:24.397Z",
+      "reply_count": 2,
+      "reply_to_post_number": 13,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 31,
+      "readers_count": 30,
+      "score": 15.2,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 38103,
+        "username": "24f3000618",
+        "name": "Diptanshu Suraj dube",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/14",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 757344,
+      "name": "Diptanshu Suraj dube",
+      "username": "24f3000618",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+      "created_at": "2026-04-17T08:48:36.553Z",
+      "cooked": "<p>got it thank you for the reply</p>",
+      "post_number": 15,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-17T08:48:36.553Z",
+      "reply_count": 0,
+      "reply_to_post_number": 14,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 31,
+      "readers_count": 30,
+      "score": 20.2,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Diptanshu Suraj dube",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 38103,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/15",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 757357,
+      "name": "Baskaran Nadar",
+      "username": "Baskaran_Nadar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png",
+      "created_at": "2026-04-17T09:08:17.541Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/8/d876cbe0df6bee67c3f263cce41fd577c0fef388.png\" data-download-href=\"/uploads/short-url/uSVEwWdE5Uaoqkc3v8QLJtAiP7W.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/8/d876cbe0df6bee67c3f263cce41fd577c0fef388_2_690x368.png\" alt=\"image\" data-base62-sha1=\"uSVEwWdE5Uaoqkc3v8QLJtAiP7W\" width=\"690\" height=\"368\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/8/d876cbe0df6bee67c3f263cce41fd577c0fef388_2_690x368.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/8/d876cbe0df6bee67c3f263cce41fd577c0fef388_2_1035x552.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/8/d876cbe0df6bee67c3f263cce41fd577c0fef388.png 2x\" data-dominant-color=\"321529\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1363×727 69.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>I use WSL/Ubuntu terminal to login VM. Instead of VMs tmux, I prefer the split option of WSL which allows me to view two terminal side by side and supports mouse.</p>\n<p>Yes, that would mean I will have two login sessions in VM; even under tmux, it would amount to be multiple sessions.</p>\n<p>Can I continue to use this split screen or do you guy want me to start learning those keystrokes for tmux ?</p>",
+      "post_number": 16,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-17T09:08:17.541Z",
+      "reply_count": 2,
+      "reply_to_post_number": 14,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 32,
+      "readers_count": 31,
+      "score": 15.4,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Baskaran Nadar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37539,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/16",
+      "user_cakedate": "2024-09-22",
+      "user_birthdate": "1904-04-03",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 757361,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2026-04-17T09:13:27.500Z",
+      "cooked": "<p>Yes, you can use but tmux is encouraged!</p>",
+      "post_number": 17,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-17T09:13:27.500Z",
+      "reply_count": 0,
+      "reply_to_post_number": 16,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 32,
+      "readers_count": 31,
+      "score": 5.4,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 37539,
+        "username": "Baskaran_Nadar",
+        "name": "Baskaran Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/17",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 757365,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2026-04-17T09:29:41.346Z",
+      "cooked": "<p>Also, <code>tmux</code> provides the added advantage that if you lose your network connection mid exam, your unsaved changes in script file will not be lost, you can simply re-ssh and do <code>tmux a</code> to attach to last session.</p>",
+      "post_number": 18,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-04-17T09:29:41.346Z",
+      "reply_count": 0,
+      "reply_to_post_number": 16,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 31,
+      "readers_count": 30,
+      "score": 35.2,
+      "yours": false,
+      "topic_id": 201583,
+      "topic_slug": "is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 37539,
+        "username": "Baskaran_Nadar",
+        "name": "Baskaran Nadar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/baskaran_nadar/{size}/150150_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/is-it-allowed-to-use-a-custom-setup-sh-script-during-oppe/201583/18",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        },
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

@@ -1,0 +1,5736 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 561327,
+        "name": "Subendu Gorai",
+        "username": "Subendu",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+        "created_at": "2024-12-02T10:00:35.639Z",
+        "cooked": "<p>Dear Student,</p>\n<p>Your first NPPE has been released on the OPPE VM. I am attaching an image for your reference.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/c/4c29aeff10c4ba8cecef6862d11b521813a4d5da.png\" data-download-href=\"/uploads/short-url/aRLAQURdPr2ZQgW64O8Knapun1w.png?dl=1\" title=\"Screenshot 2024-12-02 at 6.18.42 PM\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/c/4c29aeff10c4ba8cecef6862d11b521813a4d5da.png\" alt=\"Screenshot 2024-12-02 at 6.18.42 PM\" data-base62-sha1=\"aRLAQURdPr2ZQgW64O8Knapun1w\" width=\"322\" height=\"252\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2024-12-02 at 6.18.42 PM</span><span class=\"informations\">322×252 56.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>You can access it using the following command:</p>\n<pre><code class=\"lang-auto\">ssh your_roll_number@sc-oppe.study.iitm.ac.in\n</code></pre>\n<p>For example, if your roll number is <strong>21f1006567</strong>, you can access it using:</p>\n<pre><code class=\"lang-auto\">ssh 21f1006567@sc-oppe.study.iitm.ac.in\n</code></pre>\n<p>Kindly solve all NPPE problems before <strong>6th November</strong>.</p>\n<p>If you face any issues accessing the OPPE VM, you can join <a href=\"http://meet.google.com/cve-wdtq-tqf\"><strong>this</strong></a> meeting link between <strong>7:00 PM and 9:00 PM</strong>. We will be available from <strong>Tuesday to Friday</strong> to assist you.</p>\n<p><strong>Please note that we will not address any accessing VM-related issues on the exam day.</strong></p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-02T12:49:09.725Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 30,
+        "reads": 263,
+        "readers_count": 262,
+        "score": 252.6,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Subendu Gorai",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "http://meet.google.com/cve-wdtq-tqf",
+            "internal": false,
+            "reflection": false,
+            "clicks": 17
+          }
+        ],
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 3,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6147,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/1",
+        "user_cakedate": "2021-08-16",
+        "user_birthdate": "1904-03-17",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          },
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 3,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 561328,
+        "name": "Subendu Gorai",
+        "username": "Subendu",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+        "created_at": "2024-12-02T10:01:00.405Z",
+        "cooked": "",
+        "post_number": 2,
+        "post_type": 3,
+        "posts_count": 35,
+        "updated_at": "2024-12-02T10:01:00.405Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 252,
+        "readers_count": 251,
+        "score": 50.4,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Subendu Gorai",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6147,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "action_code": "pinned.enabled",
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/2",
+        "user_cakedate": "2021-08-16",
+        "user_birthdate": "1904-03-17",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 561400,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2024-12-02T14:14:54.099Z",
+        "cooked": "<p>A post was merged into an existing topic: <a href=\"/t/unable-to-access-nppe/157857/3\">Unable to access NPPE</a></p>",
+        "post_number": 3,
+        "post_type": 3,
+        "posts_count": 35,
+        "updated_at": "2024-12-02T14:14:54.099Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 2,
+        "reads": 382,
+        "readers_count": 381,
+        "score": 86.4,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/unable-to-access-nppe/157857/3",
+            "internal": true,
+            "reflection": false,
+            "title": "Unable to access NPPE",
+            "clicks": 0
+          }
+        ],
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "action_code": "split_topic",
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/3",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 561636,
+        "name": "Rajeev ",
+        "username": "Rajeevranjan2191",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rajeevranjan2191/{size}/112616_2.png",
+        "created_at": "2024-12-03T07:49:47.866Z",
+        "cooked": "<p>it is showing 75% only in BPT even though I submitted every question solution on time with all test cases passed, in 2 BPTs facing same issue… Please fix this…</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-03T07:49:47.866Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 5,
+        "reads": 231,
+        "readers_count": 230,
+        "score": 71.2,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Rajeev ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 32221,
+        "hidden": false,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/4",
+        "user_cakedate": "2024-06-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 561914,
+        "name": "B R GIRI SUBRAHMANYA",
+        "username": "23f2000573",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000573/{size}/68306_2.png",
+        "created_at": "2024-12-03T18:58:15.926Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> sir, should I complete it by tomorrow, as it is given “before”. Is it possible to keep it till <span class=\"math\">6^{th}</span> (23:59)</p>\n<aside class=\"quote group-course_support\" data-username=\"Subendu\" data-post=\"1\" data-topic=\"157844\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/48/114_2.png\" class=\"avatar\"> Subendu:</div>\n<blockquote>\n<p>before <strong>6th November</strong></p>\n</blockquote>\n</aside>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-03T18:58:37.639Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 224,
+        "readers_count": 223,
+        "score": 49.8,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "B R GIRI SUBRAHMANYA",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 17736,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/5",
+        "user_cakedate": "2023-06-03",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 561925,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2024-12-03T19:51:07.491Z",
+        "cooked": "<p>NPPE is non-graded, it is for your practice. Yes it will be available till 6th midnight.</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-03T19:51:07.491Z",
+        "reply_count": 0,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 204,
+        "readers_count": 203,
+        "score": 55.8,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 17736,
+          "username": "23f2000573",
+          "name": "B R GIRI SUBRAHMANYA",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000573/{size}/68306_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/6",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 562229,
+        "name": "Shriyash Gulhane",
+        "username": "23dp3000040",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23dp3000040/{size}/82814_2.png",
+        "created_at": "2024-12-04T13:33:39.269Z",
+        "cooked": "<p>Is oppe-practice questions compulsory and graded?<br>\nAnd what is the deadline?</p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-04T13:33:39.269Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 189,
+        "readers_count": 188,
+        "score": 42.8,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Shriyash Gulhane",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 23332,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/8",
+        "user_cakedate": "2023-10-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 562236,
+        "name": "Chelluri Bharathi",
+        "username": "24dp1000006",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24dp1000006/{size}/79922_2.png",
+        "created_at": "2024-12-04T13:50:28.193Z",
+        "cooked": "<p>They are for practice purpose and not graded</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-04T13:50:28.193Z",
+        "reply_count": 0,
+        "reply_to_post_number": 8,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 184,
+        "readers_count": 183,
+        "score": 56.8,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Chelluri Bharathi",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 23332,
+          "username": "23dp3000040",
+          "name": "Shriyash Gulhane",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23dp3000040/{size}/82814_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 26202,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/9",
+        "user_cakedate": "2024-01-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 562384,
+        "name": "Shriyash Gulhane",
+        "username": "23dp3000040",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23dp3000040/{size}/82814_2.png",
+        "created_at": "2024-12-05T01:47:44.221Z",
+        "cooked": "<p>I am getting this when log in for first time. What should be next step? Do I need to follow same procedure as when I set up VM for BPT?</p>\n<p>The authenticity of host ‘sc-oppe.study.iitm.ac.in (35.200.199.232)’ can’t be established.<br>\nED25519 key fingerprint is SHA256:***********<br>\nThis key is not known by any other names.<br>\nAre you sure you want to continue connecting (yes/no/[fingerprint])?</p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-05T01:47:44.221Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 179,
+        "readers_count": 178,
+        "score": 40.8,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Shriyash Gulhane",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 23332,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/10",
+        "user_cakedate": "2023-10-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 562404,
+        "name": "Avanthika sriram",
+        "username": "avan3762",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/avan3762/{size}/518_2.png",
+        "created_at": "2024-12-05T04:18:03.185Z",
+        "cooked": "<p>Just type yes and continue</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-05T04:18:03.185Z",
+        "reply_count": 0,
+        "reply_to_post_number": 10,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 172,
+        "readers_count": 171,
+        "score": 34.4,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Avanthika sriram",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 23332,
+          "username": "23dp3000040",
+          "name": "Shriyash Gulhane",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23dp3000040/{size}/82814_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 3590,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/11",
+        "user_cakedate": "2021-05-05",
+        "user_birthdate": "1904-12-24",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 562759,
+        "name": "Vihaan Bhambhani",
+        "username": "24f1002825",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002825/{size}/68806_2.png",
+        "created_at": "2024-12-05T21:30:24.594Z",
+        "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/e/3/e345eda094009586e4cddd61c7ba43e60959ebdc.png\" data-download-href=\"/uploads/short-url/wqycN9RwZtiMujYGcoJnlMat3uk.png?dl=1\" title=\"Screenshot 2024-12-06 024252\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/e/3/e345eda094009586e4cddd61c7ba43e60959ebdc.png\" alt=\"Screenshot 2024-12-06 024252\" data-base62-sha1=\"wqycN9RwZtiMujYGcoJnlMat3uk\" width=\"690\" height=\"150\" data-dominant-color=\"1E1E1E\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2024-12-06 024252</span><span class=\"informations\">1412×307 19.5 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\nWhy is it showing like this?<br>\nConnection closed by 35.200.199.232 port 22</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-05T21:30:24.594Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 4,
+        "reads": 157,
+        "readers_count": 156,
+        "score": 56.4,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Vihaan Bhambhani",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 29970,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/13",
+        "user_cakedate": "2024-06-02",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 562799,
+        "name": "Subendu Gorai",
+        "username": "Subendu",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+        "created_at": "2024-12-06T03:55:37.777Z",
+        "cooked": "<p>We are working on it, give us some time.</p>",
+        "post_number": 14,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-06T03:55:45.328Z",
+        "reply_count": 1,
+        "reply_to_post_number": 13,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 151,
+        "readers_count": 150,
+        "score": 35.2,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Subendu Gorai",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 29970,
+          "username": "24f1002825",
+          "name": "Vihaan Bhambhani",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002825/{size}/68806_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6147,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/14",
+        "user_cakedate": "2021-08-16",
+        "user_birthdate": "1904-03-17",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 562805,
+        "name": "Sivasundari R",
+        "username": "RKS",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rks/{size}/162_2.png",
+        "created_at": "2024-12-06T04:15:42.539Z",
+        "cooked": "<p>Hello Sir, I connected oppe vm successfully on dec 3 but when I try to login today I got the error as connection timed out.</p>",
+        "post_number": 15,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-06T04:15:42.539Z",
+        "reply_count": 1,
+        "reply_to_post_number": 14,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 145,
+        "readers_count": 144,
+        "score": 34,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Sivasundari R",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 6147,
+          "username": "Subendu",
+          "name": "Subendu Gorai",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 1582,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/15",
+        "user_cakedate": "2021-04-28",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 562821,
+        "name": "Subendu Gorai",
+        "username": "Subendu",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+        "created_at": "2024-12-06T05:21:52.971Z",
+        "cooked": "<p>There is some issue on our side, wait an hour, we are fixing the issue.</p>",
+        "post_number": 16,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-06T05:21:52.971Z",
+        "reply_count": 1,
+        "reply_to_post_number": 15,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 141,
+        "readers_count": 140,
+        "score": 48.2,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Subendu Gorai",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 1582,
+          "username": "RKS",
+          "name": "Sivasundari R",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rks/{size}/162_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6147,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/16",
+        "user_cakedate": "2021-08-16",
+        "user_birthdate": "1904-03-17",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 562994,
+        "name": "Sivasundari R",
+        "username": "RKS",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rks/{size}/162_2.png",
+        "created_at": "2024-12-06T11:23:46.268Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/subendu\">@Subendu</a> Sir, is the issue resolved? I still couldn’t access both VM(bpt and oppe) and now dashboard too. Kindly help me sir.</p>",
+        "post_number": 17,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-06T11:23:46.268Z",
+        "reply_count": 1,
+        "reply_to_post_number": 16,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 131,
+        "readers_count": 130,
+        "score": 31.2,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Sivasundari R",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 6147,
+          "username": "Subendu",
+          "name": "Subendu Gorai",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 1582,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/17",
+        "user_cakedate": "2021-04-28",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 562999,
+        "name": "Subendu Gorai",
+        "username": "Subendu",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+        "created_at": "2024-12-06T11:28:29.669Z",
+        "cooked": "<p>Yes, issue resolved.<br>\nCould you please share screenshot<br>\nwhat error showing.</p>",
+        "post_number": 18,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-06T11:28:29.669Z",
+        "reply_count": 1,
+        "reply_to_post_number": 17,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 127,
+        "readers_count": 126,
+        "score": 30.4,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Subendu Gorai",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 1582,
+          "username": "RKS",
+          "name": "Sivasundari R",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rks/{size}/162_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6147,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/18",
+        "user_cakedate": "2021-08-16",
+        "user_birthdate": "1904-03-17",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 563001,
+        "name": "Sivasundari R",
+        "username": "RKS",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rks/{size}/162_2.png",
+        "created_at": "2024-12-06T11:32:50.195Z",
+        "cooked": "<p>Thank you sir, now its connecting.</p>",
+        "post_number": 19,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-06T11:32:50.195Z",
+        "reply_count": 0,
+        "reply_to_post_number": 18,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 125,
+        "readers_count": 124,
+        "score": 25,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Sivasundari R",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 6147,
+          "username": "Subendu",
+          "name": "Subendu Gorai",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 1582,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/19",
+        "user_cakedate": "2021-04-28",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 563234,
+        "name": "RT",
+        "username": "22f3001319",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001319/{size}/111618_2.png",
+        "created_at": "2024-12-06T16:28:21.347Z",
+        "cooked": "<p>can i solve it after 6 December</p>",
+        "post_number": 20,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-06T16:28:21.347Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 117,
+        "readers_count": 116,
+        "score": 23.4,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "RT",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16630,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/20",
+        "user_cakedate": "2023-01-31",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 563329,
+        "name": "Abhishek Ramesh Kumar",
+        "username": "21f3002090",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3002090/{size}/33586_2.png",
+        "created_at": "2024-12-06T17:59:04.528Z",
+        "cooked": "<p><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/9/8/98e649a4d3edcf87692b40f9825b574c19c49454.png\" alt=\"image\" data-base62-sha1=\"lOBXNNHrdyQ4dn6ZdcmP3EAfmZK\" width=\"690\" height=\"20\" data-dominant-color=\"292727\"></p>\n<p>Trying to use “synchro show” to see the question, it isn’t showing me</p>",
+        "post_number": 21,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-06T17:59:04.528Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 2,
+        "reads": 120,
+        "readers_count": 119,
+        "score": 39,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Abhishek Ramesh Kumar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 8523,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/21",
+        "user_cakedate": "2021-12-29",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 563335,
+        "name": "Johnson Philips",
+        "username": "22f2001036",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001036/{size}/21069_2.png",
+        "created_at": "2024-12-06T18:05:58.837Z",
+        "cooked": "<p>NPPE eval is not working it seems ???<br>\n<a class=\"mention\" href=\"/u/sayan\">@sayan</a> <a class=\"mention\" href=\"/u/puneet\">@puneet</a> <a class=\"mention\" href=\"/u/subendu\">@Subendu</a> -<br>\nI tried now the first 2 NPPEs (2.1.1.1 and 2.1.1.2), both of them fails when I do ‘synchro eval’, however my script works and gives the required output when I do cat input.txt | sed -f script.sed ,<br>\ncan you please advise?<br>\nAlso I was in the doubt clearing session earlier , saw one problem faciling similar issue with the eval failing while Puneet confirmed the answer was correct… how can we know if it will be accepted/passed?<br>\nWill I have similar trouble tomorrow in the actual OPPE?</p>\n<p>thanks</p>",
+        "post_number": 22,
+        "post_type": 1,
+        "posts_count": 35,
+        "updated_at": "2024-12-06T18:40:40.503Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 125,
+        "readers_count": 124,
+        "score": 35,
+        "yours": false,
+        "topic_id": 157844,
+        "topic_slug": "nppe-released-on-oppe-vm",
+        "display_username": "Johnson Philips",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 14972,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/nppe-released-on-oppe-vm/157844/22",
+        "user_cakedate": "2022-09-09",
+        "user_birthdate": "1904-02-05",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      561327,
+      561328,
+      561400,
+      561636,
+      561914,
+      561925,
+      562229,
+      562236,
+      562384,
+      562404,
+      562759,
+      562799,
+      562805,
+      562821,
+      562994,
+      562999,
+      563001,
+      563234,
+      563329,
+      563335,
+      563392,
+      563440,
+      563445,
+      563499,
+      563516,
+      563527,
+      563528,
+      563532,
+      563534,
+      563563,
+      563568,
+      563570,
+      563573,
+      563779,
+      563780
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      510
+    ],
+    [
+      5,
+      509
+    ],
+    [
+      7,
+      508
+    ],
+    [
+      11,
+      507
+    ],
+    [
+      15,
+      506
+    ],
+    [
+      34,
+      505
+    ]
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 294,
+      "name": "nppe",
+      "slug": "nppe"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "NPPE- Released on OPPE VM",
+  "id": 157844,
+  "title": "NPPE- Released on OPPE VM",
+  "posts_count": 35,
+  "created_at": "2024-12-02T10:00:35.465Z",
+  "views": 624,
+  "reply_count": 22,
+  "like_count": 8,
+  "last_posted_at": "2024-12-07T10:57:14.661Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "nppe-released-on-oppe-vm",
+  "category_id": 36,
+  "word_count": 939,
+  "deleted_at": null,
+  "user_id": 6147,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/c/4c29aeff10c4ba8cecef6862d11b521813a4d5da.png",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_157844",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 37,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 14,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 322,
+      "height": 252,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/c/4c29aeff10c4ba8cecef6862d11b521813a4d5da.png"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": null,
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 11,
+    "username": "avan3762",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/avan3762/{size}/518_2.png",
+    "excerpt": "<p>Just type yes and continue</p>",
+    "accepter_name": null,
+    "accepter_username": "sayan"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "post_count": 7,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      },
+      {
+        "id": 7234,
+        "username": "21f3000813",
+        "name": "Suraj mishra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000813/{size}/12622_2.png",
+        "post_count": 5,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 6147,
+        "username": "Subendu",
+        "name": "Subendu Gorai",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+        "post_count": 4,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      },
+      {
+        "id": 1582,
+        "username": "RKS",
+        "name": "Sivasundari R",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rks/{size}/162_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 8523,
+        "username": "21f3002090",
+        "name": "Abhishek Ramesh Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3002090/{size}/33586_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 14972,
+        "username": "22f2001036",
+        "name": "Johnson Philips",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001036/{size}/21069_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 29970,
+        "username": "24f1002825",
+        "name": "Vihaan Bhambhani",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002825/{size}/68806_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 23332,
+        "username": "23dp3000040",
+        "name": "Shriyash Gulhane",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23dp3000040/{size}/82814_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 16630,
+        "username": "22f3001319",
+        "name": "RT",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001319/{size}/111618_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 3590,
+        "username": "avan3762",
+        "name": "Avanthika sriram",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/avan3762/{size}/518_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 17736,
+        "username": "23f2000573",
+        "name": "B R GIRI SUBRAHMANYA",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000573/{size}/68306_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 32221,
+        "username": "Rajeevranjan2191",
+        "name": "Rajeev ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rajeevranjan2191/{size}/112616_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      },
+      {
+        "id": 26202,
+        "username": "24dp1000006",
+        "name": "Chelluri Bharathi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24dp1000006/{size}/79922_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 22452,
+        "username": "22f1001391",
+        "name": "mittapalli vijayalaxmi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1001391/{size}/67299_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 6147,
+      "username": "Subendu",
+      "name": "Subendu Gorai",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png"
+    },
+    "last_poster": {
+      "id": 348,
+      "username": "sayan",
+      "name": "Sayan Ghosh",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+    },
+    "links": [
+      {
+        "url": "http://meet.google.com/cve-wdtq-tqf",
+        "title": null,
+        "internal": false,
+        "attachment": false,
+        "reflection": false,
+        "clicks": 17,
+        "user_id": 6147,
+        "domain": "meet.google.com",
+        "root_domain": "google.com"
+      }
+    ]
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 561327,
+      "name": "Subendu Gorai",
+      "username": "Subendu",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+      "created_at": "2024-12-02T10:00:35.639Z",
+      "cooked": "<p>Dear Student,</p>\n<p>Your first NPPE has been released on the OPPE VM. I am attaching an image for your reference.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/c/4c29aeff10c4ba8cecef6862d11b521813a4d5da.png\" data-download-href=\"/uploads/short-url/aRLAQURdPr2ZQgW64O8Knapun1w.png?dl=1\" title=\"Screenshot 2024-12-02 at 6.18.42 PM\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/c/4c29aeff10c4ba8cecef6862d11b521813a4d5da.png\" alt=\"Screenshot 2024-12-02 at 6.18.42 PM\" data-base62-sha1=\"aRLAQURdPr2ZQgW64O8Knapun1w\" width=\"322\" height=\"252\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2024-12-02 at 6.18.42 PM</span><span class=\"informations\">322×252 56.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>You can access it using the following command:</p>\n<pre><code class=\"lang-auto\">ssh your_roll_number@sc-oppe.study.iitm.ac.in\n</code></pre>\n<p>For example, if your roll number is <strong>21f1006567</strong>, you can access it using:</p>\n<pre><code class=\"lang-auto\">ssh 21f1006567@sc-oppe.study.iitm.ac.in\n</code></pre>\n<p>Kindly solve all NPPE problems before <strong>6th November</strong>.</p>\n<p>If you face any issues accessing the OPPE VM, you can join <a href=\"http://meet.google.com/cve-wdtq-tqf\"><strong>this</strong></a> meeting link between <strong>7:00 PM and 9:00 PM</strong>. We will be available from <strong>Tuesday to Friday</strong> to assist you.</p>\n<p><strong>Please note that we will not address any accessing VM-related issues on the exam day.</strong></p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-02T12:49:09.725Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 30,
+      "reads": 263,
+      "readers_count": 262,
+      "score": 252.6,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Subendu Gorai",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "http://meet.google.com/cve-wdtq-tqf",
+          "internal": false,
+          "reflection": false,
+          "clicks": 17
+        }
+      ],
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 3,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6147,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/1",
+      "user_cakedate": "2021-08-16",
+      "user_birthdate": "1904-03-17",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        },
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 3,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 561328,
+      "name": "Subendu Gorai",
+      "username": "Subendu",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+      "created_at": "2024-12-02T10:01:00.405Z",
+      "cooked": "",
+      "post_number": 2,
+      "post_type": 3,
+      "posts_count": 35,
+      "updated_at": "2024-12-02T10:01:00.405Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 252,
+      "readers_count": 251,
+      "score": 50.4,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Subendu Gorai",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6147,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "action_code": "pinned.enabled",
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/2",
+      "user_cakedate": "2021-08-16",
+      "user_birthdate": "1904-03-17",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 561400,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2024-12-02T14:14:54.099Z",
+      "cooked": "<p>A post was merged into an existing topic: <a href=\"/t/unable-to-access-nppe/157857/3\">Unable to access NPPE</a></p>",
+      "post_number": 3,
+      "post_type": 3,
+      "posts_count": 35,
+      "updated_at": "2024-12-02T14:14:54.099Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 382,
+      "readers_count": 381,
+      "score": 86.4,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/unable-to-access-nppe/157857/3",
+          "internal": true,
+          "reflection": false,
+          "title": "Unable to access NPPE",
+          "clicks": 0
+        }
+      ],
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "action_code": "split_topic",
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/3",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 561636,
+      "name": "Rajeev ",
+      "username": "Rajeevranjan2191",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rajeevranjan2191/{size}/112616_2.png",
+      "created_at": "2024-12-03T07:49:47.866Z",
+      "cooked": "<p>it is showing 75% only in BPT even though I submitted every question solution on time with all test cases passed, in 2 BPTs facing same issue… Please fix this…</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-03T07:49:47.866Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 5,
+      "reads": 231,
+      "readers_count": 230,
+      "score": 71.2,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Rajeev ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 32221,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/4",
+      "user_cakedate": "2024-06-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 561914,
+      "name": "B R GIRI SUBRAHMANYA",
+      "username": "23f2000573",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000573/{size}/68306_2.png",
+      "created_at": "2024-12-03T18:58:15.926Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> sir, should I complete it by tomorrow, as it is given “before”. Is it possible to keep it till <span class=\"math\">6^{th}</span> (23:59)</p>\n<aside class=\"quote group-course_support\" data-username=\"Subendu\" data-post=\"1\" data-topic=\"157844\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/48/114_2.png\" class=\"avatar\"> Subendu:</div>\n<blockquote>\n<p>before <strong>6th November</strong></p>\n</blockquote>\n</aside>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-03T18:58:37.639Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 224,
+      "readers_count": 223,
+      "score": 49.8,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "B R GIRI SUBRAHMANYA",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17736,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/5",
+      "user_cakedate": "2023-06-03",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 561925,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2024-12-03T19:51:07.491Z",
+      "cooked": "<p>NPPE is non-graded, it is for your practice. Yes it will be available till 6th midnight.</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-03T19:51:07.491Z",
+      "reply_count": 0,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 204,
+      "readers_count": 203,
+      "score": 55.8,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 17736,
+        "username": "23f2000573",
+        "name": "B R GIRI SUBRAHMANYA",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000573/{size}/68306_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/6",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 562229,
+      "name": "Shriyash Gulhane",
+      "username": "23dp3000040",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23dp3000040/{size}/82814_2.png",
+      "created_at": "2024-12-04T13:33:39.269Z",
+      "cooked": "<p>Is oppe-practice questions compulsory and graded?<br>\nAnd what is the deadline?</p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-04T13:33:39.269Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 189,
+      "readers_count": 188,
+      "score": 42.8,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Shriyash Gulhane",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23332,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/8",
+      "user_cakedate": "2023-10-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 562236,
+      "name": "Chelluri Bharathi",
+      "username": "24dp1000006",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24dp1000006/{size}/79922_2.png",
+      "created_at": "2024-12-04T13:50:28.193Z",
+      "cooked": "<p>They are for practice purpose and not graded</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-04T13:50:28.193Z",
+      "reply_count": 0,
+      "reply_to_post_number": 8,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 184,
+      "readers_count": 183,
+      "score": 56.8,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Chelluri Bharathi",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 23332,
+        "username": "23dp3000040",
+        "name": "Shriyash Gulhane",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23dp3000040/{size}/82814_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 26202,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/9",
+      "user_cakedate": "2024-01-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 562384,
+      "name": "Shriyash Gulhane",
+      "username": "23dp3000040",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23dp3000040/{size}/82814_2.png",
+      "created_at": "2024-12-05T01:47:44.221Z",
+      "cooked": "<p>I am getting this when log in for first time. What should be next step? Do I need to follow same procedure as when I set up VM for BPT?</p>\n<p>The authenticity of host ‘sc-oppe.study.iitm.ac.in (35.200.199.232)’ can’t be established.<br>\nED25519 key fingerprint is SHA256:***********<br>\nThis key is not known by any other names.<br>\nAre you sure you want to continue connecting (yes/no/[fingerprint])?</p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-05T01:47:44.221Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 179,
+      "readers_count": 178,
+      "score": 40.8,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Shriyash Gulhane",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23332,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/10",
+      "user_cakedate": "2023-10-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 562404,
+      "name": "Avanthika sriram",
+      "username": "avan3762",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/avan3762/{size}/518_2.png",
+      "created_at": "2024-12-05T04:18:03.185Z",
+      "cooked": "<p>Just type yes and continue</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-05T04:18:03.185Z",
+      "reply_count": 0,
+      "reply_to_post_number": 10,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 172,
+      "readers_count": 171,
+      "score": 34.4,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Avanthika sriram",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 23332,
+        "username": "23dp3000040",
+        "name": "Shriyash Gulhane",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23dp3000040/{size}/82814_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 3590,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/11",
+      "user_cakedate": "2021-05-05",
+      "user_birthdate": "1904-12-24",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 562759,
+      "name": "Vihaan Bhambhani",
+      "username": "24f1002825",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002825/{size}/68806_2.png",
+      "created_at": "2024-12-05T21:30:24.594Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/e/3/e345eda094009586e4cddd61c7ba43e60959ebdc.png\" data-download-href=\"/uploads/short-url/wqycN9RwZtiMujYGcoJnlMat3uk.png?dl=1\" title=\"Screenshot 2024-12-06 024252\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/e/3/e345eda094009586e4cddd61c7ba43e60959ebdc.png\" alt=\"Screenshot 2024-12-06 024252\" data-base62-sha1=\"wqycN9RwZtiMujYGcoJnlMat3uk\" width=\"690\" height=\"150\" data-dominant-color=\"1E1E1E\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2024-12-06 024252</span><span class=\"informations\">1412×307 19.5 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\nWhy is it showing like this?<br>\nConnection closed by 35.200.199.232 port 22</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-05T21:30:24.594Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 4,
+      "reads": 157,
+      "readers_count": 156,
+      "score": 56.4,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Vihaan Bhambhani",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 29970,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/13",
+      "user_cakedate": "2024-06-02",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 562799,
+      "name": "Subendu Gorai",
+      "username": "Subendu",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+      "created_at": "2024-12-06T03:55:37.777Z",
+      "cooked": "<p>We are working on it, give us some time.</p>",
+      "post_number": 14,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-06T03:55:45.328Z",
+      "reply_count": 1,
+      "reply_to_post_number": 13,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 151,
+      "readers_count": 150,
+      "score": 35.2,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Subendu Gorai",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 29970,
+        "username": "24f1002825",
+        "name": "Vihaan Bhambhani",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002825/{size}/68806_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6147,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/14",
+      "user_cakedate": "2021-08-16",
+      "user_birthdate": "1904-03-17",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 562805,
+      "name": "Sivasundari R",
+      "username": "RKS",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rks/{size}/162_2.png",
+      "created_at": "2024-12-06T04:15:42.539Z",
+      "cooked": "<p>Hello Sir, I connected oppe vm successfully on dec 3 but when I try to login today I got the error as connection timed out.</p>",
+      "post_number": 15,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-06T04:15:42.539Z",
+      "reply_count": 1,
+      "reply_to_post_number": 14,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 145,
+      "readers_count": 144,
+      "score": 34,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Sivasundari R",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 6147,
+        "username": "Subendu",
+        "name": "Subendu Gorai",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 1582,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/15",
+      "user_cakedate": "2021-04-28",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 562821,
+      "name": "Subendu Gorai",
+      "username": "Subendu",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+      "created_at": "2024-12-06T05:21:52.971Z",
+      "cooked": "<p>There is some issue on our side, wait an hour, we are fixing the issue.</p>",
+      "post_number": 16,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-06T05:21:52.971Z",
+      "reply_count": 1,
+      "reply_to_post_number": 15,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 141,
+      "readers_count": 140,
+      "score": 48.2,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Subendu Gorai",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 1582,
+        "username": "RKS",
+        "name": "Sivasundari R",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rks/{size}/162_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6147,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/16",
+      "user_cakedate": "2021-08-16",
+      "user_birthdate": "1904-03-17",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 562994,
+      "name": "Sivasundari R",
+      "username": "RKS",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rks/{size}/162_2.png",
+      "created_at": "2024-12-06T11:23:46.268Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/subendu\">@Subendu</a> Sir, is the issue resolved? I still couldn’t access both VM(bpt and oppe) and now dashboard too. Kindly help me sir.</p>",
+      "post_number": 17,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-06T11:23:46.268Z",
+      "reply_count": 1,
+      "reply_to_post_number": 16,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 131,
+      "readers_count": 130,
+      "score": 31.2,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Sivasundari R",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 6147,
+        "username": "Subendu",
+        "name": "Subendu Gorai",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 1582,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/17",
+      "user_cakedate": "2021-04-28",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 562999,
+      "name": "Subendu Gorai",
+      "username": "Subendu",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+      "created_at": "2024-12-06T11:28:29.669Z",
+      "cooked": "<p>Yes, issue resolved.<br>\nCould you please share screenshot<br>\nwhat error showing.</p>",
+      "post_number": 18,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-06T11:28:29.669Z",
+      "reply_count": 1,
+      "reply_to_post_number": 17,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 127,
+      "readers_count": 126,
+      "score": 30.4,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Subendu Gorai",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 1582,
+        "username": "RKS",
+        "name": "Sivasundari R",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rks/{size}/162_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6147,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/18",
+      "user_cakedate": "2021-08-16",
+      "user_birthdate": "1904-03-17",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563001,
+      "name": "Sivasundari R",
+      "username": "RKS",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rks/{size}/162_2.png",
+      "created_at": "2024-12-06T11:32:50.195Z",
+      "cooked": "<p>Thank you sir, now its connecting.</p>",
+      "post_number": 19,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-06T11:32:50.195Z",
+      "reply_count": 0,
+      "reply_to_post_number": 18,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 125,
+      "readers_count": 124,
+      "score": 25,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Sivasundari R",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 6147,
+        "username": "Subendu",
+        "name": "Subendu Gorai",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 1582,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/19",
+      "user_cakedate": "2021-04-28",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563234,
+      "name": "RT",
+      "username": "22f3001319",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001319/{size}/111618_2.png",
+      "created_at": "2024-12-06T16:28:21.347Z",
+      "cooked": "<p>can i solve it after 6 December</p>",
+      "post_number": 20,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-06T16:28:21.347Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 117,
+      "readers_count": 116,
+      "score": 23.4,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "RT",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16630,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/20",
+      "user_cakedate": "2023-01-31",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563329,
+      "name": "Abhishek Ramesh Kumar",
+      "username": "21f3002090",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3002090/{size}/33586_2.png",
+      "created_at": "2024-12-06T17:59:04.528Z",
+      "cooked": "<p><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/9/8/98e649a4d3edcf87692b40f9825b574c19c49454.png\" alt=\"image\" data-base62-sha1=\"lOBXNNHrdyQ4dn6ZdcmP3EAfmZK\" width=\"690\" height=\"20\" data-dominant-color=\"292727\"></p>\n<p>Trying to use “synchro show” to see the question, it isn’t showing me</p>",
+      "post_number": 21,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-06T17:59:04.528Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 120,
+      "readers_count": 119,
+      "score": 39,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Abhishek Ramesh Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8523,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/21",
+      "user_cakedate": "2021-12-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563335,
+      "name": "Johnson Philips",
+      "username": "22f2001036",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001036/{size}/21069_2.png",
+      "created_at": "2024-12-06T18:05:58.837Z",
+      "cooked": "<p>NPPE eval is not working it seems ???<br>\n<a class=\"mention\" href=\"/u/sayan\">@sayan</a> <a class=\"mention\" href=\"/u/puneet\">@puneet</a> <a class=\"mention\" href=\"/u/subendu\">@Subendu</a> -<br>\nI tried now the first 2 NPPEs (2.1.1.1 and 2.1.1.2), both of them fails when I do ‘synchro eval’, however my script works and gives the required output when I do cat input.txt | sed -f script.sed ,<br>\ncan you please advise?<br>\nAlso I was in the doubt clearing session earlier , saw one problem faciling similar issue with the eval failing while Puneet confirmed the answer was correct… how can we know if it will be accepted/passed?<br>\nWill I have similar trouble tomorrow in the actual OPPE?</p>\n<p>thanks</p>",
+      "post_number": 22,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-06T18:40:40.503Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 125,
+      "readers_count": 124,
+      "score": 35,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Johnson Philips",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14972,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/22",
+      "user_cakedate": "2022-09-09",
+      "user_birthdate": "1904-02-05",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563392,
+      "name": "Vihaan Bhambhani",
+      "username": "24f1002825",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002825/{size}/68806_2.png",
+      "created_at": "2024-12-06T19:12:55.694Z",
+      "cooked": "<p>Does the nppe carry any extra bonus marks?<br>\nAlso, the extra questions of sed and awk in the bpt vm, do they carry any extra marks?</p>",
+      "post_number": 23,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-06T19:12:55.694Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 110,
+      "readers_count": 109,
+      "score": 27,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Vihaan Bhambhani",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 29970,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/23",
+      "user_cakedate": "2024-06-02",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563440,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2024-12-07T04:32:43.559Z",
+      "cooked": "<p>You can read the grading pattern in the grading doc to confirm that these do not have marks</p>",
+      "post_number": 24,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-07T04:32:43.559Z",
+      "reply_count": 0,
+      "reply_to_post_number": 23,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 98,
+      "readers_count": 97,
+      "score": 19.6,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 29970,
+        "username": "24f1002825",
+        "name": "Vihaan Bhambhani",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002825/{size}/68806_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/24",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563445,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2024-12-07T04:34:25.885Z",
+      "cooked": "<p>Which VM are you in?</p>",
+      "post_number": 25,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-07T04:34:25.885Z",
+      "reply_count": 0,
+      "reply_to_post_number": 21,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 98,
+      "readers_count": 97,
+      "score": 19.6,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 8523,
+        "username": "21f3002090",
+        "name": "Abhishek Ramesh Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3002090/{size}/33586_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/25",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563499,
+      "name": "Suraj mishra",
+      "username": "21f3000813",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000813/{size}/12622_2.png",
+      "created_at": "2024-12-07T05:26:50.856Z",
+      "cooked": "<p>Unable to login to the VM.I am asked to create another ID .I tried to generate another ssh rsa public key &amp; then create my login key but it is giving error when i try to upload my ssh rsa key<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/e/1e639b3c42efa92f0bcb202207c7decd5df550ea.png\" data-download-href=\"/uploads/short-url/4kPJfpCaiaCr5be6P8GjRDgQ5DA.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/e/1e639b3c42efa92f0bcb202207c7decd5df550ea_2_690x302.png\" alt=\"image\" data-base62-sha1=\"4kPJfpCaiaCr5be6P8GjRDgQ5DA\" width=\"690\" height=\"302\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/e/1e639b3c42efa92f0bcb202207c7decd5df550ea_2_690x302.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/e/1e639b3c42efa92f0bcb202207c7decd5df550ea_2_1035x453.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/e/1e639b3c42efa92f0bcb202207c7decd5df550ea_2_1380x604.png 2x\" data-dominant-color=\"F9FBFB\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1865×818 41.1 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 26,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-07T05:26:50.856Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 94,
+      "readers_count": 93,
+      "score": 23.8,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Suraj mishra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 7234,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/26",
+      "user_cakedate": "2021-09-14",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563516,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2024-12-07T05:42:35.702Z",
+      "cooked": "<p>You cannot upload new keys now.</p>",
+      "post_number": 27,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-07T05:42:35.702Z",
+      "reply_count": 1,
+      "reply_to_post_number": 26,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 86,
+      "readers_count": 85,
+      "score": 22.2,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 7234,
+        "username": "21f3000813",
+        "name": "Suraj mishra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000813/{size}/12622_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/27",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563527,
+      "name": "Suraj mishra",
+      "username": "21f3000813",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000813/{size}/12622_2.png",
+      "created_at": "2024-12-07T05:49:38.624Z",
+      "cooked": "<p>I have done this process already at the starting of the course.but in the morning when i tried to login to my VM &amp; i opened this page to copy my passwordless ssh key to connect with the IIT M server. my old page that had my login key vanished &amp; this page poped up.when i tried to login from my old key.my permission was denied</p>",
+      "post_number": 28,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-07T05:49:38.624Z",
+      "reply_count": 1,
+      "reply_to_post_number": 27,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 86,
+      "readers_count": 85,
+      "score": 27.2,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Suraj mishra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 7234,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/28",
+      "user_cakedate": "2021-09-14",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563528,
+      "name": "Suraj mishra",
+      "username": "21f3000813",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000813/{size}/12622_2.png",
+      "created_at": "2024-12-07T05:50:29.394Z",
+      "cooked": "<p>please help my with this .I have my OPPE today</p>",
+      "post_number": 29,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-07T05:50:29.394Z",
+      "reply_count": 1,
+      "reply_to_post_number": 28,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 86,
+      "readers_count": 85,
+      "score": 22.2,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Suraj mishra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 7234,
+        "username": "21f3000813",
+        "name": "Suraj mishra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000813/{size}/12622_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 7234,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/29",
+      "user_cakedate": "2021-09-14",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563532,
+      "name": "Suraj mishra",
+      "username": "21f3000813",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000813/{size}/12622_2.png",
+      "created_at": "2024-12-07T05:54:25.447Z",
+      "cooked": "<p><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/9/9/9957c0bbb01478051a79b6212844936855bb6952.png\" alt=\"image\" data-base62-sha1=\"lSx3SIH2blU6POrwvdQApOPqhns\" width=\"592\" height=\"81\"></p>",
+      "post_number": 30,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-07T05:54:25.447Z",
+      "reply_count": 1,
+      "reply_to_post_number": 29,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 84,
+      "readers_count": 83,
+      "score": 21.8,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Suraj mishra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 7234,
+        "username": "21f3000813",
+        "name": "Suraj mishra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000813/{size}/12622_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 7234,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/30",
+      "user_cakedate": "2021-09-14",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563534,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2024-12-07T05:55:09.393Z",
+      "cooked": "<p>Please wait till the OPPE, you cannot change your ssh key now.</p>",
+      "post_number": 31,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-07T05:55:09.393Z",
+      "reply_count": 1,
+      "reply_to_post_number": 30,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 87,
+      "readers_count": 86,
+      "score": 32.4,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 7234,
+        "username": "21f3000813",
+        "name": "Suraj mishra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000813/{size}/12622_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/31",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563563,
+      "name": "Suraj mishra",
+      "username": "21f3000813",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000813/{size}/12622_2.png",
+      "created_at": "2024-12-07T06:25:00.794Z",
+      "cooked": "<p>Please tell me what the process will be. Will I have to inform my invigilator about this . Last week only I was able to login thought the same key to complete my BPT-4.I don’t understand what happened all of a sudden.I will be able to give my exam right?</p>",
+      "post_number": 32,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-07T06:25:28.889Z",
+      "reply_count": 1,
+      "reply_to_post_number": 31,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 82,
+      "readers_count": 81,
+      "score": 26.4,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Suraj mishra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 7234,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/32",
+      "user_cakedate": "2021-09-14",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563568,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2024-12-07T06:28:02.536Z",
+      "cooked": "<p>If you have not made any changes to your ssh key, you should be able to login without any procedure.</p>\n<p>Otherwise, upload your updated key to sc-oppe.study.iitm.ac.in during OPPE.</p>",
+      "post_number": 33,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-07T06:28:08.225Z",
+      "reply_count": 0,
+      "reply_to_post_number": 32,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 84,
+      "readers_count": 83,
+      "score": 21.8,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 7234,
+        "username": "21f3000813",
+        "name": "Suraj mishra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000813/{size}/12622_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/33",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563570,
+      "name": "mittapalli vijayalaxmi",
+      "username": "22f1001391",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1001391/{size}/67299_2.png",
+      "created_at": "2024-12-07T06:28:49.414Z",
+      "cooked": "<p>I had the same issue …try using #!/bin/sed -f<br>\nThis as the first line of the script.sed file</p>",
+      "post_number": 34,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-07T06:28:49.414Z",
+      "reply_count": 1,
+      "reply_to_post_number": 22,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 81,
+      "readers_count": 80,
+      "score": 36.2,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "mittapalli vijayalaxmi",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 14972,
+        "username": "22f2001036",
+        "name": "Johnson Philips",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001036/{size}/21069_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 22452,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/34",
+      "user_cakedate": "2023-09-22",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563573,
+      "name": "Johnson Philips",
+      "username": "22f2001036",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001036/{size}/21069_2.png",
+      "created_at": "2024-12-07T06:33:23.051Z",
+      "cooked": "<p>Thanks, tried, but it seems the NPPEs are removed by now, in preparation for the actual OPPE…</p>",
+      "post_number": 35,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-07T06:33:23.051Z",
+      "reply_count": 0,
+      "reply_to_post_number": 34,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 80,
+      "readers_count": 79,
+      "score": 21,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Johnson Philips",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 22452,
+        "username": "22f1001391",
+        "name": "mittapalli vijayalaxmi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1001391/{size}/67299_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14972,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/35",
+      "user_cakedate": "2022-09-09",
+      "user_birthdate": "1904-02-05",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563779,
+      "name": "Abhishek Ramesh Kumar",
+      "username": "21f3002090",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3002090/{size}/33586_2.png",
+      "created_at": "2024-12-07T10:55:28.017Z",
+      "cooked": "<p>Hi. How do I request a new host key? It says the key expired.</p>",
+      "post_number": 36,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-07T10:55:28.017Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 77,
+      "readers_count": 76,
+      "score": 20.4,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Abhishek Ramesh Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8523,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/36",
+      "user_cakedate": "2021-12-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 563780,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2024-12-07T10:57:14.661Z",
+      "cooked": "<p>Please run <code>ssh-keygen -R se2001.ds.study.iitm.ac.in</code><br>\nor <code>ssh-keygen -R sc-oppe.study.iitm.ac.in</code> whichever domain you are trying to connect.</p>",
+      "post_number": 37,
+      "post_type": 1,
+      "posts_count": 35,
+      "updated_at": "2024-12-07T10:57:14.661Z",
+      "reply_count": 0,
+      "reply_to_post_number": 36,
+      "quote_count": 0,
+      "incoming_link_count": 5,
+      "reads": 80,
+      "readers_count": 79,
+      "score": 56,
+      "yours": false,
+      "topic_id": 157844,
+      "topic_slug": "nppe-released-on-oppe-vm",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 8523,
+        "username": "21f3002090",
+        "name": "Abhishek Ramesh Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3002090/{size}/33586_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/nppe-released-on-oppe-vm/157844/37",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

@@ -1,0 +1,2650 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 586487,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2025-01-26T19:20:15.007Z",
+        "cooked": "<p>Hello,</p>\n<p>Sharing a resource for python made by me (student) - <a href=\"https://colab.research.google.com/drive/1E_GjWABne4RBA95JyjL6qKvnXb9gFSOM?usp=sharing\" class=\"inline-onebox\" rel=\"noopener nofollow ugc\">Google Colab</a></p>\n<p>Please note -</p>\n<ol>\n<li>Use IITM student id to access it &amp; create a copy</li>\n<li>Don’t treat it as official</li>\n<li>Its contains topics from the course but may not contain all please follow your course syllabus</li>\n<li>In case of any issues/improvement leave a comment here.</li>\n</ol>\n<p>Hope this helps!</p>\n<p>Thanks &amp; Regards,<br>\nSwati Jain</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-02-02T10:38:31.078Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 34,
+        "reads": 242,
+        "readers_count": 241,
+        "score": 533.4,
+        "yours": false,
+        "topic_id": 165395,
+        "topic_slug": "resource-for-python-made-by-me",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 3,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://colab.research.google.com/drive/1E_GjWABne4RBA95JyjL6qKvnXb9gFSOM?usp=sharing",
+            "internal": false,
+            "reflection": false,
+            "title": "Google Colab",
+            "clicks": 193
+          },
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/pending-syllabus-strategy-and-guidance-for-the-upcoming-python-oppe-2/171543/5",
+            "internal": true,
+            "reflection": true,
+            "title": "(Pending syllabus)strategy and guidance for the upcoming Python OPPE 2",
+            "clicks": 4
+          }
+        ],
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 21,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/resource-for-python-made-by-me/165395/1",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 16
+          },
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 5
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 21,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 586645,
+        "name": "Asha C V",
+        "username": "24f1002163",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002163/{size}/68296_2.png",
+        "created_at": "2025-01-27T07:56:50.650Z",
+        "cooked": "<p>Hi,</p>\n<p>Thank you so much for this. I really appreciate the time and effort that you’ve put into creating this <img src=\"https://emoji.discourse-cdn.com/google/slight_smile.png?v=12\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-01-27T07:57:19.990Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 212,
+        "readers_count": 211,
+        "score": 77.4,
+        "yours": false,
+        "topic_id": 165395,
+        "topic_slug": "resource-for-python-made-by-me",
+        "display_username": "Asha C V",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 30471,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/resource-for-python-made-by-me/165395/2",
+        "user_cakedate": "2024-06-02",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 589306,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2025-02-02T10:36:54.373Z",
+        "cooked": "<p>I hope this helps everyone! Your welcome</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-02-02T10:36:54.373Z",
+        "reply_count": 0,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 177,
+        "readers_count": 176,
+        "score": 65.4,
+        "yours": false,
+        "topic_id": 165395,
+        "topic_slug": "resource-for-python-made-by-me",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 30471,
+          "username": "24f1002163",
+          "name": "Asha C V",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002163/{size}/68296_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/resource-for-python-made-by-me/165395/3",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 596801,
+        "name": "Alexi Abraham",
+        "username": "itzzalexisabraham",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/i/59ef9b/{size}.png",
+        "created_at": "2025-02-18T20:02:25.069Z",
+        "cooked": "<p>This is soo good<br>\nThankyou so much Swati</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-02-18T20:02:25.069Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 149,
+        "readers_count": 148,
+        "score": 59.6,
+        "yours": false,
+        "topic_id": 165395,
+        "topic_slug": "resource-for-python-made-by-me",
+        "display_username": "Alexi Abraham",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 33231,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/resource-for-python-made-by-me/165395/4",
+        "user_cakedate": "2024-06-06",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          },
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 597118,
+        "name": "Gayathri Lakshmi Puppala ",
+        "username": "24f1002564",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002564/{size}/110637_2.png",
+        "created_at": "2025-02-19T14:37:40.216Z",
+        "cooked": "<p>This soo good and simple<br>\nThank you for all your effort</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-02-19T14:37:40.216Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 137,
+        "readers_count": 136,
+        "score": 57.2,
+        "yours": false,
+        "topic_id": 165395,
+        "topic_slug": "resource-for-python-made-by-me",
+        "display_username": "Gayathri Lakshmi Puppala ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 29956,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/resource-for-python-made-by-me/165395/5",
+        "user_cakedate": "2024-06-02",
+        "user_birthdate": "1904-06-23",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          },
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 614546,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2025-04-02T11:16:53.632Z",
+        "cooked": "<p>Use this for end term revision &amp; oppe!</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-04-12T08:30:37.655Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 109,
+        "readers_count": 108,
+        "score": 36.6,
+        "yours": false,
+        "topic_id": 165395,
+        "topic_slug": "resource-for-python-made-by-me",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 3,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/resource-for-python-made-by-me/165395/6",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 618551,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2025-04-12T08:30:54.893Z",
+        "cooked": "<p>All the best for end term!</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-04-12T08:30:54.893Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 87,
+        "readers_count": 86,
+        "score": 17.2,
+        "yours": false,
+        "topic_id": 165395,
+        "topic_slug": "resource-for-python-made-by-me",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/resource-for-python-made-by-me/165395/7",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 659511,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2025-08-03T16:58:44.098Z",
+        "cooked": "<p><strong>Please note - Use IITM student id to access it &amp; create a copy. I am getting a lot of request for access</strong></p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 8,
+        "updated_at": "2025-08-03T17:01:39.113Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 49,
+        "readers_count": 48,
+        "score": 9.6,
+        "yours": false,
+        "topic_id": 165395,
+        "topic_slug": "resource-for-python-made-by-me",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/resource-for-python-made-by-me/165395/8",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      586487,
+      586645,
+      589306,
+      596801,
+      597118,
+      614546,
+      618551,
+      659511
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      455
+    ],
+    [
+      3,
+      448
+    ],
+    [
+      4,
+      432
+    ],
+    [
+      5,
+      431
+    ],
+    [
+      6,
+      389
+    ],
+    [
+      7,
+      379
+    ],
+    [
+      8,
+      266
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "PPA-3 solution",
+      "id": 202515,
+      "title": "PPA-3 solution",
+      "slug": "ppa-3-solution",
+      "posts_count": 4,
+      "reply_count": 1,
+      "highest_post_number": 4,
+      "image_url": null,
+      "created_at": "2026-04-26T18:58:16.204Z",
+      "last_posted_at": "2026-04-26T20:11:09.075Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T20:11:09.075Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 7,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 47387,
+            "username": "25f2000510",
+            "name": "Sayed Abiha Abul Hasan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2000510/{size}/119801_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "PYqs for OPPE-2 Python",
+      "id": 202516,
+      "title": "PYqs for OPPE-2 Python",
+      "slug": "pyqs-for-oppe-2-python",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": null,
+      "created_at": "2026-04-26T19:18:02.398Z",
+      "last_posted_at": "2026-04-26T19:56:34.716Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T19:56:34.716Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 6,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 56474,
+            "username": "25f3002735",
+            "name": "Aamir",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/f17d59/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "PPA-1 Solution",
+      "id": 202514,
+      "title": "PPA-1 Solution",
+      "slug": "ppa-1-solution",
+      "posts_count": 1,
+      "reply_count": 0,
+      "highest_post_number": 1,
+      "image_url": null,
+      "created_at": "2026-04-26T18:51:19.212Z",
+      "last_posted_at": "2026-04-26T18:51:19.374Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:51:19.374Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 4,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest single",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 47387,
+            "username": "25f2000510",
+            "name": "Sayed Abiha Abul Hasan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2000510/{size}/119801_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe result related query",
+      "id": 202495,
+      "title": "Oppe result related query",
+      "slug": "oppe-result-related-query",
+      "posts_count": 4,
+      "reply_count": 2,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/7/676201f5c22b7eee7f1673038360f3615706cbd2_2_460x1024.jpeg",
+      "created_at": "2026-04-26T13:45:02.580Z",
+      "last_posted_at": "2026-04-26T14:07:11.728Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T14:07:11.728Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 339,
+          "name": "term3-2024",
+          "slug": "term3-2024"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 37,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 30749,
+            "username": "24f2002652",
+            "name": "Yashaswee mrinal jha ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2002652/{size}/125481_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe clearance",
+      "id": 202411,
+      "title": "Oppe clearance",
+      "slug": "oppe-clearance",
+      "posts_count": 6,
+      "reply_count": 2,
+      "highest_post_number": 6,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/4/9420a7e6546f171bf30f0b5049091e0bbfdf4f88_2_459x1024.jpeg",
+      "created_at": "2026-04-26T03:56:45.449Z",
+      "last_posted_at": "2026-04-26T10:27:05.020Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T10:27:05.020Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 4,
+      "views": 61,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 39782,
+            "username": "Omkar7",
+            "name": "Omkar gudla",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/omkar7/{size}/113203_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 23318,
+            "username": "23f2001123",
+            "name": "Anshu Rajbhar ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2001123/{size}/110382_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 57115,
+            "username": "25f3006372",
+            "name": "Raihan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f3006372/{size}/161245_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 44,
+      "name": "extra-resources",
+      "slug": "extra-resources"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Resource for python made by me",
+  "id": 165395,
+  "title": "Resource for python made by me",
+  "posts_count": 8,
+  "created_at": "2025-01-26T19:20:14.789Z",
+  "views": 419,
+  "reply_count": 1,
+  "like_count": 30,
+  "last_posted_at": "2025-08-03T16:58:44.098Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "resource-for-python-made-by-me",
+  "category_id": 25,
+  "word_count": 156,
+  "deleted_at": null,
+  "user_id": 6563,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": null,
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_165395",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 8,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 4,
+  "show_read_indicator": false,
+  "thumbnails": null,
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "Python colab files of ta and instructor",
+      "id": 172226,
+      "title": "Python colab files of ta and instructor",
+      "slug": "python-colab-files-of-ta-and-instructor",
+      "posts_count": 1,
+      "reply_count": 0,
+      "highest_post_number": 1,
+      "image_url": null,
+      "created_at": "2025-04-09T10:05:07.335Z",
+      "last_posted_at": "2025-04-09T10:05:07.560Z",
+      "bumped": true,
+      "bumped_at": "2025-04-09T10:05:07.560Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 34,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest single",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 24021,
+            "username": "23f2005111",
+            "name": "Rex",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2005111/{size}/66974_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "I want these problems sir/mam",
+      "id": 142670,
+      "title": "I want these problems sir/mam",
+      "slug": "i-want-these-problems-sir-mam",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 5,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/3/3/33da6f79528097abdc134347bf6b9dad5eab07c7_2_1024x700.jpeg",
+      "created_at": "2024-08-11T04:48:58.032Z",
+      "last_posted_at": "2024-08-11T10:56:24.718Z",
+      "bumped": true,
+      "bumped_at": "2024-08-11T10:56:24.718Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 146,
+          "name": "miscellaneous",
+          "slug": "miscellaneous"
+        },
+        {
+          "id": 44,
+          "name": "extra-resources",
+          "slug": "extra-resources"
+        },
+        {
+          "id": 24,
+          "name": "guidelines",
+          "slug": "guidelines"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 62,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 21565,
+            "username": "23f2003509",
+            "name": "Eraf Ali",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003509/{size}/87326_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 18376,
+            "username": "23f2003006",
+            "name": "Vaishnavi Chede",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003006/{size}/109662_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25024,
+            "username": "deepbist",
+            "name": "Dipanshu Singh Bist",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/deepbist/{size}/98467_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Please add colab link for week 5 and week 6 ppa",
+      "id": 122936,
+      "title": "Please add colab link for week 5 and week 6 ppa",
+      "slug": "please-add-colab-link-for-week-5-and-week-6-ppa",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2024-03-04T14:26:53.803Z",
+      "last_posted_at": "2024-03-04T14:55:10.950Z",
+      "bumped": true,
+      "bumped_at": "2024-03-04T14:55:10.950Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 20,
+          "name": "intropython",
+          "slug": "intropython"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 38,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 26485,
+            "username": "23f3003624",
+            "name": "23f3003624",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003624/{size}/123352_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 19683,
+            "username": "23f2000207",
+            "name": "hfkshoignepiobuto",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000207/{size}/92569_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 23292,
+            "username": "23f3001764",
+            "name": "Sahil Raj ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3001764/{size}/66764_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "I corrupted(edited accidentially) the &lsquo;Statistics-playground&rsquo; file",
+      "id": 77770,
+      "title": "I corrupted(edited accidentially) the 'Statistics-playground' file",
+      "slug": "i-corrupted-edited-accidentially-the-statistics-playground-file",
+      "posts_count": 1,
+      "reply_count": 0,
+      "highest_post_number": 1,
+      "image_url": null,
+      "created_at": "2023-02-13T06:00:39.314Z",
+      "last_posted_at": "2023-02-13T06:00:39.498Z",
+      "bumped": true,
+      "bumped_at": "2023-02-13T06:03:43.010Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 44,
+          "name": "extra-resources",
+          "slug": "extra-resources"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 27,
+      "category_id": 24,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest single",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 15905,
+            "username": "NayanChandwani",
+            "name": "NAYAN CHANDWANI",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/nayanchandwani/{size}/67326_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Dawn of the Virtual TA - TDS GPT TA",
+      "id": 143992,
+      "title": "Dawn of the Virtual TA - TDS GPT TA",
+      "slug": "dawn-of-the-virtual-ta-tds-gpt-ta",
+      "posts_count": 6,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2024-08-26T06:11:26.121Z",
+      "last_posted_at": "2024-12-21T20:19:45.097Z",
+      "bumped": true,
+      "bumped_at": "2024-12-21T20:19:45.097Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 44,
+          "name": "extra-resources",
+          "slug": "extra-resources"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 21,
+      "views": 476,
+      "category_id": 34,
+      "featured_link": null,
+      "op_like_count": 15,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16094,
+            "username": "carlton",
+            "name": "Carlton D'Silva",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/carlton/{size}/56317_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 3
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 15826,
+            "username": "iitmanupam",
+            "name": "Anupam Chandra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitmanupam/{size}/56694_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 23358,
+            "username": "23f3001129",
+            "name": "Aliza Shaikh ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3001129/{size}/66875_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 6523,
+            "username": "21f3000700",
+            "name": "Hritik Shyam Gupta",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000700/{size}/118382_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 833,
+            "username": "d_ritu07",
+            "name": "Rituparno Dhar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/d_ritu07/{size}/9393_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 8,
+    "username": "21f3000759",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+    "excerpt": "<p><strong>Please note - Use IITM student id to access it &amp; create a copy. I am getting a lot of request for access</strong></p>",
+    "accepter_name": null,
+    "accepter_username": "21f3000759"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "post_count": 5,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 2
+      },
+      {
+        "id": 29956,
+        "username": "24f1002564",
+        "name": "Gayathri Lakshmi Puppala ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002564/{size}/110637_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 33231,
+        "username": "itzzalexisabraham",
+        "name": "Alexi Abraham",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/i/59ef9b/{size}.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 30471,
+        "username": "24f1002163",
+        "name": "Asha C V",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002163/{size}/68296_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 6563,
+      "username": "21f3000759",
+      "name": "Swati Jain",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+    },
+    "last_poster": {
+      "id": 6563,
+      "username": "21f3000759",
+      "name": "Swati Jain",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+    },
+    "links": [
+      {
+        "url": "https://colab.research.google.com/drive/1E_GjWABne4RBA95JyjL6qKvnXb9gFSOM?usp=sharing",
+        "title": "Google Colab",
+        "internal": false,
+        "attachment": false,
+        "reflection": false,
+        "clicks": 193,
+        "user_id": 6563,
+        "domain": "colab.research.google.com",
+        "root_domain": "google.com"
+      },
+      {
+        "url": "https://discourse.onlinedegree.iitm.ac.in/t/pending-syllabus-strategy-and-guidance-for-the-upcoming-python-oppe-2/171543/5",
+        "title": "(Pending syllabus)strategy and guidance for the upcoming Python OPPE 2",
+        "internal": true,
+        "attachment": false,
+        "reflection": true,
+        "clicks": 4,
+        "user_id": 6563,
+        "domain": "discourse.onlinedegree.iitm.ac.in",
+        "root_domain": "iitm.ac.in"
+      }
+    ]
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 586487,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2025-01-26T19:20:15.007Z",
+      "cooked": "<p>Hello,</p>\n<p>Sharing a resource for python made by me (student) - <a href=\"https://colab.research.google.com/drive/1E_GjWABne4RBA95JyjL6qKvnXb9gFSOM?usp=sharing\" class=\"inline-onebox\" rel=\"noopener nofollow ugc\">Google Colab</a></p>\n<p>Please note -</p>\n<ol>\n<li>Use IITM student id to access it &amp; create a copy</li>\n<li>Don’t treat it as official</li>\n<li>Its contains topics from the course but may not contain all please follow your course syllabus</li>\n<li>In case of any issues/improvement leave a comment here.</li>\n</ol>\n<p>Hope this helps!</p>\n<p>Thanks &amp; Regards,<br>\nSwati Jain</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-02-02T10:38:31.078Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 34,
+      "reads": 242,
+      "readers_count": 241,
+      "score": 533.4,
+      "yours": false,
+      "topic_id": 165395,
+      "topic_slug": "resource-for-python-made-by-me",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://colab.research.google.com/drive/1E_GjWABne4RBA95JyjL6qKvnXb9gFSOM?usp=sharing",
+          "internal": false,
+          "reflection": false,
+          "title": "Google Colab",
+          "clicks": 193
+        },
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/pending-syllabus-strategy-and-guidance-for-the-upcoming-python-oppe-2/171543/5",
+          "internal": true,
+          "reflection": true,
+          "title": "(Pending syllabus)strategy and guidance for the upcoming Python OPPE 2",
+          "clicks": 4
+        }
+      ],
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 21,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/resource-for-python-made-by-me/165395/1",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 16
+        },
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 5
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 21,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 586645,
+      "name": "Asha C V",
+      "username": "24f1002163",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002163/{size}/68296_2.png",
+      "created_at": "2025-01-27T07:56:50.650Z",
+      "cooked": "<p>Hi,</p>\n<p>Thank you so much for this. I really appreciate the time and effort that you’ve put into creating this <img src=\"https://emoji.discourse-cdn.com/google/slight_smile.png?v=12\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-01-27T07:57:19.990Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 212,
+      "readers_count": 211,
+      "score": 77.4,
+      "yours": false,
+      "topic_id": 165395,
+      "topic_slug": "resource-for-python-made-by-me",
+      "display_username": "Asha C V",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 30471,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/resource-for-python-made-by-me/165395/2",
+      "user_cakedate": "2024-06-02",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 589306,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2025-02-02T10:36:54.373Z",
+      "cooked": "<p>I hope this helps everyone! Your welcome</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-02-02T10:36:54.373Z",
+      "reply_count": 0,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 177,
+      "readers_count": 176,
+      "score": 65.4,
+      "yours": false,
+      "topic_id": 165395,
+      "topic_slug": "resource-for-python-made-by-me",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 30471,
+        "username": "24f1002163",
+        "name": "Asha C V",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002163/{size}/68296_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/resource-for-python-made-by-me/165395/3",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 596801,
+      "name": "Alexi Abraham",
+      "username": "itzzalexisabraham",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/i/59ef9b/{size}.png",
+      "created_at": "2025-02-18T20:02:25.069Z",
+      "cooked": "<p>This is soo good<br>\nThankyou so much Swati</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-02-18T20:02:25.069Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 149,
+      "readers_count": 148,
+      "score": 59.6,
+      "yours": false,
+      "topic_id": 165395,
+      "topic_slug": "resource-for-python-made-by-me",
+      "display_username": "Alexi Abraham",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 33231,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/resource-for-python-made-by-me/165395/4",
+      "user_cakedate": "2024-06-06",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        },
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 597118,
+      "name": "Gayathri Lakshmi Puppala ",
+      "username": "24f1002564",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002564/{size}/110637_2.png",
+      "created_at": "2025-02-19T14:37:40.216Z",
+      "cooked": "<p>This soo good and simple<br>\nThank you for all your effort</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-02-19T14:37:40.216Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 137,
+      "readers_count": 136,
+      "score": 57.2,
+      "yours": false,
+      "topic_id": 165395,
+      "topic_slug": "resource-for-python-made-by-me",
+      "display_username": "Gayathri Lakshmi Puppala ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 29956,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/resource-for-python-made-by-me/165395/5",
+      "user_cakedate": "2024-06-02",
+      "user_birthdate": "1904-06-23",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        },
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 614546,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2025-04-02T11:16:53.632Z",
+      "cooked": "<p>Use this for end term revision &amp; oppe!</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-04-12T08:30:37.655Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 109,
+      "readers_count": 108,
+      "score": 36.6,
+      "yours": false,
+      "topic_id": 165395,
+      "topic_slug": "resource-for-python-made-by-me",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/resource-for-python-made-by-me/165395/6",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 618551,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2025-04-12T08:30:54.893Z",
+      "cooked": "<p>All the best for end term!</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-04-12T08:30:54.893Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 87,
+      "readers_count": 86,
+      "score": 17.2,
+      "yours": false,
+      "topic_id": 165395,
+      "topic_slug": "resource-for-python-made-by-me",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/resource-for-python-made-by-me/165395/7",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 659511,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2025-08-03T16:58:44.098Z",
+      "cooked": "<p><strong>Please note - Use IITM student id to access it &amp; create a copy. I am getting a lot of request for access</strong></p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 8,
+      "updated_at": "2025-08-03T17:01:39.113Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 49,
+      "readers_count": 48,
+      "score": 9.6,
+      "yours": false,
+      "topic_id": 165395,
+      "topic_slug": "resource-for-python-made-by-me",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/resource-for-python-made-by-me/165395/8",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    }
+  ]
+}

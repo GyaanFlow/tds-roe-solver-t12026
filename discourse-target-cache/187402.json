@@ -1,0 +1,4909 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 675755,
+        "name": "Priyanshi Dixit",
+        "username": "Priyanshi_Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+        "created_at": "2025-09-19T16:51:39.340Z",
+        "cooked": "<p>I am not able to submit any of my assignments (both graded and ungraded). It shows ‘OOPS! SOMETHING WENT WRONG’.</p>\n<p>I am also attaching a screenshot of my issue.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/d/6db492aec7d3e01754992d58a4ea68c42758fc36.png\" data-download-href=\"/uploads/short-url/fEuV2SldGUaRxu2HJwGTgOBoiO2.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/d/6db492aec7d3e01754992d58a4ea68c42758fc36_2_690x351.png\" alt=\"image\" data-base62-sha1=\"fEuV2SldGUaRxu2HJwGTgOBoiO2\" width=\"690\" height=\"351\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/d/6db492aec7d3e01754992d58a4ea68c42758fc36_2_690x351.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/d/6db492aec7d3e01754992d58a4ea68c42758fc36_2_1035x526.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/d/6db492aec7d3e01754992d58a4ea68c42758fc36_2_1380x702.png 2x\" data-dominant-color=\"F3F4F5\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1491×760 69.5 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-19T17:01:15.108Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 4,
+        "reads": 134,
+        "readers_count": 133,
+        "score": 136.8,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Priyanshi Dixit",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/python-graded-assignment-not-able-to-submit/187502/2",
+            "internal": true,
+            "reflection": true,
+            "title": "Python graded assignment not able to submit",
+            "clicks": 0
+          },
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/error-unable-to-submit-grpa-answers/187488/2",
+            "internal": true,
+            "reflection": true,
+            "title": "Error: Unable to submit GrPA answers",
+            "clicks": 0
+          },
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/assigment-is-not-submit-in-python-as-well-as-grpa/187491/2",
+            "internal": true,
+            "reflection": true,
+            "title": "Assigment is not submit in python as well as grpa",
+            "clicks": 0
+          }
+        ],
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 6,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 50546,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/1",
+        "user_cakedate": "2025-09-16",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 6
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 6,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 675757,
+        "name": "Anupam ",
+        "username": "iitm_student",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitm_student/{size}/147334_2.png",
+        "created_at": "2025-09-19T16:58:31.175Z",
+        "cooked": "<p>Try to log out and re-login and complete assignment and submit.</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-19T16:58:31.175Z",
+        "reply_count": 2,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 121,
+        "readers_count": 120,
+        "score": 34.2,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Anupam ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 42676,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/2",
+        "user_cakedate": "2025-01-10",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675758,
+        "name": "Priyanshi Dixit",
+        "username": "Priyanshi_Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+        "created_at": "2025-09-19T17:00:47.258Z",
+        "cooked": "<p>tried..</p>\n<p>Yesterday too I faced the same problem. I thought it will be solved but it continues.</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-19T17:00:47.258Z",
+        "reply_count": 1,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 120,
+        "readers_count": 119,
+        "score": 59,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Priyanshi Dixit",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 42676,
+          "username": "iitm_student",
+          "name": "Anupam ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitm_student/{size}/147334_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 50546,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/3",
+        "user_cakedate": "2025-09-16",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675760,
+        "name": "Anupam ",
+        "username": "iitm_student",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitm_student/{size}/147334_2.png",
+        "created_at": "2025-09-19T17:02:39.426Z",
+        "cooked": "<p>So, Ignore that assignment because it is only for Practice it doesn’t count toward your Score.<br>\nSo, try the Graded Assignment maybe there issue doesn’t come.</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-19T17:02:39.426Z",
+        "reply_count": 1,
+        "reply_to_post_number": 3,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 115,
+        "readers_count": 114,
+        "score": 28,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Anupam ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 50546,
+          "username": "Priyanshi_Dixit",
+          "name": "Priyanshi Dixit",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 42676,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/4",
+        "user_cakedate": "2025-01-10",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675761,
+        "name": "Priyanshi Dixit",
+        "username": "Priyanshi_Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+        "created_at": "2025-09-19T17:03:46.422Z",
+        "cooked": "<p>it’s there in graded assignment too..</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-19T17:03:46.422Z",
+        "reply_count": 1,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 109,
+        "readers_count": 108,
+        "score": 56.8,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Priyanshi Dixit",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 42676,
+          "username": "iitm_student",
+          "name": "Anupam ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitm_student/{size}/147334_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 50546,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/5",
+        "user_cakedate": "2025-09-16",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675762,
+        "name": "Anupam ",
+        "username": "iitm_student",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitm_student/{size}/147334_2.png",
+        "created_at": "2025-09-19T17:05:33.853Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/kaustubhismyname\">@KaustubhIsMyName</a> Please Look on this Matter.</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-19T17:05:33.853Z",
+        "reply_count": 0,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 105,
+        "readers_count": 104,
+        "score": 21,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Anupam ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 50546,
+          "username": "Priyanshi_Dixit",
+          "name": "Priyanshi Dixit",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 42676,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/6",
+        "user_cakedate": "2025-01-10",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675775,
+        "name": "PD",
+        "username": "25f1002640",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e9a140/{size}.png",
+        "created_at": "2025-09-19T17:52:35.062Z",
+        "cooked": "<p>same for me also, can not submitt assingment</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-19T17:52:35.062Z",
+        "reply_count": 0,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 102,
+        "readers_count": 101,
+        "score": 35.4,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "PD",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 42676,
+          "username": "iitm_student",
+          "name": "Anupam ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitm_student/{size}/147334_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 49796,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/7",
+        "user_cakedate": "2025-06-25",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675859,
+        "name": "Adarsh Khandelwal",
+        "username": "Adarsh_8922",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/a/34f0e0/{size}.png",
+        "created_at": "2025-09-19T19:42:05.608Z",
+        "cooked": "<p>I am also facing the same issue</p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-19T19:42:05.608Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 95,
+        "readers_count": 94,
+        "score": 39,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Adarsh Khandelwal",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 51404,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/8",
+        "user_cakedate": "2025-09-18",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675870,
+        "name": "Praveen Mishra ",
+        "username": "Praveen1",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/praveen1/{size}/111576_2.png",
+        "created_at": "2025-09-20T03:14:24.689Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/livin\">@livin</a> <a class=\"mention\" href=\"/u/kubra_7\">@kubra_7</a> please look into this matter</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-20T03:14:24.689Z",
+        "reply_count": 0,
+        "reply_to_post_number": 8,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 90,
+        "readers_count": 89,
+        "score": 23,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Praveen Mishra ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 51404,
+          "username": "Adarsh_8922",
+          "name": "Adarsh Khandelwal",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/a/34f0e0/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 36907,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/9",
+        "user_cakedate": "2024-09-21",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675888,
+        "name": "ANKIT KUMAR MISHRA",
+        "username": "24f2007274",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007274/{size}/119508_2.png",
+        "created_at": "2025-09-20T05:01:00.316Z",
+        "cooked": "<p>same i am also unable to submit</p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-20T05:01:00.316Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 84,
+        "readers_count": 83,
+        "score": 16.8,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "ANKIT KUMAR MISHRA",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 36911,
+        "hidden": false,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/10",
+        "user_cakedate": "2024-09-21",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675895,
+        "name": "Priyanshi Dixit",
+        "username": "Priyanshi_Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+        "created_at": "2025-09-20T05:24:06.316Z",
+        "cooked": "<p>I think we should mail to the support team as many of us are facing the same problem.</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-20T05:24:06.316Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 84,
+        "readers_count": 83,
+        "score": 81.8,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Priyanshi Dixit",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 4,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 50546,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/11",
+        "user_cakedate": "2025-09-16",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 4
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 4,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675921,
+        "name": "S Adithya Kosimin ",
+        "username": "Spidaaman",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/spidaaman/{size}/119699_2.png",
+        "created_at": "2025-09-20T06:02:20.491Z",
+        "cooked": "<p>i have a doubt</p>\n<p>for using replit and google colab can i use iit student mail id or am i supposed to use my  personal id ?</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-20T06:02:20.491Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 82,
+        "readers_count": 81,
+        "score": 26.4,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "S Adithya Kosimin ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 46538,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/12",
+        "user_cakedate": "2025-05-14",
+        "user_birthdate": "1904-06-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675952,
+        "name": "Jay prakash prasad kushwaha",
+        "username": "24f3003875jppk",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003875jppk/{size}/123124_2.png",
+        "created_at": "2025-09-20T08:09:29.510Z",
+        "cooked": "<p>you can use it by any  id</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-20T08:09:29.510Z",
+        "reply_count": 0,
+        "reply_to_post_number": 12,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 78,
+        "readers_count": 77,
+        "score": 35.6,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Jay prakash prasad kushwaha",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 46538,
+          "username": "Spidaaman",
+          "name": "S Adithya Kosimin ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/spidaaman/{size}/119699_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 43573,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/13",
+        "user_cakedate": "2025-01-12",
+        "user_birthdate": "1904-10-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675966,
+        "name": "Udbhas Sarkar",
+        "username": "25f2004017",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2004017/{size}/134369_2.png",
+        "created_at": "2025-09-20T08:30:57.971Z",
+        "cooked": "<p>Doesn’t work for GrPA or for other courses as well</p>",
+        "post_number": 14,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-20T08:30:57.971Z",
+        "reply_count": 1,
+        "reply_to_post_number": 11,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 78,
+        "readers_count": 77,
+        "score": 20.6,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Udbhas Sarkar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 50546,
+          "username": "Priyanshi_Dixit",
+          "name": "Priyanshi Dixit",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 48069,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/14",
+        "user_cakedate": "2025-06-02",
+        "user_birthdate": "1904-02-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 675967,
+        "name": "Priyanshi Dixit",
+        "username": "Priyanshi_Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+        "created_at": "2025-09-20T08:35:01.601Z",
+        "cooked": "<p>All assignments of python not working…neither practice assignments nor GrPa.</p>",
+        "post_number": 15,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-20T09:00:48.348Z",
+        "reply_count": 1,
+        "reply_to_post_number": 14,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 79,
+        "readers_count": 78,
+        "score": 80.8,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Priyanshi Dixit",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 3,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 48069,
+          "username": "25f2004017",
+          "name": "Udbhas Sarkar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2004017/{size}/134369_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 4,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 50546,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/15",
+        "user_cakedate": "2025-09-16",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 4
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 4,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 676048,
+        "name": "Rishi B",
+        "username": "21f1000330",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f1000330/{size}/1038_2.png",
+        "created_at": "2025-09-20T14:08:35.176Z",
+        "cooked": "<p>Facing the same issue. It says Oops something went wrong every time we submit</p>",
+        "post_number": 16,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-20T14:08:35.176Z",
+        "reply_count": 0,
+        "reply_to_post_number": 15,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 66,
+        "readers_count": 65,
+        "score": 13.2,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Rishi B",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 50546,
+          "username": "Priyanshi_Dixit",
+          "name": "Priyanshi Dixit",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 3596,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/16",
+        "user_cakedate": "2021-05-05",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 676053,
+        "name": "waseeq",
+        "username": "25f2000129",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2000129/{size}/120096_2.png",
+        "created_at": "2025-09-20T14:21:07.246Z",
+        "cooked": "<p>same issue for me too</p>",
+        "post_number": 17,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-20T14:21:07.246Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 62,
+        "readers_count": 61,
+        "score": 12.4,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "waseeq",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 46237,
+        "hidden": false,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/17",
+        "user_cakedate": "2025-05-07",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 676071,
+        "name": "Shardul Shukla",
+        "username": "ShardulShukla",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/shardulshukla/{size}/145677_2.png",
+        "created_at": "2025-09-20T15:25:50.489Z",
+        "cooked": "<p>same issue here too . please someone look into this.</p>",
+        "post_number": 18,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-20T15:25:50.489Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 54,
+        "readers_count": 53,
+        "score": 10.8,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Shardul Shukla",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 50605,
+        "hidden": false,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/18",
+        "user_cakedate": "2025-09-16",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 676073,
+        "name": "Priyanshi Dixit",
+        "username": "Priyanshi_Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+        "created_at": "2025-09-20T15:34:35.841Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/kaustubhismyname\">@KaustubhIsMyName</a>  Sir please look into the issue. Many of us are facing the same problem in submitting assignments.</p>",
+        "post_number": 19,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-20T15:34:45.823Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 53,
+        "readers_count": 52,
+        "score": 40.6,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "Priyanshi Dixit",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 50546,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/19",
+        "user_cakedate": "2025-09-16",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 676083,
+        "name": "AVINASH SHARMA",
+        "username": "avinashsharma",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/avinashsharma/{size}/79265_2.png",
+        "created_at": "2025-09-20T16:13:36.078Z",
+        "cooked": "<p>facing same issue when trying to submit assigment it showing “someting went wrong”</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/0/40bfcf7ffe03a7d789835ab0637d0c80a7806bf2.png\" data-download-href=\"/uploads/short-url/9eNvDD8ajK0EPXodXw7cDnyKlW2.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/4/0/40bfcf7ffe03a7d789835ab0637d0c80a7806bf2_2_690x431.png\" alt=\"image\" data-base62-sha1=\"9eNvDD8ajK0EPXodXw7cDnyKlW2\" width=\"690\" height=\"431\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/4/0/40bfcf7ffe03a7d789835ab0637d0c80a7806bf2_2_690x431.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/0/40bfcf7ffe03a7d789835ab0637d0c80a7806bf2.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/0/40bfcf7ffe03a7d789835ab0637d0c80a7806bf2.png 2x\" data-dominant-color=\"F7F6F6\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1029×643 67.4 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 20,
+        "post_type": 1,
+        "posts_count": 26,
+        "updated_at": "2025-09-20T16:13:36.078Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 56,
+        "readers_count": 55,
+        "score": 16.2,
+        "yours": false,
+        "topic_id": 187402,
+        "topic_slug": "assignments-of-python-not-working",
+        "display_username": "AVINASH SHARMA",
+        "primary_group_name": "es-students",
+        "flair_name": "es-students",
+        "flair_url": "bolt",
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 293,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 22688,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/assignments-of-python-not-working/187402/20",
+        "user_cakedate": "2023-09-28",
+        "user_birthdate": "1904-12-20",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      675755,
+      675757,
+      675758,
+      675760,
+      675761,
+      675762,
+      675775,
+      675859,
+      675870,
+      675888,
+      675895,
+      675921,
+      675952,
+      675966,
+      675967,
+      676048,
+      676053,
+      676071,
+      676073,
+      676083,
+      676096,
+      676104,
+      676147,
+      676231,
+      676279,
+      676328
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      219
+    ],
+    [
+      14,
+      218
+    ],
+    [
+      25,
+      217
+    ]
+  ],
+  "tags": [
+    {
+      "id": 245,
+      "name": "foundation-level",
+      "slug": "foundation-level"
+    },
+    {
+      "id": 341,
+      "name": "term2-2025",
+      "slug": "term2-2025"
+    },
+    {
+      "id": 37,
+      "name": "operational",
+      "slug": "operational"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Assignments of python not working",
+  "id": 187402,
+  "title": "Assignments of python not working",
+  "posts_count": 26,
+  "created_at": "2025-09-19T16:51:39.103Z",
+  "views": 220,
+  "reply_count": 13,
+  "like_count": 25,
+  "last_posted_at": "2025-09-21T14:11:32.476Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "assignments-of-python-not-working",
+  "category_id": 25,
+  "word_count": 361,
+  "deleted_at": null,
+  "user_id": 50546,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/d/6db492aec7d3e01754992d58a4ea68c42758fc36_2_1024x521.png",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_187402",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 26,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 16,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 1491,
+      "height": 760,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/d/6db492aec7d3e01754992d58a4ea68c42758fc36.png"
+    },
+    {
+      "max_width": 1024,
+      "max_height": 1024,
+      "width": 1024,
+      "height": 521,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/d/6db492aec7d3e01754992d58a4ea68c42758fc36_2_1024x521.png"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": null,
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 25,
+    "username": "Kshitij_21",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kshitij_21/{size}/142124_2.png",
+    "excerpt": "<p>They will solve this issue by tomorrow.<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/c/cc8220344d5baa5c639eec47a2bc4527fe4b709b.jpeg\" data-download-href=\"/uploads/short-url/tbace4eqAGoUNzDWWSGcwVcTG4j.jpeg?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/c/cc8220344d5baa5c639eec47a2bc4527fe4b709b_2_542x500.jpeg\" alt=\"image\" data-base62-sha1=\"tbace4eqAGoUNzDWWSGcwVcTG4j\" width=\"542\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/c/cc8220344d5baa5c639eec47a2bc4527fe4b709b_2_542x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/c/cc8220344d5baa5c639eec47a2bc4527fe4b709b.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/c/cc8220344d5baa5c639eec47a2bc4527fe4b709b.jpeg 2x\" data-dominant-color=\"F2F2F7\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">706×651 42 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+    "accepter_name": null,
+    "accepter_username": "Priyanshi_Dixit"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 50546,
+        "username": "Priyanshi_Dixit",
+        "name": "Priyanshi Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+        "post_count": 7,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 42676,
+        "username": "iitm_student",
+        "name": "Anupam ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitm_student/{size}/147334_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 22688,
+        "username": "avinashsharma",
+        "name": "AVINASH SHARMA",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/avinashsharma/{size}/79265_2.png",
+        "post_count": 2,
+        "primary_group_name": "es-students",
+        "flair_name": "es-students",
+        "flair_url": "bolt",
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 293,
+        "trust_level": 1
+      },
+      {
+        "id": 48069,
+        "username": "25f2004017",
+        "name": "Udbhas Sarkar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2004017/{size}/134369_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 36911,
+        "username": "24f2007274",
+        "name": "ANKIT KUMAR MISHRA",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007274/{size}/119508_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      },
+      {
+        "id": 46538,
+        "username": "Spidaaman",
+        "name": "S Adithya Kosimin ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/spidaaman/{size}/119699_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 47024,
+        "username": "ankitisalive",
+        "name": "Ankit ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ankitisalive/{size}/120034_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      },
+      {
+        "id": 51404,
+        "username": "Adarsh_8922",
+        "name": "Adarsh Khandelwal",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/a/34f0e0/{size}.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 50605,
+        "username": "ShardulShukla",
+        "name": "Shardul Shukla",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/shardulshukla/{size}/145677_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      },
+      {
+        "id": 50507,
+        "username": "25f2006132",
+        "name": "Manoj Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2006132/{size}/143081_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      },
+      {
+        "id": 36907,
+        "username": "Praveen1",
+        "name": "Praveen Mishra ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/praveen1/{size}/111576_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 46237,
+        "username": "25f2000129",
+        "name": "waseeq",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2000129/{size}/120096_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      },
+      {
+        "id": 46098,
+        "username": "Kshitij_21",
+        "name": "Kshitij ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kshitij_21/{size}/142124_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 43573,
+        "username": "24f3003875jppk",
+        "name": "Jay prakash prasad kushwaha",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003875jppk/{size}/123124_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 3596,
+        "username": "21f1000330",
+        "name": "Rishi B",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f1000330/{size}/1038_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 49796,
+        "username": "25f1002640",
+        "name": "PD",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e9a140/{size}.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 50546,
+      "username": "Priyanshi_Dixit",
+      "name": "Priyanshi Dixit",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png"
+    },
+    "last_poster": {
+      "id": 22688,
+      "username": "avinashsharma",
+      "name": "AVINASH SHARMA",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/avinashsharma/{size}/79265_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 675755,
+      "name": "Priyanshi Dixit",
+      "username": "Priyanshi_Dixit",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+      "created_at": "2025-09-19T16:51:39.340Z",
+      "cooked": "<p>I am not able to submit any of my assignments (both graded and ungraded). It shows ‘OOPS! SOMETHING WENT WRONG’.</p>\n<p>I am also attaching a screenshot of my issue.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/d/6db492aec7d3e01754992d58a4ea68c42758fc36.png\" data-download-href=\"/uploads/short-url/fEuV2SldGUaRxu2HJwGTgOBoiO2.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/d/6db492aec7d3e01754992d58a4ea68c42758fc36_2_690x351.png\" alt=\"image\" data-base62-sha1=\"fEuV2SldGUaRxu2HJwGTgOBoiO2\" width=\"690\" height=\"351\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/d/6db492aec7d3e01754992d58a4ea68c42758fc36_2_690x351.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/d/6db492aec7d3e01754992d58a4ea68c42758fc36_2_1035x526.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/d/6db492aec7d3e01754992d58a4ea68c42758fc36_2_1380x702.png 2x\" data-dominant-color=\"F3F4F5\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1491×760 69.5 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-19T17:01:15.108Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 4,
+      "reads": 134,
+      "readers_count": 133,
+      "score": 136.8,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Priyanshi Dixit",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/python-graded-assignment-not-able-to-submit/187502/2",
+          "internal": true,
+          "reflection": true,
+          "title": "Python graded assignment not able to submit",
+          "clicks": 0
+        },
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/error-unable-to-submit-grpa-answers/187488/2",
+          "internal": true,
+          "reflection": true,
+          "title": "Error: Unable to submit GrPA answers",
+          "clicks": 0
+        },
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/assigment-is-not-submit-in-python-as-well-as-grpa/187491/2",
+          "internal": true,
+          "reflection": true,
+          "title": "Assigment is not submit in python as well as grpa",
+          "clicks": 0
+        }
+      ],
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 6,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50546,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/1",
+      "user_cakedate": "2025-09-16",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 6
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 6,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 675757,
+      "name": "Anupam ",
+      "username": "iitm_student",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitm_student/{size}/147334_2.png",
+      "created_at": "2025-09-19T16:58:31.175Z",
+      "cooked": "<p>Try to log out and re-login and complete assignment and submit.</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-19T16:58:31.175Z",
+      "reply_count": 2,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 121,
+      "readers_count": 120,
+      "score": 34.2,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Anupam ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 42676,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/2",
+      "user_cakedate": "2025-01-10",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675758,
+      "name": "Priyanshi Dixit",
+      "username": "Priyanshi_Dixit",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+      "created_at": "2025-09-19T17:00:47.258Z",
+      "cooked": "<p>tried..</p>\n<p>Yesterday too I faced the same problem. I thought it will be solved but it continues.</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-19T17:00:47.258Z",
+      "reply_count": 1,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 120,
+      "readers_count": 119,
+      "score": 59,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Priyanshi Dixit",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 42676,
+        "username": "iitm_student",
+        "name": "Anupam ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitm_student/{size}/147334_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50546,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/3",
+      "user_cakedate": "2025-09-16",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675760,
+      "name": "Anupam ",
+      "username": "iitm_student",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitm_student/{size}/147334_2.png",
+      "created_at": "2025-09-19T17:02:39.426Z",
+      "cooked": "<p>So, Ignore that assignment because it is only for Practice it doesn’t count toward your Score.<br>\nSo, try the Graded Assignment maybe there issue doesn’t come.</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-19T17:02:39.426Z",
+      "reply_count": 1,
+      "reply_to_post_number": 3,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 115,
+      "readers_count": 114,
+      "score": 28,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Anupam ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 50546,
+        "username": "Priyanshi_Dixit",
+        "name": "Priyanshi Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 42676,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/4",
+      "user_cakedate": "2025-01-10",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675761,
+      "name": "Priyanshi Dixit",
+      "username": "Priyanshi_Dixit",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+      "created_at": "2025-09-19T17:03:46.422Z",
+      "cooked": "<p>it’s there in graded assignment too..</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-19T17:03:46.422Z",
+      "reply_count": 1,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 109,
+      "readers_count": 108,
+      "score": 56.8,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Priyanshi Dixit",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 42676,
+        "username": "iitm_student",
+        "name": "Anupam ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitm_student/{size}/147334_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50546,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/5",
+      "user_cakedate": "2025-09-16",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675762,
+      "name": "Anupam ",
+      "username": "iitm_student",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitm_student/{size}/147334_2.png",
+      "created_at": "2025-09-19T17:05:33.853Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/kaustubhismyname\">@KaustubhIsMyName</a> Please Look on this Matter.</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-19T17:05:33.853Z",
+      "reply_count": 0,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 105,
+      "readers_count": 104,
+      "score": 21,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Anupam ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 50546,
+        "username": "Priyanshi_Dixit",
+        "name": "Priyanshi Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 42676,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/6",
+      "user_cakedate": "2025-01-10",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675775,
+      "name": "PD",
+      "username": "25f1002640",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e9a140/{size}.png",
+      "created_at": "2025-09-19T17:52:35.062Z",
+      "cooked": "<p>same for me also, can not submitt assingment</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-19T17:52:35.062Z",
+      "reply_count": 0,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 102,
+      "readers_count": 101,
+      "score": 35.4,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "PD",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 42676,
+        "username": "iitm_student",
+        "name": "Anupam ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/iitm_student/{size}/147334_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 49796,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/7",
+      "user_cakedate": "2025-06-25",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675859,
+      "name": "Adarsh Khandelwal",
+      "username": "Adarsh_8922",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/a/34f0e0/{size}.png",
+      "created_at": "2025-09-19T19:42:05.608Z",
+      "cooked": "<p>I am also facing the same issue</p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-19T19:42:05.608Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 95,
+      "readers_count": 94,
+      "score": 39,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Adarsh Khandelwal",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 51404,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/8",
+      "user_cakedate": "2025-09-18",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675870,
+      "name": "Praveen Mishra ",
+      "username": "Praveen1",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/praveen1/{size}/111576_2.png",
+      "created_at": "2025-09-20T03:14:24.689Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/livin\">@livin</a> <a class=\"mention\" href=\"/u/kubra_7\">@kubra_7</a> please look into this matter</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-20T03:14:24.689Z",
+      "reply_count": 0,
+      "reply_to_post_number": 8,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 90,
+      "readers_count": 89,
+      "score": 23,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Praveen Mishra ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 51404,
+        "username": "Adarsh_8922",
+        "name": "Adarsh Khandelwal",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/a/34f0e0/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 36907,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/9",
+      "user_cakedate": "2024-09-21",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675888,
+      "name": "ANKIT KUMAR MISHRA",
+      "username": "24f2007274",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007274/{size}/119508_2.png",
+      "created_at": "2025-09-20T05:01:00.316Z",
+      "cooked": "<p>same i am also unable to submit</p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-20T05:01:00.316Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 84,
+      "readers_count": 83,
+      "score": 16.8,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "ANKIT KUMAR MISHRA",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 36911,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/10",
+      "user_cakedate": "2024-09-21",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675895,
+      "name": "Priyanshi Dixit",
+      "username": "Priyanshi_Dixit",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+      "created_at": "2025-09-20T05:24:06.316Z",
+      "cooked": "<p>I think we should mail to the support team as many of us are facing the same problem.</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-20T05:24:06.316Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 84,
+      "readers_count": 83,
+      "score": 81.8,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Priyanshi Dixit",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 4,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50546,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/11",
+      "user_cakedate": "2025-09-16",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 4
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 4,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675921,
+      "name": "S Adithya Kosimin ",
+      "username": "Spidaaman",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/spidaaman/{size}/119699_2.png",
+      "created_at": "2025-09-20T06:02:20.491Z",
+      "cooked": "<p>i have a doubt</p>\n<p>for using replit and google colab can i use iit student mail id or am i supposed to use my  personal id ?</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-20T06:02:20.491Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 82,
+      "readers_count": 81,
+      "score": 26.4,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "S Adithya Kosimin ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 46538,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/12",
+      "user_cakedate": "2025-05-14",
+      "user_birthdate": "1904-06-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675952,
+      "name": "Jay prakash prasad kushwaha",
+      "username": "24f3003875jppk",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3003875jppk/{size}/123124_2.png",
+      "created_at": "2025-09-20T08:09:29.510Z",
+      "cooked": "<p>you can use it by any  id</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-20T08:09:29.510Z",
+      "reply_count": 0,
+      "reply_to_post_number": 12,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 78,
+      "readers_count": 77,
+      "score": 35.6,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Jay prakash prasad kushwaha",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 46538,
+        "username": "Spidaaman",
+        "name": "S Adithya Kosimin ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/spidaaman/{size}/119699_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 43573,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/13",
+      "user_cakedate": "2025-01-12",
+      "user_birthdate": "1904-10-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675966,
+      "name": "Udbhas Sarkar",
+      "username": "25f2004017",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2004017/{size}/134369_2.png",
+      "created_at": "2025-09-20T08:30:57.971Z",
+      "cooked": "<p>Doesn’t work for GrPA or for other courses as well</p>",
+      "post_number": 14,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-20T08:30:57.971Z",
+      "reply_count": 1,
+      "reply_to_post_number": 11,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 78,
+      "readers_count": 77,
+      "score": 20.6,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Udbhas Sarkar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 50546,
+        "username": "Priyanshi_Dixit",
+        "name": "Priyanshi Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 48069,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/14",
+      "user_cakedate": "2025-06-02",
+      "user_birthdate": "1904-02-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 675967,
+      "name": "Priyanshi Dixit",
+      "username": "Priyanshi_Dixit",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+      "created_at": "2025-09-20T08:35:01.601Z",
+      "cooked": "<p>All assignments of python not working…neither practice assignments nor GrPa.</p>",
+      "post_number": 15,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-20T09:00:48.348Z",
+      "reply_count": 1,
+      "reply_to_post_number": 14,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 79,
+      "readers_count": 78,
+      "score": 80.8,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Priyanshi Dixit",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 48069,
+        "username": "25f2004017",
+        "name": "Udbhas Sarkar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2004017/{size}/134369_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 4,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50546,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/15",
+      "user_cakedate": "2025-09-16",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 4
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 4,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 676048,
+      "name": "Rishi B",
+      "username": "21f1000330",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f1000330/{size}/1038_2.png",
+      "created_at": "2025-09-20T14:08:35.176Z",
+      "cooked": "<p>Facing the same issue. It says Oops something went wrong every time we submit</p>",
+      "post_number": 16,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-20T14:08:35.176Z",
+      "reply_count": 0,
+      "reply_to_post_number": 15,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 66,
+      "readers_count": 65,
+      "score": 13.2,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Rishi B",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 50546,
+        "username": "Priyanshi_Dixit",
+        "name": "Priyanshi Dixit",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 3596,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/16",
+      "user_cakedate": "2021-05-05",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 676053,
+      "name": "waseeq",
+      "username": "25f2000129",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2000129/{size}/120096_2.png",
+      "created_at": "2025-09-20T14:21:07.246Z",
+      "cooked": "<p>same issue for me too</p>",
+      "post_number": 17,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-20T14:21:07.246Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 62,
+      "readers_count": 61,
+      "score": 12.4,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "waseeq",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 46237,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/17",
+      "user_cakedate": "2025-05-07",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 676071,
+      "name": "Shardul Shukla",
+      "username": "ShardulShukla",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/shardulshukla/{size}/145677_2.png",
+      "created_at": "2025-09-20T15:25:50.489Z",
+      "cooked": "<p>same issue here too . please someone look into this.</p>",
+      "post_number": 18,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-20T15:25:50.489Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 54,
+      "readers_count": 53,
+      "score": 10.8,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Shardul Shukla",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50605,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/18",
+      "user_cakedate": "2025-09-16",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 676073,
+      "name": "Priyanshi Dixit",
+      "username": "Priyanshi_Dixit",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+      "created_at": "2025-09-20T15:34:35.841Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/kaustubhismyname\">@KaustubhIsMyName</a>  Sir please look into the issue. Many of us are facing the same problem in submitting assignments.</p>",
+      "post_number": 19,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-20T15:34:45.823Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 53,
+      "readers_count": 52,
+      "score": 40.6,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Priyanshi Dixit",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50546,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/19",
+      "user_cakedate": "2025-09-16",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 676083,
+      "name": "AVINASH SHARMA",
+      "username": "avinashsharma",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/avinashsharma/{size}/79265_2.png",
+      "created_at": "2025-09-20T16:13:36.078Z",
+      "cooked": "<p>facing same issue when trying to submit assigment it showing “someting went wrong”</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/0/40bfcf7ffe03a7d789835ab0637d0c80a7806bf2.png\" data-download-href=\"/uploads/short-url/9eNvDD8ajK0EPXodXw7cDnyKlW2.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/4/0/40bfcf7ffe03a7d789835ab0637d0c80a7806bf2_2_690x431.png\" alt=\"image\" data-base62-sha1=\"9eNvDD8ajK0EPXodXw7cDnyKlW2\" width=\"690\" height=\"431\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/4/0/40bfcf7ffe03a7d789835ab0637d0c80a7806bf2_2_690x431.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/0/40bfcf7ffe03a7d789835ab0637d0c80a7806bf2.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/0/40bfcf7ffe03a7d789835ab0637d0c80a7806bf2.png 2x\" data-dominant-color=\"F7F6F6\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1029×643 67.4 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 20,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-20T16:13:36.078Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 56,
+      "readers_count": 55,
+      "score": 16.2,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "AVINASH SHARMA",
+      "primary_group_name": "es-students",
+      "flair_name": "es-students",
+      "flair_url": "bolt",
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 293,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 22688,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/20",
+      "user_cakedate": "2023-09-28",
+      "user_birthdate": "1904-12-20",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 676096,
+      "name": "Ankit ",
+      "username": "ankitisalive",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ankitisalive/{size}/120034_2.png",
+      "created_at": "2025-09-20T16:34:38.633Z",
+      "cooked": "<p>I am facing the same issue brother and till now they did not fix it.<br>\nhow many of you facing the same problem ?</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/a/1a62e94ce4ee9e7fc6133f45ef40e08b9311eb0b.png\" data-download-href=\"/uploads/short-url/3LqkvvDDe8iL69b78eKvFrR9UYX.png?dl=1\" title=\"Screenshot (167)\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/a/1a62e94ce4ee9e7fc6133f45ef40e08b9311eb0b_2_690x387.png\" alt=\"Screenshot (167)\" data-base62-sha1=\"3LqkvvDDe8iL69b78eKvFrR9UYX\" width=\"690\" height=\"387\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/a/1a62e94ce4ee9e7fc6133f45ef40e08b9311eb0b_2_690x387.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/a/1a62e94ce4ee9e7fc6133f45ef40e08b9311eb0b_2_1035x580.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/a/1a62e94ce4ee9e7fc6133f45ef40e08b9311eb0b.png 2x\" data-dominant-color=\"E3E4E5\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot (167)</span><span class=\"informations\">1366×768 45.8 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 21,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-20T16:34:38.633Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 53,
+      "readers_count": 52,
+      "score": 15.6,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Ankit ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 47024,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/21",
+      "user_cakedate": "2025-05-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 676104,
+      "name": "Manoj Kumar",
+      "username": "25f2006132",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2006132/{size}/143081_2.png",
+      "created_at": "2025-09-20T16:54:15.569Z",
+      "cooked": "<p>Try tomorrow. There is some error issue at backend.</p>",
+      "post_number": 22,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-20T16:54:15.569Z",
+      "reply_count": 1,
+      "reply_to_post_number": 21,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 49,
+      "readers_count": 48,
+      "score": 14.8,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Manoj Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 47024,
+        "username": "ankitisalive",
+        "name": "Ankit ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ankitisalive/{size}/120034_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50507,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/22",
+      "user_cakedate": "2025-09-16",
+      "user_birthdate": "1904-11-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 676147,
+      "name": "Udbhas Sarkar",
+      "username": "25f2004017",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2004017/{size}/134369_2.png",
+      "created_at": "2025-09-21T03:23:30.835Z",
+      "cooked": "<p>Still doesn’t work. Moreover, there have been no responses or announcements from the TAs or Instructors regarding this.</p>",
+      "post_number": 23,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-21T03:23:30.835Z",
+      "reply_count": 0,
+      "reply_to_post_number": 22,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 47,
+      "readers_count": 46,
+      "score": 9.4,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Udbhas Sarkar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 50507,
+        "username": "25f2006132",
+        "name": "Manoj Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2006132/{size}/143081_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 48069,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/23",
+      "user_cakedate": "2025-06-02",
+      "user_birthdate": "1904-02-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 676231,
+      "name": "Priyanshi Dixit",
+      "username": "Priyanshi_Dixit",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priyanshi_dixit/{size}/156716_2.png",
+      "created_at": "2025-09-21T08:00:04.284Z",
+      "cooked": "<p>I had also sent a mail to support team yesterday but didn’t get any reply..</p>",
+      "post_number": 24,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-21T08:00:04.284Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 41,
+      "readers_count": 40,
+      "score": 38.2,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Priyanshi Dixit",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 50546,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/24",
+      "user_cakedate": "2025-09-16",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 676279,
+      "name": "Kshitij ",
+      "username": "Kshitij_21",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kshitij_21/{size}/142124_2.png",
+      "created_at": "2025-09-21T11:08:57.412Z",
+      "cooked": "<p>They will solve this issue by tomorrow.<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/c/cc8220344d5baa5c639eec47a2bc4527fe4b709b.jpeg\" data-download-href=\"/uploads/short-url/tbace4eqAGoUNzDWWSGcwVcTG4j.jpeg?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/c/cc8220344d5baa5c639eec47a2bc4527fe4b709b_2_542x500.jpeg\" alt=\"image\" data-base62-sha1=\"tbace4eqAGoUNzDWWSGcwVcTG4j\" width=\"542\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/c/cc8220344d5baa5c639eec47a2bc4527fe4b709b_2_542x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/c/cc8220344d5baa5c639eec47a2bc4527fe4b709b.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/c/cc8220344d5baa5c639eec47a2bc4527fe4b709b.jpeg 2x\" data-dominant-color=\"F2F2F7\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">706×651 42 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 25,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-21T11:08:57.412Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 40,
+      "readers_count": 39,
+      "score": 13,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "Kshitij ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 46098,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/25",
+      "user_cakedate": "2025-05-06",
+      "user_birthdate": "1904-05-21",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 676328,
+      "name": "AVINASH SHARMA",
+      "username": "avinashsharma",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/avinashsharma/{size}/79265_2.png",
+      "created_at": "2025-09-21T14:11:32.476Z",
+      "cooked": "<p>now programming assigment is working fine.</p>",
+      "post_number": 26,
+      "post_type": 1,
+      "posts_count": 26,
+      "updated_at": "2025-09-21T14:11:32.476Z",
+      "reply_count": 0,
+      "reply_to_post_number": 20,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 37,
+      "readers_count": 36,
+      "score": 12.4,
+      "yours": false,
+      "topic_id": 187402,
+      "topic_slug": "assignments-of-python-not-working",
+      "display_username": "AVINASH SHARMA",
+      "primary_group_name": "es-students",
+      "flair_name": "es-students",
+      "flair_url": "bolt",
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 293,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 22688,
+        "username": "avinashsharma",
+        "name": "AVINASH SHARMA",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/avinashsharma/{size}/79265_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 22688,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/assignments-of-python-not-working/187402/26",
+      "user_cakedate": "2023-09-28",
+      "user_birthdate": "1904-12-20",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

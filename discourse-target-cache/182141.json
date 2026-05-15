@@ -1,0 +1,2924 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 650689,
+        "name": "K Anshitha",
+        "username": "24f3002688",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3002688/{size}/122728_2.png",
+        "created_at": "2025-07-15T07:08:29.349Z",
+        "cooked": "<p>My doubt is: I assume that there is an error in the answer key of Quiz 1(Intro to Python). In the below attached question(Q28), the question reads, “Which of the following changes would also include SQL in the final result?”, but the answer given is</p>\n<ol>\n<li>\"Make the length condition len(item)%2==1 instead of ==0 \"(which must be wrong as the elements AI and ML will not be printed, and that violates the question as it mentions SQL also must be included from the previous question(Q27) without any change in the initial output)</li>\n<li>“Remove the condition len(item)%2==0” which is perfectly correct.</li>\n</ol>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/8/48557c44736125b162e3cf1a1cc75d37e0ab1c51.png\" data-download-href=\"/uploads/short-url/ajTwPxWgMbdWchZT78yatTAAg6t.png?dl=1\" title=\"28Q\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/4/8/48557c44736125b162e3cf1a1cc75d37e0ab1c51_2_673x500.png\" alt=\"28Q\" data-base62-sha1=\"ajTwPxWgMbdWchZT78yatTAAg6t\" width=\"673\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/4/8/48557c44736125b162e3cf1a1cc75d37e0ab1c51_2_673x500.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/4/8/48557c44736125b162e3cf1a1cc75d37e0ab1c51_2_1009x750.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/8/48557c44736125b162e3cf1a1cc75d37e0ab1c51.png 2x\" data-dominant-color=\"F9F8F7\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">28Q</span><span class=\"informations\">1190×884 101 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>I gave my feedback regarding this, if you find this reasonable too please consider to share your opinion and feedbacks, and please share your thoughts if you consider the given answer to be right.</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-15T07:08:29.349Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 9,
+        "reads": 108,
+        "readers_count": 107,
+        "score": 171.6,
+        "yours": false,
+        "topic_id": 182141,
+        "topic_slug": "quiz-1-answer-key-doubt",
+        "display_username": "K Anshitha",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 7,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 39156,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/quiz-1-answer-key-doubt/182141/1",
+        "user_cakedate": "2024-09-28",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 6
+          },
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 7,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 650702,
+        "name": "Mantasha fatma",
+        "username": "Mantasa",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mantasa/{size}/111087_2.png",
+        "created_at": "2025-07-15T07:36:34.138Z",
+        "cooked": "<p>i have also doubt in this Q, only option2 should be correct.<br>\nIn this question, the first option should be incorrect. Option 1 clearly states that replace len(item)%2==0 len(item)%2==1. if we do this, then ‘AI’ and ‘ML’ will be removed.</p>\n<p>Since the question specifically states “also include SQL”, the expected interpretation is to include <code>'sql'</code> <strong>in addition to the existing valid outputs</strong>, not by replacing them.</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-15T07:36:34.138Z",
+        "reply_count": 2,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 2,
+        "reads": 86,
+        "readers_count": 85,
+        "score": 52.2,
+        "yours": false,
+        "topic_id": 182141,
+        "topic_slug": "quiz-1-answer-key-doubt",
+        "display_username": "Mantasha fatma",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 39752,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/quiz-1-answer-key-doubt/182141/2",
+        "user_cakedate": "2024-10-04",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 651035,
+        "name": "Girish",
+        "username": "25f1002053",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f1002053/{size}/122692_2.png",
+        "created_at": "2025-07-16T02:04:29.908Z",
+        "cooked": "<p>I agree and I too feel only the second option should be correct here</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-16T02:04:29.908Z",
+        "reply_count": 0,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 71,
+        "readers_count": 70,
+        "score": 19.2,
+        "yours": false,
+        "topic_id": 182141,
+        "topic_slug": "quiz-1-answer-key-doubt",
+        "display_username": "Girish",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 39752,
+          "username": "Mantasa",
+          "name": "Mantasha fatma",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mantasa/{size}/111087_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 46324,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/quiz-1-answer-key-doubt/182141/3",
+        "user_cakedate": "2025-05-07",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 651089,
+        "name": "Koushik Mishra ",
+        "username": "cami",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/cami/{size}/148256_2.png",
+        "created_at": "2025-07-16T05:32:38.233Z",
+        "cooked": "<p>Same here</p>\n<p>I read this question thrice</p>\n<p>And that “also” part made me to click on option 3<br>\nThat is remove the even condition</p>\n<p>Also means that ML and AI should be included<br>\nBut if we chance it’s condition to i%2==1<br>\nThen both ML and AI will get excluded from the answer</p>\n<p>Then how option 1 is correct</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-16T05:32:38.233Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 64,
+        "readers_count": 63,
+        "score": 12.8,
+        "yours": false,
+        "topic_id": 182141,
+        "topic_slug": "quiz-1-answer-key-doubt",
+        "display_username": "Koushik Mishra ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 36784,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/quiz-1-answer-key-doubt/182141/4",
+        "user_cakedate": "2024-09-21",
+        "user_birthdate": "1904-01-31",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 651353,
+        "name": "Adul P R",
+        "username": "24f1000965",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1000965/{size}/67139_2.png",
+        "created_at": "2025-07-16T12:18:04.081Z",
+        "cooked": "<p>yes you are right ! because the sentence stated very clearly that <strong>Which of the following changes would also include SQL in the final result?</strong> that mean we have an output but we have to make some changes which will include SQL also in this list.</p>\n<p><a class=\"mention\" href=\"/u/kubra_7\">@kubra_7</a> <a class=\"mention\" href=\"/u/livin\">@livin</a> <a class=\"mention\" href=\"/u/piyushw\">@PiyushW</a></p>\n<p>when first option is executed <strong>Make the length condition len(item) % 2 == 1 instead of == 0.</strong><br>\nthen only odd len strings would be the output not all together! <strong>so we wont have AI or ML.</strong></p>\n<p><strong>option 1 is wrong</strong></p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-16T12:20:19.277Z",
+        "reply_count": 0,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 2,
+        "reads": 54,
+        "readers_count": 53,
+        "score": 20.8,
+        "yours": false,
+        "topic_id": 182141,
+        "topic_slug": "quiz-1-answer-key-doubt",
+        "display_username": "Adul P R",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 39752,
+          "username": "Mantasa",
+          "name": "Mantasha fatma",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mantasa/{size}/111087_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 27872,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/quiz-1-answer-key-doubt/182141/5",
+        "user_cakedate": "2024-02-20",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 651892,
+        "name": "Om Narayan Singh",
+        "username": "22f2001266",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png",
+        "created_at": "2025-07-17T14:54:12.254Z",
+        "cooked": "<p>Yeah . Respected Concerned Authorities , Please clarify. <a class=\"mention\" href=\"/u/livin\">@livin</a> <a class=\"mention\" href=\"/u/kubra_7\">@kubra_7</a> <a class=\"mention\" href=\"/u/manidipa2001\">@Manidipa2001</a> <a class=\"mention\" href=\"/u/piyushw\">@PiyushW</a> <a class=\"mention\" href=\"/u/umaiyalakshmi\">@umaiyalakshmi</a> <a class=\"mention\" href=\"/u/23f2004399\">@23f2004399</a> <a class=\"mention\" href=\"/u/salim0986\">@salim0986</a> <a class=\"mention\" href=\"/u/kaustubhismyname\">@KaustubhIsMyName</a></p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-17T14:54:12.254Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 5,
+        "reads": 37,
+        "readers_count": 36,
+        "score": 52.4,
+        "yours": false,
+        "topic_id": 182141,
+        "topic_slug": "quiz-1-answer-key-doubt",
+        "display_username": "Om Narayan Singh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 14104,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/quiz-1-answer-key-doubt/182141/6",
+        "user_cakedate": "2022-09-02",
+        "user_birthdate": "1904-07-27",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 651902,
+        "name": "Pavan K Rao",
+        "username": "24f3000702",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000702/{size}/122855_2.png",
+        "created_at": "2025-07-17T15:22:18.989Z",
+        "cooked": "<p>yes but still the answer key is not updated</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-17T15:22:18.989Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 2,
+        "reads": 36,
+        "readers_count": 35,
+        "score": 17.2,
+        "yours": false,
+        "topic_id": 182141,
+        "topic_slug": "quiz-1-answer-key-doubt",
+        "display_username": "Pavan K Rao",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 40753,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/quiz-1-answer-key-doubt/182141/7",
+        "user_cakedate": "2024-10-21",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 652250,
+        "name": "Om Narayan Singh",
+        "username": "22f2001266",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png",
+        "created_at": "2025-07-18T11:02:41.507Z",
+        "cooked": "<p>Respected instructors, Marks of Quiz 1 are showing on our dashboard without correcting the marks for this question with wrong answer. Please see to it and do the needful at the earliest.<br>\n<a class=\"mention\" href=\"/u/livin\">@livin</a> <a class=\"mention\" href=\"/u/kubra_7\">@kubra_7</a> <a class=\"mention\" href=\"/u/piyushw\">@PiyushW</a> <a class=\"mention\" href=\"/u/manidipa2001\">@Manidipa2001</a> <a class=\"mention\" href=\"/u/kaustubhismyname\">@KaustubhIsMyName</a> <a class=\"mention\" href=\"/u/salim0986\">@salim0986</a> <a class=\"mention\" href=\"/u/23f2004399\">@23f2004399</a></p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-18T11:02:41.507Z",
+        "reply_count": 1,
+        "reply_to_post_number": 6,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 30,
+        "readers_count": 29,
+        "score": 11,
+        "yours": false,
+        "topic_id": 182141,
+        "topic_slug": "quiz-1-answer-key-doubt",
+        "display_username": "Om Narayan Singh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 14104,
+          "username": "22f2001266",
+          "name": "Om Narayan Singh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 14104,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/quiz-1-answer-key-doubt/182141/8",
+        "user_cakedate": "2022-09-02",
+        "user_birthdate": "1904-07-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 653169,
+        "name": "Piyush Wairale",
+        "username": "PiyushW",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/piyushw/{size}/7225_2.png",
+        "created_at": "2025-07-20T12:40:28.652Z",
+        "cooked": "<p>Hi,<br>\nYes, option 1 is not correct here.<br>\nWill update the marks accordingly.</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 9,
+        "updated_at": "2025-07-20T12:40:28.652Z",
+        "reply_count": 0,
+        "reply_to_post_number": 8,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 24,
+        "readers_count": 23,
+        "score": 49.8,
+        "yours": false,
+        "topic_id": 182141,
+        "topic_slug": "quiz-1-answer-key-doubt",
+        "display_username": "Piyush Wairale",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course_Team",
+        "title_is_group": true,
+        "reply_to_user": {
+          "id": 14104,
+          "username": "22f2001266",
+          "name": "Om Narayan Singh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 3,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 43,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/quiz-1-answer-key-doubt/182141/9",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-04-05",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 3
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 3,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      650689,
+      650702,
+      651035,
+      651089,
+      651353,
+      651892,
+      651902,
+      652250,
+      653169
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      286
+    ],
+    [
+      3,
+      285
+    ],
+    [
+      5,
+      284
+    ],
+    [
+      6,
+      283
+    ],
+    [
+      8,
+      282
+    ],
+    [
+      9,
+      280
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "PPA-3 solution",
+      "id": 202515,
+      "title": "PPA-3 solution",
+      "slug": "ppa-3-solution",
+      "posts_count": 4,
+      "reply_count": 1,
+      "highest_post_number": 4,
+      "image_url": null,
+      "created_at": "2026-04-26T18:58:16.204Z",
+      "last_posted_at": "2026-04-26T20:11:09.075Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T20:11:09.075Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 7,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 47387,
+            "username": "25f2000510",
+            "name": "Sayed Abiha Abul Hasan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2000510/{size}/119801_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "PYqs for OPPE-2 Python",
+      "id": 202516,
+      "title": "PYqs for OPPE-2 Python",
+      "slug": "pyqs-for-oppe-2-python",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": null,
+      "created_at": "2026-04-26T19:18:02.398Z",
+      "last_posted_at": "2026-04-26T19:56:34.716Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T19:56:34.716Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 6,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 56474,
+            "username": "25f3002735",
+            "name": "Aamir",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/f17d59/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "PPA-1 Solution",
+      "id": 202514,
+      "title": "PPA-1 Solution",
+      "slug": "ppa-1-solution",
+      "posts_count": 1,
+      "reply_count": 0,
+      "highest_post_number": 1,
+      "image_url": null,
+      "created_at": "2026-04-26T18:51:19.212Z",
+      "last_posted_at": "2026-04-26T18:51:19.374Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:51:19.374Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 4,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest single",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 47387,
+            "username": "25f2000510",
+            "name": "Sayed Abiha Abul Hasan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2000510/{size}/119801_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe result related query",
+      "id": 202495,
+      "title": "Oppe result related query",
+      "slug": "oppe-result-related-query",
+      "posts_count": 4,
+      "reply_count": 2,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/7/676201f5c22b7eee7f1673038360f3615706cbd2_2_460x1024.jpeg",
+      "created_at": "2026-04-26T13:45:02.580Z",
+      "last_posted_at": "2026-04-26T14:07:11.728Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T14:07:11.728Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 339,
+          "name": "term3-2024",
+          "slug": "term3-2024"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 37,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 30749,
+            "username": "24f2002652",
+            "name": "Yashaswee mrinal jha ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2002652/{size}/125481_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe clearance",
+      "id": 202411,
+      "title": "Oppe clearance",
+      "slug": "oppe-clearance",
+      "posts_count": 6,
+      "reply_count": 2,
+      "highest_post_number": 6,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/4/9420a7e6546f171bf30f0b5049091e0bbfdf4f88_2_459x1024.jpeg",
+      "created_at": "2026-04-26T03:56:45.449Z",
+      "last_posted_at": "2026-04-26T10:27:05.020Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T10:27:05.020Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 4,
+      "views": 61,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 39782,
+            "username": "Omkar7",
+            "name": "Omkar gudla",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/omkar7/{size}/113203_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 23318,
+            "username": "23f2001123",
+            "name": "Anshu Rajbhar ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2001123/{size}/110382_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 57115,
+            "username": "25f3006372",
+            "name": "Raihan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f3006372/{size}/161245_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 245,
+      "name": "foundation-level",
+      "slug": "foundation-level"
+    },
+    {
+      "id": 339,
+      "name": "term3-2024",
+      "slug": "term3-2024"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "QUIZ 1 Answer Key Doubt",
+  "id": 182141,
+  "title": "QUIZ 1 Answer Key Doubt",
+  "posts_count": 9,
+  "created_at": "2025-07-15T07:08:29.095Z",
+  "views": 203,
+  "reply_count": 4,
+  "like_count": 12,
+  "last_posted_at": "2025-07-20T12:40:28.652Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "quiz-1-answer-key-doubt",
+  "category_id": 25,
+  "word_count": 458,
+  "deleted_at": null,
+  "user_id": 39156,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/4/8/48557c44736125b162e3cf1a1cc75d37e0ab1c51_2_1024x760.png",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_182141",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 9,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 8,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 1190,
+      "height": 884,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/8/48557c44736125b162e3cf1a1cc75d37e0ab1c51.png"
+    },
+    {
+      "max_width": 1024,
+      "max_height": 1024,
+      "width": 1024,
+      "height": 760,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/4/8/48557c44736125b162e3cf1a1cc75d37e0ab1c51_2_1024x760.png"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "Quiz 1 2025 sem2 intro to python",
+      "id": 182449,
+      "title": "Quiz 1 2025 sem2 intro to python",
+      "slug": "quiz-1-2025-sem2-intro-to-python",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2025-07-18T05:27:11.943Z",
+      "last_posted_at": "2025-07-18T11:05:24.741Z",
+      "bumped": true,
+      "bumped_at": "2025-07-18T11:05:24.741Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 35,
+          "name": "error",
+          "slug": "error"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 60,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 33808,
+            "username": "Pinal",
+            "name": "Rana Pinal Pareshkumar ",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/p/7993a0/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 38320,
+            "username": "24f3002643",
+            "name": "Ankit Kumar Prajapati",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3002643/{size}/109978_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 14104,
+            "username": "22f2001266",
+            "name": "Om Narayan Singh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Error in Quiz 1 Python answerKey",
+      "id": 182151,
+      "title": "Error in Quiz 1 Python answerKey",
+      "slug": "error-in-quiz-1-python-answerkey",
+      "posts_count": 1,
+      "reply_count": 0,
+      "highest_post_number": 1,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/c/9c7d6ef0d0845a4f1048c48b4f0b5127111fb1ac_2_460x1024.jpeg",
+      "created_at": "2025-07-15T07:54:00.945Z",
+      "last_posted_at": "2025-07-15T07:54:01.135Z",
+      "bumped": true,
+      "bumped_at": "2025-07-15T07:54:01.135Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 35,
+          "name": "error",
+          "slug": "error"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 45,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 2,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest single",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 40753,
+            "username": "24f3000702",
+            "name": "Pavan K Rao",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000702/{size}/122855_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Incorrect Answer Key in Python Quiz1 Question",
+      "id": 155396,
+      "title": "Incorrect Answer Key in Python Quiz1 Question",
+      "slug": "incorrect-answer-key-in-python-quiz1-question",
+      "posts_count": 6,
+      "reply_count": 2,
+      "highest_post_number": 6,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/3/b/3b44fb9f079b02d24f1f19c9f588a827f8d53e7d.png",
+      "created_at": "2024-11-03T06:35:59.388Z",
+      "last_posted_at": "2024-11-03T08:59:24.450Z",
+      "bumped": true,
+      "bumped_at": "2024-11-03T08:59:24.450Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 146,
+          "name": "miscellaneous",
+          "slug": "miscellaneous"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 35,
+          "name": "error",
+          "slug": "error"
+        },
+        {
+          "id": 20,
+          "name": "intropython",
+          "slug": "intropython"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 66,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 30846,
+            "username": "24f2002843",
+            "name": "Loading... ",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e47774/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 15682,
+            "username": "nandanreddyp",
+            "name": "NandanReddy Parnapalli",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/nandanreddyp/{size}/111940_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25916,
+            "username": "Gowtham7",
+            "name": "Gowtham Pandiarajan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/gowtham7/{size}/98676_2.png",
+            "primary_group_name": "es-students",
+            "flair_name": "es-students",
+            "flair_url": "bolt",
+            "flair_group_id": 293,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 25731,
+            "username": "Mrinal.exe",
+            "name": "Mrinal",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal.exe/{size}/151669_2.png",
+            "primary_group_name": "ds-students",
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Quiz-1 Query Resolution Post",
+      "id": 168351,
+      "title": "Quiz-1 Query Resolution Post",
+      "slug": "quiz-1-query-resolution-post",
+      "posts_count": 5,
+      "reply_count": 2,
+      "highest_post_number": 5,
+      "image_url": null,
+      "created_at": "2025-02-24T16:32:44.105Z",
+      "last_posted_at": "2025-02-25T13:00:18.547Z",
+      "bumped": true,
+      "bumped_at": "2025-02-25T13:02:11.888Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 146,
+          "name": "miscellaneous",
+          "slug": "miscellaneous"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 116,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 21395,
+            "username": "kubra_7",
+            "name": "Kadeejathil Kubra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kubra_7/{size}/66794_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 43585,
+            "username": "estudiar.mucho",
+            "name": "Akshara",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/estudiar.mucho/{size}/119532_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 39132,
+            "username": "H.BHASKAR_934",
+            "name": "HARSH BHASKAR",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/h.bhaskar_934/{size}/112475_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 39529,
+            "username": "Gurkirat",
+            "name": "Gurkirat Singh",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Dbms ope exam python sql",
+      "id": 72547,
+      "title": "Dbms ope exam python sql",
+      "slug": "dbms-ope-exam-python-sql",
+      "posts_count": 29,
+      "reply_count": 24,
+      "highest_post_number": 29,
+      "image_url": null,
+      "created_at": "2022-12-04T04:10:51.393Z",
+      "last_posted_at": "2022-12-05T03:11:21.388Z",
+      "bumped": true,
+      "bumped_at": "2022-12-05T03:11:21.388Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 14,
+      "views": 162,
+      "category_id": 27,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 8223,
+            "username": "21f3001205",
+            "name": "Priyangshu Bala",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001205/{size}/14246_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 43,
+            "username": "PiyushW",
+            "name": "Piyush Wairale",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/piyushw/{size}/7225_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 3935,
+            "username": "vikramjncasr",
+            "name": "Vikram Suriyanarayanan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/vikramjncasr/{size}/1844_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 933,
+            "username": "Anand",
+            "name": "Anand Iyer",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/anand/{size}/1555_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 9,
+    "username": "PiyushW",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/piyushw/{size}/7225_2.png",
+    "excerpt": "<p>Hi,<br>\nYes, option 1 is not correct here.<br>\nWill update the marks accordingly.</p>",
+    "accepter_name": null,
+    "accepter_username": "24f3002688"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 14104,
+        "username": "22f2001266",
+        "name": "Om Narayan Singh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 40753,
+        "username": "24f3000702",
+        "name": "Pavan K Rao",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000702/{size}/122855_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 27872,
+        "username": "24f1000965",
+        "name": "Adul P R",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1000965/{size}/67139_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 46324,
+        "username": "25f1002053",
+        "name": "Girish",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f1002053/{size}/122692_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 39156,
+        "username": "24f3002688",
+        "name": "K Anshitha",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3002688/{size}/122728_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 36784,
+        "username": "cami",
+        "name": "Koushik Mishra ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/cami/{size}/148256_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 43,
+        "username": "PiyushW",
+        "name": "Piyush Wairale",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/piyushw/{size}/7225_2.png",
+        "post_count": 1,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      },
+      {
+        "id": 39752,
+        "username": "Mantasa",
+        "name": "Mantasha fatma",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mantasa/{size}/111087_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 39156,
+      "username": "24f3002688",
+      "name": "K Anshitha",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3002688/{size}/122728_2.png"
+    },
+    "last_poster": {
+      "id": 43,
+      "username": "PiyushW",
+      "name": "Piyush Wairale",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/piyushw/{size}/7225_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 650689,
+      "name": "K Anshitha",
+      "username": "24f3002688",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3002688/{size}/122728_2.png",
+      "created_at": "2025-07-15T07:08:29.349Z",
+      "cooked": "<p>My doubt is: I assume that there is an error in the answer key of Quiz 1(Intro to Python). In the below attached question(Q28), the question reads, “Which of the following changes would also include SQL in the final result?”, but the answer given is</p>\n<ol>\n<li>\"Make the length condition len(item)%2==1 instead of ==0 \"(which must be wrong as the elements AI and ML will not be printed, and that violates the question as it mentions SQL also must be included from the previous question(Q27) without any change in the initial output)</li>\n<li>“Remove the condition len(item)%2==0” which is perfectly correct.</li>\n</ol>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/8/48557c44736125b162e3cf1a1cc75d37e0ab1c51.png\" data-download-href=\"/uploads/short-url/ajTwPxWgMbdWchZT78yatTAAg6t.png?dl=1\" title=\"28Q\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/4/8/48557c44736125b162e3cf1a1cc75d37e0ab1c51_2_673x500.png\" alt=\"28Q\" data-base62-sha1=\"ajTwPxWgMbdWchZT78yatTAAg6t\" width=\"673\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/4/8/48557c44736125b162e3cf1a1cc75d37e0ab1c51_2_673x500.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/4/8/48557c44736125b162e3cf1a1cc75d37e0ab1c51_2_1009x750.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/8/48557c44736125b162e3cf1a1cc75d37e0ab1c51.png 2x\" data-dominant-color=\"F9F8F7\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">28Q</span><span class=\"informations\">1190×884 101 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>I gave my feedback regarding this, if you find this reasonable too please consider to share your opinion and feedbacks, and please share your thoughts if you consider the given answer to be right.</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-15T07:08:29.349Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 9,
+      "reads": 108,
+      "readers_count": 107,
+      "score": 171.6,
+      "yours": false,
+      "topic_id": 182141,
+      "topic_slug": "quiz-1-answer-key-doubt",
+      "display_username": "K Anshitha",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 7,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 39156,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/quiz-1-answer-key-doubt/182141/1",
+      "user_cakedate": "2024-09-28",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 6
+        },
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 7,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 650702,
+      "name": "Mantasha fatma",
+      "username": "Mantasa",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mantasa/{size}/111087_2.png",
+      "created_at": "2025-07-15T07:36:34.138Z",
+      "cooked": "<p>i have also doubt in this Q, only option2 should be correct.<br>\nIn this question, the first option should be incorrect. Option 1 clearly states that replace len(item)%2==0 len(item)%2==1. if we do this, then ‘AI’ and ‘ML’ will be removed.</p>\n<p>Since the question specifically states “also include SQL”, the expected interpretation is to include <code>'sql'</code> <strong>in addition to the existing valid outputs</strong>, not by replacing them.</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-15T07:36:34.138Z",
+      "reply_count": 2,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 86,
+      "readers_count": 85,
+      "score": 52.2,
+      "yours": false,
+      "topic_id": 182141,
+      "topic_slug": "quiz-1-answer-key-doubt",
+      "display_username": "Mantasha fatma",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 39752,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/quiz-1-answer-key-doubt/182141/2",
+      "user_cakedate": "2024-10-04",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 651035,
+      "name": "Girish",
+      "username": "25f1002053",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f1002053/{size}/122692_2.png",
+      "created_at": "2025-07-16T02:04:29.908Z",
+      "cooked": "<p>I agree and I too feel only the second option should be correct here</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-16T02:04:29.908Z",
+      "reply_count": 0,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 71,
+      "readers_count": 70,
+      "score": 19.2,
+      "yours": false,
+      "topic_id": 182141,
+      "topic_slug": "quiz-1-answer-key-doubt",
+      "display_username": "Girish",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 39752,
+        "username": "Mantasa",
+        "name": "Mantasha fatma",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mantasa/{size}/111087_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 46324,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/quiz-1-answer-key-doubt/182141/3",
+      "user_cakedate": "2025-05-07",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 651089,
+      "name": "Koushik Mishra ",
+      "username": "cami",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/cami/{size}/148256_2.png",
+      "created_at": "2025-07-16T05:32:38.233Z",
+      "cooked": "<p>Same here</p>\n<p>I read this question thrice</p>\n<p>And that “also” part made me to click on option 3<br>\nThat is remove the even condition</p>\n<p>Also means that ML and AI should be included<br>\nBut if we chance it’s condition to i%2==1<br>\nThen both ML and AI will get excluded from the answer</p>\n<p>Then how option 1 is correct</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-16T05:32:38.233Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 64,
+      "readers_count": 63,
+      "score": 12.8,
+      "yours": false,
+      "topic_id": 182141,
+      "topic_slug": "quiz-1-answer-key-doubt",
+      "display_username": "Koushik Mishra ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 36784,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/quiz-1-answer-key-doubt/182141/4",
+      "user_cakedate": "2024-09-21",
+      "user_birthdate": "1904-01-31",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 651353,
+      "name": "Adul P R",
+      "username": "24f1000965",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1000965/{size}/67139_2.png",
+      "created_at": "2025-07-16T12:18:04.081Z",
+      "cooked": "<p>yes you are right ! because the sentence stated very clearly that <strong>Which of the following changes would also include SQL in the final result?</strong> that mean we have an output but we have to make some changes which will include SQL also in this list.</p>\n<p><a class=\"mention\" href=\"/u/kubra_7\">@kubra_7</a> <a class=\"mention\" href=\"/u/livin\">@livin</a> <a class=\"mention\" href=\"/u/piyushw\">@PiyushW</a></p>\n<p>when first option is executed <strong>Make the length condition len(item) % 2 == 1 instead of == 0.</strong><br>\nthen only odd len strings would be the output not all together! <strong>so we wont have AI or ML.</strong></p>\n<p><strong>option 1 is wrong</strong></p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-16T12:20:19.277Z",
+      "reply_count": 0,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 54,
+      "readers_count": 53,
+      "score": 20.8,
+      "yours": false,
+      "topic_id": 182141,
+      "topic_slug": "quiz-1-answer-key-doubt",
+      "display_username": "Adul P R",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 39752,
+        "username": "Mantasa",
+        "name": "Mantasha fatma",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mantasa/{size}/111087_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 27872,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/quiz-1-answer-key-doubt/182141/5",
+      "user_cakedate": "2024-02-20",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 651892,
+      "name": "Om Narayan Singh",
+      "username": "22f2001266",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png",
+      "created_at": "2025-07-17T14:54:12.254Z",
+      "cooked": "<p>Yeah . Respected Concerned Authorities , Please clarify. <a class=\"mention\" href=\"/u/livin\">@livin</a> <a class=\"mention\" href=\"/u/kubra_7\">@kubra_7</a> <a class=\"mention\" href=\"/u/manidipa2001\">@Manidipa2001</a> <a class=\"mention\" href=\"/u/piyushw\">@PiyushW</a> <a class=\"mention\" href=\"/u/umaiyalakshmi\">@umaiyalakshmi</a> <a class=\"mention\" href=\"/u/23f2004399\">@23f2004399</a> <a class=\"mention\" href=\"/u/salim0986\">@salim0986</a> <a class=\"mention\" href=\"/u/kaustubhismyname\">@KaustubhIsMyName</a></p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-17T14:54:12.254Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 5,
+      "reads": 37,
+      "readers_count": 36,
+      "score": 52.4,
+      "yours": false,
+      "topic_id": 182141,
+      "topic_slug": "quiz-1-answer-key-doubt",
+      "display_username": "Om Narayan Singh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14104,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/quiz-1-answer-key-doubt/182141/6",
+      "user_cakedate": "2022-09-02",
+      "user_birthdate": "1904-07-27",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 651902,
+      "name": "Pavan K Rao",
+      "username": "24f3000702",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000702/{size}/122855_2.png",
+      "created_at": "2025-07-17T15:22:18.989Z",
+      "cooked": "<p>yes but still the answer key is not updated</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-17T15:22:18.989Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 36,
+      "readers_count": 35,
+      "score": 17.2,
+      "yours": false,
+      "topic_id": 182141,
+      "topic_slug": "quiz-1-answer-key-doubt",
+      "display_username": "Pavan K Rao",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 40753,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/quiz-1-answer-key-doubt/182141/7",
+      "user_cakedate": "2024-10-21",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 652250,
+      "name": "Om Narayan Singh",
+      "username": "22f2001266",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png",
+      "created_at": "2025-07-18T11:02:41.507Z",
+      "cooked": "<p>Respected instructors, Marks of Quiz 1 are showing on our dashboard without correcting the marks for this question with wrong answer. Please see to it and do the needful at the earliest.<br>\n<a class=\"mention\" href=\"/u/livin\">@livin</a> <a class=\"mention\" href=\"/u/kubra_7\">@kubra_7</a> <a class=\"mention\" href=\"/u/piyushw\">@PiyushW</a> <a class=\"mention\" href=\"/u/manidipa2001\">@Manidipa2001</a> <a class=\"mention\" href=\"/u/kaustubhismyname\">@KaustubhIsMyName</a> <a class=\"mention\" href=\"/u/salim0986\">@salim0986</a> <a class=\"mention\" href=\"/u/23f2004399\">@23f2004399</a></p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-18T11:02:41.507Z",
+      "reply_count": 1,
+      "reply_to_post_number": 6,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 30,
+      "readers_count": 29,
+      "score": 11,
+      "yours": false,
+      "topic_id": 182141,
+      "topic_slug": "quiz-1-answer-key-doubt",
+      "display_username": "Om Narayan Singh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 14104,
+        "username": "22f2001266",
+        "name": "Om Narayan Singh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14104,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/quiz-1-answer-key-doubt/182141/8",
+      "user_cakedate": "2022-09-02",
+      "user_birthdate": "1904-07-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 653169,
+      "name": "Piyush Wairale",
+      "username": "PiyushW",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/piyushw/{size}/7225_2.png",
+      "created_at": "2025-07-20T12:40:28.652Z",
+      "cooked": "<p>Hi,<br>\nYes, option 1 is not correct here.<br>\nWill update the marks accordingly.</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 9,
+      "updated_at": "2025-07-20T12:40:28.652Z",
+      "reply_count": 0,
+      "reply_to_post_number": 8,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 24,
+      "readers_count": 23,
+      "score": 49.8,
+      "yours": false,
+      "topic_id": 182141,
+      "topic_slug": "quiz-1-answer-key-doubt",
+      "display_username": "Piyush Wairale",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course_Team",
+      "title_is_group": true,
+      "reply_to_user": {
+        "id": 14104,
+        "username": "22f2001266",
+        "name": "Om Narayan Singh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001266/{size}/87231_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 3,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 43,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/quiz-1-answer-key-doubt/182141/9",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-04-05",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 3
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 3,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    }
+  ]
+}

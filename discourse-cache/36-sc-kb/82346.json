@@ -1,0 +1,4077 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 310165,
+        "name": "Lalit Kumar",
+        "username": "21f3003123",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png",
+        "created_at": "2023-03-26T03:42:34.210Z",
+        "cooked": "<p>Hello , I am trying to create script.sh file but it shows permission denied. Again tried command for creating file with sudo then it says you are not in sudoers file.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/8/78477103e8a767a3d73ee6457f45269c28b88ed7.png\" data-download-href=\"/uploads/short-url/ha2mgkSujQ4B1UzetDUw4HfPwyz.png?dl=1\" title=\"2023-03-26_09-11\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/8/78477103e8a767a3d73ee6457f45269c28b88ed7.png\" alt=\"2023-03-26_09-11\" data-base62-sha1=\"ha2mgkSujQ4B1UzetDUw4HfPwyz\" width=\"659\" height=\"396\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">2023-03-26_09-11</span><span class=\"informations\">659×396 47.6 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>How do I fix It? Plz help.</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 14,
+        "updated_at": "2026-03-22T13:47:21.774Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 34,
+        "reads": 196,
+        "readers_count": 195,
+        "score": 224.2,
+        "yours": false,
+        "topic_id": 82346,
+        "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+        "display_username": "Lalit Kumar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 9169,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/1",
+        "user_cakedate": "2022-01-02",
+        "user_birthdate": "1904-02-10",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 310217,
+        "name": "Ratheesh",
+        "username": "ratheesh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ratheesh/{size}/13067_2.png",
+        "created_at": "2023-03-26T06:15:31.167Z",
+        "cooked": "<p>Readme says that the assignments have to be done in home folder.<br>\nNormal users are not given write permission to <code>/opt</code> folder.</p>\n<p>There is folder called <code>~/se2001</code> in your home folder. Please use that folder for doing assignments.</p>\n<p><a class=\"mention\" href=\"/u/prass\">@prass</a> Correct me if I am wrong.</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 14,
+        "updated_at": "2023-03-26T06:15:31.167Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 180,
+        "readers_count": 179,
+        "score": 91,
+        "yours": false,
+        "topic_id": 82346,
+        "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+        "display_username": "Ratheesh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 3,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 8177,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/2",
+        "user_cakedate": "2021-12-29",
+        "user_birthdate": "1904-02-24",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 3
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 3,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 310294,
+        "name": "Sabit sundar Kar",
+        "username": "sabitskar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sabitskar/{size}/540_2.png",
+        "created_at": "2023-03-26T08:43:27.128Z",
+        "cooked": "<p>Dear Ratheesh,<br>\nI am not convinced , as per sample assigment_0 the script.sh is created in side that assigment_0 dir, same should be applicable for rest.<br>\n<a class=\"mention\" href=\"/u/prass\">@prass</a> please confirm and assigned the permission for creating script.sh</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 14,
+        "updated_at": "2023-03-26T08:43:27.128Z",
+        "reply_count": 1,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 3,
+        "reads": 174,
+        "readers_count": 173,
+        "score": 54.8,
+        "yours": false,
+        "topic_id": 82346,
+        "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+        "display_username": "Sabit sundar Kar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 8177,
+          "username": "ratheesh",
+          "name": "Ratheesh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ratheesh/{size}/13067_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 2429,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/3",
+        "user_cakedate": "2021-04-29",
+        "user_birthdate": "1904-04-26",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 310305,
+        "name": "Sanjaykumar",
+        "username": "prass",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prass/{size}/40_2.png",
+        "created_at": "2023-03-26T09:06:07.076Z",
+        "cooked": "<p>Please, read carefully and follow the instructions given for the questions in <code>README.md</code> file.</p>\n<p>It is clearly mentioned in <code>README.md</code> that where you have to look for question statement and where to create the solution file.</p>\n<p><code>/opt/se2001</code> : problem statements directory and not solution directory. So, you don’t need write permission here. Only read permission is sufficient to read the question statement.</p>\n<p><code>~/se2001</code> : solutions directory, where you have to write your solutions which is defined in problem statements directory.</p>\n<p>Please, follow the question statement properly, you will not get stuck. The questions have been cross verified multiple times, so that you will not face any issues.</p>\n<p>For any other errors you come across, please raise it on discourse, we will note and act promptly to resolve the errata.</p>\n<p><img src=\"https://emoji.discourse-cdn.com/google/+1.png?v=12\" title=\":+1:\" class=\"emoji only-emoji\" alt=\":+1:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 14,
+        "updated_at": "2023-03-26T09:06:26.871Z",
+        "reply_count": 1,
+        "reply_to_post_number": 3,
+        "quote_count": 0,
+        "incoming_link_count": 2,
+        "reads": 172,
+        "readers_count": 171,
+        "score": 109.4,
+        "yours": false,
+        "topic_id": 82346,
+        "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+        "display_username": "Sanjaykumar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 2429,
+          "username": "sabitskar",
+          "name": "Sabit sundar Kar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sabitskar/{size}/540_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 4,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 714,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/4",
+        "user_cakedate": "2021-04-28",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 4
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 4,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 310385,
+        "name": "Lalit Kumar",
+        "username": "21f3003123",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png",
+        "created_at": "2023-03-26T13:03:06.324Z",
+        "cooked": "<p>I created a script.sh file in <code>~/se2001/assignment_0/</code> when I am using <code>synchro eval</code> getting evaluation failed error and  if executing <code>~/se2001/assignment_0/script.sh hello.txt</code><br>\nit gives permission denied as you can see in the image below. How do I fix it.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/e/de5ff19d17321df860b72d9e5d72364e5b70f54f.png\" data-download-href=\"/uploads/short-url/vJdyxsbhL06vQtI91Ni7XPzCQ2z.png?dl=1\" title=\"2023-03-26_18-28\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/e/de5ff19d17321df860b72d9e5d72364e5b70f54f_2_690x312.png\" alt=\"2023-03-26_18-28\" data-base62-sha1=\"vJdyxsbhL06vQtI91Ni7XPzCQ2z\" width=\"690\" height=\"312\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/e/de5ff19d17321df860b72d9e5d72364e5b70f54f_2_690x312.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/e/de5ff19d17321df860b72d9e5d72364e5b70f54f_2_1035x468.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/e/de5ff19d17321df860b72d9e5d72364e5b70f54f.png 2x\" data-dominant-color=\"434443\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">2023-03-26_18-28</span><span class=\"informations\">1361×617 86.5 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 14,
+        "updated_at": "2023-03-26T13:03:06.324Z",
+        "reply_count": 2,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 5,
+        "reads": 156,
+        "readers_count": 155,
+        "score": 66.2,
+        "yours": false,
+        "topic_id": 82346,
+        "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+        "display_username": "Lalit Kumar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/e/de5ff19d17321df860b72d9e5d72364e5b70f54f.png",
+            "internal": false,
+            "reflection": false,
+            "title": "de5ff19d17321df860b72d9e5d72364e5b70f54f.png",
+            "clicks": 0
+          }
+        ],
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 714,
+          "username": "prass",
+          "name": "Sanjaykumar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prass/{size}/40_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 9169,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/5",
+        "user_cakedate": "2022-01-02",
+        "user_birthdate": "1904-02-10",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 310386,
+        "name": "MRITYUNJAY KUMAR MISHRA",
+        "username": "Mrityunjay",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrityunjay/{size}/93207_2.png",
+        "created_at": "2023-03-26T13:04:38.171Z",
+        "cooked": "<p>Try running this command in assignment folder <code>source script.sh hello.txt</code></p>\n<p>Kindly check whether the file <code>script.sh</code> have executable permission(s) or not.<br>\nuse <code>ls -l</code> inside assignment folder</p>\n<p>if not then update the permission with this command<br>\n<code>chmod +x script.sh</code></p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 14,
+        "updated_at": "2023-03-26T13:08:06.391Z",
+        "reply_count": 1,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 3,
+        "reads": 147,
+        "readers_count": 146,
+        "score": 79.4,
+        "yours": false,
+        "topic_id": 82346,
+        "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+        "display_username": "MRITYUNJAY KUMAR MISHRA",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 9169,
+          "username": "21f3003123",
+          "name": "Lalit Kumar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 1296,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/6",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-04-18",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 310526,
+        "name": "Lalit Kumar",
+        "username": "21f3003123",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png",
+        "created_at": "2023-03-27T03:04:35.341Z",
+        "cooked": "<p>Now It is working.</p>\n<p>What I did here is -</p>\n<ol>\n<li>copied the assignment folder from <code>/opt/se2001/&lt;assignment_x&gt;</code> to <code>se2001</code> directory which is inside my home directory.</li>\n<li>Created and written solution in script.sh</li>\n<li>Provide executable permissions using <code>chmod +x evaluation.sh script.sh</code>\n</li>\n<li>Executed <code>synchro eval</code>\n</li>\n</ol>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 14,
+        "updated_at": "2023-03-27T03:04:35.341Z",
+        "reply_count": 2,
+        "reply_to_post_number": 6,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 144,
+        "readers_count": 143,
+        "score": 68.8,
+        "yours": false,
+        "topic_id": 82346,
+        "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+        "display_username": "Lalit Kumar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 1296,
+          "username": "Mrityunjay",
+          "name": "MRITYUNJAY KUMAR MISHRA",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrityunjay/{size}/93207_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 9169,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/7",
+        "user_cakedate": "2022-01-02",
+        "user_birthdate": "1904-02-10",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 317897,
+        "name": "Prahladh N C",
+        "username": "Prahladh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prahladh/{size}/56083_2.png",
+        "created_at": "2023-04-19T10:28:50.515Z",
+        "cooked": "<p>I found the assignment, but where is this se2001 directory? It says there is no such directory in the home directory</p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 14,
+        "updated_at": "2023-04-19T10:28:50.515Z",
+        "reply_count": 1,
+        "reply_to_post_number": 7,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 123,
+        "readers_count": 122,
+        "score": 34.6,
+        "yours": false,
+        "topic_id": 82346,
+        "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+        "display_username": "Prahladh N C",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 9169,
+          "username": "21f3003123",
+          "name": "Lalit Kumar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 14545,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/8",
+        "user_cakedate": "2022-09-07",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 317913,
+        "name": "Santhana Krishnan S",
+        "username": "santhanakrishnan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/santhanakrishnan/{size}/179_2.png",
+        "created_at": "2023-04-19T10:59:28.741Z",
+        "cooked": "<p>If it is not there then you can create one.</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 14,
+        "updated_at": "2023-04-19T10:59:28.741Z",
+        "reply_count": 0,
+        "reply_to_post_number": 8,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 121,
+        "readers_count": 120,
+        "score": 24.2,
+        "yours": false,
+        "topic_id": 82346,
+        "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+        "display_username": "Santhana Krishnan S",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course_Team",
+        "title_is_group": true,
+        "reply_to_user": {
+          "id": 14545,
+          "username": "Prahladh",
+          "name": "Prahladh N C",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prahladh/{size}/56083_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 12,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/9",
+        "user_cakedate": "2021-03-29",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 412935,
+        "name": "Akansha Uniyal",
+        "username": "21f3000261",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000261/{size}/13890_2.png",
+        "created_at": "2023-12-20T18:26:29.529Z",
+        "cooked": "<p>when i do ls in home, it just gives me readme.md</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 14,
+        "updated_at": "2023-12-20T18:26:29.529Z",
+        "reply_count": 0,
+        "reply_to_post_number": 7,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 55,
+        "readers_count": 54,
+        "score": 11,
+        "yours": false,
+        "topic_id": 82346,
+        "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+        "display_username": "Akansha Uniyal",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 9169,
+          "username": "21f3003123",
+          "name": "Lalit Kumar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6672,
+        "hidden": false,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/11",
+        "user_cakedate": "2021-09-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 742215,
+        "name": "Rakshitha P",
+        "username": "25f2005088",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png",
+        "created_at": "2026-03-21T06:51:52.834Z",
+        "cooked": "<p>How did you do it I am facing the same issue now can you please help me</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 14,
+        "updated_at": "2026-03-21T06:51:52.834Z",
+        "reply_count": 2,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 18,
+        "readers_count": 17,
+        "score": 13.6,
+        "yours": false,
+        "topic_id": 82346,
+        "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+        "display_username": "Rakshitha P",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 9169,
+          "username": "21f3003123",
+          "name": "Lalit Kumar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 56697,
+        "hidden": false,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/12",
+        "user_cakedate": "2026-01-11",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 742216,
+        "name": "Ishan Shishodiya",
+        "username": "22f2001554",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "created_at": "2026-03-21T06:53:00.970Z",
+        "cooked": "<p>They are trying to edit a file in <code>/opt/se2001</code> when instead they should be editting inside <code>~/se2001</code>. If you’re facing the same error then this is the likely reason.</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 14,
+        "updated_at": "2026-03-21T06:53:00.970Z",
+        "reply_count": 0,
+        "reply_to_post_number": 12,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 17,
+        "readers_count": 16,
+        "score": 8.4,
+        "yours": false,
+        "topic_id": 82346,
+        "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+        "display_username": "Ishan Shishodiya",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 56697,
+          "username": "25f2005088",
+          "name": "Rakshitha P",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 14366,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/13",
+        "user_cakedate": "2022-09-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 742226,
+        "name": "Ishan Shishodiya",
+        "username": "22f2001554",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "created_at": "2026-03-21T07:08:19.846Z",
+        "cooked": "<p>A post was merged into an existing topic: <a href=\"/t/cant-modify-script-sh-file-for-bpt3/199316/7\">Can’t modify script.sh file for BPT3</a></p>",
+        "post_number": 14,
+        "post_type": 3,
+        "posts_count": 14,
+        "updated_at": "2026-03-21T07:08:19.846Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 15,
+        "readers_count": 14,
+        "score": 3,
+        "yours": false,
+        "topic_id": 82346,
+        "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+        "display_username": "Ishan Shishodiya",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 14366,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "action_code": "split_topic",
+        "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/14",
+        "user_cakedate": "2022-09-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 742598,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2026-03-22T10:50:18.102Z",
+        "cooked": "<p>You need to do <code>chmod +x script.sh</code></p>",
+        "post_number": 15,
+        "post_type": 1,
+        "posts_count": 14,
+        "updated_at": "2026-03-22T10:51:47.575Z",
+        "reply_count": 0,
+        "reply_to_post_number": 12,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 9,
+        "readers_count": 8,
+        "score": 1.8,
+        "yours": false,
+        "topic_id": 82346,
+        "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 56697,
+          "username": "25f2005088",
+          "name": "Rakshitha P",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/15",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      310165,
+      310217,
+      310294,
+      310305,
+      310385,
+      310386,
+      310526,
+      317897,
+      317913,
+      412935,
+      742215,
+      742216,
+      742226,
+      742598
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      1128
+    ],
+    [
+      3,
+      1127
+    ],
+    [
+      8,
+      1103
+    ],
+    [
+      10,
+      858
+    ],
+    [
+      11,
+      37
+    ],
+    [
+      14,
+      35
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 47,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 6,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 233,
+      "name": "term1-2023",
+      "slug": "term1-2023"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "VM TASK: Permission denied while creating script.sh",
+  "id": 82346,
+  "title": "VM TASK: Permission denied while creating script.sh",
+  "posts_count": 14,
+  "created_at": "2023-03-26T03:42:34.035Z",
+  "views": 303,
+  "reply_count": 13,
+  "like_count": 12,
+  "last_posted_at": "2026-03-22T10:50:18.102Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "vm-task-permission-denied-while-creating-script-sh",
+  "category_id": 36,
+  "word_count": 532,
+  "deleted_at": null,
+  "user_id": 9169,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/8/78477103e8a767a3d73ee6457f45269c28b88ed7.png",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_82346",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 15,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 11,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 659,
+      "height": 396,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/8/78477103e8a767a3d73ee6457f45269c28b88ed7.png"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "Permission Denied to script.sh",
+      "id": 152713,
+      "title": "Permission Denied to script.sh",
+      "slug": "permission-denied-to-script-sh",
+      "posts_count": 7,
+      "reply_count": 0,
+      "highest_post_number": 7,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/4/c409aa2be0d1df595372f10868b6790bb99ede03_2_1024x490.png",
+      "created_at": "2024-10-20T08:41:56.722Z",
+      "last_posted_at": "2024-10-21T04:40:23.714Z",
+      "bumped": true,
+      "bumped_at": "2024-10-21T05:32:03.437Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 59,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 18484,
+            "username": "23f2001843",
+            "name": "KR.SUBRAMANIAN",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2001843/{size}/66846_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 15475,
+            "username": "22f3002293",
+            "name": "Rajat Goel",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002293/{size}/92210_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 7943,
+            "username": "UtkarshJM",
+            "name": "Utkarsh  Mishra",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/u/6de8d8/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 7771,
+            "username": "21f1002877",
+            "name": "User",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/58956e/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Creating script in wrong directory (Permission denied error)",
+      "id": 182534,
+      "title": "Creating script in wrong directory (Permission denied error)",
+      "slug": "creating-script-in-wrong-directory-permission-denied-error",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/3/9/3978ce7c87d0231fe617b9a704c2341906ebb343.png",
+      "created_at": "2025-07-18T16:16:46.478Z",
+      "last_posted_at": "2025-07-19T10:24:43.139Z",
+      "bumped": true,
+      "bumped_at": "2025-07-19T10:24:43.139Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 338,
+          "name": "bpt",
+          "slug": "bpt"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 31,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 24615,
+            "username": "23f3001168",
+            "name": "Abhishek",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/91b2a8/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 30471,
+            "username": "24f1002163",
+            "name": "Asha C V",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002163/{size}/68296_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "WM Task - Unable to edit script.sh",
+      "id": 109369,
+      "title": "WM Task - Unable to edit script.sh",
+      "slug": "wm-task-unable-to-edit-script-sh",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 5,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/1/0193ad8083e9e2ccb0fa6d0e56db33450322a9b2.png",
+      "created_at": "2023-11-14T14:14:35.795Z",
+      "last_posted_at": "2023-11-15T07:31:50.766Z",
+      "bumped": true,
+      "bumped_at": "2023-11-15T07:31:50.766Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 35,
+          "name": "error",
+          "slug": "error"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 64,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 5940,
+            "username": "Pritstift",
+            "name": "Prithvi J",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritstift/{size}/13325_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 15485,
+            "username": "Ksoham",
+            "name": "Soham Sachin Kulkarni",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ksoham/{size}/60244_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 12433,
+            "username": "keetrap",
+            "name": " 𝙋𝙖𝙧𝙩𝙚𝙚𝙠",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/keetrap/{size}/95838_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Synchro eval permission denied for script.sh",
+      "id": 134880,
+      "title": "Synchro eval permission denied for script.sh",
+      "slug": "synchro-eval-permission-denied-for-script-sh",
+      "posts_count": 9,
+      "reply_count": 5,
+      "highest_post_number": 9,
+      "image_url": null,
+      "created_at": "2024-06-15T13:49:55.087Z",
+      "last_posted_at": "2024-06-18T22:51:49.911Z",
+      "bumped": true,
+      "bumped_at": "2024-06-20T02:10:57.190Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 8,
+      "views": 135,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 14443,
+            "username": "22f2001236",
+            "name": "Prashant Negi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001236/{size}/111557_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 17065,
+            "username": "22F3002354",
+            "name": "Yash Rastogi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 4706,
+            "username": "jags14",
+            "name": "Jagpat Singh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jags14/{size}/191_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 24095,
+            "username": "AayushSinha",
+            "name": "Aayush Sinha",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aayushsinha/{size}/66966_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 15764,
+            "username": "22f3000983",
+            "name": "MADHAVAN R MOHAN",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000983/{size}/97294_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "VM Task Q10 &ldquo;evaluation_file.sh&rdquo; does not have execute right",
+      "id": 85147,
+      "title": "VM Task Q10 \"evaluation_file.sh\" does not have execute right",
+      "slug": "vm-task-q10-evaluation-file-sh-does-not-have-execute-right",
+      "posts_count": 6,
+      "reply_count": 5,
+      "highest_post_number": 7,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/4/1410697df4ce9b80df52516c6c1230f56be8fd14.png",
+      "created_at": "2023-04-27T21:03:58.123Z",
+      "last_posted_at": "2023-04-28T05:42:22.012Z",
+      "bumped": true,
+      "bumped_at": "2023-04-28T05:42:22.012Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 58,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 5231,
+            "username": "praveen24_kumar",
+            "name": "Praveen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/praveen24_kumar/{size}/266_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 3978,
+            "username": "royce",
+            "name": "ROYCE ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/royce/{size}/64509_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 714,
+            "username": "prass",
+            "name": "Sanjaykumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prass/{size}/40_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 4,
+    "username": "prass",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prass/{size}/40_2.png",
+    "excerpt": "<p>Please, read carefully and follow the instructions given for the questions in <code>README.md</code> file.</p>\n<p>It is clearly mentioned in <code>README.md</code> that where you have to look for question statement and where to create the solution file.</p>\n<p><code>/opt/se2001</code> : problem statements directory and not solution directory. So, you don’t need write permission here. Only read permission is sufficient to read the question statement.</p>\n<p><code>~/se2001</code> : solutions directory, where you have to write your solutions which is defined in problem statements directory.</p>\n<p>Please, follow the question statement properly, you will not get stuck. The questions have been cross verified multiple times, so that you will not face any issues.</p>\n<p>For any other errors you come across, please raise it on discourse, we will note and act promptly to resolve the errata.</p>\n<p><img src=\"https://emoji.discourse-cdn.com/google/+1.png?v=12\" title=\":+1:\" class=\"emoji only-emoji\" alt=\":+1:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+    "accepter_name": null,
+    "accepter_username": "21f3000759"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 9169,
+        "username": "21f3003123",
+        "name": "Lalit Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 2429,
+        "username": "sabitskar",
+        "name": "Sabit sundar Kar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sabitskar/{size}/540_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 6672,
+        "username": "21f3000261",
+        "name": "Akansha Uniyal",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000261/{size}/13890_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      },
+      {
+        "id": 1296,
+        "username": "Mrityunjay",
+        "name": "MRITYUNJAY KUMAR MISHRA",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrityunjay/{size}/93207_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 12,
+        "username": "santhanakrishnan",
+        "name": "Santhana Krishnan S",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/santhanakrishnan/{size}/179_2.png",
+        "post_count": 1,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      },
+      {
+        "id": 14545,
+        "username": "Prahladh",
+        "name": "Prahladh N C",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prahladh/{size}/56083_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 56697,
+        "username": "25f2005088",
+        "name": "Rakshitha P",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      },
+      {
+        "id": 8177,
+        "username": "ratheesh",
+        "name": "Ratheesh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ratheesh/{size}/13067_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 714,
+        "username": "prass",
+        "name": "Sanjaykumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prass/{size}/40_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 2
+      }
+    ],
+    "created_by": {
+      "id": 9169,
+      "username": "21f3003123",
+      "name": "Lalit Kumar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png"
+    },
+    "last_poster": {
+      "id": 6563,
+      "username": "21f3000759",
+      "name": "Swati Jain",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 310165,
+      "name": "Lalit Kumar",
+      "username": "21f3003123",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png",
+      "created_at": "2023-03-26T03:42:34.210Z",
+      "cooked": "<p>Hello , I am trying to create script.sh file but it shows permission denied. Again tried command for creating file with sudo then it says you are not in sudoers file.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/8/78477103e8a767a3d73ee6457f45269c28b88ed7.png\" data-download-href=\"/uploads/short-url/ha2mgkSujQ4B1UzetDUw4HfPwyz.png?dl=1\" title=\"2023-03-26_09-11\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/8/78477103e8a767a3d73ee6457f45269c28b88ed7.png\" alt=\"2023-03-26_09-11\" data-base62-sha1=\"ha2mgkSujQ4B1UzetDUw4HfPwyz\" width=\"659\" height=\"396\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">2023-03-26_09-11</span><span class=\"informations\">659×396 47.6 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>How do I fix It? Plz help.</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 14,
+      "updated_at": "2026-03-22T13:47:21.774Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 34,
+      "reads": 196,
+      "readers_count": 195,
+      "score": 224.2,
+      "yours": false,
+      "topic_id": 82346,
+      "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+      "display_username": "Lalit Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 9169,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/1",
+      "user_cakedate": "2022-01-02",
+      "user_birthdate": "1904-02-10",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 310217,
+      "name": "Ratheesh",
+      "username": "ratheesh",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ratheesh/{size}/13067_2.png",
+      "created_at": "2023-03-26T06:15:31.167Z",
+      "cooked": "<p>Readme says that the assignments have to be done in home folder.<br>\nNormal users are not given write permission to <code>/opt</code> folder.</p>\n<p>There is folder called <code>~/se2001</code> in your home folder. Please use that folder for doing assignments.</p>\n<p><a class=\"mention\" href=\"/u/prass\">@prass</a> Correct me if I am wrong.</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 14,
+      "updated_at": "2023-03-26T06:15:31.167Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 180,
+      "readers_count": 179,
+      "score": 91,
+      "yours": false,
+      "topic_id": 82346,
+      "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+      "display_username": "Ratheesh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 3,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8177,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/2",
+      "user_cakedate": "2021-12-29",
+      "user_birthdate": "1904-02-24",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 3
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 3,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 310294,
+      "name": "Sabit sundar Kar",
+      "username": "sabitskar",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sabitskar/{size}/540_2.png",
+      "created_at": "2023-03-26T08:43:27.128Z",
+      "cooked": "<p>Dear Ratheesh,<br>\nI am not convinced , as per sample assigment_0 the script.sh is created in side that assigment_0 dir, same should be applicable for rest.<br>\n<a class=\"mention\" href=\"/u/prass\">@prass</a> please confirm and assigned the permission for creating script.sh</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 14,
+      "updated_at": "2023-03-26T08:43:27.128Z",
+      "reply_count": 1,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 3,
+      "reads": 174,
+      "readers_count": 173,
+      "score": 54.8,
+      "yours": false,
+      "topic_id": 82346,
+      "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+      "display_username": "Sabit sundar Kar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 8177,
+        "username": "ratheesh",
+        "name": "Ratheesh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ratheesh/{size}/13067_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 2429,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/3",
+      "user_cakedate": "2021-04-29",
+      "user_birthdate": "1904-04-26",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 310305,
+      "name": "Sanjaykumar",
+      "username": "prass",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prass/{size}/40_2.png",
+      "created_at": "2023-03-26T09:06:07.076Z",
+      "cooked": "<p>Please, read carefully and follow the instructions given for the questions in <code>README.md</code> file.</p>\n<p>It is clearly mentioned in <code>README.md</code> that where you have to look for question statement and where to create the solution file.</p>\n<p><code>/opt/se2001</code> : problem statements directory and not solution directory. So, you don’t need write permission here. Only read permission is sufficient to read the question statement.</p>\n<p><code>~/se2001</code> : solutions directory, where you have to write your solutions which is defined in problem statements directory.</p>\n<p>Please, follow the question statement properly, you will not get stuck. The questions have been cross verified multiple times, so that you will not face any issues.</p>\n<p>For any other errors you come across, please raise it on discourse, we will note and act promptly to resolve the errata.</p>\n<p><img src=\"https://emoji.discourse-cdn.com/google/+1.png?v=12\" title=\":+1:\" class=\"emoji only-emoji\" alt=\":+1:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 14,
+      "updated_at": "2023-03-26T09:06:26.871Z",
+      "reply_count": 1,
+      "reply_to_post_number": 3,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 172,
+      "readers_count": 171,
+      "score": 109.4,
+      "yours": false,
+      "topic_id": 82346,
+      "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+      "display_username": "Sanjaykumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 2429,
+        "username": "sabitskar",
+        "name": "Sabit sundar Kar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sabitskar/{size}/540_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 4,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 714,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/4",
+      "user_cakedate": "2021-04-28",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 4
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 4,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 310385,
+      "name": "Lalit Kumar",
+      "username": "21f3003123",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png",
+      "created_at": "2023-03-26T13:03:06.324Z",
+      "cooked": "<p>I created a script.sh file in <code>~/se2001/assignment_0/</code> when I am using <code>synchro eval</code> getting evaluation failed error and  if executing <code>~/se2001/assignment_0/script.sh hello.txt</code><br>\nit gives permission denied as you can see in the image below. How do I fix it.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/e/de5ff19d17321df860b72d9e5d72364e5b70f54f.png\" data-download-href=\"/uploads/short-url/vJdyxsbhL06vQtI91Ni7XPzCQ2z.png?dl=1\" title=\"2023-03-26_18-28\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/e/de5ff19d17321df860b72d9e5d72364e5b70f54f_2_690x312.png\" alt=\"2023-03-26_18-28\" data-base62-sha1=\"vJdyxsbhL06vQtI91Ni7XPzCQ2z\" width=\"690\" height=\"312\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/e/de5ff19d17321df860b72d9e5d72364e5b70f54f_2_690x312.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/e/de5ff19d17321df860b72d9e5d72364e5b70f54f_2_1035x468.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/e/de5ff19d17321df860b72d9e5d72364e5b70f54f.png 2x\" data-dominant-color=\"434443\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">2023-03-26_18-28</span><span class=\"informations\">1361×617 86.5 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 14,
+      "updated_at": "2023-03-26T13:03:06.324Z",
+      "reply_count": 2,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 5,
+      "reads": 156,
+      "readers_count": 155,
+      "score": 66.2,
+      "yours": false,
+      "topic_id": 82346,
+      "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+      "display_username": "Lalit Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/e/de5ff19d17321df860b72d9e5d72364e5b70f54f.png",
+          "internal": false,
+          "reflection": false,
+          "title": "de5ff19d17321df860b72d9e5d72364e5b70f54f.png",
+          "clicks": 0
+        }
+      ],
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 714,
+        "username": "prass",
+        "name": "Sanjaykumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prass/{size}/40_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 9169,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/5",
+      "user_cakedate": "2022-01-02",
+      "user_birthdate": "1904-02-10",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 310386,
+      "name": "MRITYUNJAY KUMAR MISHRA",
+      "username": "Mrityunjay",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrityunjay/{size}/93207_2.png",
+      "created_at": "2023-03-26T13:04:38.171Z",
+      "cooked": "<p>Try running this command in assignment folder <code>source script.sh hello.txt</code></p>\n<p>Kindly check whether the file <code>script.sh</code> have executable permission(s) or not.<br>\nuse <code>ls -l</code> inside assignment folder</p>\n<p>if not then update the permission with this command<br>\n<code>chmod +x script.sh</code></p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 14,
+      "updated_at": "2023-03-26T13:08:06.391Z",
+      "reply_count": 1,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 3,
+      "reads": 147,
+      "readers_count": 146,
+      "score": 79.4,
+      "yours": false,
+      "topic_id": 82346,
+      "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+      "display_username": "MRITYUNJAY KUMAR MISHRA",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 9169,
+        "username": "21f3003123",
+        "name": "Lalit Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 1296,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/6",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-04-18",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 310526,
+      "name": "Lalit Kumar",
+      "username": "21f3003123",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png",
+      "created_at": "2023-03-27T03:04:35.341Z",
+      "cooked": "<p>Now It is working.</p>\n<p>What I did here is -</p>\n<ol>\n<li>copied the assignment folder from <code>/opt/se2001/&lt;assignment_x&gt;</code> to <code>se2001</code> directory which is inside my home directory.</li>\n<li>Created and written solution in script.sh</li>\n<li>Provide executable permissions using <code>chmod +x evaluation.sh script.sh</code>\n</li>\n<li>Executed <code>synchro eval</code>\n</li>\n</ol>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 14,
+      "updated_at": "2023-03-27T03:04:35.341Z",
+      "reply_count": 2,
+      "reply_to_post_number": 6,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 144,
+      "readers_count": 143,
+      "score": 68.8,
+      "yours": false,
+      "topic_id": 82346,
+      "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+      "display_username": "Lalit Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 1296,
+        "username": "Mrityunjay",
+        "name": "MRITYUNJAY KUMAR MISHRA",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrityunjay/{size}/93207_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 9169,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/7",
+      "user_cakedate": "2022-01-02",
+      "user_birthdate": "1904-02-10",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 317897,
+      "name": "Prahladh N C",
+      "username": "Prahladh",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prahladh/{size}/56083_2.png",
+      "created_at": "2023-04-19T10:28:50.515Z",
+      "cooked": "<p>I found the assignment, but where is this se2001 directory? It says there is no such directory in the home directory</p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 14,
+      "updated_at": "2023-04-19T10:28:50.515Z",
+      "reply_count": 1,
+      "reply_to_post_number": 7,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 123,
+      "readers_count": 122,
+      "score": 34.6,
+      "yours": false,
+      "topic_id": 82346,
+      "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+      "display_username": "Prahladh N C",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 9169,
+        "username": "21f3003123",
+        "name": "Lalit Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14545,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/8",
+      "user_cakedate": "2022-09-07",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 317913,
+      "name": "Santhana Krishnan S",
+      "username": "santhanakrishnan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/santhanakrishnan/{size}/179_2.png",
+      "created_at": "2023-04-19T10:59:28.741Z",
+      "cooked": "<p>If it is not there then you can create one.</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 14,
+      "updated_at": "2023-04-19T10:59:28.741Z",
+      "reply_count": 0,
+      "reply_to_post_number": 8,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 121,
+      "readers_count": 120,
+      "score": 24.2,
+      "yours": false,
+      "topic_id": 82346,
+      "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+      "display_username": "Santhana Krishnan S",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course_Team",
+      "title_is_group": true,
+      "reply_to_user": {
+        "id": 14545,
+        "username": "Prahladh",
+        "name": "Prahladh N C",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prahladh/{size}/56083_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 12,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/9",
+      "user_cakedate": "2021-03-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 412935,
+      "name": "Akansha Uniyal",
+      "username": "21f3000261",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000261/{size}/13890_2.png",
+      "created_at": "2023-12-20T18:26:29.529Z",
+      "cooked": "<p>when i do ls in home, it just gives me readme.md</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 14,
+      "updated_at": "2023-12-20T18:26:29.529Z",
+      "reply_count": 0,
+      "reply_to_post_number": 7,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 55,
+      "readers_count": 54,
+      "score": 11,
+      "yours": false,
+      "topic_id": 82346,
+      "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+      "display_username": "Akansha Uniyal",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 9169,
+        "username": "21f3003123",
+        "name": "Lalit Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6672,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/11",
+      "user_cakedate": "2021-09-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 742215,
+      "name": "Rakshitha P",
+      "username": "25f2005088",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png",
+      "created_at": "2026-03-21T06:51:52.834Z",
+      "cooked": "<p>How did you do it I am facing the same issue now can you please help me</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 14,
+      "updated_at": "2026-03-21T06:51:52.834Z",
+      "reply_count": 2,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 18,
+      "readers_count": 17,
+      "score": 13.6,
+      "yours": false,
+      "topic_id": 82346,
+      "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+      "display_username": "Rakshitha P",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 9169,
+        "username": "21f3003123",
+        "name": "Lalit Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 56697,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/12",
+      "user_cakedate": "2026-01-11",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 742216,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-03-21T06:53:00.970Z",
+      "cooked": "<p>They are trying to edit a file in <code>/opt/se2001</code> when instead they should be editting inside <code>~/se2001</code>. If you’re facing the same error then this is the likely reason.</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 14,
+      "updated_at": "2026-03-21T06:53:00.970Z",
+      "reply_count": 0,
+      "reply_to_post_number": 12,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 17,
+      "readers_count": 16,
+      "score": 8.4,
+      "yours": false,
+      "topic_id": 82346,
+      "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 56697,
+        "username": "25f2005088",
+        "name": "Rakshitha P",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/13",
+      "user_cakedate": "2022-09-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 742226,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-03-21T07:08:19.846Z",
+      "cooked": "<p>A post was merged into an existing topic: <a href=\"/t/cant-modify-script-sh-file-for-bpt3/199316/7\">Can’t modify script.sh file for BPT3</a></p>",
+      "post_number": 14,
+      "post_type": 3,
+      "posts_count": 14,
+      "updated_at": "2026-03-21T07:08:19.846Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 15,
+      "readers_count": 14,
+      "score": 3,
+      "yours": false,
+      "topic_id": 82346,
+      "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "action_code": "split_topic",
+      "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/14",
+      "user_cakedate": "2022-09-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 742598,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2026-03-22T10:50:18.102Z",
+      "cooked": "<p>You need to do <code>chmod +x script.sh</code></p>",
+      "post_number": 15,
+      "post_type": 1,
+      "posts_count": 14,
+      "updated_at": "2026-03-22T10:51:47.575Z",
+      "reply_count": 0,
+      "reply_to_post_number": 12,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 9,
+      "readers_count": 8,
+      "score": 1.8,
+      "yours": false,
+      "topic_id": 82346,
+      "topic_slug": "vm-task-permission-denied-while-creating-script-sh",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 56697,
+        "username": "25f2005088",
+        "name": "Rakshitha P",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/vm-task-permission-denied-while-creating-script-sh/82346/15",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

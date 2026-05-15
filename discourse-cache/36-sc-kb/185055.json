@@ -1,0 +1,4676 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 664768,
+        "name": "Rajagopalan Vaidyanathan",
+        "username": "22f2000345",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+        "created_at": "2025-08-16T17:16:54.982Z",
+        "cooked": "<p>Hi,</p>\n<p>I would like to post about the issues that I(and am sure a lot of others too) faced during the OPPE today (7pm).</p>\n<ol>\n<li>The VM was unresponsive and lagging so badly that I couldn’t really do anything for almost 1 hour. I complained to the proctor about it and others did too.As a result, there was a broadcast sent saying VM will restart in 5 minutes but it didn’t happen for another 15 minutes at least. I complained again along with others and eventually the VM was restarted. This easily took more than an hour of our precious time putting up with an unresponsive VM</li>\n<li>The VM was refreshed before the exam and I lost all my setup for Tmux. I didn’t have the instructions handy to configure it again. This made me to work on a single window and unable to refer back to the question until I save my work and do synchro eval. This is painful because it lacks continuity in doing synchro show because the previous page information couldn’t be revisited unless I do synchro show again. I’m not sure how many times I would have had to do and the questions were so lengthy that it didn’t help.</li>\n<li>In spite of losing close to an hour on the VM being unresponsive, we got only 15 minutes of additional time.</li>\n<li>The synchro eval had lot of issues too; in spite of passing all tests(public and private), it gave some error that I couldn’t resolve. Again wasted time rerunning the same question many times.</li>\n<li>Effective time on the exam would be less than an hour in total though it is a 2 hour exam.</li>\n</ol>\n<p>I would like you to do something about it because I didn’t finish 4 of the 5 questions - I only submitted one question successfully and all the others failed because of some problem that I couldn’t resolve in time.</p>\n<p>This is atrocious that having spent so much time preparing and dedicating time for practicing, I had to put up with issues that were not in my control and stand to reappear for it next week. I take this as an insult to the hard yards that I and others have put in.</p>\n<p>The help provided within the questions became an obstacle and hindrance than helping because the question became too long and time consuming to get to the actual question.</p>\n<p>I’m not sure what the idea is to not allow us to have multiple windows open and if you have valid reasons then why can’t you make tmux part of your configuration so that we don’t have to worry about setting it up every time you refresh. Or, at least if told this would be the case, I would have come prepared by noting down the configuration details.</p>\n<p>With all the problems with the whole setup, the VM’s slow response, I feel frustrated that I could get through this exam in spite of preparing well!</p>\n<p>You cannot be doing this to the students, especially those that have a lot of other commitments and have committed to do well in the exam.</p>\n<p>Please do something about the whole setup because it sucks to know that no matter how much you do work, prepare and practice, one is left to write a post in utter disgust after preparing well.</p>\n<p>Regards</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-16T17:16:54.982Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 154,
+        "readers_count": 153,
+        "score": 260.8,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "Rajagopalan Vaidyanathan",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 15,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21163,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/1",
+        "user_cakedate": "2023-06-24",
+        "user_birthdate": "1904-06-29",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 13
+          },
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 15,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 664786,
+        "name": "Rajagopalan Vaidyanathan",
+        "username": "22f2000345",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+        "created_at": "2025-08-16T17:41:31.486Z",
+        "cooked": "<p>I forgot to add something important…</p>\n<p>The actual questions—especially the one involving the Fibonacci sequence—were incredibly confusing. Please review how that question was presented/rendered. It was all over the place, and the formula itself was so poorly formatted that I genuinely couldn’t understand what was being asked. For example, n-1 followed by a slash—was that a typo, a rendering issue, or just bad formatting? It was impossible to decipher.</p>\n<p>I would have expected someone to review how the questions appear on screen to ensure they’re actually comprehensible. If there was a technical issue with how the formula rendered, that should have been caught and fixed before the assessment went live.</p>\n<p>Also, regarding the help on commands, their purpose and their usage: they weren’t helpful at all. In fact, they were incredibly frustrating. Every time I had to do a synchro show, I had to wade through those instructions just to get to the actual question. If you insist on including them (and not allowing multiple windows), please separate them from the question itself so they’re optional for those who need them—not mandatory for everyone.</p>\n<p>It’s now 1:40am on Sunday following the OPPE, and I’m still trying to recover from the excruciating experience of this OPPE. I’m exhausted, frustrated, and deeply disappointed.</p>\n<p>Please take this feedback seriously. The experience was painful and needs urgent improvement.</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-16T17:41:31.486Z",
+        "reply_count": 2,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 143,
+        "readers_count": 142,
+        "score": 173.6,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "Rajagopalan Vaidyanathan",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 9,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21163,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/2",
+        "user_cakedate": "2023-06-24",
+        "user_birthdate": "1904-06-29",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 9
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 9,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 664790,
+        "name": "Abhishek Jain",
+        "username": "23f3000159",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3000159/{size}/99011_2.png",
+        "created_at": "2025-08-16T17:52:32.455Z",
+        "cooked": "<p>True at every time i used synchro show command for question it was excluding something everytime.</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-16T17:52:32.455Z",
+        "reply_count": 0,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 135,
+        "readers_count": 134,
+        "score": 42,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "Abhishek Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 21163,
+          "username": "22f2000345",
+          "name": "Rajagopalan Vaidyanathan",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 23186,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/3",
+        "user_cakedate": "2023-10-04",
+        "user_birthdate": "1904-06-10",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665481,
+        "name": "nishanta dalabehera",
+        "username": "23f3003974",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003974/{size}/111957_2.png",
+        "created_at": "2025-08-18T09:21:08.423Z",
+        "cooked": "<p>You can use at most two terminals. I used one for keeping the question on screen and the other to write the script. Makes things a bit easier.</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-18T09:21:08.423Z",
+        "reply_count": 1,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 111,
+        "readers_count": 110,
+        "score": 27.2,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "nishanta dalabehera",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 21163,
+          "username": "22f2000345",
+          "name": "Rajagopalan Vaidyanathan",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 25291,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/4",
+        "user_cakedate": "2024-01-19",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665657,
+        "name": "Rajagopalan Vaidyanathan",
+        "username": "22f2000345",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+        "created_at": "2025-08-19T02:17:46.538Z",
+        "cooked": "<p>Hi <a class=\"mention\" href=\"/u/23f3003974\">@23f3003974</a> ,</p>\n<p>I had it set up in my login but that was refreshed during OPPE, I didn’t even know until I started the exam and didn’t have the config information to set it up. How did you manage to get the config done? Did you have your environment refreshed?</p>\n<p>To the TAs…</p>\n<p>I would like to know from the TAs about the issues I’ve raised because I need to reappear for OPPE and would like to have clarity on what to expect(not expect).</p>\n<ol>\n<li>\n<p>Will the VM again have performance issues ?- How are you going to take care of it? The extra 15 mins last time was ridiculous when it was having performance issues for close to an hour and was still having issues after rebooting. The synchro eval was taking for ever to come back.</p>\n</li>\n<li>\n<p>Will tmux be setup when we login? if not, do we get time to set it up because it’s not part of the exam?</p>\n</li>\n<li>\n<p>Will any of the things raised about “synchro show” be handled by the support team? E.g. help on commands and related information at the top to be excluded from the question or to keep them separate or to have them at the bottom instead of the at the top. The 1st page of synchro show should show the complete question, the sample input and sample output.</p>\n</li>\n<li>\n<p>The questions will be correctly shown/rendered without any issues?</p>\n</li>\n<li>\n<p>Do we have to regenerate the login keys?(ssh)</p>\n</li>\n<li>\n<p>How much time do we have before the exam starts for us to login and do the necessary setups if needed?</p>\n</li>\n</ol>\n<p><span class=\"mention\">@TAs</span> - Please respond. It’s imperative that these issues are resolved and we’re given a level playing field. I don’t mind you challenging us but provide us with the necessary environment to be able to meet them than worrying about VM performance, tmux and synchro issues. And, if the VM has performance issues, the additional time will be commensurate with the lost time?</p>\n<p>Regards</p>\n<p>Rajagopalan Vaidyanathan</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-19T13:08:06.839Z",
+        "reply_count": 1,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 103,
+        "readers_count": 102,
+        "score": 60.6,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "Rajagopalan Vaidyanathan",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 25291,
+          "username": "23f3003974",
+          "name": "nishanta dalabehera",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003974/{size}/111957_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21163,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/5",
+        "user_cakedate": "2023-06-24",
+        "user_birthdate": "1904-06-29",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665804,
+        "name": "sandeepkumar sudhakar surkute",
+        "username": "22f3002925",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+        "created_at": "2025-08-19T12:36:14.655Z",
+        "cooked": "<p>Yes, the “synchro Show “ was failing and not displaying the correct status. Because in output of my synchro show only 1 question appeared to be pass, no other question appeared as pass/ partially pass as it shows in our course VM, but still my score is 43 for the 1 passed question. I am failing to understand this. VM had slowed down from few minutes in to the exam and continued with glitches till it was rebooted. Even after that synchro show was behaving erratically.</p>\n<p>As I know IITM instructors are considerate of the student community, and hopefully the course team looks at these issues faced in OPPE from student point of view and gives us a fair chance in re-oppe.</p>\n<p>Regards,</p>\n<p>Sandeep</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-19T12:36:14.655Z",
+        "reply_count": 1,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 86,
+        "readers_count": 85,
+        "score": 42.2,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "sandeepkumar sudhakar surkute",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 21163,
+          "username": "22f2000345",
+          "name": "Rajagopalan Vaidyanathan",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16751,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/6",
+        "user_cakedate": "2023-02-06",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665807,
+        "name": "Rajagopalan Vaidyanathan",
+        "username": "22f2000345",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+        "created_at": "2025-08-19T12:51:52.166Z",
+        "cooked": "<p>Hi Sandeep,</p>\n<p>If you have got 43 then you don’t have to reappear for it and go through hell!</p>\n<p>Good Luck.</p>\n<p>Regards</p>\n<p>Rajagopalan Vaidyanathan</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-19T12:51:52.166Z",
+        "reply_count": 1,
+        "reply_to_post_number": 6,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 86,
+        "readers_count": 85,
+        "score": 22,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "Rajagopalan Vaidyanathan",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 16751,
+          "username": "22f3002925",
+          "name": "sandeepkumar sudhakar surkute",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21163,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/7",
+        "user_cakedate": "2023-06-24",
+        "user_birthdate": "1904-06-29",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665950,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-08-20T04:30:50.267Z",
+        "cooked": "<p>A few clarifications:</p>\n<ul>\n<li>There will be no change in the question’s format – if you want to skip the Motivation section, you can scroll the <code>batcat</code> output using your Arrow keys, or <code>j</code> and <code>k</code> vim keys. You can also use <code>d</code> to go down one page at a time, or <code>G</code> to go to the end of the page.</li>\n<li>There are no rendering issues – the math is typeset using <span class=\"math\">\\LaTeX</span> and you see the code for that. <code>batcat</code> does not render <span class=\"math\">\\LaTeX</span> by itself, so it remains in the source-code format. Given you have done <code>ma1001</code>, <code>ma1002</code>, <code>ma1003</code>, and <code>ma1004</code> courses in foundation level, and have been using Discourse from that time, it is expected of you to know to parse basic math typesetting in <span class=\"math\">\\LaTeX</span>.</li>\n<li>There should be less throttling in the VM in REOPPE, as we will configure the VMs with a higher resources like the last half.</li>\n<li>Tmux is not set with custom configurations, that can be done by each student as per their liking, since there is no ‘one-good’ configuration. You are taught how to configure it, so that you can tweak it to your liking. You can also use unconfigured tmux, it does not hinder you from using it since navigating between panes and scrolling can still be done using the correct hotkeys. The VM will remain open from 6PM (1hr before questions are released), like the last time. Students are encouraged to login, and configure any configurations (<code>bashrc</code>, <code>tmux.conf</code> etc) that they require.</li>\n<li>Login keys do not have to be re-generated, this has been clarified throughout the term, that once you have an ssh key, you never have to regenerate it, simply upload it wherever it is required.</li>\n<li>You can use two terminals as well, instead of using <code>tmux</code>, I believe this was present in the portal.</li>\n<li>There was an extension of 30 mins, not 15, for the server upgrade which only took 5 mins of downtime, rest was given as a concession, since students would also need time to re-login, and re-type any unsaved code in their editor.</li>\n<li>If you have got <span class=\"math\">\\ge40</span>, you cannot re-attempt the OPPE.</li>\n</ul>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-20T04:30:50.267Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 81,
+        "readers_count": 80,
+        "score": 36,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/8",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 666438,
+        "name": "Rajagopalan Vaidyanathan",
+        "username": "22f2000345",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+        "created_at": "2025-08-21T01:30:31.470Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a></p>\n<p>Thx for you email.</p>\n<p>Don’t want to go into your email above but will come back after the reexam.</p>\n<p>Please share the link on the portal for having two terminals</p>\n<p>Regards</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-21T01:30:31.470Z",
+        "reply_count": 0,
+        "reply_to_post_number": 8,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 75,
+        "readers_count": 74,
+        "score": 14.8,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "Rajagopalan Vaidyanathan",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21163,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/9",
+        "user_cakedate": "2023-06-24",
+        "user_birthdate": "1904-06-29",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 667283,
+        "name": "sandeepkumar sudhakar surkute",
+        "username": "22f3002925",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+        "created_at": "2025-08-23T19:03:34.014Z",
+        "cooked": "<p>I was aiming for 80 at least and due to the load next day, I was planning to re-do the OPPE on second slot. But all in vain due to the issues in exam, mis-communication about latest evaluation being the final one for scoring etc.</p>\n<p>Anyways,  all the best for you too !</p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-23T19:03:34.014Z",
+        "reply_count": 0,
+        "reply_to_post_number": 7,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 66,
+        "readers_count": 65,
+        "score": 18,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "sandeepkumar sudhakar surkute",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 21163,
+          "username": "22f2000345",
+          "name": "Rajagopalan Vaidyanathan",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16751,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/10",
+        "user_cakedate": "2023-02-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 667345,
+        "name": "Yash Raj",
+        "username": "23f2004827",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004827/{size}/122726_2.png",
+        "created_at": "2025-08-24T05:33:49.623Z",
+        "cooked": "<p>This is true , I have also mailed at night only regarding this issue , in last oppe on 16th August also same issue was happening but that time they provided extra time for compensation but this time proctor was not taking any responsibility.   I just want to say I have also solved 1 question successfully in 1 hour because of lagging issue. If I will repeat this this this mistake from your side not mine . If this will happen everytime I will never be able to pass this SC oppe .  I gave pdsa oppe also but everything was fined that time . VM terminal has some problem.</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-24T05:33:49.623Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 62,
+        "readers_count": 61,
+        "score": 22.2,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "Yash Raj",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21414,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/11",
+        "user_cakedate": "2023-09-17",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 667362,
+        "name": "SHAHZADA MOON",
+        "username": "23f2002668",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2002668/{size}/66999_2.png",
+        "created_at": "2025-08-24T06:02:50.258Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a></p>\n<p>Good morning sir ! I hope you are doing well.<br>\nWell I want to say that I am not doing well.</p>\n<p>I am also facing same issue. Many times the VM has stopped responding then when I relogin again back, it shows <code>The VM will be accessible before one hour of exam . . .</code>. I have screenshots also which I am attaching. The problem is not that we have faced the issue in Re-OPPE, but the problem is that even after OPPE on 16-August-2025, so many issues occured and then again same issues we faced in Re-OPPE. The mistake in first time can be called as “Mistake” but if same problems and issues occured again and again then it is definitely a blunder which shows that the course team really don’t take the problems seriously. Well, I will easily pass the Re-OPPE but the point is that I could get more marks.</p>\n<p>Now, I also don’t have any hope if the team will handle the same issues in future also for other students and thus, they will also face same issues.</p>\n<p>Image-1</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/e/1/e1e4e70912982ffd4b55ce9159526994f310f862.jpeg\" data-download-href=\"/uploads/short-url/welQPGWX8BoGnR8eyEGdaptEZkC.jpeg?dl=1\" title=\"Screenshot 2025-08-23 at 20.26.50\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/1/e1e4e70912982ffd4b55ce9159526994f310f862_2_690x431.jpeg\" alt=\"Screenshot 2025-08-23 at 20.26.50\" data-base62-sha1=\"welQPGWX8BoGnR8eyEGdaptEZkC\" width=\"690\" height=\"431\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/1/e1e4e70912982ffd4b55ce9159526994f310f862_2_690x431.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/1/e1e4e70912982ffd4b55ce9159526994f310f862_2_1035x646.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/1/e1e4e70912982ffd4b55ce9159526994f310f862_2_1380x862.jpeg 2x\" data-dominant-color=\"040603\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-23 at 20.26.50</span><span class=\"informations\">2880×1800 787 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Image-2</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/9/b/9b34e21b5bc0e438d103780e8e3877da21df3048.jpeg\" data-download-href=\"/uploads/short-url/m91jcyi2aC8OaKACJoqG1Gl5nbq.jpeg?dl=1\" title=\"Screenshot 2025-08-23 at 20.50.17\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/b/9b34e21b5bc0e438d103780e8e3877da21df3048_2_690x431.jpeg\" alt=\"Screenshot 2025-08-23 at 20.50.17\" data-base62-sha1=\"m91jcyi2aC8OaKACJoqG1Gl5nbq\" width=\"690\" height=\"431\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/b/9b34e21b5bc0e438d103780e8e3877da21df3048_2_690x431.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/b/9b34e21b5bc0e438d103780e8e3877da21df3048_2_1035x646.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/b/9b34e21b5bc0e438d103780e8e3877da21df3048_2_1380x862.jpeg 2x\" data-dominant-color=\"020302\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-23 at 20.50.17</span><span class=\"informations\">2880×1800 327 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Thankyou and have a nice day !</p>\n<p>Your sincerely,<br>\nShahzada Moon</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-24T06:02:50.258Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 64,
+        "readers_count": 63,
+        "score": 12.6,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "SHAHZADA MOON",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 19309,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/13",
+        "user_cakedate": "2023-06-08",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 667372,
+        "name": "Rajagopalan Vaidyanathan",
+        "username": "22f2000345",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+        "created_at": "2025-08-24T06:24:25.122Z",
+        "cooked": "<p>Hi <a class=\"mention\" href=\"/u/sayan\">@sayan</a> ,</p>\n<p>Yesterday, I was connected to support after waiting restlessly for 23 minutes. During that time, the Proctor informed me that the issue had been escalated. Unfortunately, the time I lost waiting was precious — I’m confident I could have solved another problem had I been assisted promptly.</p>\n<p>I understand that logging into the wrong VM was considered my mistake, but the refusal to grant additional time felt unfair. Why was the BPT VM even present during the exam when it wasn’t available during our preparation? It caused confusion and cost me valuable time. I was one of the earlier ones to join google meet well ahead of the exam to make sure I do everything I had to and not face an issue like last time - with Tmux, etc.</p>\n<p>Your decision to deny my request for extra time effectively cost me marks! Was it truly my fault that I had to wait 23 minutes to be connected to support? I repeatedly asked the Proctor for help, only to be told to remain quiet because the issue was already escalated. I even requested a few extra minutes to finish the question I was working on — I was close to completing it.</p>\n<p>The support for this course has been mediocre, to say the least. I asked for the portal link mentioned in your post about using two terminal sessions, but received no response. Despite repeated requests to correct grading errors, nothing has been done. You stated that the motivational section at the top of the question would remain unchanged, yet it was altered — and not even acknowledged. If it was a good idea, why not say so?</p>\n<p>You also mentioned a session I should have attended to know which VM to use. But with so many sessions and unclear communication, it’s difficult to know what’s essential and what’s not. The volume of communication itself becomes a source of confusion.</p>\n<p>I will certainly pass this time — I’ve correctly solved three questions. But the 23 minutes I lost could have helped me reach a perfect score. For you, this may be just a job. For students, it’s their career. And for me, it’s even more than that — I’m at the tail end of my career, striving to achieve something I couldn’t during my school and college days. During the first OPPE, it was a VM issue with no proper compensation. This time, it was the wrong VM.</p>\n<p>Please, going forward, take a closer look at the challenges students face. Don’t shift the blame onto us. Improvement begins with acknowledging that there are issues — and then working to fix them.</p>\n<p>Kind regards,<br>\nRajagopalan Vaidyanathan</p>",
+        "post_number": 14,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-24T06:24:25.122Z",
+        "reply_count": 1,
+        "reply_to_post_number": 11,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 57,
+        "readers_count": 56,
+        "score": 21.2,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "Rajagopalan Vaidyanathan",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 21414,
+          "username": "23f2004827",
+          "name": "Yash Raj",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004827/{size}/122726_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21163,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/14",
+        "user_cakedate": "2023-06-24",
+        "user_birthdate": "1904-06-29",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 667671,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-08-25T05:16:19.870Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/22f2000345\">@22f2000345</a></p>\n<p>The support meets are for technical issues faced by the students, not for student-side issues. Just like you there are many students in line for the meet, we cannot possibly admit all at once and be able to address anyone. However, since your issue was a student-side negligence, not any technical issue, it does not warrant any additional time. The NPPE, the 16th Aug OPPE, and this OPPE, all has been conducted on OPPE VM. Further in the Exam Portal Question 2 it has also been clearly mentioned which VM to use, the website for re-uploading the ssh key (if required), and the exact domain of the VM. If a student is not able to follow the instructions given in the exam portal itself, it is not possible to grant an additional time, it would be unfair for the other students who have worked hard to earn their marks.</p>\n<p>Using two terminals being allowed is mentioned in the exam portal question itself, as I mentioned earlier. There is no link for such, it is present in the exam portal.</p>",
+        "post_number": 15,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-25T06:10:25.580Z",
+        "reply_count": 1,
+        "reply_to_post_number": 14,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 46,
+        "readers_count": 45,
+        "score": 19,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 21163,
+          "username": "22f2000345",
+          "name": "Rajagopalan Vaidyanathan",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/15",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 667691,
+        "name": "Yash Raj",
+        "username": "23f2004827",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004827/{size}/122726_2.png",
+        "created_at": "2025-08-25T05:43:48.483Z",
+        "cooked": "<p>I have used 2 terminal , also as I told on 16 August oppe also same problem was there exactly same then why additional time was provided on that day.</p>\n<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> <a class=\"mention\" href=\"/u/subendu\">@Subendu</a></p>",
+        "post_number": 16,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-25T05:43:48.483Z",
+        "reply_count": 2,
+        "reply_to_post_number": 15,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 46,
+        "readers_count": 45,
+        "score": 19,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "Yash Raj",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21414,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/16",
+        "user_cakedate": "2023-09-17",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 667709,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-08-25T06:11:31.588Z",
+        "cooked": "<p>On reOPPE, we have observed no system issues or lag from our side, the resources utilization were well below limits. If you face a lag, please change your network, as it is a client side ISP issue.</p>",
+        "post_number": 17,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-25T06:11:31.588Z",
+        "reply_count": 0,
+        "reply_to_post_number": 16,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 44,
+        "readers_count": 43,
+        "score": 8.6,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 21414,
+          "username": "23f2004827",
+          "name": "Yash Raj",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004827/{size}/122726_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-system-issues/185055/17",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 667715,
+        "name": "Rajagopalan Vaidyanathan",
+        "username": "22f2000345",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+        "created_at": "2025-08-25T06:21:22.000Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@Sayan</a>,</p>\n<p>In hindsight, I’m truly grateful to God that you didn’t grant my request for extra time.<br>\nHad you done so, any additional marks I earned would have felt like a debt I owed you—and that would have weighed heavily on me.<br>\nBut now, whatever I score is entirely my own, achieved not because of you, but in spite of you — with 23 less minutes, no less!<br>\nAnd honestly, that feels far more rewarding than a perfect score ever could.</p>",
+        "post_number": 18,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-25T06:21:35.177Z",
+        "reply_count": 0,
+        "reply_to_post_number": 16,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 43,
+        "readers_count": 42,
+        "score": 13.4,
+        "yours": false,
+        "topic_id": 185055,
+        "topic_slug": "oppe-system-issues",
+        "display_username": "Rajagopalan Vaidyanathan",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 21414,
+          "username": "23f2004827",
+          "name": "Yash Raj",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004827/{size}/122726_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21163,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "via_email": true,
+        "post_url": "/t/oppe-system-issues/185055/18",
+        "user_cakedate": "2023-06-24",
+        "user_birthdate": "1904-06-29",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      664768,
+      664786,
+      664790,
+      665481,
+      665657,
+      665804,
+      665807,
+      665950,
+      666438,
+      667283,
+      667345,
+      667362,
+      667372,
+      667671,
+      667691,
+      667709,
+      667715
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      253
+    ],
+    [
+      4,
+      251
+    ],
+    [
+      6,
+      250
+    ],
+    [
+      9,
+      249
+    ],
+    [
+      10,
+      246
+    ],
+    [
+      14,
+      245
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 48,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 7,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 341,
+      "name": "term2-2025",
+      "slug": "term2-2025"
+    },
+    {
+      "id": 37,
+      "name": "operational",
+      "slug": "operational"
+    },
+    {
+      "id": 206,
+      "name": "oppe",
+      "slug": "oppe"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "OPPE - System Issues",
+  "id": 185055,
+  "title": "OPPE - System Issues",
+  "posts_count": 17,
+  "created_at": "2025-08-16T17:16:54.753Z",
+  "views": 368,
+  "reply_count": 12,
+  "like_count": 29,
+  "last_posted_at": "2025-08-25T06:21:22.000Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "oppe-system-issues",
+  "category_id": 36,
+  "word_count": 2918,
+  "deleted_at": null,
+  "user_id": 21163,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": null,
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_185055",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 18,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 1,
+  "participant_count": 7,
+  "show_read_indicator": false,
+  "thumbnails": null,
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "OPPE Technical Issue | Time lost not compensated",
+      "id": 182648,
+      "title": "OPPE Technical Issue | Time lost not compensated",
+      "slug": "oppe-technical-issue-time-lost-not-compensated",
+      "posts_count": 47,
+      "reply_count": 25,
+      "highest_post_number": 48,
+      "image_url": null,
+      "created_at": "2025-07-19T15:44:14.372Z",
+      "last_posted_at": "2025-08-03T00:04:31.927Z",
+      "bumped": true,
+      "bumped_at": "2025-08-03T00:04:31.927Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 37,
+          "name": "operational",
+          "slug": "operational"
+        },
+        {
+          "id": 159,
+          "name": "mlp-oppe-1",
+          "slug": "mlp-oppe-1"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 119,
+      "views": 560,
+      "category_id": 33,
+      "featured_link": null,
+      "op_like_count": 6,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 47430,
+            "username": "ae22b009",
+            "name": "Pradyumnan R",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ae22b009/{size}/135904_2.png",
+            "primary_group_name": "smail_students",
+            "flair_name": "smail_students",
+            "flair_url": "bezier-curve",
+            "flair_group_id": 445,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 42188,
+            "username": "Aniruddha_A",
+            "name": "A Aniruddha",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aniruddha_a/{size}/119243_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 20885,
+            "username": "23f2002017",
+            "name": "Ikram Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2002017/{size}/141932_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 23071,
+            "username": "Adwitiya_Chauhan",
+            "name": "Adwitiya Chauhan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/adwitiya_chauhan/{size}/79315_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 19232,
+            "username": "23f1002312",
+            "name": "Chandrasekhar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1002312/{size}/66864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Feedback on OPPE Experience and Suggestions for Improvement",
+      "id": 126335,
+      "title": "Feedback on OPPE Experience and Suggestions for Improvement",
+      "slug": "feedback-on-oppe-experience-and-suggestions-for-improvement",
+      "posts_count": 24,
+      "reply_count": 7,
+      "highest_post_number": 25,
+      "image_url": null,
+      "created_at": "2024-04-08T06:09:41.109Z",
+      "last_posted_at": "2024-04-25T07:08:17.760Z",
+      "bumped": true,
+      "bumped_at": "2024-04-25T07:10:06.580Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 37,
+          "name": "operational",
+          "slug": "operational"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 27,
+      "views": 384,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 7,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 17581,
+            "username": "23f1003071",
+            "name": "Ashish Roopan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1003071/{size}/113278_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 12968,
+            "username": "Abhinandan",
+            "name": "Abhinandan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/abhinandan/{size}/12565_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 14150,
+            "username": "22f1001974",
+            "name": "Anant Vikram  Singh ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1001974/{size}/83412_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 12,
+            "username": "santhanakrishnan",
+            "name": "Santhana Krishnan S",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/santhanakrishnan/{size}/179_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Re oppe needed",
+      "id": 200541,
+      "title": "Re oppe needed",
+      "slug": "re-oppe-needed",
+      "posts_count": 88,
+      "reply_count": 41,
+      "highest_post_number": 91,
+      "image_url": null,
+      "created_at": "2026-04-04T14:48:14.153Z",
+      "last_posted_at": "2026-04-06T12:22:29.917Z",
+      "bumped": true,
+      "bumped_at": "2026-04-06T12:22:29.917Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 295,
+          "name": "oppe-1",
+          "slug": "oppe-1"
+        },
+        {
+          "id": 159,
+          "name": "mlp-oppe-1",
+          "slug": "mlp-oppe-1"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 186,
+      "views": 693,
+      "category_id": 33,
+      "featured_link": null,
+      "op_like_count": 34,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 25030,
+            "username": "23f3003322",
+            "name": "Mohamed Shamil M A",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003322/{size}/110628_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 21985,
+            "username": "23f2004867",
+            "name": "Jatin Bhardwaj",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004867/{size}/75651_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 21449,
+            "username": "23f2003824",
+            "name": "Shrijan kumar ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003824/{size}/68148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 19253,
+            "username": "Bruce_Wayne",
+            "name": "NOT_Batman",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/bruce_wayne/{size}/109347_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 42963,
+            "username": "25f1000347",
+            "name": "Pragya Medhatiya",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f1000347/{size}/124419_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Re oppe",
+      "id": 158405,
+      "title": "Re oppe",
+      "slug": "re-oppe",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/4/d43cb8177a3529e0ed0b2f28c85c08d89b4473fb_2_1024x575.png",
+      "created_at": "2024-12-08T02:13:46.645Z",
+      "last_posted_at": "2024-12-08T05:46:08.400Z",
+      "bumped": true,
+      "bumped_at": "2024-12-08T05:46:08.400Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 37,
+          "name": "operational",
+          "slug": "operational"
+        },
+        {
+          "id": 298,
+          "name": "degree-level",
+          "slug": "degree-level"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 122,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 22842,
+            "username": "23f2005056",
+            "name": "Sri Harsha Reddy Sagili",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2005056/{size}/66760_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Mega Thread - OPPE FAQs and PYQs",
+      "id": 201785,
+      "title": "Mega Thread - OPPE FAQs and PYQs",
+      "slug": "mega-thread-oppe-faqs-and-pyqs",
+      "posts_count": 176,
+      "reply_count": 146,
+      "highest_post_number": 189,
+      "image_url": null,
+      "created_at": "2026-04-17T12:26:16.423Z",
+      "last_posted_at": "2026-04-26T16:02:21.415Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T15:51:26.854Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": true,
+      "unpinned": null,
+      "excerpt": "Hello all, \n\nRe-attempt - 2nd May, 2026, 6:00 p.m. to 8:00 p.m. IST (+5:30  GMT) \n[Chance given automatically, if you score less than 40 AND WERE PRESENT AND MADE A SUBMISSION]\n\nThe first reply to this post links all the&hellip;",
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 67,
+      "views": 1938,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 10,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 38404,
+            "username": "24f3000060",
+            "name": "Kumuda",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000060/{size}/133771_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 31902,
+            "username": "Jessica05",
+            "name": "Jessica Malik",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jessica05/{size}/111259_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 8,
+    "username": "sayan",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+    "excerpt": "<p>A few clarifications:</p>\n<ul>\n<li>There will be no change in the question’s format – if you want to skip the Motivation section, you can scroll the <code>batcat</code> output using your Arrow keys, or <code>j</code> and <code>k</code> vim keys. You can also use <code>d</code> to go down one page at a time, or <code>G</code> to go to the end of the page.</li>\n<li>There are no rendering issues – the math is typeset using <span class=\"math\">\\LaTeX</span> and you see the code for that. <code>batcat</code> does not render <span class=\"math\">\\LaTeX</span> by itself, so it remains in the source-code format. Given you have done <code>ma1001</code>, <code>ma1002</code>, <code>ma1003</code>, and <code>ma1004</code> courses in foundation level, and have been using Discourse from that time, it is expected of you to know to parse basic math typesetting in <span class=\"math\">\\LaTeX</span>.</li>\n<li>There should be less throttling in the VM in REOPPE, as we will configure the VMs with a higher resources like the last half.</li>\n<li>Tmux is not set with custom configurations, that can be done by each student as per their liking, since there is no ‘one-good’ configuration. You are taught how to configure it, so that you can tweak it to your liking. You can also use unconfigured tmux, it does not hinder you from using it since navigating between panes and scrolling can still be done using the correct hotkeys. The VM will remain open from 6PM (1hr before questions are released), like the last time. Students are encouraged to login, and configure any configurations (<code>bashrc</code>, <code>tmux.conf</code> etc) that they require.</li>\n<li>Login keys do not have to be re-generated, this has been clarified throughout the term, that once you have an ssh key, you never have to regenerate it, simply upload it wherever it is required.</li>\n<li>You can use two terminals as well, instead of using <code>tmux</code>, I believe this was present in the portal.</li>\n<li>There was an extension of 30 mins, not 15, for the server upgrade which only took 5 mins of downtime, rest was given as a concession, since students would also need time to re-login, and re-type any unsaved code in their editor.</li>\n<li>If you have got <span class=\"math\">\\ge40</span>, you cannot re-attempt the OPPE.</li>\n</ul>",
+    "accepter_name": null,
+    "accepter_username": "21f3000759"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 21163,
+        "username": "22f2000345",
+        "name": "Rajagopalan Vaidyanathan",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+        "post_count": 7,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "post_count": 3,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      },
+      {
+        "id": 21414,
+        "username": "23f2004827",
+        "name": "Yash Raj",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004827/{size}/122726_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 16751,
+        "username": "22f3002925",
+        "name": "sandeepkumar sudhakar surkute",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 25291,
+        "username": "23f3003974",
+        "name": "nishanta dalabehera",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003974/{size}/111957_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 23186,
+        "username": "23f3000159",
+        "name": "Abhishek Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3000159/{size}/99011_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 19309,
+        "username": "23f2002668",
+        "name": "SHAHZADA MOON",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2002668/{size}/66999_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 21163,
+      "username": "22f2000345",
+      "name": "Rajagopalan Vaidyanathan",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png"
+    },
+    "last_poster": {
+      "id": 21163,
+      "username": "22f2000345",
+      "name": "Rajagopalan Vaidyanathan",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 664768,
+      "name": "Rajagopalan Vaidyanathan",
+      "username": "22f2000345",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+      "created_at": "2025-08-16T17:16:54.982Z",
+      "cooked": "<p>Hi,</p>\n<p>I would like to post about the issues that I(and am sure a lot of others too) faced during the OPPE today (7pm).</p>\n<ol>\n<li>The VM was unresponsive and lagging so badly that I couldn’t really do anything for almost 1 hour. I complained to the proctor about it and others did too.As a result, there was a broadcast sent saying VM will restart in 5 minutes but it didn’t happen for another 15 minutes at least. I complained again along with others and eventually the VM was restarted. This easily took more than an hour of our precious time putting up with an unresponsive VM</li>\n<li>The VM was refreshed before the exam and I lost all my setup for Tmux. I didn’t have the instructions handy to configure it again. This made me to work on a single window and unable to refer back to the question until I save my work and do synchro eval. This is painful because it lacks continuity in doing synchro show because the previous page information couldn’t be revisited unless I do synchro show again. I’m not sure how many times I would have had to do and the questions were so lengthy that it didn’t help.</li>\n<li>In spite of losing close to an hour on the VM being unresponsive, we got only 15 minutes of additional time.</li>\n<li>The synchro eval had lot of issues too; in spite of passing all tests(public and private), it gave some error that I couldn’t resolve. Again wasted time rerunning the same question many times.</li>\n<li>Effective time on the exam would be less than an hour in total though it is a 2 hour exam.</li>\n</ol>\n<p>I would like you to do something about it because I didn’t finish 4 of the 5 questions - I only submitted one question successfully and all the others failed because of some problem that I couldn’t resolve in time.</p>\n<p>This is atrocious that having spent so much time preparing and dedicating time for practicing, I had to put up with issues that were not in my control and stand to reappear for it next week. I take this as an insult to the hard yards that I and others have put in.</p>\n<p>The help provided within the questions became an obstacle and hindrance than helping because the question became too long and time consuming to get to the actual question.</p>\n<p>I’m not sure what the idea is to not allow us to have multiple windows open and if you have valid reasons then why can’t you make tmux part of your configuration so that we don’t have to worry about setting it up every time you refresh. Or, at least if told this would be the case, I would have come prepared by noting down the configuration details.</p>\n<p>With all the problems with the whole setup, the VM’s slow response, I feel frustrated that I could get through this exam in spite of preparing well!</p>\n<p>You cannot be doing this to the students, especially those that have a lot of other commitments and have committed to do well in the exam.</p>\n<p>Please do something about the whole setup because it sucks to know that no matter how much you do work, prepare and practice, one is left to write a post in utter disgust after preparing well.</p>\n<p>Regards</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-16T17:16:54.982Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 154,
+      "readers_count": 153,
+      "score": 260.8,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "Rajagopalan Vaidyanathan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 15,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21163,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/1",
+      "user_cakedate": "2023-06-24",
+      "user_birthdate": "1904-06-29",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 13
+        },
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 15,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 664786,
+      "name": "Rajagopalan Vaidyanathan",
+      "username": "22f2000345",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+      "created_at": "2025-08-16T17:41:31.486Z",
+      "cooked": "<p>I forgot to add something important…</p>\n<p>The actual questions—especially the one involving the Fibonacci sequence—were incredibly confusing. Please review how that question was presented/rendered. It was all over the place, and the formula itself was so poorly formatted that I genuinely couldn’t understand what was being asked. For example, n-1 followed by a slash—was that a typo, a rendering issue, or just bad formatting? It was impossible to decipher.</p>\n<p>I would have expected someone to review how the questions appear on screen to ensure they’re actually comprehensible. If there was a technical issue with how the formula rendered, that should have been caught and fixed before the assessment went live.</p>\n<p>Also, regarding the help on commands, their purpose and their usage: they weren’t helpful at all. In fact, they were incredibly frustrating. Every time I had to do a synchro show, I had to wade through those instructions just to get to the actual question. If you insist on including them (and not allowing multiple windows), please separate them from the question itself so they’re optional for those who need them—not mandatory for everyone.</p>\n<p>It’s now 1:40am on Sunday following the OPPE, and I’m still trying to recover from the excruciating experience of this OPPE. I’m exhausted, frustrated, and deeply disappointed.</p>\n<p>Please take this feedback seriously. The experience was painful and needs urgent improvement.</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-16T17:41:31.486Z",
+      "reply_count": 2,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 143,
+      "readers_count": 142,
+      "score": 173.6,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "Rajagopalan Vaidyanathan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 9,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21163,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/2",
+      "user_cakedate": "2023-06-24",
+      "user_birthdate": "1904-06-29",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 9
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 9,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 664790,
+      "name": "Abhishek Jain",
+      "username": "23f3000159",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3000159/{size}/99011_2.png",
+      "created_at": "2025-08-16T17:52:32.455Z",
+      "cooked": "<p>True at every time i used synchro show command for question it was excluding something everytime.</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-16T17:52:32.455Z",
+      "reply_count": 0,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 135,
+      "readers_count": 134,
+      "score": 42,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "Abhishek Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 21163,
+        "username": "22f2000345",
+        "name": "Rajagopalan Vaidyanathan",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23186,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/3",
+      "user_cakedate": "2023-10-04",
+      "user_birthdate": "1904-06-10",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665481,
+      "name": "nishanta dalabehera",
+      "username": "23f3003974",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003974/{size}/111957_2.png",
+      "created_at": "2025-08-18T09:21:08.423Z",
+      "cooked": "<p>You can use at most two terminals. I used one for keeping the question on screen and the other to write the script. Makes things a bit easier.</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-18T09:21:08.423Z",
+      "reply_count": 1,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 111,
+      "readers_count": 110,
+      "score": 27.2,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "nishanta dalabehera",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 21163,
+        "username": "22f2000345",
+        "name": "Rajagopalan Vaidyanathan",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 25291,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/4",
+      "user_cakedate": "2024-01-19",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665657,
+      "name": "Rajagopalan Vaidyanathan",
+      "username": "22f2000345",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+      "created_at": "2025-08-19T02:17:46.538Z",
+      "cooked": "<p>Hi <a class=\"mention\" href=\"/u/23f3003974\">@23f3003974</a> ,</p>\n<p>I had it set up in my login but that was refreshed during OPPE, I didn’t even know until I started the exam and didn’t have the config information to set it up. How did you manage to get the config done? Did you have your environment refreshed?</p>\n<p>To the TAs…</p>\n<p>I would like to know from the TAs about the issues I’ve raised because I need to reappear for OPPE and would like to have clarity on what to expect(not expect).</p>\n<ol>\n<li>\n<p>Will the VM again have performance issues ?- How are you going to take care of it? The extra 15 mins last time was ridiculous when it was having performance issues for close to an hour and was still having issues after rebooting. The synchro eval was taking for ever to come back.</p>\n</li>\n<li>\n<p>Will tmux be setup when we login? if not, do we get time to set it up because it’s not part of the exam?</p>\n</li>\n<li>\n<p>Will any of the things raised about “synchro show” be handled by the support team? E.g. help on commands and related information at the top to be excluded from the question or to keep them separate or to have them at the bottom instead of the at the top. The 1st page of synchro show should show the complete question, the sample input and sample output.</p>\n</li>\n<li>\n<p>The questions will be correctly shown/rendered without any issues?</p>\n</li>\n<li>\n<p>Do we have to regenerate the login keys?(ssh)</p>\n</li>\n<li>\n<p>How much time do we have before the exam starts for us to login and do the necessary setups if needed?</p>\n</li>\n</ol>\n<p><span class=\"mention\">@TAs</span> - Please respond. It’s imperative that these issues are resolved and we’re given a level playing field. I don’t mind you challenging us but provide us with the necessary environment to be able to meet them than worrying about VM performance, tmux and synchro issues. And, if the VM has performance issues, the additional time will be commensurate with the lost time?</p>\n<p>Regards</p>\n<p>Rajagopalan Vaidyanathan</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-19T13:08:06.839Z",
+      "reply_count": 1,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 103,
+      "readers_count": 102,
+      "score": 60.6,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "Rajagopalan Vaidyanathan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 25291,
+        "username": "23f3003974",
+        "name": "nishanta dalabehera",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003974/{size}/111957_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21163,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/5",
+      "user_cakedate": "2023-06-24",
+      "user_birthdate": "1904-06-29",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665804,
+      "name": "sandeepkumar sudhakar surkute",
+      "username": "22f3002925",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+      "created_at": "2025-08-19T12:36:14.655Z",
+      "cooked": "<p>Yes, the “synchro Show “ was failing and not displaying the correct status. Because in output of my synchro show only 1 question appeared to be pass, no other question appeared as pass/ partially pass as it shows in our course VM, but still my score is 43 for the 1 passed question. I am failing to understand this. VM had slowed down from few minutes in to the exam and continued with glitches till it was rebooted. Even after that synchro show was behaving erratically.</p>\n<p>As I know IITM instructors are considerate of the student community, and hopefully the course team looks at these issues faced in OPPE from student point of view and gives us a fair chance in re-oppe.</p>\n<p>Regards,</p>\n<p>Sandeep</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-19T12:36:14.655Z",
+      "reply_count": 1,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 86,
+      "readers_count": 85,
+      "score": 42.2,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "sandeepkumar sudhakar surkute",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 21163,
+        "username": "22f2000345",
+        "name": "Rajagopalan Vaidyanathan",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16751,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/6",
+      "user_cakedate": "2023-02-06",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665807,
+      "name": "Rajagopalan Vaidyanathan",
+      "username": "22f2000345",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+      "created_at": "2025-08-19T12:51:52.166Z",
+      "cooked": "<p>Hi Sandeep,</p>\n<p>If you have got 43 then you don’t have to reappear for it and go through hell!</p>\n<p>Good Luck.</p>\n<p>Regards</p>\n<p>Rajagopalan Vaidyanathan</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-19T12:51:52.166Z",
+      "reply_count": 1,
+      "reply_to_post_number": 6,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 86,
+      "readers_count": 85,
+      "score": 22,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "Rajagopalan Vaidyanathan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 16751,
+        "username": "22f3002925",
+        "name": "sandeepkumar sudhakar surkute",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21163,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/7",
+      "user_cakedate": "2023-06-24",
+      "user_birthdate": "1904-06-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665950,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-08-20T04:30:50.267Z",
+      "cooked": "<p>A few clarifications:</p>\n<ul>\n<li>There will be no change in the question’s format – if you want to skip the Motivation section, you can scroll the <code>batcat</code> output using your Arrow keys, or <code>j</code> and <code>k</code> vim keys. You can also use <code>d</code> to go down one page at a time, or <code>G</code> to go to the end of the page.</li>\n<li>There are no rendering issues – the math is typeset using <span class=\"math\">\\LaTeX</span> and you see the code for that. <code>batcat</code> does not render <span class=\"math\">\\LaTeX</span> by itself, so it remains in the source-code format. Given you have done <code>ma1001</code>, <code>ma1002</code>, <code>ma1003</code>, and <code>ma1004</code> courses in foundation level, and have been using Discourse from that time, it is expected of you to know to parse basic math typesetting in <span class=\"math\">\\LaTeX</span>.</li>\n<li>There should be less throttling in the VM in REOPPE, as we will configure the VMs with a higher resources like the last half.</li>\n<li>Tmux is not set with custom configurations, that can be done by each student as per their liking, since there is no ‘one-good’ configuration. You are taught how to configure it, so that you can tweak it to your liking. You can also use unconfigured tmux, it does not hinder you from using it since navigating between panes and scrolling can still be done using the correct hotkeys. The VM will remain open from 6PM (1hr before questions are released), like the last time. Students are encouraged to login, and configure any configurations (<code>bashrc</code>, <code>tmux.conf</code> etc) that they require.</li>\n<li>Login keys do not have to be re-generated, this has been clarified throughout the term, that once you have an ssh key, you never have to regenerate it, simply upload it wherever it is required.</li>\n<li>You can use two terminals as well, instead of using <code>tmux</code>, I believe this was present in the portal.</li>\n<li>There was an extension of 30 mins, not 15, for the server upgrade which only took 5 mins of downtime, rest was given as a concession, since students would also need time to re-login, and re-type any unsaved code in their editor.</li>\n<li>If you have got <span class=\"math\">\\ge40</span>, you cannot re-attempt the OPPE.</li>\n</ul>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-20T04:30:50.267Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 81,
+      "readers_count": 80,
+      "score": 36,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/8",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666438,
+      "name": "Rajagopalan Vaidyanathan",
+      "username": "22f2000345",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+      "created_at": "2025-08-21T01:30:31.470Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a></p>\n<p>Thx for you email.</p>\n<p>Don’t want to go into your email above but will come back after the reexam.</p>\n<p>Please share the link on the portal for having two terminals</p>\n<p>Regards</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-21T01:30:31.470Z",
+      "reply_count": 0,
+      "reply_to_post_number": 8,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 75,
+      "readers_count": 74,
+      "score": 14.8,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "Rajagopalan Vaidyanathan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21163,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/9",
+      "user_cakedate": "2023-06-24",
+      "user_birthdate": "1904-06-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 667283,
+      "name": "sandeepkumar sudhakar surkute",
+      "username": "22f3002925",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+      "created_at": "2025-08-23T19:03:34.014Z",
+      "cooked": "<p>I was aiming for 80 at least and due to the load next day, I was planning to re-do the OPPE on second slot. But all in vain due to the issues in exam, mis-communication about latest evaluation being the final one for scoring etc.</p>\n<p>Anyways,  all the best for you too !</p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-23T19:03:34.014Z",
+      "reply_count": 0,
+      "reply_to_post_number": 7,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 66,
+      "readers_count": 65,
+      "score": 18,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "sandeepkumar sudhakar surkute",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 21163,
+        "username": "22f2000345",
+        "name": "Rajagopalan Vaidyanathan",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16751,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/10",
+      "user_cakedate": "2023-02-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 667345,
+      "name": "Yash Raj",
+      "username": "23f2004827",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004827/{size}/122726_2.png",
+      "created_at": "2025-08-24T05:33:49.623Z",
+      "cooked": "<p>This is true , I have also mailed at night only regarding this issue , in last oppe on 16th August also same issue was happening but that time they provided extra time for compensation but this time proctor was not taking any responsibility.   I just want to say I have also solved 1 question successfully in 1 hour because of lagging issue. If I will repeat this this this mistake from your side not mine . If this will happen everytime I will never be able to pass this SC oppe .  I gave pdsa oppe also but everything was fined that time . VM terminal has some problem.</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-24T05:33:49.623Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 62,
+      "readers_count": 61,
+      "score": 22.2,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "Yash Raj",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21414,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/11",
+      "user_cakedate": "2023-09-17",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 667362,
+      "name": "SHAHZADA MOON",
+      "username": "23f2002668",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2002668/{size}/66999_2.png",
+      "created_at": "2025-08-24T06:02:50.258Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a></p>\n<p>Good morning sir ! I hope you are doing well.<br>\nWell I want to say that I am not doing well.</p>\n<p>I am also facing same issue. Many times the VM has stopped responding then when I relogin again back, it shows <code>The VM will be accessible before one hour of exam . . .</code>. I have screenshots also which I am attaching. The problem is not that we have faced the issue in Re-OPPE, but the problem is that even after OPPE on 16-August-2025, so many issues occured and then again same issues we faced in Re-OPPE. The mistake in first time can be called as “Mistake” but if same problems and issues occured again and again then it is definitely a blunder which shows that the course team really don’t take the problems seriously. Well, I will easily pass the Re-OPPE but the point is that I could get more marks.</p>\n<p>Now, I also don’t have any hope if the team will handle the same issues in future also for other students and thus, they will also face same issues.</p>\n<p>Image-1</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/e/1/e1e4e70912982ffd4b55ce9159526994f310f862.jpeg\" data-download-href=\"/uploads/short-url/welQPGWX8BoGnR8eyEGdaptEZkC.jpeg?dl=1\" title=\"Screenshot 2025-08-23 at 20.26.50\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/1/e1e4e70912982ffd4b55ce9159526994f310f862_2_690x431.jpeg\" alt=\"Screenshot 2025-08-23 at 20.26.50\" data-base62-sha1=\"welQPGWX8BoGnR8eyEGdaptEZkC\" width=\"690\" height=\"431\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/1/e1e4e70912982ffd4b55ce9159526994f310f862_2_690x431.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/1/e1e4e70912982ffd4b55ce9159526994f310f862_2_1035x646.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/1/e1e4e70912982ffd4b55ce9159526994f310f862_2_1380x862.jpeg 2x\" data-dominant-color=\"040603\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-23 at 20.26.50</span><span class=\"informations\">2880×1800 787 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Image-2</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/9/b/9b34e21b5bc0e438d103780e8e3877da21df3048.jpeg\" data-download-href=\"/uploads/short-url/m91jcyi2aC8OaKACJoqG1Gl5nbq.jpeg?dl=1\" title=\"Screenshot 2025-08-23 at 20.50.17\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/b/9b34e21b5bc0e438d103780e8e3877da21df3048_2_690x431.jpeg\" alt=\"Screenshot 2025-08-23 at 20.50.17\" data-base62-sha1=\"m91jcyi2aC8OaKACJoqG1Gl5nbq\" width=\"690\" height=\"431\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/b/9b34e21b5bc0e438d103780e8e3877da21df3048_2_690x431.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/b/9b34e21b5bc0e438d103780e8e3877da21df3048_2_1035x646.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/b/9b34e21b5bc0e438d103780e8e3877da21df3048_2_1380x862.jpeg 2x\" data-dominant-color=\"020302\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-23 at 20.50.17</span><span class=\"informations\">2880×1800 327 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Thankyou and have a nice day !</p>\n<p>Your sincerely,<br>\nShahzada Moon</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-24T06:02:50.258Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 64,
+      "readers_count": 63,
+      "score": 12.6,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "SHAHZADA MOON",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 19309,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/13",
+      "user_cakedate": "2023-06-08",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 667372,
+      "name": "Rajagopalan Vaidyanathan",
+      "username": "22f2000345",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+      "created_at": "2025-08-24T06:24:25.122Z",
+      "cooked": "<p>Hi <a class=\"mention\" href=\"/u/sayan\">@sayan</a> ,</p>\n<p>Yesterday, I was connected to support after waiting restlessly for 23 minutes. During that time, the Proctor informed me that the issue had been escalated. Unfortunately, the time I lost waiting was precious — I’m confident I could have solved another problem had I been assisted promptly.</p>\n<p>I understand that logging into the wrong VM was considered my mistake, but the refusal to grant additional time felt unfair. Why was the BPT VM even present during the exam when it wasn’t available during our preparation? It caused confusion and cost me valuable time. I was one of the earlier ones to join google meet well ahead of the exam to make sure I do everything I had to and not face an issue like last time - with Tmux, etc.</p>\n<p>Your decision to deny my request for extra time effectively cost me marks! Was it truly my fault that I had to wait 23 minutes to be connected to support? I repeatedly asked the Proctor for help, only to be told to remain quiet because the issue was already escalated. I even requested a few extra minutes to finish the question I was working on — I was close to completing it.</p>\n<p>The support for this course has been mediocre, to say the least. I asked for the portal link mentioned in your post about using two terminal sessions, but received no response. Despite repeated requests to correct grading errors, nothing has been done. You stated that the motivational section at the top of the question would remain unchanged, yet it was altered — and not even acknowledged. If it was a good idea, why not say so?</p>\n<p>You also mentioned a session I should have attended to know which VM to use. But with so many sessions and unclear communication, it’s difficult to know what’s essential and what’s not. The volume of communication itself becomes a source of confusion.</p>\n<p>I will certainly pass this time — I’ve correctly solved three questions. But the 23 minutes I lost could have helped me reach a perfect score. For you, this may be just a job. For students, it’s their career. And for me, it’s even more than that — I’m at the tail end of my career, striving to achieve something I couldn’t during my school and college days. During the first OPPE, it was a VM issue with no proper compensation. This time, it was the wrong VM.</p>\n<p>Please, going forward, take a closer look at the challenges students face. Don’t shift the blame onto us. Improvement begins with acknowledging that there are issues — and then working to fix them.</p>\n<p>Kind regards,<br>\nRajagopalan Vaidyanathan</p>",
+      "post_number": 14,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-24T06:24:25.122Z",
+      "reply_count": 1,
+      "reply_to_post_number": 11,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 57,
+      "readers_count": 56,
+      "score": 21.2,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "Rajagopalan Vaidyanathan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 21414,
+        "username": "23f2004827",
+        "name": "Yash Raj",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004827/{size}/122726_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21163,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/14",
+      "user_cakedate": "2023-06-24",
+      "user_birthdate": "1904-06-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 667671,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-08-25T05:16:19.870Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/22f2000345\">@22f2000345</a></p>\n<p>The support meets are for technical issues faced by the students, not for student-side issues. Just like you there are many students in line for the meet, we cannot possibly admit all at once and be able to address anyone. However, since your issue was a student-side negligence, not any technical issue, it does not warrant any additional time. The NPPE, the 16th Aug OPPE, and this OPPE, all has been conducted on OPPE VM. Further in the Exam Portal Question 2 it has also been clearly mentioned which VM to use, the website for re-uploading the ssh key (if required), and the exact domain of the VM. If a student is not able to follow the instructions given in the exam portal itself, it is not possible to grant an additional time, it would be unfair for the other students who have worked hard to earn their marks.</p>\n<p>Using two terminals being allowed is mentioned in the exam portal question itself, as I mentioned earlier. There is no link for such, it is present in the exam portal.</p>",
+      "post_number": 15,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-25T06:10:25.580Z",
+      "reply_count": 1,
+      "reply_to_post_number": 14,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 46,
+      "readers_count": 45,
+      "score": 19,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 21163,
+        "username": "22f2000345",
+        "name": "Rajagopalan Vaidyanathan",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/15",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 667691,
+      "name": "Yash Raj",
+      "username": "23f2004827",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004827/{size}/122726_2.png",
+      "created_at": "2025-08-25T05:43:48.483Z",
+      "cooked": "<p>I have used 2 terminal , also as I told on 16 August oppe also same problem was there exactly same then why additional time was provided on that day.</p>\n<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> <a class=\"mention\" href=\"/u/subendu\">@Subendu</a></p>",
+      "post_number": 16,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-25T05:43:48.483Z",
+      "reply_count": 2,
+      "reply_to_post_number": 15,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 46,
+      "readers_count": 45,
+      "score": 19,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "Yash Raj",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21414,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/16",
+      "user_cakedate": "2023-09-17",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 667709,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-08-25T06:11:31.588Z",
+      "cooked": "<p>On reOPPE, we have observed no system issues or lag from our side, the resources utilization were well below limits. If you face a lag, please change your network, as it is a client side ISP issue.</p>",
+      "post_number": 17,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-25T06:11:31.588Z",
+      "reply_count": 0,
+      "reply_to_post_number": 16,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 44,
+      "readers_count": 43,
+      "score": 8.6,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 21414,
+        "username": "23f2004827",
+        "name": "Yash Raj",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004827/{size}/122726_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-system-issues/185055/17",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 667715,
+      "name": "Rajagopalan Vaidyanathan",
+      "username": "22f2000345",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/8dc957/{size}.png",
+      "created_at": "2025-08-25T06:21:22.000Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@Sayan</a>,</p>\n<p>In hindsight, I’m truly grateful to God that you didn’t grant my request for extra time.<br>\nHad you done so, any additional marks I earned would have felt like a debt I owed you—and that would have weighed heavily on me.<br>\nBut now, whatever I score is entirely my own, achieved not because of you, but in spite of you — with 23 less minutes, no less!<br>\nAnd honestly, that feels far more rewarding than a perfect score ever could.</p>",
+      "post_number": 18,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-25T06:21:35.177Z",
+      "reply_count": 0,
+      "reply_to_post_number": 16,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 43,
+      "readers_count": 42,
+      "score": 13.4,
+      "yours": false,
+      "topic_id": 185055,
+      "topic_slug": "oppe-system-issues",
+      "display_username": "Rajagopalan Vaidyanathan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 21414,
+        "username": "23f2004827",
+        "name": "Yash Raj",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004827/{size}/122726_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21163,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "via_email": true,
+      "post_url": "/t/oppe-system-issues/185055/18",
+      "user_cakedate": "2023-06-24",
+      "user_birthdate": "1904-06-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

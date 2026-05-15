@@ -1,0 +1,5447 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 515112,
+        "name": "Rohan Bhalla ",
+        "username": "Rohan72",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png",
+        "created_at": "2024-08-18T04:50:01.738Z",
+        "cooked": "<p>For the symbolic link, I wrote<br>\n<code>ln -s scripts/deploy.sh logs/deploy_log</code><br>\nAnd it kept giving error “deploy_log points to scripts/deploy.sh instead of ~/workspace/scripts/deploy.sh”. What have I done wrong ? I tried and tested everything in the command and yet it kept giving the same error.</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2025-07-17T20:36:16.046Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 141,
+        "readers_count": 140,
+        "score": 43.2,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Rohan Bhalla ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 3,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 3893,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/1",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 515116,
+        "name": "Ansh bansal",
+        "username": "23f2004752",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004752/{size}/68296_2.png",
+        "created_at": "2024-08-18T04:51:20.417Z",
+        "cooked": "<p>same problem for me as well</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T04:51:20.417Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 140,
+        "readers_count": 139,
+        "score": 48,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Ansh bansal",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21948,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/2",
+        "user_cakedate": "2023-09-18",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515119,
+        "name": "SHIVADHARSHAN S",
+        "username": "22f3001421",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+        "created_at": "2024-08-18T04:54:48.326Z",
+        "cooked": "<p>This happened in BPT and the only way to fix was to give the full address</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T04:54:48.326Z",
+        "reply_count": 2,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 134,
+        "readers_count": 133,
+        "score": 36.8,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "SHIVADHARSHAN S",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 21948,
+          "username": "23f2004752",
+          "name": "Ansh bansal",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004752/{size}/68296_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16469,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/3",
+        "user_cakedate": "2023-01-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515122,
+        "name": "Rohan Bhalla ",
+        "username": "Rohan72",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png",
+        "created_at": "2024-08-18T04:55:38.534Z",
+        "cooked": "<p>I gave the full address as well, still didn’t work</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T04:55:38.534Z",
+        "reply_count": 1,
+        "reply_to_post_number": 3,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 130,
+        "readers_count": 129,
+        "score": 31,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Rohan Bhalla ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 16469,
+          "username": "22f3001421",
+          "name": "SHIVADHARSHAN S",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 3893,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/4",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515123,
+        "name": "Varun Kumar",
+        "username": "22f1000734",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000734/{size}/161030_2.png",
+        "created_at": "2024-08-18T04:55:54.483Z",
+        "cooked": "<p>We can use -r to give relative link?</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T04:55:54.483Z",
+        "reply_count": 1,
+        "reply_to_post_number": 3,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 128,
+        "readers_count": 127,
+        "score": 30.6,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Varun Kumar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 16469,
+          "username": "22f3001421",
+          "name": "SHIVADHARSHAN S",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 12077,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/5",
+        "user_cakedate": "2022-04-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515126,
+        "name": "SHIVADHARSHAN S",
+        "username": "22f3001421",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+        "created_at": "2024-08-18T04:57:36.108Z",
+        "cooked": "<p>Yeah right that works too, didn’t occur to me.</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T04:57:36.108Z",
+        "reply_count": 0,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 127,
+        "readers_count": 126,
+        "score": 25.4,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "SHIVADHARSHAN S",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 12077,
+          "username": "22f1000734",
+          "name": "Varun Kumar",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000734/{size}/161030_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16469,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/6",
+        "user_cakedate": "2023-01-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515139,
+        "name": "Hari Venkataraman",
+        "username": "22f2001398",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png",
+        "created_at": "2024-08-18T05:04:53.555Z",
+        "cooked": "<p>Once the files and directories have been created, You have to remove the directories  and files created so that the new changes in your script will take place. If you run the script again without removing the original files and directories, the files already exist so changes will not be made.</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T05:05:23.261Z",
+        "reply_count": 1,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 125,
+        "readers_count": 124,
+        "score": 30,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Hari Venkataraman",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 3893,
+          "username": "Rohan72",
+          "name": "Rohan Bhalla ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 15047,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/7",
+        "user_cakedate": "2022-09-11",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515141,
+        "name": "Rohan Bhalla ",
+        "username": "Rohan72",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png",
+        "created_at": "2024-08-18T05:06:14.916Z",
+        "cooked": "<p>No no, it would just not run the code again. It would say already exists and FAIL. That’s not the problem I faced.</p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T05:07:13.070Z",
+        "reply_count": 1,
+        "reply_to_post_number": 7,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 120,
+        "readers_count": 119,
+        "score": 29,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Rohan Bhalla ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 15047,
+          "username": "22f2001398",
+          "name": "Hari Venkataraman",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 3893,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/8",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515149,
+        "name": "Abhijeet Kumar Garg",
+        "username": "Abhijeet21",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/abhijeet21/{size}/215_2.png",
+        "created_at": "2024-08-18T05:17:02.770Z",
+        "cooked": "<p>i was also getting the same issue</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T05:17:02.770Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 116,
+        "readers_count": 115,
+        "score": 23.2,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Abhijeet Kumar Garg",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 4507,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/9",
+        "user_cakedate": "2021-05-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515150,
+        "name": "Mayank Poddar",
+        "username": "23f3004197",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3004197/{size}/158755_2.png",
+        "created_at": "2024-08-18T05:17:02.933Z",
+        "cooked": "<p>Same here<br>\nI tried giving relative path, full path using other methods but it didn’t work</p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T05:17:02.933Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 115,
+        "readers_count": 114,
+        "score": 23,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Mayank Poddar",
+        "primary_group_name": "ds-students",
+        "flair_name": "moderator_CourseTA",
+        "flair_url": "handshake-angle",
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 232,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 24953,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/10",
+        "user_cakedate": "2024-01-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515151,
+        "name": "Abhijeet Kumar Garg",
+        "username": "Abhijeet21",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/abhijeet21/{size}/215_2.png",
+        "created_at": "2024-08-18T05:17:26.679Z",
+        "cooked": "<p>it was showing same for me also</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T05:17:26.679Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 116,
+        "readers_count": 115,
+        "score": 23.2,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Abhijeet Kumar Garg",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 4507,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/11",
+        "user_cakedate": "2021-05-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515154,
+        "name": "Dibakash Baruah",
+        "username": "Dibakash",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/d/22d042/{size}.png",
+        "created_at": "2024-08-18T05:18:56.429Z",
+        "cooked": "<p>I used $PWD variable like $PWD/workstaion/foo<br>\npassed all the test cases</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T05:18:56.429Z",
+        "reply_count": 2,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 112,
+        "readers_count": 111,
+        "score": 62.4,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Dibakash Baruah",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 12462,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/12",
+        "user_cakedate": "2022-05-01",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515160,
+        "name": "Rohan Bhalla ",
+        "username": "Rohan72",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png",
+        "created_at": "2024-08-18T05:21:31.180Z",
+        "cooked": "<p>That’s a solution, but the initial code shouldn’t give false output in the first place. <code>ln -s a b</code> is a correct statement in all regards</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T05:21:31.180Z",
+        "reply_count": 1,
+        "reply_to_post_number": 12,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 112,
+        "readers_count": 111,
+        "score": 47.4,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Rohan Bhalla ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 12462,
+          "username": "Dibakash",
+          "name": "Dibakash Baruah",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/d/22d042/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 3893,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/13",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515163,
+        "name": "Mayank Poddar",
+        "username": "23f3004197",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3004197/{size}/158755_2.png",
+        "created_at": "2024-08-18T05:25:12.052Z",
+        "cooked": "<p>There may be more than 1 way for a question to solve<br>\nThis question had many ways<br>\nBut there was a particular solution as the only solution</p>",
+        "post_number": 14,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T05:25:12.052Z",
+        "reply_count": 0,
+        "reply_to_post_number": 12,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 109,
+        "readers_count": 108,
+        "score": 36.8,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Mayank Poddar",
+        "primary_group_name": "ds-students",
+        "flair_name": "moderator_CourseTA",
+        "flair_url": "handshake-angle",
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 232,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 12462,
+          "username": "Dibakash",
+          "name": "Dibakash Baruah",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/d/22d042/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 24953,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/14",
+        "user_cakedate": "2024-01-18",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515167,
+        "name": "Hari Venkataraman",
+        "username": "22f2001398",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png",
+        "created_at": "2024-08-18T05:27:42.173Z",
+        "cooked": "<p>I also received the error. It told me that the soft link is pointing somewhere else instead to the full path. I copied the full path, then removed the directories (workspace, scripts, logs, etc.) manually and then pasted the full path after the ln -s. I ran again and it worked.</p>",
+        "post_number": 15,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T05:27:42.173Z",
+        "reply_count": 3,
+        "reply_to_post_number": 13,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 102,
+        "readers_count": 101,
+        "score": 50.4,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Hari Venkataraman",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 3893,
+          "username": "Rohan72",
+          "name": "Rohan Bhalla ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 15047,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/15",
+        "user_cakedate": "2022-09-11",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515172,
+        "name": "Mayank Poddar",
+        "username": "23f3004197",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3004197/{size}/158755_2.png",
+        "created_at": "2024-08-18T05:32:07.503Z",
+        "cooked": "<p>They didn’t taught this? Did they?<br>\nWe just had assignments, BPT etc. with visible test cases and evaluation file in the previous VM<br>\nWe were not familiar with today’s VM</p>",
+        "post_number": 16,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T05:32:07.503Z",
+        "reply_count": 0,
+        "reply_to_post_number": 15,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 97,
+        "readers_count": 96,
+        "score": 19.4,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Mayank Poddar",
+        "primary_group_name": "ds-students",
+        "flair_name": "moderator_CourseTA",
+        "flair_url": "handshake-angle",
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 232,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 15047,
+          "username": "22f2001398",
+          "name": "Hari Venkataraman",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 24953,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/16",
+        "user_cakedate": "2024-01-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515174,
+        "name": "Rohan Bhalla ",
+        "username": "Rohan72",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png",
+        "created_at": "2024-08-18T05:32:42.478Z",
+        "cooked": "<p>I was getting this problem to start with <img src=\"https://emoji.discourse-cdn.com/google/sweat_smile.png?v=12\" title=\":sweat_smile:\" class=\"emoji\" alt=\":sweat_smile:\" loading=\"lazy\" width=\"20\" height=\"20\"> the very first attempt itself</p>",
+        "post_number": 17,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T05:32:42.478Z",
+        "reply_count": 0,
+        "reply_to_post_number": 15,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 93,
+        "readers_count": 92,
+        "score": 18.6,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Rohan Bhalla ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 15047,
+          "username": "22f2001398",
+          "name": "Hari Venkataraman",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 3893,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/17",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515176,
+        "name": "Manan Tilwani",
+        "username": "21f200858_MananT",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f200858_manant/{size}/1103_2.png",
+        "created_at": "2024-08-18T05:34:02.372Z",
+        "cooked": "<p>Can u share the exact code for soft link?</p>",
+        "post_number": 18,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T05:34:02.372Z",
+        "reply_count": 1,
+        "reply_to_post_number": 15,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 94,
+        "readers_count": 93,
+        "score": 23.8,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Manan Tilwani",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 15047,
+          "username": "22f2001398",
+          "name": "Hari Venkataraman",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6234,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/18",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-09-01",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515183,
+        "name": "Hari Venkataraman",
+        "username": "22f2001398",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png",
+        "created_at": "2024-08-18T05:58:28.351Z",
+        "cooked": "<p>I don’t have the exact code as I’m unable to log back into the VM of OPPE. But it was in the format of:</p>\n<p>ln -s [deploy.sh full path]  [workspace deploy_log relative path]</p>",
+        "post_number": 19,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T05:59:07.183Z",
+        "reply_count": 1,
+        "reply_to_post_number": 18,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 94,
+        "readers_count": 93,
+        "score": 23.8,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Hari Venkataraman",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 6234,
+          "username": "21f200858_MananT",
+          "name": "Manan Tilwani",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f200858_manant/{size}/1103_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 15047,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/19",
+        "user_cakedate": "2022-09-11",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 515187,
+        "name": "Manan Tilwani",
+        "username": "21f200858_MananT",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f200858_manant/{size}/1103_2.png",
+        "created_at": "2024-08-18T06:04:10.145Z",
+        "cooked": "<p>What does full path here means? Doesn’t workspace/scripts/deploy.sh comes under full path or \"$PWD/workspace/scripts/deploy.sh come under full path? workspace/logs/deploy_log is a correct path right? <a class=\"mention\" href=\"/u/22f2001398\">@22f2001398</a></p>",
+        "post_number": 20,
+        "post_type": 1,
+        "posts_count": 32,
+        "updated_at": "2024-08-18T06:04:10.145Z",
+        "reply_count": 1,
+        "reply_to_post_number": 19,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 93,
+        "readers_count": 92,
+        "score": 38.6,
+        "yours": false,
+        "topic_id": 143239,
+        "topic_slug": "oppe-question-1",
+        "display_username": "Manan Tilwani",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 15047,
+          "username": "22f2001398",
+          "name": "Hari Venkataraman",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6234,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/oppe-question-1/143239/20",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-09-01",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      515112,
+      515116,
+      515119,
+      515122,
+      515123,
+      515126,
+      515139,
+      515141,
+      515149,
+      515150,
+      515151,
+      515154,
+      515160,
+      515163,
+      515167,
+      515172,
+      515174,
+      515176,
+      515183,
+      515187,
+      515188,
+      515189,
+      515190,
+      515222,
+      515225,
+      515356,
+      515358,
+      515604,
+      515633,
+      515712,
+      516967,
+      516970
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      617
+    ],
+    [
+      26,
+      616
+    ],
+    [
+      30,
+      615
+    ],
+    [
+      31,
+      613
+    ]
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 206,
+      "name": "oppe",
+      "slug": "oppe"
+    },
+    {
+      "id": 321,
+      "name": "term2-2024",
+      "slug": "term2-2024"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "OPPE: Question 1",
+  "id": 143239,
+  "title": "OPPE: Question 1",
+  "posts_count": 32,
+  "created_at": "2024-08-18T04:50:01.587Z",
+  "views": 251,
+  "reply_count": 22,
+  "like_count": 16,
+  "last_posted_at": "2024-08-22T04:20:39.979Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "oppe-question-1",
+  "category_id": 36,
+  "word_count": 816,
+  "deleted_at": null,
+  "user_id": 3893,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": null,
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_143239",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 32,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 15,
+  "show_read_indicator": false,
+  "thumbnails": null,
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": null,
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 31,
+    "username": "22F3002354",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+    "excerpt": "<p>There was no issue in this question.</p>",
+    "accepter_name": null,
+    "accepter_username": "22F3002354"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 3893,
+        "username": "Rohan72",
+        "name": "Rohan Bhalla ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png",
+        "post_count": 5,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 15047,
+        "username": "22f2001398",
+        "name": "Hari Venkataraman",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png",
+        "post_count": 5,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 24953,
+        "username": "23f3004197",
+        "name": "Mayank Poddar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3004197/{size}/158755_2.png",
+        "post_count": 4,
+        "primary_group_name": "ds-students",
+        "flair_name": "moderator_CourseTA",
+        "flair_url": "handshake-angle",
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 232,
+        "trust_level": 1
+      },
+      {
+        "id": 4507,
+        "username": "Abhijeet21",
+        "name": "Abhijeet Kumar Garg",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/abhijeet21/{size}/215_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 6234,
+        "username": "21f200858_MananT",
+        "name": "Manan Tilwani",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f200858_manant/{size}/1103_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 14150,
+        "username": "22f1001974",
+        "name": "Anant Vikram  Singh ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1001974/{size}/83412_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 8878,
+        "username": "21f3002365",
+        "name": "Sandeep kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3002365/{size}/13748_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 13623,
+        "username": "22f1000684",
+        "name": "Roshan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000684/{size}/13879_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 16469,
+        "username": "22f3001421",
+        "name": "SHIVADHARSHAN S",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 8906,
+        "username": "21f3003042",
+        "name": "21f3003042",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003042/{size}/13758_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 21948,
+        "username": "23f2004752",
+        "name": "Ansh bansal",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004752/{size}/68296_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 17065,
+        "username": "22F3002354",
+        "name": "Yash Rastogi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 12462,
+        "username": "Dibakash",
+        "name": "Dibakash Baruah",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/d/22d042/{size}.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 12077,
+        "username": "22f1000734",
+        "name": "Varun Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000734/{size}/161030_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 17407,
+        "username": "22f3003152",
+        "name": "Akash Maurya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3003152/{size}/80588_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 3893,
+      "username": "Rohan72",
+      "name": "Rohan Bhalla ",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png"
+    },
+    "last_poster": {
+      "id": 14150,
+      "username": "22f1001974",
+      "name": "Anant Vikram  Singh ",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1001974/{size}/83412_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 515112,
+      "name": "Rohan Bhalla ",
+      "username": "Rohan72",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png",
+      "created_at": "2024-08-18T04:50:01.738Z",
+      "cooked": "<p>For the symbolic link, I wrote<br>\n<code>ln -s scripts/deploy.sh logs/deploy_log</code><br>\nAnd it kept giving error “deploy_log points to scripts/deploy.sh instead of ~/workspace/scripts/deploy.sh”. What have I done wrong ? I tried and tested everything in the command and yet it kept giving the same error.</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2025-07-17T20:36:16.046Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 141,
+      "readers_count": 140,
+      "score": 43.2,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Rohan Bhalla ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 3893,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/1",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 515116,
+      "name": "Ansh bansal",
+      "username": "23f2004752",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004752/{size}/68296_2.png",
+      "created_at": "2024-08-18T04:51:20.417Z",
+      "cooked": "<p>same problem for me as well</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T04:51:20.417Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 140,
+      "readers_count": 139,
+      "score": 48,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Ansh bansal",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21948,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/2",
+      "user_cakedate": "2023-09-18",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515119,
+      "name": "SHIVADHARSHAN S",
+      "username": "22f3001421",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+      "created_at": "2024-08-18T04:54:48.326Z",
+      "cooked": "<p>This happened in BPT and the only way to fix was to give the full address</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T04:54:48.326Z",
+      "reply_count": 2,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 134,
+      "readers_count": 133,
+      "score": 36.8,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "SHIVADHARSHAN S",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 21948,
+        "username": "23f2004752",
+        "name": "Ansh bansal",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004752/{size}/68296_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16469,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/3",
+      "user_cakedate": "2023-01-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515122,
+      "name": "Rohan Bhalla ",
+      "username": "Rohan72",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png",
+      "created_at": "2024-08-18T04:55:38.534Z",
+      "cooked": "<p>I gave the full address as well, still didn’t work</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T04:55:38.534Z",
+      "reply_count": 1,
+      "reply_to_post_number": 3,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 130,
+      "readers_count": 129,
+      "score": 31,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Rohan Bhalla ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 16469,
+        "username": "22f3001421",
+        "name": "SHIVADHARSHAN S",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 3893,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/4",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515123,
+      "name": "Varun Kumar",
+      "username": "22f1000734",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000734/{size}/161030_2.png",
+      "created_at": "2024-08-18T04:55:54.483Z",
+      "cooked": "<p>We can use -r to give relative link?</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T04:55:54.483Z",
+      "reply_count": 1,
+      "reply_to_post_number": 3,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 128,
+      "readers_count": 127,
+      "score": 30.6,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Varun Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 16469,
+        "username": "22f3001421",
+        "name": "SHIVADHARSHAN S",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 12077,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/5",
+      "user_cakedate": "2022-04-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515126,
+      "name": "SHIVADHARSHAN S",
+      "username": "22f3001421",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001421/{size}/119347_2.png",
+      "created_at": "2024-08-18T04:57:36.108Z",
+      "cooked": "<p>Yeah right that works too, didn’t occur to me.</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T04:57:36.108Z",
+      "reply_count": 0,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 127,
+      "readers_count": 126,
+      "score": 25.4,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "SHIVADHARSHAN S",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 12077,
+        "username": "22f1000734",
+        "name": "Varun Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000734/{size}/161030_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16469,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/6",
+      "user_cakedate": "2023-01-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515139,
+      "name": "Hari Venkataraman",
+      "username": "22f2001398",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png",
+      "created_at": "2024-08-18T05:04:53.555Z",
+      "cooked": "<p>Once the files and directories have been created, You have to remove the directories  and files created so that the new changes in your script will take place. If you run the script again without removing the original files and directories, the files already exist so changes will not be made.</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T05:05:23.261Z",
+      "reply_count": 1,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 125,
+      "readers_count": 124,
+      "score": 30,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Hari Venkataraman",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 3893,
+        "username": "Rohan72",
+        "name": "Rohan Bhalla ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 15047,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/7",
+      "user_cakedate": "2022-09-11",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515141,
+      "name": "Rohan Bhalla ",
+      "username": "Rohan72",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png",
+      "created_at": "2024-08-18T05:06:14.916Z",
+      "cooked": "<p>No no, it would just not run the code again. It would say already exists and FAIL. That’s not the problem I faced.</p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T05:07:13.070Z",
+      "reply_count": 1,
+      "reply_to_post_number": 7,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 120,
+      "readers_count": 119,
+      "score": 29,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Rohan Bhalla ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 15047,
+        "username": "22f2001398",
+        "name": "Hari Venkataraman",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 3893,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/8",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515149,
+      "name": "Abhijeet Kumar Garg",
+      "username": "Abhijeet21",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/abhijeet21/{size}/215_2.png",
+      "created_at": "2024-08-18T05:17:02.770Z",
+      "cooked": "<p>i was also getting the same issue</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T05:17:02.770Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 116,
+      "readers_count": 115,
+      "score": 23.2,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Abhijeet Kumar Garg",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 4507,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/9",
+      "user_cakedate": "2021-05-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515150,
+      "name": "Mayank Poddar",
+      "username": "23f3004197",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3004197/{size}/158755_2.png",
+      "created_at": "2024-08-18T05:17:02.933Z",
+      "cooked": "<p>Same here<br>\nI tried giving relative path, full path using other methods but it didn’t work</p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T05:17:02.933Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 115,
+      "readers_count": 114,
+      "score": 23,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Mayank Poddar",
+      "primary_group_name": "ds-students",
+      "flair_name": "moderator_CourseTA",
+      "flair_url": "handshake-angle",
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 232,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 24953,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/10",
+      "user_cakedate": "2024-01-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515151,
+      "name": "Abhijeet Kumar Garg",
+      "username": "Abhijeet21",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/abhijeet21/{size}/215_2.png",
+      "created_at": "2024-08-18T05:17:26.679Z",
+      "cooked": "<p>it was showing same for me also</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T05:17:26.679Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 116,
+      "readers_count": 115,
+      "score": 23.2,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Abhijeet Kumar Garg",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 4507,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/11",
+      "user_cakedate": "2021-05-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515154,
+      "name": "Dibakash Baruah",
+      "username": "Dibakash",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/d/22d042/{size}.png",
+      "created_at": "2024-08-18T05:18:56.429Z",
+      "cooked": "<p>I used $PWD variable like $PWD/workstaion/foo<br>\npassed all the test cases</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T05:18:56.429Z",
+      "reply_count": 2,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 112,
+      "readers_count": 111,
+      "score": 62.4,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Dibakash Baruah",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 12462,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/12",
+      "user_cakedate": "2022-05-01",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515160,
+      "name": "Rohan Bhalla ",
+      "username": "Rohan72",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png",
+      "created_at": "2024-08-18T05:21:31.180Z",
+      "cooked": "<p>That’s a solution, but the initial code shouldn’t give false output in the first place. <code>ln -s a b</code> is a correct statement in all regards</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T05:21:31.180Z",
+      "reply_count": 1,
+      "reply_to_post_number": 12,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 112,
+      "readers_count": 111,
+      "score": 47.4,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Rohan Bhalla ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 12462,
+        "username": "Dibakash",
+        "name": "Dibakash Baruah",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/d/22d042/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 3893,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/13",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515163,
+      "name": "Mayank Poddar",
+      "username": "23f3004197",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3004197/{size}/158755_2.png",
+      "created_at": "2024-08-18T05:25:12.052Z",
+      "cooked": "<p>There may be more than 1 way for a question to solve<br>\nThis question had many ways<br>\nBut there was a particular solution as the only solution</p>",
+      "post_number": 14,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T05:25:12.052Z",
+      "reply_count": 0,
+      "reply_to_post_number": 12,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 109,
+      "readers_count": 108,
+      "score": 36.8,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Mayank Poddar",
+      "primary_group_name": "ds-students",
+      "flair_name": "moderator_CourseTA",
+      "flair_url": "handshake-angle",
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 232,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 12462,
+        "username": "Dibakash",
+        "name": "Dibakash Baruah",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/d/22d042/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 24953,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/14",
+      "user_cakedate": "2024-01-18",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515167,
+      "name": "Hari Venkataraman",
+      "username": "22f2001398",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png",
+      "created_at": "2024-08-18T05:27:42.173Z",
+      "cooked": "<p>I also received the error. It told me that the soft link is pointing somewhere else instead to the full path. I copied the full path, then removed the directories (workspace, scripts, logs, etc.) manually and then pasted the full path after the ln -s. I ran again and it worked.</p>",
+      "post_number": 15,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T05:27:42.173Z",
+      "reply_count": 3,
+      "reply_to_post_number": 13,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 102,
+      "readers_count": 101,
+      "score": 50.4,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Hari Venkataraman",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 3893,
+        "username": "Rohan72",
+        "name": "Rohan Bhalla ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 15047,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/15",
+      "user_cakedate": "2022-09-11",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515172,
+      "name": "Mayank Poddar",
+      "username": "23f3004197",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3004197/{size}/158755_2.png",
+      "created_at": "2024-08-18T05:32:07.503Z",
+      "cooked": "<p>They didn’t taught this? Did they?<br>\nWe just had assignments, BPT etc. with visible test cases and evaluation file in the previous VM<br>\nWe were not familiar with today’s VM</p>",
+      "post_number": 16,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T05:32:07.503Z",
+      "reply_count": 0,
+      "reply_to_post_number": 15,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 97,
+      "readers_count": 96,
+      "score": 19.4,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Mayank Poddar",
+      "primary_group_name": "ds-students",
+      "flair_name": "moderator_CourseTA",
+      "flair_url": "handshake-angle",
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 232,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 15047,
+        "username": "22f2001398",
+        "name": "Hari Venkataraman",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 24953,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/16",
+      "user_cakedate": "2024-01-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515174,
+      "name": "Rohan Bhalla ",
+      "username": "Rohan72",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png",
+      "created_at": "2024-08-18T05:32:42.478Z",
+      "cooked": "<p>I was getting this problem to start with <img src=\"https://emoji.discourse-cdn.com/google/sweat_smile.png?v=12\" title=\":sweat_smile:\" class=\"emoji\" alt=\":sweat_smile:\" loading=\"lazy\" width=\"20\" height=\"20\"> the very first attempt itself</p>",
+      "post_number": 17,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T05:32:42.478Z",
+      "reply_count": 0,
+      "reply_to_post_number": 15,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 93,
+      "readers_count": 92,
+      "score": 18.6,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Rohan Bhalla ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 15047,
+        "username": "22f2001398",
+        "name": "Hari Venkataraman",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 3893,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/17",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515176,
+      "name": "Manan Tilwani",
+      "username": "21f200858_MananT",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f200858_manant/{size}/1103_2.png",
+      "created_at": "2024-08-18T05:34:02.372Z",
+      "cooked": "<p>Can u share the exact code for soft link?</p>",
+      "post_number": 18,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T05:34:02.372Z",
+      "reply_count": 1,
+      "reply_to_post_number": 15,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 94,
+      "readers_count": 93,
+      "score": 23.8,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Manan Tilwani",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 15047,
+        "username": "22f2001398",
+        "name": "Hari Venkataraman",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6234,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/18",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-09-01",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515183,
+      "name": "Hari Venkataraman",
+      "username": "22f2001398",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png",
+      "created_at": "2024-08-18T05:58:28.351Z",
+      "cooked": "<p>I don’t have the exact code as I’m unable to log back into the VM of OPPE. But it was in the format of:</p>\n<p>ln -s [deploy.sh full path]  [workspace deploy_log relative path]</p>",
+      "post_number": 19,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T05:59:07.183Z",
+      "reply_count": 1,
+      "reply_to_post_number": 18,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 94,
+      "readers_count": 93,
+      "score": 23.8,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Hari Venkataraman",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 6234,
+        "username": "21f200858_MananT",
+        "name": "Manan Tilwani",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f200858_manant/{size}/1103_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 15047,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/19",
+      "user_cakedate": "2022-09-11",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515187,
+      "name": "Manan Tilwani",
+      "username": "21f200858_MananT",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f200858_manant/{size}/1103_2.png",
+      "created_at": "2024-08-18T06:04:10.145Z",
+      "cooked": "<p>What does full path here means? Doesn’t workspace/scripts/deploy.sh comes under full path or \"$PWD/workspace/scripts/deploy.sh come under full path? workspace/logs/deploy_log is a correct path right? <a class=\"mention\" href=\"/u/22f2001398\">@22f2001398</a></p>",
+      "post_number": 20,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T06:04:10.145Z",
+      "reply_count": 1,
+      "reply_to_post_number": 19,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 93,
+      "readers_count": 92,
+      "score": 38.6,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Manan Tilwani",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 15047,
+        "username": "22f2001398",
+        "name": "Hari Venkataraman",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6234,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/20",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-09-01",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515188,
+      "name": "Hari Venkataraman",
+      "username": "22f2001398",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png",
+      "created_at": "2024-08-18T06:06:55.358Z",
+      "cooked": "<p>it would be like /home/rollno/se2001/oppeproblem/workspace/scripts/deploy.sh or something along the lines of that.</p>",
+      "post_number": 21,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T06:07:10.388Z",
+      "reply_count": 1,
+      "reply_to_post_number": 20,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 91,
+      "readers_count": 90,
+      "score": 38.2,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Hari Venkataraman",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 6234,
+        "username": "21f200858_MananT",
+        "name": "Manan Tilwani",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f200858_manant/{size}/1103_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 15047,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/21",
+      "user_cakedate": "2022-09-11",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515189,
+      "name": "Mayank Poddar",
+      "username": "23f3004197",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3004197/{size}/158755_2.png",
+      "created_at": "2024-08-18T06:09:49.831Z",
+      "cooked": "<p>There is not other way except that using $PWD<br>\n/home/rollno/foo/bar This should also work but won’t work</p>",
+      "post_number": 22,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T06:10:43.752Z",
+      "reply_count": 1,
+      "reply_to_post_number": 21,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 90,
+      "readers_count": 89,
+      "score": 23,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Mayank Poddar",
+      "primary_group_name": "ds-students",
+      "flair_name": "moderator_CourseTA",
+      "flair_url": "handshake-angle",
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 232,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 15047,
+        "username": "22f2001398",
+        "name": "Hari Venkataraman",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 24953,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/22",
+      "user_cakedate": "2024-01-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515190,
+      "name": "Hari Venkataraman",
+      "username": "22f2001398",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001398/{size}/19186_2.png",
+      "created_at": "2024-08-18T06:11:12.622Z",
+      "cooked": "<p>It worked for me. Even the error told us that the deploy.sh is pointing to relative path instead of full path and gave the entire full path to us. What more confusion is there?</p>",
+      "post_number": 23,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T06:11:12.622Z",
+      "reply_count": 0,
+      "reply_to_post_number": 22,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 88,
+      "readers_count": 87,
+      "score": 32.6,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Hari Venkataraman",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 24953,
+        "username": "23f3004197",
+        "name": "Mayank Poddar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3004197/{size}/158755_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 15047,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/23",
+      "user_cakedate": "2022-09-11",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515222,
+      "name": "Sandeep kumar",
+      "username": "21f3002365",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3002365/{size}/13748_2.png",
+      "created_at": "2024-08-18T07:23:53.011Z",
+      "cooked": "<p>Same for me q1 was giving the error soft link and I waste 1 hour for this question because I was confident that I will pass because I had solved questions like this in bpt</p>",
+      "post_number": 24,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T07:23:53.011Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 82,
+      "readers_count": 81,
+      "score": 16.4,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Sandeep kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8878,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/24",
+      "user_cakedate": "2021-12-31",
+      "user_birthdate": "1904-05-07",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515225,
+      "name": "21f3003042",
+      "username": "21f3003042",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003042/{size}/13758_2.png",
+      "created_at": "2024-08-18T07:28:02.553Z",
+      "cooked": "<p>I did question 1 first then i moved to do some other question, then I came back around 9:16 and my setup_environment.sh was not there in the question directory.<br>\nKindly look into, I have to make the script again and repeat everything.</p>",
+      "post_number": 25,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T07:28:02.553Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 78,
+      "readers_count": 77,
+      "score": 30.6,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "21f3003042",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8906,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/25",
+      "user_cakedate": "2021-12-31",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515356,
+      "name": "Roshan",
+      "username": "22f1000684",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000684/{size}/13879_2.png",
+      "created_at": "2024-08-18T12:09:17.173Z",
+      "cooked": "<p>this was the problem i was facing,how to get rid of this problem?</p>",
+      "post_number": 26,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T12:09:17.173Z",
+      "reply_count": 1,
+      "reply_to_post_number": 8,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 70,
+      "readers_count": 69,
+      "score": 34,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Roshan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 3893,
+        "username": "Rohan72",
+        "name": "Rohan Bhalla ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/rohan72/{size}/327_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13623,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/26",
+      "user_cakedate": "2022-05-12",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515358,
+      "name": "Roshan",
+      "username": "22f1000684",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000684/{size}/13879_2.png",
+      "created_at": "2024-08-18T12:10:39.401Z",
+      "cooked": "<p>can someone please paste the code for setup_environment.sh it will help us in debugging our mistakes.</p>",
+      "post_number": 27,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-18T12:10:39.401Z",
+      "reply_count": 1,
+      "reply_to_post_number": 26,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 71,
+      "readers_count": 70,
+      "score": 49.2,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Roshan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 13623,
+        "username": "22f1000684",
+        "name": "Roshan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000684/{size}/13879_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13623,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/27",
+      "user_cakedate": "2022-05-12",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515604,
+      "name": "Anant Vikram  Singh ",
+      "username": "22f1001974",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1001974/{size}/83412_2.png",
+      "created_at": "2024-08-19T05:45:32.043Z",
+      "cooked": "<p>issues with questsion one should be considered ,everyone has faced issue in 1st questions</p>",
+      "post_number": 28,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-19T05:45:32.043Z",
+      "reply_count": 0,
+      "reply_to_post_number": 27,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 70,
+      "readers_count": 69,
+      "score": 49,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Anant Vikram  Singh ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 13623,
+        "username": "22f1000684",
+        "name": "Roshan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000684/{size}/13879_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14150,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/28",
+      "user_cakedate": "2022-09-02",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515633,
+      "name": "Akash Maurya",
+      "username": "22f3003152",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3003152/{size}/80588_2.png",
+      "created_at": "2024-08-19T07:17:38.613Z",
+      "cooked": "<p>I have got the same problem in the exam but i have solved it in the exam.</p>\n<p>When you create a symbolic link incorrectly and then run the synchronization evaluation (<code>synchro eval</code>), the system will save that incorrect link. To correct this, you need to follow this step:</p>\n<p>step1 .  you have to remove the soft link by running the code on terminal directly (rm workplace/ …/ …) and then run synchro eval again, if you did write the symbolic link correctly in the script.sh this time then it gonna recreate it.</p>\n<p>your code (ln -s workspace/scripts/deploy.sh workspace/logs/deploy_log) is correct but the problem is that you did not remove the wrong symbolic link you have created in statrting.</p>",
+      "post_number": 29,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-19T07:17:38.613Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 70,
+      "readers_count": 69,
+      "score": 24,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Akash Maurya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17407,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/29",
+      "user_cakedate": "2023-06-03",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 515712,
+      "name": "Sandeep kumar",
+      "username": "21f3002365",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3002365/{size}/13748_2.png",
+      "created_at": "2024-08-19T11:42:25.635Z",
+      "cooked": "<p>I didi remove the symbolic link still facing same issues there workspace was present already. And when I was trying to delete that was not able to delete that</p>",
+      "post_number": 30,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-19T11:42:25.635Z",
+      "reply_count": 0,
+      "reply_to_post_number": 29,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 67,
+      "readers_count": 66,
+      "score": 13.4,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Sandeep kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 17407,
+        "username": "22f3003152",
+        "name": "Akash Maurya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3003152/{size}/80588_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8878,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/30",
+      "user_cakedate": "2021-12-31",
+      "user_birthdate": "1904-05-07",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 516967,
+      "name": "Yash Rastogi",
+      "username": "22F3002354",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+      "created_at": "2024-08-22T04:11:38.484Z",
+      "cooked": "<p>There was no issue in this question.</p>",
+      "post_number": 31,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-22T04:11:38.484Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 45,
+      "readers_count": 44,
+      "score": 14,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Yash Rastogi",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17065,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/31",
+      "user_cakedate": "2023-04-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 516970,
+      "name": "Anant Vikram  Singh ",
+      "username": "22f1001974",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1001974/{size}/83412_2.png",
+      "created_at": "2024-08-22T04:20:39.979Z",
+      "cooked": "<p>Thanks for clearing it out after 4 days</p>",
+      "post_number": 32,
+      "post_type": 1,
+      "posts_count": 32,
+      "updated_at": "2024-08-22T04:20:39.979Z",
+      "reply_count": 0,
+      "reply_to_post_number": 31,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 44,
+      "readers_count": 43,
+      "score": 8.8,
+      "yours": false,
+      "topic_id": 143239,
+      "topic_slug": "oppe-question-1",
+      "display_username": "Anant Vikram  Singh ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 17065,
+        "username": "22F3002354",
+        "name": "Yash Rastogi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14150,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/oppe-question-1/143239/32",
+      "user_cakedate": "2022-09-02",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

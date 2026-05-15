@@ -1,0 +1,4382 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 728721,
+        "name": "Mrinal Chandra",
+        "username": "Mrinal",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+        "created_at": "2026-02-23T05:18:56.850Z",
+        "cooked": "<p>Hi,</p>\n<p>could you please help me setup my vm account? I have not received my ssh key yet.</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:53:46.605Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 42,
+        "readers_count": 41,
+        "score": 13.4,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Mrinal Chandra",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/query-regarding-vm-ssh-key-and-setup-for-sc-re-oppe/196360/9",
+            "internal": true,
+            "reflection": true,
+            "title": "Query Regarding VM SSH Key and Setup for SC Re-Oppe",
+            "clicks": 0
+          },
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/issue-with-bpt-access-for-repeat-oppe-system-commands-course/197222/5",
+            "internal": true,
+            "reflection": true,
+            "title": "Issue with BPT Access for Repeat OPPE – System Commands Course",
+            "clicks": 0
+          }
+        ],
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 2073,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/1",
+        "user_cakedate": "2021-04-29",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 728723,
+        "name": "Gurkirat Singh",
+        "username": "Gurkirat",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+        "created_at": "2026-02-23T05:20:57.224Z",
+        "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/1/5138d0cd17afa1c41abcdc241fecb8897659d21f.jpeg\" data-download-href=\"/uploads/short-url/bAwoVpgCyRfYvwWXWO1hFcYWpTV.jpeg?dl=1\" title=\"Screenshot 2026-02-23 105116\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/1/5138d0cd17afa1c41abcdc241fecb8897659d21f_2_690x286.jpeg\" alt=\"Screenshot 2026-02-23 105116\" data-base62-sha1=\"bAwoVpgCyRfYvwWXWO1hFcYWpTV\" width=\"690\" height=\"286\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/1/5138d0cd17afa1c41abcdc241fecb8897659d21f_2_690x286.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/1/5138d0cd17afa1c41abcdc241fecb8897659d21f_2_1035x429.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/1/5138d0cd17afa1c41abcdc241fecb8897659d21f_2_1380x572.jpeg 2x\" data-dominant-color=\"767374\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2026-02-23 105116</span><span class=\"informations\">1405×583 122 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Watch this vid.</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:53:30.557Z",
+        "reply_count": 1,
+        "reply_to_post_number": 1,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 42,
+        "readers_count": 41,
+        "score": 13.4,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Gurkirat Singh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Know-it-All",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 2073,
+          "username": "Mrinal",
+          "name": "Mrinal Chandra",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 39529,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/2",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 728726,
+        "name": "Mrinal Chandra",
+        "username": "Mrinal",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+        "created_at": "2026-02-23T05:28:32.911Z",
+        "cooked": "<p>Hi, Thanks for the share. But I am having trouble in following the instructions. Could you please clear some doubts related to it?</p>\n<p>Do I need some keys to complete the setup? Could I do it on windows 10?</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:53:30.560Z",
+        "reply_count": 2,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 35,
+        "readers_count": 34,
+        "score": 17,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Mrinal Chandra",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 39529,
+          "username": "Gurkirat",
+          "name": "Gurkirat Singh",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 2073,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/3",
+        "user_cakedate": "2021-04-29",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 728727,
+        "name": "Ishaan Sameer Sawant",
+        "username": "ishanite",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png",
+        "created_at": "2026-02-23T05:31:37.616Z",
+        "cooked": "<p>i think u can do this in powershell cause i am solving all bpts on my windows powershell</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:53:30.563Z",
+        "reply_count": 0,
+        "reply_to_post_number": 3,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 35,
+        "readers_count": 34,
+        "score": 7,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Ishaan Sameer Sawant",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 2073,
+          "username": "Mrinal",
+          "name": "Mrinal Chandra",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 37778,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/4",
+        "user_cakedate": "2024-09-23",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 728728,
+        "name": "Gurkirat Singh",
+        "username": "Gurkirat",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+        "created_at": "2026-02-23T05:32:18.407Z",
+        "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Mrinal\" data-post=\"3\" data-topic=\"197210\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/48/119167_2.png\" class=\"avatar\"> Mrinal:</div>\n<blockquote>\n<p>Do I need some keys to complete the setup?</p>\n</blockquote>\n</aside>\n<p>Yes, in the tutorial vid, they explained how to create it.</p>\n<aside class=\"quote group-ds-students\" data-username=\"Mrinal\" data-post=\"3\" data-topic=\"197210\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/48/119167_2.png\" class=\"avatar\"> Mrinal:</div>\n<blockquote>\n<p>Could I do it on windows 10?</p>\n</blockquote>\n</aside>\n<p>Yes.</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:53:30.565Z",
+        "reply_count": 1,
+        "reply_to_post_number": 3,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 35,
+        "readers_count": 34,
+        "score": 12,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Gurkirat Singh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Know-it-All",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 39529,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/5",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 728729,
+        "name": "Mrinal Chandra",
+        "username": "Mrinal",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+        "created_at": "2026-02-23T05:33:24.487Z",
+        "cooked": "<p>I am not getting the desired result after typing ‘ls’. it says - not recognized as an external or internal command.</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:53:30.568Z",
+        "reply_count": 1,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 34,
+        "readers_count": 33,
+        "score": 11.8,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Mrinal Chandra",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 39529,
+          "username": "Gurkirat",
+          "name": "Gurkirat Singh",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 2073,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/6",
+        "user_cakedate": "2021-04-29",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 728731,
+        "name": "Ishaan Sameer Sawant",
+        "username": "ishanite",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png",
+        "created_at": "2026-02-23T05:34:49.102Z",
+        "cooked": "<p>show me screenshot for it i may be able to solve it</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:53:30.570Z",
+        "reply_count": 0,
+        "reply_to_post_number": 6,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 32,
+        "readers_count": 31,
+        "score": 6.4,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Ishaan Sameer Sawant",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 2073,
+          "username": "Mrinal",
+          "name": "Mrinal Chandra",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 37778,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/7",
+        "user_cakedate": "2024-09-23",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 728736,
+        "name": "Mrinal Chandra",
+        "username": "Mrinal",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+        "created_at": "2026-02-23T05:37:47.545Z",
+        "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/e/2e31e846cebee7b14d6e92b38f734ccac3e6ec01.png\" data-download-href=\"/uploads/short-url/6AET9DiAh7bpGow7QNutbdrBYkh.png?dl=1\" title=\"Screenshot 2026-02-23 110608\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/e/2e31e846cebee7b14d6e92b38f734ccac3e6ec01.png\" alt=\"Screenshot 2026-02-23 110608\" data-base62-sha1=\"6AET9DiAh7bpGow7QNutbdrBYkh\" width=\"690\" height=\"353\" data-dominant-color=\"191919\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2026-02-23 110608</span><span class=\"informations\">956×490 9.92 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:58:47.768Z",
+        "reply_count": 2,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 35,
+        "readers_count": 34,
+        "score": 17,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Mrinal Chandra",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/query-regarding-vm-ssh-key-and-setup-for-sc-re-oppe/196360/16",
+            "internal": true,
+            "reflection": true,
+            "title": "Query Regarding VM SSH Key and Setup for SC Re-Oppe",
+            "clicks": 0
+          }
+        ],
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 2073,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/8",
+        "user_cakedate": "2021-04-29",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 728739,
+        "name": "Ishaan Sameer Sawant",
+        "username": "ishanite",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png",
+        "created_at": "2026-02-23T05:39:45.233Z",
+        "cooked": "<p><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/f/6/f633d4444f5542cee961caf6c76c8523d5485b1f.png\" alt=\"image\" data-base62-sha1=\"z80v4EdyT8E6zr5lAvUeWVzCKt1\" width=\"690\" height=\"89\" data-dominant-color=\"051203\"></p>\n<p>to open vm u need to type ssh and then your roll number following everything same after @</p>\n<p>then try ls</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:58:47.765Z",
+        "reply_count": 1,
+        "reply_to_post_number": 8,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 36,
+        "readers_count": 35,
+        "score": 12.2,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Ishaan Sameer Sawant",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 2073,
+          "username": "Mrinal",
+          "name": "Mrinal Chandra",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 37778,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/9",
+        "user_cakedate": "2024-09-23",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 728740,
+        "name": "Mrinal Chandra",
+        "username": "Mrinal",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+        "created_at": "2026-02-23T05:41:04.799Z",
+        "cooked": "<p>Thank you so much for the response and your help.</p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:58:47.763Z",
+        "reply_count": 1,
+        "reply_to_post_number": 9,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 37,
+        "readers_count": 36,
+        "score": 12.4,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Mrinal Chandra",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 37778,
+          "username": "ishanite",
+          "name": "Ishaan Sameer Sawant",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 2073,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/10",
+        "user_cakedate": "2021-04-29",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 728742,
+        "name": "Ishaan Sameer Sawant",
+        "username": "ishanite",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png",
+        "created_at": "2026-02-23T05:43:45.110Z",
+        "cooked": "<p>are you now able to do it ?</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:58:47.761Z",
+        "reply_count": 1,
+        "reply_to_post_number": 10,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 36,
+        "readers_count": 35,
+        "score": 12.2,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Ishaan Sameer Sawant",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 2073,
+          "username": "Mrinal",
+          "name": "Mrinal Chandra",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 37778,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/11",
+        "user_cakedate": "2024-09-23",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 728743,
+        "name": "Mrinal Chandra",
+        "username": "Mrinal",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+        "created_at": "2026-02-23T05:45:26.661Z",
+        "cooked": "<p>Unfortunately, no. it says ‘couldn’t resolve host name’. I have tried both powershell and terminal.</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:58:47.758Z",
+        "reply_count": 1,
+        "reply_to_post_number": 11,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 35,
+        "readers_count": 34,
+        "score": 12,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Mrinal Chandra",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 37778,
+          "username": "ishanite",
+          "name": "Ishaan Sameer Sawant",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 2073,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/12",
+        "user_cakedate": "2021-04-29",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 728746,
+        "name": "Ishaan Sameer Sawant",
+        "username": "ishanite",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png",
+        "created_at": "2026-02-23T05:52:18.301Z",
+        "cooked": "<p>see your chat section i msg u something</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:58:47.756Z",
+        "reply_count": 0,
+        "reply_to_post_number": 12,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 36,
+        "readers_count": 35,
+        "score": 7.2,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Ishaan Sameer Sawant",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 2073,
+          "username": "Mrinal",
+          "name": "Mrinal Chandra",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 37778,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/13",
+        "user_cakedate": "2024-09-23",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 728906,
+        "name": "Ishan Shishodiya",
+        "username": "22f2001554",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "created_at": "2026-02-23T11:32:35.917Z",
+        "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Mrinal\" data-post=\"6\" data-topic=\"197210\" data-full=\"true\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/48/119167_2.png\" class=\"avatar\"> Mrinal:</div>\n<blockquote>\n<p>I am not getting the desired result after typing ‘ls’. it says - not recognized as an external or internal command.</p>\n</blockquote>\n</aside>\n<p>The command <code>ls</code> is not available on the Windows command prompt. Use PowerShell instead.</p>",
+        "post_number": 14,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:58:47.753Z",
+        "reply_count": 0,
+        "reply_to_post_number": 8,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 33,
+        "readers_count": 32,
+        "score": 6.6,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Ishan Shishodiya",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 2073,
+          "username": "Mrinal",
+          "name": "Mrinal Chandra",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 14366,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/14",
+        "user_cakedate": "2022-09-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 729787,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2026-02-25T15:59:23.152Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/mrinal\">@Mrinal</a> Is your issue resolved?</p>",
+        "post_number": 16,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-02-25T15:59:23.152Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 28,
+        "readers_count": 27,
+        "score": 5.6,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/16",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 732633,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2026-03-02T07:49:34.801Z",
+        "cooked": "<p>Here is the video for the same <a href=\"https://seek.onlinedegree.iitm.ac.in/courses/ns_26t1_se2001?id=53\" class=\"inline-onebox\">Nptel Seekh</a></p>",
+        "post_number": 17,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-03-02T07:49:34.801Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 27,
+        "readers_count": 26,
+        "score": 10.4,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://seek.onlinedegree.iitm.ac.in/courses/ns_26t1_se2001?id=53",
+            "internal": false,
+            "reflection": false,
+            "title": "Nptel Seekh",
+            "clicks": 5
+          }
+        ],
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/17",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 732897,
+        "name": "Mrinal Chandra",
+        "username": "Mrinal",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+        "created_at": "2026-03-03T03:32:59.000Z",
+        "cooked": "<p>Hi Swati,</p>\n<p>I have seen the video but I am still stuck with the issue.</p>\n<p>I am sharing a screenshot to clarify. I will share my steps here:</p>\n<p>I open terminal in windows 10. Give command ssh-keygen, enter, enter, y and enter<br>\nIt gives me a public key in users&gt;ssh. I copy it and paste in the VM link. After that I get the page which I have shared here with you. But after clicking on the link given in the page, I keep receiving the same page again and again. I have repeated the whole process many times.</p>\n<p>Kindly help me with this.</p>\n<p>Thanks,</p>\n<details>\n<summary>\n(attachments)</summary>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/8/287803145609ecaca0566f1c4a3b2484c3c7db51.png\" data-download-href=\"/uploads/short-url/5M0dQLvXfZrwq2juf9b8mYpgOit.png?dl=1\" title=\"Screenshot 2026-03-01 180529.png\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/8/287803145609ecaca0566f1c4a3b2484c3c7db51.png\" alt=\"Screenshot 2026-03-01 180529.png\" data-base62-sha1=\"5M0dQLvXfZrwq2juf9b8mYpgOit\" width=\"690\" height=\"334\" data-dominant-color=\"F5F8F9\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2026-03-01 180529.png</span><span class=\"informations\">1305×632 29.6 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n</details>",
+        "post_number": 18,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-03-03T03:33:19.944Z",
+        "reply_count": 2,
+        "reply_to_post_number": 17,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 23,
+        "readers_count": 22,
+        "score": 14.6,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Mrinal Chandra",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 6563,
+          "username": "21f3000759",
+          "name": "Swati Jain",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 2073,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "via_email": true,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/18",
+        "user_cakedate": "2021-04-29",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 732904,
+        "name": "Ishan Shishodiya",
+        "username": "22f2001554",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "created_at": "2026-03-03T03:59:50.351Z",
+        "cooked": "<p>Just copy the ssh command here <code>ssh 21f1005893@se2001.ds.study.iitm.ac.in</code> and paste and run it in your terminal.</p>",
+        "post_number": 19,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-03-03T03:59:50.351Z",
+        "reply_count": 1,
+        "reply_to_post_number": 18,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 22,
+        "readers_count": 21,
+        "score": 24.4,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Ishan Shishodiya",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 2073,
+          "username": "Mrinal",
+          "name": "Mrinal Chandra",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 14366,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/19",
+        "user_cakedate": "2022-09-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 732965,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2026-03-03T06:36:46.876Z",
+        "cooked": "<p>This is the expected behaviour.</p>",
+        "post_number": 20,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-03-03T06:36:46.876Z",
+        "reply_count": 0,
+        "reply_to_post_number": 18,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 20,
+        "readers_count": 19,
+        "score": 19,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 2073,
+          "username": "Mrinal",
+          "name": "Mrinal Chandra",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/20",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 732973,
+        "name": "Mrinal Chandra",
+        "username": "Mrinal",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+        "created_at": "2026-03-03T07:01:12.000Z",
+        "cooked": "<p>Hi Ishan,</p>\n<p>Thank you so much.</p>\n<p>I have successfully logged into the VM. How do I find the BPTs now? Could you please guide me a little?</p>\n<p>Thanks,</p>",
+        "post_number": 21,
+        "post_type": 1,
+        "posts_count": 22,
+        "updated_at": "2026-03-03T07:01:29.697Z",
+        "reply_count": 1,
+        "reply_to_post_number": 19,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 19,
+        "readers_count": 18,
+        "score": 8.8,
+        "yours": false,
+        "topic_id": 197210,
+        "topic_slug": "issue-logging-in-to-the-vm",
+        "display_username": "Mrinal Chandra",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 14366,
+          "username": "22f2001554",
+          "name": "Ishan Shishodiya",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 2073,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "via_email": true,
+        "post_url": "/t/issue-logging-in-to-the-vm/197210/21",
+        "user_cakedate": "2021-04-29",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      728721,
+      728723,
+      728726,
+      728727,
+      728728,
+      728729,
+      728731,
+      728736,
+      728739,
+      728740,
+      728742,
+      728743,
+      728746,
+      728906,
+      729787,
+      732633,
+      732897,
+      732904,
+      732965,
+      732973,
+      733083,
+      733121
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      63
+    ],
+    [
+      14,
+      62
+    ],
+    [
+      15,
+      60
+    ],
+    [
+      16,
+      56
+    ],
+    [
+      17,
+      55
+    ],
+    [
+      21,
+      54
+    ]
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 365,
+      "name": "term1-2026",
+      "slug": "term1-2026"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Issue logging in to the VM",
+  "id": 197210,
+  "title": "Issue logging in to the VM",
+  "posts_count": 22,
+  "created_at": "2026-02-23T05:18:56.850Z",
+  "views": 66,
+  "reply_count": 6,
+  "like_count": 3,
+  "last_posted_at": "2026-03-03T12:11:22.000Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "issue-logging-in-to-the-vm",
+  "category_id": 36,
+  "word_count": 598,
+  "deleted_at": null,
+  "user_id": 2073,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": null,
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_197210",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 23,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 5,
+  "show_read_indicator": false,
+  "thumbnails": null,
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": null,
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 17,
+    "username": "21f3000759",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+    "excerpt": "<p>Here is the video for the same <a href=\"https://seek.onlinedegree.iitm.ac.in/courses/ns_26t1_se2001?id=53\" class=\"inline-onebox\">Nptel Seekh</a></p>",
+    "accepter_name": null,
+    "accepter_username": "21f3000759"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 2073,
+        "username": "Mrinal",
+        "name": "Mrinal Chandra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+        "post_count": 9,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 37778,
+        "username": "ishanite",
+        "name": "Ishaan Sameer Sawant",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png",
+        "post_count": 5,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 2
+      },
+      {
+        "id": 39529,
+        "username": "Gurkirat",
+        "name": "Gurkirat Singh",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 2073,
+      "username": "Mrinal",
+      "name": "Mrinal Chandra",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+    },
+    "last_poster": {
+      "id": 2073,
+      "username": "Mrinal",
+      "name": "Mrinal Chandra",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+    },
+    "links": [
+      {
+        "url": "https://seek.onlinedegree.iitm.ac.in/courses/ns_26t1_se2001?id=53",
+        "title": "Nptel Seekh",
+        "internal": false,
+        "attachment": false,
+        "reflection": false,
+        "clicks": 5,
+        "user_id": 6563,
+        "domain": "seek.onlinedegree.iitm.ac.in",
+        "root_domain": "iitm.ac.in"
+      }
+    ]
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 728721,
+      "name": "Mrinal Chandra",
+      "username": "Mrinal",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+      "created_at": "2026-02-23T05:18:56.850Z",
+      "cooked": "<p>Hi,</p>\n<p>could you please help me setup my vm account? I have not received my ssh key yet.</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:53:46.605Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 42,
+      "readers_count": 41,
+      "score": 13.4,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Mrinal Chandra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/query-regarding-vm-ssh-key-and-setup-for-sc-re-oppe/196360/9",
+          "internal": true,
+          "reflection": true,
+          "title": "Query Regarding VM SSH Key and Setup for SC Re-Oppe",
+          "clicks": 0
+        },
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/issue-with-bpt-access-for-repeat-oppe-system-commands-course/197222/5",
+          "internal": true,
+          "reflection": true,
+          "title": "Issue with BPT Access for Repeat OPPE – System Commands Course",
+          "clicks": 0
+        }
+      ],
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 2073,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/1",
+      "user_cakedate": "2021-04-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 728723,
+      "name": "Gurkirat Singh",
+      "username": "Gurkirat",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+      "created_at": "2026-02-23T05:20:57.224Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/1/5138d0cd17afa1c41abcdc241fecb8897659d21f.jpeg\" data-download-href=\"/uploads/short-url/bAwoVpgCyRfYvwWXWO1hFcYWpTV.jpeg?dl=1\" title=\"Screenshot 2026-02-23 105116\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/1/5138d0cd17afa1c41abcdc241fecb8897659d21f_2_690x286.jpeg\" alt=\"Screenshot 2026-02-23 105116\" data-base62-sha1=\"bAwoVpgCyRfYvwWXWO1hFcYWpTV\" width=\"690\" height=\"286\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/1/5138d0cd17afa1c41abcdc241fecb8897659d21f_2_690x286.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/1/5138d0cd17afa1c41abcdc241fecb8897659d21f_2_1035x429.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/1/5138d0cd17afa1c41abcdc241fecb8897659d21f_2_1380x572.jpeg 2x\" data-dominant-color=\"767374\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2026-02-23 105116</span><span class=\"informations\">1405×583 122 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Watch this vid.</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:53:30.557Z",
+      "reply_count": 1,
+      "reply_to_post_number": 1,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 42,
+      "readers_count": 41,
+      "score": 13.4,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Gurkirat Singh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Know-it-All",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 2073,
+        "username": "Mrinal",
+        "name": "Mrinal Chandra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 39529,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/2",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 728726,
+      "name": "Mrinal Chandra",
+      "username": "Mrinal",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+      "created_at": "2026-02-23T05:28:32.911Z",
+      "cooked": "<p>Hi, Thanks for the share. But I am having trouble in following the instructions. Could you please clear some doubts related to it?</p>\n<p>Do I need some keys to complete the setup? Could I do it on windows 10?</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:53:30.560Z",
+      "reply_count": 2,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 35,
+      "readers_count": 34,
+      "score": 17,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Mrinal Chandra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 39529,
+        "username": "Gurkirat",
+        "name": "Gurkirat Singh",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 2073,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/3",
+      "user_cakedate": "2021-04-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 728727,
+      "name": "Ishaan Sameer Sawant",
+      "username": "ishanite",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png",
+      "created_at": "2026-02-23T05:31:37.616Z",
+      "cooked": "<p>i think u can do this in powershell cause i am solving all bpts on my windows powershell</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:53:30.563Z",
+      "reply_count": 0,
+      "reply_to_post_number": 3,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 35,
+      "readers_count": 34,
+      "score": 7,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Ishaan Sameer Sawant",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 2073,
+        "username": "Mrinal",
+        "name": "Mrinal Chandra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37778,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/4",
+      "user_cakedate": "2024-09-23",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 728728,
+      "name": "Gurkirat Singh",
+      "username": "Gurkirat",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+      "created_at": "2026-02-23T05:32:18.407Z",
+      "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Mrinal\" data-post=\"3\" data-topic=\"197210\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/48/119167_2.png\" class=\"avatar\"> Mrinal:</div>\n<blockquote>\n<p>Do I need some keys to complete the setup?</p>\n</blockquote>\n</aside>\n<p>Yes, in the tutorial vid, they explained how to create it.</p>\n<aside class=\"quote group-ds-students\" data-username=\"Mrinal\" data-post=\"3\" data-topic=\"197210\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/48/119167_2.png\" class=\"avatar\"> Mrinal:</div>\n<blockquote>\n<p>Could I do it on windows 10?</p>\n</blockquote>\n</aside>\n<p>Yes.</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:53:30.565Z",
+      "reply_count": 1,
+      "reply_to_post_number": 3,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 35,
+      "readers_count": 34,
+      "score": 12,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Gurkirat Singh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Know-it-All",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 39529,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/5",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 728729,
+      "name": "Mrinal Chandra",
+      "username": "Mrinal",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+      "created_at": "2026-02-23T05:33:24.487Z",
+      "cooked": "<p>I am not getting the desired result after typing ‘ls’. it says - not recognized as an external or internal command.</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:53:30.568Z",
+      "reply_count": 1,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 34,
+      "readers_count": 33,
+      "score": 11.8,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Mrinal Chandra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 39529,
+        "username": "Gurkirat",
+        "name": "Gurkirat Singh",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 2073,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/6",
+      "user_cakedate": "2021-04-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 728731,
+      "name": "Ishaan Sameer Sawant",
+      "username": "ishanite",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png",
+      "created_at": "2026-02-23T05:34:49.102Z",
+      "cooked": "<p>show me screenshot for it i may be able to solve it</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:53:30.570Z",
+      "reply_count": 0,
+      "reply_to_post_number": 6,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 32,
+      "readers_count": 31,
+      "score": 6.4,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Ishaan Sameer Sawant",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 2073,
+        "username": "Mrinal",
+        "name": "Mrinal Chandra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37778,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/7",
+      "user_cakedate": "2024-09-23",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 728736,
+      "name": "Mrinal Chandra",
+      "username": "Mrinal",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+      "created_at": "2026-02-23T05:37:47.545Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/e/2e31e846cebee7b14d6e92b38f734ccac3e6ec01.png\" data-download-href=\"/uploads/short-url/6AET9DiAh7bpGow7QNutbdrBYkh.png?dl=1\" title=\"Screenshot 2026-02-23 110608\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/e/2e31e846cebee7b14d6e92b38f734ccac3e6ec01.png\" alt=\"Screenshot 2026-02-23 110608\" data-base62-sha1=\"6AET9DiAh7bpGow7QNutbdrBYkh\" width=\"690\" height=\"353\" data-dominant-color=\"191919\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2026-02-23 110608</span><span class=\"informations\">956×490 9.92 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:58:47.768Z",
+      "reply_count": 2,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 35,
+      "readers_count": 34,
+      "score": 17,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Mrinal Chandra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/query-regarding-vm-ssh-key-and-setup-for-sc-re-oppe/196360/16",
+          "internal": true,
+          "reflection": true,
+          "title": "Query Regarding VM SSH Key and Setup for SC Re-Oppe",
+          "clicks": 0
+        }
+      ],
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 2073,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/8",
+      "user_cakedate": "2021-04-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 728739,
+      "name": "Ishaan Sameer Sawant",
+      "username": "ishanite",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png",
+      "created_at": "2026-02-23T05:39:45.233Z",
+      "cooked": "<p><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/f/6/f633d4444f5542cee961caf6c76c8523d5485b1f.png\" alt=\"image\" data-base62-sha1=\"z80v4EdyT8E6zr5lAvUeWVzCKt1\" width=\"690\" height=\"89\" data-dominant-color=\"051203\"></p>\n<p>to open vm u need to type ssh and then your roll number following everything same after @</p>\n<p>then try ls</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:58:47.765Z",
+      "reply_count": 1,
+      "reply_to_post_number": 8,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 36,
+      "readers_count": 35,
+      "score": 12.2,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Ishaan Sameer Sawant",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 2073,
+        "username": "Mrinal",
+        "name": "Mrinal Chandra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37778,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/9",
+      "user_cakedate": "2024-09-23",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 728740,
+      "name": "Mrinal Chandra",
+      "username": "Mrinal",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+      "created_at": "2026-02-23T05:41:04.799Z",
+      "cooked": "<p>Thank you so much for the response and your help.</p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:58:47.763Z",
+      "reply_count": 1,
+      "reply_to_post_number": 9,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 37,
+      "readers_count": 36,
+      "score": 12.4,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Mrinal Chandra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 37778,
+        "username": "ishanite",
+        "name": "Ishaan Sameer Sawant",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 2073,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/10",
+      "user_cakedate": "2021-04-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 728742,
+      "name": "Ishaan Sameer Sawant",
+      "username": "ishanite",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png",
+      "created_at": "2026-02-23T05:43:45.110Z",
+      "cooked": "<p>are you now able to do it ?</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:58:47.761Z",
+      "reply_count": 1,
+      "reply_to_post_number": 10,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 36,
+      "readers_count": 35,
+      "score": 12.2,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Ishaan Sameer Sawant",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 2073,
+        "username": "Mrinal",
+        "name": "Mrinal Chandra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37778,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/11",
+      "user_cakedate": "2024-09-23",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 728743,
+      "name": "Mrinal Chandra",
+      "username": "Mrinal",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+      "created_at": "2026-02-23T05:45:26.661Z",
+      "cooked": "<p>Unfortunately, no. it says ‘couldn’t resolve host name’. I have tried both powershell and terminal.</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:58:47.758Z",
+      "reply_count": 1,
+      "reply_to_post_number": 11,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 35,
+      "readers_count": 34,
+      "score": 12,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Mrinal Chandra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 37778,
+        "username": "ishanite",
+        "name": "Ishaan Sameer Sawant",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 2073,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/12",
+      "user_cakedate": "2021-04-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 728746,
+      "name": "Ishaan Sameer Sawant",
+      "username": "ishanite",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ishanite/{size}/114775_2.png",
+      "created_at": "2026-02-23T05:52:18.301Z",
+      "cooked": "<p>see your chat section i msg u something</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:58:47.756Z",
+      "reply_count": 0,
+      "reply_to_post_number": 12,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 36,
+      "readers_count": 35,
+      "score": 7.2,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Ishaan Sameer Sawant",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 2073,
+        "username": "Mrinal",
+        "name": "Mrinal Chandra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37778,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/13",
+      "user_cakedate": "2024-09-23",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 728906,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-02-23T11:32:35.917Z",
+      "cooked": "<aside class=\"quote group-ds-students\" data-username=\"Mrinal\" data-post=\"6\" data-topic=\"197210\" data-full=\"true\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/48/119167_2.png\" class=\"avatar\"> Mrinal:</div>\n<blockquote>\n<p>I am not getting the desired result after typing ‘ls’. it says - not recognized as an external or internal command.</p>\n</blockquote>\n</aside>\n<p>The command <code>ls</code> is not available on the Windows command prompt. Use PowerShell instead.</p>",
+      "post_number": 14,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:58:47.753Z",
+      "reply_count": 0,
+      "reply_to_post_number": 8,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 33,
+      "readers_count": 32,
+      "score": 6.6,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 2073,
+        "username": "Mrinal",
+        "name": "Mrinal Chandra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/14",
+      "user_cakedate": "2022-09-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 729787,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2026-02-25T15:59:23.152Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/mrinal\">@Mrinal</a> Is your issue resolved?</p>",
+      "post_number": 16,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-02-25T15:59:23.152Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 28,
+      "readers_count": 27,
+      "score": 5.6,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/16",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 732633,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2026-03-02T07:49:34.801Z",
+      "cooked": "<p>Here is the video for the same <a href=\"https://seek.onlinedegree.iitm.ac.in/courses/ns_26t1_se2001?id=53\" class=\"inline-onebox\">Nptel Seekh</a></p>",
+      "post_number": 17,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-03-02T07:49:34.801Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 27,
+      "readers_count": 26,
+      "score": 10.4,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://seek.onlinedegree.iitm.ac.in/courses/ns_26t1_se2001?id=53",
+          "internal": false,
+          "reflection": false,
+          "title": "Nptel Seekh",
+          "clicks": 5
+        }
+      ],
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/17",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 732897,
+      "name": "Mrinal Chandra",
+      "username": "Mrinal",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+      "created_at": "2026-03-03T03:32:59.000Z",
+      "cooked": "<p>Hi Swati,</p>\n<p>I have seen the video but I am still stuck with the issue.</p>\n<p>I am sharing a screenshot to clarify. I will share my steps here:</p>\n<p>I open terminal in windows 10. Give command ssh-keygen, enter, enter, y and enter<br>\nIt gives me a public key in users&gt;ssh. I copy it and paste in the VM link. After that I get the page which I have shared here with you. But after clicking on the link given in the page, I keep receiving the same page again and again. I have repeated the whole process many times.</p>\n<p>Kindly help me with this.</p>\n<p>Thanks,</p>\n<details>\n<summary>\n(attachments)</summary>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/8/287803145609ecaca0566f1c4a3b2484c3c7db51.png\" data-download-href=\"/uploads/short-url/5M0dQLvXfZrwq2juf9b8mYpgOit.png?dl=1\" title=\"Screenshot 2026-03-01 180529.png\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/8/287803145609ecaca0566f1c4a3b2484c3c7db51.png\" alt=\"Screenshot 2026-03-01 180529.png\" data-base62-sha1=\"5M0dQLvXfZrwq2juf9b8mYpgOit\" width=\"690\" height=\"334\" data-dominant-color=\"F5F8F9\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2026-03-01 180529.png</span><span class=\"informations\">1305×632 29.6 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n</details>",
+      "post_number": 18,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-03-03T03:33:19.944Z",
+      "reply_count": 2,
+      "reply_to_post_number": 17,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 23,
+      "readers_count": 22,
+      "score": 14.6,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Mrinal Chandra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 2073,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "via_email": true,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/18",
+      "user_cakedate": "2021-04-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 732904,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-03-03T03:59:50.351Z",
+      "cooked": "<p>Just copy the ssh command here <code>ssh 21f1005893@se2001.ds.study.iitm.ac.in</code> and paste and run it in your terminal.</p>",
+      "post_number": 19,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-03-03T03:59:50.351Z",
+      "reply_count": 1,
+      "reply_to_post_number": 18,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 22,
+      "readers_count": 21,
+      "score": 24.4,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 2073,
+        "username": "Mrinal",
+        "name": "Mrinal Chandra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/19",
+      "user_cakedate": "2022-09-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 732965,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2026-03-03T06:36:46.876Z",
+      "cooked": "<p>This is the expected behaviour.</p>",
+      "post_number": 20,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-03-03T06:36:46.876Z",
+      "reply_count": 0,
+      "reply_to_post_number": 18,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 20,
+      "readers_count": 19,
+      "score": 19,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 2073,
+        "username": "Mrinal",
+        "name": "Mrinal Chandra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/20",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 732973,
+      "name": "Mrinal Chandra",
+      "username": "Mrinal",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+      "created_at": "2026-03-03T07:01:12.000Z",
+      "cooked": "<p>Hi Ishan,</p>\n<p>Thank you so much.</p>\n<p>I have successfully logged into the VM. How do I find the BPTs now? Could you please guide me a little?</p>\n<p>Thanks,</p>",
+      "post_number": 21,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-03-03T07:01:29.697Z",
+      "reply_count": 1,
+      "reply_to_post_number": 19,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 19,
+      "readers_count": 18,
+      "score": 8.8,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Mrinal Chandra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 2073,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "via_email": true,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/21",
+      "user_cakedate": "2021-04-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 733083,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-03-03T10:46:06.327Z",
+      "cooked": "<p>Not to be rude, but please check for similar queries on Discourse before asking your own queries too. Such topics have already been covered extensively in multiple other posts and the <code>README.md</code> file in your home directory.</p>\n<p>To view any programming assignment, not just BPT, do <code>ls /opt/se2001</code>. You’d then have to create a directory of the same name as the assignment under <code>~/se2001</code> and do <code>synchro show</code> from inside it to view the assignment. Example -</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">cd ~\nmkdir se2001\ncd se2001\nmkdir BPT1_problem_1\ncd BPT1_problem_1\nsynchro show\n</code></pre>",
+      "post_number": 22,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-03-03T10:47:41.289Z",
+      "reply_count": 1,
+      "reply_to_post_number": 21,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 19,
+      "readers_count": 18,
+      "score": 23.8,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 2073,
+        "username": "Mrinal",
+        "name": "Mrinal Chandra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/22",
+      "user_cakedate": "2022-09-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 733121,
+      "name": "Mrinal Chandra",
+      "username": "Mrinal",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mrinal/{size}/119167_2.png",
+      "created_at": "2026-03-03T12:11:22.000Z",
+      "cooked": "<p>Hi Ishan,</p>\n<p>Thanks for the response.</p>\n<p>It wasn’t rude. Maybe I am just anxious and overwhelmed a bit. But I will definitely check the related threads in the future.</p>\n<p>Thanks,</p>",
+      "post_number": 23,
+      "post_type": 1,
+      "posts_count": 22,
+      "updated_at": "2026-03-03T12:11:37.558Z",
+      "reply_count": 0,
+      "reply_to_post_number": 22,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 16,
+      "readers_count": 15,
+      "score": 3.2,
+      "yours": false,
+      "topic_id": 197210,
+      "topic_slug": "issue-logging-in-to-the-vm",
+      "display_username": "Mrinal Chandra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 2073,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "via_email": true,
+      "post_url": "/t/issue-logging-in-to-the-vm/197210/23",
+      "user_cakedate": "2021-04-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

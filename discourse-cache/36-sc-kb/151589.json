@@ -1,0 +1,5318 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 538400,
+        "name": "Surya Prakash Pareek",
+        "username": "22f2001613",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001613/{size}/66893_2.png",
+        "created_at": "2024-10-08T04:07:10.767Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/subendu\">@Subendu</a> Sir, I am getting error while submitting the BPT1_problem_3 and 4.<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/e/8/e89d7b7e5ba59648d08606f1f01bf8997d4546e1.jpeg\" data-download-href=\"/uploads/short-url/xbOb0MBbmoegwnU0euCRYi5aypb.jpeg?dl=1\" title=\"IMG-20241008-WA0013\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/8/e89d7b7e5ba59648d08606f1f01bf8997d4546e1_2_690x388.jpeg\" alt=\"IMG-20241008-WA0013\" data-base62-sha1=\"xbOb0MBbmoegwnU0euCRYi5aypb\" width=\"690\" height=\"388\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/8/e89d7b7e5ba59648d08606f1f01bf8997d4546e1_2_690x388.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/8/e89d7b7e5ba59648d08606f1f01bf8997d4546e1_2_1035x582.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/8/e89d7b7e5ba59648d08606f1f01bf8997d4546e1_2_1380x776.jpeg 2x\" data-dominant-color=\"313734\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">IMG-20241008-WA0013</span><span class=\"informations\">1920×1080 189 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T04:07:10.767Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 93,
+        "readers_count": 92,
+        "score": 23.6,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "Surya Prakash Pareek",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 15210,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/1",
+        "user_cakedate": "2022-09-17",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 538439,
+        "name": "Anwita",
+        "username": "anw",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/anw/{size}/66858_2.png",
+        "created_at": "2024-10-08T05:25:11.124Z",
+        "cooked": "<p>same problem for me too, but with problem 4</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T05:25:11.124Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 89,
+        "readers_count": 88,
+        "score": 22.8,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "Anwita",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21079,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/2",
+        "user_cakedate": "2023-06-21",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538443,
+        "name": "KAPISHANKAR ASHTANKAR",
+        "username": "KAPS_ON_AIR",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png",
+        "created_at": "2024-10-08T05:34:10.877Z",
+        "cooked": "<p>facing same problem <a class=\"mention\" href=\"/u/subendu\">@Subendu</a> <a class=\"mention\" href=\"/u/puneet_21f3002005\">@Puneet_21f3002005</a><br>\nattaching document for reference<br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/8/c8d6e3bb0fe7e608ce0113973c555d5b4470d128.png\" alt=\"bpt1\" data-base62-sha1=\"sEHTmdxWqHJZfrcYGtrz0vTvzPG\" width=\"554\" height=\"107\"></p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T05:34:10.877Z",
+        "reply_count": 1,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 84,
+        "readers_count": 83,
+        "score": 26.8,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "KAPISHANKAR ASHTANKAR",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 21079,
+          "username": "anw",
+          "name": "Anwita",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/anw/{size}/66858_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6277,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/3",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-03-10",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538448,
+        "name": "Puneet ",
+        "username": "Puneet_21f3002005",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+        "created_at": "2024-10-08T05:41:30.538Z",
+        "cooked": "<p>Hi,</p>\n<p>Can you please share what code have you written? <a class=\"mention\" href=\"/u/kaps_on_air\">@KAPS_ON_AIR</a>  <a class=\"mention\" href=\"/u/anw\">@anw</a> <a class=\"mention\" href=\"/u/22f2001613\">@22f2001613</a></p>\n<p>Regards,<br>\nPuneet</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T05:41:30.538Z",
+        "reply_count": 3,
+        "reply_to_post_number": 3,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 80,
+        "readers_count": 79,
+        "score": 36,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "Puneet ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 6277,
+          "username": "KAPS_ON_AIR",
+          "name": "KAPISHANKAR ASHTANKAR",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 8056,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/4",
+        "user_cakedate": "2021-12-28",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538453,
+        "name": "KAPISHANKAR ASHTANKAR",
+        "username": "KAPS_ON_AIR",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png",
+        "created_at": "2024-10-08T05:44:50.095Z",
+        "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/9/c92158d700a74b4e882725abba1decd5786e348c.png\" data-download-href=\"/uploads/short-url/sHhpRSVjdr7jZ1jE8tdu48IWObG.png?dl=1\" title=\"bpt1p1\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/9/c92158d700a74b4e882725abba1decd5786e348c.png\" alt=\"bpt1p1\" data-base62-sha1=\"sHhpRSVjdr7jZ1jE8tdu48IWObG\" width=\"690\" height=\"67\" data-dominant-color=\"181E1E\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">bpt1p1</span><span class=\"informations\">909×89 4.57 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p><a class=\"mention\" href=\"/u/puneet_21f3002005\">@Puneet_21f3002005</a></p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T05:45:11.165Z",
+        "reply_count": 1,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 2,
+        "reads": 75,
+        "readers_count": 74,
+        "score": 30,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "KAPISHANKAR ASHTANKAR",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 8056,
+          "username": "Puneet_21f3002005",
+          "name": "Puneet ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6277,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/5",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-03-10",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538459,
+        "name": "Puneet ",
+        "username": "Puneet_21f3002005",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+        "created_at": "2024-10-08T05:57:44.432Z",
+        "cooked": "<p>Hi,</p>\n<p>Please check the command itself. Try running it 2-3 times. There is no error in the question.</p>\n<p>Regards,<br>\nPuneet</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T05:57:44.432Z",
+        "reply_count": 2,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 77,
+        "readers_count": 76,
+        "score": 25.4,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "Puneet ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 6277,
+          "username": "KAPS_ON_AIR",
+          "name": "KAPISHANKAR ASHTANKAR",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 8056,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/6",
+        "user_cakedate": "2021-12-28",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538471,
+        "name": "Lokesh R",
+        "username": "22f3001411",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001411/{size}/67152_2.png",
+        "created_at": "2024-10-08T06:22:57.880Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/puneet_21f3002005\">@Puneet_21f3002005</a> Synchro status show’s pass, but private case, no private test cases</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T06:22:57.880Z",
+        "reply_count": 1,
+        "reply_to_post_number": 6,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 75,
+        "readers_count": 74,
+        "score": 20,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "Lokesh R",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 8056,
+          "username": "Puneet_21f3002005",
+          "name": "Puneet ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16093,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/7",
+        "user_cakedate": "2023-01-25",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538472,
+        "name": "KAPISHANKAR ASHTANKAR",
+        "username": "KAPS_ON_AIR",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png",
+        "created_at": "2024-10-08T06:24:09.671Z",
+        "cooked": "<p>same haprnning for bpt1_problem2<br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/9/d9f399da31136b5c64ae44be6da56615797927ae.png\" alt=\"bpt1_2\" data-base62-sha1=\"v65wtsj98exeYhVM6mJKIwbggpM\" width=\"582\" height=\"121\"><br>\n<a class=\"mention\" href=\"/u/puneet_21f3002005\">@Puneet_21f3002005</a></p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T06:24:09.671Z",
+        "reply_count": 1,
+        "reply_to_post_number": 6,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 74,
+        "readers_count": 73,
+        "score": 19.8,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "KAPISHANKAR ASHTANKAR",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 8056,
+          "username": "Puneet_21f3002005",
+          "name": "Puneet ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6277,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/8",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-03-10",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538473,
+        "name": "Puneet ",
+        "username": "Puneet_21f3002005",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+        "created_at": "2024-10-08T06:24:53.009Z",
+        "cooked": "<p>Hi,</p>\n<p>You have to focus that it should show - submission and evaluation successful. Don’t worry about why type of test cases are there, etc.</p>\n<p>Regards,<br>\nPuneet</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T06:24:53.009Z",
+        "reply_count": 1,
+        "reply_to_post_number": 7,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 72,
+        "readers_count": 71,
+        "score": 19.4,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "Puneet ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 16093,
+          "username": "22f3001411",
+          "name": "Lokesh R",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001411/{size}/67152_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 8056,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/9",
+        "user_cakedate": "2021-12-28",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538475,
+        "name": "Surya Prakash Pareek",
+        "username": "22f2001613",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001613/{size}/66893_2.png",
+        "created_at": "2024-10-08T06:25:51.061Z",
+        "cooked": "<p>Here is commands I have written. I have tried everything like removing whole directory and making a new one. But nothing works.<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/9/c9b02ed353b1fcc642c3f6a359f0ece688ebd70d.png\" data-download-href=\"/uploads/short-url/sMdrnVvSHjwngPdIFR0nPJ6Qw8Z.png?dl=1\" title=\"Screenshot 2024-10-08 115428\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/9/c9b02ed353b1fcc642c3f6a359f0ece688ebd70d.png\" alt=\"Screenshot 2024-10-08 115428\" data-base62-sha1=\"sMdrnVvSHjwngPdIFR0nPJ6Qw8Z\" width=\"690\" height=\"388\" data-dominant-color=\"111212\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2024-10-08 115428</span><span class=\"informations\">1115×628 25.7 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T06:25:51.061Z",
+        "reply_count": 1,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 71,
+        "readers_count": 70,
+        "score": 19.2,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "Surya Prakash Pareek",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 8056,
+          "username": "Puneet_21f3002005",
+          "name": "Puneet ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 15210,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/10",
+        "user_cakedate": "2022-09-17",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538476,
+        "name": "KAPISHANKAR ASHTANKAR",
+        "username": "KAPS_ON_AIR",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png",
+        "created_at": "2024-10-08T06:26:21.394Z",
+        "cooked": "<p>In my case for problem1 and 2 i am getting ‘submission failed’.</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T06:26:21.394Z",
+        "reply_count": 1,
+        "reply_to_post_number": 9,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 67,
+        "readers_count": 66,
+        "score": 18.4,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "KAPISHANKAR ASHTANKAR",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 8056,
+          "username": "Puneet_21f3002005",
+          "name": "Puneet ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6277,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/11",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-03-10",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538477,
+        "name": "Puneet ",
+        "username": "Puneet_21f3002005",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+        "created_at": "2024-10-08T06:26:27.370Z",
+        "cooked": "<p>Hi</p>\n<p><a class=\"mention\" href=\"/u/subendu\">@Subendu</a> Sir, can you please check this once?</p>\n<p>Regards,<br>\nPuneet</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T06:26:27.370Z",
+        "reply_count": 0,
+        "reply_to_post_number": 10,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 61,
+        "readers_count": 60,
+        "score": 12.2,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "Puneet ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 15210,
+          "username": "22f2001613",
+          "name": "Surya Prakash Pareek",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001613/{size}/66893_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 8056,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/12",
+        "user_cakedate": "2021-12-28",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538481,
+        "name": "Puneet ",
+        "username": "Puneet_21f3002005",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+        "created_at": "2024-10-08T06:29:04.010Z",
+        "cooked": "<p>Hi,</p>\n<p>I have checked it is working on my end.</p>\n<p>Regards,<br>\nPuneet</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T06:29:04.010Z",
+        "reply_count": 1,
+        "reply_to_post_number": 11,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 59,
+        "readers_count": 58,
+        "score": 16.8,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "Puneet ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 6277,
+          "username": "KAPS_ON_AIR",
+          "name": "KAPISHANKAR ASHTANKAR",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 8056,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/13",
+        "user_cakedate": "2021-12-28",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538482,
+        "name": "KAPISHANKAR ASHTANKAR",
+        "username": "KAPS_ON_AIR",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png",
+        "created_at": "2024-10-08T06:30:46.233Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/puneet_21f3002005\">@Puneet_21f3002005</a>  check this one bpt1_problem2</p>",
+        "post_number": 14,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T06:30:46.233Z",
+        "reply_count": 0,
+        "reply_to_post_number": 8,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 58,
+        "readers_count": 57,
+        "score": 11.6,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "KAPISHANKAR ASHTANKAR",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 6277,
+          "username": "KAPS_ON_AIR",
+          "name": "KAPISHANKAR ASHTANKAR",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6277,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/14",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-03-10",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538486,
+        "name": "Prashin Prabha",
+        "username": "21f2001042",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f2001042/{size}/457_2.png",
+        "created_at": "2024-10-08T06:43:00.312Z",
+        "cooked": "<p>Sir,<br>\nBPT1_problem_1<br>\nGetting Submission failed</p>\n<p><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/5/2502cc1451b046c84693f62227dc629d3eff268e.jpeg\" alt=\"SC_BPT1_problem_1\" data-base62-sha1=\"5hpESx4CjyS0IPhnzwdLV3dDvl4\" width=\"355\" height=\"93\"></p>",
+        "post_number": 15,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T06:43:00.312Z",
+        "reply_count": 0,
+        "reply_to_post_number": 13,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 64,
+        "readers_count": 63,
+        "score": 12.8,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "Prashin Prabha",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 8056,
+          "username": "Puneet_21f3002005",
+          "name": "Puneet ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 7319,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/15",
+        "user_cakedate": "2021-09-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538491,
+        "name": "Y Pavan",
+        "username": "22f3002368",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002368/{size}/71123_2.png",
+        "created_at": "2024-10-08T06:51:24.382Z",
+        "cooked": "<p>Im also getting submission failed in bpt problems<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/3/a3905302f8bb3be1380c6f38fb9809050cda699f.png\" data-download-href=\"/uploads/short-url/nkX2xzLqYOvSU35RnrQTd9jKZu7.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/3/a3905302f8bb3be1380c6f38fb9809050cda699f.png\" alt=\"image\" data-base62-sha1=\"nkX2xzLqYOvSU35RnrQTd9jKZu7\" width=\"687\" height=\"500\" data-dominant-color=\"2B2C2B\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">729×530 9.87 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 16,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T06:51:24.382Z",
+        "reply_count": 2,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 64,
+        "readers_count": 63,
+        "score": 22.8,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "Y Pavan",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16243,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/16",
+        "user_cakedate": "2023-01-26",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538494,
+        "name": "Puneet ",
+        "username": "Puneet_21f3002005",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+        "created_at": "2024-10-08T06:54:50.811Z",
+        "cooked": "<p>Hi,</p>\n<p>Please wait and I will get back to you guys on this.</p>\n<p>Regards,<br>\nPuneet</p>",
+        "post_number": 17,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T06:54:50.811Z",
+        "reply_count": 0,
+        "reply_to_post_number": 16,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 62,
+        "readers_count": 61,
+        "score": 27.4,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "Puneet ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 16243,
+          "username": "22f3002368",
+          "name": "Y Pavan",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002368/{size}/71123_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 8056,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/17",
+        "user_cakedate": "2021-12-28",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538513,
+        "name": "Subendu Gorai",
+        "username": "Subendu",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+        "created_at": "2024-10-08T07:52:09.105Z",
+        "cooked": "<p>Check now, we have resolved the issue.</p>",
+        "post_number": 18,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T07:52:09.105Z",
+        "reply_count": 2,
+        "reply_to_post_number": 16,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 64,
+        "readers_count": 63,
+        "score": 52.8,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "Subendu Gorai",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 16243,
+          "username": "22f3002368",
+          "name": "Y Pavan",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002368/{size}/71123_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6147,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/18",
+        "user_cakedate": "2021-08-16",
+        "user_birthdate": "1904-03-17",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538517,
+        "name": "KAPISHANKAR ASHTANKAR",
+        "username": "KAPS_ON_AIR",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png",
+        "created_at": "2024-10-08T08:03:35.364Z",
+        "cooked": "<p><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/4/040001c05ef3eb2e08f0d2e8157d480c467b424d.png\" alt=\"image\" data-base62-sha1=\"znVjVJtuJHWVMC0NBcXguWQGRf\" width=\"590\" height=\"179\"></p>\n<p>resolved, Thank you <a class=\"mention\" href=\"/u/subendu\">@Subendu</a> sir</p>",
+        "post_number": 19,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T08:04:03.650Z",
+        "reply_count": 0,
+        "reply_to_post_number": 18,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 74,
+        "readers_count": 73,
+        "score": 14.8,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "KAPISHANKAR ASHTANKAR",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 6147,
+          "username": "Subendu",
+          "name": "Subendu Gorai",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6277,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/19",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-03-10",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 538520,
+        "name": "Abhimanyu",
+        "username": "22f3000587",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000587/{size}/56292_2.png",
+        "created_at": "2024-10-08T08:07:33.491Z",
+        "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/6/b631eb00e739b7b30d8980428c118875095e8588.png\" data-download-href=\"/uploads/short-url/pZLQBgV0Av4TXPCtmbckuFOrkeI.png?dl=1\" title=\"sc bpt\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/6/b631eb00e739b7b30d8980428c118875095e8588.png\" alt=\"sc bpt\" data-base62-sha1=\"pZLQBgV0Av4TXPCtmbckuFOrkeI\" width=\"614\" height=\"500\" data-dominant-color=\"101112\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">sc bpt</span><span class=\"informations\">1113×906 24.7 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\nmy not working tried many times<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/7/7786bf38dbe07d25bb335c1b655c03c1b9302f8a.png\" data-download-href=\"/uploads/short-url/h3nvO2eSdmscVqhSqs9FTtwg9hE.png?dl=1\" title=\"Screenshot (153)\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/7/7786bf38dbe07d25bb335c1b655c03c1b9302f8a_2_690x388.png\" alt=\"Screenshot (153)\" data-base62-sha1=\"h3nvO2eSdmscVqhSqs9FTtwg9hE\" width=\"690\" height=\"388\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/7/7786bf38dbe07d25bb335c1b655c03c1b9302f8a_2_690x388.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/7/7786bf38dbe07d25bb335c1b655c03c1b9302f8a_2_1035x582.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/7/7786bf38dbe07d25bb335c1b655c03c1b9302f8a_2_1380x776.png 2x\" data-dominant-color=\"101111\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot (153)</span><span class=\"informations\">1920×1080 171 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 20,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2024-10-08T08:10:36.569Z",
+        "reply_count": 1,
+        "reply_to_post_number": 18,
+        "quote_count": 0,
+        "incoming_link_count": 19,
+        "reads": 78,
+        "readers_count": 77,
+        "score": 115.6,
+        "yours": false,
+        "topic_id": 151589,
+        "topic_slug": "bpt1-submission-failed",
+        "display_username": "Abhimanyu",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 6147,
+          "username": "Subendu",
+          "name": "Subendu Gorai",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16473,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/bpt1-submission-failed/151589/20",
+        "user_cakedate": "2023-01-27",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      538400,
+      538439,
+      538443,
+      538448,
+      538453,
+      538459,
+      538471,
+      538472,
+      538473,
+      538475,
+      538476,
+      538477,
+      538481,
+      538482,
+      538486,
+      538491,
+      538494,
+      538513,
+      538517,
+      538520,
+      538522,
+      538568,
+      538570,
+      540269,
+      540514,
+      541265,
+      541464,
+      541860,
+      541953,
+      542038,
+      542352
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      566
+    ],
+    [
+      21,
+      565
+    ],
+    [
+      24,
+      561
+    ],
+    [
+      26,
+      560
+    ],
+    [
+      28,
+      559
+    ],
+    [
+      31,
+      557
+    ]
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "BPT1 Submission Failed",
+  "id": 151589,
+  "title": "BPT1 Submission Failed",
+  "posts_count": 31,
+  "created_at": "2024-10-08T04:07:10.572Z",
+  "views": 197,
+  "reply_count": 26,
+  "like_count": 5,
+  "last_posted_at": "2024-10-16T10:49:31.823Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "bpt1-submission-failed",
+  "category_id": 36,
+  "word_count": 898,
+  "deleted_at": null,
+  "user_id": 15210,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/8/e89d7b7e5ba59648d08606f1f01bf8997d4546e1_2_1024x576.jpeg",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_151589",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 31,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 13,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 1920,
+      "height": 1080,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/e/8/e89d7b7e5ba59648d08606f1f01bf8997d4546e1.jpeg"
+    },
+    {
+      "max_width": 1024,
+      "max_height": 1024,
+      "width": 1024,
+      "height": 576,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/8/e89d7b7e5ba59648d08606f1f01bf8997d4546e1_2_1024x576.jpeg"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": null,
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 18,
+    "username": "Subendu",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+    "excerpt": "<p>Check now, we have resolved the issue.</p>",
+    "accepter_name": null,
+    "accepter_username": "sayan"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 6277,
+        "username": "KAPS_ON_AIR",
+        "name": "KAPISHANKAR ASHTANKAR",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png",
+        "post_count": 6,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 8056,
+        "username": "Puneet_21f3002005",
+        "name": "Puneet ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+        "post_count": 6,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 16473,
+        "username": "22f3000587",
+        "name": "Abhimanyu",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000587/{size}/56292_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 23914,
+        "username": "DerrickUnleashed",
+        "name": "Derrick Richard",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/derrickunleashed/{size}/109067_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      },
+      {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "post_count": 3,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      },
+      {
+        "id": 6147,
+        "username": "Subendu",
+        "name": "Subendu Gorai",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+        "post_count": 2,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      },
+      {
+        "id": 15210,
+        "username": "22f2001613",
+        "name": "Surya Prakash Pareek",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001613/{size}/66893_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 16243,
+        "username": "22f3002368",
+        "name": "Y Pavan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002368/{size}/71123_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 8235,
+        "username": "21f3003179",
+        "name": "Subramaniam Mohan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003179/{size}/13038_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 7421,
+        "username": "21f2000679",
+        "name": "Hariharan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f2000679/{size}/67291_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 21079,
+        "username": "anw",
+        "name": "Anwita",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/anw/{size}/66858_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 16093,
+        "username": "22f3001411",
+        "name": "Lokesh R",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001411/{size}/67152_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 7319,
+        "username": "21f2001042",
+        "name": "Prashin Prabha",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f2001042/{size}/457_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 15210,
+      "username": "22f2001613",
+      "name": "Surya Prakash Pareek",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001613/{size}/66893_2.png"
+    },
+    "last_poster": {
+      "id": 23914,
+      "username": "DerrickUnleashed",
+      "name": "Derrick Richard",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/derrickunleashed/{size}/109067_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 538400,
+      "name": "Surya Prakash Pareek",
+      "username": "22f2001613",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001613/{size}/66893_2.png",
+      "created_at": "2024-10-08T04:07:10.767Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/subendu\">@Subendu</a> Sir, I am getting error while submitting the BPT1_problem_3 and 4.<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/e/8/e89d7b7e5ba59648d08606f1f01bf8997d4546e1.jpeg\" data-download-href=\"/uploads/short-url/xbOb0MBbmoegwnU0euCRYi5aypb.jpeg?dl=1\" title=\"IMG-20241008-WA0013\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/8/e89d7b7e5ba59648d08606f1f01bf8997d4546e1_2_690x388.jpeg\" alt=\"IMG-20241008-WA0013\" data-base62-sha1=\"xbOb0MBbmoegwnU0euCRYi5aypb\" width=\"690\" height=\"388\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/8/e89d7b7e5ba59648d08606f1f01bf8997d4546e1_2_690x388.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/8/e89d7b7e5ba59648d08606f1f01bf8997d4546e1_2_1035x582.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/8/e89d7b7e5ba59648d08606f1f01bf8997d4546e1_2_1380x776.jpeg 2x\" data-dominant-color=\"313734\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">IMG-20241008-WA0013</span><span class=\"informations\">1920×1080 189 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T04:07:10.767Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 93,
+      "readers_count": 92,
+      "score": 23.6,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Surya Prakash Pareek",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 15210,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/1",
+      "user_cakedate": "2022-09-17",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 538439,
+      "name": "Anwita",
+      "username": "anw",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/anw/{size}/66858_2.png",
+      "created_at": "2024-10-08T05:25:11.124Z",
+      "cooked": "<p>same problem for me too, but with problem 4</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T05:25:11.124Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 89,
+      "readers_count": 88,
+      "score": 22.8,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Anwita",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21079,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/2",
+      "user_cakedate": "2023-06-21",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538443,
+      "name": "KAPISHANKAR ASHTANKAR",
+      "username": "KAPS_ON_AIR",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png",
+      "created_at": "2024-10-08T05:34:10.877Z",
+      "cooked": "<p>facing same problem <a class=\"mention\" href=\"/u/subendu\">@Subendu</a> <a class=\"mention\" href=\"/u/puneet_21f3002005\">@Puneet_21f3002005</a><br>\nattaching document for reference<br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/8/c8d6e3bb0fe7e608ce0113973c555d5b4470d128.png\" alt=\"bpt1\" data-base62-sha1=\"sEHTmdxWqHJZfrcYGtrz0vTvzPG\" width=\"554\" height=\"107\"></p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T05:34:10.877Z",
+      "reply_count": 1,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 84,
+      "readers_count": 83,
+      "score": 26.8,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "KAPISHANKAR ASHTANKAR",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 21079,
+        "username": "anw",
+        "name": "Anwita",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/anw/{size}/66858_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6277,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/3",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-03-10",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538448,
+      "name": "Puneet ",
+      "username": "Puneet_21f3002005",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+      "created_at": "2024-10-08T05:41:30.538Z",
+      "cooked": "<p>Hi,</p>\n<p>Can you please share what code have you written? <a class=\"mention\" href=\"/u/kaps_on_air\">@KAPS_ON_AIR</a>  <a class=\"mention\" href=\"/u/anw\">@anw</a> <a class=\"mention\" href=\"/u/22f2001613\">@22f2001613</a></p>\n<p>Regards,<br>\nPuneet</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T05:41:30.538Z",
+      "reply_count": 3,
+      "reply_to_post_number": 3,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 80,
+      "readers_count": 79,
+      "score": 36,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Puneet ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 6277,
+        "username": "KAPS_ON_AIR",
+        "name": "KAPISHANKAR ASHTANKAR",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8056,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/4",
+      "user_cakedate": "2021-12-28",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538453,
+      "name": "KAPISHANKAR ASHTANKAR",
+      "username": "KAPS_ON_AIR",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png",
+      "created_at": "2024-10-08T05:44:50.095Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/9/c92158d700a74b4e882725abba1decd5786e348c.png\" data-download-href=\"/uploads/short-url/sHhpRSVjdr7jZ1jE8tdu48IWObG.png?dl=1\" title=\"bpt1p1\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/9/c92158d700a74b4e882725abba1decd5786e348c.png\" alt=\"bpt1p1\" data-base62-sha1=\"sHhpRSVjdr7jZ1jE8tdu48IWObG\" width=\"690\" height=\"67\" data-dominant-color=\"181E1E\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">bpt1p1</span><span class=\"informations\">909×89 4.57 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p><a class=\"mention\" href=\"/u/puneet_21f3002005\">@Puneet_21f3002005</a></p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T05:45:11.165Z",
+      "reply_count": 1,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 75,
+      "readers_count": 74,
+      "score": 30,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "KAPISHANKAR ASHTANKAR",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 8056,
+        "username": "Puneet_21f3002005",
+        "name": "Puneet ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6277,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/5",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-03-10",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538459,
+      "name": "Puneet ",
+      "username": "Puneet_21f3002005",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+      "created_at": "2024-10-08T05:57:44.432Z",
+      "cooked": "<p>Hi,</p>\n<p>Please check the command itself. Try running it 2-3 times. There is no error in the question.</p>\n<p>Regards,<br>\nPuneet</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T05:57:44.432Z",
+      "reply_count": 2,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 77,
+      "readers_count": 76,
+      "score": 25.4,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Puneet ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 6277,
+        "username": "KAPS_ON_AIR",
+        "name": "KAPISHANKAR ASHTANKAR",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8056,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/6",
+      "user_cakedate": "2021-12-28",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538471,
+      "name": "Lokesh R",
+      "username": "22f3001411",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001411/{size}/67152_2.png",
+      "created_at": "2024-10-08T06:22:57.880Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/puneet_21f3002005\">@Puneet_21f3002005</a> Synchro status show’s pass, but private case, no private test cases</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T06:22:57.880Z",
+      "reply_count": 1,
+      "reply_to_post_number": 6,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 75,
+      "readers_count": 74,
+      "score": 20,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Lokesh R",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 8056,
+        "username": "Puneet_21f3002005",
+        "name": "Puneet ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16093,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/7",
+      "user_cakedate": "2023-01-25",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538472,
+      "name": "KAPISHANKAR ASHTANKAR",
+      "username": "KAPS_ON_AIR",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png",
+      "created_at": "2024-10-08T06:24:09.671Z",
+      "cooked": "<p>same haprnning for bpt1_problem2<br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/9/d9f399da31136b5c64ae44be6da56615797927ae.png\" alt=\"bpt1_2\" data-base62-sha1=\"v65wtsj98exeYhVM6mJKIwbggpM\" width=\"582\" height=\"121\"><br>\n<a class=\"mention\" href=\"/u/puneet_21f3002005\">@Puneet_21f3002005</a></p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T06:24:09.671Z",
+      "reply_count": 1,
+      "reply_to_post_number": 6,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 74,
+      "readers_count": 73,
+      "score": 19.8,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "KAPISHANKAR ASHTANKAR",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 8056,
+        "username": "Puneet_21f3002005",
+        "name": "Puneet ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6277,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/8",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-03-10",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538473,
+      "name": "Puneet ",
+      "username": "Puneet_21f3002005",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+      "created_at": "2024-10-08T06:24:53.009Z",
+      "cooked": "<p>Hi,</p>\n<p>You have to focus that it should show - submission and evaluation successful. Don’t worry about why type of test cases are there, etc.</p>\n<p>Regards,<br>\nPuneet</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T06:24:53.009Z",
+      "reply_count": 1,
+      "reply_to_post_number": 7,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 72,
+      "readers_count": 71,
+      "score": 19.4,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Puneet ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 16093,
+        "username": "22f3001411",
+        "name": "Lokesh R",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001411/{size}/67152_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8056,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/9",
+      "user_cakedate": "2021-12-28",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538475,
+      "name": "Surya Prakash Pareek",
+      "username": "22f2001613",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001613/{size}/66893_2.png",
+      "created_at": "2024-10-08T06:25:51.061Z",
+      "cooked": "<p>Here is commands I have written. I have tried everything like removing whole directory and making a new one. But nothing works.<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/9/c9b02ed353b1fcc642c3f6a359f0ece688ebd70d.png\" data-download-href=\"/uploads/short-url/sMdrnVvSHjwngPdIFR0nPJ6Qw8Z.png?dl=1\" title=\"Screenshot 2024-10-08 115428\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/9/c9b02ed353b1fcc642c3f6a359f0ece688ebd70d.png\" alt=\"Screenshot 2024-10-08 115428\" data-base62-sha1=\"sMdrnVvSHjwngPdIFR0nPJ6Qw8Z\" width=\"690\" height=\"388\" data-dominant-color=\"111212\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2024-10-08 115428</span><span class=\"informations\">1115×628 25.7 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T06:25:51.061Z",
+      "reply_count": 1,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 71,
+      "readers_count": 70,
+      "score": 19.2,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Surya Prakash Pareek",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 8056,
+        "username": "Puneet_21f3002005",
+        "name": "Puneet ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 15210,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/10",
+      "user_cakedate": "2022-09-17",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538476,
+      "name": "KAPISHANKAR ASHTANKAR",
+      "username": "KAPS_ON_AIR",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png",
+      "created_at": "2024-10-08T06:26:21.394Z",
+      "cooked": "<p>In my case for problem1 and 2 i am getting ‘submission failed’.</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T06:26:21.394Z",
+      "reply_count": 1,
+      "reply_to_post_number": 9,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 67,
+      "readers_count": 66,
+      "score": 18.4,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "KAPISHANKAR ASHTANKAR",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 8056,
+        "username": "Puneet_21f3002005",
+        "name": "Puneet ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6277,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/11",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-03-10",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538477,
+      "name": "Puneet ",
+      "username": "Puneet_21f3002005",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+      "created_at": "2024-10-08T06:26:27.370Z",
+      "cooked": "<p>Hi</p>\n<p><a class=\"mention\" href=\"/u/subendu\">@Subendu</a> Sir, can you please check this once?</p>\n<p>Regards,<br>\nPuneet</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T06:26:27.370Z",
+      "reply_count": 0,
+      "reply_to_post_number": 10,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 61,
+      "readers_count": 60,
+      "score": 12.2,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Puneet ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 15210,
+        "username": "22f2001613",
+        "name": "Surya Prakash Pareek",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001613/{size}/66893_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8056,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/12",
+      "user_cakedate": "2021-12-28",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538481,
+      "name": "Puneet ",
+      "username": "Puneet_21f3002005",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+      "created_at": "2024-10-08T06:29:04.010Z",
+      "cooked": "<p>Hi,</p>\n<p>I have checked it is working on my end.</p>\n<p>Regards,<br>\nPuneet</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T06:29:04.010Z",
+      "reply_count": 1,
+      "reply_to_post_number": 11,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 59,
+      "readers_count": 58,
+      "score": 16.8,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Puneet ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 6277,
+        "username": "KAPS_ON_AIR",
+        "name": "KAPISHANKAR ASHTANKAR",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8056,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/13",
+      "user_cakedate": "2021-12-28",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538482,
+      "name": "KAPISHANKAR ASHTANKAR",
+      "username": "KAPS_ON_AIR",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png",
+      "created_at": "2024-10-08T06:30:46.233Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/puneet_21f3002005\">@Puneet_21f3002005</a>  check this one bpt1_problem2</p>",
+      "post_number": 14,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T06:30:46.233Z",
+      "reply_count": 0,
+      "reply_to_post_number": 8,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 58,
+      "readers_count": 57,
+      "score": 11.6,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "KAPISHANKAR ASHTANKAR",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 6277,
+        "username": "KAPS_ON_AIR",
+        "name": "KAPISHANKAR ASHTANKAR",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6277,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/14",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-03-10",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538486,
+      "name": "Prashin Prabha",
+      "username": "21f2001042",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f2001042/{size}/457_2.png",
+      "created_at": "2024-10-08T06:43:00.312Z",
+      "cooked": "<p>Sir,<br>\nBPT1_problem_1<br>\nGetting Submission failed</p>\n<p><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/2/5/2502cc1451b046c84693f62227dc629d3eff268e.jpeg\" alt=\"SC_BPT1_problem_1\" data-base62-sha1=\"5hpESx4CjyS0IPhnzwdLV3dDvl4\" width=\"355\" height=\"93\"></p>",
+      "post_number": 15,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T06:43:00.312Z",
+      "reply_count": 0,
+      "reply_to_post_number": 13,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 64,
+      "readers_count": 63,
+      "score": 12.8,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Prashin Prabha",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 8056,
+        "username": "Puneet_21f3002005",
+        "name": "Puneet ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 7319,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/15",
+      "user_cakedate": "2021-09-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538491,
+      "name": "Y Pavan",
+      "username": "22f3002368",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002368/{size}/71123_2.png",
+      "created_at": "2024-10-08T06:51:24.382Z",
+      "cooked": "<p>Im also getting submission failed in bpt problems<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/3/a3905302f8bb3be1380c6f38fb9809050cda699f.png\" data-download-href=\"/uploads/short-url/nkX2xzLqYOvSU35RnrQTd9jKZu7.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/3/a3905302f8bb3be1380c6f38fb9809050cda699f.png\" alt=\"image\" data-base62-sha1=\"nkX2xzLqYOvSU35RnrQTd9jKZu7\" width=\"687\" height=\"500\" data-dominant-color=\"2B2C2B\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">729×530 9.87 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 16,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T06:51:24.382Z",
+      "reply_count": 2,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 64,
+      "readers_count": 63,
+      "score": 22.8,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Y Pavan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16243,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/16",
+      "user_cakedate": "2023-01-26",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538494,
+      "name": "Puneet ",
+      "username": "Puneet_21f3002005",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+      "created_at": "2024-10-08T06:54:50.811Z",
+      "cooked": "<p>Hi,</p>\n<p>Please wait and I will get back to you guys on this.</p>\n<p>Regards,<br>\nPuneet</p>",
+      "post_number": 17,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T06:54:50.811Z",
+      "reply_count": 0,
+      "reply_to_post_number": 16,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 62,
+      "readers_count": 61,
+      "score": 27.4,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Puneet ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 16243,
+        "username": "22f3002368",
+        "name": "Y Pavan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002368/{size}/71123_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8056,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/17",
+      "user_cakedate": "2021-12-28",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538513,
+      "name": "Subendu Gorai",
+      "username": "Subendu",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+      "created_at": "2024-10-08T07:52:09.105Z",
+      "cooked": "<p>Check now, we have resolved the issue.</p>",
+      "post_number": 18,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T07:52:09.105Z",
+      "reply_count": 2,
+      "reply_to_post_number": 16,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 64,
+      "readers_count": 63,
+      "score": 52.8,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Subendu Gorai",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 16243,
+        "username": "22f3002368",
+        "name": "Y Pavan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002368/{size}/71123_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6147,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/18",
+      "user_cakedate": "2021-08-16",
+      "user_birthdate": "1904-03-17",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538517,
+      "name": "KAPISHANKAR ASHTANKAR",
+      "username": "KAPS_ON_AIR",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kaps_on_air/{size}/77870_2.png",
+      "created_at": "2024-10-08T08:03:35.364Z",
+      "cooked": "<p><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/4/040001c05ef3eb2e08f0d2e8157d480c467b424d.png\" alt=\"image\" data-base62-sha1=\"znVjVJtuJHWVMC0NBcXguWQGRf\" width=\"590\" height=\"179\"></p>\n<p>resolved, Thank you <a class=\"mention\" href=\"/u/subendu\">@Subendu</a> sir</p>",
+      "post_number": 19,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T08:04:03.650Z",
+      "reply_count": 0,
+      "reply_to_post_number": 18,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 74,
+      "readers_count": 73,
+      "score": 14.8,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "KAPISHANKAR ASHTANKAR",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 6147,
+        "username": "Subendu",
+        "name": "Subendu Gorai",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6277,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/19",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-03-10",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538520,
+      "name": "Abhimanyu",
+      "username": "22f3000587",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000587/{size}/56292_2.png",
+      "created_at": "2024-10-08T08:07:33.491Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/6/b631eb00e739b7b30d8980428c118875095e8588.png\" data-download-href=\"/uploads/short-url/pZLQBgV0Av4TXPCtmbckuFOrkeI.png?dl=1\" title=\"sc bpt\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/b/6/b631eb00e739b7b30d8980428c118875095e8588.png\" alt=\"sc bpt\" data-base62-sha1=\"pZLQBgV0Av4TXPCtmbckuFOrkeI\" width=\"614\" height=\"500\" data-dominant-color=\"101112\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">sc bpt</span><span class=\"informations\">1113×906 24.7 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\nmy not working tried many times<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/7/7786bf38dbe07d25bb335c1b655c03c1b9302f8a.png\" data-download-href=\"/uploads/short-url/h3nvO2eSdmscVqhSqs9FTtwg9hE.png?dl=1\" title=\"Screenshot (153)\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/7/7786bf38dbe07d25bb335c1b655c03c1b9302f8a_2_690x388.png\" alt=\"Screenshot (153)\" data-base62-sha1=\"h3nvO2eSdmscVqhSqs9FTtwg9hE\" width=\"690\" height=\"388\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/7/7786bf38dbe07d25bb335c1b655c03c1b9302f8a_2_690x388.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/7/7786bf38dbe07d25bb335c1b655c03c1b9302f8a_2_1035x582.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/7/7786bf38dbe07d25bb335c1b655c03c1b9302f8a_2_1380x776.png 2x\" data-dominant-color=\"101111\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot (153)</span><span class=\"informations\">1920×1080 171 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 20,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T08:10:36.569Z",
+      "reply_count": 1,
+      "reply_to_post_number": 18,
+      "quote_count": 0,
+      "incoming_link_count": 19,
+      "reads": 78,
+      "readers_count": 77,
+      "score": 115.6,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Abhimanyu",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 6147,
+        "username": "Subendu",
+        "name": "Subendu Gorai",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16473,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/20",
+      "user_cakedate": "2023-01-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538522,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2024-10-08T08:17:11.060Z",
+      "cooked": "<p>Ensure you do not have other folders or files in your solution folder. You seem to have copied entire question folder into your solution, that is not correct</p>",
+      "post_number": 21,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T08:17:11.060Z",
+      "reply_count": 1,
+      "reply_to_post_number": 20,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 68,
+      "readers_count": 67,
+      "score": 23.6,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 16473,
+        "username": "22f3000587",
+        "name": "Abhimanyu",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000587/{size}/56292_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/21",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538568,
+      "name": "Abhimanyu",
+      "username": "22f3000587",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000587/{size}/56292_2.png",
+      "created_at": "2024-10-08T11:14:06.104Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/9/b/9b510cdc5334f44e5291697d3bf66ed6542a7c85.png\" data-download-href=\"/uploads/short-url/m9ZEKtnOEDPO0h1KIjtTIeLU0Yd.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/9/b/9b510cdc5334f44e5291697d3bf66ed6542a7c85.png\" alt=\"image\" data-base62-sha1=\"m9ZEKtnOEDPO0h1KIjtTIeLU0Yd\" width=\"690\" height=\"440\" data-dominant-color=\"131513\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">872×557 13 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 22,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T11:14:06.104Z",
+      "reply_count": 1,
+      "reply_to_post_number": 21,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 70,
+      "readers_count": 69,
+      "score": 24,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Abhimanyu",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16473,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/22",
+      "user_cakedate": "2023-01-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 538570,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2024-10-08T11:22:53.678Z",
+      "cooked": "<p>You seem like you are trying to delete the entire <code>~/se2001</code> folder. Are you sure this is what you want? It will delete all your solutions.</p>\n<p>If yes, use <code>rm -rf ~/se2001</code> instead of <code>rmdir</code></p>",
+      "post_number": 23,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-08T11:22:53.678Z",
+      "reply_count": 1,
+      "reply_to_post_number": 22,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 67,
+      "readers_count": 66,
+      "score": 48.4,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 16473,
+        "username": "22f3000587",
+        "name": "Abhimanyu",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000587/{size}/56292_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/23",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 540269,
+      "name": "Abhimanyu",
+      "username": "22f3000587",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000587/{size}/56292_2.png",
+      "created_at": "2024-10-12T08:49:04.836Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/9/d/9d8283f2ae515165c36de125892e25ebe3e2b1c0.png\" data-download-href=\"/uploads/short-url/mtoADgXxBFpr6eS92VKgaQFuMTe.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/d/9d8283f2ae515165c36de125892e25ebe3e2b1c0_2_690x388.png\" alt=\"image\" data-base62-sha1=\"mtoADgXxBFpr6eS92VKgaQFuMTe\" width=\"690\" height=\"388\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/d/9d8283f2ae515165c36de125892e25ebe3e2b1c0_2_690x388.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/d/9d8283f2ae515165c36de125892e25ebe3e2b1c0_2_1035x582.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/d/9d8283f2ae515165c36de125892e25ebe3e2b1c0_2_1380x776.png 2x\" data-dominant-color=\"111213\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1920×1080 194 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\nproblem not solved <a class=\"mention\" href=\"/u/subendu\">@Subendu</a> <a class=\"mention\" href=\"/u/sayan\">@sayan</a> <a class=\"mention\" href=\"/u/puneet_21f3002005\">@Puneet_21f3002005</a></p>",
+      "post_number": 24,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-12T08:51:46.602Z",
+      "reply_count": 1,
+      "reply_to_post_number": 23,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 55,
+      "readers_count": 54,
+      "score": 21,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Abhimanyu",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16473,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/24",
+      "user_cakedate": "2023-01-27",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 540514,
+      "name": "Subramaniam Mohan",
+      "username": "21f3003179",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003179/{size}/13038_2.png",
+      "created_at": "2024-10-12T17:45:39.188Z",
+      "cooked": "<p>I could not progress my solutions for problem 3 &amp; 4; following is the error code.<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/5/c59fae1693eb8513962f49e5dce06b316d2dea8e.png\" data-download-href=\"/uploads/short-url/scgaP2JHJBPIxmwtQKxwfROQ7o2.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/c/5/c59fae1693eb8513962f49e5dce06b316d2dea8e.png\" alt=\"image\" data-base62-sha1=\"scgaP2JHJBPIxmwtQKxwfROQ7o2\" width=\"690\" height=\"303\" data-dominant-color=\"1E1E1E\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1126×496 17.8 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 25,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-12T17:45:39.188Z",
+      "reply_count": 0,
+      "reply_to_post_number": 24,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 49,
+      "readers_count": 48,
+      "score": 9.8,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Subramaniam Mohan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 16473,
+        "username": "22f3000587",
+        "name": "Abhimanyu",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000587/{size}/56292_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8235,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/25",
+      "user_cakedate": "2021-12-29",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 541265,
+      "name": "Hariharan",
+      "username": "21f2000679",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f2000679/{size}/67291_2.png",
+      "created_at": "2024-10-13T16:24:42.444Z",
+      "cooked": "<p>Hi Team,<br>\nMy evaluation got failed for BPT1_problem2  – Please help me out whether I made mistake or is system error??<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/4/74a0ba9be29db87c707c31816b9992571914cb9e.png\" data-download-href=\"/uploads/short-url/gDJKit75yVGuWTaGaNqJsVTZDgW.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/4/74a0ba9be29db87c707c31816b9992571914cb9e.png\" alt=\"image\" data-base62-sha1=\"gDJKit75yVGuWTaGaNqJsVTZDgW\" width=\"690\" height=\"340\" data-dominant-color=\"131414\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1870×922 47.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 26,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-13T16:24:42.444Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 37,
+      "readers_count": 36,
+      "score": 12.4,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Hariharan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 7421,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/26",
+      "user_cakedate": "2021-09-16",
+      "user_birthdate": "1904-03-24",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 541464,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2024-10-13T18:02:41.564Z",
+      "cooked": "<p>The issue is clearly pointed out in the error message, kindly follow it and fix your script.</p>",
+      "post_number": 27,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-13T18:02:41.564Z",
+      "reply_count": 0,
+      "reply_to_post_number": 26,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 35,
+      "readers_count": 34,
+      "score": 7,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 7421,
+        "username": "21f2000679",
+        "name": "Hariharan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f2000679/{size}/67291_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/27",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 541860,
+      "name": "Derrick Richard",
+      "username": "DerrickUnleashed",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/derrickunleashed/{size}/109067_2.png",
+      "created_at": "2024-10-14T15:31:28.420Z",
+      "cooked": "<p>Dear IITM Support Team,</p>\n<p>I am writing to bring to your attention the significant technical difficulties I faced during the completion of my BPT1 tasks. These issues severely impacted my ability to meet the deadline, and I kindly request you to consider my submission despite the delay.</p>\n<p>I received the BPT1 release notification on 6th October, as outlined in the email from the System Command team. I understand that the deadline for submission was extended to 12th October. Unfortunately, due to persistent technical issues with accessing the course VM and running the BPT tasks, I was unable to complete my work on time. Despite these challenges, I submitted my solutions on the night of 13th October.</p>\n<p>The problems I encountered included:</p>\n<ul>\n<li>Frequent disconnections from the course VM, making it difficult to save progress.</li>\n<li>Delays in accessing directories and files, which slowed down my workflow.</li>\n<li>Execution failures when running the required tasks, particularly for BPT1_problem_2, which took additional time to resolve.</li>\n</ul>\n<p>I have been diligent in working through these issues and finally managed to complete the tasks, albeit a bit late. Given the circumstances, I request that my submission be considered for evaluation.</p>\n<p>Please let me know if further details are required, and I would greatly appreciate your understanding in this matter.</p>\n<p>Thank you for your time and support.</p>\n<p>Best regards,<br>\nDerrick Samuel R<br>\nRoll No: 23f2001426</p>",
+      "post_number": 28,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-14T15:31:28.420Z",
+      "reply_count": 0,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 37,
+      "readers_count": 36,
+      "score": 7.4,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Derrick Richard",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 8056,
+        "username": "Puneet_21f3002005",
+        "name": "Puneet ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23914,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/28",
+      "user_cakedate": "2023-10-13",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 541953,
+      "name": "Derrick Richard",
+      "username": "DerrickUnleashed",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/derrickunleashed/{size}/109067_2.png",
+      "created_at": "2024-10-15T04:20:53.953Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/subendu\">@Subendu</a> sir</p>\n<p>I am writing to bring to your attention the significant technical difficulties I faced during the completion of my BPT1 tasks. These issues severely impacted my ability to meet the deadline, and I kindly request you to consider my submission despite the delay.</p>\n<p>I received the BPT1 release notification on 6th October, as outlined in the email from the System Command team. I understand that the deadline for submission was extended to 12th October. Unfortunately, due to persistent technical issues with accessing the course VM and running the BPT tasks, I was unable to complete my work on time. Despite these challenges, I submitted my solutions on the night of 13th October.</p>\n<p>The problems I encountered included:</p>\n<ul>\n<li>Frequent disconnections from the course VM, making it difficult to save progress.</li>\n<li>Delays in accessing directories and files, which slowed down my workflow.</li>\n<li>Execution failures when running the required tasks, particularly for BPT1_problem_2, which took additional time to resolve.</li>\n</ul>\n<p>I have been diligent in working through these issues and finally managed to complete the tasks, albeit a bit late. Given the circumstances, I request that my submission be considered for evaluation.</p>\n<p>Please let me know if further details are required, and I would greatly appreciate your understanding in this matter.</p>\n<p>Thank you for your time and support.</p>\n<p>Best regards,<br>\nDerrick Samuel R<br>\nRoll No: 23f2001426</p>",
+      "post_number": 29,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-15T04:20:53.953Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 33,
+      "readers_count": 32,
+      "score": 11.6,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Derrick Richard",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23914,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/29",
+      "user_cakedate": "2023-10-13",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 542038,
+      "name": "Subendu Gorai",
+      "username": "Subendu",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png",
+      "created_at": "2024-10-15T08:09:10.612Z",
+      "cooked": "<p>Thanks, <a class=\"mention\" href=\"/u/derrickunleashed\">@DerrickUnleashed</a>,  for your feedback<br>\nWe will work on the VM issue and will review your submission.<br>\nThe VM issue won’t occur next time.</p>",
+      "post_number": 30,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-15T08:09:10.612Z",
+      "reply_count": 1,
+      "reply_to_post_number": 29,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 32,
+      "readers_count": 31,
+      "score": 11.4,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Subendu Gorai",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 23914,
+        "username": "DerrickUnleashed",
+        "name": "Derrick Richard",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/derrickunleashed/{size}/109067_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6147,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/30",
+      "user_cakedate": "2021-08-16",
+      "user_birthdate": "1904-03-17",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 542352,
+      "name": "Derrick Richard",
+      "username": "DerrickUnleashed",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/derrickunleashed/{size}/109067_2.png",
+      "created_at": "2024-10-16T10:49:31.823Z",
+      "cooked": "<p>Thank you <a class=\"mention\" href=\"/u/subendu\">@Subendu</a> sir…</p>",
+      "post_number": 31,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2024-10-16T10:49:31.823Z",
+      "reply_count": 0,
+      "reply_to_post_number": 30,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 29,
+      "readers_count": 28,
+      "score": 5.8,
+      "yours": false,
+      "topic_id": 151589,
+      "topic_slug": "bpt1-submission-failed",
+      "display_username": "Derrick Richard",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 6147,
+        "username": "Subendu",
+        "name": "Subendu Gorai",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/subendu/{size}/114_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23914,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/bpt1-submission-failed/151589/31",
+      "user_cakedate": "2023-10-13",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

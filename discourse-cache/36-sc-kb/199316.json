@@ -1,0 +1,4609 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 742199,
+        "name": "Rakshitha P",
+        "username": "25f2005088",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png",
+        "created_at": "2026-03-21T06:29:31.977Z",
+        "cooked": "<p>In system commands,I had to do one BPT which is like compulsory for attending oppe but in that I had to work with a file <code>script.sh</code> for which several swap files have been created and it is present in readonly form as well I couldn’t modify or write in it..What should I do to alter it?I couldn’t remove the swap files as well as it shows permission denied. I couldn’t use <code>sudo</code> command also.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/b/0be197fb947a7852724868251a819b213b6f105a.jpeg\" data-download-href=\"/uploads/short-url/1H6Aetr2fNkXrMUk7Z5CMkzVBfY.jpeg?dl=1\" title=\"IMG-20260321-WA0006\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/b/0be197fb947a7852724868251a819b213b6f105a_2_281x500.jpeg\" alt=\"IMG-20260321-WA0006\" data-base62-sha1=\"1H6Aetr2fNkXrMUk7Z5CMkzVBfY\" width=\"281\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/b/0be197fb947a7852724868251a819b213b6f105a_2_281x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/b/0be197fb947a7852724868251a819b213b6f105a_2_421x750.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/b/0be197fb947a7852724868251a819b213b6f105a_2_562x1000.jpeg 2x\" data-dominant-color=\"61465C\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">IMG-20260321-WA0006</span><span class=\"informations\">1920×3413 1.05 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-22T10:48:56.480Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 39,
+        "readers_count": 38,
+        "score": 12.8,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Rakshitha P",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 3,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 56697,
+        "hidden": false,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/1",
+        "user_cakedate": "2026-01-11",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 742213,
+        "name": "Ishan Shishodiya",
+        "username": "22f2001554",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "created_at": "2026-03-21T06:47:09.659Z",
+        "cooked": "<p>Vim creates swap files as a safety mechanism. So if your session ever crashes unexpectedly, you’d not lose out on your progress. In your case it must have happened that a previous vim session crashed unexpectedly without properly closing the file.</p>\n<p>You have two swap files right now, <code>/var/tmp/script.sh.swp</code> and <code>/tmp/script.sh.swp</code>, so you can try deleting those and reopen <code>script.sh</code>.</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">rm /var/tmp/script.sh.swp\nrm /tmp/script.sh.swp\nvim script.sh\n</code></pre>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-21T06:47:09.659Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 35,
+        "readers_count": 34,
+        "score": 12,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Ishan Shishodiya",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 14366,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/2",
+        "user_cakedate": "2022-09-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 742220,
+        "name": "Rakshitha P",
+        "username": "25f2005088",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png",
+        "created_at": "2026-03-21T06:56:40.190Z",
+        "cooked": "<p>But it shows permission denied</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-21T06:56:40.190Z",
+        "reply_count": 1,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 32,
+        "readers_count": 31,
+        "score": 11.4,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Rakshitha P",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 14366,
+          "username": "22f2001554",
+          "name": "Ishan Shishodiya",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 56697,
+        "hidden": false,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/3",
+        "user_cakedate": "2026-01-11",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 742221,
+        "name": "Ishan Shishodiya",
+        "username": "22f2001554",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "created_at": "2026-03-21T06:58:12.565Z",
+        "cooked": "<p>I assumed that the user would own the swap file, but if the root user is owning that then yeah deleting it won’t be possible. From the screenshot it seems that one of the swap files is owned by <code>23f2002876</code> and not you.</p>\n<p>You can try clicking <code>(D)elete</code> or <code>(E)dit</code> when the prompt shows up in vim about what to do. Can you please mention which assignment is this?</p>\n<p>Another thing I see from your terminal title is that you’re inside <code>/opt/se2001/BPT3_problem_1</code>. If so then switch to <code>~/se2001/BPT3_problem_1</code> instead.</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-21T07:04:14.828Z",
+        "reply_count": 2,
+        "reply_to_post_number": 3,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 33,
+        "readers_count": 32,
+        "score": 16.6,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Ishan Shishodiya",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 3,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 56697,
+          "username": "25f2005088",
+          "name": "Rakshitha P",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 14366,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/4",
+        "user_cakedate": "2022-09-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 742223,
+        "name": "Rakshitha P",
+        "username": "25f2005088",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png",
+        "created_at": "2026-03-21T07:05:32.901Z",
+        "cooked": "<p>BPT3 for all the problems I couldn’t modify script.sh and  clicking D or E in vim is also not working after inserting when I give escape and :wq it shows writing permission is denied</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-21T07:05:32.901Z",
+        "reply_count": 1,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 31,
+        "readers_count": 30,
+        "score": 11.2,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Rakshitha P",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 14366,
+          "username": "22f2001554",
+          "name": "Ishan Shishodiya",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 56697,
+        "hidden": false,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/5",
+        "user_cakedate": "2026-01-11",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 742224,
+        "name": "Ishan Shishodiya",
+        "username": "22f2001554",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "created_at": "2026-03-21T07:06:44.671Z",
+        "cooked": "<p>Yes, that’s because you’re inside <code>/opt/se2001</code> instead of <code>~/se2001</code>. Do</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">cd ~/se2001\n</code></pre>\n<p>and then create/go to your BPT3 directory.</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-21T07:06:44.671Z",
+        "reply_count": 0,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 30,
+        "readers_count": 29,
+        "score": 6,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Ishan Shishodiya",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 56697,
+          "username": "25f2005088",
+          "name": "Rakshitha P",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 14366,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/6",
+        "user_cakedate": "2022-09-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 742608,
+        "name": "Rakshitha P",
+        "username": "25f2005088",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png",
+        "created_at": "2026-03-22T11:09:23.061Z",
+        "cooked": "<p>Alright Thanks!!..I got it</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-22T11:09:23.061Z",
+        "reply_count": 0,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 26,
+        "readers_count": 25,
+        "score": 5.2,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Rakshitha P",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 14366,
+          "username": "22f2001554",
+          "name": "Ishan Shishodiya",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 56697,
+        "hidden": false,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/9",
+        "user_cakedate": "2026-01-11",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 744865,
+        "name": "Jeet",
+        "username": "23f2003292",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png",
+        "created_at": "2026-03-27T10:10:11.187Z",
+        "cooked": "<p>I am unable to find the bpt3 problems in the opt/se2001 directory</p>\n<p>Only bpt2 problems are shown</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/8/f/8f42c1d50fb91e138142355c2d8687ad88ad2fe0.png\" data-download-href=\"/uploads/short-url/krliTK7AHDUjpTruGQTcIbnqNbO.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/8/f/8f42c1d50fb91e138142355c2d8687ad88ad2fe0.png\" alt=\"image\" data-base62-sha1=\"krliTK7AHDUjpTruGQTcIbnqNbO\" width=\"690\" height=\"93\" data-dominant-color=\"141B1F\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">815×111 5.15 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-28T12:22:53.528Z",
+        "reply_count": 2,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 17,
+        "readers_count": 16,
+        "score": 13.4,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Jeet",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/bpt3-biweekly-programming-test-three/155086/32",
+            "internal": true,
+            "reflection": true,
+            "title": "BPT3 (Biweekly programming Test Three)",
+            "clicks": 0
+          }
+        ],
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 35219,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/10",
+        "user_cakedate": "2024-07-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 744868,
+        "name": "Jeet",
+        "username": "23f2003292",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png",
+        "created_at": "2026-03-27T10:15:27.394Z",
+        "cooked": "<p>i am unable to find the bpt3 problems in the opt/se2001 folder<br>\nonly bpt2 problems are shown</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/8/f/8f42c1d50fb91e138142355c2d8687ad88ad2fe0.png\" data-download-href=\"/uploads/short-url/krliTK7AHDUjpTruGQTcIbnqNbO.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/8/f/8f42c1d50fb91e138142355c2d8687ad88ad2fe0.png\" alt=\"image\" data-base62-sha1=\"krliTK7AHDUjpTruGQTcIbnqNbO\" width=\"690\" height=\"93\" data-dominant-color=\"141B1F\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">815×111 5.15 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-28T12:22:53.527Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 21,
+        "readers_count": 20,
+        "score": 9.2,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Jeet",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 35219,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/11",
+        "user_cakedate": "2024-07-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 744870,
+        "name": "Gurkirat Singh",
+        "username": "Gurkirat",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+        "created_at": "2026-03-27T10:18:16.075Z",
+        "cooked": "<p>Try this:</p>\n<pre><code class=\"lang-auto\">cd ~\ncd se2001\nmkdir BPT3_problem_1\ncd BPT3_problem_1\nsynchro show\n\n</code></pre>\n<p>You should be able to see Ques1 of BPT3, you can do for other ques as well.</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-28T12:22:53.526Z",
+        "reply_count": 2,
+        "reply_to_post_number": 11,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 22,
+        "readers_count": 21,
+        "score": 14.4,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Gurkirat Singh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Know-it-All",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 35219,
+          "username": "23f2003292",
+          "name": "Jeet",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 39529,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/12",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 744892,
+        "name": "Jeet",
+        "username": "23f2003292",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png",
+        "created_at": "2026-03-27T11:02:25.830Z",
+        "cooked": "<p>Thanks, it worked<br>\nI was able to see the problem<br>\nBut there is no evaluation file so synchro eval is not working</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-28T12:22:53.524Z",
+        "reply_count": 2,
+        "reply_to_post_number": 12,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 19,
+        "readers_count": 18,
+        "score": 18.8,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Jeet",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 39529,
+          "username": "Gurkirat",
+          "name": "Gurkirat Singh",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 35219,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/13",
+        "user_cakedate": "2024-07-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 744898,
+        "name": "Ishan Shishodiya",
+        "username": "22f2001554",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "created_at": "2026-03-27T11:11:19.242Z",
+        "cooked": "<p>You’re in <code>~/opt/se2001</code> when you should instead be inside <code>/opt/se2001</code>.</p>",
+        "post_number": 14,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-28T12:22:53.521Z",
+        "reply_count": 0,
+        "reply_to_post_number": 10,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 15,
+        "readers_count": 14,
+        "score": 18,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Ishan Shishodiya",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 35219,
+          "username": "23f2003292",
+          "name": "Jeet",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 14366,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/14",
+        "user_cakedate": "2022-09-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 744901,
+        "name": "Gurkirat Singh",
+        "username": "Gurkirat",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+        "created_at": "2026-03-27T11:17:18.271Z",
+        "cooked": "<p>You have to write the script thats the point right?</p>\n<p>if u prefer vi then do vi script.sh after you are in correct directory, then you can write your ans.</p>\n<p>After that just save and exit. Then give execute permission then run synchro eval.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/6511dfb65b5c8a149d55fc010637aec3f80d8461.png\" data-download-href=\"/uploads/short-url/eq6wbuwonZTXIMXLo6eWme6nSO5.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/6511dfb65b5c8a149d55fc010637aec3f80d8461.png\" alt=\"image\" data-base62-sha1=\"eq6wbuwonZTXIMXLo6eWme6nSO5\" width=\"361\" height=\"118\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">361×118 32.1 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 15,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-28T12:22:53.519Z",
+        "reply_count": 1,
+        "reply_to_post_number": 13,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 18,
+        "readers_count": 17,
+        "score": 8.6,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Gurkirat Singh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Know-it-All",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 35219,
+          "username": "23f2003292",
+          "name": "Jeet",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 39529,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 744906,
+        "name": "Ishan Shishodiya",
+        "username": "22f2001554",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "created_at": "2026-03-27T11:28:45.523Z",
+        "cooked": "<p>A <code>script.sh</code> is supposed to be the solution to the problem. It can’t exist beforehand because the purpose of the problem itself is for you to solve it. You’ll have to make a <code>script.sh</code> file with the solution you deem fit.</p>",
+        "post_number": 16,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-28T12:22:53.518Z",
+        "reply_count": 1,
+        "reply_to_post_number": 13,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 19,
+        "readers_count": 18,
+        "score": 8.8,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Ishan Shishodiya",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 35219,
+          "username": "23f2003292",
+          "name": "Jeet",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 14366,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/16",
+        "user_cakedate": "2022-09-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 744919,
+        "name": "Dalyodh Singh",
+        "username": "22f3001166",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001166/{size}/142932_2.png",
+        "created_at": "2026-03-27T11:55:47.501Z",
+        "cooked": "<p>I think in /opt/se2001 too you have to manually create these files usign<br>\n<code> touch BPT3_problem_{1..4}</code></p>",
+        "post_number": 17,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-28T12:22:53.514Z",
+        "reply_count": 0,
+        "reply_to_post_number": 10,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 16,
+        "readers_count": 15,
+        "score": 3.2,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Dalyodh Singh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 35219,
+          "username": "23f2003292",
+          "name": "Jeet",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16223,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/17",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 744940,
+        "name": "Jeet",
+        "username": "23f2003292",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png",
+        "created_at": "2026-03-27T13:16:02.055Z",
+        "cooked": "<p>i know that script.sh doesnt exist but the evaluation_file.sh also doesnt exist. I created script.sh and wrote the solution but it is showing this i tried both synchro eval and synchro eval script.sh</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/1/a13a8be0d26f4f1aba86b1814c339b9964a82daa.png\" data-download-href=\"/uploads/short-url/n0ij5h8218Ez4fDt8fgSvIPFyB4.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/1/a13a8be0d26f4f1aba86b1814c339b9964a82daa.png\" alt=\"image\" data-base62-sha1=\"n0ij5h8218Ez4fDt8fgSvIPFyB4\" width=\"690\" height=\"186\" data-dominant-color=\"1A1D1B\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">912×247 13 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/3/13674da345eb6c628eed45258fa54ac82539ec5a.png\" data-download-href=\"/uploads/short-url/2LEoGBhBdpaPuFwaiUNbWGsGkR4.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/3/13674da345eb6c628eed45258fa54ac82539ec5a.png\" alt=\"image\" data-base62-sha1=\"2LEoGBhBdpaPuFwaiUNbWGsGkR4\" width=\"690\" height=\"339\" data-dominant-color=\"161616\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1401×689 26.8 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 18,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-28T12:22:53.512Z",
+        "reply_count": 1,
+        "reply_to_post_number": 16,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 18,
+        "readers_count": 17,
+        "score": 8.6,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Jeet",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 14366,
+          "username": "22f2001554",
+          "name": "Ishan Shishodiya",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 35219,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/18",
+        "user_cakedate": "2024-07-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 744942,
+        "name": "Gurkirat Singh",
+        "username": "Gurkirat",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+        "created_at": "2026-03-27T13:17:32.918Z",
+        "cooked": "<p>Why are you running all that in /opt…… directory.</p>\n<p>No need to do all this in that directory.</p>\n<p>Follow the steps given below and it should work.</p>\n<aside class=\"quote group-ds-students quote-modified\" data-username=\"Gurkirat\" data-post=\"11\" data-topic=\"199316\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/g/49beb7/48.png\" class=\"avatar\"> Gurkirat:</div>\n<blockquote>\n<pre><code class=\"lang-auto\">cd ~\ncd se2001\nmkdir BPT3_problem_1\ncd BPT3_problem_1\nsynchro show\n</code></pre>\n</blockquote>\n</aside>\n<aside class=\"quote group-ds-students\" data-username=\"Gurkirat\" data-post=\"15\" data-topic=\"199316\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/g/49beb7/48.png\" class=\"avatar\"> Gurkirat:</div>\n<blockquote>\n<p>if u prefer vi then do vi script.sh after you are in correct directory, then you can write your ans.</p>\n<p>After that just save and exit. Then give execute permission then run synchro eval.</p>\n</blockquote>\n</aside>\n<aside class=\"quote group-ds-students quote-modified\" data-username=\"Gurkirat\" data-post=\"15\" data-topic=\"199316\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/g/49beb7/48.png\" class=\"avatar\"> Gurkirat:</div>\n<blockquote>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/6511dfb65b5c8a149d55fc010637aec3f80d8461.png\" data-download-href=\"/uploads/short-url/eq6wbuwonZTXIMXLo6eWme6nSO5.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/6511dfb65b5c8a149d55fc010637aec3f80d8461.png\" alt=\"image\" data-base62-sha1=\"eq6wbuwonZTXIMXLo6eWme6nSO5\" width=\"361\" height=\"118\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">361×118 32.1 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n</blockquote>\n</aside>",
+        "post_number": 19,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-28T12:22:53.510Z",
+        "reply_count": 1,
+        "reply_to_post_number": 18,
+        "quote_count": 2,
+        "incoming_link_count": 0,
+        "reads": 17,
+        "readers_count": 16,
+        "score": 8.4,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Gurkirat Singh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 3,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Know-it-All",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 35219,
+          "username": "23f2003292",
+          "name": "Jeet",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 39529,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/19",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 744950,
+        "name": "Jeet",
+        "username": "23f2003292",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png",
+        "created_at": "2026-03-27T13:27:49.178Z",
+        "cooked": "<p>ok<br>\nthank you its done</p>",
+        "post_number": 20,
+        "post_type": 1,
+        "posts_count": 18,
+        "updated_at": "2026-03-28T12:22:53.504Z",
+        "reply_count": 0,
+        "reply_to_post_number": 19,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 14,
+        "readers_count": 13,
+        "score": 2.8,
+        "yours": false,
+        "topic_id": 199316,
+        "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+        "display_username": "Jeet",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 39529,
+          "username": "Gurkirat",
+          "name": "Gurkirat Singh",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 35219,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/20",
+        "user_cakedate": "2024-07-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      742199,
+      742213,
+      742220,
+      742221,
+      742223,
+      742224,
+      742608,
+      744865,
+      744868,
+      744870,
+      744892,
+      744898,
+      744901,
+      744906,
+      744919,
+      744940,
+      744942,
+      744950
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      37
+    ],
+    [
+      7,
+      35
+    ],
+    [
+      8,
+      30
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 47,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 6,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 365,
+      "name": "term1-2026",
+      "slug": "term1-2026"
+    },
+    {
+      "id": 338,
+      "name": "bpt",
+      "slug": "bpt"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Can&rsquo;t modify script.sh file for BPT3",
+  "id": 199316,
+  "title": "Can't modify script.sh file for BPT3",
+  "posts_count": 18,
+  "created_at": "2026-03-21T06:29:31.829Z",
+  "views": 96,
+  "reply_count": 12,
+  "like_count": 1,
+  "last_posted_at": "2026-03-27T13:27:49.178Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "cant-modify-script-sh-file-for-bpt3",
+  "category_id": 36,
+  "word_count": 709,
+  "deleted_at": null,
+  "user_id": 56697,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/b/0be197fb947a7852724868251a819b213b6f105a_2_576x1024.jpeg",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_199316",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 20,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 5,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 1920,
+      "height": 3413,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/b/0be197fb947a7852724868251a819b213b6f105a.jpeg"
+    },
+    {
+      "max_width": 1024,
+      "max_height": 1024,
+      "width": 576,
+      "height": 1024,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/b/0be197fb947a7852724868251a819b213b6f105a_2_576x1024.jpeg"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "System commands BPT script.sh file is present asa a readonly file",
+      "id": 199309,
+      "title": "System commands BPT script.sh file is present asa a readonly file",
+      "slug": "system-commands-bpt-script-sh-file-is-present-asa-a-readonly-file",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/7/3/7374ad9de7119e79f1534cf9551f834ed5d541c9_2_576x1024.jpeg",
+      "created_at": "2026-03-21T05:37:19.293Z",
+      "last_posted_at": "2026-03-21T06:04:23.833Z",
+      "bumped": true,
+      "bumped_at": "2026-03-21T06:04:23.833Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 28,
+      "category_id": 7,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 56697,
+            "username": "25f2005088",
+            "name": "Rakshitha P",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6616,
+            "username": "aaruni-kale",
+            "name": "‎ Aaruni Kale",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/aaruni-kale/{size}/53900_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Cant create script.sh file",
+      "id": 137765,
+      "title": "Cant create script.sh file",
+      "slug": "cant-create-script-sh-file",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/a/8/a89d655ea93b87b76326d0297e30cb1832066254_2_1024x640.png",
+      "created_at": "2024-07-03T05:21:36.386Z",
+      "last_posted_at": "2024-07-03T05:50:45.453Z",
+      "bumped": true,
+      "bumped_at": "2024-07-03T05:50:45.453Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 297,
+          "name": "vm-task",
+          "slug": "vm-task"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 31,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 18848,
+            "username": "23f1001389",
+            "name": "ASWANTHRAVEENDRAN",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1001389/{size}/67405_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 16998,
+            "username": "sushil1",
+            "name": "sushil_sys",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sushil1/{size}/62332_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Need help with nano script.sh",
+      "id": 165334,
+      "title": "Need help with nano script.sh",
+      "slug": "need-help-with-nano-script-sh",
+      "posts_count": 12,
+      "reply_count": 11,
+      "highest_post_number": 14,
+      "image_url": null,
+      "created_at": "2025-01-26T12:38:32.776Z",
+      "last_posted_at": "2025-01-31T16:30:59.243Z",
+      "bumped": true,
+      "bumped_at": "2025-01-31T16:30:59.243Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 62,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 13439,
+            "username": "kalpana",
+            "name": "kalpana palaniswamy",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 8056,
+            "username": "Puneet_21f3002005",
+            "name": "Puneet ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 12910,
+            "username": "chaitanya353535",
+            "name": "Chaitanya Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chaitanya353535/{size}/31240_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "WM Task - Unable to edit script.sh",
+      "id": 109369,
+      "title": "WM Task - Unable to edit script.sh",
+      "slug": "wm-task-unable-to-edit-script-sh",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 5,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/1/0193ad8083e9e2ccb0fa6d0e56db33450322a9b2.png",
+      "created_at": "2023-11-14T14:14:35.795Z",
+      "last_posted_at": "2023-11-15T07:31:50.766Z",
+      "bumped": true,
+      "bumped_at": "2023-11-15T07:31:50.766Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 35,
+          "name": "error",
+          "slug": "error"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 64,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 5940,
+            "username": "Pritstift",
+            "name": "Prithvi J",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritstift/{size}/13325_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 15485,
+            "username": "Ksoham",
+            "name": "Soham Sachin Kulkarni",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ksoham/{size}/60244_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 12433,
+            "username": "keetrap",
+            "name": " 𝙋𝙖𝙧𝙩𝙚𝙚𝙠",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/keetrap/{size}/95838_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Issue While Running BPT Script - No Permissions?",
+      "id": 154185,
+      "title": "Issue While Running BPT Script - No Permissions?",
+      "slug": "issue-while-running-bpt-script-no-permissions",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": null,
+      "created_at": "2024-10-27T16:22:02.119Z",
+      "last_posted_at": "2024-10-27T18:58:16.409Z",
+      "bumped": true,
+      "bumped_at": "2024-10-27T18:58:16.409Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 297,
+          "name": "vm-task",
+          "slug": "vm-task"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 33,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 22472,
+            "username": "Advaith52",
+            "name": "Advaith Sanil Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/advaith52/{size}/67172_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 7771,
+            "username": "21f1002877",
+            "name": "User",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/58956e/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 6,
+    "username": "22f2001554",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+    "excerpt": "<p>Yes, that’s because you’re inside <code>/opt/se2001</code> instead of <code>~/se2001</code>. Do</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">cd ~/se2001\n</code></pre>\n<p>and then create/go to your BPT3 directory.</p>",
+    "accepter_name": null,
+    "accepter_username": "21f3000759"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+        "post_count": 5,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 35219,
+        "username": "23f2003292",
+        "name": "Jeet",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png",
+        "post_count": 5,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 56697,
+        "username": "25f2005088",
+        "name": "Rakshitha P",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png",
+        "post_count": 4,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      },
+      {
+        "id": 39529,
+        "username": "Gurkirat",
+        "name": "Gurkirat Singh",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 16223,
+        "username": "22f3001166",
+        "name": "Dalyodh Singh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001166/{size}/142932_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 56697,
+      "username": "25f2005088",
+      "name": "Rakshitha P",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png"
+    },
+    "last_poster": {
+      "id": 35219,
+      "username": "23f2003292",
+      "name": "Jeet",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 742199,
+      "name": "Rakshitha P",
+      "username": "25f2005088",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png",
+      "created_at": "2026-03-21T06:29:31.977Z",
+      "cooked": "<p>In system commands,I had to do one BPT which is like compulsory for attending oppe but in that I had to work with a file <code>script.sh</code> for which several swap files have been created and it is present in readonly form as well I couldn’t modify or write in it..What should I do to alter it?I couldn’t remove the swap files as well as it shows permission denied. I couldn’t use <code>sudo</code> command also.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/b/0be197fb947a7852724868251a819b213b6f105a.jpeg\" data-download-href=\"/uploads/short-url/1H6Aetr2fNkXrMUk7Z5CMkzVBfY.jpeg?dl=1\" title=\"IMG-20260321-WA0006\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/b/0be197fb947a7852724868251a819b213b6f105a_2_281x500.jpeg\" alt=\"IMG-20260321-WA0006\" data-base62-sha1=\"1H6Aetr2fNkXrMUk7Z5CMkzVBfY\" width=\"281\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/b/0be197fb947a7852724868251a819b213b6f105a_2_281x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/b/0be197fb947a7852724868251a819b213b6f105a_2_421x750.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/b/0be197fb947a7852724868251a819b213b6f105a_2_562x1000.jpeg 2x\" data-dominant-color=\"61465C\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">IMG-20260321-WA0006</span><span class=\"informations\">1920×3413 1.05 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-22T10:48:56.480Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 39,
+      "readers_count": 38,
+      "score": 12.8,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Rakshitha P",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 56697,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/1",
+      "user_cakedate": "2026-01-11",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 742213,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-03-21T06:47:09.659Z",
+      "cooked": "<p>Vim creates swap files as a safety mechanism. So if your session ever crashes unexpectedly, you’d not lose out on your progress. In your case it must have happened that a previous vim session crashed unexpectedly without properly closing the file.</p>\n<p>You have two swap files right now, <code>/var/tmp/script.sh.swp</code> and <code>/tmp/script.sh.swp</code>, so you can try deleting those and reopen <code>script.sh</code>.</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">rm /var/tmp/script.sh.swp\nrm /tmp/script.sh.swp\nvim script.sh\n</code></pre>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-21T06:47:09.659Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 35,
+      "readers_count": 34,
+      "score": 12,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/2",
+      "user_cakedate": "2022-09-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 742220,
+      "name": "Rakshitha P",
+      "username": "25f2005088",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png",
+      "created_at": "2026-03-21T06:56:40.190Z",
+      "cooked": "<p>But it shows permission denied</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-21T06:56:40.190Z",
+      "reply_count": 1,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 32,
+      "readers_count": 31,
+      "score": 11.4,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Rakshitha P",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 56697,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/3",
+      "user_cakedate": "2026-01-11",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 742221,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-03-21T06:58:12.565Z",
+      "cooked": "<p>I assumed that the user would own the swap file, but if the root user is owning that then yeah deleting it won’t be possible. From the screenshot it seems that one of the swap files is owned by <code>23f2002876</code> and not you.</p>\n<p>You can try clicking <code>(D)elete</code> or <code>(E)dit</code> when the prompt shows up in vim about what to do. Can you please mention which assignment is this?</p>\n<p>Another thing I see from your terminal title is that you’re inside <code>/opt/se2001/BPT3_problem_1</code>. If so then switch to <code>~/se2001/BPT3_problem_1</code> instead.</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-21T07:04:14.828Z",
+      "reply_count": 2,
+      "reply_to_post_number": 3,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 33,
+      "readers_count": 32,
+      "score": 16.6,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 56697,
+        "username": "25f2005088",
+        "name": "Rakshitha P",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/4",
+      "user_cakedate": "2022-09-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 742223,
+      "name": "Rakshitha P",
+      "username": "25f2005088",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png",
+      "created_at": "2026-03-21T07:05:32.901Z",
+      "cooked": "<p>BPT3 for all the problems I couldn’t modify script.sh and  clicking D or E in vim is also not working after inserting when I give escape and :wq it shows writing permission is denied</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-21T07:05:32.901Z",
+      "reply_count": 1,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 31,
+      "readers_count": 30,
+      "score": 11.2,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Rakshitha P",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 56697,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/5",
+      "user_cakedate": "2026-01-11",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 742224,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-03-21T07:06:44.671Z",
+      "cooked": "<p>Yes, that’s because you’re inside <code>/opt/se2001</code> instead of <code>~/se2001</code>. Do</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">cd ~/se2001\n</code></pre>\n<p>and then create/go to your BPT3 directory.</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-21T07:06:44.671Z",
+      "reply_count": 0,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 30,
+      "readers_count": 29,
+      "score": 6,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 56697,
+        "username": "25f2005088",
+        "name": "Rakshitha P",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/6",
+      "user_cakedate": "2022-09-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 742608,
+      "name": "Rakshitha P",
+      "username": "25f2005088",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png",
+      "created_at": "2026-03-22T11:09:23.061Z",
+      "cooked": "<p>Alright Thanks!!..I got it</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-22T11:09:23.061Z",
+      "reply_count": 0,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 26,
+      "readers_count": 25,
+      "score": 5.2,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Rakshitha P",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 56697,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/9",
+      "user_cakedate": "2026-01-11",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 744865,
+      "name": "Jeet",
+      "username": "23f2003292",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png",
+      "created_at": "2026-03-27T10:10:11.187Z",
+      "cooked": "<p>I am unable to find the bpt3 problems in the opt/se2001 directory</p>\n<p>Only bpt2 problems are shown</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/8/f/8f42c1d50fb91e138142355c2d8687ad88ad2fe0.png\" data-download-href=\"/uploads/short-url/krliTK7AHDUjpTruGQTcIbnqNbO.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/8/f/8f42c1d50fb91e138142355c2d8687ad88ad2fe0.png\" alt=\"image\" data-base62-sha1=\"krliTK7AHDUjpTruGQTcIbnqNbO\" width=\"690\" height=\"93\" data-dominant-color=\"141B1F\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">815×111 5.15 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-28T12:22:53.528Z",
+      "reply_count": 2,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 17,
+      "readers_count": 16,
+      "score": 13.4,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Jeet",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/bpt3-biweekly-programming-test-three/155086/32",
+          "internal": true,
+          "reflection": true,
+          "title": "BPT3 (Biweekly programming Test Three)",
+          "clicks": 0
+        }
+      ],
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 35219,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/10",
+      "user_cakedate": "2024-07-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 744868,
+      "name": "Jeet",
+      "username": "23f2003292",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png",
+      "created_at": "2026-03-27T10:15:27.394Z",
+      "cooked": "<p>i am unable to find the bpt3 problems in the opt/se2001 folder<br>\nonly bpt2 problems are shown</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/8/f/8f42c1d50fb91e138142355c2d8687ad88ad2fe0.png\" data-download-href=\"/uploads/short-url/krliTK7AHDUjpTruGQTcIbnqNbO.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/8/f/8f42c1d50fb91e138142355c2d8687ad88ad2fe0.png\" alt=\"image\" data-base62-sha1=\"krliTK7AHDUjpTruGQTcIbnqNbO\" width=\"690\" height=\"93\" data-dominant-color=\"141B1F\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">815×111 5.15 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-28T12:22:53.527Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 21,
+      "readers_count": 20,
+      "score": 9.2,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Jeet",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 35219,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/11",
+      "user_cakedate": "2024-07-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 744870,
+      "name": "Gurkirat Singh",
+      "username": "Gurkirat",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+      "created_at": "2026-03-27T10:18:16.075Z",
+      "cooked": "<p>Try this:</p>\n<pre><code class=\"lang-auto\">cd ~\ncd se2001\nmkdir BPT3_problem_1\ncd BPT3_problem_1\nsynchro show\n\n</code></pre>\n<p>You should be able to see Ques1 of BPT3, you can do for other ques as well.</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-28T12:22:53.526Z",
+      "reply_count": 2,
+      "reply_to_post_number": 11,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 22,
+      "readers_count": 21,
+      "score": 14.4,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Gurkirat Singh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Know-it-All",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 35219,
+        "username": "23f2003292",
+        "name": "Jeet",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 39529,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/12",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 744892,
+      "name": "Jeet",
+      "username": "23f2003292",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png",
+      "created_at": "2026-03-27T11:02:25.830Z",
+      "cooked": "<p>Thanks, it worked<br>\nI was able to see the problem<br>\nBut there is no evaluation file so synchro eval is not working</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-28T12:22:53.524Z",
+      "reply_count": 2,
+      "reply_to_post_number": 12,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 19,
+      "readers_count": 18,
+      "score": 18.8,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Jeet",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 39529,
+        "username": "Gurkirat",
+        "name": "Gurkirat Singh",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 35219,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/13",
+      "user_cakedate": "2024-07-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 744898,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-03-27T11:11:19.242Z",
+      "cooked": "<p>You’re in <code>~/opt/se2001</code> when you should instead be inside <code>/opt/se2001</code>.</p>",
+      "post_number": 14,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-28T12:22:53.521Z",
+      "reply_count": 0,
+      "reply_to_post_number": 10,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 15,
+      "readers_count": 14,
+      "score": 18,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 35219,
+        "username": "23f2003292",
+        "name": "Jeet",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/14",
+      "user_cakedate": "2022-09-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 744901,
+      "name": "Gurkirat Singh",
+      "username": "Gurkirat",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+      "created_at": "2026-03-27T11:17:18.271Z",
+      "cooked": "<p>You have to write the script thats the point right?</p>\n<p>if u prefer vi then do vi script.sh after you are in correct directory, then you can write your ans.</p>\n<p>After that just save and exit. Then give execute permission then run synchro eval.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/6511dfb65b5c8a149d55fc010637aec3f80d8461.png\" data-download-href=\"/uploads/short-url/eq6wbuwonZTXIMXLo6eWme6nSO5.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/6511dfb65b5c8a149d55fc010637aec3f80d8461.png\" alt=\"image\" data-base62-sha1=\"eq6wbuwonZTXIMXLo6eWme6nSO5\" width=\"361\" height=\"118\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">361×118 32.1 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 15,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-28T12:22:53.519Z",
+      "reply_count": 1,
+      "reply_to_post_number": 13,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 18,
+      "readers_count": 17,
+      "score": 8.6,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Gurkirat Singh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Know-it-All",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 35219,
+        "username": "23f2003292",
+        "name": "Jeet",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 39529,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 744906,
+      "name": "Ishan Shishodiya",
+      "username": "22f2001554",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+      "created_at": "2026-03-27T11:28:45.523Z",
+      "cooked": "<p>A <code>script.sh</code> is supposed to be the solution to the problem. It can’t exist beforehand because the purpose of the problem itself is for you to solve it. You’ll have to make a <code>script.sh</code> file with the solution you deem fit.</p>",
+      "post_number": 16,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-28T12:22:53.518Z",
+      "reply_count": 1,
+      "reply_to_post_number": 13,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 19,
+      "readers_count": 18,
+      "score": 8.8,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Ishan Shishodiya",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 35219,
+        "username": "23f2003292",
+        "name": "Jeet",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 14366,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/16",
+      "user_cakedate": "2022-09-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 744919,
+      "name": "Dalyodh Singh",
+      "username": "22f3001166",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001166/{size}/142932_2.png",
+      "created_at": "2026-03-27T11:55:47.501Z",
+      "cooked": "<p>I think in /opt/se2001 too you have to manually create these files usign<br>\n<code> touch BPT3_problem_{1..4}</code></p>",
+      "post_number": 17,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-28T12:22:53.514Z",
+      "reply_count": 0,
+      "reply_to_post_number": 10,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 16,
+      "readers_count": 15,
+      "score": 3.2,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Dalyodh Singh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 35219,
+        "username": "23f2003292",
+        "name": "Jeet",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16223,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/17",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 744940,
+      "name": "Jeet",
+      "username": "23f2003292",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png",
+      "created_at": "2026-03-27T13:16:02.055Z",
+      "cooked": "<p>i know that script.sh doesnt exist but the evaluation_file.sh also doesnt exist. I created script.sh and wrote the solution but it is showing this i tried both synchro eval and synchro eval script.sh</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/1/a13a8be0d26f4f1aba86b1814c339b9964a82daa.png\" data-download-href=\"/uploads/short-url/n0ij5h8218Ez4fDt8fgSvIPFyB4.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/a/1/a13a8be0d26f4f1aba86b1814c339b9964a82daa.png\" alt=\"image\" data-base62-sha1=\"n0ij5h8218Ez4fDt8fgSvIPFyB4\" width=\"690\" height=\"186\" data-dominant-color=\"1A1D1B\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">912×247 13 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/3/13674da345eb6c628eed45258fa54ac82539ec5a.png\" data-download-href=\"/uploads/short-url/2LEoGBhBdpaPuFwaiUNbWGsGkR4.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/3/13674da345eb6c628eed45258fa54ac82539ec5a.png\" alt=\"image\" data-base62-sha1=\"2LEoGBhBdpaPuFwaiUNbWGsGkR4\" width=\"690\" height=\"339\" data-dominant-color=\"161616\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1401×689 26.8 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 18,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-28T12:22:53.512Z",
+      "reply_count": 1,
+      "reply_to_post_number": 16,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 18,
+      "readers_count": 17,
+      "score": 8.6,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Jeet",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 14366,
+        "username": "22f2001554",
+        "name": "Ishan Shishodiya",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 35219,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/18",
+      "user_cakedate": "2024-07-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 744942,
+      "name": "Gurkirat Singh",
+      "username": "Gurkirat",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+      "created_at": "2026-03-27T13:17:32.918Z",
+      "cooked": "<p>Why are you running all that in /opt…… directory.</p>\n<p>No need to do all this in that directory.</p>\n<p>Follow the steps given below and it should work.</p>\n<aside class=\"quote group-ds-students quote-modified\" data-username=\"Gurkirat\" data-post=\"11\" data-topic=\"199316\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/g/49beb7/48.png\" class=\"avatar\"> Gurkirat:</div>\n<blockquote>\n<pre><code class=\"lang-auto\">cd ~\ncd se2001\nmkdir BPT3_problem_1\ncd BPT3_problem_1\nsynchro show\n</code></pre>\n</blockquote>\n</aside>\n<aside class=\"quote group-ds-students\" data-username=\"Gurkirat\" data-post=\"15\" data-topic=\"199316\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/g/49beb7/48.png\" class=\"avatar\"> Gurkirat:</div>\n<blockquote>\n<p>if u prefer vi then do vi script.sh after you are in correct directory, then you can write your ans.</p>\n<p>After that just save and exit. Then give execute permission then run synchro eval.</p>\n</blockquote>\n</aside>\n<aside class=\"quote group-ds-students quote-modified\" data-username=\"Gurkirat\" data-post=\"15\" data-topic=\"199316\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/g/49beb7/48.png\" class=\"avatar\"> Gurkirat:</div>\n<blockquote>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/6511dfb65b5c8a149d55fc010637aec3f80d8461.png\" data-download-href=\"/uploads/short-url/eq6wbuwonZTXIMXLo6eWme6nSO5.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/6511dfb65b5c8a149d55fc010637aec3f80d8461.png\" alt=\"image\" data-base62-sha1=\"eq6wbuwonZTXIMXLo6eWme6nSO5\" width=\"361\" height=\"118\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">361×118 32.1 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n</blockquote>\n</aside>",
+      "post_number": 19,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-28T12:22:53.510Z",
+      "reply_count": 1,
+      "reply_to_post_number": 18,
+      "quote_count": 2,
+      "incoming_link_count": 0,
+      "reads": 17,
+      "readers_count": 16,
+      "score": 8.4,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Gurkirat Singh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Know-it-All",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 35219,
+        "username": "23f2003292",
+        "name": "Jeet",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 39529,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/19",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 744950,
+      "name": "Jeet",
+      "username": "23f2003292",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png",
+      "created_at": "2026-03-27T13:27:49.178Z",
+      "cooked": "<p>ok<br>\nthank you its done</p>",
+      "post_number": 20,
+      "post_type": 1,
+      "posts_count": 18,
+      "updated_at": "2026-03-28T12:22:53.504Z",
+      "reply_count": 0,
+      "reply_to_post_number": 19,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 14,
+      "readers_count": 13,
+      "score": 2.8,
+      "yours": false,
+      "topic_id": 199316,
+      "topic_slug": "cant-modify-script-sh-file-for-bpt3",
+      "display_username": "Jeet",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 39529,
+        "username": "Gurkirat",
+        "name": "Gurkirat Singh",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 35219,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/cant-modify-script-sh-file-for-bpt3/199316/20",
+      "user_cakedate": "2024-07-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

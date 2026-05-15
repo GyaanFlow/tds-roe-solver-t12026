@@ -1,0 +1,3505 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 585678,
+        "name": "kalpana palaniswamy",
+        "username": "kalpana",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+        "created_at": "2025-01-26T12:38:33.043Z",
+        "cooked": "<p>HAI GOOD EVENING i have been trying to write the command in script.sh.i tried using Nano.when i did Nano script.sh i was able to write my command but when i want to save it it gives me ana error message<br>\nError writing script.sh: Permission denied ] i have tried using vi as well but was unable to .<br>\nDue to this am unable to proceed with bpt1 problems 3,4 .PLEASE HELP</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-01-26T12:38:33.043Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 38,
+        "readers_count": 37,
+        "score": 7.6,
+        "yours": false,
+        "topic_id": 165334,
+        "topic_slug": "need-help-with-nano-script-sh",
+        "display_username": "kalpana palaniswamy",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 13439,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-with-nano-script-sh/165334/1",
+        "user_cakedate": "2022-05-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 585737,
+        "name": "Puneet ",
+        "username": "Puneet_21f3002005",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+        "created_at": "2025-01-26T13:12:37.559Z",
+        "cooked": "<p>Please check your permissions for the script.sh using <code>ls -l</code>. If not then provide permissions to write in the file using <code>chmod</code> command.</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-01-26T13:12:37.559Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 36,
+        "readers_count": 35,
+        "score": 17.2,
+        "yours": false,
+        "topic_id": 165334,
+        "topic_slug": "need-help-with-nano-script-sh",
+        "display_username": "Puneet ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 8056,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-with-nano-script-sh/165334/2",
+        "user_cakedate": "2021-12-28",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 585831,
+        "name": "kalpana palaniswamy",
+        "username": "kalpana",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+        "created_at": "2025-01-26T13:53:26.905Z",
+        "cooked": "<aside class=\"quote group-ds-students quote-modified\" data-username=\"kalpana\" data-post=\"3\" data-topic=\"165334\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/48/12402_2.png\" class=\"avatar\"> kalpana:</div>\n<blockquote>\n<p>22f1000375@se2001:~/se2001/BPT1_problem_3$ chmod u+w script.sh<br>\nchmod: cannot access ‘script.sh’: No such file or directory</p>\n</blockquote>\n</aside>\n<p>22f1000375@se2001:~/se2001/BPT1_problem_3$ ls -l<br>\ntotal 16<br>\n-rw-r–r-- 1 root root  770 Jan 23 12:19 README.md<br>\n-rw-r–r-- 1 root root  722 Jan 23 12:19 evaluation_file.sh<br>\ndrwxr-xr-x 2 root root 4096 Jan 23 12:19 private<br>\ndrwxr-xr-x 3 root root 4096 Jan 23 12:19 public<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ chmod u+w script.sh<br>\nchmod: cannot access ‘script.sh’: No such file or directory<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ ls -l<br>\ni am getting this error pls help</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-01-26T13:53:26.905Z",
+        "reply_count": 1,
+        "reply_to_post_number": 2,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 32,
+        "readers_count": 31,
+        "score": 11.4,
+        "yours": false,
+        "topic_id": 165334,
+        "topic_slug": "need-help-with-nano-script-sh",
+        "display_username": "kalpana palaniswamy",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 8056,
+          "username": "Puneet_21f3002005",
+          "name": "Puneet ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 13439,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-with-nano-script-sh/165334/4",
+        "user_cakedate": "2022-05-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 585837,
+        "name": "Puneet ",
+        "username": "Puneet_21f3002005",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+        "created_at": "2025-01-26T13:59:48.510Z",
+        "cooked": "<p>First of all you have to create a script.sh file inside the present directory. Then open it in the nano editor. Write your code and then <code>chmod 755 script.sh</code> . Then try to evaluate it.</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-01-26T13:59:48.510Z",
+        "reply_count": 1,
+        "reply_to_post_number": 4,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 31,
+        "readers_count": 30,
+        "score": 11.2,
+        "yours": false,
+        "topic_id": 165334,
+        "topic_slug": "need-help-with-nano-script-sh",
+        "display_username": "Puneet ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 13439,
+          "username": "kalpana",
+          "name": "kalpana palaniswamy",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 8056,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-with-nano-script-sh/165334/5",
+        "user_cakedate": "2021-12-28",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 585886,
+        "name": "kalpana palaniswamy",
+        "username": "kalpana",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+        "created_at": "2025-01-26T14:27:47.048Z",
+        "cooked": "<aside class=\"quote group-ds-students quote-post-not-found\" data-username=\"kalpana\" data-post=\"6\" data-topic=\"165334\" data-full=\"true\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/48/12402_2.png\" class=\"avatar\"> kalpana:</div>\n<blockquote>\n<p>I also tried this it is the same again22f1000375@se2001:~/se2001/BPT1_problem_3$ nano script.sh<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ 22f1000375@se2001:~/se2001/BPT1_problem_3$ cd …<br>\n22f1000375@se2001:~/se2001$ touch script.sh<br>\ntouch: cannot touch ‘script.sh’: Permission denied<br>\n22f1000375@se2001:~/se2001$ nano script.sh<br>\n22f1000375@se2001:~/se2001$ cd BPT1_problem_3<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ ls<br>\nREADME.md evaluation_file.sh private public<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ touch script.sh<br>\ntouch: cannot touch ‘script.sh’: Permission denied<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ nano ~/script.sh<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ chmod 755 script.sh<br>\nchmod: cannot access ‘script.sh’: No such file or directory<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$</p>\n</blockquote>\n</aside>\n<p>22f1000375@se2001:~/se2001$ touch script.sh<br>\ntouch: cannot touch ‘script.sh’: Permission denied<br>\n22f1000375@se2001:~/se2001$ nano script.sh<br>\n22f1000375@se2001:~/se2001$ cd BPT1_problem_3<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ ls<br>\nREADME.md evaluation_file.sh private public<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ touch script.sh<br>\ntouch: cannot touch ‘script.sh’: Permission denied<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ nano script.sh<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ chmod 755 script.sh<br>\nchmod: cannot access ‘script.sh’: No such file or directory<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$</p>\n<p>I also tried this way</p>\n<h2><a name=\"p-585886-h-22f1000375se2001se2001bpt1_problem_3-chmod-755-scriptsh-22f1000375se2001se2001bpt1_problem_3-ls-scriptsh-home22f1000375scriptsh-22f1000375se2001se2001bpt1_problem_3-synchro-eval-bpt1_problem_3-sun-jan-26-142048-utc-2025-1\" class=\"anchor\" href=\"#p-585886-h-22f1000375se2001se2001bpt1_problem_3-chmod-755-scriptsh-22f1000375se2001se2001bpt1_problem_3-ls-scriptsh-home22f1000375scriptsh-22f1000375se2001se2001bpt1_problem_3-synchro-eval-bpt1_problem_3-sun-jan-26-142048-utc-2025-1\" aria-label=\"Heading link\"></a>22f1000375@se2001:~/se2001/BPT1_problem_3$ chmod 755 ~/script.sh<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ ls ~/script.sh<br>\n/home/22f1000375/script.sh<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ synchro eval<br>\nBPT1_problem_3: Sun Jan 26 14:20:48 UTC 2025</h2>\n<p> → /opt/se2001/BPT1_problem_3/public/test_case_1<br>\n/opt/se2001/BPT1_problem_3/evaluation_file.sh: line 9: ./script.sh: No such file or directory</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-01-26T14:27:47.048Z",
+        "reply_count": 1,
+        "reply_to_post_number": 5,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 27,
+        "readers_count": 26,
+        "score": 10.4,
+        "yours": false,
+        "topic_id": 165334,
+        "topic_slug": "need-help-with-nano-script-sh",
+        "display_username": "kalpana palaniswamy",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 8056,
+          "username": "Puneet_21f3002005",
+          "name": "Puneet ",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 13439,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-with-nano-script-sh/165334/7",
+        "user_cakedate": "2022-05-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 586632,
+        "name": "Chaitanya Mishra",
+        "username": "chaitanya353535",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chaitanya353535/{size}/31240_2.png",
+        "created_at": "2025-01-27T07:37:34.219Z",
+        "cooked": "<aside class=\"quote group-ds-students\" data-username=\"kalpana\" data-post=\"7\" data-topic=\"165334\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/48/12402_2.png\" class=\"avatar\"> kalpana:</div>\n<blockquote>\n<p>22f1000375@se2001:~/se2001/BPT1_problem_3$ touch script.sh<br>\ntouch: cannot touch ‘script.sh’: Permission denied</p>\n</blockquote>\n</aside>\n<p>I think you should check the permission for the BPT* directory first. And change it using <code>chmod u+x</code></p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-01-27T07:37:34.219Z",
+        "reply_count": 1,
+        "reply_to_post_number": 7,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 23,
+        "readers_count": 22,
+        "score": 9.6,
+        "yours": false,
+        "topic_id": 165334,
+        "topic_slug": "need-help-with-nano-script-sh",
+        "display_username": "Chaitanya Mishra",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 12910,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-with-nano-script-sh/165334/8",
+        "user_cakedate": "2022-05-02",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 586756,
+        "name": "kalpana palaniswamy",
+        "username": "kalpana",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+        "created_at": "2025-01-27T12:45:49.000Z",
+        "cooked": "<p>Can you guide me as to how to do it .</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-01-27T12:46:04.039Z",
+        "reply_count": 1,
+        "reply_to_post_number": 8,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 21,
+        "readers_count": 20,
+        "score": 9.2,
+        "yours": false,
+        "topic_id": 165334,
+        "topic_slug": "need-help-with-nano-script-sh",
+        "display_username": "kalpana palaniswamy",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 12910,
+          "username": "chaitanya353535",
+          "name": "Chaitanya Mishra",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chaitanya353535/{size}/31240_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 13439,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "via_email": true,
+        "post_url": "/t/need-help-with-nano-script-sh/165334/9",
+        "user_cakedate": "2022-05-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 586769,
+        "name": "Chaitanya Mishra",
+        "username": "chaitanya353535",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chaitanya353535/{size}/31240_2.png",
+        "created_at": "2025-01-27T13:13:54.269Z",
+        "cooked": "<p>When in the home directory. Where you created se2001 folder. Do:<br>\n<code>cd se2001</code><br>\n<code>chmod u+x BPT1_problem_3</code></p>\n<p>If <strong>nothing</strong> works. In se2001 directory do<br>\n<code>rm -r BPT1_problem_3</code><br>\nand create folder again and there you may perform <code>synchro show</code> and other steps.</p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-01-27T13:14:42.806Z",
+        "reply_count": 1,
+        "reply_to_post_number": 9,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 22,
+        "readers_count": 21,
+        "score": 14.4,
+        "yours": false,
+        "topic_id": 165334,
+        "topic_slug": "need-help-with-nano-script-sh",
+        "display_username": "Chaitanya Mishra",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 13439,
+          "username": "kalpana",
+          "name": "kalpana palaniswamy",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 12910,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-with-nano-script-sh/165334/10",
+        "user_cakedate": "2022-05-02",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 587474,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-01-29T11:27:04.132Z",
+        "cooked": "<ol>\n<li>Why are files in your <code>~/se2001/BPT1_problem_3</code> owned by <code>root</code>?<br>\nDid you copy <code>/opt/se2001/BPT1_problem_3</code> to your <code>~/se2001</code> instead of creating the folder by yourself as instructed?</li>\n</ol>\n<p>If your folder is owned by <code>root</code>, setting different permissions will not have any effect.</p>\n<p>You do not need all those files for each question in your <code>~/se2001/</code> folder. You need to create <strong>empty</strong> folders with the correct name, then do <code>synchro show</code> and create the <code>script.sh</code> file there and do <code>synchro eval</code> there.</p>\n<p>Please follow the steps from here:</p>\n<ul>\n<li><a href=\"https://www.youtube.com/watch?v=iw0WcBNUtro\" rel=\"noopener nofollow ugc\">https://www.youtube.com/watch?v=iw0WcBNUtro</a></li>\n</ul>\n<p>but first delete the <code>~/se2001/*</code> folders you have.</p>\n<pre><code class=\"lang-auto\">rm -rf ~/se2001/*\n</code></pre>\n<p>Then create the folders</p>\n<pre><code class=\"lang-auto\">mkdir ~/se2001/BPT1_problem_{1..4}\n</code></pre>\n<p>Each question can be seen by going inside the folder and doing <code>synchro show</code>, then create a script if required using <code>nano</code> or <code>vim</code> as <code>nano script.sh</code>, write the code, then save and exit. Finally make it executable using <code>chmod u+x script.sh</code> and then evaluate it using <code>synchro eval</code>.</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-01-29T11:27:04.132Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 19,
+        "readers_count": 18,
+        "score": 13.8,
+        "yours": false,
+        "topic_id": 165334,
+        "topic_slug": "need-help-with-nano-script-sh",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://www.youtube.com/watch?v=iw0WcBNUtro",
+            "internal": false,
+            "reflection": false,
+            "clicks": 3
+          }
+        ],
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-with-nano-script-sh/165334/11",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 588281,
+        "name": "kalpana palaniswamy",
+        "username": "kalpana",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+        "created_at": "2025-01-31T14:31:50.417Z",
+        "cooked": "<aside class=\"quote group-ds-students\" data-username=\"chaitanya353535\" data-post=\"10\" data-topic=\"165334\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/chaitanya353535/48/31240_2.png\" class=\"avatar\"> chaitanya353535:</div>\n<blockquote>\n<p>rm -r BPT1_problem_3</p>\n</blockquote>\n</aside>\n<p>sir i am trying to do the steps you had given me am i doing it the right way</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">22f1000375@se2001:~/se2001$ cd ~/se2001\n22f1000375@se2001:~/se2001$ chmod u+x BPT1_problem_3\nchmod: changing permissions of 'BPT1_problem_3': Operation not permitted\n22f1000375@se2001:~/se2001$ rm -r BPT1_problem_3\nrm: descend into write-protected directory 'BPT1_problem_3'?\n22f1000375@se2001:~/se2001$ \n</code></pre>\n<p>I am getting this one pls guide me Apologies</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-02-01T07:55:26.206Z",
+        "reply_count": 0,
+        "reply_to_post_number": 10,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 17,
+        "readers_count": 16,
+        "score": 3.4,
+        "yours": false,
+        "topic_id": 165334,
+        "topic_slug": "need-help-with-nano-script-sh",
+        "display_username": "kalpana palaniswamy",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 13439,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-with-nano-script-sh/165334/12",
+        "user_cakedate": "2022-05-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 588282,
+        "name": "kalpana palaniswamy",
+        "username": "kalpana",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+        "created_at": "2025-01-31T14:34:08.304Z",
+        "cooked": "<aside class=\"quote group-ds-students\" data-username=\"sayan\" data-post=\"11\" data-topic=\"165334\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/48/112713_2.png\" class=\"avatar\"> sayan:</div>\n<blockquote>\n<p><code>rm -rf ~/se2001/*</code></p>\n</blockquote>\n</aside>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">22f1000375@se2001:~$ rm -rf ~/se2001/*\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_1/public/test_case_1/input.txt': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_1/public/test_case_1/output.txt': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_1/evaluation_file.sh': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_1/evaluation_file1.sh': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_1/README.md': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_1/private': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_2/public/test_case_1/input.txt': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_2/public/test_case_1/output.txt': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_2/evaluation_file.sh': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_2/evaluation_file1.sh': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_2/evaluation_file': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_2/README.md': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_2/private': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_3/public/test_case_1/output.txt': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_3/evaluation_file.sh': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_3/README.md': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_3/private': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_4/public/test_case_1/output.txt': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_4/evaluation_file.sh': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_4/README.md': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_4/private': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/LICENSE': Permission denied\n</code></pre>\n<p>Sir i have tried to remove the folder but says permission denied.Am i doing it the correct way</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-02-01T07:55:48.321Z",
+        "reply_count": 1,
+        "reply_to_post_number": 11,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 15,
+        "readers_count": 14,
+        "score": 8,
+        "yours": false,
+        "topic_id": 165334,
+        "topic_slug": "need-help-with-nano-script-sh",
+        "display_username": "kalpana palaniswamy",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 13439,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-with-nano-script-sh/165334/13",
+        "user_cakedate": "2022-05-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 588332,
+        "name": "kalpana palaniswamy",
+        "username": "kalpana",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+        "created_at": "2025-01-31T16:30:59.243Z",
+        "cooked": "<p>Thanks a lot to all the instructors,managed to delete the folder .apologies</p>",
+        "post_number": 14,
+        "post_type": 1,
+        "posts_count": 12,
+        "updated_at": "2025-01-31T16:30:59.243Z",
+        "reply_count": 0,
+        "reply_to_post_number": 13,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 13,
+        "readers_count": 12,
+        "score": 17.6,
+        "yours": false,
+        "topic_id": 165334,
+        "topic_slug": "need-help-with-nano-script-sh",
+        "display_username": "kalpana palaniswamy",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 13439,
+          "username": "kalpana",
+          "name": "kalpana palaniswamy",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 13439,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/need-help-with-nano-script-sh/165334/14",
+        "user_cakedate": "2022-05-06",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      585678,
+      585737,
+      585831,
+      585837,
+      585886,
+      586632,
+      586756,
+      586769,
+      587474,
+      588281,
+      588282,
+      588332
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      455
+    ],
+    [
+      7,
+      454
+    ],
+    [
+      9,
+      452
+    ],
+    [
+      10,
+      450
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 48,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 7,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 246,
+      "name": "diploma-level",
+      "slug": "diploma-level"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Need help with nano script.sh",
+  "id": 165334,
+  "title": "Need help with nano script.sh",
+  "posts_count": 12,
+  "created_at": "2025-01-26T12:38:32.776Z",
+  "views": 62,
+  "reply_count": 11,
+  "like_count": 1,
+  "last_posted_at": "2025-01-31T16:30:59.243Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "need-help-with-nano-script-sh",
+  "category_id": 36,
+  "word_count": 1135,
+  "deleted_at": null,
+  "user_id": 13439,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": null,
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_165334",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 14,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 4,
+  "show_read_indicator": false,
+  "thumbnails": null,
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "Unable to write script",
+      "id": 190922,
+      "title": "Unable to write script",
+      "slug": "unable-to-write-script",
+      "posts_count": 2,
+      "reply_count": 1,
+      "highest_post_number": 2,
+      "image_url": null,
+      "created_at": "2025-11-07T11:08:13.574Z",
+      "last_posted_at": "2025-11-07T11:30:44.663Z",
+      "bumped": true,
+      "bumped_at": "2025-11-07T11:30:44.663Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 48,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 41461,
+            "username": "Vigneshwar_2006",
+            "name": "V.H Vigneshwar ",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/v/34f0e0/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 25287,
+            "username": "23f2003821",
+            "name": "Mohammad Kashan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003821/{size}/68387_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "VM TASK: Permission denied while creating script.sh",
+      "id": 82346,
+      "title": "VM TASK: Permission denied while creating script.sh",
+      "slug": "vm-task-permission-denied-while-creating-script-sh",
+      "posts_count": 14,
+      "reply_count": 13,
+      "highest_post_number": 15,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/8/78477103e8a767a3d73ee6457f45269c28b88ed7.png",
+      "created_at": "2023-03-26T03:42:34.035Z",
+      "last_posted_at": "2026-03-22T10:50:18.102Z",
+      "bumped": true,
+      "bumped_at": "2026-03-22T10:50:18.102Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 233,
+          "name": "term1-2023",
+          "slug": "term1-2023"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 12,
+      "views": 303,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 9169,
+            "username": "21f3003123",
+            "name": "Lalit Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3003123/{size}/228_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 714,
+            "username": "prass",
+            "name": "Sanjaykumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/prass/{size}/40_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 12,
+            "username": "santhanakrishnan",
+            "name": "Santhana Krishnan S",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/santhanakrishnan/{size}/179_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 6672,
+            "username": "21f3000261",
+            "name": "Akansha Uniyal",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000261/{size}/13890_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Can&rsquo;t modify script.sh file for BPT3",
+      "id": 199316,
+      "title": "Can't modify script.sh file for BPT3",
+      "slug": "cant-modify-script-sh-file-for-bpt3",
+      "posts_count": 18,
+      "reply_count": 12,
+      "highest_post_number": 20,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/b/0be197fb947a7852724868251a819b213b6f105a_2_576x1024.jpeg",
+      "created_at": "2026-03-21T06:29:31.829Z",
+      "last_posted_at": "2026-03-27T13:27:49.178Z",
+      "bumped": true,
+      "bumped_at": "2026-03-27T13:27:49.178Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 338,
+          "name": "bpt",
+          "slug": "bpt"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 96,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 56697,
+            "username": "25f2005088",
+            "name": "Rakshitha P",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2005088/{size}/119286_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 14366,
+            "username": "22f2001554",
+            "name": "Ishan Shishodiya",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001554/{size}/141946_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 16223,
+            "username": "22f3001166",
+            "name": "Dalyodh Singh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001166/{size}/142932_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 39529,
+            "username": "Gurkirat",
+            "name": "Gurkirat Singh",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/g/49beb7/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 35219,
+            "username": "23f2003292",
+            "name": "Jeet",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2003292/{size}/120944_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "WM Task - Unable to edit script.sh",
+      "id": 109369,
+      "title": "WM Task - Unable to edit script.sh",
+      "slug": "wm-task-unable-to-edit-script-sh",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 5,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/1/0193ad8083e9e2ccb0fa6d0e56db33450322a9b2.png",
+      "created_at": "2023-11-14T14:14:35.795Z",
+      "last_posted_at": "2023-11-15T07:31:50.766Z",
+      "bumped": true,
+      "bumped_at": "2023-11-15T07:31:50.766Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 35,
+          "name": "error",
+          "slug": "error"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 64,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 5940,
+            "username": "Pritstift",
+            "name": "Prithvi J",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pritstift/{size}/13325_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 15485,
+            "username": "Ksoham",
+            "name": "Soham Sachin Kulkarni",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ksoham/{size}/60244_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 12433,
+            "username": "keetrap",
+            "name": " 𝙋𝙖𝙧𝙩𝙚𝙚𝙠",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/keetrap/{size}/95838_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Permission Denied to script.sh",
+      "id": 152713,
+      "title": "Permission Denied to script.sh",
+      "slug": "permission-denied-to-script-sh",
+      "posts_count": 7,
+      "reply_count": 0,
+      "highest_post_number": 7,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/c/4/c409aa2be0d1df595372f10868b6790bb99ede03_2_1024x490.png",
+      "created_at": "2024-10-20T08:41:56.722Z",
+      "last_posted_at": "2024-10-21T04:40:23.714Z",
+      "bumped": true,
+      "bumped_at": "2024-10-21T05:32:03.437Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 59,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 18484,
+            "username": "23f2001843",
+            "name": "KR.SUBRAMANIAN",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2001843/{size}/66846_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 15475,
+            "username": "22f3002293",
+            "name": "Rajat Goel",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002293/{size}/92210_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 7943,
+            "username": "UtkarshJM",
+            "name": "Utkarsh  Mishra",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/u/6de8d8/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 7771,
+            "username": "21f1002877",
+            "name": "User",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/58956e/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 14,
+    "username": "kalpana",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+    "excerpt": "<p>Thanks a lot to all the instructors,managed to delete the folder .apologies</p>",
+    "accepter_name": null,
+    "accepter_username": "sayan"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 13439,
+        "username": "kalpana",
+        "name": "kalpana palaniswamy",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+        "post_count": 7,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 12910,
+        "username": "chaitanya353535",
+        "name": "Chaitanya Mishra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chaitanya353535/{size}/31240_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 8056,
+        "username": "Puneet_21f3002005",
+        "name": "Puneet ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "post_count": 1,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      }
+    ],
+    "created_by": {
+      "id": 13439,
+      "username": "kalpana",
+      "name": "kalpana palaniswamy",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png"
+    },
+    "last_poster": {
+      "id": 13439,
+      "username": "kalpana",
+      "name": "kalpana palaniswamy",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png"
+    },
+    "links": [
+      {
+        "url": "https://www.youtube.com/watch?v=iw0WcBNUtro",
+        "title": null,
+        "internal": false,
+        "attachment": false,
+        "reflection": false,
+        "clicks": 3,
+        "user_id": 348,
+        "domain": "www.youtube.com",
+        "root_domain": "youtube.com"
+      }
+    ]
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 585678,
+      "name": "kalpana palaniswamy",
+      "username": "kalpana",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+      "created_at": "2025-01-26T12:38:33.043Z",
+      "cooked": "<p>HAI GOOD EVENING i have been trying to write the command in script.sh.i tried using Nano.when i did Nano script.sh i was able to write my command but when i want to save it it gives me ana error message<br>\nError writing script.sh: Permission denied ] i have tried using vi as well but was unable to .<br>\nDue to this am unable to proceed with bpt1 problems 3,4 .PLEASE HELP</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-01-26T12:38:33.043Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 38,
+      "readers_count": 37,
+      "score": 7.6,
+      "yours": false,
+      "topic_id": 165334,
+      "topic_slug": "need-help-with-nano-script-sh",
+      "display_username": "kalpana palaniswamy",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13439,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-with-nano-script-sh/165334/1",
+      "user_cakedate": "2022-05-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 585737,
+      "name": "Puneet ",
+      "username": "Puneet_21f3002005",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+      "created_at": "2025-01-26T13:12:37.559Z",
+      "cooked": "<p>Please check your permissions for the script.sh using <code>ls -l</code>. If not then provide permissions to write in the file using <code>chmod</code> command.</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-01-26T13:12:37.559Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 36,
+      "readers_count": 35,
+      "score": 17.2,
+      "yours": false,
+      "topic_id": 165334,
+      "topic_slug": "need-help-with-nano-script-sh",
+      "display_username": "Puneet ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8056,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-with-nano-script-sh/165334/2",
+      "user_cakedate": "2021-12-28",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 585831,
+      "name": "kalpana palaniswamy",
+      "username": "kalpana",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+      "created_at": "2025-01-26T13:53:26.905Z",
+      "cooked": "<aside class=\"quote group-ds-students quote-modified\" data-username=\"kalpana\" data-post=\"3\" data-topic=\"165334\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/48/12402_2.png\" class=\"avatar\"> kalpana:</div>\n<blockquote>\n<p>22f1000375@se2001:~/se2001/BPT1_problem_3$ chmod u+w script.sh<br>\nchmod: cannot access ‘script.sh’: No such file or directory</p>\n</blockquote>\n</aside>\n<p>22f1000375@se2001:~/se2001/BPT1_problem_3$ ls -l<br>\ntotal 16<br>\n-rw-r–r-- 1 root root  770 Jan 23 12:19 README.md<br>\n-rw-r–r-- 1 root root  722 Jan 23 12:19 evaluation_file.sh<br>\ndrwxr-xr-x 2 root root 4096 Jan 23 12:19 private<br>\ndrwxr-xr-x 3 root root 4096 Jan 23 12:19 public<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ chmod u+w script.sh<br>\nchmod: cannot access ‘script.sh’: No such file or directory<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ ls -l<br>\ni am getting this error pls help</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-01-26T13:53:26.905Z",
+      "reply_count": 1,
+      "reply_to_post_number": 2,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 32,
+      "readers_count": 31,
+      "score": 11.4,
+      "yours": false,
+      "topic_id": 165334,
+      "topic_slug": "need-help-with-nano-script-sh",
+      "display_username": "kalpana palaniswamy",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 8056,
+        "username": "Puneet_21f3002005",
+        "name": "Puneet ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13439,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-with-nano-script-sh/165334/4",
+      "user_cakedate": "2022-05-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 585837,
+      "name": "Puneet ",
+      "username": "Puneet_21f3002005",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png",
+      "created_at": "2025-01-26T13:59:48.510Z",
+      "cooked": "<p>First of all you have to create a script.sh file inside the present directory. Then open it in the nano editor. Write your code and then <code>chmod 755 script.sh</code> . Then try to evaluate it.</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-01-26T13:59:48.510Z",
+      "reply_count": 1,
+      "reply_to_post_number": 4,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 31,
+      "readers_count": 30,
+      "score": 11.2,
+      "yours": false,
+      "topic_id": 165334,
+      "topic_slug": "need-help-with-nano-script-sh",
+      "display_username": "Puneet ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 13439,
+        "username": "kalpana",
+        "name": "kalpana palaniswamy",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 8056,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-with-nano-script-sh/165334/5",
+      "user_cakedate": "2021-12-28",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 585886,
+      "name": "kalpana palaniswamy",
+      "username": "kalpana",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+      "created_at": "2025-01-26T14:27:47.048Z",
+      "cooked": "<aside class=\"quote group-ds-students quote-post-not-found\" data-username=\"kalpana\" data-post=\"6\" data-topic=\"165334\" data-full=\"true\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/48/12402_2.png\" class=\"avatar\"> kalpana:</div>\n<blockquote>\n<p>I also tried this it is the same again22f1000375@se2001:~/se2001/BPT1_problem_3$ nano script.sh<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ 22f1000375@se2001:~/se2001/BPT1_problem_3$ cd …<br>\n22f1000375@se2001:~/se2001$ touch script.sh<br>\ntouch: cannot touch ‘script.sh’: Permission denied<br>\n22f1000375@se2001:~/se2001$ nano script.sh<br>\n22f1000375@se2001:~/se2001$ cd BPT1_problem_3<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ ls<br>\nREADME.md evaluation_file.sh private public<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ touch script.sh<br>\ntouch: cannot touch ‘script.sh’: Permission denied<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ nano ~/script.sh<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ chmod 755 script.sh<br>\nchmod: cannot access ‘script.sh’: No such file or directory<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$</p>\n</blockquote>\n</aside>\n<p>22f1000375@se2001:~/se2001$ touch script.sh<br>\ntouch: cannot touch ‘script.sh’: Permission denied<br>\n22f1000375@se2001:~/se2001$ nano script.sh<br>\n22f1000375@se2001:~/se2001$ cd BPT1_problem_3<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ ls<br>\nREADME.md evaluation_file.sh private public<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ touch script.sh<br>\ntouch: cannot touch ‘script.sh’: Permission denied<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ nano script.sh<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ chmod 755 script.sh<br>\nchmod: cannot access ‘script.sh’: No such file or directory<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$</p>\n<p>I also tried this way</p>\n<h2><a name=\"p-585886-h-22f1000375se2001se2001bpt1_problem_3-chmod-755-scriptsh-22f1000375se2001se2001bpt1_problem_3-ls-scriptsh-home22f1000375scriptsh-22f1000375se2001se2001bpt1_problem_3-synchro-eval-bpt1_problem_3-sun-jan-26-142048-utc-2025-1\" class=\"anchor\" href=\"#p-585886-h-22f1000375se2001se2001bpt1_problem_3-chmod-755-scriptsh-22f1000375se2001se2001bpt1_problem_3-ls-scriptsh-home22f1000375scriptsh-22f1000375se2001se2001bpt1_problem_3-synchro-eval-bpt1_problem_3-sun-jan-26-142048-utc-2025-1\" aria-label=\"Heading link\"></a>22f1000375@se2001:~/se2001/BPT1_problem_3$ chmod 755 ~/script.sh<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ ls ~/script.sh<br>\n/home/22f1000375/script.sh<br>\n22f1000375@se2001:~/se2001/BPT1_problem_3$ synchro eval<br>\nBPT1_problem_3: Sun Jan 26 14:20:48 UTC 2025</h2>\n<p> → /opt/se2001/BPT1_problem_3/public/test_case_1<br>\n/opt/se2001/BPT1_problem_3/evaluation_file.sh: line 9: ./script.sh: No such file or directory</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-01-26T14:27:47.048Z",
+      "reply_count": 1,
+      "reply_to_post_number": 5,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 27,
+      "readers_count": 26,
+      "score": 10.4,
+      "yours": false,
+      "topic_id": 165334,
+      "topic_slug": "need-help-with-nano-script-sh",
+      "display_username": "kalpana palaniswamy",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 8056,
+        "username": "Puneet_21f3002005",
+        "name": "Puneet ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/puneet_21f3002005/{size}/46059_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13439,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-with-nano-script-sh/165334/7",
+      "user_cakedate": "2022-05-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 586632,
+      "name": "Chaitanya Mishra",
+      "username": "chaitanya353535",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chaitanya353535/{size}/31240_2.png",
+      "created_at": "2025-01-27T07:37:34.219Z",
+      "cooked": "<aside class=\"quote group-ds-students\" data-username=\"kalpana\" data-post=\"7\" data-topic=\"165334\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/48/12402_2.png\" class=\"avatar\"> kalpana:</div>\n<blockquote>\n<p>22f1000375@se2001:~/se2001/BPT1_problem_3$ touch script.sh<br>\ntouch: cannot touch ‘script.sh’: Permission denied</p>\n</blockquote>\n</aside>\n<p>I think you should check the permission for the BPT* directory first. And change it using <code>chmod u+x</code></p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-01-27T07:37:34.219Z",
+      "reply_count": 1,
+      "reply_to_post_number": 7,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 23,
+      "readers_count": 22,
+      "score": 9.6,
+      "yours": false,
+      "topic_id": 165334,
+      "topic_slug": "need-help-with-nano-script-sh",
+      "display_username": "Chaitanya Mishra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 12910,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-with-nano-script-sh/165334/8",
+      "user_cakedate": "2022-05-02",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 586756,
+      "name": "kalpana palaniswamy",
+      "username": "kalpana",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+      "created_at": "2025-01-27T12:45:49.000Z",
+      "cooked": "<p>Can you guide me as to how to do it .</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-01-27T12:46:04.039Z",
+      "reply_count": 1,
+      "reply_to_post_number": 8,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 21,
+      "readers_count": 20,
+      "score": 9.2,
+      "yours": false,
+      "topic_id": 165334,
+      "topic_slug": "need-help-with-nano-script-sh",
+      "display_username": "kalpana palaniswamy",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 12910,
+        "username": "chaitanya353535",
+        "name": "Chaitanya Mishra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chaitanya353535/{size}/31240_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13439,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "via_email": true,
+      "post_url": "/t/need-help-with-nano-script-sh/165334/9",
+      "user_cakedate": "2022-05-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 586769,
+      "name": "Chaitanya Mishra",
+      "username": "chaitanya353535",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chaitanya353535/{size}/31240_2.png",
+      "created_at": "2025-01-27T13:13:54.269Z",
+      "cooked": "<p>When in the home directory. Where you created se2001 folder. Do:<br>\n<code>cd se2001</code><br>\n<code>chmod u+x BPT1_problem_3</code></p>\n<p>If <strong>nothing</strong> works. In se2001 directory do<br>\n<code>rm -r BPT1_problem_3</code><br>\nand create folder again and there you may perform <code>synchro show</code> and other steps.</p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-01-27T13:14:42.806Z",
+      "reply_count": 1,
+      "reply_to_post_number": 9,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 22,
+      "readers_count": 21,
+      "score": 14.4,
+      "yours": false,
+      "topic_id": 165334,
+      "topic_slug": "need-help-with-nano-script-sh",
+      "display_username": "Chaitanya Mishra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 13439,
+        "username": "kalpana",
+        "name": "kalpana palaniswamy",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 12910,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-with-nano-script-sh/165334/10",
+      "user_cakedate": "2022-05-02",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 587474,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-01-29T11:27:04.132Z",
+      "cooked": "<ol>\n<li>Why are files in your <code>~/se2001/BPT1_problem_3</code> owned by <code>root</code>?<br>\nDid you copy <code>/opt/se2001/BPT1_problem_3</code> to your <code>~/se2001</code> instead of creating the folder by yourself as instructed?</li>\n</ol>\n<p>If your folder is owned by <code>root</code>, setting different permissions will not have any effect.</p>\n<p>You do not need all those files for each question in your <code>~/se2001/</code> folder. You need to create <strong>empty</strong> folders with the correct name, then do <code>synchro show</code> and create the <code>script.sh</code> file there and do <code>synchro eval</code> there.</p>\n<p>Please follow the steps from here:</p>\n<ul>\n<li><a href=\"https://www.youtube.com/watch?v=iw0WcBNUtro\" rel=\"noopener nofollow ugc\">https://www.youtube.com/watch?v=iw0WcBNUtro</a></li>\n</ul>\n<p>but first delete the <code>~/se2001/*</code> folders you have.</p>\n<pre><code class=\"lang-auto\">rm -rf ~/se2001/*\n</code></pre>\n<p>Then create the folders</p>\n<pre><code class=\"lang-auto\">mkdir ~/se2001/BPT1_problem_{1..4}\n</code></pre>\n<p>Each question can be seen by going inside the folder and doing <code>synchro show</code>, then create a script if required using <code>nano</code> or <code>vim</code> as <code>nano script.sh</code>, write the code, then save and exit. Finally make it executable using <code>chmod u+x script.sh</code> and then evaluate it using <code>synchro eval</code>.</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-01-29T11:27:04.132Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 19,
+      "readers_count": 18,
+      "score": 13.8,
+      "yours": false,
+      "topic_id": 165334,
+      "topic_slug": "need-help-with-nano-script-sh",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://www.youtube.com/watch?v=iw0WcBNUtro",
+          "internal": false,
+          "reflection": false,
+          "clicks": 3
+        }
+      ],
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-with-nano-script-sh/165334/11",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 588281,
+      "name": "kalpana palaniswamy",
+      "username": "kalpana",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+      "created_at": "2025-01-31T14:31:50.417Z",
+      "cooked": "<aside class=\"quote group-ds-students\" data-username=\"chaitanya353535\" data-post=\"10\" data-topic=\"165334\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/chaitanya353535/48/31240_2.png\" class=\"avatar\"> chaitanya353535:</div>\n<blockquote>\n<p>rm -r BPT1_problem_3</p>\n</blockquote>\n</aside>\n<p>sir i am trying to do the steps you had given me am i doing it the right way</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">22f1000375@se2001:~/se2001$ cd ~/se2001\n22f1000375@se2001:~/se2001$ chmod u+x BPT1_problem_3\nchmod: changing permissions of 'BPT1_problem_3': Operation not permitted\n22f1000375@se2001:~/se2001$ rm -r BPT1_problem_3\nrm: descend into write-protected directory 'BPT1_problem_3'?\n22f1000375@se2001:~/se2001$ \n</code></pre>\n<p>I am getting this one pls guide me Apologies</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-02-01T07:55:26.206Z",
+      "reply_count": 0,
+      "reply_to_post_number": 10,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 17,
+      "readers_count": 16,
+      "score": 3.4,
+      "yours": false,
+      "topic_id": 165334,
+      "topic_slug": "need-help-with-nano-script-sh",
+      "display_username": "kalpana palaniswamy",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13439,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-with-nano-script-sh/165334/12",
+      "user_cakedate": "2022-05-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 588282,
+      "name": "kalpana palaniswamy",
+      "username": "kalpana",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+      "created_at": "2025-01-31T14:34:08.304Z",
+      "cooked": "<aside class=\"quote group-ds-students\" data-username=\"sayan\" data-post=\"11\" data-topic=\"165334\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/48/112713_2.png\" class=\"avatar\"> sayan:</div>\n<blockquote>\n<p><code>rm -rf ~/se2001/*</code></p>\n</blockquote>\n</aside>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">22f1000375@se2001:~$ rm -rf ~/se2001/*\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_1/public/test_case_1/input.txt': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_1/public/test_case_1/output.txt': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_1/evaluation_file.sh': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_1/evaluation_file1.sh': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_1/README.md': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_1/private': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_2/public/test_case_1/input.txt': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_2/public/test_case_1/output.txt': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_2/evaluation_file.sh': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_2/evaluation_file1.sh': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_2/evaluation_file': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_2/README.md': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_2/private': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_3/public/test_case_1/output.txt': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_3/evaluation_file.sh': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_3/README.md': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_3/private': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_4/public/test_case_1/output.txt': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_4/evaluation_file.sh': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_4/README.md': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/BPT1_problem_4/private': Permission denied\nrm: cannot remove '/home/22f1000375/se2001/LICENSE': Permission denied\n</code></pre>\n<p>Sir i have tried to remove the folder but says permission denied.Am i doing it the correct way</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-02-01T07:55:48.321Z",
+      "reply_count": 1,
+      "reply_to_post_number": 11,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 15,
+      "readers_count": 14,
+      "score": 8,
+      "yours": false,
+      "topic_id": 165334,
+      "topic_slug": "need-help-with-nano-script-sh",
+      "display_username": "kalpana palaniswamy",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13439,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-with-nano-script-sh/165334/13",
+      "user_cakedate": "2022-05-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 588332,
+      "name": "kalpana palaniswamy",
+      "username": "kalpana",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png",
+      "created_at": "2025-01-31T16:30:59.243Z",
+      "cooked": "<p>Thanks a lot to all the instructors,managed to delete the folder .apologies</p>",
+      "post_number": 14,
+      "post_type": 1,
+      "posts_count": 12,
+      "updated_at": "2025-01-31T16:30:59.243Z",
+      "reply_count": 0,
+      "reply_to_post_number": 13,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 13,
+      "readers_count": 12,
+      "score": 17.6,
+      "yours": false,
+      "topic_id": 165334,
+      "topic_slug": "need-help-with-nano-script-sh",
+      "display_username": "kalpana palaniswamy",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 13439,
+        "username": "kalpana",
+        "name": "kalpana palaniswamy",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kalpana/{size}/12402_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13439,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/need-help-with-nano-script-sh/165334/14",
+      "user_cakedate": "2022-05-06",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    }
+  ]
+}

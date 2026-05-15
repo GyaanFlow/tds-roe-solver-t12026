@@ -1,0 +1,5472 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 665557,
+        "name": "Jb Anmol",
+        "username": "Jbanmol",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png",
+        "created_at": "2025-08-18T09:35:19.775Z",
+        "cooked": "<p>Respected SC Team,</p>\n<p>I attempted the OPPE for SC on <strong>16th August</strong> and current score is <strong>60/100 (no clarity - HOW)</strong>.<br>\nDuring the exam, I faced technical issues—the VM hung multiple times and there was confusion with the test cases, which led to a loss of time.</p>\n<p>I kindly request approval for a <strong>reattempt</strong>, as I believe I can perform better in a stable environment.<br>\nThis deeply affect my grades.</p>\n<p>Jb Anmol<br>\n23f1001015<br>\n<a class=\"mention\" href=\"/u/sayan\">@sayan</a>  <a class=\"mention\" href=\"/u/hemalatha\">@hemalatha</a>  <a class=\"mention\" href=\"/u/subendu\">@Subendu</a>  <a class=\"mention\" href=\"/u/chaitanya353535\">@chaitanya353535</a></p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-18T13:57:56.498Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 5,
+        "reads": 176,
+        "readers_count": 175,
+        "score": 90,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Jb Anmol",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 23640,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/1",
+        "user_cakedate": "2023-01-29",
+        "user_birthdate": "1904-05-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 665554,
+        "name": "Thumula Praneeth Rao",
+        "username": "praneeth31",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/praneeth31/{size}/67560_2.png",
+        "created_at": "2025-08-18T09:39:52.647Z",
+        "cooked": "<p>Dear SC Team,</p>\n<p>I was able to solve 4 out of 5 questions correctly in the OPPE that was held on 17th August 2025. All the public and private test cases passed for those 4 questions. For the remaining question, all public test cases passed, but only 2 out of 7 private test cases succeeded due to a bug in my script.</p>\n<p>The scores are now out, and I have scored 86%. However, I lost valuable time because of VM lagging and multiple reboots, which prevented me from fixing the bug in time. I am confident that I can achieve a full score if given another chance.</p>\n<p>Therefore, I kindly request the SC team to allow me to reappear for the OPPE.<br>\n<a class=\"mention\" href=\"/u/sayan\">@sayan</a></p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-18T13:55:29.654Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 166,
+        "readers_count": 165,
+        "score": 108,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Thumula Praneeth Rao",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 3,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 5,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 21545,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/2",
+        "user_cakedate": "2023-09-18",
+        "user_birthdate": "1904-08-10",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 3
+          },
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 5,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665496,
+        "name": "Mohammad Tayyab Bhatti",
+        "username": "tayyab",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tayyab/{size}/73245_2.png",
+        "created_at": "2025-08-18T10:27:50.011Z",
+        "cooked": "<p>I’m Mohammad Tayyab Bhatti, a diploma-level student. In the recent OPPE exam of SC, I faced many issues, though extra time was given, but those issues took more than 1 hour of my exam time. I was literally in between the last question, which was almost completed, but I couldn’t make it. Can I give re-Oppe which is handling on 24, for those who have failed? If I score less or fail, that would be on me. Since I want to apply for SC/Linux TA in the next term, this OPPE is very important to me. I have also scored 94/100 in Quiz 1. I know I could have scored much better if there were no issues.<br>\n<a class=\"mention\" href=\"/u/hemalatha\">@hemalatha</a> <a class=\"mention\" href=\"/u/atulps\">@AtulPS</a></p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-18T13:55:29.652Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 224,
+        "readers_count": 223,
+        "score": 89.6,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Mohammad Tayyab Bhatti",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 3,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 28406,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/3",
+        "user_cakedate": "2024-02-21",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 3
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 3,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665565,
+        "name": "Loga",
+        "username": "25dp1000084",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25dp1000084/{size}/120960_2.png",
+        "created_at": "2025-08-18T11:01:23.581Z",
+        "cooked": "<p>I received 43/100 in the System Commands OPPE held on 16 August. I understand that the passing mark is 40 and normally students who clear it are not allowed to reappear. Still, because of the issues I faced during the exam, I would like to request if I could be given another chance to attempt it.</p>\n<p>The VM during the exam was very slow — every command or input took a long time to register, and whenever I tried to evaluate my script the screen would freeze for close to a minute. Even when the evaluation script ran, the results were inconsistent; at times I got different outputs on the same file. There also seemed to be errors with the evaluation process that stopped some test cases from being submitted properly, due to which I lost a lot of time rechecking solutions that were already correct.</p>\n<p>Even though I have passed, I would sincerely like the opportunity to reappear for the OPPE. Could you please let me know if there is any procedure to request this?</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-18T14:06:30.644Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 178,
+        "readers_count": 177,
+        "score": 70.4,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Loga",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 45054,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/4",
+        "user_cakedate": "2025-01-28",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665526,
+        "name": "jesse",
+        "username": "22f2001029",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001029/{size}/12771_2.png",
+        "created_at": "2025-08-18T12:22:53.187Z",
+        "cooked": "<p>Had the same issue but the support team denied for attending it again</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-18T14:06:30.599Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 203,
+        "readers_count": 202,
+        "score": 60.4,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "jesse",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 15221,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/5",
+        "user_cakedate": "2022-09-17",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665536,
+        "name": "Soubiya Nasir",
+        "username": "23dp2000049",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/ed655f/{size}.png",
+        "created_at": "2025-08-18T13:05:41.750Z",
+        "cooked": "<p>How will I know if I can reappear for SC OPPE? Do I have to ask someone or will they send a google form?</p>\n<p>I did not do well in this OPPE.(Conducted on 16th August.)</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-18T14:06:30.594Z",
+        "reply_count": 0,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 201,
+        "readers_count": 200,
+        "score": 40,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Soubiya Nasir",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 15221,
+          "username": "22f2001029",
+          "name": "jesse",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001029/{size}/12771_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 35362,
+        "hidden": false,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/6",
+        "user_cakedate": "2024-07-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665552,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2025-08-18T13:47:24.438Z",
+        "cooked": "<p>If you get less than 40 you will get a chance to reappear for OPPE otherwise not. This will be done automatically.</p>\n<p>If you get equal to or more than 40, then your next exam would be end term for System Commands.</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-18T14:06:30.587Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 190,
+        "readers_count": 189,
+        "score": 42.8,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/7",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665562,
+        "name": "Jb Anmol",
+        "username": "Jbanmol",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png",
+        "created_at": "2025-08-18T14:02:44.705Z",
+        "cooked": "<p>Ma’am, I feel this is unfair. There was a lot of confusion regarding the test cases, and the VM was stuck for a considerable amount of time. I understand the rules, but this situation was an exception. Considering that the OPPE carries <strong>30% weightage</strong>, the impact is significant.</p>\n<p>I am not asking for free marks, only for a fair chance. I wouldn’t have raised this concern if the VM had worked smoothly on the exam day.</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-18T14:06:30.582Z",
+        "reply_count": 1,
+        "reply_to_post_number": 7,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 183,
+        "readers_count": 182,
+        "score": 91.6,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Jb Anmol",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 6563,
+          "username": "21f3000759",
+          "name": "Swati Jain",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 3,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 23640,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/9",
+        "user_cakedate": "2023-01-29",
+        "user_birthdate": "1904-05-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 3
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 3,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665564,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2025-08-18T14:05:29.762Z",
+        "cooked": "<p>I understand your concern. It does carry 30% weightage but I simply stated the rule in the grading document to the question asked.</p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-18T14:06:30.577Z",
+        "reply_count": 2,
+        "reply_to_post_number": 9,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 180,
+        "readers_count": 179,
+        "score": 46,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 23640,
+          "username": "Jbanmol",
+          "name": "Jb Anmol",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/10",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665572,
+        "name": "Jb Anmol",
+        "username": "Jbanmol",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png",
+        "created_at": "2025-08-18T14:09:30.875Z",
+        "cooked": "<p>Yes ma’am, I understand the rule and thank you for your response. However, the grading document did not mention that we need to account for bugs or a delay during the OPPE exam.</p>\n<p>Also for me 4 questions showed test cases passed on synchro show. but score is 60.</p>\n<p>I just need a fair chance.</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-18T14:16:20.687Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 185,
+        "readers_count": 184,
+        "score": 82,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Jb Anmol",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 3,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 23640,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/11",
+        "user_cakedate": "2023-01-29",
+        "user_birthdate": "1904-05-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 3
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 3,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665591,
+        "name": "Mohammad Tayyab Bhatti",
+        "username": "tayyab",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tayyab/{size}/73245_2.png",
+        "created_at": "2025-08-18T15:28:02.907Z",
+        "cooked": "<ol>\n<li>If you fail in this, you get a chance to reappear the next weekend. So you get 2 chances to attempt the exam.</li>\n<li>If the first date is inconvenient due to a clash with some other engagement, then you can apply for a <em><strong><span class=\"bbcode-u\">postponement to the second date, providing sufficient proof</span></strong></em>. If this is accepted, your exam will be moved to the second date, but if you fail in this, you will not get another chance to reattempt. You will have to do it in the subsequent term.</li>\n<li>If you are absent on 16th Aug, you DON’T get another chance on 24th Aug.</li>\n</ol>\n<p>Ma’am, there is nothing in the Grading Doc related to technical errors from VM, and what I understand from the grading doc is that if I have valid proof, I can re-attempt OPPE. I have attached some screen shot from OPPE day, If I just have 5 mins more I would have completed one more quesiton by which I would probably score S grade (although I could have completed all quesiton), or ( I would have intentionally failed myself just by deleting my scripts to re-appear), So I don’t understand what’s the problem here to not get a re-attempt chance. Not lying, I have spent so much time to score well in this subject cause I like Linux. I scored 94 in Qz1, scored 100 in all BPT, just because of some technical error, all my efforts seem to be wasted. I believe people with a valid reason and proof should get another chance. Kindly accept my request and give me another chance. If I fail or score less, that would be 100% my responsibility.</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-18T15:28:02.907Z",
+        "reply_count": 0,
+        "reply_to_post_number": 10,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 186,
+        "readers_count": 185,
+        "score": 67.2,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Mohammad Tayyab Bhatti",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 6563,
+          "username": "21f3000759",
+          "name": "Swati Jain",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 28406,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/13",
+        "user_cakedate": "2024-02-21",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665605,
+        "name": "Pradeep Kumar",
+        "username": "23f1001467",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1001467/{size}/66949_2.png",
+        "created_at": "2025-08-18T16:09:35.254Z",
+        "cooked": "<p>Respected sir/mam,</p>\n<p>I would also like to request you to allow me for re-appear for OPPE as even I scored 43, I don’t feel justified with my score as I have learnt a lot in this course and technical issues faced during the exam caused me to panic which resulted in low score. I couldn’t focus on any question as thought other one I should try as previous one is taking much much to evaluate, may be my code is wrong and some other reasons too.</p>\n<p>I can’t explain much in words about the thought process during recent OPPE due to technical issue as I was losing constant focus to solve the questions which were somehow of higher difficulty level. Further, absence of cheat sheet as promised was another cause of concern on which I was dependent.</p>\n<p>Therefore, I again humbly request you to allow me to show my full learnt potential. This re-OPPE will be worth to meet high standards of IITM.</p>",
+        "post_number": 14,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-18T16:13:08.505Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 5,
+        "reads": 170,
+        "readers_count": 169,
+        "score": 74,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Pradeep Kumar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 17204,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/14",
+        "user_cakedate": "2023-06-02",
+        "user_birthdate": "1904-07-21",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665795,
+        "name": "sandeepkumar sudhakar surkute",
+        "username": "22f3002925",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+        "created_at": "2025-08-19T12:17:16.329Z",
+        "cooked": "<p>Ma’am, we understand the grading rules, but as a student community we are requesting you to genuinely have a look at issues faced in the OPPE as well as the scoring has gone wrong somewhere, because my “synchro status” command clearly showed only one question passed but the score now is 43. How is it possible ?  also the  “synchro status”  was not working from some problem folders it was working from only one of the problem folders.</p>\n<p>In good faith, we are just asking to consider the issues faced and give us fair chance in re-oppe please.</p>\n<p>Regards,</p>\n<p>Sandeep</p>",
+        "post_number": 15,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-19T12:17:16.329Z",
+        "reply_count": 0,
+        "reply_to_post_number": 10,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 143,
+        "readers_count": 142,
+        "score": 28.6,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "sandeepkumar sudhakar surkute",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 6563,
+          "username": "21f3000759",
+          "name": "Swati Jain",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16751,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/15",
+        "user_cakedate": "2023-02-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665817,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2025-08-19T14:01:28.094Z",
+        "cooked": "<p>To all those tagging me,</p>\n<p>I politely want to state that</p>\n<ol>\n<li>I replied to this thread because some of you had confusion regarding re-OPPE eligibility - I merely stated what’s written in grading document to clear that doubt.</li>\n<li>I am a student TA and has no role in deciding if you can appear for it or not.</li>\n</ol>",
+        "post_number": 16,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-19T14:01:53.036Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 137,
+        "readers_count": 136,
+        "score": 27.4,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/16",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665875,
+        "name": "Ravi",
+        "username": "cravikiran",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/cravikiran/{size}/22537_2.png",
+        "created_at": "2025-08-19T17:48:48.401Z",
+        "cooked": "<p>Dear Sir/Madam,</p>\n<p>I attended the OPPE on 16th Aug and scored 43. I would like to appear for Re-OPPE. Kindly consider my request.</p>\n<p>Best regards</p>\n<p>Ravi</p>\n<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> <a class=\"mention\" href=\"/u/hemalatha\">@hemalatha</a> <a class=\"mention\" href=\"/u/subendu\">@Subendu</a> <a class=\"mention\" href=\"/u/chaitanya353535\">@chaitanya353535</a></p>",
+        "post_number": 17,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-19T17:48:48.401Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 135,
+        "readers_count": 134,
+        "score": 47,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Ravi",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 13015,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/17",
+        "user_cakedate": "2022-05-02",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665942,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-08-20T04:14:08.900Z",
+        "cooked": "<p>We are aware that some of you experienced interruptions due to a VM load update during the exam. To ensure fairness, we extended the exam time for everyone by more than the time lost. The  most students were still able to successfully complete the exam within the adjusted timeframe.</p>\n<p>Please note that a re-oppe is only available for students who did not pass the exam. Since you have successfully passed, our policy does not allow us to grant you a re-oppe.</p>",
+        "post_number": 18,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-20T04:14:08.900Z",
+        "reply_count": 2,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 121,
+        "readers_count": 120,
+        "score": 49.2,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/18",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665986,
+        "name": "Jb Anmol",
+        "username": "Jbanmol",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png",
+        "created_at": "2025-08-20T05:35:09.917Z",
+        "cooked": "<p>Sir even after the fix due to multiple messages there were interruptions. And 2 questions were not passing private test cases but passed all public test cases. I didn’t get the marks for it.</p>\n<p>I just need a fair chance to get the score I deserve, pls help.</p>",
+        "post_number": 19,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-20T05:35:09.917Z",
+        "reply_count": 1,
+        "reply_to_post_number": 18,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 122,
+        "readers_count": 121,
+        "score": 44.4,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Jb Anmol",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 23640,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/19",
+        "user_cakedate": "2023-01-29",
+        "user_birthdate": "1904-05-04",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665999,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-08-20T05:58:39.723Z",
+        "cooked": "<p>If private test cases are not passing, it is due to code not covering all edge cases or matching the expected output format exactly. For correct script it has been verified that all test cases pass. There have been multiple students (~150) who have scored 100 in this OPPE.</p>\n<p>We are aware of the technical issues, but we cannot extend any more concession other than the 30 mins extension.</p>",
+        "post_number": 20,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-20T05:58:39.723Z",
+        "reply_count": 3,
+        "reply_to_post_number": 19,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 140,
+        "readers_count": 139,
+        "score": 43,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 23640,
+          "username": "Jbanmol",
+          "name": "Jb Anmol",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/20",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 666042,
+        "name": "PURNENDU SHUKLA",
+        "username": "Learner_HS",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/learner_hs/{size}/13282_2.png",
+        "created_at": "2025-08-20T06:41:17.012Z",
+        "cooked": "<p>As per what I understood from it , if submission evaluation passed and submission was not submitted , we can move on.</p>",
+        "post_number": 22,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-20T06:41:17.012Z",
+        "reply_count": 0,
+        "reply_to_post_number": 21,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 135,
+        "readers_count": 134,
+        "score": 42,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "PURNENDU SHUKLA",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 23640,
+          "username": "Jbanmol",
+          "name": "Jb Anmol",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 13371,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/22",
+        "user_cakedate": "2022-05-05",
+        "user_birthdate": "1904-10-14",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 666047,
+        "name": "VENGALA MANASA",
+        "username": "23f3000404",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3000404/{size}/68556_2.png",
+        "created_at": "2025-08-20T06:51:04.599Z",
+        "cooked": "<p>Respected SC team</p>\n<p>On 16 august ,  I tried to login to my vm during the start of exam but it shown permission denied. I tried and followed every step that have mentioned. Could you please allow me to reappear for exam on 23 august and also  it will be helpful if you conduct some zoom meeting regarding logging into the vm during exam</p>",
+        "post_number": 23,
+        "post_type": 1,
+        "posts_count": 31,
+        "updated_at": "2025-08-20T06:51:04.599Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 7,
+        "reads": 130,
+        "readers_count": 129,
+        "score": 61,
+        "yours": false,
+        "topic_id": 185208,
+        "topic_slug": "request-to-appear-for-sc-re-oppe",
+        "display_username": "VENGALA MANASA",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 23142,
+        "hidden": false,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/23",
+        "user_cakedate": "2023-10-04",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      665557,
+      665554,
+      665496,
+      665565,
+      665526,
+      665536,
+      665552,
+      665562,
+      665564,
+      665572,
+      665591,
+      665605,
+      665795,
+      665817,
+      665875,
+      665942,
+      665986,
+      665999,
+      666042,
+      666047,
+      666153,
+      666180,
+      666398,
+      666399,
+      666416,
+      666452,
+      666453,
+      666460,
+      666493,
+      666496,
+      670666
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      251
+    ],
+    [
+      13,
+      250
+    ],
+    [
+      21,
+      249
+    ],
+    [
+      31,
+      236
+    ]
+  ],
+  "tags": [
+    {
+      "id": 341,
+      "name": "term2-2025",
+      "slug": "term2-2025"
+    },
+    {
+      "id": 206,
+      "name": "oppe",
+      "slug": "oppe"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Request to appear for SC re-OPPE",
+  "id": 185208,
+  "title": "Request to appear for SC re-OPPE",
+  "posts_count": 31,
+  "created_at": "2025-08-18T10:27:49.782Z",
+  "views": 478,
+  "reply_count": 16,
+  "like_count": 37,
+  "last_posted_at": "2025-09-02T12:18:37.049Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "request-to-appear-for-sc-re-oppe",
+  "category_id": 36,
+  "word_count": 2783,
+  "deleted_at": null,
+  "user_id": 23640,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": null,
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_185208",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 34,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 18,
+  "show_read_indicator": false,
+  "thumbnails": null,
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": null,
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 31,
+    "username": "sayan",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+    "excerpt": "<p>We are aware that some of you experienced interruptions due to a VM load update during the exam. To ensure fairness, we extended the exam time for everyone by more than the time lost. The  most students were still able to successfully complete the exam within the adjusted timeframe.</p>\n<p>Please note that a re-oppe is only available for students who did not pass the exam. Since you have successfully passed, our policy does not allow us to grant you a re-oppe. We cannot grant a re-oppe on concession.</p>",
+    "accepter_name": null,
+    "accepter_username": "21f3000759"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 23640,
+        "username": "Jbanmol",
+        "name": "Jb Anmol",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png",
+        "post_count": 7,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "post_count": 4,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      },
+      {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 2
+      },
+      {
+        "id": 21704,
+        "username": "23f2005014",
+        "name": "Soubhagya Nayak ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2005014/{size}/66907_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 28406,
+        "username": "tayyab",
+        "name": "Mohammad Tayyab Bhatti",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tayyab/{size}/73245_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 13371,
+        "username": "Learner_HS",
+        "name": "PURNENDU SHUKLA",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/learner_hs/{size}/13282_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 45054,
+        "username": "25dp1000084",
+        "name": "Loga",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25dp1000084/{size}/120960_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 15221,
+        "username": "22f2001029",
+        "name": "jesse",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001029/{size}/12771_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 23142,
+        "username": "23f3000404",
+        "name": "VENGALA MANASA",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3000404/{size}/68556_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      },
+      {
+        "id": 35362,
+        "username": "23dp2000049",
+        "name": "Soubiya Nasir",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/ed655f/{size}.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      },
+      {
+        "id": 21545,
+        "username": "praneeth31",
+        "name": "Thumula Praneeth Rao",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/praneeth31/{size}/67560_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 28360,
+        "username": "Debarghya",
+        "name": "Debarghya Adhikari ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/debarghya/{size}/122418_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 0
+      },
+      {
+        "id": 17204,
+        "username": "23f1001467",
+        "name": "Pradeep Kumar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1001467/{size}/66949_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 17076,
+        "username": "23f2000051",
+        "name": "Divyansh Gupta",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000051/{size}/66928_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": null,
+        "flair_url": null,
+        "flair_color": null,
+        "flair_bg_color": null,
+        "flair_group_id": null,
+        "trust_level": 1
+      },
+      {
+        "id": 13015,
+        "username": "cravikiran",
+        "name": "Ravi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/cravikiran/{size}/22537_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 16751,
+        "username": "22f3002925",
+        "name": "sandeepkumar sudhakar surkute",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 28096,
+        "username": "patraakash98",
+        "name": "Akash Patra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/patraakash98/{size}/67139_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 37111,
+        "username": "24f2007572",
+        "name": "Pradheepa",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007572/{size}/119861_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 23640,
+      "username": "Jbanmol",
+      "name": "Jb Anmol",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png"
+    },
+    "last_poster": {
+      "id": 37111,
+      "username": "24f2007572",
+      "name": "Pradheepa",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007572/{size}/119861_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 665557,
+      "name": "Jb Anmol",
+      "username": "Jbanmol",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png",
+      "created_at": "2025-08-18T09:35:19.775Z",
+      "cooked": "<p>Respected SC Team,</p>\n<p>I attempted the OPPE for SC on <strong>16th August</strong> and current score is <strong>60/100 (no clarity - HOW)</strong>.<br>\nDuring the exam, I faced technical issues—the VM hung multiple times and there was confusion with the test cases, which led to a loss of time.</p>\n<p>I kindly request approval for a <strong>reattempt</strong>, as I believe I can perform better in a stable environment.<br>\nThis deeply affect my grades.</p>\n<p>Jb Anmol<br>\n23f1001015<br>\n<a class=\"mention\" href=\"/u/sayan\">@sayan</a>  <a class=\"mention\" href=\"/u/hemalatha\">@hemalatha</a>  <a class=\"mention\" href=\"/u/subendu\">@Subendu</a>  <a class=\"mention\" href=\"/u/chaitanya353535\">@chaitanya353535</a></p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-18T13:57:56.498Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 5,
+      "reads": 176,
+      "readers_count": 175,
+      "score": 90,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Jb Anmol",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23640,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/1",
+      "user_cakedate": "2023-01-29",
+      "user_birthdate": "1904-05-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 665554,
+      "name": "Thumula Praneeth Rao",
+      "username": "praneeth31",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/praneeth31/{size}/67560_2.png",
+      "created_at": "2025-08-18T09:39:52.647Z",
+      "cooked": "<p>Dear SC Team,</p>\n<p>I was able to solve 4 out of 5 questions correctly in the OPPE that was held on 17th August 2025. All the public and private test cases passed for those 4 questions. For the remaining question, all public test cases passed, but only 2 out of 7 private test cases succeeded due to a bug in my script.</p>\n<p>The scores are now out, and I have scored 86%. However, I lost valuable time because of VM lagging and multiple reboots, which prevented me from fixing the bug in time. I am confident that I can achieve a full score if given another chance.</p>\n<p>Therefore, I kindly request the SC team to allow me to reappear for the OPPE.<br>\n<a class=\"mention\" href=\"/u/sayan\">@sayan</a></p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-18T13:55:29.654Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 166,
+      "readers_count": 165,
+      "score": 108,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Thumula Praneeth Rao",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 5,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21545,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/2",
+      "user_cakedate": "2023-09-18",
+      "user_birthdate": "1904-08-10",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 3
+        },
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 5,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665496,
+      "name": "Mohammad Tayyab Bhatti",
+      "username": "tayyab",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tayyab/{size}/73245_2.png",
+      "created_at": "2025-08-18T10:27:50.011Z",
+      "cooked": "<p>I’m Mohammad Tayyab Bhatti, a diploma-level student. In the recent OPPE exam of SC, I faced many issues, though extra time was given, but those issues took more than 1 hour of my exam time. I was literally in between the last question, which was almost completed, but I couldn’t make it. Can I give re-Oppe which is handling on 24, for those who have failed? If I score less or fail, that would be on me. Since I want to apply for SC/Linux TA in the next term, this OPPE is very important to me. I have also scored 94/100 in Quiz 1. I know I could have scored much better if there were no issues.<br>\n<a class=\"mention\" href=\"/u/hemalatha\">@hemalatha</a> <a class=\"mention\" href=\"/u/atulps\">@AtulPS</a></p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-18T13:55:29.652Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 224,
+      "readers_count": 223,
+      "score": 89.6,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Mohammad Tayyab Bhatti",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 3,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 28406,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/3",
+      "user_cakedate": "2024-02-21",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 3
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 3,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665565,
+      "name": "Loga",
+      "username": "25dp1000084",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25dp1000084/{size}/120960_2.png",
+      "created_at": "2025-08-18T11:01:23.581Z",
+      "cooked": "<p>I received 43/100 in the System Commands OPPE held on 16 August. I understand that the passing mark is 40 and normally students who clear it are not allowed to reappear. Still, because of the issues I faced during the exam, I would like to request if I could be given another chance to attempt it.</p>\n<p>The VM during the exam was very slow — every command or input took a long time to register, and whenever I tried to evaluate my script the screen would freeze for close to a minute. Even when the evaluation script ran, the results were inconsistent; at times I got different outputs on the same file. There also seemed to be errors with the evaluation process that stopped some test cases from being submitted properly, due to which I lost a lot of time rechecking solutions that were already correct.</p>\n<p>Even though I have passed, I would sincerely like the opportunity to reappear for the OPPE. Could you please let me know if there is any procedure to request this?</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-18T14:06:30.644Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 178,
+      "readers_count": 177,
+      "score": 70.4,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Loga",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 45054,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/4",
+      "user_cakedate": "2025-01-28",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665526,
+      "name": "jesse",
+      "username": "22f2001029",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001029/{size}/12771_2.png",
+      "created_at": "2025-08-18T12:22:53.187Z",
+      "cooked": "<p>Had the same issue but the support team denied for attending it again</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-18T14:06:30.599Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 203,
+      "readers_count": 202,
+      "score": 60.4,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "jesse",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 15221,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/5",
+      "user_cakedate": "2022-09-17",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665536,
+      "name": "Soubiya Nasir",
+      "username": "23dp2000049",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/ed655f/{size}.png",
+      "created_at": "2025-08-18T13:05:41.750Z",
+      "cooked": "<p>How will I know if I can reappear for SC OPPE? Do I have to ask someone or will they send a google form?</p>\n<p>I did not do well in this OPPE.(Conducted on 16th August.)</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-18T14:06:30.594Z",
+      "reply_count": 0,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 201,
+      "readers_count": 200,
+      "score": 40,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Soubiya Nasir",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 15221,
+        "username": "22f2001029",
+        "name": "jesse",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f2001029/{size}/12771_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 35362,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/6",
+      "user_cakedate": "2024-07-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665552,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2025-08-18T13:47:24.438Z",
+      "cooked": "<p>If you get less than 40 you will get a chance to reappear for OPPE otherwise not. This will be done automatically.</p>\n<p>If you get equal to or more than 40, then your next exam would be end term for System Commands.</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-18T14:06:30.587Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 190,
+      "readers_count": 189,
+      "score": 42.8,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/7",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665562,
+      "name": "Jb Anmol",
+      "username": "Jbanmol",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png",
+      "created_at": "2025-08-18T14:02:44.705Z",
+      "cooked": "<p>Ma’am, I feel this is unfair. There was a lot of confusion regarding the test cases, and the VM was stuck for a considerable amount of time. I understand the rules, but this situation was an exception. Considering that the OPPE carries <strong>30% weightage</strong>, the impact is significant.</p>\n<p>I am not asking for free marks, only for a fair chance. I wouldn’t have raised this concern if the VM had worked smoothly on the exam day.</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-18T14:06:30.582Z",
+      "reply_count": 1,
+      "reply_to_post_number": 7,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 183,
+      "readers_count": 182,
+      "score": 91.6,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Jb Anmol",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 3,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23640,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/9",
+      "user_cakedate": "2023-01-29",
+      "user_birthdate": "1904-05-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 3
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 3,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665564,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2025-08-18T14:05:29.762Z",
+      "cooked": "<p>I understand your concern. It does carry 30% weightage but I simply stated the rule in the grading document to the question asked.</p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-18T14:06:30.577Z",
+      "reply_count": 2,
+      "reply_to_post_number": 9,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 180,
+      "readers_count": 179,
+      "score": 46,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 23640,
+        "username": "Jbanmol",
+        "name": "Jb Anmol",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/10",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665572,
+      "name": "Jb Anmol",
+      "username": "Jbanmol",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png",
+      "created_at": "2025-08-18T14:09:30.875Z",
+      "cooked": "<p>Yes ma’am, I understand the rule and thank you for your response. However, the grading document did not mention that we need to account for bugs or a delay during the OPPE exam.</p>\n<p>Also for me 4 questions showed test cases passed on synchro show. but score is 60.</p>\n<p>I just need a fair chance.</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-18T14:16:20.687Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 185,
+      "readers_count": 184,
+      "score": 82,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Jb Anmol",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 2,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 3,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23640,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/11",
+      "user_cakedate": "2023-01-29",
+      "user_birthdate": "1904-05-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 3
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 3,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665591,
+      "name": "Mohammad Tayyab Bhatti",
+      "username": "tayyab",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/tayyab/{size}/73245_2.png",
+      "created_at": "2025-08-18T15:28:02.907Z",
+      "cooked": "<ol>\n<li>If you fail in this, you get a chance to reappear the next weekend. So you get 2 chances to attempt the exam.</li>\n<li>If the first date is inconvenient due to a clash with some other engagement, then you can apply for a <em><strong><span class=\"bbcode-u\">postponement to the second date, providing sufficient proof</span></strong></em>. If this is accepted, your exam will be moved to the second date, but if you fail in this, you will not get another chance to reattempt. You will have to do it in the subsequent term.</li>\n<li>If you are absent on 16th Aug, you DON’T get another chance on 24th Aug.</li>\n</ol>\n<p>Ma’am, there is nothing in the Grading Doc related to technical errors from VM, and what I understand from the grading doc is that if I have valid proof, I can re-attempt OPPE. I have attached some screen shot from OPPE day, If I just have 5 mins more I would have completed one more quesiton by which I would probably score S grade (although I could have completed all quesiton), or ( I would have intentionally failed myself just by deleting my scripts to re-appear), So I don’t understand what’s the problem here to not get a re-attempt chance. Not lying, I have spent so much time to score well in this subject cause I like Linux. I scored 94 in Qz1, scored 100 in all BPT, just because of some technical error, all my efforts seem to be wasted. I believe people with a valid reason and proof should get another chance. Kindly accept my request and give me another chance. If I fail or score less, that would be 100% my responsibility.</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-18T15:28:02.907Z",
+      "reply_count": 0,
+      "reply_to_post_number": 10,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 186,
+      "readers_count": 185,
+      "score": 67.2,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Mohammad Tayyab Bhatti",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 28406,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/13",
+      "user_cakedate": "2024-02-21",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665605,
+      "name": "Pradeep Kumar",
+      "username": "23f1001467",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1001467/{size}/66949_2.png",
+      "created_at": "2025-08-18T16:09:35.254Z",
+      "cooked": "<p>Respected sir/mam,</p>\n<p>I would also like to request you to allow me for re-appear for OPPE as even I scored 43, I don’t feel justified with my score as I have learnt a lot in this course and technical issues faced during the exam caused me to panic which resulted in low score. I couldn’t focus on any question as thought other one I should try as previous one is taking much much to evaluate, may be my code is wrong and some other reasons too.</p>\n<p>I can’t explain much in words about the thought process during recent OPPE due to technical issue as I was losing constant focus to solve the questions which were somehow of higher difficulty level. Further, absence of cheat sheet as promised was another cause of concern on which I was dependent.</p>\n<p>Therefore, I again humbly request you to allow me to show my full learnt potential. This re-OPPE will be worth to meet high standards of IITM.</p>",
+      "post_number": 14,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-18T16:13:08.505Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 5,
+      "reads": 170,
+      "readers_count": 169,
+      "score": 74,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Pradeep Kumar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17204,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/14",
+      "user_cakedate": "2023-06-02",
+      "user_birthdate": "1904-07-21",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665795,
+      "name": "sandeepkumar sudhakar surkute",
+      "username": "22f3002925",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+      "created_at": "2025-08-19T12:17:16.329Z",
+      "cooked": "<p>Ma’am, we understand the grading rules, but as a student community we are requesting you to genuinely have a look at issues faced in the OPPE as well as the scoring has gone wrong somewhere, because my “synchro status” command clearly showed only one question passed but the score now is 43. How is it possible ?  also the  “synchro status”  was not working from some problem folders it was working from only one of the problem folders.</p>\n<p>In good faith, we are just asking to consider the issues faced and give us fair chance in re-oppe please.</p>\n<p>Regards,</p>\n<p>Sandeep</p>",
+      "post_number": 15,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-19T12:17:16.329Z",
+      "reply_count": 0,
+      "reply_to_post_number": 10,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 143,
+      "readers_count": 142,
+      "score": 28.6,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "sandeepkumar sudhakar surkute",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16751,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/15",
+      "user_cakedate": "2023-02-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665817,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2025-08-19T14:01:28.094Z",
+      "cooked": "<p>To all those tagging me,</p>\n<p>I politely want to state that</p>\n<ol>\n<li>I replied to this thread because some of you had confusion regarding re-OPPE eligibility - I merely stated what’s written in grading document to clear that doubt.</li>\n<li>I am a student TA and has no role in deciding if you can appear for it or not.</li>\n</ol>",
+      "post_number": 16,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-19T14:01:53.036Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 137,
+      "readers_count": 136,
+      "score": 27.4,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/16",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665875,
+      "name": "Ravi",
+      "username": "cravikiran",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/cravikiran/{size}/22537_2.png",
+      "created_at": "2025-08-19T17:48:48.401Z",
+      "cooked": "<p>Dear Sir/Madam,</p>\n<p>I attended the OPPE on 16th Aug and scored 43. I would like to appear for Re-OPPE. Kindly consider my request.</p>\n<p>Best regards</p>\n<p>Ravi</p>\n<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> <a class=\"mention\" href=\"/u/hemalatha\">@hemalatha</a> <a class=\"mention\" href=\"/u/subendu\">@Subendu</a> <a class=\"mention\" href=\"/u/chaitanya353535\">@chaitanya353535</a></p>",
+      "post_number": 17,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-19T17:48:48.401Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 135,
+      "readers_count": 134,
+      "score": 47,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Ravi",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13015,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/17",
+      "user_cakedate": "2022-05-02",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665942,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-08-20T04:14:08.900Z",
+      "cooked": "<p>We are aware that some of you experienced interruptions due to a VM load update during the exam. To ensure fairness, we extended the exam time for everyone by more than the time lost. The  most students were still able to successfully complete the exam within the adjusted timeframe.</p>\n<p>Please note that a re-oppe is only available for students who did not pass the exam. Since you have successfully passed, our policy does not allow us to grant you a re-oppe.</p>",
+      "post_number": 18,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-20T04:14:08.900Z",
+      "reply_count": 2,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 121,
+      "readers_count": 120,
+      "score": 49.2,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/18",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665986,
+      "name": "Jb Anmol",
+      "username": "Jbanmol",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png",
+      "created_at": "2025-08-20T05:35:09.917Z",
+      "cooked": "<p>Sir even after the fix due to multiple messages there were interruptions. And 2 questions were not passing private test cases but passed all public test cases. I didn’t get the marks for it.</p>\n<p>I just need a fair chance to get the score I deserve, pls help.</p>",
+      "post_number": 19,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-20T05:35:09.917Z",
+      "reply_count": 1,
+      "reply_to_post_number": 18,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 122,
+      "readers_count": 121,
+      "score": 44.4,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Jb Anmol",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23640,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/19",
+      "user_cakedate": "2023-01-29",
+      "user_birthdate": "1904-05-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665999,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-08-20T05:58:39.723Z",
+      "cooked": "<p>If private test cases are not passing, it is due to code not covering all edge cases or matching the expected output format exactly. For correct script it has been verified that all test cases pass. There have been multiple students (~150) who have scored 100 in this OPPE.</p>\n<p>We are aware of the technical issues, but we cannot extend any more concession other than the 30 mins extension.</p>",
+      "post_number": 20,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-20T05:58:39.723Z",
+      "reply_count": 3,
+      "reply_to_post_number": 19,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 140,
+      "readers_count": 139,
+      "score": 43,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 23640,
+        "username": "Jbanmol",
+        "name": "Jb Anmol",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/20",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666042,
+      "name": "PURNENDU SHUKLA",
+      "username": "Learner_HS",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/learner_hs/{size}/13282_2.png",
+      "created_at": "2025-08-20T06:41:17.012Z",
+      "cooked": "<p>As per what I understood from it , if submission evaluation passed and submission was not submitted , we can move on.</p>",
+      "post_number": 22,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-20T06:41:17.012Z",
+      "reply_count": 0,
+      "reply_to_post_number": 21,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 135,
+      "readers_count": 134,
+      "score": 42,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "PURNENDU SHUKLA",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 23640,
+        "username": "Jbanmol",
+        "name": "Jb Anmol",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13371,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/22",
+      "user_cakedate": "2022-05-05",
+      "user_birthdate": "1904-10-14",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666047,
+      "name": "VENGALA MANASA",
+      "username": "23f3000404",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3000404/{size}/68556_2.png",
+      "created_at": "2025-08-20T06:51:04.599Z",
+      "cooked": "<p>Respected SC team</p>\n<p>On 16 august ,  I tried to login to my vm during the start of exam but it shown permission denied. I tried and followed every step that have mentioned. Could you please allow me to reappear for exam on 23 august and also  it will be helpful if you conduct some zoom meeting regarding logging into the vm during exam</p>",
+      "post_number": 23,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-20T06:51:04.599Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 7,
+      "reads": 130,
+      "readers_count": 129,
+      "score": 61,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "VENGALA MANASA",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23142,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/23",
+      "user_cakedate": "2023-10-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666153,
+      "name": "Soubhagya Nayak ",
+      "username": "23f2005014",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2005014/{size}/66907_2.png",
+      "created_at": "2025-08-20T09:15:55.499Z",
+      "cooked": "<p>Sir please allows us to appear for the re oppe as the vm issues made the exam experience quite bad and became the reason for loss of focus. Please let us take the exam 2nd time</p>\n<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a></p>",
+      "post_number": 24,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-20T09:15:55.499Z",
+      "reply_count": 0,
+      "reply_to_post_number": 20,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 97,
+      "readers_count": 96,
+      "score": 34.4,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Soubhagya Nayak ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21704,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/24",
+      "user_cakedate": "2023-09-18",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666180,
+      "name": "Akash Patra",
+      "username": "patraakash98",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/patraakash98/{size}/67139_2.png",
+      "created_at": "2025-08-20T10:01:25.304Z",
+      "cooked": "<p>Respected Sir,</p>\n<p>I hope you are doing well. I want to write honestly about what I felt during the recent exam.</p>\n<p>Sir, I am new to working fully inside the VM environment. I practiced very hard before the exam, but inside the exam hall the VM crashed at times and I became very confused. When pop-up messages came like “don’t worry if code is right it will be evaluated”, instead of giving me confidence, they made me doubt whether my work was really being counted.</p>\n<p>In one AWK question, I submitted the same code twice — the first time it did not go through, the second time suddenly all test cases passed. Such things made me nervous and I kept questioning myself instead of focusing on solving.</p>\n<p>Sir, I know many students are very skilled and can score 100, and I respect them. But for a student like me, who is trying with all sincerity, these technical issues reduced my confidence. I felt like my effort was wasted not because of lack of preparation, but because of the instability of the system.</p>\n<p>I would even accept failure if it is due to my own mistakes. But it feels very discouraging when I suffer due to system crashes and confusing evaluation messages. That is why I wanted to share my feelings with you.</p>\n<p>I humbly request you to kindly look into this issue for the sake of students like me who may not be perfect but are genuinely working hard to improve.</p>\n<p>Thank you for reading this patiently, Sir.</p>\n<p>Sincerely,</p>\n<p>Akash</p>",
+      "post_number": 25,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-20T10:01:25.304Z",
+      "reply_count": 0,
+      "reply_to_post_number": 20,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 93,
+      "readers_count": 92,
+      "score": 48.4,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Akash Patra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 28096,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/25",
+      "user_cakedate": "2024-02-20",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666398,
+      "name": "Jb Anmol",
+      "username": "Jbanmol",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png",
+      "created_at": "2025-08-20T17:09:20.014Z",
+      "cooked": "<p>Sir. I kindly request a <strong>fair and stable opportunity to demonstrate my capability</strong>. This issue has a direct impact on my grade, and a <strong>30% is very significant</strong>. Since reattempts are already being scheduled for some students, I sincerely hope my case can also be considered. Many Students who didn’t even attend OPPE 1 got 3 marks(out of nothing) and they are getting another chance, why can’t I.</p>",
+      "post_number": 26,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-20T17:09:20.014Z",
+      "reply_count": 0,
+      "reply_to_post_number": 20,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 70,
+      "readers_count": 69,
+      "score": 28.8,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Jb Anmol",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23640,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/26",
+      "user_cakedate": "2023-01-29",
+      "user_birthdate": "1904-05-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666399,
+      "name": "Jb Anmol",
+      "username": "Jbanmol",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png",
+      "created_at": "2025-08-20T17:10:29.333Z",
+      "cooked": "<p>Sir, I’m a bit confused. During the exam, there was a message saying we could ignore and move forward if private test cases weren’t passing. When I checked doing synchro status, 4 of my questions were passing all the test cases, so I don’t understand how my score ended up being 60.</p>\n<p>Sir, please try to understand our situation. For most of us, working on a VM is new, and facing glitches during an exam creates a lot of stress and pressure.</p>\n<p>I sincerely request a fair and stable opportunity to demonstrate my capability, this issue will deeply affect my grade. Kindly help. 30% is a lot.</p>",
+      "post_number": 27,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-20T17:10:29.333Z",
+      "reply_count": 0,
+      "reply_to_post_number": 18,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 71,
+      "readers_count": 70,
+      "score": 29,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Jb Anmol",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23640,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/27",
+      "user_cakedate": "2023-01-29",
+      "user_birthdate": "1904-05-04",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666416,
+      "name": "Debarghya Adhikari ",
+      "username": "Debarghya",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/debarghya/{size}/122418_2.png",
+      "created_at": "2025-08-20T18:32:33.647Z",
+      "cooked": "<p>Respected Sir/Ma’am,</p>\n<p>I had an online assessment of Wells Fargo at my university (Jadavpur University) for my internship in the 3rd year of college. The online assessment was rigorous and hence it required a lot of time, resulting in its completion in the evening. So, I couldn’t reach my home in time to give the System Commands OPPE. Please consider my candidature for the OPPE on 23rd August in the evening.</p>\n<p>With regards,</p>\n<p>Yours sincerely,</p>\n<p>Debarghya Adhikari.</p>",
+      "post_number": 28,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-20T18:32:33.647Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 67,
+      "readers_count": 66,
+      "score": 28.2,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Debarghya Adhikari ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 28360,
+      "hidden": false,
+      "trust_level": 0,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/28",
+      "user_cakedate": "2024-02-21",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666452,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-08-21T04:17:30.435Z",
+      "cooked": "<p>Let me clarify this misconception:</p>\n<p>It was mentioned that if your submission is failing, not to worry.</p>\n<p>This does not mean that if your code does not satisfy the private test cases, you would be granted free marks. Only if your code is correct and works on private test cases, it is considered, regardless of whether you faced submission issue during exam or not, since we have resubmitted all of your codes post exam, and taken the highest marks per question.</p>",
+      "post_number": 29,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-21T04:17:30.435Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 62,
+      "readers_count": 61,
+      "score": 17.4,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/29",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666453,
+      "name": "Soubhagya Nayak ",
+      "username": "23f2005014",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2005014/{size}/66907_2.png",
+      "created_at": "2025-08-21T04:17:50.046Z",
+      "cooked": "<p>Sir please let us to reapper for oppe .</p>\n<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a></p>",
+      "post_number": 30,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-21T04:17:50.046Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 65,
+      "readers_count": 64,
+      "score": 33,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Soubhagya Nayak ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 21704,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/30",
+      "user_cakedate": "2023-09-18",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666460,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-08-21T04:22:55.662Z",
+      "cooked": "<p>We are aware that some of you experienced interruptions due to a VM load update during the exam. To ensure fairness, we extended the exam time for everyone by more than the time lost. The  most students were still able to successfully complete the exam within the adjusted timeframe.</p>\n<p>Please note that a re-oppe is only available for students who did not pass the exam. Since you have successfully passed, our policy does not allow us to grant you a re-oppe. We cannot grant a re-oppe on concession.</p>",
+      "post_number": 31,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-21T04:22:55.662Z",
+      "reply_count": 1,
+      "reply_to_post_number": 30,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 66,
+      "readers_count": 65,
+      "score": 33.2,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 21704,
+        "username": "23f2005014",
+        "name": "Soubhagya Nayak ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2005014/{size}/66907_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/31",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666493,
+      "name": "Jb Anmol",
+      "username": "Jbanmol",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png",
+      "created_at": "2025-08-21T05:37:54.725Z",
+      "cooked": "<p>Sir, Apologies for any misunderstandin. I wanted to briefly explain my perspective, receiving a concise message during a high-pressure exam was challenging, and as a student new to this VM-based format, the situation felt difficult to navigate.</p>\n<p>I truly understand and appreciate the immense effort that goes into conducting an exam of this nature.</p>\n<p>Towards the end of the exam, synchro status showed  four of my answers were passing the test cases, but my final score is 60. I would be grateful if you could help me understand this discrepancy.</p>\n<p>Thank you for your time and consideration.</p>",
+      "post_number": 32,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-21T05:37:54.725Z",
+      "reply_count": 0,
+      "reply_to_post_number": 29,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 65,
+      "readers_count": 64,
+      "score": 13,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Jb Anmol",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 23640,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/32",
+      "user_cakedate": "2023-01-29",
+      "user_birthdate": "1904-05-04",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666496,
+      "name": "Divyansh Gupta",
+      "username": "23f2000051",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000051/{size}/66928_2.png",
+      "created_at": "2025-08-21T05:54:36.816Z",
+      "cooked": "<p>Dear Sayn,</p>\n<p>I hope this message finds you well. I am writing regarding the online proctored programming exam conducted on Saturday. While I understand that the grading document generally covers normal cases, the circumstances during the exam were unfortunately not normal for many of us.</p>\n<p>The virtual machine provided for the exam was experiencing significant lag throughout the session. Even though the exam duration was extended by half an hour to accommodate this, the lagginess persisted and made it very difficult to attempt the paper with proper focus. In addition, some private test cases were failing due to issues such as “invalid literal” parse errors, despite all public test cases passing successfully. This inconsistency created further challenges during the assessment.</p>\n<p>Given these circumstances, I kindly request some consideration so that our grades are not adversely affected. I completely understand that conducting a re-exam for all students would be   challenging; however, possible alternatives could be either awarding a small bonus to account for these difficulties, or scheduling a re-exam for those who wish to improve.</p>\n<p>If there is any doubt that these issues were experienced widely, you might also consider rolling out an exam feedback Google Form to gather inputs from students across the class. This way, you would receive collective feedback and not just isolated complaints.</p>\n<p>I sincerely hope the faculty can consider this request, as the issues were genuine and made it difficult to perform to our full potential.</p>\n<p>Thank you for your time and understanding.</p>",
+      "post_number": 33,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-08-21T05:55:52.842Z",
+      "reply_count": 0,
+      "reply_to_post_number": 31,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 64,
+      "readers_count": 63,
+      "score": 57.8,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Divyansh Gupta",
+      "primary_group_name": "ds-students",
+      "flair_name": null,
+      "flair_url": null,
+      "flair_bg_color": null,
+      "flair_color": null,
+      "flair_group_id": null,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 3,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17076,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/33",
+      "user_cakedate": "2023-06-02",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 3
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 3,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 670666,
+      "name": "Pradheepa",
+      "username": "24f2007572",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007572/{size}/119861_2.png",
+      "created_at": "2025-09-02T12:18:37.049Z",
+      "cooked": "<p>Hi Sir, Will thre be an oppurtunity for Re-OPPE</p>",
+      "post_number": 34,
+      "post_type": 1,
+      "posts_count": 31,
+      "updated_at": "2025-09-02T12:18:37.049Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 36,
+      "readers_count": 35,
+      "score": 7.2,
+      "yours": false,
+      "topic_id": 185208,
+      "topic_slug": "request-to-appear-for-sc-re-oppe",
+      "display_username": "Pradheepa",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 37111,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-to-appear-for-sc-re-oppe/185208/34",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

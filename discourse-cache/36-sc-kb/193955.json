@@ -1,0 +1,1699 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 710755,
+        "name": "~",
+        "username": "23f2000539",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png",
+        "created_at": "2025-12-19T18:44:57.914Z",
+        "cooked": "<p>Respected Sir/Ma’am,</p>\n<p>I hope you are doing well.</p>\n<p>As the System Commands end-term syllabus is quite extensive and spans both core and auxiliary topics, I wanted to request your guidance regarding topic prioritization for exam preparation.</p>\n<p>From my understanding, topics like shell scripting, awk, sed, grep, regular expressions, pipelines, and cron scheduling form the core of the course. However, there are also several supporting topics such as hardware utilities, networking/SSH, version control concepts, prompt strings, and package/build utilities.</p>\n<p>To prepare more effectively and avoid missing essential areas, could you please let us know:</p>\n<ul>\n<li>\n<p>which topics are <strong>must-not-skip</strong> for the end-term, and</p>\n</li>\n<li>\n<p>which topics are mainly for <strong>conceptual awareness</strong> rather than detailed preparation?</p>\n</li>\n</ul>\n<p>This guidance would really help us focus our revision appropriately in the limited time available.</p>\n<p>Thank you very much for your time and support.</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 3,
+        "updated_at": "2025-12-19T18:44:57.914Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 9,
+        "reads": 74,
+        "readers_count": 73,
+        "score": 59.8,
+        "yours": false,
+        "topic_id": 193955,
+        "topic_slug": "request-for-topic-prioritization-for-system-commands-end-term",
+        "display_username": "~",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 17291,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-for-topic-prioritization-for-system-commands-end-term/193955/1",
+        "user_cakedate": "2023-06-03",
+        "user_birthdate": "1904-08-18",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 710756,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-12-19T19:03:20.931Z",
+        "cooked": "<p>Thank you for your question.</p>\n<p>For end-term preparation, you should <strong>prioritize the following must-not-skip topics</strong>, as they form the operational core of the course and are tested for correctness, reasoning, and command composition:</p>\n<p><strong>High-Priority (Must Prepare Thoroughly)</strong></p>\n<ul>\n<li>Shell fundamentals: command execution, exit status, chaining (<code>&amp;&amp;</code>, <code>||</code>)</li>\n<li>I/O redirection and pipelines</li>\n<li>File and directory operations, permissions</li>\n<li><code>grep</code>, <code>sed</code>, <code>awk</code> (filters, substitutions, conditionals, aggregation)</li>\n<li>Regular expressions (basic + extended, practical usage)</li>\n<li>Archiving and compression (<code>tar</code>, <code>gzip</code>, related flags)</li>\n<li>Sorting, uniqueness, counting (<code>sort</code>, <code>uniq</code>, <code>wc</code>)</li>\n<li>Shell scripting basics:\n<ul>\n<li>Variables, quoting (<code>\"$@\"</code> vs <code>\"$*\"</code>)</li>\n<li>Loops, conditionals, functions</li>\n<li>Exit codes and error handling</li>\n</ul>\n</li>\n<li>Cron jobs and scheduling syntax</li>\n</ul>\n<p><strong>Medium Priority (Prepare Conceptually + Basic Usage)</strong></p>\n<ul>\n<li>Prompt customization (<code>PS1</code>, environment variables)</li>\n<li>Text processing utilities (<code>cut</code>, <code>tr</code>, <code>paste</code>, <code>xargs</code>)</li>\n<li>Process management (<code>ps</code>, <code>top</code>, <code>kill</code>, job control)</li>\n<li>Log handling and redirection patterns</li>\n<li>Basic networking commands (<code>ping</code>, <code>ssh</code>, <code>scp</code>)</li>\n<li>Environment variables and shell startup files</li>\n</ul>\n<p><strong>Conceptual Awareness (Know What/Why, Not Deep Syntax)</strong></p>\n<ul>\n<li>Package managers and build tools (apt/yum, make – high level)</li>\n<li>Version control concepts (basic Git ideas, not workflows)</li>\n<li>Hardware and system utilities (disk, memory, CPU tools – overview)</li>\n<li>Filesystem hierarchy and Linux boot concepts</li>\n</ul>\n<p><strong>Additionally Recommended (Even if not emphasized earlier)</strong></p>\n<ul>\n<li>Quoting and globbing rules</li>\n<li>Differences between GNU vs POSIX behavior (where relevant)</li>\n<li>Safe scripting practices (idempotency, avoiding destructive commands)</li>\n<li>Reading and understanding man pages effectively</li>\n</ul>\n<p>Focus first on correctness and reasoning with commands, then on composing multi-step pipelines and scripts. Breadth matters, but <strong>depth in core Unix text processing and shell behavior is essential</strong>.</p>\n<p>Best wishes for your preparation.</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 3,
+        "updated_at": "2025-12-19T19:03:20.931Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 71,
+        "readers_count": 70,
+        "score": 79.2,
+        "yours": false,
+        "topic_id": 193955,
+        "topic_slug": "request-for-topic-prioritization-for-system-commands-end-term",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 4,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-for-topic-prioritization-for-system-commands-end-term/193955/2",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 4
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 4,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 710863,
+        "name": "Swati Jain",
+        "username": "21f3000759",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "created_at": "2025-12-20T08:14:03.596Z",
+        "cooked": "<p>You can also go through revision sessions from the sheet below and also it has some extra resources</p>\n<aside class=\"onebox allowlistedgeneric\" data-onebox-src=\"https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&amp;dsh=S-167655939%3A1766218407131422&amp;followup=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&amp;ifkv=Ac2yZaXnRf9A-GUgXtz9-MjWjtaJ0ngZyKqHF2XsbEW9R8YXeLFh4fgeqd56ZyAjhZH7ewAJ52dD&amp;ltmpl=sheets&amp;osid=1&amp;passive=1209600&amp;service=wise&amp;flowName=GlifWebSignIn&amp;flowEntry=ServiceLogin\">\n  <header class=\"source\">\n\n      <a href=\"https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&amp;dsh=S-167655939%3A1766218407131422&amp;followup=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&amp;ifkv=Ac2yZaXnRf9A-GUgXtz9-MjWjtaJ0ngZyKqHF2XsbEW9R8YXeLFh4fgeqd56ZyAjhZH7ewAJ52dD&amp;ltmpl=sheets&amp;osid=1&amp;passive=1209600&amp;service=wise&amp;flowName=GlifWebSignIn&amp;flowEntry=ServiceLogin\" target=\"_blank\" rel=\"noopener nofollow ugc\">accounts.google.com</a>\n  </header>\n\n  <article class=\"onebox-body\">\n    \n\n<h3><a href=\"https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&amp;dsh=S-167655939%3A1766218407131422&amp;followup=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&amp;ifkv=Ac2yZaXnRf9A-GUgXtz9-MjWjtaJ0ngZyKqHF2XsbEW9R8YXeLFh4fgeqd56ZyAjhZH7ewAJ52dD&amp;ltmpl=sheets&amp;osid=1&amp;passive=1209600&amp;service=wise&amp;flowName=GlifWebSignIn&amp;flowEntry=ServiceLogin\" target=\"_blank\" rel=\"noopener nofollow ugc\">Google Sheets: Sign-in</a></h3>\n\n  <p>Access Google Sheets with a personal Google account or Google Workspace account (for business use).</p>\n\n\n  </article>\n\n  <div class=\"onebox-metadata\">\n    \n    \n  </div>\n\n  <div style=\"clear: both\"></div>\n</aside>\n",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 3,
+        "updated_at": "2025-12-20T08:14:03.596Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 54,
+        "readers_count": 53,
+        "score": 10.8,
+        "yours": false,
+        "topic_id": 193955,
+        "topic_slug": "request-for-topic-prioritization-for-system-commands-end-term",
+        "display_username": "Swati Jain",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&dsh=S-167655939%3A1766218407131422&followup=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&ifkv=Ac2yZaXnRf9A-GUgXtz9-MjWjtaJ0ngZyKqHF2XsbEW9R8YXeLFh4fgeqd56ZyAjhZH7ewAJ52dD&ltmpl=sheets&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceL",
+            "internal": false,
+            "reflection": false,
+            "clicks": 19
+          }
+        ],
+        "read": false,
+        "user_title": "Course TA",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 6563,
+        "hidden": false,
+        "trust_level": 2,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/request-for-topic-prioritization-for-system-commands-end-term/193955/3",
+        "user_cakedate": "2021-09-06",
+        "user_birthdate": "1904-04-15",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      710755,
+      710756,
+      710863
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      128
+    ],
+    [
+      3,
+      127
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 47,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 6,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 364,
+      "name": "term3-2025",
+      "slug": "term3-2025"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Request for Topic Prioritization for System Commands End-Term",
+  "id": 193955,
+  "title": "Request for Topic Prioritization for System Commands End-Term",
+  "posts_count": 3,
+  "created_at": "2025-12-19T18:44:57.791Z",
+  "views": 100,
+  "reply_count": 0,
+  "like_count": 4,
+  "last_posted_at": "2025-12-20T08:14:03.596Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "request-for-topic-prioritization-for-system-commands-end-term",
+  "category_id": 36,
+  "word_count": 427,
+  "deleted_at": null,
+  "user_id": 17291,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": null,
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_193955",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 3,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 3,
+  "show_read_indicator": false,
+  "thumbnails": null,
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "System Commands | Jan 2026 | References | Guidelines",
+      "id": 86269,
+      "title": "System Commands | Jan 2026 | References | Guidelines",
+      "slug": "system-commands-jan-2026-references-guidelines",
+      "posts_count": 1,
+      "reply_count": 16,
+      "highest_post_number": 1,
+      "image_url": null,
+      "created_at": "2023-05-30T05:57:48.716Z",
+      "last_posted_at": "2023-05-30T05:57:48.907Z",
+      "bumped": true,
+      "bumped_at": "2023-05-30T05:57:48.907Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": true,
+      "unpinned": null,
+      "excerpt": "Welcome Learners :slight_smile: \nLead Instructor\n\n@Subendu \nTag this instructor if there is no response to your post within the first 12 hours\n\n\nOther Instructors\n\n@hemalatha\n@AtulPS\n@Afnan_POD\n@sayan\n\n\nStudent TA\n\n@21f3&hellip;",
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        },
+        {
+          "id": 44,
+          "name": "extra-resources",
+          "slug": "extra-resources"
+        },
+        {
+          "id": 24,
+          "name": "guidelines",
+          "slug": "guidelines"
+        },
+        {
+          "id": 113,
+          "name": "announcement",
+          "slug": "announcement"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 53,
+      "views": 6843,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 53,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest single",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 12,
+            "username": "santhanakrishnan",
+            "name": "Santhana Krishnan S",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/santhanakrishnan/{size}/179_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "System commands oppe questions pattern",
+      "id": 201587,
+      "title": "System commands oppe questions pattern",
+      "slug": "system-commands-oppe-questions-pattern",
+      "posts_count": 11,
+      "reply_count": 2,
+      "highest_post_number": 11,
+      "image_url": null,
+      "created_at": "2026-04-15T05:46:22.743Z",
+      "last_posted_at": "2026-04-17T08:35:41.977Z",
+      "bumped": true,
+      "bumped_at": "2026-04-17T09:47:41.113Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 24,
+          "name": "guidelines",
+          "slug": "guidelines"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 4,
+      "views": 279,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 38404,
+            "username": "24f3000060",
+            "name": "Kumuda",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000060/{size}/133771_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35797,
+            "username": "24f2004936",
+            "name": "Ashish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2004936/{size}/120606_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "OPPE Syllabus and Reference Material",
+      "id": 182107,
+      "title": "OPPE Syllabus and Reference Material",
+      "slug": "oppe-syllabus-and-reference-material",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": null,
+      "created_at": "2025-07-14T19:42:33.271Z",
+      "last_posted_at": "2025-07-15T04:35:18.448Z",
+      "bumped": true,
+      "bumped_at": "2025-07-15T04:35:18.448Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 5,
+      "views": 73,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 29169,
+            "username": "RaghavSrinivasG",
+            "name": "Raghav Srinivas Gollapinni",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/raghavsrinivasg/{size}/67073_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Doubt regarding pattern of System commands OPPE",
+      "id": 192861,
+      "title": "Doubt regarding pattern of System commands OPPE",
+      "slug": "doubt-regarding-pattern-of-system-commands-oppe",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": null,
+      "created_at": "2025-12-04T16:08:22.741Z",
+      "last_posted_at": "2025-12-04T16:33:11.791Z",
+      "bumped": true,
+      "bumped_at": "2025-12-04T16:33:11.791Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 148,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 56288,
+            "username": "24f2004306",
+            "name": "Tejesh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2004306/{size}/114143_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 16301,
+            "username": "22f3000671",
+            "name": "Prakhar Arora",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000671/{size}/148470_2.png",
+            "primary_group_name": "ds-students",
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Advice/Tip for oppe",
+      "id": 185128,
+      "title": "Advice/Tip for oppe",
+      "slug": "advice-tip-for-oppe",
+      "posts_count": 4,
+      "reply_count": 2,
+      "highest_post_number": 5,
+      "image_url": null,
+      "created_at": "2025-08-17T12:45:23.895Z",
+      "last_posted_at": "2025-08-18T09:48:16.276Z",
+      "bumped": true,
+      "bumped_at": "2025-08-18T09:48:16.276Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 4,
+      "views": 175,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 23186,
+            "username": "23f3000159",
+            "name": "Abhishek Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3000159/{size}/99011_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 42973,
+            "username": "24f3004946",
+            "name": "Soumyadip Hazari",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004946/{size}/132540_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 2,
+    "username": "sayan",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+    "excerpt": "<p>Thank you for your question.</p>\n<p>For end-term preparation, you should <strong>prioritize the following must-not-skip topics</strong>, as they form the operational core of the course and are tested for correctness, reasoning, and command composition:</p>\n<p><strong>High-Priority (Must Prepare Thoroughly)</strong></p>\n<ul>\n<li>Shell fundamentals: command execution, exit status, chaining (<code>&amp;&amp;</code>, <code>||</code>)</li>\n<li>I/O redirection and pipelines</li>\n<li>File and directory operations, permissions</li>\n<li><code>grep</code>, <code>sed</code>, <code>awk</code> (filters, substitutions, conditionals, aggregation)</li>\n<li>Regular expressions (basic + extended, practical usage)</li>\n<li>Archiving and compression (<code>tar</code>, <code>gzip</code>, related flags)</li>\n<li>Sorting, uniqueness, counting (<code>sort</code>, <code>uniq</code>, <code>wc</code>)</li>\n<li>Shell scripting basics:\n<ul>\n<li>Variables, quoting (<code>\"$@\"</code> vs <code>\"$*\"</code>)</li>\n<li>Loops, conditionals, functions</li>\n<li>Exit codes and error handling</li>\n</ul>\n</li>\n<li>Cron jobs and scheduling syntax</li>\n</ul>\n<p><strong>Medium Priority (Prepare Conceptually + Basic Usage)</strong></p>\n<ul>\n<li>Prompt customization (<code>PS1</code>, environment variables)</li>\n<li>Text processing utilities (<code>cut</code>, <code>tr</code>, <code>paste</code>, <code>xargs</code>)</li>\n<li>Process management (<code>ps</code>, <code>top</code>, <code>kill</code>, job control)</li>\n<li>Log handling and redirection patterns</li>\n<li>Basic networking commands (<code>ping</code>, <code>ssh</code>, <code>scp</code>)</li>\n<li>Environment variables and shell startup files</li>\n</ul>\n<p><strong>Conceptual Awareness (Know What/Why, Not Deep Syntax)</strong></p>\n<ul>\n<li>Package managers and build tools (apt/yum, make – high level)</li>\n<li>Version control concepts (basic Git ideas, not workflows)</li>\n<li>Hardware and system utilities (disk, memory, CPU tools – overview)</li>\n<li>Filesystem hierarchy and Linux boot concepts</li>\n</ul>\n<p><strong>Additionally Recommended (Even if not emphasized earlier)</strong></p>\n<ul>\n<li>Quoting and globbing rules</li>\n<li>Differences between GNU vs POSIX behavior (where relevant)</li>\n<li>Safe scripting practices (idempotency, avoiding destructive commands)</li>\n<li>Reading and understanding man pages effectively</li>\n</ul>\n<p>Focus first on correctness and reasoning with commands, then on composing multi-step pipelines and scripts. Breadth matters, but <strong>depth in core Unix text processing and shell behavior is essential</strong>.</p>\n<p>Best wishes for your preparation.</p>",
+    "accepter_name": null,
+    "accepter_username": "23f2000539"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "post_count": 1,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      },
+      {
+        "id": 6563,
+        "username": "21f3000759",
+        "name": "Swati Jain",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 2
+      },
+      {
+        "id": 17291,
+        "username": "23f2000539",
+        "name": "~",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 17291,
+      "username": "23f2000539",
+      "name": "~",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png"
+    },
+    "last_poster": {
+      "id": 6563,
+      "username": "21f3000759",
+      "name": "Swati Jain",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png"
+    },
+    "links": [
+      {
+        "url": "https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&dsh=S-167655939%3A1766218407131422&followup=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&ifkv=Ac2yZaXnRf9A-GUgXtz9-MjWjtaJ0ngZyKqHF2XsbEW9R8YXeLFh4fgeqd56ZyAjhZH7ewAJ52dD&ltmpl=sheets&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceL",
+        "title": null,
+        "internal": false,
+        "attachment": false,
+        "reflection": false,
+        "clicks": 19,
+        "user_id": 6563,
+        "domain": "accounts.google.com",
+        "root_domain": "google.com"
+      }
+    ]
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 710755,
+      "name": "~",
+      "username": "23f2000539",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2000539/{size}/157092_2.png",
+      "created_at": "2025-12-19T18:44:57.914Z",
+      "cooked": "<p>Respected Sir/Ma’am,</p>\n<p>I hope you are doing well.</p>\n<p>As the System Commands end-term syllabus is quite extensive and spans both core and auxiliary topics, I wanted to request your guidance regarding topic prioritization for exam preparation.</p>\n<p>From my understanding, topics like shell scripting, awk, sed, grep, regular expressions, pipelines, and cron scheduling form the core of the course. However, there are also several supporting topics such as hardware utilities, networking/SSH, version control concepts, prompt strings, and package/build utilities.</p>\n<p>To prepare more effectively and avoid missing essential areas, could you please let us know:</p>\n<ul>\n<li>\n<p>which topics are <strong>must-not-skip</strong> for the end-term, and</p>\n</li>\n<li>\n<p>which topics are mainly for <strong>conceptual awareness</strong> rather than detailed preparation?</p>\n</li>\n</ul>\n<p>This guidance would really help us focus our revision appropriately in the limited time available.</p>\n<p>Thank you very much for your time and support.</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 3,
+      "updated_at": "2025-12-19T18:44:57.914Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 9,
+      "reads": 74,
+      "readers_count": 73,
+      "score": 59.8,
+      "yours": false,
+      "topic_id": 193955,
+      "topic_slug": "request-for-topic-prioritization-for-system-commands-end-term",
+      "display_username": "~",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17291,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-for-topic-prioritization-for-system-commands-end-term/193955/1",
+      "user_cakedate": "2023-06-03",
+      "user_birthdate": "1904-08-18",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 710756,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-12-19T19:03:20.931Z",
+      "cooked": "<p>Thank you for your question.</p>\n<p>For end-term preparation, you should <strong>prioritize the following must-not-skip topics</strong>, as they form the operational core of the course and are tested for correctness, reasoning, and command composition:</p>\n<p><strong>High-Priority (Must Prepare Thoroughly)</strong></p>\n<ul>\n<li>Shell fundamentals: command execution, exit status, chaining (<code>&amp;&amp;</code>, <code>||</code>)</li>\n<li>I/O redirection and pipelines</li>\n<li>File and directory operations, permissions</li>\n<li><code>grep</code>, <code>sed</code>, <code>awk</code> (filters, substitutions, conditionals, aggregation)</li>\n<li>Regular expressions (basic + extended, practical usage)</li>\n<li>Archiving and compression (<code>tar</code>, <code>gzip</code>, related flags)</li>\n<li>Sorting, uniqueness, counting (<code>sort</code>, <code>uniq</code>, <code>wc</code>)</li>\n<li>Shell scripting basics:\n<ul>\n<li>Variables, quoting (<code>\"$@\"</code> vs <code>\"$*\"</code>)</li>\n<li>Loops, conditionals, functions</li>\n<li>Exit codes and error handling</li>\n</ul>\n</li>\n<li>Cron jobs and scheduling syntax</li>\n</ul>\n<p><strong>Medium Priority (Prepare Conceptually + Basic Usage)</strong></p>\n<ul>\n<li>Prompt customization (<code>PS1</code>, environment variables)</li>\n<li>Text processing utilities (<code>cut</code>, <code>tr</code>, <code>paste</code>, <code>xargs</code>)</li>\n<li>Process management (<code>ps</code>, <code>top</code>, <code>kill</code>, job control)</li>\n<li>Log handling and redirection patterns</li>\n<li>Basic networking commands (<code>ping</code>, <code>ssh</code>, <code>scp</code>)</li>\n<li>Environment variables and shell startup files</li>\n</ul>\n<p><strong>Conceptual Awareness (Know What/Why, Not Deep Syntax)</strong></p>\n<ul>\n<li>Package managers and build tools (apt/yum, make – high level)</li>\n<li>Version control concepts (basic Git ideas, not workflows)</li>\n<li>Hardware and system utilities (disk, memory, CPU tools – overview)</li>\n<li>Filesystem hierarchy and Linux boot concepts</li>\n</ul>\n<p><strong>Additionally Recommended (Even if not emphasized earlier)</strong></p>\n<ul>\n<li>Quoting and globbing rules</li>\n<li>Differences between GNU vs POSIX behavior (where relevant)</li>\n<li>Safe scripting practices (idempotency, avoiding destructive commands)</li>\n<li>Reading and understanding man pages effectively</li>\n</ul>\n<p>Focus first on correctness and reasoning with commands, then on composing multi-step pipelines and scripts. Breadth matters, but <strong>depth in core Unix text processing and shell behavior is essential</strong>.</p>\n<p>Best wishes for your preparation.</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 3,
+      "updated_at": "2025-12-19T19:03:20.931Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 71,
+      "readers_count": 70,
+      "score": 79.2,
+      "yours": false,
+      "topic_id": 193955,
+      "topic_slug": "request-for-topic-prioritization-for-system-commands-end-term",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 4,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-for-topic-prioritization-for-system-commands-end-term/193955/2",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 4
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 4,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 710863,
+      "name": "Swati Jain",
+      "username": "21f3000759",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+      "created_at": "2025-12-20T08:14:03.596Z",
+      "cooked": "<p>You can also go through revision sessions from the sheet below and also it has some extra resources</p>\n<aside class=\"onebox allowlistedgeneric\" data-onebox-src=\"https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&amp;dsh=S-167655939%3A1766218407131422&amp;followup=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&amp;ifkv=Ac2yZaXnRf9A-GUgXtz9-MjWjtaJ0ngZyKqHF2XsbEW9R8YXeLFh4fgeqd56ZyAjhZH7ewAJ52dD&amp;ltmpl=sheets&amp;osid=1&amp;passive=1209600&amp;service=wise&amp;flowName=GlifWebSignIn&amp;flowEntry=ServiceLogin\">\n  <header class=\"source\">\n\n      <a href=\"https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&amp;dsh=S-167655939%3A1766218407131422&amp;followup=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&amp;ifkv=Ac2yZaXnRf9A-GUgXtz9-MjWjtaJ0ngZyKqHF2XsbEW9R8YXeLFh4fgeqd56ZyAjhZH7ewAJ52dD&amp;ltmpl=sheets&amp;osid=1&amp;passive=1209600&amp;service=wise&amp;flowName=GlifWebSignIn&amp;flowEntry=ServiceLogin\" target=\"_blank\" rel=\"noopener nofollow ugc\">accounts.google.com</a>\n  </header>\n\n  <article class=\"onebox-body\">\n    \n\n<h3><a href=\"https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&amp;dsh=S-167655939%3A1766218407131422&amp;followup=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&amp;ifkv=Ac2yZaXnRf9A-GUgXtz9-MjWjtaJ0ngZyKqHF2XsbEW9R8YXeLFh4fgeqd56ZyAjhZH7ewAJ52dD&amp;ltmpl=sheets&amp;osid=1&amp;passive=1209600&amp;service=wise&amp;flowName=GlifWebSignIn&amp;flowEntry=ServiceLogin\" target=\"_blank\" rel=\"noopener nofollow ugc\">Google Sheets: Sign-in</a></h3>\n\n  <p>Access Google Sheets with a personal Google account or Google Workspace account (for business use).</p>\n\n\n  </article>\n\n  <div class=\"onebox-metadata\">\n    \n    \n  </div>\n\n  <div style=\"clear: both\"></div>\n</aside>\n",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 3,
+      "updated_at": "2025-12-20T08:14:03.596Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 54,
+      "readers_count": 53,
+      "score": 10.8,
+      "yours": false,
+      "topic_id": 193955,
+      "topic_slug": "request-for-topic-prioritization-for-system-commands-end-term",
+      "display_username": "Swati Jain",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&dsh=S-167655939%3A1766218407131422&followup=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1X83gy2IGF76UunFtNVMZ1pE0Sgv9hJtkkjJUI_LGbjc%2Fedit%3Fgid%3D0&ifkv=Ac2yZaXnRf9A-GUgXtz9-MjWjtaJ0ngZyKqHF2XsbEW9R8YXeLFh4fgeqd56ZyAjhZH7ewAJ52dD&ltmpl=sheets&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceL",
+          "internal": false,
+          "reflection": false,
+          "clicks": 19
+        }
+      ],
+      "read": false,
+      "user_title": "Course TA",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 6563,
+      "hidden": false,
+      "trust_level": 2,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/request-for-topic-prioritization-for-system-commands-end-term/193955/3",
+      "user_cakedate": "2021-09-06",
+      "user_birthdate": "1904-04-15",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

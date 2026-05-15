@@ -1,0 +1,4476 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 523316,
+        "name": "Hemendra Sharma",
+        "username": "hemjadli",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hemjadli/{size}/66975_2.png",
+        "created_at": "2024-09-09T07:43:16.508Z",
+        "cooked": "<p>Dear Sir,</p>\n<p>My final score is not showing on the dashboard, kindly look into it.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/b/db1e39de5e8cb36aac63be1d9121c3339c81b350.png\" data-download-href=\"/uploads/short-url/vgpk9sdSYW6DqT4HZkWGkLvMmPe.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/b/db1e39de5e8cb36aac63be1d9121c3339c81b350_2_689x275.png\" alt=\"image\" data-base62-sha1=\"vgpk9sdSYW6DqT4HZkWGkLvMmPe\" width=\"689\" height=\"275\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/b/db1e39de5e8cb36aac63be1d9121c3339c81b350_2_689x275.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/b/db1e39de5e8cb36aac63be1d9121c3339c81b350_2_1033x412.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/b/db1e39de5e8cb36aac63be1d9121c3339c81b350.png 2x\" data-dominant-color=\"F6F6F6\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1346×537 31.5 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Thanks &amp;Regards,<br>\nHemendra Sharma</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-09T07:43:16.508Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 84,
+        "readers_count": 83,
+        "score": 51.8,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Hemendra Sharma",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 14561,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/1",
+        "user_cakedate": "2022-09-07",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 523317,
+        "name": "Adarsh",
+        "username": "22f3000608",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000608/{size}/119708_2.png",
+        "created_at": "2024-09-09T07:45:26.331Z",
+        "cooked": "<p>Same Issue for me too</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-09T07:45:26.331Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 79,
+        "readers_count": 78,
+        "score": 45.8,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Adarsh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16522,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/2",
+        "user_cakedate": "2023-01-28",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523327,
+        "name": "Harshit Paunikar",
+        "username": "harsh21f3001927",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/harsh21f3001927/{size}/15176_2.png",
+        "created_at": "2024-09-09T08:44:44.855Z",
+        "cooked": "<p>I am also facing Same issue .</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-09T08:44:44.855Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 74,
+        "readers_count": 73,
+        "score": 14.8,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Harshit Paunikar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 11597,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/3",
+        "user_cakedate": "2022-01-20",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523344,
+        "name": "Shailendra Yadav",
+        "username": "21f3001165",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001165/{size}/16980_2.png",
+        "created_at": "2024-09-09T08:55:24.518Z",
+        "cooked": "<p>Hello,<br>\nMy entire this term score of system command has been removed from my portal and system command is now visible in pending course instead of completed course.<br>\nHow do I proceed with discrepancy form?<br>\nPlease guide.</p>\n<p>Thank you<br>\n21f3001165</p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-09T09:33:49.828Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 3,
+        "reads": 62,
+        "readers_count": 61,
+        "score": 42.4,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Shailendra Yadav",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 9118,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/4",
+        "user_cakedate": "2022-01-01",
+        "user_birthdate": "1904-01-19",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523336,
+        "name": "Harshit Paunikar",
+        "username": "harsh21f3001927",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/harsh21f3001927/{size}/15176_2.png",
+        "created_at": "2024-09-09T09:09:58.740Z",
+        "cooked": "<p>Hey,<br>\nThe same thing happened to me a few minutes ago; the SC scores are now <strong>VISIBLE</strong> on the dashboard.</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-09T09:33:49.796Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 65,
+        "readers_count": 64,
+        "score": 13,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Harshit Paunikar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 11597,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/5",
+        "user_cakedate": "2022-01-20",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523337,
+        "name": "Harshit Paunikar",
+        "username": "harsh21f3001927",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/harsh21f3001927/{size}/15176_2.png",
+        "created_at": "2024-09-09T09:10:50.495Z",
+        "cooked": "<p>Hey Guys,<br>\nThe same thing happened to me a few minutes ago; <strong>the SC scores are now <strong>VISIBLE</strong> on the dashboard.</strong></p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-09T09:33:49.794Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 65,
+        "readers_count": 64,
+        "score": 13,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Harshit Paunikar",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 11597,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/6",
+        "user_cakedate": "2022-01-20",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523392,
+        "name": "Shailendra Yadav",
+        "username": "21f3001165",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001165/{size}/16980_2.png",
+        "created_at": "2024-09-09T15:30:47.785Z",
+        "cooked": "<p>Hi, by when will final status (course grade) of System Command subject will be updated? Has the status been updated or it is still pending.<br>\nIn a mail received it was mentioned by EOD.<br>\nPlease help and update. <a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a></p>\n<p>Thank you</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-09T15:33:36.109Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 44,
+        "readers_count": 43,
+        "score": 23.8,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Shailendra Yadav",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 9118,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/7",
+        "user_cakedate": "2022-01-01",
+        "user_birthdate": "1904-01-19",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523393,
+        "name": "Hemendra Sharma",
+        "username": "hemjadli",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hemjadli/{size}/66975_2.png",
+        "created_at": "2024-09-09T15:30:52.551Z",
+        "cooked": "<p>Thank you team for updating the marks.<br>\nregards, Hemendra Sharma</p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-09T15:30:52.551Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 46,
+        "readers_count": 45,
+        "score": 9.2,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Hemendra Sharma",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 14561,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/8",
+        "user_cakedate": "2022-09-07",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523474,
+        "name": "Roshan",
+        "username": "22f1000684",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000684/{size}/13879_2.png",
+        "created_at": "2024-09-09T15:31:21.852Z",
+        "cooked": "<p>are the final grades for system commands released yet?</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-10T02:38:18.272Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 23,
+        "readers_count": 22,
+        "score": 19.6,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Roshan",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 13623,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/9",
+        "user_cakedate": "2022-05-12",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523411,
+        "name": "ISHITA",
+        "username": "22f3001114",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001114/{size}/133282_2.png",
+        "created_at": "2024-09-09T17:29:31.555Z",
+        "cooked": "<p>I don’t know about others , but mine , no ,not yet . Just showing the End Term Score.</p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-10T02:38:18.228Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 44,
+        "readers_count": 43,
+        "score": 33.8,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "ISHITA",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16031,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/10",
+        "user_cakedate": "2023-01-25",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523426,
+        "name": "Roshan",
+        "username": "22f1000684",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000684/{size}/13879_2.png",
+        "created_at": "2024-09-09T18:49:02.000Z",
+        "cooked": "<p>thank u same on my dashboard too</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-10T02:38:18.225Z",
+        "reply_count": 0,
+        "reply_to_post_number": 10,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 41,
+        "readers_count": 40,
+        "score": 23.2,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Roshan",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 16031,
+          "username": "22f3001114",
+          "name": "ISHITA",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001114/{size}/133282_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 13623,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "via_email": true,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/11",
+        "user_cakedate": "2022-05-12",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523577,
+        "name": "Javets",
+        "username": "22f3002499",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002499/{size}/57046_2.png",
+        "created_at": "2024-09-10T04:47:12.385Z",
+        "cooked": "<p>I just saw that the system commands final course grade has been calculated and is showing in the dashboard.</p>\n<p>Will there be any changes to this from now?</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-10T07:12:48.271Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 26,
+        "readers_count": 25,
+        "score": 20.2,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Javets",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16045,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/12",
+        "user_cakedate": "2023-01-25",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523545,
+        "name": "ravina",
+        "username": "21f2001128",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f2001128/{size}/151159_2.png",
+        "created_at": "2024-09-10T05:52:25.790Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/sushil1\">@sushil1</a> sir my grade is not displaying . and registeration has also started for next term.</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-10T07:12:48.243Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 39,
+        "readers_count": 38,
+        "score": 7.8,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "ravina",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 6640,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/13",
+        "user_cakedate": "2021-09-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523571,
+        "name": "Mohammad Aban Ali",
+        "username": "MohammadAban",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mohammadaban/{size}/30776_2.png",
+        "created_at": "2024-09-10T05:53:36.069Z",
+        "cooked": "<p>Dear Sir,<br>\nI have registered for OPPE only this term in System Commands, I have cleared the OPPE yet my course grade is I_OP and hasn’t been updated due to which I cannot register any course of degree level (The registration portal is active now.). I wrote this as people are saying the course grade has been updated.</p>\n<p>Also, I would appreciate it if you could provide clarification on the grading methodology for students who have elected to take the OPPE only. Despite my earlier inquiry, I have not received a response regarding this matter, and I would like to request your assistance in this regard.</p>\n<aside class=\"quote\" data-post=\"12\" data-topic=\"134708\">\n  <div class=\"title\">\n    <div class=\"quote-controls\"></div>\n    <img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/mohammadaban/48/30776_2.png\" class=\"avatar\">\n    <a href=\"https://discourse.onlinedegree.iitm.ac.in/t/doubts-regarding-oppe-only-registration/134708/12\">Doubts regarding oppe only registration</a> <a class=\"badge-category__wrapper \" href=\"/c/courses/sc-kb/36\"><span data-category-id=\"36\" style=\"--category-badge-color: #0088CC; --category-badge-text-color: #FFFFFF; --parent-category-badge-color: #3AB54A;\" data-parent-category-id=\"9\" data-drop-close=\"true\" class=\"badge-category --has-parent\" title=\"This category is created to address subject-specific queries related to System Commands\"><span class=\"badge-category__name\">System Commands</span></span></a>\n  </div>\n  <blockquote>\n    Respected team, \nAs the grading pattern for system commands has changed a lot with respect to last term. My query is regarding how will be the students who have opted for OPPE only will be graded, since we have to give 1 oppe only, how will our bpt marks be deduced? Also what about bonus and VMT marks and Quiz 2 marks, will they be counted? \n<a class=\"mention\" href=\"/u/sushil1\">@sushil1</a> <a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a> \nThanks in advance.\n  </blockquote>\n</aside>\n\n<p><a class=\"mention\" href=\"/u/sushil1\">@sushil1</a> <a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a>  <a class=\"mention\" href=\"/u/andrew\">@andrew</a></p>\n<p>Thanks in advance.</p>",
+        "post_number": 14,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-10T07:12:48.242Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 2,
+        "reads": 29,
+        "readers_count": 28,
+        "score": 15.8,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Mohammad Aban Ali",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "link_counts": [
+          {
+            "url": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-regarding-oppe-only-registration/134708/12",
+            "internal": true,
+            "reflection": false,
+            "title": "Doubts regarding oppe only registration",
+            "clicks": 0
+          }
+        ],
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 12480,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/14",
+        "user_cakedate": "2022-05-01",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523576,
+        "name": "Yash Rastogi",
+        "username": "22F3002354",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+        "created_at": "2024-09-10T07:12:12.708Z",
+        "cooked": "<p>The course grade will be pushed by today EOD.</p>",
+        "post_number": 15,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-10T07:12:48.240Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 4,
+        "reads": 32,
+        "readers_count": 31,
+        "score": 46.4,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Yash Rastogi",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 17065,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/15",
+        "user_cakedate": "2023-04-27",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523878,
+        "name": "Mohammad Aban Ali",
+        "username": "MohammadAban",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mohammadaban/{size}/30776_2.png",
+        "created_at": "2024-09-11T10:04:25.174Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a>  <a class=\"mention\" href=\"/u/sushil1\">@sushil1</a> sir any update on the issue?</p>",
+        "post_number": 16,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-11T10:04:25.174Z",
+        "reply_count": 0,
+        "reply_to_post_number": 15,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 22,
+        "readers_count": 21,
+        "score": 4.4,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Mohammad Aban Ali",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "reply_to_user": {
+          "id": 17065,
+          "username": "22F3002354",
+          "name": "Yash Rastogi",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 12480,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/16",
+        "user_cakedate": "2022-05-01",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 523889,
+        "name": "Narayanan R",
+        "username": "Narayanan.POD",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/narayanan.pod/{size}/297_2.png",
+        "created_at": "2024-09-11T10:47:19.648Z",
+        "cooked": "<p>Please check now it is updated</p>",
+        "post_number": 17,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2024-09-13T03:38:50.727Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 25,
+        "readers_count": 24,
+        "score": 20,
+        "yours": false,
+        "topic_id": 145224,
+        "topic_slug": "final-score-not-shown-on-dashboard",
+        "display_username": "Narayanan R",
+        "primary_group_name": "pod-ops",
+        "flair_name": "pod-ops",
+        "flair_url": "sun",
+        "flair_bg_color": "0E7B55",
+        "flair_color": "24633F",
+        "flair_group_id": 43,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": true,
+        "staff": true,
+        "user_id": 23,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/final-score-not-shown-on-dashboard/145224/17",
+        "user_cakedate": "2021-04-23",
+        "reactions": [
+          {
+            "id": "+1",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      523316,
+      523317,
+      523327,
+      523344,
+      523336,
+      523337,
+      523392,
+      523393,
+      523474,
+      523411,
+      523426,
+      523577,
+      523545,
+      523571,
+      523576,
+      523878,
+      523889
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      595
+    ],
+    [
+      3,
+      594
+    ],
+    [
+      16,
+      592
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 48,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 7,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 246,
+      "name": "diploma-level",
+      "slug": "diploma-level"
+    },
+    {
+      "id": 37,
+      "name": "operational",
+      "slug": "operational"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Final score not shown on dashboard",
+  "id": 145224,
+  "title": "Final score not shown on dashboard",
+  "posts_count": 17,
+  "created_at": "2024-09-09T07:43:16.358Z",
+  "views": 134,
+  "reply_count": 1,
+  "like_count": 12,
+  "last_posted_at": "2024-09-11T10:47:19.648Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "final-score-not-shown-on-dashboard",
+  "category_id": 36,
+  "word_count": 395,
+  "deleted_at": null,
+  "user_id": 14561,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/b/db1e39de5e8cb36aac63be1d9121c3339c81b350_2_1024x408.png",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_145224",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 17,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 11,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 1346,
+      "height": 537,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/b/db1e39de5e8cb36aac63be1d9121c3339c81b350.png"
+    },
+    {
+      "max_width": 1024,
+      "max_height": 1024,
+      "width": 1024,
+      "height": 408,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/b/db1e39de5e8cb36aac63be1d9121c3339c81b350_2_1024x408.png"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "SC final graded not updated",
+      "id": 113559,
+      "title": "SC final graded not updated",
+      "slug": "sc-final-graded-not-updated",
+      "posts_count": 1,
+      "reply_count": 0,
+      "highest_post_number": 1,
+      "image_url": null,
+      "created_at": "2024-01-01T16:06:57.126Z",
+      "last_posted_at": "2024-01-01T16:06:57.317Z",
+      "bumped": true,
+      "bumped_at": "2024-01-01T16:06:57.317Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 37,
+          "name": "operational",
+          "slug": "operational"
+        },
+        {
+          "id": 201,
+          "name": "course-selection",
+          "slug": "course-selection"
+        },
+        {
+          "id": 188,
+          "name": "course-portal",
+          "slug": "course-portal"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 42,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest single",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 12039,
+            "username": "22f1000533",
+            "name": "Atharva",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000533/{size}/123788_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Regarding OPPE -1",
+      "id": 70715,
+      "title": "Regarding OPPE -1",
+      "slug": "regarding-oppe-1",
+      "posts_count": 4,
+      "reply_count": 1,
+      "highest_post_number": 4,
+      "image_url": null,
+      "created_at": "2022-11-14T06:20:07.035Z",
+      "last_posted_at": "2022-12-20T08:40:34.308Z",
+      "bumped": true,
+      "bumped_at": "2022-12-20T08:40:34.308Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 37,
+          "name": "operational",
+          "slug": "operational"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 126,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 7596,
+            "username": "21f2001351",
+            "name": "Harsh Sinha",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f2001351/{size}/142680_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 4233,
+            "username": "srisai",
+            "name": "srinath",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/srisai/{size}/189_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 923,
+            "username": "KAJAL_PARIKH",
+            "name": "KAJAL PARIKH",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kajal_parikh/{size}/181_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Didn&rsquo;t get final course grade",
+      "id": 113512,
+      "title": "Didn't get final course grade",
+      "slug": "didnt-get-final-course-grade",
+      "posts_count": 4,
+      "reply_count": 0,
+      "highest_post_number": 4,
+      "image_url": null,
+      "created_at": "2023-12-31T08:57:01.755Z",
+      "last_posted_at": "2024-01-01T14:39:49.973Z",
+      "bumped": true,
+      "bumped_at": "2024-01-01T14:39:49.973Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 37,
+          "name": "operational",
+          "slug": "operational"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 72,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 3,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 6234,
+            "username": "21f200858_MananT",
+            "name": "Manan Tilwani",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f200858_manant/{size}/1103_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 1758,
+            "username": "daaris",
+            "name": "Daaris Ameen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/daaris/{size}/119616_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Grade not upgraded for sc oppe repeat",
+      "id": 73908,
+      "title": "Grade not upgraded for sc oppe repeat",
+      "slug": "grade-not-upgraded-for-sc-oppe-repeat",
+      "posts_count": 4,
+      "reply_count": 0,
+      "highest_post_number": 4,
+      "image_url": null,
+      "created_at": "2022-12-20T11:30:07.747Z",
+      "last_posted_at": "2022-12-20T12:23:27.794Z",
+      "bumped": true,
+      "bumped_at": "2022-12-20T12:23:27.794Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 58,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 488,
+            "username": "himanshu",
+            "name": "Himanshu Agarwal",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/himanshu/{size}/5338_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 12,
+            "username": "santhanakrishnan",
+            "name": "Santhana Krishnan S",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/santhanakrishnan/{size}/179_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 923,
+            "username": "KAJAL_PARIKH",
+            "name": "KAJAL PARIKH",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kajal_parikh/{size}/181_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Issues regarding System Commands course card",
+      "id": 189258,
+      "title": "Issues regarding System Commands course card",
+      "slug": "issues-regarding-system-commands-course-card",
+      "posts_count": 3,
+      "reply_count": 1,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/5/65a492d7aae899fc6faae63ebb6896b29488a684.png",
+      "created_at": "2025-10-13T12:08:57.018Z",
+      "last_posted_at": "2025-10-13T18:58:17.670Z",
+      "bumped": true,
+      "bumped_at": "2025-10-13T18:58:17.670Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 53,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 18102,
+            "username": "23f1000962",
+            "name": "Aman",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000962/{size}/76028_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 15,
+    "username": "22F3002354",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+    "excerpt": "<p>The course grade will be pushed by today EOD.</p>",
+    "accepter_name": null,
+    "accepter_username": "22F3002354"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 11597,
+        "username": "harsh21f3001927",
+        "name": "Harshit Paunikar",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/harsh21f3001927/{size}/15176_2.png",
+        "post_count": 3,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 13623,
+        "username": "22f1000684",
+        "name": "Roshan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000684/{size}/13879_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 14561,
+        "username": "hemjadli",
+        "name": "Hemendra Sharma",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hemjadli/{size}/66975_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 12480,
+        "username": "MohammadAban",
+        "name": "Mohammad Aban Ali",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mohammadaban/{size}/30776_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 9118,
+        "username": "21f3001165",
+        "name": "Shailendra Yadav",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001165/{size}/16980_2.png",
+        "post_count": 2,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 16522,
+        "username": "22f3000608",
+        "name": "Adarsh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000608/{size}/119708_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 6640,
+        "username": "21f2001128",
+        "name": "ravina",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f2001128/{size}/151159_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 17065,
+        "username": "22F3002354",
+        "name": "Yash Rastogi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 16045,
+        "username": "22f3002499",
+        "name": "Javets",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002499/{size}/57046_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 16031,
+        "username": "22f3001114",
+        "name": "ISHITA",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001114/{size}/133282_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 23,
+        "username": "Narayanan.POD",
+        "name": "Narayanan R",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/narayanan.pod/{size}/297_2.png",
+        "post_count": 1,
+        "primary_group_name": "pod-ops",
+        "flair_name": "pod-ops",
+        "flair_url": "sun",
+        "flair_color": "24633F",
+        "flair_bg_color": "0E7B55",
+        "flair_group_id": 43,
+        "admin": true,
+        "trust_level": 4
+      }
+    ],
+    "created_by": {
+      "id": 14561,
+      "username": "hemjadli",
+      "name": "Hemendra Sharma",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hemjadli/{size}/66975_2.png"
+    },
+    "last_poster": {
+      "id": 23,
+      "username": "Narayanan.POD",
+      "name": "Narayanan R",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/narayanan.pod/{size}/297_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 523316,
+      "name": "Hemendra Sharma",
+      "username": "hemjadli",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hemjadli/{size}/66975_2.png",
+      "created_at": "2024-09-09T07:43:16.508Z",
+      "cooked": "<p>Dear Sir,</p>\n<p>My final score is not showing on the dashboard, kindly look into it.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/b/db1e39de5e8cb36aac63be1d9121c3339c81b350.png\" data-download-href=\"/uploads/short-url/vgpk9sdSYW6DqT4HZkWGkLvMmPe.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/b/db1e39de5e8cb36aac63be1d9121c3339c81b350_2_689x275.png\" alt=\"image\" data-base62-sha1=\"vgpk9sdSYW6DqT4HZkWGkLvMmPe\" width=\"689\" height=\"275\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/b/db1e39de5e8cb36aac63be1d9121c3339c81b350_2_689x275.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/b/db1e39de5e8cb36aac63be1d9121c3339c81b350_2_1033x412.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/b/db1e39de5e8cb36aac63be1d9121c3339c81b350.png 2x\" data-dominant-color=\"F6F6F6\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1346×537 31.5 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Thanks &amp;Regards,<br>\nHemendra Sharma</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-09T07:43:16.508Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 84,
+      "readers_count": 83,
+      "score": 51.8,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Hemendra Sharma",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14561,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/1",
+      "user_cakedate": "2022-09-07",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 523317,
+      "name": "Adarsh",
+      "username": "22f3000608",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3000608/{size}/119708_2.png",
+      "created_at": "2024-09-09T07:45:26.331Z",
+      "cooked": "<p>Same Issue for me too</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-09T07:45:26.331Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 79,
+      "readers_count": 78,
+      "score": 45.8,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Adarsh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16522,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/2",
+      "user_cakedate": "2023-01-28",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523327,
+      "name": "Harshit Paunikar",
+      "username": "harsh21f3001927",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/harsh21f3001927/{size}/15176_2.png",
+      "created_at": "2024-09-09T08:44:44.855Z",
+      "cooked": "<p>I am also facing Same issue .</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-09T08:44:44.855Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 74,
+      "readers_count": 73,
+      "score": 14.8,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Harshit Paunikar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 11597,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/3",
+      "user_cakedate": "2022-01-20",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523344,
+      "name": "Shailendra Yadav",
+      "username": "21f3001165",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001165/{size}/16980_2.png",
+      "created_at": "2024-09-09T08:55:24.518Z",
+      "cooked": "<p>Hello,<br>\nMy entire this term score of system command has been removed from my portal and system command is now visible in pending course instead of completed course.<br>\nHow do I proceed with discrepancy form?<br>\nPlease guide.</p>\n<p>Thank you<br>\n21f3001165</p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-09T09:33:49.828Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 3,
+      "reads": 62,
+      "readers_count": 61,
+      "score": 42.4,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Shailendra Yadav",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 9118,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/4",
+      "user_cakedate": "2022-01-01",
+      "user_birthdate": "1904-01-19",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523336,
+      "name": "Harshit Paunikar",
+      "username": "harsh21f3001927",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/harsh21f3001927/{size}/15176_2.png",
+      "created_at": "2024-09-09T09:09:58.740Z",
+      "cooked": "<p>Hey,<br>\nThe same thing happened to me a few minutes ago; the SC scores are now <strong>VISIBLE</strong> on the dashboard.</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-09T09:33:49.796Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 65,
+      "readers_count": 64,
+      "score": 13,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Harshit Paunikar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 11597,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/5",
+      "user_cakedate": "2022-01-20",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523337,
+      "name": "Harshit Paunikar",
+      "username": "harsh21f3001927",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/harsh21f3001927/{size}/15176_2.png",
+      "created_at": "2024-09-09T09:10:50.495Z",
+      "cooked": "<p>Hey Guys,<br>\nThe same thing happened to me a few minutes ago; <strong>the SC scores are now <strong>VISIBLE</strong> on the dashboard.</strong></p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-09T09:33:49.794Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 65,
+      "readers_count": 64,
+      "score": 13,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Harshit Paunikar",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 11597,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/6",
+      "user_cakedate": "2022-01-20",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523392,
+      "name": "Shailendra Yadav",
+      "username": "21f3001165",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3001165/{size}/16980_2.png",
+      "created_at": "2024-09-09T15:30:47.785Z",
+      "cooked": "<p>Hi, by when will final status (course grade) of System Command subject will be updated? Has the status been updated or it is still pending.<br>\nIn a mail received it was mentioned by EOD.<br>\nPlease help and update. <a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a></p>\n<p>Thank you</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-09T15:33:36.109Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 44,
+      "readers_count": 43,
+      "score": 23.8,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Shailendra Yadav",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 9118,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/7",
+      "user_cakedate": "2022-01-01",
+      "user_birthdate": "1904-01-19",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523393,
+      "name": "Hemendra Sharma",
+      "username": "hemjadli",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hemjadli/{size}/66975_2.png",
+      "created_at": "2024-09-09T15:30:52.551Z",
+      "cooked": "<p>Thank you team for updating the marks.<br>\nregards, Hemendra Sharma</p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-09T15:30:52.551Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 46,
+      "readers_count": 45,
+      "score": 9.2,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Hemendra Sharma",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 14561,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/8",
+      "user_cakedate": "2022-09-07",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523474,
+      "name": "Roshan",
+      "username": "22f1000684",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000684/{size}/13879_2.png",
+      "created_at": "2024-09-09T15:31:21.852Z",
+      "cooked": "<p>are the final grades for system commands released yet?</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-10T02:38:18.272Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 23,
+      "readers_count": 22,
+      "score": 19.6,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Roshan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13623,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/9",
+      "user_cakedate": "2022-05-12",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523411,
+      "name": "ISHITA",
+      "username": "22f3001114",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001114/{size}/133282_2.png",
+      "created_at": "2024-09-09T17:29:31.555Z",
+      "cooked": "<p>I don’t know about others , but mine , no ,not yet . Just showing the End Term Score.</p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-10T02:38:18.228Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 44,
+      "readers_count": 43,
+      "score": 33.8,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "ISHITA",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16031,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/10",
+      "user_cakedate": "2023-01-25",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523426,
+      "name": "Roshan",
+      "username": "22f1000684",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f1000684/{size}/13879_2.png",
+      "created_at": "2024-09-09T18:49:02.000Z",
+      "cooked": "<p>thank u same on my dashboard too</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-10T02:38:18.225Z",
+      "reply_count": 0,
+      "reply_to_post_number": 10,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 41,
+      "readers_count": 40,
+      "score": 23.2,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Roshan",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 16031,
+        "username": "22f3001114",
+        "name": "ISHITA",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3001114/{size}/133282_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 13623,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "via_email": true,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/11",
+      "user_cakedate": "2022-05-12",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523577,
+      "name": "Javets",
+      "username": "22f3002499",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002499/{size}/57046_2.png",
+      "created_at": "2024-09-10T04:47:12.385Z",
+      "cooked": "<p>I just saw that the system commands final course grade has been calculated and is showing in the dashboard.</p>\n<p>Will there be any changes to this from now?</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-10T07:12:48.271Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 26,
+      "readers_count": 25,
+      "score": 20.2,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Javets",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16045,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/12",
+      "user_cakedate": "2023-01-25",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523545,
+      "name": "ravina",
+      "username": "21f2001128",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f2001128/{size}/151159_2.png",
+      "created_at": "2024-09-10T05:52:25.790Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/sushil1\">@sushil1</a> sir my grade is not displaying . and registeration has also started for next term.</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-10T07:12:48.243Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 39,
+      "readers_count": 38,
+      "score": 7.8,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "ravina",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 6640,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/13",
+      "user_cakedate": "2021-09-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523571,
+      "name": "Mohammad Aban Ali",
+      "username": "MohammadAban",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mohammadaban/{size}/30776_2.png",
+      "created_at": "2024-09-10T05:53:36.069Z",
+      "cooked": "<p>Dear Sir,<br>\nI have registered for OPPE only this term in System Commands, I have cleared the OPPE yet my course grade is I_OP and hasn’t been updated due to which I cannot register any course of degree level (The registration portal is active now.). I wrote this as people are saying the course grade has been updated.</p>\n<p>Also, I would appreciate it if you could provide clarification on the grading methodology for students who have elected to take the OPPE only. Despite my earlier inquiry, I have not received a response regarding this matter, and I would like to request your assistance in this regard.</p>\n<aside class=\"quote\" data-post=\"12\" data-topic=\"134708\">\n  <div class=\"title\">\n    <div class=\"quote-controls\"></div>\n    <img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/mohammadaban/48/30776_2.png\" class=\"avatar\">\n    <a href=\"https://discourse.onlinedegree.iitm.ac.in/t/doubts-regarding-oppe-only-registration/134708/12\">Doubts regarding oppe only registration</a> <a class=\"badge-category__wrapper \" href=\"/c/courses/sc-kb/36\"><span data-category-id=\"36\" style=\"--category-badge-color: #0088CC; --category-badge-text-color: #FFFFFF; --parent-category-badge-color: #3AB54A;\" data-parent-category-id=\"9\" data-drop-close=\"true\" class=\"badge-category --has-parent\" title=\"This category is created to address subject-specific queries related to System Commands\"><span class=\"badge-category__name\">System Commands</span></span></a>\n  </div>\n  <blockquote>\n    Respected team, \nAs the grading pattern for system commands has changed a lot with respect to last term. My query is regarding how will be the students who have opted for OPPE only will be graded, since we have to give 1 oppe only, how will our bpt marks be deduced? Also what about bonus and VMT marks and Quiz 2 marks, will they be counted? \n<a class=\"mention\" href=\"/u/sushil1\">@sushil1</a> <a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a> \nThanks in advance.\n  </blockquote>\n</aside>\n\n<p><a class=\"mention\" href=\"/u/sushil1\">@sushil1</a> <a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a>  <a class=\"mention\" href=\"/u/andrew\">@andrew</a></p>\n<p>Thanks in advance.</p>",
+      "post_number": 14,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-10T07:12:48.242Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 2,
+      "reads": 29,
+      "readers_count": 28,
+      "score": 15.8,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Mohammad Aban Ali",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "link_counts": [
+        {
+          "url": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-regarding-oppe-only-registration/134708/12",
+          "internal": true,
+          "reflection": false,
+          "title": "Doubts regarding oppe only registration",
+          "clicks": 0
+        }
+      ],
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 12480,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/14",
+      "user_cakedate": "2022-05-01",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523576,
+      "name": "Yash Rastogi",
+      "username": "22F3002354",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png",
+      "created_at": "2024-09-10T07:12:12.708Z",
+      "cooked": "<p>The course grade will be pushed by today EOD.</p>",
+      "post_number": 15,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-10T07:12:48.240Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 4,
+      "reads": 32,
+      "readers_count": 31,
+      "score": 46.4,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Yash Rastogi",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 17065,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/15",
+      "user_cakedate": "2023-04-27",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523878,
+      "name": "Mohammad Aban Ali",
+      "username": "MohammadAban",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mohammadaban/{size}/30776_2.png",
+      "created_at": "2024-09-11T10:04:25.174Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/22f3002354\">@22F3002354</a>  <a class=\"mention\" href=\"/u/sushil1\">@sushil1</a> sir any update on the issue?</p>",
+      "post_number": 16,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-11T10:04:25.174Z",
+      "reply_count": 0,
+      "reply_to_post_number": 15,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 22,
+      "readers_count": 21,
+      "score": 4.4,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Mohammad Aban Ali",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "reply_to_user": {
+        "id": 17065,
+        "username": "22F3002354",
+        "name": "Yash Rastogi",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/22f3002354/{size}/69454_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 12480,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/16",
+      "user_cakedate": "2022-05-01",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 523889,
+      "name": "Narayanan R",
+      "username": "Narayanan.POD",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/narayanan.pod/{size}/297_2.png",
+      "created_at": "2024-09-11T10:47:19.648Z",
+      "cooked": "<p>Please check now it is updated</p>",
+      "post_number": 17,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2024-09-13T03:38:50.727Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 25,
+      "readers_count": 24,
+      "score": 20,
+      "yours": false,
+      "topic_id": 145224,
+      "topic_slug": "final-score-not-shown-on-dashboard",
+      "display_username": "Narayanan R",
+      "primary_group_name": "pod-ops",
+      "flair_name": "pod-ops",
+      "flair_url": "sun",
+      "flair_bg_color": "0E7B55",
+      "flair_color": "24633F",
+      "flair_group_id": 43,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": true,
+      "staff": true,
+      "user_id": 23,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/final-score-not-shown-on-dashboard/145224/17",
+      "user_cakedate": "2021-04-23",
+      "reactions": [
+        {
+          "id": "+1",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}

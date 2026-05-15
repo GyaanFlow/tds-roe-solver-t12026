@@ -1,0 +1,1441 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 665852,
+        "name": "Sohamdip Santra",
+        "username": "24f3004677",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004677/{size}/120647_2.png",
+        "created_at": "2025-08-19T16:56:13.359Z",
+        "cooked": "<p>please help me where i am getting it wrong</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/e/deed0a36471f4a7dd1d25022f7bd72eec6da7aff.png\" data-download-href=\"/uploads/short-url/vO5QX1cRyLqBoiL1OYvDVSHJ92n.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/e/deed0a36471f4a7dd1d25022f7bd72eec6da7aff_2_392x500.png\" alt=\"image\" data-base62-sha1=\"vO5QX1cRyLqBoiL1OYvDVSHJ92n\" width=\"392\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/e/deed0a36471f4a7dd1d25022f7bd72eec6da7aff_2_392x500.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/e/deed0a36471f4a7dd1d25022f7bd72eec6da7aff_2_588x750.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/e/deed0a36471f4a7dd1d25022f7bd72eec6da7aff.png 2x\" data-dominant-color=\"F5F5F6\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">668×850 52 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/c/0cf24752a5b64384aed89f63e7ea7e6bb393478e.png\" data-download-href=\"/uploads/short-url/1QwOaq279HQeGQokUl8I1GY7HXg.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cf24752a5b64384aed89f63e7ea7e6bb393478e_2_690x354.png\" alt=\"image\" data-base62-sha1=\"1QwOaq279HQeGQokUl8I1GY7HXg\" width=\"690\" height=\"354\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cf24752a5b64384aed89f63e7ea7e6bb393478e_2_690x354.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cf24752a5b64384aed89f63e7ea7e6bb393478e_2_1035x531.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cf24752a5b64384aed89f63e7ea7e6bb393478e_2_1380x708.png 2x\" data-dominant-color=\"FAF9F9\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1768×909 52.1 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>my code:<br>\nWrite your code here to read input and print the formatted board</p>\n<pre data-code-wrap=\"python\"><code class=\"lang-python\">\n# Write your code here to read input and print the formatted board\n\nn=input().split(\" \")\nlock={\"1\":(0,0),\"2\":(0,1),\"3\":(0,2),\"4\":(1,0),\"5\":(1,1),\"6\":(1,2),\"7\":(2,0),\"8\":(2,1),\"9\":(2,2)}\ncount=1\npattern=[[\" \",\" \",\" \"],[\" \",\" \",\" \"],[\" \",\" \",\" \"]]\ncount=1\nfor point in n:\n    if point in lock:\n        i=lock[point][0]\n        j=lock[point][1]\n        pattern[i][j]=str(count)\n        count+=1\nprint(f\"[{pattern[0][0]}]---[{pattern[0][1]}]---[{pattern[0][2]}]\")\nprint(\" |     |     | \")\nprint(f\"[{pattern[1][0]}]---[{pattern[1][1]}]---[{pattern[1][2]}]\")\nprint(\" |     |     | \")\nprint(f\"[{pattern[2][0]}]---[{pattern[2][1]}]---[{pattern[2][2]}]\")\n</code></pre>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 2,
+        "updated_at": "2025-08-19T16:56:13.359Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 43,
+        "readers_count": 42,
+        "score": 8.6,
+        "yours": false,
+        "topic_id": 185294,
+        "topic_slug": "visualize-pattern-lock-question",
+        "display_username": "Sohamdip Santra",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 42442,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/visualize-pattern-lock-question/185294/1",
+        "user_cakedate": "2025-01-10",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 665854,
+        "name": "Kriti Tiwari ",
+        "username": "KritiT",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kritit/{size}/128889_2.png",
+        "created_at": "2025-08-19T17:18:32.616Z",
+        "cooked": "<p>Line 16 and line 18 of your code is adding space after <code>|</code>, and it is mentioned in the last point of the output format that there should be no space at the end of each line while displaying the pattern.</p>\n<p>I think the question wants output like this<br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/c/7ca31bb256dc76c35ece31c55be9a176ed03129d.png\" alt=\"image\" data-base62-sha1=\"hMAFauOgJX4LauaI3pzULW2mCBv\" width=\"121\" height=\"87\"></p>\n<p>whereas your output is this<br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/f/6fe5ee3670d53ba8ad709ef21f0e18e40ac0d092.png\" alt=\"image\" data-base62-sha1=\"fXTCD89HMlfcOcXRa99jz1CIcSK\" width=\"121\" height=\"80\"></p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 2,
+        "updated_at": "2025-08-19T17:18:32.616Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 32,
+        "readers_count": 31,
+        "score": 36.4,
+        "yours": false,
+        "topic_id": 185294,
+        "topic_slug": "visualize-pattern-lock-question",
+        "display_username": "Kriti Tiwari ",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "",
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 38798,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/visualize-pattern-lock-question/185294/2",
+        "user_cakedate": "2024-09-26",
+        "user_birthdate": "1904-09-18",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      665852,
+      665854
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      250
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "PPA-3 solution",
+      "id": 202515,
+      "title": "PPA-3 solution",
+      "slug": "ppa-3-solution",
+      "posts_count": 4,
+      "reply_count": 1,
+      "highest_post_number": 4,
+      "image_url": null,
+      "created_at": "2026-04-26T18:58:16.204Z",
+      "last_posted_at": "2026-04-26T20:11:09.075Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T20:11:09.075Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 7,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 47387,
+            "username": "25f2000510",
+            "name": "Sayed Abiha Abul Hasan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2000510/{size}/119801_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "PYqs for OPPE-2 Python",
+      "id": 202516,
+      "title": "PYqs for OPPE-2 Python",
+      "slug": "pyqs-for-oppe-2-python",
+      "posts_count": 2,
+      "reply_count": 0,
+      "highest_post_number": 2,
+      "image_url": null,
+      "created_at": "2026-04-26T19:18:02.398Z",
+      "last_posted_at": "2026-04-26T19:56:34.716Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T19:56:34.716Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 6,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 56474,
+            "username": "25f3002735",
+            "name": "Aamir",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/f17d59/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "PPA-1 Solution",
+      "id": 202514,
+      "title": "PPA-1 Solution",
+      "slug": "ppa-1-solution",
+      "posts_count": 1,
+      "reply_count": 0,
+      "highest_post_number": 1,
+      "image_url": null,
+      "created_at": "2026-04-26T18:51:19.212Z",
+      "last_posted_at": "2026-04-26T18:51:19.374Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:51:19.374Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 4,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest single",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 47387,
+            "username": "25f2000510",
+            "name": "Sayed Abiha Abul Hasan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2000510/{size}/119801_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe result related query",
+      "id": 202495,
+      "title": "Oppe result related query",
+      "slug": "oppe-result-related-query",
+      "posts_count": 4,
+      "reply_count": 2,
+      "highest_post_number": 4,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/6/7/676201f5c22b7eee7f1673038360f3615706cbd2_2_460x1024.jpeg",
+      "created_at": "2026-04-26T13:45:02.580Z",
+      "last_posted_at": "2026-04-26T14:07:11.728Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T14:07:11.728Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 339,
+          "name": "term3-2024",
+          "slug": "term3-2024"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 37,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 30749,
+            "username": "24f2002652",
+            "name": "Yashaswee mrinal jha ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2002652/{size}/125481_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe clearance",
+      "id": 202411,
+      "title": "Oppe clearance",
+      "slug": "oppe-clearance",
+      "posts_count": 6,
+      "reply_count": 2,
+      "highest_post_number": 6,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/9/4/9420a7e6546f171bf30f0b5049091e0bbfdf4f88_2_459x1024.jpeg",
+      "created_at": "2026-04-26T03:56:45.449Z",
+      "last_posted_at": "2026-04-26T10:27:05.020Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T10:27:05.020Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 4,
+      "views": 61,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 39782,
+            "username": "Omkar7",
+            "name": "Omkar gudla",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/omkar7/{size}/113203_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 23318,
+            "username": "23f2001123",
+            "name": "Anshu Rajbhar ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2001123/{size}/110382_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 57115,
+            "username": "25f3006372",
+            "name": "Raihan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f3006372/{size}/161245_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 341,
+      "name": "term2-2025",
+      "slug": "term2-2025"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Visualize Pattern Lock Question",
+  "id": 185294,
+  "title": "Visualize Pattern Lock Question",
+  "posts_count": 2,
+  "created_at": "2025-08-19T16:56:13.024Z",
+  "views": 51,
+  "reply_count": 0,
+  "like_count": 2,
+  "last_posted_at": "2025-08-19T17:18:32.616Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "visualize-pattern-lock-question",
+  "category_id": 25,
+  "word_count": 203,
+  "deleted_at": null,
+  "user_id": 42442,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/e/deed0a36471f4a7dd1d25022f7bd72eec6da7aff.png",
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_185294",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 2,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 2,
+  "show_read_indicator": false,
+  "thumbnails": [
+    {
+      "max_width": null,
+      "max_height": null,
+      "width": 668,
+      "height": 850,
+      "url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/e/deed0a36471f4a7dd1d25022f7bd72eec6da7aff.png"
+    }
+  ],
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "2025 MAY OPPE1 SET5 section 3 problem 2",
+      "id": 190341,
+      "title": "2025 MAY OPPE1 SET5 section 3 problem 2",
+      "slug": "2025-may-oppe1-set5-section-3-problem-2",
+      "posts_count": 6,
+      "reply_count": 4,
+      "highest_post_number": 6,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/3/f/3f5577f6ab7135e8c4e236417089a8b31ab056dc_2_1024x597.png",
+      "created_at": "2025-10-29T20:04:41.817Z",
+      "last_posted_at": "2025-11-01T07:20:13.248Z",
+      "bumped": true,
+      "bumped_at": "2025-11-01T07:20:13.248Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 364,
+          "name": "term3-2025",
+          "slug": "term3-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 69,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 50580,
+            "username": "MIG21",
+            "name": "Megh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mig21/{size}/121091_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 34486,
+            "username": "hardik0",
+            "name": "Hardik  Saini",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hardik0/{size}/66917_2.png",
+            "primary_group_name": "25t2_ma1002",
+            "flair_name": "25t2_ma1002",
+            "flair_group_id": 593,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Need Course Instructors feedback on Sec 3 Question 2 in OPPE April 5th 14:30 batch",
+      "id": 201074,
+      "title": "Need Course Instructors feedback on Sec 3 Question 2 in OPPE April 5th 14:30 batch",
+      "slug": "need-course-instructors-feedback-on-sec-3-question-2-in-oppe-april-5th-14-30-batch",
+      "posts_count": 14,
+      "reply_count": 10,
+      "highest_post_number": 14,
+      "image_url": null,
+      "created_at": "2026-04-09T08:18:27.877Z",
+      "last_posted_at": "2026-04-18T12:13:27.454Z",
+      "bumped": true,
+      "bumped_at": "2026-04-18T12:13:27.454Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 35,
+          "name": "error",
+          "slug": "error"
+        },
+        {
+          "id": 20,
+          "name": "intropython",
+          "slug": "intropython"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 8,
+      "views": 142,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 2,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 51592,
+            "username": "amar.rao",
+            "name": "Amar Rao",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/amar.rao/{size}/119543_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 34486,
+            "username": "hardik0",
+            "name": "Hardik  Saini",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hardik0/{size}/66917_2.png",
+            "primary_group_name": "25t2_ma1002",
+            "flair_name": "25t2_ma1002",
+            "flair_group_id": 593,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 57115,
+            "username": "25f3006372",
+            "name": "Raihan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f3006372/{size}/161245_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Python question doubt , pattern printing",
+      "id": 199652,
+      "title": "Python question doubt , pattern printing",
+      "slug": "python-question-doubt-pattern-printing",
+      "posts_count": 9,
+      "reply_count": 3,
+      "highest_post_number": 9,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/9/59a72645e2b184f7435b0b1c02e6ecb824263ac5_2_1023x593.png",
+      "created_at": "2026-03-24T19:20:12.997Z",
+      "last_posted_at": "2026-03-25T14:40:48.468Z",
+      "bumped": true,
+      "bumped_at": "2026-03-25T14:40:48.468Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 245,
+          "name": "foundation-level",
+          "slug": "foundation-level"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 7,
+      "views": 69,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 58466,
+            "username": "Vishalkumar78044",
+            "name": "Vishal kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/vishalkumar78044/{size}/152401_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 45245,
+            "username": "onu",
+            "name": "green tea",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/onu/{size}/158139_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 47966,
+            "username": "25f2001205",
+            "name": "Ajay Verma",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/25f2001205/{size}/152182_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 50735,
+            "username": "Hx_xA",
+            "name": "Hiba Sineen",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/hx_xa/{size}/143092_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 36907,
+            "username": "Praveen1",
+            "name": "Praveen Mishra ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/praveen1/{size}/111576_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week 4 ppa8",
+      "id": 39716,
+      "title": "Week 4 ppa8",
+      "slug": "week-4-ppa8",
+      "posts_count": 6,
+      "reply_count": 0,
+      "highest_post_number": 6,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/e/a/ea5aafb3a9931ed42587b04272af0c9221b856eb_2_1024x640.jpeg",
+      "created_at": "2022-03-16T19:23:30.597Z",
+      "last_posted_at": "2022-03-17T11:28:20.101Z",
+      "bumped": true,
+      "bumped_at": "2022-06-22T09:40:05.370Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 99,
+          "name": "ppa",
+          "slug": "ppa"
+        },
+        {
+          "id": 6,
+          "name": "week-4",
+          "slug": "week-4"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 86,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 8085,
+            "username": "21f3000284",
+            "name": "Sukriti Kala",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000284/{size}/13359_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 8039,
+            "username": "NERO",
+            "name": "Tanishq Singh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/nero/{size}/693_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 7963,
+            "username": "Laxminandan",
+            "name": "Laxminandan Handique",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/l/85f322/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 1446,
+            "username": "Priya1",
+            "name": "Priyanka Tripathi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/priya1/{size}/344_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 562,
+            "username": "pkh",
+            "name": "Prashant Kumar Himanshu",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/pkh/{size}/284_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Week12 PPA2",
+      "id": 59995,
+      "title": "Week12 PPA2",
+      "slug": "week12-ppa2",
+      "posts_count": 5,
+      "reply_count": 2,
+      "highest_post_number": 5,
+      "image_url": "https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/9/5971093ce899d01340bffc1c5e1242f6d152a4dc_2_1024x598.png",
+      "created_at": "2022-08-02T13:42:43.090Z",
+      "last_posted_at": "2022-08-03T06:58:04.280Z",
+      "bumped": true,
+      "bumped_at": "2022-08-03T06:58:04.280Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 14,
+          "name": "week-12",
+          "slug": "week-12"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 5,
+      "views": 90,
+      "category_id": 25,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 12352,
+            "username": "Anusha_T_S",
+            "name": "Anusha T S",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/anusha_t_s/{size}/35902_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 12985,
+            "username": "bharath_raghu",
+            "name": "Bharath Raghunathan (B)",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/bharath_raghu/{size}/30920_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 4043,
+            "username": "jishnu_s_g",
+            "name": "Jishnu S G",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jishnu_s_g/{size}/898_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 2,
+    "username": "KritiT",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kritit/{size}/128889_2.png",
+    "excerpt": "<p>Line 16 and line 18 of your code is adding space after <code>|</code>, and it is mentioned in the last point of the output format that there should be no space at the end of each line while displaying the pattern.</p>\n<p>I think the question wants output like this<br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/c/7ca31bb256dc76c35ece31c55be9a176ed03129d.png\" alt=\"image\" data-base62-sha1=\"hMAFauOgJX4LauaI3pzULW2mCBv\" width=\"121\" height=\"87\"></p>\n<p>whereas your output is this<br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/f/6fe5ee3670d53ba8ad709ef21f0e18e40ac0d092.png\" alt=\"image\" data-base62-sha1=\"fXTCD89HMlfcOcXRa99jz1CIcSK\" width=\"121\" height=\"80\"></p>",
+    "accepter_name": null,
+    "accepter_username": "24f3004677"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 42442,
+        "username": "24f3004677",
+        "name": "Sohamdip Santra",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004677/{size}/120647_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 38798,
+        "username": "KritiT",
+        "name": "Kriti Tiwari ",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kritit/{size}/128889_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 42442,
+      "username": "24f3004677",
+      "name": "Sohamdip Santra",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004677/{size}/120647_2.png"
+    },
+    "last_poster": {
+      "id": 38798,
+      "username": "KritiT",
+      "name": "Kriti Tiwari ",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kritit/{size}/128889_2.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 665852,
+      "name": "Sohamdip Santra",
+      "username": "24f3004677",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004677/{size}/120647_2.png",
+      "created_at": "2025-08-19T16:56:13.359Z",
+      "cooked": "<p>please help me where i am getting it wrong</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/e/deed0a36471f4a7dd1d25022f7bd72eec6da7aff.png\" data-download-href=\"/uploads/short-url/vO5QX1cRyLqBoiL1OYvDVSHJ92n.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/e/deed0a36471f4a7dd1d25022f7bd72eec6da7aff_2_392x500.png\" alt=\"image\" data-base62-sha1=\"vO5QX1cRyLqBoiL1OYvDVSHJ92n\" width=\"392\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/e/deed0a36471f4a7dd1d25022f7bd72eec6da7aff_2_392x500.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/d/e/deed0a36471f4a7dd1d25022f7bd72eec6da7aff_2_588x750.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/d/e/deed0a36471f4a7dd1d25022f7bd72eec6da7aff.png 2x\" data-dominant-color=\"F5F5F6\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">668×850 52 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/c/0cf24752a5b64384aed89f63e7ea7e6bb393478e.png\" data-download-href=\"/uploads/short-url/1QwOaq279HQeGQokUl8I1GY7HXg.png?dl=1\" title=\"image\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cf24752a5b64384aed89f63e7ea7e6bb393478e_2_690x354.png\" alt=\"image\" data-base62-sha1=\"1QwOaq279HQeGQokUl8I1GY7HXg\" width=\"690\" height=\"354\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cf24752a5b64384aed89f63e7ea7e6bb393478e_2_690x354.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cf24752a5b64384aed89f63e7ea7e6bb393478e_2_1035x531.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cf24752a5b64384aed89f63e7ea7e6bb393478e_2_1380x708.png 2x\" data-dominant-color=\"FAF9F9\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">1768×909 52.1 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>my code:<br>\nWrite your code here to read input and print the formatted board</p>\n<pre data-code-wrap=\"python\"><code class=\"lang-python\">\n# Write your code here to read input and print the formatted board\n\nn=input().split(\" \")\nlock={\"1\":(0,0),\"2\":(0,1),\"3\":(0,2),\"4\":(1,0),\"5\":(1,1),\"6\":(1,2),\"7\":(2,0),\"8\":(2,1),\"9\":(2,2)}\ncount=1\npattern=[[\" \",\" \",\" \"],[\" \",\" \",\" \"],[\" \",\" \",\" \"]]\ncount=1\nfor point in n:\n    if point in lock:\n        i=lock[point][0]\n        j=lock[point][1]\n        pattern[i][j]=str(count)\n        count+=1\nprint(f\"[{pattern[0][0]}]---[{pattern[0][1]}]---[{pattern[0][2]}]\")\nprint(\" |     |     | \")\nprint(f\"[{pattern[1][0]}]---[{pattern[1][1]}]---[{pattern[1][2]}]\")\nprint(\" |     |     | \")\nprint(f\"[{pattern[2][0]}]---[{pattern[2][1]}]---[{pattern[2][2]}]\")\n</code></pre>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 2,
+      "updated_at": "2025-08-19T16:56:13.359Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 43,
+      "readers_count": 42,
+      "score": 8.6,
+      "yours": false,
+      "topic_id": 185294,
+      "topic_slug": "visualize-pattern-lock-question",
+      "display_username": "Sohamdip Santra",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 42442,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/visualize-pattern-lock-question/185294/1",
+      "user_cakedate": "2025-01-10",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 665854,
+      "name": "Kriti Tiwari ",
+      "username": "KritiT",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kritit/{size}/128889_2.png",
+      "created_at": "2025-08-19T17:18:32.616Z",
+      "cooked": "<p>Line 16 and line 18 of your code is adding space after <code>|</code>, and it is mentioned in the last point of the output format that there should be no space at the end of each line while displaying the pattern.</p>\n<p>I think the question wants output like this<br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/7/c/7ca31bb256dc76c35ece31c55be9a176ed03129d.png\" alt=\"image\" data-base62-sha1=\"hMAFauOgJX4LauaI3pzULW2mCBv\" width=\"121\" height=\"87\"></p>\n<p>whereas your output is this<br>\n<img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/6/f/6fe5ee3670d53ba8ad709ef21f0e18e40ac0d092.png\" alt=\"image\" data-base62-sha1=\"fXTCD89HMlfcOcXRa99jz1CIcSK\" width=\"121\" height=\"80\"></p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 2,
+      "updated_at": "2025-08-19T17:18:32.616Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 32,
+      "readers_count": 31,
+      "score": 36.4,
+      "yours": false,
+      "topic_id": 185294,
+      "topic_slug": "visualize-pattern-lock-question",
+      "display_username": "Kriti Tiwari ",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "",
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 38798,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/visualize-pattern-lock-question/185294/2",
+      "user_cakedate": "2024-09-26",
+      "user_birthdate": "1904-09-18",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    }
+  ]
+}

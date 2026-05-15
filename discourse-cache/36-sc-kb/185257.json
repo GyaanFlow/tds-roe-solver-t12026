@@ -1,0 +1,4531 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 665733,
+        "name": "Rohit Rai",
+        "username": "kingmancheste",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png",
+        "created_at": "2025-08-19T08:25:18.950Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> <a class=\"mention\" href=\"/u/atulps\">@AtulPS</a> <a class=\"mention\" href=\"/u/arup.kr\">@arup.kr</a><br>\nI attempted the System Commands OPPE. Out of the 5 questions, only 1 question was correctly submitted. However, on the portal, my score is being displayed as 43**,** which does not seem possible for a single correct submission.</p>\n<p>I believe there may be a technical issue with the score calculation or display. Since I want to appear for the re-OPPE, I kindly request you to look into this and clarify my actual score.</p>",
+        "post_number": 1,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-19T08:25:18.950Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 169,
+        "readers_count": 168,
+        "score": 48.6,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "Rohit Rai",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 19727,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/1",
+        "user_cakedate": "2023-06-12",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true,
+        "can_vote": false
+      },
+      {
+        "id": 665756,
+        "name": "Harsh",
+        "username": "24f1002285",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002285/{size}/112501_2.png",
+        "created_at": "2025-08-19T09:38:48.577Z",
+        "cooked": "<p>yes , i am also getting 46 but that is ofc not correct , i think it is some dummy data or some bug</p>",
+        "post_number": 2,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-19T09:38:48.577Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 1,
+        "reads": 162,
+        "readers_count": 161,
+        "score": 42.2,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "Harsh",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 35988,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/2",
+        "user_cakedate": "2024-09-21",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665792,
+        "name": "sandeepkumar sudhakar surkute",
+        "username": "22f3002925",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+        "created_at": "2025-08-19T12:08:29.329Z",
+        "cooked": "<p>Yes, I also solved only one question and getting 43 as score, I have written it in separate post.</p>\n<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> <a class=\"mention\" href=\"/u/atulps\">@AtulPS</a> <a class=\"mention\" href=\"/u/subendu\">@Subendu</a>  Kindly Request instructors to please consider these cases for re-oppe. This OPPE score  would snatch a chance of scoring S in the course. I deliberately solved only 1 question as I wanted to re-appear on 23 Aug and finish the oppe with good marks towards achieving an S in the course. Also the VM was very slow for the much of the duration, only when many people reported the rebooting was done at a later stage. Still the “ <code>synchro status  \"</code> was not working properly, sometimes it gave results, and sometimes it was throwing errors.</p>\n<p>Please consider this is sincere student request to maintain better academic performance on our part.</p>\n<p>Regards,</p>\n<p>Sandeep</p>",
+        "post_number": 3,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-19T12:23:38.671Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 151,
+        "readers_count": 150,
+        "score": 35,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "sandeepkumar sudhakar surkute",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 3,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16751,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/3",
+        "user_cakedate": "2023-02-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665958,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-08-20T04:52:29.045Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/24f1002285\">@24f1002285</a> You have correctly solved Q1 and Q2 as well, fetching you 40 marks. Qs3 has a empty output test case that fetches you <span class=\"math\">\\frac{1}{7}\\times20</span> marks. You seem to pass another test case as well, total of <span class=\"math\">45.8</span> marks.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/3/1347af96e23b178e3634b1c9794ccd7c338952c3.jpeg\" data-download-href=\"/uploads/short-url/2KyEOmnLu3LfwOTc6FzZjgt1E0r.jpeg?dl=1\" title=\"Screenshot 2025-08-20 at 10.22.05\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/3/1347af96e23b178e3634b1c9794ccd7c338952c3_2_690x236.jpeg\" alt=\"Screenshot 2025-08-20 at 10.22.05\" data-base62-sha1=\"2KyEOmnLu3LfwOTc6FzZjgt1E0r\" width=\"690\" height=\"236\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/3/1347af96e23b178e3634b1c9794ccd7c338952c3_2_690x236.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/3/1347af96e23b178e3634b1c9794ccd7c338952c3_2_1035x354.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/3/1347af96e23b178e3634b1c9794ccd7c338952c3_2_1380x472.jpeg 2x\" data-dominant-color=\"323033\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-20 at 10.22.05</span><span class=\"informations\">1810×620 158 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/6/5604fd7556cc242779b925fbe265e722e5c93c38.png\" data-download-href=\"/uploads/short-url/cgXKIZ1jt0KMpAVLNVhWIyroRba.png?dl=1\" title=\"Screenshot 2025-08-20 at 10.21.30\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/6/5604fd7556cc242779b925fbe265e722e5c93c38_2_589x500.png\" alt=\"Screenshot 2025-08-20 at 10.21.30\" data-base62-sha1=\"cgXKIZ1jt0KMpAVLNVhWIyroRba\" width=\"589\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/6/5604fd7556cc242779b925fbe265e722e5c93c38_2_589x500.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/6/5604fd7556cc242779b925fbe265e722e5c93c38.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/6/5604fd7556cc242779b925fbe265e722e5c93c38.png 2x\" data-dominant-color=\"332F30\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-20 at 10.21.30</span><span class=\"informations\">856×726 152 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+        "post_number": 4,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-20T04:53:15.331Z",
+        "reply_count": 0,
+        "reply_to_post_number": 2,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 126,
+        "readers_count": 125,
+        "score": 25,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 35988,
+          "username": "24f1002285",
+          "name": "Harsh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002285/{size}/112501_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/4",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665959,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-08-20T04:56:23.112Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/22f3002925\">@22f3002925</a> You have solved Q1 and Q2 as well.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/1/410c7a0b32da43a31ff9514695f0d552cb056357.png\" data-download-href=\"/uploads/short-url/9hrLxNxa2M7Xib8IMtd3VmLa0nB.png?dl=1\" title=\"Screenshot 2025-08-20 at 10.24.03\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/1/410c7a0b32da43a31ff9514695f0d552cb056357.png\" alt=\"Screenshot 2025-08-20 at 10.24.03\" data-base62-sha1=\"9hrLxNxa2M7Xib8IMtd3VmLa0nB\" width=\"594\" height=\"326\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-20 at 10.24.03</span><span class=\"informations\">594×326 57.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>(this is the optimal solution btw)</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/8/a/8a2055cf67ceb4152c852ec8e75baabc00afc9fe.png\" data-download-href=\"/uploads/short-url/jHVasId6eVGrKQq28DDYhXgw9ZQ.png?dl=1\" title=\"Screenshot 2025-08-20 at 10.24.26\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/8/a/8a2055cf67ceb4152c852ec8e75baabc00afc9fe_2_690x131.png\" alt=\"Screenshot 2025-08-20 at 10.24.26\" data-base62-sha1=\"jHVasId6eVGrKQq28DDYhXgw9ZQ\" width=\"690\" height=\"131\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/8/a/8a2055cf67ceb4152c852ec8e75baabc00afc9fe_2_690x131.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/8/a/8a2055cf67ceb4152c852ec8e75baabc00afc9fe_2_1035x196.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/8/a/8a2055cf67ceb4152c852ec8e75baabc00afc9fe.png 2x\" data-dominant-color=\"2B292C\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-20 at 10.24.26</span><span class=\"informations\">1042×198 37.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>You would have run <code>synchro eval</code> once without the <code>#</code> to verify your solution is correct and later commented it out to fail the test cases purposefully. However the max of all your submissions are taken, so you have solved both the questions.</p>\n<p>Qs3 gives you a <span class=\"math\">\\frac{1}{7}\\times20</span> as one test case is empty.</p>\n<p>For a total of <span class=\"math\">42.8</span>.</p>",
+        "post_number": 5,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-20T04:56:23.112Z",
+        "reply_count": 1,
+        "reply_to_post_number": 3,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 122,
+        "readers_count": 121,
+        "score": 29.2,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 16751,
+          "username": "22f3002925",
+          "name": "sandeepkumar sudhakar surkute",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/5",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 665987,
+        "name": "Rohit Rai",
+        "username": "kingmancheste",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png",
+        "created_at": "2025-08-20T05:35:42.844Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> sir please reply to my case</p>",
+        "post_number": 6,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-20T05:35:42.844Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 112,
+        "readers_count": 111,
+        "score": 27.2,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "Rohit Rai",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 19727,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/6",
+        "user_cakedate": "2023-06-12",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 666001,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-08-20T05:59:01.195Z",
+        "cooked": "<p>Can you provide your roll number?</p>",
+        "post_number": 7,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-20T05:59:01.195Z",
+        "reply_count": 1,
+        "reply_to_post_number": 6,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 107,
+        "readers_count": 106,
+        "score": 26.2,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 19727,
+          "username": "kingmancheste",
+          "name": "Rohit Rai",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/7",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 666049,
+        "name": "Rohit Rai",
+        "username": "kingmancheste",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png",
+        "created_at": "2025-08-20T06:56:32.727Z",
+        "cooked": "<p>my roll number:  23f1000362</p>",
+        "post_number": 8,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-20T06:56:32.727Z",
+        "reply_count": 1,
+        "reply_to_post_number": 7,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 101,
+        "readers_count": 100,
+        "score": 25,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "Rohit Rai",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 19727,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/8",
+        "user_cakedate": "2023-06-12",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 666096,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-08-20T07:47:58.495Z",
+        "cooked": "<aside class=\"quote group-ds-students\" data-username=\"kingmancheste\" data-post=\"8\" data-topic=\"185257\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/48/122562_2.png\" class=\"avatar\"> kingmancheste:</div>\n<blockquote>\n<p>23f1000362</p>\n</blockquote>\n</aside>\n<p>Scores:</p>\n<p>100,100,14,0,0 : total = 42.8</p>\n<p>Qs1: you have solved it and then removed the code, however since you have solved it correctly, it is considered as solved. (<code>100</code>)</p>\n<p>Qs2:<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510.jpeg\" data-download-href=\"/uploads/short-url/4pHxCPlYoYYxe3U4kdEdBV07g9W.jpeg?dl=1\" title=\"Screenshot 2025-08-20 at 13.17.04\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510_2_642x500.jpeg\" alt=\"Screenshot 2025-08-20 at 13.17.04\" data-base62-sha1=\"4pHxCPlYoYYxe3U4kdEdBV07g9W\" width=\"642\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510_2_642x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510_2_963x750.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510.jpeg 2x\" data-dominant-color=\"2F2C2E\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-20 at 13.17.04</span><span class=\"informations\">1208×940 120 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a.jpeg\" data-download-href=\"/uploads/short-url/1OW4PlmIlnaMxfjpPpro5KZ8xwS.jpeg?dl=1\" title=\"Screenshot 2025-08-20 at 13.17.27\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a_2_537x500.jpeg\" alt=\"Screenshot 2025-08-20 at 13.17.27\" data-base62-sha1=\"1OW4PlmIlnaMxfjpPpro5KZ8xwS\" width=\"537\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a_2_537x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a_2_805x750.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a_2_1074x1000.jpeg 2x\" data-dominant-color=\"2A292E\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-20 at 13.17.27</span><span class=\"informations\">1878×1748 154 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Qs3: as discussed earlier, one test case passes, so <span class=\"math\">\\frac{1}{7}\\times20</span>.</p>",
+        "post_number": 9,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-20T07:47:58.495Z",
+        "reply_count": 0,
+        "reply_to_post_number": 8,
+        "quote_count": 1,
+        "incoming_link_count": 0,
+        "reads": 107,
+        "readers_count": 106,
+        "score": 21.2,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/9",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": true,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 666110,
+        "name": "Rohit Rai",
+        "username": "kingmancheste",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png",
+        "created_at": "2025-08-20T08:14:34.325Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> sir Thank you for your reply regarding my OPPE scores. I wanted to clarify my situation further<br>\nFor Question 1, I had initially solved it, but later I removed my answer and submitted the final version as blank. Since my final submission did not contain the solution, I feel it should not be counted as solved.<br>\nFor Question 5, I had attempted it and was close to solving it, but due to a minor error, it did not pass. My intention in removing the earlier answer was to prepare for a proper retry in OPPE 2.</p>\n<p>And similar thing happened in question 4 where all test cases were good only issue in my code was it was not printing single digit number with a zero it was just printing that number.<br>\nSeeing both these questions as i was close to solving them i decided to remove question 1 solution and work more retry giving Re-OPPE.</p>",
+        "post_number": 10,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-20T08:14:34.325Z",
+        "reply_count": 1,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 97,
+        "readers_count": 96,
+        "score": 24.2,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "Rohit Rai",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 19727,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/10",
+        "user_cakedate": "2023-06-12",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 666543,
+        "name": "Rohit Rai",
+        "username": "kingmancheste",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png",
+        "created_at": "2025-08-21T08:37:24.636Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> sir as i had removed solution to question but i was assessed for it as well.<br>\ncan i be eligible to Re OPPE as in my last submission of Q1 did not had answers and also i want to give re OPPE. So am i eligible for Re OPPE?</p>",
+        "post_number": 11,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-21T08:37:24.636Z",
+        "reply_count": 1,
+        "reply_to_post_number": 10,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 90,
+        "readers_count": 89,
+        "score": 22.8,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "Rohit Rai",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 19727,
+          "username": "kingmancheste",
+          "name": "Rohit Rai",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 19727,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/11",
+        "user_cakedate": "2023-06-12",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 666544,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-08-21T08:38:13.993Z",
+        "cooked": "<p>That is not possible, we have taken the highest score for each question, since we had to re-evaluate all questions post the exam, if you get more than 40, we cannot allot a reOPPE.</p>",
+        "post_number": 12,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-21T08:38:13.993Z",
+        "reply_count": 0,
+        "reply_to_post_number": 11,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 90,
+        "readers_count": 89,
+        "score": 17.8,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 19727,
+          "username": "kingmancheste",
+          "name": "Rohit Rai",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/12",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 667281,
+        "name": "sandeepkumar sudhakar surkute",
+        "username": "22f3002925",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+        "created_at": "2025-08-23T18:58:36.994Z",
+        "cooked": "<p>At the end, I have lost chance for re-oppe due to mis-information during the live session about latest evaluation being the final one instead of the maximum of all evaluations. With that information only I ran and later commented some code to fail the question which did not work as planned. I had deliberately planned to re-do the OPPE because I had another OPPE on next day and wanted to score 100 in the SC.</p>\n<p>Also if the VM would have run satisfactorily, At least two more questions I could have completed successfully except maybe awk question scoring at least 80. The speed of VM seriously took away some time. The compensation was 30 minutes but the VM was slow after approx 10-15 minutes in to the exam. We did not feel the pinch because first two questions were relatively lighter to tackle. By the time we complained about VM in exam,  we were half way through time of the exam.</p>",
+        "post_number": 13,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-23T18:58:36.994Z",
+        "reply_count": 1,
+        "reply_to_post_number": 5,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 76,
+        "readers_count": 75,
+        "score": 20,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "sandeepkumar sudhakar surkute",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16751,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/13",
+        "user_cakedate": "2023-02-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 667674,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-08-25T05:21:06.558Z",
+        "cooked": "<aside class=\"quote group-ds-students\" data-username=\"22f3002925\" data-post=\"13\" data-topic=\"185257\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/48.png\" class=\"avatar\"> 22f3002925:</div>\n<blockquote>\n<p>I ran and later commented some code to fail the question which did not work as planned. I had deliberately planned to re-do the OPPE</p>\n</blockquote>\n</aside>\n<p>I hope you are aware that deliberately failing the OPPE is not allowed and not encouraged. This is the exact reason why reOPPE questions are harder, to discourage such practices.</p>\n<p>There have been hundreds of students who have scored <span class=\"math\">\\frac{100}{100}</span> in first OPPE despite the technical issues with the extra 30 minutes provided, and many more have performed well without resorting to such tactics.</p>\n<p>If you have solved a question, you get marks for said question.</p>",
+        "post_number": 14,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-25T05:21:06.558Z",
+        "reply_count": 1,
+        "reply_to_post_number": 13,
+        "quote_count": 1,
+        "incoming_link_count": 1,
+        "reads": 66,
+        "readers_count": 65,
+        "score": 38,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 1,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/14",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 1
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 1,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 668484,
+        "name": "sandeepkumar sudhakar surkute",
+        "username": "22f3002925",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+        "created_at": "2025-08-26T18:05:58.398Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a>  Sir, I also don’t like to postpone OPPE due to any tactics. In the same week, I had 2 project viva’s, and 2 OPEEs of PDSA and SC, i.e. SC in the evening 9-11 PM, and PDSA the next morning at 09:30 AM. And all this I was to complete as full time working professional.</p>\n<p>Flexibility of this online programme was the key motivation for me to join the programme along with a full time job.</p>\n<p>Also, I had requested support to postpone PDSA OPPE to 23 or 24 Aug, which was not done by them. Only then I had decided to re-do the SC-OPPE in the second slot only from the perspective of appearing with full revision, and no other intention than to continue the good grades in the programme specially in my favourite subject of SC.</p>\n<p>I accept the results and would like to clarify that there were no ill-intended tactics other than just to purely space out different OPPEs/ Project Vivas, since it was not done by Support automatically despite there being slots for PDSA on 23 and 24.</p>\n<p>I respect my instructors and their decisions, therefore I would not like them to think that there were some tactics in there. Hence, this clarification from my side about the schedule I was facing for the OPPE week.</p>",
+        "post_number": 15,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-26T18:05:58.398Z",
+        "reply_count": 1,
+        "reply_to_post_number": 14,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 59,
+        "readers_count": 58,
+        "score": 16.6,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "sandeepkumar sudhakar surkute",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16751,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/15",
+        "user_cakedate": "2023-02-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 668618,
+        "name": "Sayan Ghosh",
+        "username": "sayan",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "created_at": "2025-08-27T06:57:33.119Z",
+        "cooked": "<p>I can understand your situation, it becomes hectic trying to manage multiple subjects/OPPE/project vivas in the same week.</p>\n<p>(SC OPPE was 7pm to 9:30pm though, not 9pm to 11pm).</p>\n<p>Usually the OPPE slots are not moved around and are mentioned before the registration in the grading document so that students can choose non-conflicting subjects in a term during registration. However, it might not always be possible to avoid conflicts.</p>\n<p>However, since we had to perform a re-grade  of all solutions post the OPPE due to submission issue, it leaves us no choice but to take the max of the attempts, so that the latest rescore does not override someone’s previously successful attempt.</p>",
+        "post_number": 16,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-08-27T06:57:42.363Z",
+        "reply_count": 1,
+        "reply_to_post_number": 15,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 55,
+        "readers_count": 54,
+        "score": 45.8,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "Sayan Ghosh",
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_bg_color": "0040ff",
+        "flair_color": "1affc6",
+        "flair_group_id": 41,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": "Leader",
+        "title_is_group": false,
+        "reply_to_user": {
+          "id": 16751,
+          "username": "22f3002925",
+          "name": "sandeepkumar sudhakar surkute",
+          "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "count": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "group_moderator": true,
+        "user_id": 348,
+        "hidden": false,
+        "trust_level": 4,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/16",
+        "user_cakedate": "2021-04-28",
+        "user_birthdate": "1904-07-30",
+        "reactions": [
+          {
+            "id": "heart",
+            "type": "emoji",
+            "count": 2
+          }
+        ],
+        "current_user_reaction": null,
+        "reaction_users_count": 2,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      },
+      {
+        "id": 684917,
+        "name": "sandeepkumar sudhakar surkute",
+        "username": "22f3002925",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+        "created_at": "2025-10-10T02:18:26.118Z",
+        "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a></p>\n<p>Thanks for understanding.</p>\n<p>P.S. And yes, the time of SC OPPE is as corrected in your reply. I erroneously wrote 9-11pm in my post.</p>",
+        "post_number": 17,
+        "post_type": 1,
+        "posts_count": 17,
+        "updated_at": "2025-10-10T02:18:26.118Z",
+        "reply_count": 0,
+        "reply_to_post_number": 16,
+        "quote_count": 0,
+        "incoming_link_count": 0,
+        "reads": 31,
+        "readers_count": 30,
+        "score": 6,
+        "yours": false,
+        "topic_id": 185257,
+        "topic_slug": "clarification-needed-on-oppe-score",
+        "display_username": "sandeepkumar sudhakar surkute",
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_bg_color": "",
+        "flair_color": "",
+        "flair_group_id": 294,
+        "badges_granted": [],
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_see_hidden_post": false,
+        "can_wiki": false,
+        "read": false,
+        "user_title": null,
+        "reply_to_user": {
+          "id": 348,
+          "username": "sayan",
+          "name": "Sayan Ghosh",
+          "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+        },
+        "bookmarked": false,
+        "actions_summary": [
+          {
+            "id": 2,
+            "can_act": true
+          },
+          {
+            "id": 6,
+            "can_act": true
+          },
+          {
+            "id": 3,
+            "can_act": true
+          },
+          {
+            "id": 4,
+            "can_act": true
+          },
+          {
+            "id": 8,
+            "can_act": true
+          },
+          {
+            "id": 10,
+            "can_act": true
+          },
+          {
+            "id": 7,
+            "can_act": true
+          }
+        ],
+        "moderator": false,
+        "admin": false,
+        "staff": false,
+        "user_id": 16751,
+        "hidden": false,
+        "trust_level": 1,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false,
+        "post_url": "/t/clarification-needed-on-oppe-score/185257/17",
+        "user_cakedate": "2023-02-06",
+        "reactions": [],
+        "current_user_reaction": null,
+        "reaction_users_count": 0,
+        "current_user_used_main_reaction": false,
+        "can_accept_answer": false,
+        "can_unaccept_answer": false,
+        "accepted_answer": false,
+        "topic_accepted_answer": true
+      }
+    ],
+    "stream": [
+      665733,
+      665756,
+      665792,
+      665958,
+      665959,
+      665987,
+      666001,
+      666049,
+      666096,
+      666110,
+      666543,
+      666544,
+      667281,
+      667674,
+      668484,
+      668618,
+      684917
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      250
+    ],
+    [
+      10,
+      249
+    ],
+    [
+      11,
+      248
+    ],
+    [
+      13,
+      246
+    ],
+    [
+      14,
+      245
+    ],
+    [
+      15,
+      243
+    ],
+    [
+      17,
+      199
+    ]
+  ],
+  "suggested_topics": [
+    {
+      "fancy_title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "id": 202375,
+      "title": "Request for Moderation in Difficulty Level for OPPE Reattempt",
+      "slug": "request-for-moderation-in-difficulty-level-for-oppe-reattempt",
+      "posts_count": 72,
+      "reply_count": 36,
+      "highest_post_number": 72,
+      "image_url": null,
+      "created_at": "2026-04-25T16:17:32.142Z",
+      "last_posted_at": "2026-04-26T11:05:32.857Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T11:05:32.857Z",
+      "archetype": "regular",
+      "unseen": false,
+      "last_read_post_number": 65,
+      "unread": 0,
+      "new_posts": 7,
+      "unread_posts": 7,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "notification_level": 2,
+      "bookmarked": false,
+      "liked": true,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 602,
+      "views": 633,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 89,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 36073,
+            "username": "24f2007692",
+            "name": "Kbxai",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f2007692/{size}/156316_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40316,
+            "username": "mbk",
+            "name": "Musaab Khan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/mbk/{size}/111087_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 35539,
+            "username": "Kriticon",
+            "name": "KRITHIK ABHINAV A ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kriticon/{size}/119258_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 31102,
+            "username": "24f2003468",
+            "name": "Cube",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/e19b73/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Help for ReOPPE - Network Issue",
+      "id": 202404,
+      "title": "Help for ReOPPE - Network Issue",
+      "slug": "help-for-reoppe-network-issue",
+      "posts_count": 5,
+      "reply_count": 1,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T01:22:24.542Z",
+      "last_posted_at": "2026-04-26T18:55:34.443Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:55:34.443Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 106,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16606,
+            "username": "23f1000725",
+            "name": "Jagruti ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1000725/{size}/143148_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25033,
+            "username": "23f3003894",
+            "name": "Arpit Mishra",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003894/{size}/88779_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Changing my ssh key for reoppe",
+      "id": 202464,
+      "title": "Changing my ssh key for reoppe",
+      "slug": "changing-my-ssh-key-for-reoppe",
+      "posts_count": 5,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2026-04-26T08:32:45.202Z",
+      "last_posted_at": "2026-04-26T18:54:27.132Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:54:27.132Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 48,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 12528,
+            "username": "Chinmoy_Das",
+            "name": "Chinmoy Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/chinmoy_das/{size}/19501_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Oppe issue due to internet",
+      "id": 202513,
+      "title": "Oppe issue due to internet",
+      "slug": "oppe-issue-due-to-internet",
+      "posts_count": 3,
+      "reply_count": 0,
+      "highest_post_number": 3,
+      "image_url": null,
+      "created_at": "2026-04-26T18:46:12.317Z",
+      "last_posted_at": "2026-04-26T18:55:04.334Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T18:46:12.515Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": true,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 0,
+      "views": 7,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 42459,
+            "username": "24f3004020",
+            "name": "Sophia Pradhan ",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3004020/{size}/119864_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Not able to access our course vm",
+      "id": 202416,
+      "title": "Not able to access our course vm",
+      "slug": "not-able-to-access-our-course-vm",
+      "posts_count": 12,
+      "reply_count": 0,
+      "highest_post_number": 12,
+      "image_url": null,
+      "created_at": "2026-04-26T04:55:59.988Z",
+      "last_posted_at": "2026-04-26T16:21:55.496Z",
+      "bumped": true,
+      "bumped_at": "2026-04-26T16:21:55.496Z",
+      "archetype": "regular",
+      "unseen": true,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 39,
+          "name": "clarification",
+          "slug": "clarification"
+        },
+        {
+          "id": 365,
+          "name": "term1-2026",
+          "slug": "term1-2026"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 3,
+      "views": 90,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 38103,
+            "username": "24f3000618",
+            "name": "Diptanshu Suraj dube",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3000618/{size}/118648_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 6563,
+            "username": "21f3000759",
+            "name": "Swati Jain",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/21f3000759/{size}/23528_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 42854,
+            "username": "Manish_i3",
+            "name": "Manish Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/manish_i3/{size}/161554_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 40758,
+            "username": "24f3001985",
+            "name": "Khushi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f3001985/{size}/161438_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 33679,
+            "username": "palashshimpi",
+            "name": "Palash Tushar Shimpi",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/palashshimpi/{size}/104678_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 39,
+      "name": "clarification",
+      "slug": "clarification"
+    },
+    {
+      "id": 341,
+      "name": "term2-2025",
+      "slug": "term2-2025"
+    },
+    {
+      "id": 206,
+      "name": "oppe",
+      "slug": "oppe"
+    },
+    {
+      "id": 336,
+      "name": "score-issues",
+      "slug": "score-issues"
+    }
+  ],
+  "tags_descriptions": {},
+  "fancy_title": "Clarification Needed on OPPE Score",
+  "id": 185257,
+  "title": "Clarification Needed on OPPE Score",
+  "posts_count": 17,
+  "created_at": "2025-08-19T08:25:18.685Z",
+  "views": 342,
+  "reply_count": 12,
+  "like_count": 4,
+  "last_posted_at": "2025-10-10T02:18:26.118Z",
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "clarification-needed-on-oppe-score",
+  "category_id": 36,
+  "word_count": 1390,
+  "deleted_at": null,
+  "user_id": 19727,
+  "featured_link": null,
+  "pinned_globally": false,
+  "pinned_at": null,
+  "pinned_until": null,
+  "image_url": null,
+  "slow_mode_seconds": 0,
+  "draft": null,
+  "draft_key": "topic_185257",
+  "draft_sequence": 0,
+  "unpinned": null,
+  "pinned": false,
+  "current_post_number": 1,
+  "highest_post_number": 17,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 10,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": true
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": false,
+  "topic_timer": null,
+  "message_bus_last_id": 0,
+  "participant_count": 4,
+  "show_read_indicator": false,
+  "thumbnails": null,
+  "slow_mode_enabled_until": null,
+  "tags_disable_ads": false,
+  "related_topics": [
+    {
+      "fancy_title": "Wrong OPPE score and affects the chance of re-oppe",
+      "id": 185233,
+      "title": "Wrong OPPE score and affects the chance of re-oppe",
+      "slug": "wrong-oppe-score-and-affects-the-chance-of-re-oppe",
+      "posts_count": 6,
+      "reply_count": 3,
+      "highest_post_number": 6,
+      "image_url": null,
+      "created_at": "2025-08-18T19:23:44.196Z",
+      "last_posted_at": "2025-08-26T08:13:45.357Z",
+      "bumped": true,
+      "bumped_at": "2025-08-26T08:13:45.357Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        },
+        {
+          "id": 336,
+          "name": "score-issues",
+          "slug": "score-issues"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 1,
+      "views": 204,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 16751,
+            "username": "22f3002925",
+            "name": "sandeepkumar sudhakar surkute",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 23640,
+            "username": "Jbanmol",
+            "name": "Jb Anmol",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/jbanmol/{size}/114409_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 16206,
+            "username": "22f3001120",
+            "name": "Soham",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/f05b48/{size}.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "OPPE marks discrepancy",
+      "id": 185308,
+      "title": "OPPE marks discrepancy",
+      "slug": "oppe-marks-discrepancy",
+      "posts_count": 13,
+      "reply_count": 6,
+      "highest_post_number": 13,
+      "image_url": null,
+      "created_at": "2025-08-20T02:45:12.595Z",
+      "last_posted_at": "2025-09-04T07:34:18.637Z",
+      "bumped": true,
+      "bumped_at": "2025-08-21T15:28:29.022Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 177,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 31897,
+            "username": "Annie",
+            "name": "Anirudh Phophalia",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/annie/{size}/66730_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 29162,
+            "username": "DSGIE",
+            "name": "MOHIT KUMAR",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/dsgie/{size}/127570_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 24021,
+            "username": "23f2005111",
+            "name": "Rex",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2005111/{size}/66974_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 24072,
+            "username": "23f1001611",
+            "name": "Arjun Dwarakesh Janarthanan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f1001611/{size}/67277_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Reg- Discrepancy in SC OPPE score",
+      "id": 159057,
+      "title": "Reg- Discrepancy in SC OPPE score",
+      "slug": "reg-discrepancy-in-sc-oppe-score",
+      "posts_count": 9,
+      "reply_count": 6,
+      "highest_post_number": 9,
+      "image_url": null,
+      "created_at": "2024-12-14T15:39:34.512Z",
+      "last_posted_at": "2024-12-27T18:01:20.871Z",
+      "bumped": true,
+      "bumped_at": "2024-12-27T18:01:20.871Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        },
+        {
+          "id": 339,
+          "name": "term3-2024",
+          "slug": "term3-2024"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 5,
+      "views": 208,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 1,
+      "has_accepted_answer": false,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 23565,
+            "username": "23f3001476",
+            "name": "MAERAJ AKHTAR",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3001476/{size}/68370_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 15853,
+            "username": "somsubhra",
+            "name": "Somsubhra/সোমশুভ্র",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/s/c2a13f/{size}.png",
+            "primary_group_name": "ds-students",
+            "trust_level": 2
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster",
+          "user": {
+            "id": 21700,
+            "username": "23f2004627",
+            "name": "Aman Kumar",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f2004627/{size}/67354_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Marks retention - DBMS OPPE",
+      "id": 158447,
+      "title": "Marks retention - DBMS OPPE",
+      "slug": "marks-retention-dbms-oppe",
+      "posts_count": 14,
+      "reply_count": 11,
+      "highest_post_number": 14,
+      "image_url": null,
+      "created_at": "2024-12-08T07:39:27.016Z",
+      "last_posted_at": "2024-12-20T09:27:00.748Z",
+      "bumped": true,
+      "bumped_at": "2024-12-20T09:27:00.748Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 246,
+          "name": "diploma-level",
+          "slug": "diploma-level"
+        },
+        {
+          "id": 37,
+          "name": "operational",
+          "slug": "operational"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 11,
+      "views": 295,
+      "category_id": 27,
+      "featured_link": null,
+      "op_like_count": 6,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": "latest",
+          "description": "Original Poster, Most Recent Poster",
+          "user": {
+            "id": 23071,
+            "username": "Adwitiya_Chauhan",
+            "name": "Adwitiya Chauhan",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/adwitiya_chauhan/{size}/79315_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster, Accepted Answer",
+          "user": {
+            "id": 43,
+            "username": "PiyushW",
+            "name": "Piyush Wairale",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/piyushw/{size}/7225_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 23715,
+            "username": "23f3001021",
+            "name": "disharani",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3001021/{size}/68126_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 25214,
+            "username": "23f3003566",
+            "name": "Seshadri Das",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003566/{size}/66883_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        }
+      ]
+    },
+    {
+      "fancy_title": "Marks distribution in OPPE",
+      "id": 185850,
+      "title": "Marks distribution in OPPE",
+      "slug": "marks-distribution-in-oppe",
+      "posts_count": 5,
+      "reply_count": 0,
+      "highest_post_number": 5,
+      "image_url": null,
+      "created_at": "2025-08-26T11:28:00.738Z",
+      "last_posted_at": "2025-08-27T06:48:54.575Z",
+      "bumped": true,
+      "bumped_at": "2025-08-27T06:48:54.575Z",
+      "archetype": "regular",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "tags": [
+        {
+          "id": 341,
+          "name": "term2-2025",
+          "slug": "term2-2025"
+        },
+        {
+          "id": 206,
+          "name": "oppe",
+          "slug": "oppe"
+        }
+      ],
+      "tags_descriptions": {},
+      "like_count": 2,
+      "views": 81,
+      "category_id": 36,
+      "featured_link": null,
+      "op_like_count": 0,
+      "has_accepted_answer": true,
+      "posters": [
+        {
+          "extras": null,
+          "description": "Original Poster",
+          "user": {
+            "id": 25461,
+            "username": "23f3003513",
+            "name": "Aniruddha Jagdale",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/23f3003513/{size}/68296_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 1
+          }
+        },
+        {
+          "extras": "latest",
+          "description": "Most Recent Poster, Accepted Answer",
+          "user": {
+            "id": 348,
+            "username": "sayan",
+            "name": "Sayan Ghosh",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+            "primary_group_name": "course_support",
+            "flair_name": "course_support",
+            "flair_url": "scale-balanced",
+            "flair_bg_color": "0040ff",
+            "flair_color": "1affc6",
+            "flair_group_id": 41,
+            "trust_level": 4
+          }
+        },
+        {
+          "extras": null,
+          "description": "Frequent Poster",
+          "user": {
+            "id": 28953,
+            "username": "Ace_manas",
+            "name": "Manas Agrawal",
+            "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/ace_manas/{size}/68500_2.png",
+            "primary_group_name": "ds-students",
+            "flair_name": "ds-students",
+            "flair_group_id": 294,
+            "trust_level": 0
+          }
+        }
+      ]
+    }
+  ],
+  "summarizable": true,
+  "has_cached_summary": false,
+  "valid_reactions": [
+    "heart",
+    "+1",
+    "laughing",
+    "open_mouth",
+    "clap",
+    "confetti_ball",
+    "rocket",
+    "-1"
+  ],
+  "accepted_answer": {
+    "post_number": 9,
+    "username": "sayan",
+    "name": null,
+    "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+    "excerpt": "<aside class=\"quote group-ds-students\" data-username=\"kingmancheste\" data-post=\"8\" data-topic=\"185257\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/48/122562_2.png\" class=\"avatar\"> kingmancheste:</div>\n<blockquote>\n<p>23f1000362</p>\n</blockquote>\n</aside>\n<p>Scores:</p>\n<p>100,100,14,0,0 : total = 42.8</p>\n<p>Qs1: you have solved it and then removed the code, however since you have solved it correctly, it is considered as solved. (<code>100</code>)</p>\n<p>Qs2:<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510.jpeg\" data-download-href=\"/uploads/short-url/4pHxCPlYoYYxe3U4kdEdBV07g9W.jpeg?dl=1\" title=\"Screenshot 2025-08-20 at 13.17.04\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510_2_642x500.jpeg\" alt=\"Screenshot 2025-08-20 at 13.17.04\" data-base62-sha1=\"4pHxCPlYoYYxe3U4kdEdBV07g9W\" width=\"642\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510_2_642x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510_2_963x750.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510.jpeg 2x\" data-dominant-color=\"2F2C2E\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-20 at 13.17.04</span><span class=\"informations\">1208×940 120 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a.jpeg\" data-download-href=\"/uploads/short-url/1OW4PlmIlnaMxfjpPpro5KZ8xwS.jpeg?dl=1\" title=\"Screenshot 2025-08-20 at 13.17.27\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a_2_537x500.jpeg\" alt=\"Screenshot 2025-08-20 at 13.17.27\" data-base62-sha1=\"1OW4PlmIlnaMxfjpPpro5KZ8xwS\" width=\"537\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a_2_537x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a_2_805x750.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a_2_1074x1000.jpeg 2x\" data-dominant-color=\"2A292E\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-20 at 13.17.27</span><span class=\"informations\">1878×1748 154 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Qs3: as discussed earlier, one test case passes, so <span class=\"math\">\\frac{1}{7}\\times20</span>.</p>",
+    "accepter_name": null,
+    "accepter_username": "21f3000759"
+  },
+  "can_vote": false,
+  "vote_count": 0,
+  "user_voted": false,
+  "discourse_zendesk_plugin_zendesk_id": null,
+  "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+  "details": {
+    "can_edit": false,
+    "notification_level": 1,
+    "can_create_post": true,
+    "can_reply_as_new_topic": true,
+    "can_flag_topic": true,
+    "participants": [
+      {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+        "post_count": 7,
+        "primary_group_name": "course_support",
+        "flair_name": "course_support",
+        "flair_url": "scale-balanced",
+        "flair_color": "1affc6",
+        "flair_bg_color": "0040ff",
+        "flair_group_id": 41,
+        "trust_level": 4
+      },
+      {
+        "id": 19727,
+        "username": "kingmancheste",
+        "name": "Rohit Rai",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png",
+        "post_count": 5,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 16751,
+        "username": "22f3002925",
+        "name": "sandeepkumar sudhakar surkute",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+        "post_count": 4,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      },
+      {
+        "id": 35988,
+        "username": "24f1002285",
+        "name": "Harsh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002285/{size}/112501_2.png",
+        "post_count": 1,
+        "primary_group_name": "ds-students",
+        "flair_name": "ds-students",
+        "flair_url": null,
+        "flair_color": "",
+        "flair_bg_color": "",
+        "flair_group_id": 294,
+        "trust_level": 1
+      }
+    ],
+    "created_by": {
+      "id": 19727,
+      "username": "kingmancheste",
+      "name": "Rohit Rai",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png"
+    },
+    "last_poster": {
+      "id": 16751,
+      "username": "22f3002925",
+      "name": "sandeepkumar sudhakar surkute",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png"
+    }
+  },
+  "pending_posts": [],
+  "bookmarks": [],
+  "all_posts": [
+    {
+      "id": 665733,
+      "name": "Rohit Rai",
+      "username": "kingmancheste",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png",
+      "created_at": "2025-08-19T08:25:18.950Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> <a class=\"mention\" href=\"/u/atulps\">@AtulPS</a> <a class=\"mention\" href=\"/u/arup.kr\">@arup.kr</a><br>\nI attempted the System Commands OPPE. Out of the 5 questions, only 1 question was correctly submitted. However, on the portal, my score is being displayed as 43**,** which does not seem possible for a single correct submission.</p>\n<p>I believe there may be a technical issue with the score calculation or display. Since I want to appear for the re-OPPE, I kindly request you to look into this and clarify my actual score.</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-19T08:25:18.950Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 169,
+      "readers_count": 168,
+      "score": 48.6,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "Rohit Rai",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 19727,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/1",
+      "user_cakedate": "2023-06-12",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true,
+      "can_vote": false
+    },
+    {
+      "id": 665756,
+      "name": "Harsh",
+      "username": "24f1002285",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002285/{size}/112501_2.png",
+      "created_at": "2025-08-19T09:38:48.577Z",
+      "cooked": "<p>yes , i am also getting 46 but that is ofc not correct , i think it is some dummy data or some bug</p>",
+      "post_number": 2,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-19T09:38:48.577Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 1,
+      "reads": 162,
+      "readers_count": 161,
+      "score": 42.2,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "Harsh",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 35988,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/2",
+      "user_cakedate": "2024-09-21",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665792,
+      "name": "sandeepkumar sudhakar surkute",
+      "username": "22f3002925",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+      "created_at": "2025-08-19T12:08:29.329Z",
+      "cooked": "<p>Yes, I also solved only one question and getting 43 as score, I have written it in separate post.</p>\n<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> <a class=\"mention\" href=\"/u/atulps\">@AtulPS</a> <a class=\"mention\" href=\"/u/subendu\">@Subendu</a>  Kindly Request instructors to please consider these cases for re-oppe. This OPPE score  would snatch a chance of scoring S in the course. I deliberately solved only 1 question as I wanted to re-appear on 23 Aug and finish the oppe with good marks towards achieving an S in the course. Also the VM was very slow for the much of the duration, only when many people reported the rebooting was done at a later stage. Still the “ <code>synchro status  \"</code> was not working properly, sometimes it gave results, and sometimes it was throwing errors.</p>\n<p>Please consider this is sincere student request to maintain better academic performance on our part.</p>\n<p>Regards,</p>\n<p>Sandeep</p>",
+      "post_number": 3,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-19T12:23:38.671Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 151,
+      "readers_count": 150,
+      "score": 35,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "sandeepkumar sudhakar surkute",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 3,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16751,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/3",
+      "user_cakedate": "2023-02-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665958,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-08-20T04:52:29.045Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/24f1002285\">@24f1002285</a> You have correctly solved Q1 and Q2 as well, fetching you 40 marks. Qs3 has a empty output test case that fetches you <span class=\"math\">\\frac{1}{7}\\times20</span> marks. You seem to pass another test case as well, total of <span class=\"math\">45.8</span> marks.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/3/1347af96e23b178e3634b1c9794ccd7c338952c3.jpeg\" data-download-href=\"/uploads/short-url/2KyEOmnLu3LfwOTc6FzZjgt1E0r.jpeg?dl=1\" title=\"Screenshot 2025-08-20 at 10.22.05\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/3/1347af96e23b178e3634b1c9794ccd7c338952c3_2_690x236.jpeg\" alt=\"Screenshot 2025-08-20 at 10.22.05\" data-base62-sha1=\"2KyEOmnLu3LfwOTc6FzZjgt1E0r\" width=\"690\" height=\"236\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/3/1347af96e23b178e3634b1c9794ccd7c338952c3_2_690x236.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/3/1347af96e23b178e3634b1c9794ccd7c338952c3_2_1035x354.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/3/1347af96e23b178e3634b1c9794ccd7c338952c3_2_1380x472.jpeg 2x\" data-dominant-color=\"323033\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-20 at 10.22.05</span><span class=\"informations\">1810×620 158 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/6/5604fd7556cc242779b925fbe265e722e5c93c38.png\" data-download-href=\"/uploads/short-url/cgXKIZ1jt0KMpAVLNVhWIyroRba.png?dl=1\" title=\"Screenshot 2025-08-20 at 10.21.30\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/6/5604fd7556cc242779b925fbe265e722e5c93c38_2_589x500.png\" alt=\"Screenshot 2025-08-20 at 10.21.30\" data-base62-sha1=\"cgXKIZ1jt0KMpAVLNVhWIyroRba\" width=\"589\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/5/6/5604fd7556cc242779b925fbe265e722e5c93c38_2_589x500.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/6/5604fd7556cc242779b925fbe265e722e5c93c38.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/5/6/5604fd7556cc242779b925fbe265e722e5c93c38.png 2x\" data-dominant-color=\"332F30\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-20 at 10.21.30</span><span class=\"informations\">856×726 152 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "post_number": 4,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-20T04:53:15.331Z",
+      "reply_count": 0,
+      "reply_to_post_number": 2,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 126,
+      "readers_count": 125,
+      "score": 25,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 35988,
+        "username": "24f1002285",
+        "name": "Harsh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/24f1002285/{size}/112501_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/4",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665959,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-08-20T04:56:23.112Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/22f3002925\">@22f3002925</a> You have solved Q1 and Q2 as well.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/1/410c7a0b32da43a31ff9514695f0d552cb056357.png\" data-download-href=\"/uploads/short-url/9hrLxNxa2M7Xib8IMtd3VmLa0nB.png?dl=1\" title=\"Screenshot 2025-08-20 at 10.24.03\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/4/1/410c7a0b32da43a31ff9514695f0d552cb056357.png\" alt=\"Screenshot 2025-08-20 at 10.24.03\" data-base62-sha1=\"9hrLxNxa2M7Xib8IMtd3VmLa0nB\" width=\"594\" height=\"326\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-20 at 10.24.03</span><span class=\"informations\">594×326 57.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>(this is the optimal solution btw)</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/8/a/8a2055cf67ceb4152c852ec8e75baabc00afc9fe.png\" data-download-href=\"/uploads/short-url/jHVasId6eVGrKQq28DDYhXgw9ZQ.png?dl=1\" title=\"Screenshot 2025-08-20 at 10.24.26\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/8/a/8a2055cf67ceb4152c852ec8e75baabc00afc9fe_2_690x131.png\" alt=\"Screenshot 2025-08-20 at 10.24.26\" data-base62-sha1=\"jHVasId6eVGrKQq28DDYhXgw9ZQ\" width=\"690\" height=\"131\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/8/a/8a2055cf67ceb4152c852ec8e75baabc00afc9fe_2_690x131.png, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/8/a/8a2055cf67ceb4152c852ec8e75baabc00afc9fe_2_1035x196.png 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/8/a/8a2055cf67ceb4152c852ec8e75baabc00afc9fe.png 2x\" data-dominant-color=\"2B292C\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-20 at 10.24.26</span><span class=\"informations\">1042×198 37.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>You would have run <code>synchro eval</code> once without the <code>#</code> to verify your solution is correct and later commented it out to fail the test cases purposefully. However the max of all your submissions are taken, so you have solved both the questions.</p>\n<p>Qs3 gives you a <span class=\"math\">\\frac{1}{7}\\times20</span> as one test case is empty.</p>\n<p>For a total of <span class=\"math\">42.8</span>.</p>",
+      "post_number": 5,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-20T04:56:23.112Z",
+      "reply_count": 1,
+      "reply_to_post_number": 3,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 122,
+      "readers_count": 121,
+      "score": 29.2,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 16751,
+        "username": "22f3002925",
+        "name": "sandeepkumar sudhakar surkute",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/5",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 665987,
+      "name": "Rohit Rai",
+      "username": "kingmancheste",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png",
+      "created_at": "2025-08-20T05:35:42.844Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> sir please reply to my case</p>",
+      "post_number": 6,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-20T05:35:42.844Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 112,
+      "readers_count": 111,
+      "score": 27.2,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "Rohit Rai",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 19727,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/6",
+      "user_cakedate": "2023-06-12",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666001,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-08-20T05:59:01.195Z",
+      "cooked": "<p>Can you provide your roll number?</p>",
+      "post_number": 7,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-20T05:59:01.195Z",
+      "reply_count": 1,
+      "reply_to_post_number": 6,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 107,
+      "readers_count": 106,
+      "score": 26.2,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 19727,
+        "username": "kingmancheste",
+        "name": "Rohit Rai",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/7",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666049,
+      "name": "Rohit Rai",
+      "username": "kingmancheste",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png",
+      "created_at": "2025-08-20T06:56:32.727Z",
+      "cooked": "<p>my roll number:  23f1000362</p>",
+      "post_number": 8,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-20T06:56:32.727Z",
+      "reply_count": 1,
+      "reply_to_post_number": 7,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 101,
+      "readers_count": 100,
+      "score": 25,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "Rohit Rai",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 19727,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/8",
+      "user_cakedate": "2023-06-12",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666096,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-08-20T07:47:58.495Z",
+      "cooked": "<aside class=\"quote group-ds-students\" data-username=\"kingmancheste\" data-post=\"8\" data-topic=\"185257\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://dub1.discourse-cdn.com/flex013/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/48/122562_2.png\" class=\"avatar\"> kingmancheste:</div>\n<blockquote>\n<p>23f1000362</p>\n</blockquote>\n</aside>\n<p>Scores:</p>\n<p>100,100,14,0,0 : total = 42.8</p>\n<p>Qs1: you have solved it and then removed the code, however since you have solved it correctly, it is considered as solved. (<code>100</code>)</p>\n<p>Qs2:<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510.jpeg\" data-download-href=\"/uploads/short-url/4pHxCPlYoYYxe3U4kdEdBV07g9W.jpeg?dl=1\" title=\"Screenshot 2025-08-20 at 13.17.04\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510_2_642x500.jpeg\" alt=\"Screenshot 2025-08-20 at 13.17.04\" data-base62-sha1=\"4pHxCPlYoYYxe3U4kdEdBV07g9W\" width=\"642\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510_2_642x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510_2_963x750.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/1/e/1ef079f35ae3f3ea5049205a16b93ee22a9d3510.jpeg 2x\" data-dominant-color=\"2F2C2E\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-20 at 13.17.04</span><span class=\"informations\">1208×940 120 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/original/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a.jpeg\" data-download-href=\"/uploads/short-url/1OW4PlmIlnaMxfjpPpro5KZ8xwS.jpeg?dl=1\" title=\"Screenshot 2025-08-20 at 13.17.27\" rel=\"noopener nofollow ugc\"><img src=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a_2_537x500.jpeg\" alt=\"Screenshot 2025-08-20 at 13.17.27\" data-base62-sha1=\"1OW4PlmIlnaMxfjpPpro5KZ8xwS\" width=\"537\" height=\"500\" srcset=\"https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a_2_537x500.jpeg, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a_2_805x750.jpeg 1.5x, https://europe1.discourse-cdn.com/flex013/uploads/iitm/optimized/3X/0/c/0cc4323449df07f3f4b94ef833daf138615f7f8a_2_1074x1000.jpeg 2x\" data-dominant-color=\"2A292E\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2025-08-20 at 13.17.27</span><span class=\"informations\">1878×1748 154 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Qs3: as discussed earlier, one test case passes, so <span class=\"math\">\\frac{1}{7}\\times20</span>.</p>",
+      "post_number": 9,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-20T07:47:58.495Z",
+      "reply_count": 0,
+      "reply_to_post_number": 8,
+      "quote_count": 1,
+      "incoming_link_count": 0,
+      "reads": 107,
+      "readers_count": 106,
+      "score": 21.2,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/9",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": true,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666110,
+      "name": "Rohit Rai",
+      "username": "kingmancheste",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png",
+      "created_at": "2025-08-20T08:14:34.325Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> sir Thank you for your reply regarding my OPPE scores. I wanted to clarify my situation further<br>\nFor Question 1, I had initially solved it, but later I removed my answer and submitted the final version as blank. Since my final submission did not contain the solution, I feel it should not be counted as solved.<br>\nFor Question 5, I had attempted it and was close to solving it, but due to a minor error, it did not pass. My intention in removing the earlier answer was to prepare for a proper retry in OPPE 2.</p>\n<p>And similar thing happened in question 4 where all test cases were good only issue in my code was it was not printing single digit number with a zero it was just printing that number.<br>\nSeeing both these questions as i was close to solving them i decided to remove question 1 solution and work more retry giving Re-OPPE.</p>",
+      "post_number": 10,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-20T08:14:34.325Z",
+      "reply_count": 1,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 97,
+      "readers_count": 96,
+      "score": 24.2,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "Rohit Rai",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 19727,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/10",
+      "user_cakedate": "2023-06-12",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666543,
+      "name": "Rohit Rai",
+      "username": "kingmancheste",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png",
+      "created_at": "2025-08-21T08:37:24.636Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a> sir as i had removed solution to question but i was assessed for it as well.<br>\ncan i be eligible to Re OPPE as in my last submission of Q1 did not had answers and also i want to give re OPPE. So am i eligible for Re OPPE?</p>",
+      "post_number": 11,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-21T08:37:24.636Z",
+      "reply_count": 1,
+      "reply_to_post_number": 10,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 90,
+      "readers_count": 89,
+      "score": 22.8,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "Rohit Rai",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 19727,
+        "username": "kingmancheste",
+        "name": "Rohit Rai",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 19727,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/11",
+      "user_cakedate": "2023-06-12",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 666544,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-08-21T08:38:13.993Z",
+      "cooked": "<p>That is not possible, we have taken the highest score for each question, since we had to re-evaluate all questions post the exam, if you get more than 40, we cannot allot a reOPPE.</p>",
+      "post_number": 12,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-21T08:38:13.993Z",
+      "reply_count": 0,
+      "reply_to_post_number": 11,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 90,
+      "readers_count": 89,
+      "score": 17.8,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 19727,
+        "username": "kingmancheste",
+        "name": "Rohit Rai",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/kingmancheste/{size}/122562_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/12",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 667281,
+      "name": "sandeepkumar sudhakar surkute",
+      "username": "22f3002925",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+      "created_at": "2025-08-23T18:58:36.994Z",
+      "cooked": "<p>At the end, I have lost chance for re-oppe due to mis-information during the live session about latest evaluation being the final one instead of the maximum of all evaluations. With that information only I ran and later commented some code to fail the question which did not work as planned. I had deliberately planned to re-do the OPPE because I had another OPPE on next day and wanted to score 100 in the SC.</p>\n<p>Also if the VM would have run satisfactorily, At least two more questions I could have completed successfully except maybe awk question scoring at least 80. The speed of VM seriously took away some time. The compensation was 30 minutes but the VM was slow after approx 10-15 minutes in to the exam. We did not feel the pinch because first two questions were relatively lighter to tackle. By the time we complained about VM in exam,  we were half way through time of the exam.</p>",
+      "post_number": 13,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-23T18:58:36.994Z",
+      "reply_count": 1,
+      "reply_to_post_number": 5,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 76,
+      "readers_count": 75,
+      "score": 20,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "sandeepkumar sudhakar surkute",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16751,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/13",
+      "user_cakedate": "2023-02-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 667674,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-08-25T05:21:06.558Z",
+      "cooked": "<aside class=\"quote group-ds-students\" data-username=\"22f3002925\" data-post=\"13\" data-topic=\"185257\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/48.png\" class=\"avatar\"> 22f3002925:</div>\n<blockquote>\n<p>I ran and later commented some code to fail the question which did not work as planned. I had deliberately planned to re-do the OPPE</p>\n</blockquote>\n</aside>\n<p>I hope you are aware that deliberately failing the OPPE is not allowed and not encouraged. This is the exact reason why reOPPE questions are harder, to discourage such practices.</p>\n<p>There have been hundreds of students who have scored <span class=\"math\">\\frac{100}{100}</span> in first OPPE despite the technical issues with the extra 30 minutes provided, and many more have performed well without resorting to such tactics.</p>\n<p>If you have solved a question, you get marks for said question.</p>",
+      "post_number": 14,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-25T05:21:06.558Z",
+      "reply_count": 1,
+      "reply_to_post_number": 13,
+      "quote_count": 1,
+      "incoming_link_count": 1,
+      "reads": 66,
+      "readers_count": 65,
+      "score": 38,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 1,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/14",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 1
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 1,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 668484,
+      "name": "sandeepkumar sudhakar surkute",
+      "username": "22f3002925",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+      "created_at": "2025-08-26T18:05:58.398Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a>  Sir, I also don’t like to postpone OPPE due to any tactics. In the same week, I had 2 project viva’s, and 2 OPEEs of PDSA and SC, i.e. SC in the evening 9-11 PM, and PDSA the next morning at 09:30 AM. And all this I was to complete as full time working professional.</p>\n<p>Flexibility of this online programme was the key motivation for me to join the programme along with a full time job.</p>\n<p>Also, I had requested support to postpone PDSA OPPE to 23 or 24 Aug, which was not done by them. Only then I had decided to re-do the SC-OPPE in the second slot only from the perspective of appearing with full revision, and no other intention than to continue the good grades in the programme specially in my favourite subject of SC.</p>\n<p>I accept the results and would like to clarify that there were no ill-intended tactics other than just to purely space out different OPPEs/ Project Vivas, since it was not done by Support automatically despite there being slots for PDSA on 23 and 24.</p>\n<p>I respect my instructors and their decisions, therefore I would not like them to think that there were some tactics in there. Hence, this clarification from my side about the schedule I was facing for the OPPE week.</p>",
+      "post_number": 15,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-26T18:05:58.398Z",
+      "reply_count": 1,
+      "reply_to_post_number": 14,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 59,
+      "readers_count": 58,
+      "score": 16.6,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "sandeepkumar sudhakar surkute",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16751,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/15",
+      "user_cakedate": "2023-02-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 668618,
+      "name": "Sayan Ghosh",
+      "username": "sayan",
+      "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png",
+      "created_at": "2025-08-27T06:57:33.119Z",
+      "cooked": "<p>I can understand your situation, it becomes hectic trying to manage multiple subjects/OPPE/project vivas in the same week.</p>\n<p>(SC OPPE was 7pm to 9:30pm though, not 9pm to 11pm).</p>\n<p>Usually the OPPE slots are not moved around and are mentioned before the registration in the grading document so that students can choose non-conflicting subjects in a term during registration. However, it might not always be possible to avoid conflicts.</p>\n<p>However, since we had to perform a re-grade  of all solutions post the OPPE due to submission issue, it leaves us no choice but to take the max of the attempts, so that the latest rescore does not override someone’s previously successful attempt.</p>",
+      "post_number": 16,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-08-27T06:57:42.363Z",
+      "reply_count": 1,
+      "reply_to_post_number": 15,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 55,
+      "readers_count": 54,
+      "score": 45.8,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "Sayan Ghosh",
+      "primary_group_name": "course_support",
+      "flair_name": "course_support",
+      "flair_url": "scale-balanced",
+      "flair_bg_color": "0040ff",
+      "flair_color": "1affc6",
+      "flair_group_id": 41,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": "Leader",
+      "title_is_group": false,
+      "reply_to_user": {
+        "id": 16751,
+        "username": "22f3002925",
+        "name": "sandeepkumar sudhakar surkute",
+        "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "count": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "group_moderator": true,
+      "user_id": 348,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/16",
+      "user_cakedate": "2021-04-28",
+      "user_birthdate": "1904-07-30",
+      "reactions": [
+        {
+          "id": "heart",
+          "type": "emoji",
+          "count": 2
+        }
+      ],
+      "current_user_reaction": null,
+      "reaction_users_count": 2,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    },
+    {
+      "id": 684917,
+      "name": "sandeepkumar sudhakar surkute",
+      "username": "22f3002925",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/2/a9adbd/{size}.png",
+      "created_at": "2025-10-10T02:18:26.118Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/sayan\">@sayan</a></p>\n<p>Thanks for understanding.</p>\n<p>P.S. And yes, the time of SC OPPE is as corrected in your reply. I erroneously wrote 9-11pm in my post.</p>",
+      "post_number": 17,
+      "post_type": 1,
+      "posts_count": 17,
+      "updated_at": "2025-10-10T02:18:26.118Z",
+      "reply_count": 0,
+      "reply_to_post_number": 16,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 31,
+      "readers_count": 30,
+      "score": 6,
+      "yours": false,
+      "topic_id": 185257,
+      "topic_slug": "clarification-needed-on-oppe-score",
+      "display_username": "sandeepkumar sudhakar surkute",
+      "primary_group_name": "ds-students",
+      "flair_name": "ds-students",
+      "flair_url": null,
+      "flair_bg_color": "",
+      "flair_color": "",
+      "flair_group_id": 294,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": false,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": false,
+      "can_wiki": false,
+      "read": false,
+      "user_title": null,
+      "reply_to_user": {
+        "id": 348,
+        "username": "sayan",
+        "name": "Sayan Ghosh",
+        "avatar_template": "/user_avatar/discourse.onlinedegree.iitm.ac.in/sayan/{size}/112713_2.png"
+      },
+      "bookmarked": false,
+      "actions_summary": [
+        {
+          "id": 2,
+          "can_act": true
+        },
+        {
+          "id": 6,
+          "can_act": true
+        },
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": false,
+      "staff": false,
+      "user_id": 16751,
+      "hidden": false,
+      "trust_level": 1,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "post_url": "/t/clarification-needed-on-oppe-score/185257/17",
+      "user_cakedate": "2023-02-06",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": true
+    }
+  ]
+}
