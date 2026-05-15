@@ -79,7 +79,8 @@
               <svg class="select-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             
-            <input type="email" id="emailInput" placeholder="21f1000000@ds.study.iitm.ac.in" autocomplete="email">
+            <input type="email" id="emailInput" list="emailHistory" placeholder="21f1000000@ds.study.iitm.ac.in" autocomplete="email">
+            <datalist id="emailHistory"></datalist>
             <button id="solveBtn">Initialize Workspace</button>
           </div>
         </div>
@@ -157,6 +158,7 @@
           <button class="btn-ghost" id="copyDebugBtn">Copy Debug Report</button>
           <button class="btn-ghost" id="resetUiBtn">Reset UI</button>
           <div class="divider"></div>
+          <button class="btn-ghost" id="printExamBtn">Print Cheat Sheet</button>
           <button class="btn-ghost" id="exportMdBtn">jsonl.md</button>
           <button class="btn-ghost" id="exportJsonBtn">state.json</button>
         </div>

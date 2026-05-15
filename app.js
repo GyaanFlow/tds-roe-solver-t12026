@@ -45,7 +45,8 @@ const STORAGE_KEYS = {
   search: 'tdsNodeSearch',
   selectedQuestion: 'tdsSelectedQuestion',
   rawWrap: 'tdsRawWrap',
-  openPanels: 'tdsOpenPanels'
+  openPanels: 'tdsOpenPanels',
+  emailHistory: 'tdsEmailHistory'
 };
 
 // Term → exam registry
@@ -145,6 +146,18 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
   ensureToastRoot();
+
+  // Load email history
+  const savedEmailHistory = localStorage.getItem(STORAGE_KEYS.emailHistory);
+  if (savedEmailHistory) {
+    try {
+      const history = JSON.parse(savedEmailHistory);
+      const datalist = document.getElementById('emailHistory');
+      if (datalist && Array.isArray(history)) {
+        datalist.innerHTML = history.map(e => `<option value="${e}">`).join('');
+      }
+    } catch (_) {}
+  }
 
   // Fetch dynamic configuration for the welcome screen
   fetch('tds-config.json')
@@ -779,6 +792,14 @@ async function startSolving() {
   localStorage.setItem(STORAGE_KEYS.email, email);
   localStorage.setItem(STORAGE_KEYS.exam, currentExam);
 
+  // Update email history
+  let history = [];
+  try { history = JSON.parse(localStorage.getItem(STORAGE_KEYS.emailHistory) || '[]'); } catch (_) {}
+  history = [email, ...history.filter(e => e !== email)].slice(0, 10);
+  localStorage.setItem(STORAGE_KEYS.emailHistory, JSON.stringify(history));
+  const datalist = document.getElementById('emailHistory');
+  if (datalist) datalist.innerHTML = history.map(e => `<option value="${e}">`).join('');
+
   solveBtn.disabled = true;
   solveBtn.innerText = 'Initializing...';
   questionNav.innerHTML = '';
@@ -1010,6 +1031,53 @@ copyDebugBtn.addEventListener('click', (event) => {
   safeTrack('copy_debug_report', { exam: workspaceData.exam || 'none' });
 });
 resetUiBtn.addEventListener('click', resetStoredUiState);
+
+const printExamBtn = document.getElementById('printExamBtn');
+if (printExamBtn) {
+  printExamBtn.addEventListener('click', () => {
+    if (!workspaceData.answers.length) return showToast('No data to print', 'error');
+    
+    let printHtml = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Cheat Sheet - ${escapeHtml(workspaceData.exam)}</title>
+        <style>
+          body { font-family: sans-serif; color: #000; background: #fff; padding: 20px; }
+          .q-block { margin-bottom: 30px; page-break-inside: avoid; border-bottom: 1px solid #ccc; padding-bottom: 20px; }
+          h2 { margin: 0 0 10px; font-size: 18px; color: #333; }
+          .meta { font-size: 12px; color: #666; margin-bottom: 10px; }
+          pre { background: #f4f4f4; padding: 10px; border-radius: 4px; white-space: pre-wrap; font-size: 12px; border: 1px solid #ddd; }
+        </style>
+      </head>
+      <body>
+        <h1>${escapeHtml(workspaceData.exam)} - ${escapeHtml(workspaceData.email)}</h1>
+    `;
+    
+    workspaceData.answers.forEach((ans, i) => {
+      printHtml += `
+        <div class="q-block">
+          <h2>Q${i + 1}: ${escapeHtml(ans.title)}</h2>
+          <div class="meta">Variant: ${escapeHtml(ans.variant || 'N/A')}</div>
+          <pre>${escapeHtml(ans.answer)}</pre>
+        </div>
+      `;
+    });
+    
+    printHtml += `</body></html>`;
+    
+    const printWin = window.open('', '_blank');
+    printWin.document.write(printHtml);
+    printWin.document.close();
+    printWin.focus();
+    // Use a slight timeout to let browser render the HTML before printing
+    setTimeout(() => {
+      printWin.print();
+    }, 250);
+    
+    safeTrack('print_exam', { exam: workspaceData.exam });
+  });
+}
 
 exportMdBtn.addEventListener('click', () => {
   let md = `# Workspace Export | ${String(workspaceData.exam || '').toUpperCase()}\n`;
