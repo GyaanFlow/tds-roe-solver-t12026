@@ -13,8 +13,10 @@ This project has a **graphify knowledge graph** at `graphify-out/`.
 4. Use `graphify explain "<concept>"` for plain-language node explanations
 5. After modifying code files, run `graphify update .` to keep the graph current (AST-only, free)
 
-**Graph stats:** 475 nodes · 889 edges · 28 communities · 87% EXTRACTED edges
-**God nodes:** `rng()` (38 edges), `normalizeEmail()` (26 edges), `renderCanvas()` (17 edges)
+**Graph stats:** 545 nodes · 1050 edges · 40 communities · 79% EXTRACTED edges
+**God nodes:** `rng()` (52 edges), `normalizeEmail()` (43 edges), `renderCanvas()` (17 edges)
+
+**Current graphify CLI note:** `python -m graphify update .` successfully rebuilds `graphify-out/graph.json`, `graph.html`, and `GRAPH_REPORT.md`, then the installed CLI currently exits with `NameError: name '_os' is not defined` while printing optional tips. Treat the graph outputs as updated if the rebuild lines appear before that traceback.
 
 ## Project Purpose
 
@@ -26,7 +28,8 @@ Current supported terms & targets:
   - `ga7`
   - `ga8`
   - `p2` — Project 2 Part B (Q3: QR Forensics + Q4: Discourse KB)
-- `T22026` — Term 2 2026 (May–Sep) · 🚧 placeholder, no solvers yet
+- `T22026` — Term 2 2026 (May–Sep)
+  - `ga0` — Standard 25-question exam suite
 
 The app runs locally in the browser, loads a solver registry for the selected exam, executes each solver for a user email, and renders answers plus diagnostics.
 
@@ -41,7 +44,7 @@ The app runs locally in the browser, loads a solver registry for the selected ex
 - `ga7-verify.js`: GA7 batch verification logic
 - `tds-config.json`: dynamic welcome screen config + term/exam registry metadata
 - `solvers/T12026/`: all T1 2026 exam solver folders
-- `solvers/T22026/`: placeholder for T2 2026 (README only)
+- `solvers/T22026/`: T2 2026 solvers (GA0 finalized)
 
 ## Solver Architecture
 
@@ -58,6 +61,7 @@ The main flow is:
   type,
   variant,
   answerDisplay,
+  guide,
   debug
 }
 ```
@@ -254,8 +258,7 @@ The P2 solver is a **guide-type** interactive solver (unlike GA8 solvers that au
 3. The user pastes their 50 tasks into the textarea in the "Rendered Notes" panel
 4. Clicking "Solve All Tasks" parses, validates, and solves all tasks in-browser
 5. Results are shown as JSON ready to copy-paste to the grader
-
-Global handlers (`window._p2bSolve`, `window._p2bCopy`) are registered on the window object for onclick interactivity.
+6. Global handlers (`window._p2bSolve`, `window._p2bCopy`) are registered on the window object for onclick interactivity.
 
 ### Vercel Deployment
 
@@ -264,9 +267,46 @@ Global handlers (`window._p2bSolve`, `window._p2bCopy`) are registered on the wi
 - No server-side logic needed — everything runs client-side
 - Tested: all 11 handler types produce real answers against the 20571-topic cache
 
+## GA0 (T22026) Notes
+
+The GA0 suite contains 25 solvers covering data science basics, shell scripting, automation, and web APIs.
+
+### Key Implementation Details
+
+- **Standardized Order**: Solvers are strictly ordered Q1–Q25 in `solvers/T22026/ga0/registry.js`.
+- **Official Bundle Alignment**: IDs/order are matched against `exam-tds-2026-05-ga0.js` from `https://exam.sanand.workers.dev/exam-tds-2026-05-ga0.js`.
+- **Deterministic RNG**: Seeded solvers use `rng(seed)` from `utils.js` (bridged to `Math.seedrandom` in `index.html`) to mirror official `seedrandom` behavior.
+- **Forensic Accuracy**: Q1, Q3, Q6, Q7, Q9, Q14, Q15, Q22, and Q23 use constants or generation logic derived from the official exam bundle.
+- **Automation Scripts**: Q16 (Move/Rename) and Q19 (Bulk Replace) provide complete Python scripts for direct local execution.
+- **Hosted/API Tasks**: Q5, Q10, Q11, Q18, and Q25 provide validator-compatible endpoints or deployment instructions, including CORS and expected JSON shapes.
+
+### Recent GA0 Production Hardening
+
+- `check.mjs` now verifies official GA0 Q1-Q25 ID/order and executes every GA0 solver for multiple representative emails.
+- Q1 Axis Scale uses the official scenario seed path and computes distortion values per user.
+- Q5 Code Interpreter exposes `POST /code-interpreter` and returns `{ error: number[], result: string }`, matching the official validator.
+- Q10 FastAPI Students uses the official `q-fastapi` ID, repeated `class` query params, original CSV order, and `{ students: [...] }` response shape.
+- Q11 FastAPI Sentiment has a broader deterministic rule set for the hidden official sentence pool.
+- Q12 LLM Yes targets the exact case-sensitive word `Yes`.
+- Q14 Image Grayscale rebuilds the official 5x5 jigsaw mapping and applies Rec.709 grayscale weights.
+- Q25 Vercel Latency accepts POST on both `/` and `/api/latency`, computes per-region mean, p95, uptime, and breach count.
+
+### UI Formatting
+
+GA0 solvers utilize the **Implementation Guide** pattern:
+1. `answer`: Raw code, SQL, or JSON for the primary solution.
+2. `answerDisplay`: Markdown-formatted quick steps (rendered via `marked.js`).
+3. `guide`: Detailed step-by-step implementation guide (rendered via `marked.js` in a dedicated panel).
+
 ## UI Improvements Already Applied
 
 The UI in `app.js` and `style.css` has been substantially improved.
+
+### Markdown & Instructions
+
+- **Markdown Rendering**: `app.js` now uses `marked.js` to render `answerDisplay` as rich HTML.
+- **Pre-wrap Support**: `.styled-output` in `style.css` uses `white-space: pre-wrap` for readable multiline instructions.
+- **Code Highlighting**: In-note code blocks are styled for high contrast.
 
 ### Stability and Usability
 
@@ -283,6 +323,7 @@ The UI in `app.js` and `style.css` has been substantially improved.
 - Collapsible sections for answer panels
 - Copy buttons with fallback clipboard path
 - HTML answer preview iframe
+- **Implementation Guide Panel**: A dedicated success-themed panel for detailed usage instructions.
 - Keyboard navigation with arrow keys and focus-visible rings
 - Debounced sidebar filtering
 - Mobile question picker
@@ -331,7 +372,7 @@ npm run check
 Current expected success output:
 
 ```text
-Checks passed: GA7 solvers=15, ROE solvers=15, GA8 solvers=15, P2 solvers=2
+Checks passed: GA7 solvers=15, ROE solvers=15, GA8 solvers=15, P2 solvers=2, GA0 solvers=25
 ```
 
 > Note: Registry paths are now `solvers/T12026/<exam>/registry.js`.
@@ -341,6 +382,9 @@ The smoke check covers:
 - server startup path
 - key route serving
 - traversal protection logic
+- GA8 official ID/order and seeded sample parity
+- GA0 official ID/order parity
+- GA0 solver execution for multiple representative emails
 
 ## Known Gaps / Next Good Improvements
 
@@ -352,6 +396,8 @@ These are reasonable next steps:
 - improve accessibility further with stronger ARIA/live-region coverage
 - add offline caching if this is meant to be reused heavily
 - add GA8 verification page similar to `ga7-verify.html`
+- add a GA0 browser verifier page similar to `ga7-verify.html`
+- fix or upgrade the installed Graphify CLI so it no longer throws `_os` after successful rebuilds
 - consider moving the Q16 bonus builder out of `app.js` into a dedicated solver file for consistency
 
 ## Non-Repo Context Worth Knowing

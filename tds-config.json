@@ -11,9 +11,8 @@
     },
     "T22026": {
       "label": "T2 2026 (May–Sep)",
-      "active": false,
-      "comingSoon": true,
-      "exams": []
+      "active": true,
+      "exams": ["ga0"]
     }
   }
 }

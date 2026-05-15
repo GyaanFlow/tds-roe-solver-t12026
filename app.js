@@ -55,7 +55,9 @@ const TERM_EXAMS = {
     { group: 'Weekly Graded Assignments', value: 'ga7', label: 'GA 7 (Data Visualization)' },
     { group: 'Weekly Graded Assignments', value: 'ga8', label: 'GA 8 (MLOps & DevOps)' },
   ],
-  T22026: [] // placeholder — no solvers yet
+  T22026: [
+    { group: 'Weekly Graded Assignments', value: 'ga0', label: 'GA 0 (Warm-up Exam)' }
+  ]
 };
 
 function populateExamSelect(term) {
@@ -483,7 +485,14 @@ function renderAnswerPanel(data, langClass) {
 
 function renderNotesPanel(data) {
   if (!data.answerDisplay) return '';
-  return createSection('Rendered Notes', `<div class="styled-output">${data.answerDisplay}</div>`);
+  const rendered = typeof marked !== 'undefined' ? marked.parse(data.answerDisplay) : data.answerDisplay;
+  return createSection('Rendered Notes', `<div class="styled-output">${rendered}</div>`);
+}
+
+function renderGuidePanel(data) {
+  if (!data.guide) return '';
+  const rendered = typeof marked !== 'undefined' ? marked.parse(data.guide) : data.guide;
+  return createSection('Implementation Guide', `<div class="styled-output guide-output">${rendered}</div>`, { open: true, extraClass: 'panel-guide' });
 }
 
 function renderDiagnosticsPanel(debug) {
@@ -661,6 +670,7 @@ function renderCanvas(index) {
       ${renderVariantPanel(data)}
       ${renderPreviewPanel(data)}
       ${renderAnswerPanel(data, langClass)}
+      ${renderGuidePanel(data)}
       ${renderNotesPanel(data)}
       ${renderDiagnosticsPanel(data.debug)}
     </div>
@@ -741,6 +751,7 @@ async function startSolving() {
           type: result.type || 'solved',
           variant: result.variant,
           answerDisplay: result.answerDisplay,
+          guide: result.guide,
           debug: result.debug
         });
       } catch (error) {

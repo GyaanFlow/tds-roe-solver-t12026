@@ -192,6 +192,63 @@ async function checkGa8OfficialParity(solvers) {
   }
 }
 
+function checkGa0OfficialOrder(solvers) {
+  const officialIds = [
+    'q-axis-scale-manipulation-repair',
+    'q-binary-eval-rubric',
+    'q-bug-hunter-property-based-testing',
+    'q-calculate-variance',
+    'q-code-interpreter-ai-analysis',
+    'q-colorencoding-server',
+    'q-crawl-html',
+    'q-css-selectors-sum',
+    'q-dbt-operations-dashboard',
+    'q-fastapi',
+    'q-fastapi-sentiment-batch',
+    'q-get-llm-to-say-yes',
+    'q-github-action',
+    'q-image-grayscale-rebuild',
+    'q-llm-sentiment-analysis',
+    'q-move-rename-files',
+    'q-network-game-detective',
+    'q-ollama',
+    'q-replace-across-files',
+    'q-sort-filter-json',
+    'q-sql-average-salary',
+    'q-unicode-data',
+    'q-use-devtools',
+    'q-use-github',
+    'q-vercel-latency'
+  ];
+
+  assert(solvers.length === officialIds.length, `Expected ${officialIds.length} GA0 solvers, got ${solvers.length}.`);
+  assert(
+    solvers.map((solver) => solver.id).join('|') === officialIds.join('|'),
+    'GA0 solver order/IDs no longer match the official May 2026 GA0 bundle.'
+  );
+}
+
+async function checkGa0SolversExecute(solvers) {
+  const sampleEmails = [
+    '21f1000000@ds.study.iitm.ac.in',
+    '22f2001234@ds.study.iitm.ac.in',
+    'USER.Test+GA0@Example.COM'
+  ];
+
+  for (const email of sampleEmails) {
+    for (const solver of solvers) {
+      const result = await solver.solve(email);
+      assert(result && typeof result === 'object', `GA0 ${solver.id} returned a non-object result.`);
+      assert(typeof result.answer === 'string', `GA0 ${solver.id} answer must be a string.`);
+      assert(result.answer.length > 0, `GA0 ${solver.id} answer must not be empty.`);
+      assert(
+        ['solved', 'guide', 'bypass', 'error'].includes(result.type),
+        `GA0 ${solver.id} returned unexpected result type: ${result.type}.`
+      );
+    }
+  }
+}
+
 async function main() {
   installBrowserStubs();
 
@@ -206,16 +263,20 @@ async function main() {
   const roeRegistry = await importFresh('solvers/T12026/roe/registry.js');
   const ga8Registry = await importFresh('solvers/T12026/ga8/registry.js');
   const p2Registry = await importFresh('solvers/T12026/p2/registry.js');
+  const ga0Registry = await importFresh('solvers/T22026/ga0/registry.js');
 
   assert(Array.isArray(ga7Registry.solvers) && ga7Registry.solvers.length > 0, 'GA7 registry did not load solvers.');
   assert(Array.isArray(roeRegistry.solvers) && roeRegistry.solvers.length > 0, 'ROE registry did not load solvers.');
   assert(Array.isArray(ga8Registry.solvers) && ga8Registry.solvers.length > 0, 'GA8 registry did not load solvers.');
   assert(Array.isArray(p2Registry.solvers) && p2Registry.solvers.length === 2, 'P2 registry should have exactly 2 solvers (Q3 + Q4).');
+  assert(Array.isArray(ga0Registry.solvers) && ga0Registry.solvers.length === 25, `GA0 registry should have exactly 25 solvers, got ${ga0Registry.solvers.length}.`);
   await checkGa8OfficialParity(ga8Registry.solvers);
+  checkGa0OfficialOrder(ga0Registry.solvers);
+  await checkGa0SolversExecute(ga0Registry.solvers);
 
   await checkServerRoutes();
 
-  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}`);
+  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}`);
 }
 
 main().catch((error) => {

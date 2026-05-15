@@ -419,8 +419,39 @@ body {
 }
 
 .styled-output {
-  padding: 24px; border-left: 2px solid var(--border-focus); background: var(--bg-hover);
-  border-radius: 0 8px 8px 0; color: var(--text-secondary); font-size: 14px; line-height: 1.7;
+  padding: 24px; 
+  border-left: 2px solid var(--border-focus); 
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0 8px 8px 0; 
+  color: var(--text-secondary); 
+  font-size: 14px; 
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.styled-output code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  color: var(--accent);
+}
+
+.panel-guide {
+  border-color: rgba(46, 204, 113, 0.4);
+}
+
+.guide-output {
+  border-left-color: var(--success);
+  background: rgba(46, 204, 113, 0.05);
+}
+
+.styled-output pre {
+  background: #0d0d0d;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 12px 0;
+  overflow: auto;
 }
 
 .panel-section {
