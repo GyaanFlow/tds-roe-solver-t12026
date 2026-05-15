@@ -116,7 +116,9 @@ window.addEventListener('DOMContentLoaded', () => {
   const savedOpenPanels = localStorage.getItem(STORAGE_KEYS.openPanels);
 
   // Restore term first, then populate exam list, then restore exam
-  const activeTerm = savedTerm || 'T12026';
+  const termKeys = Object.keys(TERM_EXAMS);
+  const latestTerm = termKeys.length > 0 ? termKeys[termKeys.length - 1] : '';
+  const activeTerm = savedTerm || latestTerm;
   termSelect.value = activeTerm;
   populateExamSelect(activeTerm);
   if (savedExam) examSelect.value = savedExam;
