@@ -29,6 +29,7 @@ const mobileNavToggle = document.getElementById('mobileNavToggle');
 const mobileOverlay = document.getElementById('mobileOverlay');
 const mobileQuestionPicker = document.getElementById('mobileQuestionPicker');
 const mobileQuestionPickerWrap = document.getElementById('mobileQuestionPickerWrap');
+const dashboardToggle = document.getElementById('dashboardToggle');
 
 let workspaceData = {
   exam: null,
@@ -619,7 +620,69 @@ function bindCanvasActions(data) {
   });
 }
 
+function renderDashboard() {
+  selectedQuestionIndex = -1;
+  persistUiState();
+
+  document.querySelectorAll('.nav-item').forEach((el) => el.classList.remove('active'));
+  dashboardToggle.classList.add('active');
+
+  breadcrumbs.innerHTML = `
+    <span class="crumb">tds-portal</span>
+    <span class="separator">/</span>
+    <span class="crumb">${escapeHtml(workspaceData.exam || 'workspace')}</span>
+    <span class="separator">/</span>
+    <span class="crumb highlight">overview</span>
+  `;
+
+  exportActions.classList.add('hidden');
+
+  const cardsHtml = workspaceData.answers.map((ans, idx) => {
+    let statusClass = 'status-stable';
+    let badgeClass = 'badge-stable';
+    if (ans.type === 'error') {
+      statusClass = 'status-error';
+      badgeClass = 'badge-error';
+    } else if (ans.type === 'guide') {
+      statusClass = 'status-check';
+      badgeClass = 'badge-check';
+    } else if (ans.type === 'bypass') {
+      statusClass = 'status-stable';
+      badgeClass = 'badge-stable';
+    }
+
+    return `
+      <div class="dashboard-card ${statusClass}" onclick="document.querySelector('.nav-item[data-idx=\\'${idx}\\']').click()">
+        <h3>${ans.title.split(' ')[0] || `Q${idx+1}`}</h3>
+        <div class="q-title">${escapeHtml(ans.title)}</div>
+        <div class="q-meta">
+          <span class="status-badge ${badgeClass}">${ans.type}</span>
+          <span>${ans.debug?.durationText || '0ms'}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  canvas.innerHTML = `
+    <div class="dashboard-container">
+      <div class="dashboard-header">
+        <h1>System Overview</h1>
+        <p>Execution health matrix for ${escapeHtml(workspaceData.email)}</p>
+      </div>
+      <div class="dashboard-grid">
+        ${cardsHtml}
+      </div>
+    </div>
+  `;
+}
+
 function renderCanvas(index) {
+  if (index === -1) {
+    renderDashboard();
+    return;
+  }
+
+  dashboardToggle.classList.remove('active');
   const data = workspaceData.answers[index];
   if (!data) return;
 
@@ -805,12 +868,13 @@ async function startSolving() {
     workspaceStats.classList.remove('hidden');
     navTitle.classList.remove('hidden');
     nodeSearch.classList.remove('hidden');
+    dashboardToggle.classList.remove('hidden');
     statSolved.innerText = String(statsTracker.solved);
     statBypass.innerText = String(statsTracker.bypass);
     statGuide.innerText = String(statsTracker.guide);
 
     if (workspaceData.answers.length > 0) {
-      selectedQuestionIndex = Math.min(preferredQuestionIndex, workspaceData.answers.length - 1);
+      selectedQuestionIndex = preferredQuestionIndex !== -1 ? Math.min(preferredQuestionIndex, workspaceData.answers.length - 1) : -1;
       populateMobileQuestionPicker();
       renderCanvas(selectedQuestionIndex);
       showToast(`Workspace ready. ${workspaceData.answers.length} questions loaded.`, 'success');
@@ -857,6 +921,13 @@ function downloadFile(filename, content, mime) {
   anchor.click();
   URL.revokeObjectURL(url);
 }
+
+dashboardToggle?.addEventListener('click', () => {
+  renderCanvas(-1);
+  if (window.innerWidth <= 768) {
+    setMobileNavOpen(false);
+  }
+});
 
 nodeSearch.addEventListener('input', (event) => {
   clearTimeout(searchDebounceId);

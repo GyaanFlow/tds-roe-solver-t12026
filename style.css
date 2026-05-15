@@ -727,3 +727,122 @@ body {
     min-height: 240px;
   }
 }
+
+/* ── Dashboard (Overview) ── */
+.dashboard-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-y: auto;
+  height: 100%;
+  animation: dashboardFadeIn 0.4s ease-out;
+}
+@keyframes dashboardFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.dashboard-header {
+  margin-bottom: 32px;
+}
+.dashboard-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.dashboard-header p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.dashboard-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-focus);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.dashboard-card.status-stable { border-left: 4px solid var(--success); }
+.dashboard-card.status-check { border-left: 4px solid var(--warning); }
+.dashboard-card.status-error { border-left: 4px solid var(--error); }
+
+.dashboard-card h3 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.dashboard-card .q-title {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+.dashboard-card .q-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: auto;
+}
+.dashboard-card .status-badge {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.badge-stable { background: rgba(46, 204, 113, 0.15); color: #2ecc71; }
+.badge-check { background: rgba(241, 196, 15, 0.15); color: #f1c40f; }
+.badge-error { background: rgba(231, 76, 60, 0.15); color: #e74c3c; }
+
+/* ── Sidebar Dashboard Tab ── */
+.sidebar-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+.sidebar-tab-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+.sidebar-tab-btn.active {
+  background: var(--bg-active);
+  color: var(--text-primary);
+  box-shadow: inset 3px 0 0 var(--info);
+}
+.sidebar-tab-btn i {
+  font-size: 16px;
+  color: var(--info);
+}
