@@ -121,7 +121,10 @@ window.addEventListener('DOMContentLoaded', () => {
   const activeTerm = savedTerm || latestTerm;
   termSelect.value = activeTerm;
   populateExamSelect(activeTerm);
-  if (savedExam) examSelect.value = savedExam;
+
+  const activeExams = TERM_EXAMS[activeTerm] || [];
+  const latestExam = activeExams.length > 0 ? activeExams[activeExams.length - 1].value : '';
+  examSelect.value = savedExam || latestExam;
 
   if (savedEmail) emailInput.value = savedEmail;
   if (savedSearch) nodeSearch.value = savedSearch;
