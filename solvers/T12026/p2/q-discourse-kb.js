@@ -24,7 +24,7 @@ async function loadFacts() {
 
   _factsLoadPromise = (async () => {
     try {
-      const resp = await fetch('./solvers/p2/compact_facts.json');
+      const resp = await fetch('./solvers/T12026/p2/compact_facts.json');
       if (!resp.ok) throw new Error(`HTTP ${resp.status} ${resp.statusText}`);
       _factsCache = await resp.json();
       const totalTopics = Object.values(_factsCache).reduce((s, v) => s + v.length, 0);
