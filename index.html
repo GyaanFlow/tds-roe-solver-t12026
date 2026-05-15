@@ -184,5 +184,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
   <script type="module" src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('[ServiceWorker] Registered with scope:', registration.scope);
+        }).catch(err => {
+          console.error('[ServiceWorker] Registration failed:', err);
+        });
+      });
+    }
+  </script>
 </body>
 </html>

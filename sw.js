@@ -1,0 +1,85 @@
+const CACHE_NAME = 'tds-portal-v1';
+
+const CORE_ASSETS = [
+  '/',
+  '/index.html',
+  '/app.js',
+  '/style.css',
+  '/manifest.json',
+  '/tds-config.json',
+  // CDNs
+  'https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/seedrandom.min.js',
+  'https://cdn.jsdelivr.net/npm/marked/marked.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css',
+  'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js'
+];
+
+// Install Event - Precache core assets
+self.addEventListener('install', (event) => {
+  self.skipWaiting();
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log('[ServiceWorker] Pre-caching core assets');
+      return cache.addAll(CORE_ASSETS);
+    })
+  );
+});
+
+// Activate Event - Clean up old caches
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cache) => {
+          if (cache !== CACHE_NAME) {
+            console.log('[ServiceWorker] Removing old cache', cache);
+            return caches.delete(cache);
+          }
+        })
+      );
+    }).then(() => self.clients.claim())
+  );
+});
+
+// Fetch Event - Network First for solvers/data, Cache First for static
+self.addEventListener('fetch', (event) => {
+  const url = new URL(event.request.url);
+
+  // Ignore non-GET requests and non-http/https
+  if (event.request.method !== 'GET' || !url.protocol.startsWith('http')) {
+    return;
+  }
+
+  // Ignore analytics
+  if (url.hostname.includes('vercel-insights')) {
+    return;
+  }
+
+  // Network-first strategy (Stale-While-Revalidate hybrid)
+  event.respondWith(
+    caches.match(event.request).then((cachedResponse) => {
+      const fetchPromise = fetch(event.request).then((networkResponse) => {
+        // Only cache valid responses
+        if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
+          const responseToCache = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
+        }
+        return networkResponse;
+      }).catch((err) => {
+        console.warn('[ServiceWorker] Network fetch failed, falling back to cache if available', err);
+        // If we have a cached response, return it. Otherwise, let it fail.
+        if (cachedResponse) {
+           return cachedResponse;
+        }
+        throw err;
+      });
+
+      // Return cached immediately if available, otherwise wait for network
+      return cachedResponse || fetchPromise;
+    })
+  );
+});
