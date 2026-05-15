@@ -1,112 +1,113 @@
 # TDS Exam Portal — Elite Workspace
 
-![Execution](https://img.shields.io/badge/execution-local_only-success)
-![Dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen)
-![Vercel Ready](https://img.shields.io/badge/deployment-vercel_ready-black)
-![Architecture](https://img.shields.io/badge/architecture-deterministic-blue)
+![TDS Portal Banner](file:///C:/Users/gaura/.gemini/antigravity/brain/0ccffd48-bb4b-4185-a771-ef43fa52f090/tds_portal_banner_1778839734088.png)
 
-A production-ready, browser-based workspace for executing deterministic solver logic across IIT Madras Tools in Data Science (TDS) exams. 
-
-Designed as a sleek, dynamic frontend with a lightweight local server, the portal dynamically loads exam-specific solver registries and executes them instantly entirely within the user's browser.
+<p align="center">
+  <img src="https://img.shields.io/badge/execution-local_only-success?style=for-the-badge" alt="Execution" />
+  <img src="https://img.shields.io/badge/dependencies-zero-brightgreen?style=for-the-badge" alt="Dependencies" />
+  <img src="https://img.shields.io/badge/deployment-vercel_ready-black?style=for-the-badge" alt="Vercel Ready" />
+  <img src="https://img.shields.io/badge/architecture-deterministic-blue?style=for-the-badge" alt="Architecture" />
+</p>
 
 ---
 
-## 🏗️ Deterministic Architecture
+## 🌟 The Vision
 
-To guarantee 100% consistent results offline, the architecture is built around two critical "God nodes":
+**TDS Portal** is a production-grade, browser-based environment designed for the automated execution of deterministic solver logic. It serves as an essential companion for the **IIT Madras Tools in Data Science (TDS)** course, bridging the gap between complex exam requirements and reliable, instant solutions.
 
-1. **`normalizeEmail()`**: Acts as the global input anchor, ensuring that variations in user email inputs are standardized before computation.
-2. **`rng()`**: A tightly controlled seeded random number generator. The normalized email is injected as the seed across all solvers, guaranteeing that random choices, array shuffles, and dynamic variable selections are identical every time for a given user.
+Built with a focus on **visual excellence** and **mathematical precision**, the portal dynamically orchestrates a suite of 70+ specialized solvers, delivering high-confidence results entirely on the client side.
 
-### Execution Flow
+---
 
+## 🏗️ Core Architectural Pillars
+
+### 1. Deterministic "God Nodes"
+Consistency is the heartbeat of this project. Every computation is anchored by two immutable abstractions:
+*   **`normalizeEmail()`**: Standardizes user input to prevent entropy.
+*   **`rng()`**: A tightly controlled seeded random number generator. By injecting the normalized email as the seed, we guarantee that every random choice, array shuffle, and variable selection is 100% identical for a given user across any machine.
+
+### 2. Modular Engine & Dynamic Registry
+The system utilizes a "Registry" pattern, allowing it to scale across different terms and exams without bloat.
+*   **Dynamic Imports**: Only the necessary solver modules are loaded based on the user's selection.
+*   **Structured Contract**: Every solver adheres to a strict return contract: `{ answer, type, variant, answerDisplay, guide, debug }`.
+
+### 3. Execution Flow
 ```mermaid
 graph TD
-    A["User Interface"] -->|"Email & Exam Selection"| B("app.js (Main Logic)")
-    B -->|"Dynamically Import"| C{"<exam>/registry.js"}
-    C -->|"Wrap with Metrics"| D["Shared runtime.js"]
-    D -->|"Seed RNG & Normalize"| E(("Solver Modules"))
-    E -->|"Return Deterministic Answer"| A
+    A["User Interface (Glassmorphism)"] -->|"Email & Selection"| B("app.js (Main Logic)")
+    B -->|"Dynamically Import"| C{"Registry (T1/T2)"}
+    C -->|"Wrap & Time"| D["Shared runtime.js"]
+    D -->|"Seed RNG"| E(("Solver Modules"))
+    E -->|"Answer + Guide"| A
+    style A fill:#1a1a1a,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#004d40,stroke:#00c853,stroke-width:2px,color:#fff
 ```
 
 ---
 
-## 🎯 Supported Exam Engines
+## 🎯 Exam Engine Capabilities
 
-The registry currently supports the following TDS targets:
+The portal supports a diverse range of exam targets, each with specialized logic:
 
-| Target | Description | Capabilities |
-|--------|-------------|--------------|
-| **GA0** | TDS Introduction | Standard 25-question suite with Markdown instructions |
-| **ROE** | Re-exam workflows | Regex golf, mazes, programmatic computation |
-| **GA7** | Data Visualization | Diverging palettes, prompt reverse engineering |
-| **GA8** | MLOps & Cloud deployments | Docker, FastAPI, GCP Cloud Run, Gemini API, HF Spaces |
-| **Project 2** | Interactive KB Solvers | QR Forensics (Solana tracer), Discourse KB (50 exact tasks) |
-
----
-
-## T22026 GA0 Production Notes
-
-The T22026 GA0 engine is aligned with the official May 2026 GA0 bundle:
-
-- Official ID/order parity is checked against all 25 question IDs.
-- Seeded solvers mirror the exam bundle's `seedrandom` behavior where the official question depends on email.
-- High-risk tasks have validator-compatible outputs: `/code-interpreter`, FastAPI student filtering, batch sentiment, image jigsaw reconstruction, Unicode sums, DevTools secret, and Vercel latency metrics.
-- `npm run check` executes every GA0 solver for multiple representative emails so user-specific variants do not silently regress.
+| Engine | Scope | Key Highlights |
+| :--- | :--- | :--- |
+| **GA0 (T22026)** | Intro to Data Science | 25-question suite including **Implementation Guides** for FastAPI & GitHub Actions. |
+| **ROE** | Re-exam Workflows | Complex regex golf, procedural maze solving, and programmatic computation. |
+| **GA7** | Data Visualization | Diverging palette sampling, prompt reverse engineering, and chartjunk analysis. |
+| **GA8** | MLOps & Cloud | Docker verification, GCP Cloud Run compute, and Gemini API extractors. |
+| **Project 2** | Forensics & KB | **QR Repair (Solana Tracer)** and **Discourse KB Solver** (50-task massive aggregation). |
 
 ---
 
-## ✨ Workspace UX
+## ✨ Premium Workspace UX
 
-The portal is designed as a power-user IDE rather than a simple results page:
+The UI is crafted to provide an IDE-like experience, moving beyond static result pages:
 
-- **Dynamic Welcome Screen**: Reads `tds-config.json` on startup to easily update term info each semester without touching code.
-- **Glassmorphism & Aesthetics**: Custom dark scrollbars, `backdrop-filter: blur(12px)` headers, tactile buttons, and pulsing progress bars.
-- **Mobile Drawer Navigation**: Responsive full-height slide-out drawer utilizing natural document-flow scrolling.
-- **Interactive Previews**: HTML preview iframes for rendering document outputs directly.
-- **Health Indicators**: Per-question status badges indicating runtime execution speed, stability, and warning counts.
-- **Frictionless Copying**: Fallback clipboard support and one-click debug report generation.
-- **Persistent State**: Stores exam, email, search filters, and wrap settings via `localStorage`.
+*   **Glassmorphic Design**: Modern dark mode with `backdrop-filter: blur(12px)` headers and curated HSL color palettes.
+*   **🚀 Implementation Guides**: (New) Dedicated success-themed panels for questions requiring manual steps (FastAPI, ngrok, CI/CD).
+*   **Interactive Previews**: Integrated HTML iframes for rendering document outputs in real-time.
+*   **Health Indicators**: Real-time badges for runtime speed, stability, and warning counts.
+*   **Mobile-First Navigation**: A custom slide-out drawer utilizing natural document-flow scrolling for a fluid touch experience.
+*   **One-Click Debugging**: Generate comprehensive JSON debug reports for troubleshooting.
 
 ---
 
-## 🚀 Local Development & Smoke Testing
+## 🛠️ Developer & Power User Guide
 
 ### Quick Start
-No complex build steps required.
-
+Spin up the local development server with zero configuration:
 ```bash
 npm install
 npm start
 ```
-Then navigate to: `http://localhost:3000/`
+🌐 **URL**: `http://localhost:3000/`
 
-### Smoke Testing (CI/CD Ready)
-The repository includes an ESM-based smoke test to verify registry integrity, official solver order, seeded parity checks, GA0 execution coverage, path resolution, and traversal protection logic.
-
+### Integrity & Smoke Testing
+We maintain a rigorous testing suite to ensure no user-specific variants silently regress.
 ```bash
 npm run check
 ```
-*Expected output:*
-```text
-Checks passed: GA0 solvers=25, GA7 solvers=15, GA8 solvers=15, ROE solvers=15, P2 solvers=2
-```
+*Checks performed: Registry loading, Official order parity, Seeded RNG consistency, and Full GA0 execution coverage.*
 
-The exact printed order is currently:
-
-```text
-Checks passed: GA7 solvers=15, ROE solvers=15, GA8 solvers=15, P2 solvers=2, GA0 solvers=25
-```
+### Knowledge Graph Integration
+For developers working on core abstractions, the project includes a **Graphify Knowledge Graph**:
+*   **Update Graph**: `python -m graphify update .`
+*   **Context**: Refer to `AGENT_CONTEXT.md` for high-level design decisions and known gaps.
 
 ---
 
-## 🛠️ Solver Development Guidelines
+## 💻 Technical Stack
 
-When contributing or adding new solvers to the registry:
-1. **Maintain Determinism**: Ensure all random behavior relies strictly on the injected `rng()` seed.
-2. **Use the Shared Runtime**: Avoid duplicating logic. Use the wrappers provided in your target's `runtime.js`.
-3. **Structured Returns**: Solvers must return `{ answer, type, variant, answerDisplay, debug }`.
-4. **Smoke Test**: Always run `npm run check` before committing.
-5. **Update Context**: After meaningful solver or architecture changes, rebuild Graphify and update `AGENT_CONTEXT.md` when architecture or supported targets change.
+*   **Frontend**: Vanilla HTML5, CSS3 (Glassmorphism), ES6+ Javascript.
+*   **Libraries**: 
+    *   `marked.js`: High-performance Markdown rendering.
+    *   `prism.js`: Elegant syntax highlighting for code answers.
+    *   `seedrandom`: Reliable deterministic entropy.
+*   **Server**: Lightweight Node.js ESM static server with traversal protection.
+*   **Deployment**: Fully compatible with **Vercel** via `vercel.json` configuration.
 
-*If you are an AI Agent or engineer getting up to speed, please read `AGENT_CONTEXT.md` first for detailed graph relationships and known architectural gaps.*
+---
+
+<p align="center">
+  Built with ❤️ for the IITM TDS Community.
+</p>
