@@ -22,6 +22,7 @@ const statGuide = document.getElementById('statGuide');
 const nodeSearch = document.getElementById('nodeSearch');
 const connectionText = document.getElementById('connectionText');
 const examSelect = document.getElementById('examSelect');
+const termSelect = document.getElementById('termSelect');
 const breadcrumbs = document.getElementById('breadcrumbs');
 const sidebar = document.getElementById('sidebar');
 const mobileNavToggle = document.getElementById('mobileNavToggle');
@@ -37,6 +38,7 @@ let workspaceData = {
 };
 
 const STORAGE_KEYS = {
+  term: 'tdsTerm',
   exam: 'tdsExam',
   email: 'tdsEmail',
   search: 'tdsNodeSearch',
@@ -44,6 +46,54 @@ const STORAGE_KEYS = {
   rawWrap: 'tdsRawWrap',
   openPanels: 'tdsOpenPanels'
 };
+
+// Term → exam registry
+const TERM_EXAMS = {
+  T12026: [
+    { group: 'Standard Exams',           value: 'roe', label: 'ROE Re-Exam' },
+    { group: 'Projects',                 value: 'p2',  label: 'Project 2 Part B' },
+    { group: 'Weekly Graded Assignments', value: 'ga7', label: 'GA 7 (Data Visualization)' },
+    { group: 'Weekly Graded Assignments', value: 'ga8', label: 'GA 8 (MLOps & DevOps)' },
+  ],
+  T22026: [] // placeholder — no solvers yet
+};
+
+function populateExamSelect(term) {
+  const exams = TERM_EXAMS[term] || [];
+  examSelect.innerHTML = '';
+
+  if (exams.length === 0) {
+    const opt = document.createElement('option');
+    opt.value = '';
+    opt.disabled = true;
+    opt.selected = true;
+    opt.textContent = '— No exams available yet —';
+    examSelect.appendChild(opt);
+    examSelect.disabled = true;
+    return;
+  }
+
+  examSelect.disabled = false;
+
+  // Group exams into optgroups
+  const groups = {};
+  for (const exam of exams) {
+    if (!groups[exam.group]) groups[exam.group] = [];
+    groups[exam.group].push(exam);
+  }
+
+  for (const [groupLabel, items] of Object.entries(groups)) {
+    const og = document.createElement('optgroup');
+    og.label = groupLabel;
+    for (const item of items) {
+      const opt = document.createElement('option');
+      opt.value = item.value;
+      opt.textContent = item.label;
+      og.appendChild(opt);
+    }
+    examSelect.appendChild(og);
+  }
+}
 
 let selectedQuestionIndex = 0;
 let rawWrapEnabled = true;
@@ -54,14 +104,21 @@ let toastRoot = null;
 let openPanels = new Set(['Variant', 'Preview', 'Answer', 'Diagnostics']);
 
 window.addEventListener('DOMContentLoaded', () => {
+  const savedTerm  = localStorage.getItem(STORAGE_KEYS.term);
   const savedEmail = localStorage.getItem(STORAGE_KEYS.email);
-  const savedExam = localStorage.getItem(STORAGE_KEYS.exam);
+  const savedExam  = localStorage.getItem(STORAGE_KEYS.exam);
   const savedSearch = localStorage.getItem(STORAGE_KEYS.search);
   const savedSelectedQuestion = Number(localStorage.getItem(STORAGE_KEYS.selectedQuestion));
   const savedRawWrap = localStorage.getItem(STORAGE_KEYS.rawWrap);
   const savedOpenPanels = localStorage.getItem(STORAGE_KEYS.openPanels);
-  if (savedEmail) emailInput.value = savedEmail;
+
+  // Restore term first, then populate exam list, then restore exam
+  const activeTerm = savedTerm || 'T12026';
+  termSelect.value = activeTerm;
+  populateExamSelect(activeTerm);
   if (savedExam) examSelect.value = savedExam;
+
+  if (savedEmail) emailInput.value = savedEmail;
   if (savedSearch) nodeSearch.value = savedSearch;
   if (Number.isInteger(savedSelectedQuestion) && savedSelectedQuestion >= 0) {
     selectedQuestionIndex = savedSelectedQuestion;
@@ -106,6 +163,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function persistUiState() {
+  localStorage.setItem(STORAGE_KEYS.term, termSelect.value);
   localStorage.setItem(STORAGE_KEYS.exam, examSelect.value);
   localStorage.setItem(STORAGE_KEYS.email, emailInput.value.trim());
   localStorage.setItem(STORAGE_KEYS.search, nodeSearch.value);
@@ -623,6 +681,7 @@ function renderCanvas(index) {
 
 async function startSolving() {
   const email = emailInput.value.trim();
+  const currentTerm = termSelect.value;
   const currentExam = examSelect.value;
   const preferredQuestionIndex = selectedQuestionIndex;
 
@@ -632,7 +691,13 @@ async function startSolving() {
     return;
   }
 
+  if (!currentExam) {
+    showToast('No exam available for this term yet.', 'error');
+    return;
+  }
+
   emailInput.style.borderColor = 'var(--border)';
+  localStorage.setItem(STORAGE_KEYS.term, currentTerm);
   localStorage.setItem(STORAGE_KEYS.email, email);
   localStorage.setItem(STORAGE_KEYS.exam, currentExam);
 
@@ -649,7 +714,7 @@ async function startSolving() {
   connectionText.innerText = 'Execution running...';
 
   selectedQuestionIndex = 0;
-  workspaceData = { exam: currentExam, email, answers: [], meta: {} };
+  workspaceData = { term: currentTerm, exam: currentExam, email, answers: [], meta: {} };
   setMobileNavOpen(false);
   persistUiState();
 
@@ -659,10 +724,10 @@ async function startSolving() {
   try {
     let solvers = [];
     try {
-      const registryModule = await import(`./solvers/${currentExam}/registry.js`);
+      const registryModule = await import(`./solvers/${currentTerm}/${currentExam}/registry.js`);
       solvers = registryModule.solvers;
     } catch (_) {
-      throw new Error(`CRITICAL SYSTEM FAULT: Failed to fetch module registry for ${currentExam}. Target may be missing or corrupt.`);
+      throw new Error(`CRITICAL SYSTEM FAULT: Failed to fetch module registry for ${currentTerm}/${currentExam}. Target may be missing or corrupt.`);
     }
 
     let done = 0;
@@ -840,6 +905,10 @@ document.addEventListener('keydown', (event) => {
 solveBtn.addEventListener('click', startSolving);
 emailInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') startSolving();
+});
+termSelect.addEventListener('change', () => {
+  populateExamSelect(termSelect.value);
+  persistUiState();
 });
 examSelect.addEventListener('change', persistUiState);
 emailInput.addEventListener('input', persistUiState);

@@ -118,8 +118,8 @@ async function checkServerRoutes() {
       ['/', 200],
       ['/ga7-verify.html', 200],
       ['/style.css', 200],
-      ['/solvers/ga7/registry.js', 200],
-      ['/solvers/ga8/registry.js', 200]
+      ['/solvers/T12026/ga7/registry.js', 200],
+      ['/solvers/T12026/ga8/registry.js', 200]
     ];
 
     for (const [pathname, expectedStatus] of checks) {
@@ -202,10 +202,10 @@ async function main() {
   await importFresh('app.js');
   await importFresh('ga7-verify.js');
 
-  const ga7Registry = await importFresh('solvers/ga7/registry.js');
-  const roeRegistry = await importFresh('solvers/roe/registry.js');
-  const ga8Registry = await importFresh('solvers/ga8/registry.js');
-  const p2Registry = await importFresh('solvers/p2/registry.js');
+  const ga7Registry = await importFresh('solvers/T12026/ga7/registry.js');
+  const roeRegistry = await importFresh('solvers/T12026/roe/registry.js');
+  const ga8Registry = await importFresh('solvers/T12026/ga8/registry.js');
+  const p2Registry = await importFresh('solvers/T12026/p2/registry.js');
 
   assert(Array.isArray(ga7Registry.solvers) && ga7Registry.solvers.length > 0, 'GA7 registry did not load solvers.');
   assert(Array.isArray(roeRegistry.solvers) && roeRegistry.solvers.length > 0, 'ROE registry did not load solvers.');

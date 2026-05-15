@@ -1,4 +1,4 @@
-import { solvers } from './solvers/ga7/registry.js';
+import { solvers } from './solvers/T12026/ga7/registry.js';
 
 const emailList = document.getElementById('emailList');
 const limitInput = document.getElementById('limitInput');

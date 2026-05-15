@@ -1,4 +1,4 @@
-import { generateBypassScript } from '../bypass-generator.js';
+import { generateBypassScript } from '../../bypass-generator.js';
 
 export const id = 'q-korean-audio-dataset-server';
 export const title = '韓国語音声データセットAPI検証';

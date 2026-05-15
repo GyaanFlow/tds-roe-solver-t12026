@@ -1,4 +1,4 @@
-import { generateBypassScript } from '../bypass-generator.js';
+import { generateBypassScript } from '../../bypass-generator.js';
 
 export const id = 'q-cross-lingual-entity-disambiguation-server';
 export const title = 'Cross-Lingual Entity Disambiguation';

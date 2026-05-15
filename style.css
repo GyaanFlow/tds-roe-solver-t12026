@@ -131,6 +131,14 @@ body {
 }
 
 .input-stacked { display: flex; flex-direction: column; gap: 8px; }
+.control-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
 #emailInput {
   background: transparent; color: var(--text-primary);
   border: 1px solid var(--border); border-radius: 6px;

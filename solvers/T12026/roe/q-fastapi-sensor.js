@@ -1,4 +1,4 @@
-import { generateBypassScript } from '../bypass-generator.js';
+import { generateBypassScript } from '../../bypass-generator.js';
 
 export const id = 'q-fastapi-sensor-server';
 export const title = 'FastAPI IoT Sensor Analytics';

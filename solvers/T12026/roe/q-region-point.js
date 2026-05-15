@@ -1,4 +1,4 @@
-import { generateBypassScript } from '../bypass-generator.js';
+import { generateBypassScript } from '../../bypass-generator.js';
 
 export const id = 'q-region-containing-point-server';
 export const title = 'Region Containing Point (Geospatial)';

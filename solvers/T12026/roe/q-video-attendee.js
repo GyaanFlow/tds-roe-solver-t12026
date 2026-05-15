@@ -1,4 +1,4 @@
-import { generateBypassScript } from '../bypass-generator.js';
+import { generateBypassScript } from '../../bypass-generator.js';
 
 export const id = 'q-video-attendee-server';
 export const title = 'Video Attendee Extraction (Gemini)';

@@ -20,11 +20,13 @@ This project has a **graphify knowledge graph** at `graphify-out/`.
 
 `tds-roe-solver` is a local static web workspace for IITM TDS exam helpers.
 
-Current supported targets:
-- `roe`
-- `ga7`
-- `ga8`
-- `p2` — Project 2 Part B (Q3: QR Forensics + Q4: Discourse KB)
+Current supported terms & targets:
+- `T12026` — Term 1 2026 (Jan–Apr)
+  - `roe`
+  - `ga7`
+  - `ga8`
+  - `p2` — Project 2 Part B (Q3: QR Forensics + Q4: Discourse KB)
+- `T22026` — Term 2 2026 (May–Sep) · 🚧 placeholder, no solvers yet
 
 The app runs locally in the browser, loads a solver registry for the selected exam, executes each solver for a user email, and renders answers plus diagnostics.
 
@@ -37,13 +39,16 @@ The app runs locally in the browser, loads a solver registry for the selected ex
 - `check.mjs`: smoke test for registries and server behavior
 - `ga7-verify.html`: browser verifier page for GA7
 - `ga7-verify.js`: GA7 batch verification logic
+- `tds-config.json`: dynamic welcome screen config + term/exam registry metadata
+- `solvers/T12026/`: all T1 2026 exam solver folders
+- `solvers/T22026/`: placeholder for T2 2026 (README only)
 
 ## Solver Architecture
 
 The main flow is:
 
-1. User selects exam and enters email.
-2. `app.js` dynamically imports `./solvers/<exam>/registry.js`.
+1. User selects **term** (T12026 / T22026) and **exam** from the sidebar.
+2. `app.js` dynamically imports `./solvers/<term>/<exam>/registry.js`.
 3. Registry exports ordered `solvers`.
 4. Each solver returns an object like:
 
@@ -112,9 +117,9 @@ GA8 covers MLOps, cloud deployments (GCP Cloud Run, Cloud Functions), Docker, Fa
 
 ### Solver Architecture
 
-- `solvers/ga8/registry.js` — ordered array of 15 solver entries
-- `solvers/ga8/runtime.js` — shared execution wrapper (timing, validation, debug metadata)
-- `solvers/ga8/utils.js` — shared helpers (email normalization, hash utilities)
+- `solvers/T12026/ga8/registry.js` — ordered array of 15 solver entries
+- `solvers/T12026/ga8/runtime.js` — shared execution wrapper (timing, validation, debug metadata)
+- `solvers/T12026/ga8/utils.js` — shared helpers (email normalization, hash utilities)
 - 15 individual solver files: `q-gh-actions.js`, `q-gemini-math.js`, `q-fastapi-iris.js`, `q-hf-spaces.js`, `q-docker-verify.js`, `q-bash-script.js`, `q-precommit.js`, `q-mlops-quiz.js`, `q-cloud-run-compute.js`, `q-cloud-functions.js`, `q-gemini-classify.js`, `q-cloud-run-ml.js`, `q-cloud-run-envconfig.js`, `q-cloud-run-hashapi.js`, `q-gemini-extract.js`
 
 ### Bonus Q16: One-Shot Solver (in app.js)
@@ -170,14 +175,14 @@ P2 Part B Q4 is the IITM Discourse forum KB analysis task. The user gets 50 uniq
 
 ### Architecture
 
-- `solvers/p2/registry.js` — 2 solver entries (Q3 QR Forensics + Q4 Discourse KB)
-- `solvers/p2/runtime.js` — execution wrapper (mirrors GA8 pattern, also calls `registerInteractive()` for DOM-interactive solvers)
-- `solvers/p2/utils.js` — email normalization
-- `solvers/p2/q-qr-forensics.js` — Q3 QR repair + Solana tracer (interactive guide)
-- `solvers/p2/parse-tasks.js` — universal task parser with validation
-- `solvers/p2/handlers.js` — 11 query type handlers, fully defensive
-- `solvers/p2/q-discourse-kb.js` — Q4 main solver module with interactive guide UI
-- `solvers/p2/compact_facts.json` — ~12MB precomputed snapshot (frozen 2026-04-25, 20571 topics, 14 categories)
+- `solvers/T12026/p2/registry.js` — 2 solver entries (Q3 QR Forensics + Q4 Discourse KB)
+- `solvers/T12026/p2/runtime.js` — execution wrapper (mirrors GA8 pattern, also calls `registerInteractive()` for DOM-interactive solvers)
+- `solvers/T12026/p2/utils.js` — email normalization
+- `solvers/T12026/p2/q-qr-forensics.js` — Q3 QR repair + Solana tracer (interactive guide)
+- `solvers/T12026/p2/parse-tasks.js` — universal task parser with validation
+- `solvers/T12026/p2/handlers.js` — 11 query type handlers, fully defensive
+- `solvers/T12026/p2/q-discourse-kb.js` — Q4 main solver module with interactive guide UI
+- `solvers/T12026/p2/compact_facts.json` — ~12MB precomputed snapshot (frozen 2026-04-25, 20571 topics, 14 categories)
 
 ### Data Format (`compact_facts.json`)
 
@@ -254,7 +259,7 @@ Global handlers (`window._p2bSolve`, `window._p2bCopy`) are registered on the wi
 
 ### Vercel Deployment
 
-- `compact_facts.json` is served as a static asset under `/solvers/p2/compact_facts.json`
+- `compact_facts.json` is served as a static asset under `/solvers/T12026/p2/compact_facts.json`
 - The existing `vercel.json` cache rules apply (immutable cache for `.json` files — fine since data is frozen at 2026-04-25)
 - No server-side logic needed — everything runs client-side
 - Tested: all 11 handler types produce real answers against the 20571-topic cache
@@ -326,8 +331,10 @@ npm run check
 Current expected success output:
 
 ```text
-Checks passed: GA7 solvers=15, GA8 solvers=15, ROE solvers=15, P2 solvers=2
+Checks passed: GA7 solvers=15, ROE solvers=15, GA8 solvers=15, P2 solvers=2
 ```
+
+> Note: Registry paths are now `solvers/T12026/<exam>/registry.js`.
 
 The smoke check covers:
 - registry loading
@@ -400,11 +407,18 @@ This gives the AI **complete structural understanding** in ~18KB instead of read
 
 ### For Specific Tasks, Add Context to Prompt
 
-**Adding a new exam solver (e.g., GA9):**
+**Adding a new exam solver for an existing term (e.g., GA9 in T12026):**
 ```
 Read AGENT_CONTEXT.md and graphify-out/GRAPH_REPORT.md.
-Then read solvers/ga8/registry.js for the pattern to follow.
-I need a new GA9 solver module.
+Then read solvers/T12026/ga8/registry.js for the pattern to follow.
+I need a new GA9 solver module under solvers/T12026/.
+```
+
+**Adding all solvers for a new term (T22026):**
+```
+Read AGENT_CONTEXT.md and graphify-out/GRAPH_REPORT.md.
+Create solvers/T22026/<exam>/ following the T12026 pattern.
+Add the exam to TERM_EXAMS in app.js and to tds-config.json.
 ```
 
 **Debugging a specific solver:**
