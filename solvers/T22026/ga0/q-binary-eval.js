@@ -17,6 +17,10 @@ const CHECKS = [
 export async function solve(email) {
   const norm = normalizeEmail(email);
   const n = rng(`${norm}#${id}`);
+  
+  // The exam script first picks a topic from an object keys array (which consumes one n() call)
+  n(); 
+  
   const checkCount = pick([5, 6, 7], n);
   const selectedChecks = CHECKS.slice(0, checkCount);
 

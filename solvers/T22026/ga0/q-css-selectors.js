@@ -11,9 +11,12 @@ export async function solve(email) {
   const n = rng(`${norm}#${id}`);
   
   const count = 20;
-  const items = Array.from({ length: count }, () => ({
-    classes: CLASSES[Math.floor(n() * CLASSES.length)],
-    discount: Math.floor(n() * 46) + 5
+  const classesList = Array.from({ length: count }, () => CLASSES[Math.floor(n() * CLASSES.length)]);
+  const discountList = Array.from({ length: count }, () => Math.floor(n() * 46) + 5);
+
+  const items = Array.from({ length: count }, (_, i) => ({
+    classes: classesList[i],
+    discount: discountList[i]
   }));
 
   const filtered = items.filter(item => {

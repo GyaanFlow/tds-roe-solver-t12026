@@ -10,10 +10,14 @@ export async function solve(email) {
   const norm = normalizeEmail(email);
   const n = rng(`${norm}#q-sql-average-salary`);
   
-  const employees = Array.from({ length: 500 }, () => ({
-    department: DEPARTMENTS[Math.floor(n() * DEPARTMENTS.length)],
-    salary: Math.floor(n() * 80000) + 40000
-  }));
+  const employees = Array.from({ length: 500 }, () => {
+    n(); // employee_id
+    n(); // name
+    return {
+      department: DEPARTMENTS[Math.floor(n() * DEPARTMENTS.length)],
+      salary: Math.floor(n() * 80000) + 40000
+    };
+  });
 
   const averages = DEPARTMENTS.sort().map(dept => {
     const deptEmployees = employees.filter(e => e.department === dept);
