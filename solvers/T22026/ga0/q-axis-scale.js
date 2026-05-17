@@ -1,5 +1,5 @@
 // Solver: Q1 - Scale Manipulation Repair in Axis Design (Direct Solution)
-import { normalizeEmail, rng } from './utils.js';
+import { normalizeEmail, rng, fnv1a } from './utils.js';
 
 export const id = 'q-axis-scale-manipulation-repair';
 export const title = 'Q1: Axis Scale Manipulation Repair';
@@ -129,7 +129,7 @@ function buildOfficialScenario(scenarioId, norm) {
 
 export async function solve(email) {
   const norm = normalizeEmail(email);
-  const scenarioId = Math.floor(rng(norm)() * 20);
+  const scenarioId = fnv1a(norm) % 20;
   const scenario = buildOfficialScenario(scenarioId, norm);
   const info = TYPE_INFO[scenario.type];
   const phrase = info.phrase(scenario.distortion);

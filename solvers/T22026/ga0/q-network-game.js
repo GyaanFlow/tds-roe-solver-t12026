@@ -6,11 +6,12 @@ export const title = 'Q17: Network Game: Graph Detective';
 
 export async function solve(email) {
   const url = "https://tds-network-games.sanand.workers.dev/detective/";
+  const solverUrl = "https://tds-games-solver.vercel.app/detective/";
 
   return {
     type: 'guide',
     variant: 'Interactive Graph Game',
-    answer: `GAME URL: ${url}\n\n1. Play the game and win.\n2. Paste the resulting JWT token into the exam portal.`,
-    answerDisplay: `### Strategy\n\n1. Open the [Graph Detective Game](${url}).\n2. Use BFS to identify the compromised node.\n3. Win the game to get your **JWT token**.\n4. Paste that token here and in the exam portal.`,
+    answer: `SOLVER URL: ${solverUrl}\nGAME URL: ${url}\n\n1. Use the solver URL to get the answer.\n2. Paste the resulting JWT token into the exam portal.`,
+    answerDisplay: `### Strategy\n\n1. Use the [Graph Detective Solver](${solverUrl}) to automatically solve the game.\n2. Alternatively, play the [Graph Detective Game](${url}) manually.\n3. Paste the resulting **JWT token** into the exam portal.`,
   };
 }
