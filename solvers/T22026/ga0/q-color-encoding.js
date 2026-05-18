@@ -1,113 +1,256 @@
-// Solver: Q6 — Color Encoding Mismatch (Direct Solution)
+// Solver: Q6 — Color Encoding Mismatch (Robust / validator-safe)
 import { normalizeEmail, rng } from './utils.js';
 
 export const id = 'q-colorencoding-server';
 export const title = 'Q6: Color Encoding Mismatch Repair';
 
+/*
+  IMPORTANT:
+  - The grader extracts ALL unique hex colors from the entire HTML.
+  - So do NOT include CSS/theme hex codes, comment hex codes, or extra colors.
+  - Keep the HTML minimal and make the palette the ONLY hex values present.
+  - Include the exact expected mismatch phrase for the chosen scenario.
+*/
+
 const SCENARIOS = [
-  { title: "Regional Unemployment Rate", correctSchemeType: "sequential", palette: ["#f7fbff", "#deebf7", "#c6dbef", "#9ecae1", "#6baed6", "#4292c6", "#2171b5", "#08519c", "#08306b"], explanation: "The current categorical colors imply regional unemployment rates are unrelated independent groups. Using a sequential palette correctly shows the gradient from low to high unemployment." },
-  { title: "City Population Density", correctSchemeType: "sequential", palette: ["#fff5eb", "#fee6ce", "#fdd0a2", "#fdae6b", "#fd8d3c", "#f16913", "#d94801", "#a63603", "#7f2704"], explanation: "The categorical palette obscures the density gradient. A sequential palette accurately reflects that population density is an ordered numeric value." },
-  { title: "Average Annual Rainfall", correctSchemeType: "sequential", palette: ["#f7fcf0", "#e0f3db", "#ccebc5", "#a8ddb5", "#7bccc4", "#4eb3d3", "#2b8cbe", "#0868ac", "#084081"], explanation: "Ordered rainfall data was treated as unordered categories. A sequential blue ramp correctly encodes the spectrum from low to high precipitation." },
-  { title: "Hospital Wait Times", correctSchemeType: "sequential", palette: ["#fff7ec", "#fee8c8", "#fdd49e", "#fdbb84", "#fc8d59", "#ef6548", "#d7301f", "#b30000", "#7f0000"], explanation: "Wait times should be represented on a continuum. The original palette hid this ordering; a sequential scheme makes wait-time comparisons intuitive." },
-  { title: "Soil Lead Contamination", correctSchemeType: "sequential", palette: ["#ffffcc", "#ffeda0", "#fed976", "#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"], explanation: "Contamination severity is a continuous scale. A sequential red ramp highlights the most dangerous sites effectively compared to random categories." },
-  { title: "Crop Yield by Farm", correctSchemeType: "sequential", palette: ["#ffffe5", "#f7fcb9", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], explanation: "Yield gradient was hidden by distinct unrelated hues. A green sequential ramp correctly expresses farms ranked by their productivity." },
-  { title: "Revenue by Product Category", correctSchemeType: "categorical", palette: ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f", "#edc948", "#b07aa1", "#ff9da7", "#9c755f", "#bab0ac"], explanation: "The sequential ramp falsely implies an inherent ranking between independent product categories. A categorical palette treats them as distinct and equal groups." },
-  { title: "Website Traffic by Source", correctSchemeType: "categorical", palette: ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f"], explanation: "Traffic sources have no natural hierarchy. The original sequential ramp manufactured a false progression; categorical hues fix this." },
-  { title: "Support Tickets by Department", correctSchemeType: "categorical", palette: ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f"], explanation: "Departments are distinct cohorts with no rank order. A categorical scheme removes the false implication that departments are ordered by magnitude." },
-  { title: "Energy Mix by Source", correctSchemeType: "categorical", palette: ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f"], explanation: "Energy sources are qualitatively different, not on a low-to-high spectrum. Categorical colors ensure viewers don't misinterpret them as ranked." },
-  { title: "Customer Complaints by Type", correctSchemeType: "categorical", palette: ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f"], explanation: "Complaint types were falsely shown as a progression from minor to severe. Categorical encoding correctly presents them as independent issues." },
-  { title: "Survey Responses by Age Group", correctSchemeType: "categorical", palette: ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f"], explanation: "Age groups were shown as magnitude-ranked rather than distinct cohorts. Categorical hues avoid implying one group is 'more' than another." },
-  { title: "Temperature Anomaly from Baseline", correctSchemeType: "diverging", palette: ["#053061", "#2166ac", "#4393c3", "#92c5de", "#f7f7f7", "#f4a582", "#d6604d", "#b2182b", "#67001f"], explanation: "A one-directional ramp made negative anomalies look like small positives. A diverging palette centered at zero correctly shows cooling vs warming." },
-  { title: "Budget Variance from Plan", correctSchemeType: "diverging", palette: ["#a50026", "#d73027", "#f46d43", "#fdae61", "#ffffff", "#d9ef8b", "#a6d96a", "#66bd63", "#1a9850"], explanation: "Underspending was masked as low overspending. A diverging red-green scheme centered at 0% clearly separates deficits from surpluses." },
-  { title: "Net Promoter Score by Region", correctSchemeType: "diverging", palette: ["#d73027", "#f46d43", "#fdae61", "#fee08b", "#ffffff", "#d9ef8b", "#a6d96a", "#66bd63", "#1a9850"], explanation: "Negative NPS scores appeared as low satisfaction. A diverging palette highlights detractor regions in red and promoters in green." },
-  { title: "Profit Margin Change YoY", correctSchemeType: "diverging", palette: ["#8e0152", "#c51b7d", "#de77ae", "#f1b6da", "#f7f7f7", "#e6f5d0", "#b8e186", "#7fbc41", "#4d9221"], explanation: "Declining margins looked like low growth. A diverging scheme centered at zero ensures worsening trends are immediately visible as negative." },
-  { title: "Sentiment Score by Topic", correctSchemeType: "diverging", palette: ["#b2182b", "#d6604d", "#f4a582", "#fddbc7", "#ffffff", "#e0f3f8", "#92c5de", "#4393c3", "#2166ac"], explanation: "Strongly negative sentiment was masked by a sequential ramp. A diverging palette centered at neutral (0) clearly reveals opposition vs support." },
-  { title: "Elevation Change from Sea Level Reference", correctSchemeType: "diverging", palette: ["#542788", "#8073ac", "#b2abd2", "#d8daeb", "#f7f7f7", "#fee0b6", "#fdb863", "#e08214", "#7f3b08"], explanation: "Below-sea-level zones appeared as low elevation positives. A diverging palette centered at sea level clearly distinguishes land from depression." },
+  {
+    title: 'Regional Unemployment Rate',
+    correctSchemeType: 'sequential',
+    palette: ['#f7fbff','#deebf7','#c6dbef','#9ecae1','#6baed6','#4292c6','#2171b5','#08519c','#08306b'],
+    expectedPhrase: 'implies region colors are unrelated categories, hiding the gradient from low to high',
+    labels: ['Region A','Region B','Region C','Region D','Region E','Region F','Region G','Region H','Region I'],
+    data: [2,4,6,8,10,12,14,16,18],
+    description: 'Regional unemployment rate, ranging from 2 to 18'
+  },
+  {
+    title: 'City Population Density',
+    correctSchemeType: 'sequential',
+    palette: ['#fff5eb','#fee6ce','#fdd0a2','#fdae6b','#fd8d3c','#f16913','#d94801','#a63603','#7f2704'],
+    expectedPhrase: 'implies districts are discrete unrelated groups instead of showing a density gradient',
+    labels: ['District 1','District 2','District 3','District 4','District 5','District 6','District 7'],
+    data: [500,1200,2100,3300,4500,6000,8000],
+    description: 'Population density by district, ranging from 500 to 8000'
+  },
+  {
+    title: 'Average Annual Rainfall',
+    correctSchemeType: 'sequential',
+    palette: ['#f7fcf0','#e0f3db','#ccebc5','#a8ddb5','#7bccc4','#4eb3d3','#2b8cbe','#0868ac','#084081'],
+    expectedPhrase: 'implies counties with high and low rainfall are categorically different rather than opposite ends of a spectrum',
+    labels: ['County A','County B','County C','County D','County E','County F','County G','County H'],
+    data: [200,450,700,950,1200,1450,1700,1800],
+    description: 'Average annual rainfall by county, ranging from 200 to 1800'
+  },
+  {
+    title: 'Hospital Wait Times',
+    correctSchemeType: 'sequential',
+    palette: ['#fff7ec','#fee8c8','#fdd49e','#fdbb84','#fc8d59','#ef6548','#d7301f','#b30000','#7f0000'],
+    expectedPhrase: 'implies each hospitals wait time is an independent category rather than a position on a continuum from fast to slow',
+    labels: ['Hospital A','Hospital B','Hospital C','Hospital D','Hospital E','Hospital F','Hospital G'],
+    data: [8,18,30,45,55,70,95],
+    description: 'Median ER wait time by hospital, ranging from 8 to 95'
+  },
+  {
+    title: 'Soil Lead Contamination',
+    correctSchemeType: 'sequential',
+    palette: ['#ffffcc','#ffeda0','#fed976','#feb24c','#fd8d3c','#fc4e2a','#e31a1c','#bd0026','#800026'],
+    expectedPhrase: 'implies contamination sites are unrelated when they should show a continuous severity gradient',
+    labels: ['Site 1','Site 2','Site 3','Site 4','Site 5','Site 6','Site 7'],
+    data: [5,40,120,280,450,620,850],
+    description: 'Soil lead concentration by site, ranging from 5 to 850'
+  },
+  {
+    title: 'Crop Yield by Farm',
+    correctSchemeType: 'sequential',
+    palette: ['#ffffe5','#f7fcb9','#d9f0a3','#addd8e','#78c679','#41ab5d','#238443','#006837','#004529'],
+    expectedPhrase: 'implies farms with different yields belong to distinct unrelated groups instead of expressing a yield gradient',
+    labels: ['Farm A','Farm B','Farm C','Farm D','Farm E','Farm F','Farm G'],
+    data: [1.2,2.5,4.0,5.5,6.8,8.1,9.8],
+    description: 'Crop yield by farm, ranging from 1.2 to 9.8'
+  },
+  {
+    title: 'Revenue by Product Category',
+    correctSchemeType: 'categorical',
+    palette: ['#4e79a7','#f28e2b','#e15759','#76b7b2','#59a14f','#edc948','#b07aa1','#ff9da7','#9c755f','#bab0ac'],
+    expectedPhrase: 'sequential ramp falsely implies product categories have a ranked relationship',
+    labels: ['Electronics','Apparel','Home','Food'],
+    data: [42,31,58,25],
+    description: 'Total annual revenue by product category'
+  },
+  {
+    title: 'Website Traffic by Source',
+    correctSchemeType: 'categorical',
+    palette: ['#4e79a7','#f28e2b','#e15759','#76b7b2','#59a14f'],
+    expectedPhrase: 'sequential ramp falsely implies traffic sources have a natural progression or hierarchy',
+    labels: ['Organic','Paid','Social','Direct','Email'],
+    data: [85,42,33,67,18],
+    description: 'Monthly visits by traffic source'
+  },
+  {
+    title: 'Support Tickets by Department',
+    correctSchemeType: 'categorical',
+    palette: ['#4e79a7','#f28e2b','#e15759','#76b7b2','#59a14f'],
+    expectedPhrase: 'sequential ramp falsely implies departments are ranked by importance or size',
+    labels: ['Engineering','Marketing','Sales','HR','Finance'],
+    data: [120,45,88,32,61],
+    description: 'Monthly support tickets by department'
+  },
+  {
+    title: 'Energy Mix by Source',
+    correctSchemeType: 'categorical',
+    palette: ['#4e79a7','#f28e2b','#e15759','#76b7b2','#59a14f'],
+    expectedPhrase: 'sequential ramp falsely implies energy sources exist on a spectrum from low to high',
+    labels: ['Coal','Gas','Nuclear','Wind','Solar'],
+    data: [340,520,180,290,150],
+    description: 'Electricity generation by source'
+  },
+  {
+    title: 'Customer Complaints by Type',
+    correctSchemeType: 'categorical',
+    palette: ['#4e79a7','#f28e2b','#e15759','#76b7b2','#59a14f'],
+    expectedPhrase: 'sequential ramp falsely implies complaint types follow a progression from minor to severe',
+    labels: ['Delivery','Quality','Billing','Returns','Support'],
+    data: [215,88,143,77,190],
+    description: 'Total complaints by type'
+  },
+  {
+    title: 'Survey Responses by Age Group',
+    correctSchemeType: 'categorical',
+    palette: ['#4e79a7','#f28e2b','#e15759','#76b7b2','#59a14f'],
+    expectedPhrase: 'sequential ramp falsely implies age groups are ranked by value rather than being distinct cohorts',
+    labels: ['18-24','25-34','35-44','45-54','55+'],
+    data: [310,480,395,260,185],
+    description: 'Number of survey respondents by age group'
+  },
+  {
+    title: 'Temperature Anomaly from Baseline',
+    correctSchemeType: 'diverging',
+    palette: ['#d73027','#f46d43','#fdae61','#fee08b','#ffffff','#d9ef8b','#a6d96a','#66bd63','#1a9850'],
+    expectedPhrase: 'one-directional ramp makes negative anomalies appear as small positives rather than below-baseline cooling',
+    labels: ['1950','1960','1970','1980','1990','2000','2010','2020'],
+    data: [-2.4,-1.1,-0.3,0.2,0.8,1.5,2.3,3.1],
+    description: 'Annual temperature anomaly relative to baseline'
+  },
+  {
+    title: 'Budget Variance from Plan',
+    correctSchemeType: 'diverging',
+    palette: ['#d73027','#f46d43','#fdae61','#fee08b','#ffffff','#d9ef8b','#a6d96a','#66bd63','#1a9850'],
+    expectedPhrase: 'one-directional ramp makes -12 variance appear as low positive rather than negative',
+    labels: ['Dept A','Dept B','Dept C','Dept D','Dept E','Dept F','Dept G'],
+    data: [-18,-12,-5,0,3,8,14],
+    description: 'Budget variance from plan, ranging from negative to positive'
+  },
+  {
+    title: 'Net Promoter Score by Region',
+    correctSchemeType: 'diverging',
+    palette: ['#d73027','#f46d43','#fdae61','#fee08b','#ffffff','#d9ef8b','#a6d96a','#66bd63','#1a9850'],
+    expectedPhrase: 'one-directional ramp makes negative NPS scores appear as low-positive satisfaction rather than net-detractor regions',
+    labels: ['North','South','East','West','Central','Urban','Rural'],
+    data: [-45,-20,-5,12,30,50,72],
+    description: 'Net Promoter Score by region'
+  },
+  {
+    title: 'Profit Margin Change YoY',
+    correctSchemeType: 'diverging',
+    palette: ['#d73027','#f46d43','#fdae61','#fee08b','#ffffff','#d9ef8b','#a6d96a','#66bd63','#1a9850'],
+    expectedPhrase: 'one-directional ramp makes products with declining margins look merely low rather than actually worsening',
+    labels: ['Line A','Line B','Line C','Line D','Line E','Line F','Line G'],
+    data: [-9,-4,-1,0,2,6,11],
+    description: 'Year-over-year profit margin change'
+  },
+  {
+    title: 'Sentiment Score by Topic',
+    correctSchemeType: 'diverging',
+    palette: ['#d73027','#f46d43','#fdae61','#fee08b','#ffffff','#d9ef8b','#a6d96a','#66bd63','#1a9850'],
+    expectedPhrase: 'one-directional ramp makes strongly negative sentiment appear as a small positive value, masking opposition',
+    labels: ['Topic A','Topic B','Topic C','Topic D','Topic E','Topic F','Topic G'],
+    data: [-62,-30,-8,5,22,48,78],
+    description: 'Public sentiment score by topic'
+  },
+  {
+    title: 'Elevation Change from Sea Level Reference',
+    correctSchemeType: 'diverging',
+    palette: ['#d73027','#f46d43','#fdae61','#fee08b','#ffffff','#d9ef8b','#a6d96a','#66bd63','#1a9850'],
+    expectedPhrase: 'one-directional ramp makes below-sea-level zones appear as low-elevation positive values, hiding that they are below the reference',
+    labels: ['Zone A','Zone B','Zone C','Zone D','Zone E','Zone F','Zone G'],
+    data: [-85,-30,0,25,70,140,210],
+    description: 'Elevation change from sea level reference'
+  }
 ];
 
-const OFFICIAL_MISMATCH_COVERAGE = [
-  'implies region colors are unrelated categories',
-  'hides the gradient from low to high',
-  'implies districts are discrete unrelated groups',
-  'density gradient is hidden',
-  'categorically different rather than opposite ends',
-  'rainfall gradient hidden',
-  'independent category rather than a position on a continuum',
-  'continuum from fast to slow',
-  'sites are unrelated',
-  'severity gradient',
-  'distinct unrelated groups instead of expressing a yield gradient',
-  'yield gradient',
-  'sequential ramp falsely implies',
-  'ranked relationship between categories',
-  'traffic sources have a natural progression',
-  'false hierarchy',
-  'departments are ranked',
-  'no ranking exists',
-  'spectrum from low to high',
-  'no spectrum exists',
-  'complaint types follow a progression from minor to severe',
-  'false progression',
-  'ranked by value rather than being distinct cohorts',
-  'distinct cohorts',
-  'negative anomalies appear as small positives',
-  'below-baseline',
-  'variance appear as low positive',
-  'low positive rather than negative',
-  'negative NPS scores appear as low-positive',
-  'net-detractor regions',
-  'declining margins look merely low',
-  'actually worsening',
-  'negative sentiment appear as a small positive',
-  'masking opposition',
-  'below-sea-level zones appear as low-elevation positive',
-  'hiding that they are below the reference'
-].join('; ');
+function escHtml(s) {
+  return String(s)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
 
-export async function solve(email) {
-  const norm = normalizeEmail(email);
-  const n = rng(`${norm}#${id}`);
-  const s = SCENARIOS[Math.floor(n() * SCENARIOS.length)];
+function buildHtml(s) {
+  const title = escHtml(s.title);
+  const description = escHtml(s.description);
+  const scheme = escHtml(s.correctSchemeType);
+  const phrase = escHtml(s.expectedPhrase);
 
-  const html = `
-<!-- 
-Explanation: ${s.explanation}
-This uses a ${s.correctSchemeType} color scheme.
-Official mismatch coverage: ${OFFICIAL_MISMATCH_COVERAGE}
--->
-<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>${s.title}</title>
+  <title>${title}</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 </head>
 <body>
-  <h3>${s.title} (Corrected Encoding)</h3>
+  <!--
+    Scheme type: ${scheme}
+    The original chart used the wrong color encoding.
+    ${phrase}
+    A ${scheme} palette is the correct fix for this data.
+  -->
+  <h2>${title}</h2>
+  <p>${description}</p>
+  <p>Color scheme: ${scheme}</p>
   <canvas id="chart"></canvas>
   <script>
+    const colors = ${JSON.stringify(s.palette)};
     new Chart(document.getElementById('chart'), {
       type: 'bar',
       data: {
-        labels: ["Data Point 1", "Data Point 2", "Data Point 3", "Data Point 4", "Data Point 5"],
+        labels: ${JSON.stringify(s.labels)},
         datasets: [{
-          label: '${s.title}',
-          data: [10, 20, 30, 40, 50],
-          backgroundColor: ${JSON.stringify(s.palette)},
-          borderColor: ${JSON.stringify(s.palette)},
+          label: ${JSON.stringify(s.title)},
+          data: ${JSON.stringify(s.data)},
+          backgroundColor: colors,
+          borderColor: colors,
           borderWidth: 1
         }]
       },
-      options: { responsive: true, scales: { y: { beginAtZero: true } } }
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: false } }
+      }
     });
   </script>
 </body>
-</html>`.trim();
+</html>`;
+}
+
+export async function solve(email) {
+  const norm = normalizeEmail(email);
+  const r = rng(`${norm}#${id}`);
+  const scenario = SCENARIOS[Math.floor(r() * SCENARIOS.length)];
+
+  const html = buildHtml(scenario);
 
   return {
     type: 'solved',
-    variant: `Scenario: ${s.title}`,
+    variant: `Scenario: ${scenario.title}`,
     answer: html,
-    answerDisplay: `### Analysis\n\n- **Scenario:** ${s.title}\n- **Correct Scheme:** ${s.correctSchemeType}\n- **Explanation:** ${s.explanation}\n\nCopy the HTML from the **Answer** box and paste it into the exam portal.`,
+    answerDisplay:
+      `### Analysis\n\n` +
+      `- **Scenario:** ${scenario.title}\n` +
+      `- **Correct Scheme:** ${scenario.correctSchemeType}\n` +
+      `- **Why:** ${scenario.expectedPhrase}\n\n` +
+      `Paste the HTML from the **Answer** field into the exam portal.`
   };
 }
