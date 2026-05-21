@@ -1,0 +1,307 @@
+
+--- q-axis-scale-manipulation-repair ---
+ize: 0.84rem"
+      ></textarea>
+    </div>
+  `;return{id:e,title:r,weight:o,question:l,answer:await wt(t)}}var ga,fa,kt=S(()=>{"use strict";vt();ga="q-axis-scale-manipulation-repair",fa=20});var _t={};I(_t,{default:()=>Ta});import{html as wa}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";function St(t,o){return t[Math.floor(o()*t.length)]}function ka(t,o){let e=t.length;if(!e||e!==o.length)return 0;let r=t.reduce((i,u)=>i+u,0)/e,n=o.reduce((i,u)=>i+u,0)/e,l=0,s=0,a=0;for(let i=0;i<e;i++){let u=t[i]-r,c=o[i]-n;l+=u*c,s+=u*u,a+=c*c}return s===0||a===0?0:l/Math.sqrt(s*a)}async function Ea(t,o,e){let r=Math.max(1,Number(o)||1),n=Array.from({length:t.length}),l=0;async function s(){for(;;){let i=l;if(i>=t.length)return;l+=1,n[i]=await e(t[i],i)}}let a=Array.from({length:Math.min(r,t.length)},()=>s());return await Promise.all(a),n}async function Sa({check:t,output:o,token:e}){let r="You are a strict binary evaluator. Decide whether the answer to the check question is YES by reading the candidate output only. Respond with exactly one token: YES or NO.",n=`Check question:
+${t}
+
+Candidate output:
+${o}
+
+Answer YES or NO only.`;for
+
+--- q-binary-eval-rubric ---
+return 0;if(l===1)throw new Error(`Judge returned non-binary output: ${JSON.stringify(i)}`)}return 0}async function Ta({user:t,weight:o=1.25}){let e="q-binary-eval-rubric",r="Build a Binary Eval Rubric",n=(0,Tt.default)(`${t.email}#${e}`),l=St(Object.keys(Et),n),s=Et[l],a=St(va,n),i=s.hiddenExamples,u=i.map(h=>h.label),c=a*i.length,d=8,m=async h=>{let g=(h||"").split(/\r?\n/).map(k=>k.trim()).filter(Boolean);if(g.length!==a)throw new Error(`You must submit exactly ${a} binary checks, one per line. You submitted ${g.length}.`);for(let k=0;k<g.length;k++){let C=g[k];if(!C.endsWith("?"))throw new Error(`Line ${k+1} must end with '?'.`);if(C.length<24)throw new Error(`Line ${k+1} is too short. Write a complete, specific question.`)}let f=g.map(k=>k.toLowerCase());if(new Set(f).size!==f.length)throw new Error("Duplicate checks detected. Each line must be meaningfully different.");globalThis.aiPipeToken||(globalThis.aiPipeToken=prompt("Enter your AI Pipe Token"));let y=globalThis.aiPipeToken;if(!y||!y.trim())throw new Error("AI Pipe token is required to evaluate your rubric.");let w=[];g.forEach((k,C)=>{i.forEach((R,N)=>{w.push({check:k,c
+
+--- q-bug-hunter-property-based-testing ---
+r=JSON.stringify(o.kwargs??{});return`Counterexample args=${e}, kwargs=${r}, attempt=${o.attempt??"?"}`}async function Ma({user:t,weight:o=1}){let e="q-bug-hunter-property-based-testing",r="The Bug Hunter (Property-Based Testing)",n=Oa(t),l=async a=>{if(!a||!String(a).trim())throw new Error("Submit complete Python test code with at least one @given-decorated test function.");let i=String(a);if(!/@given\s*\(/.test(i))throw new Error("Your submission must include at least one @given(...) decorator.");if(!/\btest_[a-zA-Z0-9_]*\s*\(/.test(i))throw new Error("Define at least one test function whose name starts with test_.");let u;try{u=La({pyodide:Ca,scenario:n,submission:i})}catch(h){let g=h instanceof Error?h.message:String(h);throw new Error(`Could not run your property-based test in Pyodide (${g}).`)}let c=u?.buggy||{},d=u?.correct||{};if(c.status==="error")throw new Error(`Test setup error: ${c.error}`);if(d.status==="error")throw new Error(`Your test code could not run against the reference function: ${d.error}`);let m=c.status==="failed",p=d.status==="failed";if(m&&!p)return!0;throw!m&&!p?new Error(`Hypothesis did not discover the
+
+--- q-calculate-variance ---
+/lit-html.js";import{sampleVariance as qa}from"https://cdn.jsdelivr.net/npm/simple-statistics@7/+esm";async function Da({user:t,weight:o=1.5}){let e="q-calculate-variance",r="Calculate variance",n=(0,Pt.default)(`${t.email}#${e}`),l=n()*50+25,s=Array.from({length:1e3},()=>{let c=l+(n()*40-20);return Math.floor(Math.max(0,c))}),a=qa(s).toFixed(2),i=c=>{let d=parseFloat(c.trim());if(isNaN(d))throw new Error("Please enter a valid number");let m=.05,p=parseFloat(a);if(Math.abs(d-p)>m)throw new Error("Variance is not within expected range.");return!0},u=Na`
+    <h2>Quality Control Analytics for PrecisionParts Manufacturing</h2>
+    <p>
+      <strong>PrecisionParts Manufacturing</strong> is a leading supplier of precision-engineered components for the
+      automotive and aerospace industries. Quality control is paramount in their operations, as even small variations in
+      part dimensions can lead to product failures, costly recalls, and safety issues. The company has implemented a
+      rigorous statistical process control system to monitor manufacturing consistency.
+    </p>
+
+<p>
+      The quality control team measures critical dimen
+
+--- q-code-interpreter-ai-analysis ---
+t/npm/lit-html@3/lit-html.js";import{default as Fa}from"https://cdn.jsdelivr.net/npm/seedrandom@3/+esm";async function Ha({user:t,weight:o=1}){let e="q-code-interpreter-ai-analysis",r="Code Interpreter with AI Error Analysis",n=Fa(`${t.email}#${e}`),s=[...[{id:1,code:`x = 5
+y = 10
+result = x + y
+print(result)`,hasError:!1,expectedOutput:`15
+`,errorLines:[]},{id:2,code:`numbers = [1, 2, 3, 4, 5]
+total = sum(numbers)
+print(f'Sum: {total}')`,hasError:!1,expectedOutput:`Sum: 15
+`,errorLines:[]},{id:3,code:`def greet(name):
+    return f'Hello, {name}!'
+
+message = greet('Alice')
+print(message)`,hasError:!1,expectedOutput:`Hello, Alice!
+`,errorLines:[]},{id:4,code:`for i in range(3):
+    print(i * 2)`,hasError:!1,expectedOutput:`0
+2
+4
+`,errorLines:[]},{id:5,code:`data = {'name': 'John', 'age': 30}
+print(data['name'])
+print(data['age'])`,hasError:!1,expectedOutput:`John
+30
+`,errorLines:[]},{id:6,code:`text = 'hello world'
+print(text.upper())
+print(len(text))`,hasError:!1,expectedOutput:`HELLO WORLD
+11
+`,errorLines:[]},{id:7,code:`import math
+result = math.sqrt(16)
+print(int(result))`,hasError:!1,expectedOutput:`4
+`,errorLines:[]},{id:8,code
+
+--- q-colorencoding-server ---
+|[];return[...new Set(o.map(e=>e.length===4?"#"+e[1]+e[1]+e[2]+e[2]+e[3]+e[3]:e.toLowerCase()))]}function Ce(t){let e=(0,Dt.default)(`${t?.email??""}#q-colorencoding-server`),r=Math.floor(e()*qt.length);return qt[r]}function Ja(t){if(t.length<2)return{pass:!1,reason:"Need at least 2 colors for sequential check."};let o=t.map(oe),e=o.every((n,l)=>l===0||n>=o[l-1]-5),r=o.every((n,l)=>l===0||n<=o[l-1]+5);return!e&&!r?{pass:!1,reason:`Lightness values [${o.map(n=>n.toFixed(1)).join(", ")}] are not monotonically ordered. A sequential palette must go from light to dark (or dark to light).`}:{pass:!0}}function za(t){let o=t.slice(0,8);for(let e=0;e<o.length;e++)for(let r=e+1;r<o.length;r++){let n=Ba(o[e],o[r]);if(n<30)return{pass:!1,reason:`Colors ${o[e]} and ${o[r]} are too similar (CIEDE2000 = ${n.toFixed(1)} < 30). Categorical palettes need perceptually distinct colors.`}}return{pass:!0}}function Ya(t){if(t.length<3)return{pass:!1,reason:"Need at least 3 colors for diverging check."};let o=Math.floor(t.length/2),e=oe(t[o]);if(e<80)return{pass:!1,reason:`Mid-point color ${t[o]} has L*=${e.toFixed(1)} \u2014 diverging palettes need a near
+
+--- q-crawl-html ---
+t={};I(Wt,{default:()=>on});import{html as en}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function on({user:t,weight:o=1}){let e="q-crawl-html",r="Count crawled HTML files",n=(0,Bt.default)(`${t.email}#${e}`),l=Math.floor(n()*16),s=l+10+Math.floor(n()*(26-l-10)),a=String.fromCharCode(65+l),i=String.fromCharCode(65+s),u,c=async m=>/^-?\d+$/.test(m)?(u||(u=Object.entries(tn).reduce((p,[h,g])=>{let f=h.toUpperCase();return f>=a&&f<=i?p+g:p},0)),parseInt(m,10)===u):!1,d=en`
+    <div class="mb-3">
+      <p>
+        <strong>SiteScout</strong> collects competitor pages for market research. Its crawler stores HTML files in
+        alphabetized folders. Estimate workload by counting how many files fall between letters
+        <code>${a}</code> and <code>${i}</code>.
+      </p>
+      <p>
+        Crawl <code>https://sanand0.github.io/tdsdata/crawl_html/</code>. How many HTML files begin with letters from
+        <code>${a}</code> to <code>${i}</code>?
+      </p>
+      <label for="${e}" class="form-label">Number of files</label>
+      <input class="form-control" id="${e}" name="${e}" />
+    </div>
+  `;return{id:e,title:r,wei
+
+--- q-css-selectors-sum ---
+t={};I(Vt,{default:()=>rn});import{html as zt}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function rn({user:t,weight:o=1}){let e="q-css-selectors-sum",r="CSS: Featured-Sale Discount Sum",n=(0,Yt.default)(`${t.email}#${e}`),l=20,s=["featured sale","sale featured","sale","featured","on-sale","featured new","sale vip","featured sale vip","vip sale","new"],a=Array.from({length:l},()=>s[Math.floor(n()*s.length)]),i=Array.from({length:l},()=>Math.floor(n()*46)+5),u=i.filter((d,m)=>{let p=a[m].split(/\s+/);return p.includes("featured")&&p.includes("sale")}).reduce((d,m)=>d+m,0),c=zt`
+    <div class="mb-3">
+      <h4>Case Study: eShopCo Promotional Audit</h4>
+      <p>
+        eShopCo wants to verify that all <em>featured sale</em> products are correctly tagged in the front-end. Inspect
+        the hidden product list below—each <code>&lt;li&gt;</code> represents a product with its promotional classes and
+        a <code>data-discount</code> (percentage).
+      </p>
+      <ul class="products d-none">
+        ${a.map((d,m)=>zt`<li class="${d}" data-discount="${i[m]}"></li>`)}
+      </ul>
+      <p>
+        Using a single C
+
+--- q-dbt-operations-dashboard ---
+t={};I(Zt,{default:()=>nn});import{html as an}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function nn({user:t,weight:o=1}){let e="q-dbt-operations-dashboard",r="dbt: Operations performance mart",n=(0,Xt.default)(`${t.email}#${e}`),s=U([{name:"fulfillment",metrics:["delayed_shipments","ontime_percentage","avg_transit_days"],businessTerms:["shipment","carrier","warehouse","delivery","transit"]},{name:"inventory",metrics:["stockouts","avg_days_on_hand","cycle_accuracy"],businessTerms:["inventory","sku","cycle","stock","warehouse"]},{name:"returns",metrics:["rma_volume","percent_refunded","avg_processing_hours"],businessTerms:["return","rma","refund","restock","inspection"]},{name:"support",metrics:["sla_breaches","avg_handle_minutes","first_contact_resolution"],businessTerms:["ticket","agent","sla","queue","contact"]}],n),a=U(s.metrics,n),i=U(["daily","weekly"],n),u=U([14,30,45],n),d=U(["mart model","intermediate model"],n),m={"mart model":[{name:"uses_ref",pattern:/{{\s*ref\(/i,message:"Mart models should use {{ ref() }} for dependencies."},{name:"group_by",pattern:/\bgroup\s+by\b/i,message:"Mart models require gro
+
+--- q-fastapi ---
+o={};I(no,{default:()=>ln});import{html as sn}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function ln({user:t,weight:o=1}){let e="q-fastapi",r="Write a FastAPI server to serve data",n=(0,ao.default)(`${t.email}#${e}`),{students:l}=oo(2e3,400,n),s=`studentId,class
+`+l.map(d=>`${d.studentId},${d.class}`).join(`
+`),a=new Blob([s],{type:"text/csv"}),i=[...new Set(l.map(d=>d.class))],u=async d=>{if(!d)throw new Error("URL is required");let m=new URLSearchParams,p=z([...i],Math.random).slice(0,4);p.forEach(f=>m.append("class",f));let h=await fetch(`${d}?${m.toString()}`).then(f=>f.json()),g=l.filter(f=>p.includes(f.class));return ae(h.students,g),!0},c=sn`
+    <div class="mb-3">
+      <p>
+        Download
+        <button class="btn btn-sm btn-outline-primary" type="button" @click=${()=>M(a,`${e}.csv`)}>
+          ${e}.csv</button
+        >. This file has 2-columns:
+        <ol>
+          <li>studentId: A unique identifier for each student, e.g. 1, 2, 3, ...</li>
+          <li>class: The class (including section) of the student, e.g. 1A, 1B, ... 12A, 12B, ... 12Z</li>
+        </ol>
+      </p>
+      <p>
+        Write a F
+
+--- q-fastapi-sentiment-batch ---
+);var io={};I(io,{default:()=>dn});import{html as cn}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function dn({weight:t=1}){let o="q-fastapi-sentiment-batch",e="FastAPI Batch Sentiment Analysis",r=[{text:"I absolutely love this product, it changed my life!",sentiment:"happy"},{text:"This is the worst experience I've ever had.",sentiment:"sad"},{text:"The weather today is quite average.",sentiment:"neutral"},{text:"I'm so excited about my upcoming vacation!",sentiment:"happy"},{text:"I lost my favorite book and I'm heartbroken.",sentiment:"sad"},{text:"The meeting is scheduled for 3 PM.",sentiment:"neutral"},{text:"This movie brought tears of joy to my eyes.",sentiment:"happy"},{text:"I failed my exam and feel terrible about it.",sentiment:"sad"},{text:"The package arrived on time.",sentiment:"neutral"},{text:"Winning the competition was a dream come true!",sentiment:"happy"},{text:"My pet passed away yesterday.",sentiment:"sad"},{text:"The report contains 50 pages.",sentiment:"neutral"},{text:"I'm thrilled to announce our engagement!",sentiment:"happy"},{text:"The project was rejected by the committee.",sentiment:
+
+--- q-get-llm-to-say-yes ---
+);var uo={};I(uo,{default:()=>mn});import{html as un}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function mn({weight:t=2}){let o="q-get-llm-to-say-yes",e="Get an LLM to say Yes",r=un`
+    <p>
+      SecurePrompt Technologies is a cybersecurity firm that specializes in deploying large language models (LLMs) for
+      sensitive enterprise applications. To ensure that these models adhere strictly to security policies, SecurePrompt
+      imposes hardcoded behavioral instructions on the LLMs. For example, an LLM may be configured to never output
+      certain sensitive keywords.
+    </p>
+    <p>
+      As part of their regular security audits and red-team exercises, SecurePrompt's engineers and external auditors
+      test how well the LLMs follow these strict instructions. One objective of these tests is to determine if it is
+      possible to bypass or trick the LLM into violating its preset security constraints.
+    </p>
+    <p>
+      This task is simulates potential attack vectors where a malicious actor might manipulate the model's output by
+      ingeniously engineering the prompt. While the intention is to expose
+
+--- q-github-action ---
+o={};I(mo,{default:()=>gn});import{html as hn}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function gn({user:t,weight:o=1}){let e="q-github-action",r="Create a GitHub Action",n=async s=>{let a=s.match(/https:\/\/github\.com\/([^/]+)\/([^/]+)/);if(!a)throw new Error("URL does not match https://github.com/<user>/<repo>");let[,i,u]=a,c=`https://api.github.com/repos/${i}/${u}/actions/runs`,{workflow_runs:d}=await fetch(c).then(h=>h.json());if(!d?.length)throw new Error("No runs found");let{jobs_url:m}=d[0],{jobs:p}=await fetch(m).then(h=>h.json());for(let{steps:h}of p)for(let{name:g}of h)if(g.includes(t.email))return!0;throw new Error(`No step matches ${t.email}`)},l=hn`
+    <div class="mb-3">
+      <p>
+        Create a <a href="https://github.com/features/actions">GitHub action</a> on one of your GitHub repositories.
+        Make sure one of the steps in the action has a name that contains your email address <code>${t.email}</code>.
+        For example:
+      </p>
+      <pre><code class="language-yaml">
+jobs:
+  test:
+    steps:
+      - name: ${t.email}
+        run: echo "Hello, world!"
+      </code></pre>
+      <p>Tr
+
+--- q-image-grayscale-rebuild ---
+);var vo={};I(vo,{default:()=>fn});import{html as bo}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function fn({weight:t=1}){let o="q-image-grayscale-rebuild",e="Reconstruct and desaturate an image",r=await fetch("jigsaw.webp").then(h=>h.blob()),n=await createImageBitmap(r),l=5,s=n.width/l,a=n.height/l,i=document.createElement("canvas");i.width=n.width,i.height=n.height;let u=i.getContext("2d");Object.entries(wo).forEach(([h,g])=>{let[f,y]=h.split(",").map(Number),[w,b]=g.split(",").map(Number),x=y*s,E=f*a,T=b*s,_=w*a;u.drawImage(n,x,E,s,a,T,_,s,a)});let c=u.getImageData(0,0,i.width,i.height),d=new Uint8ClampedArray(c.data.length);for(let h=0;h<c.data.length;h+=4){let g=c.data[h],f=c.data[h+1],y=c.data[h+2],w=c.data[h+3],b=Math.round(.2126*g+.7152*f+.0722*y);d[h]=d[h+1]=d[h+2]=b,d[h+3]=w}let m=async()=>{let h=document.getElementById(o);if(!h.files.length)throw new Error("Upload your reconstructed grayscale image.");let g=h.files[0],f=await go(URL.createObjectURL(g));if(f.width!==i.width||f.height!==i.height)throw new Error("Image dimensions do not match the original.");let y=fo(f);for(let w=0;w<d.length;w++)if(d[w]
+
+--- q-llm-sentiment-analysis ---
+3/lit-html.js";import{loadPyodide as bn}from"https://cdn.jsdelivr.net/pyodide/v0.27.0/full/pyodide.mjs";async function wn({user:t,weight:o=1}){let e="q-llm-sentiment-analysis",r="LLM Sentiment Analysis",n=(0,Eo.default)(`${t.email}#${e}`),l=se(50,n).join("").trim(),s=async i=>{ko.runPython(`
+import json
+import sys
+
+class MockResponse:
+    _json = {"choices": [{"message": {"content": "GOOD"}}]}
+
+    def __init__(self, method, url, kwargs):
+        self.method = method
+        self.url = url
+        self.request_kwargs = kwargs
+        self.status_code = 200
+        self.text = json.dumps(self._json)
+
+    def raise_for_status(self):
+        pass
+
+    def json(self):
+        return self._json
+
+
+class MockHttpx:
+    def __init__(self):
+        self.request = None
+        for exc in ("HTTPStatusError", "Timeout", "ReadTimeout", "ConnectTimeout", "WriteTimeout", "PoolTimeout", "ReadError", "WriteError", "PoolError", "PoolTimeoutError", "PoolReadTimeoutError", "PoolConnectTimeoutError", "PoolWriteTimeoutError", "PoolTimeoutError", "PoolReadTimeoutError", "PoolConnectTimeoutError", "PoolWriteTimeoutError", "PoolTimeoutError", "PoolReadTimeo
+
+--- q-move-rename-files ---
+elivr.net/npm/jszip@3/+esm";import{html as xn}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function kn({user:t,weight:o=1}){let e="q-move-rename-files",r="Move and rename files",n=(0,_o.default)(`${t.email}#${e}`),l=new vn,s=new Set;for(let m=0;m<3;m++){let p=Oe(n).toLowerCase();for(let h=0;h<10;h++){let g=`${Oe(n)}.txt`.toLowerCase();s.has(g)||(s.add(g),l.file(`${p}/${g}`,"x"))}}let a=await l.generateAsync({type:"blob"}),i=[...new Set([...s].map(m=>`${m.replace(/[0-9]/g,p=>(parseInt(p)+1)%10)}:x
+`))].sort().join(""),u=await le(i),c=m=>m.trim().split(/\s+/).at(0)===u,d=xn`
+    <div class="mb-3">
+      <p>
+        Download
+        <button class="btn btn-sm btn-outline-primary" type="button" @click=${()=>M(a,`${e}.zip`)}>
+          ${e}.zip
+        </button>
+        and extract it. Use <code>mv</code> to move all files under folders into an empty folder. Then rename all files
+        replacing each digit with the next. 1 becomes 2, 9 becomes 0, <code>a1b9c.txt</code> becomes
+        <code>a2b0c.txt</code>.
+      </p>
+
+      <label for="${e}" class="form-label">
+        What does running <code>grep . * | LC_ALL=C sor
+
+--- q-network-game-detective ---
+tle:o,weight:i,question:c,answer:u}}}var Uo=S(()=>{"use strict"});var Go={};I(Go,{default:()=>Dn});var Dn,Bo=S(()=>{"use strict";Fo();Uo();Dn=Ho({id:"q-network-game-detective",title:"Network Game: Graph Detective",url:"https://tds-network-games.sanand.workers.dev/detective/",summary:"Probe a transaction graph with limited queries to identify the compromised account and shortest proof path.",tokenGame:"detective",weight:1,validatorFactory:jo})});var Wo={};I(Wo,{default:()=>Fn});import{html as jn}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function Fn({user:t,weight:o=1}){let e="q-ollama",r="Local Ollama Endpoint",n=async s=>{if(s=s.trim(),!new URL(s).hostname.includes("ngrok"))throw new Error("URL must be an ngrok forwarding domain");let i=await fetch(`${s.replace(/\/$/,"")}/api/version`,{headers:{"ngrok-skip-browser-warning":!0}});if(!(await i.json()).version)throw new Error("Server is not running Ollama");let c=i.headers.get("x-email");if(c!==t.email)throw new Error(`X-Email header mismatch; expected ${t.email} but got ${c}`);return!0},l=jn`
+    <div class="mb-3">
+      <h4>Case Study: eShopCo AI Chat Diagnostic
+
+--- q-ollama ---
+o={};I(Wo,{default:()=>Fn});import{html as jn}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function Fn({user:t,weight:o=1}){let e="q-ollama",r="Local Ollama Endpoint",n=async s=>{if(s=s.trim(),!new URL(s).hostname.includes("ngrok"))throw new Error("URL must be an ngrok forwarding domain");let i=await fetch(`${s.replace(/\/$/,"")}/api/version`,{headers:{"ngrok-skip-browser-warning":!0}});if(!(await i.json()).version)throw new Error("Server is not running Ollama");let c=i.headers.get("x-email");if(c!==t.email)throw new Error(`X-Email header mismatch; expected ${t.email} but got ${c}`);return!0},l=jn`
+    <div class="mb-3">
+      <h4>Case Study: eShopCo AI Chat Diagnostics</h4>
+      <p>
+        eShopCo operates a local Ollama instance (<code>http://localhost:11434</code>) to power our internal AI chat
+        assistant. To allow remote diagnostics and frontend integration, you need to:
+      </p>
+      <ol>
+        <li>
+          <strong>Enable CORS</strong> for Ollama. Set the environment variable <code>OLLAMA_ORIGINS="*"</code>. Then
+          run Ollama. For example:
+          <pre><code>export OLLAMA_ORIGINS="*"
+
+--- q-replace-across-files ---
+t-html.js";function $e(t,o,e,r){for(let n=0;n<e;n++)t.splice(Math.floor(r()*(t.length+1)),0,o);return t}async function Gn({user:t,weight:o=1}){let e="q-replace-across-files",r="Replace across files",n=(0,zo.default)(`${t.email}#${e}`),l=new Hn,s=[];for(let d=0;d<10;d++){let m=se(1e4,n);$e(m," IITM ",10,n),$e(m," iitm ",10,n),$e(m," IITm ",10,n);let p=m.join("").split(`
+`).map(h=>h.trim()).join(`
+`)+`
+`;s.push(p),l.file(`file${d}.txt`,p)}let a=await l.generateAsync({type:"blob"}),i=await le(s.join("").replace(/iitm/gi,"IIT Madras")),u=d=>d.trim().split(/\s+/).at(0)===i,c=Un`
+    <div class="mb-3">
+      <p>
+        Download
+        <button class="btn btn-sm btn-outline-primary" type="button" @click=${()=>M(a,`${e}.zip`)}>
+          ${e}.zip
+        </button>
+        and unzip it into a new folder, then replace all "IITM" (in upper, lower, or mixed case) with "IIT Madras" in
+        <strong>all files</strong>. Leave everything as-is - don't change the
+        <a href="https://stackoverflow.com/a/39532890/100904">line endings</a>.
+      </p>
+
+      <label for="${e}" class="form-label">
+        What does running <code>cat * | sha256sum<
+
+--- q-sort-filter-json ---
+o={};I(Ko,{default:()=>Wn});import{html as Bn}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function Wn({user:t,weight:o=1}){let e="q-sort-filter-json",r="Sort and Filter a JSON Product Catalog",n=(0,Qo.default)(`${t.email}#${e}`),l=h=>h[Math.floor(n()*h.length)],s=["Electronics","Apparel","Books","Home","Toys"],a=["Super","Ultra","Eco","Smart","Deluxe","Mini","Pro"],i=["Widget","Gadget","Device","Kit","Set","Tool","Item"],u=Array.from({length:100},()=>({category:l(s),price:Number((20+n()*180).toFixed(2)),name:`${l(a)} ${l(i)}`})),c=Number((50+n()*100).toFixed(2)),d=u.filter(h=>h.price>=c).sort((h,g)=>h.category.localeCompare(g.category)||g.price-h.price||h.name.localeCompare(g.name)),m=h=>{let g=JSON.parse(h);if(g.length!==d.length)throw new Error("Array length mismatch");return g.every((f,y)=>f.category===d[y].category&&f.price===d[y].price&&f.name===d[y].name)},p=Bn`
+    <div class="mb-3">
+      <p>
+        You’re auditing an e-commerce catalog. Below is a JSON array of
+        <strong>100</strong> products. Each has a <code>category</code>, <code>price</code>, and <code>name</code>.
+      </p>
+      <ol>
+      
+
+--- q-sql-average-salary ---
+.net/npm/lit-html@3/lit-html.js";import Jn from"https://esm.sh/@sqlite.org/sqlite-wasm@3.46.1-build3";async function zn({user:t,weight:o=1.5}){let e="q-sql-average-salary",r="SQL: Average salary by department",n=(0,er.default)(`${t.email}#${e}`),l=["Engineering","Sales","Marketing","HR","Finance"],s=Array.from({length:500},()=>({employee_id:Math.floor(n()*1e4)+1e3,name:`Employee_${Math.floor(n()*1e3)}`,department:l[Math.floor(n()*l.length)],salary:Math.floor(n()*8e4)+4e4})),a=await Jn({printErr:console.error}),i=new a.oo1.DB;i.exec("CREATE TABLE employees (employee_id INTEGER, name TEXT, department TEXT, salary INTEGER)");let u=i.prepare("INSERT INTO employees (employee_id, name, department, salary) VALUES (?, ?, ?, ?)");i.exec("BEGIN TRANSACTION");for(let p of s)u.bind([p.employee_id,p.name,p.department,p.salary]).stepReset();i.exec("COMMIT"),u.finalize();let c={};l.forEach(p=>{let h=s.filter(g=>g.department===p);if(h.length>0){let g=h.reduce((f,y)=>f+y.salary,0)/h.length;c[p]=Math.round(g)}});let d=Zo`
+    <h2>HR Analytics for GlobalTech Corporation</h2>
+    <p>
+      <strong>GlobalTech Corporation</strong> is a multinational tech
+
+--- q-unicode-data ---
+taView(r);n.setUint16(0,e,o);for(let l=0;l<t.length;l++)n.setUint16((l+1)*2,t.charCodeAt(l),o);return r}async function Zn({user:t,weight:o=1}){let e="q-unicode-data",r="Process files with different encodings",n=(0,rr.default)(`${t.email}#${e}`),l=Object.values(ar),s=()=>Array.from({length:500},()=>Math.floor(n()*l.length)),[a,i,u]=[s(),s(),s()],c=a.map((w,b)=>`${l[w]},${b}`).join(`\r
+`),d=i.map((w,b)=>`${l[w]},${b}`).join(`
+`),m=u.map((w,b)=>`${l[w]}	${b}`).join(`
+`),p=new Set(a.slice(0,3).map(w=>l[w])),h=new Yn;h.file("data1.csv",Kn(`symbol,value\r
+${c}`)),h.file("data2.csv",`symbol,value
+${d}`),h.file("data3.txt",Xn(`symbol	value
+${m}`));let g=await h.generateAsync({type:"blob"}),f=a.reduce((w,b,x)=>w+(p.has(l[b])?x:0),0)+i.reduce((w,b,x)=>w+(p.has(l[b])?x:0),0)+u.reduce((w,b,x)=>w+(p.has(l[b])?x:0),0),y=Vn`
+    <div class="mb-3">
+      <p>
+        Download and process the files in
+        <button class="btn btn-sm btn-outline-primary" type="button" @click=${()=>M(g,`${e}.zip`)}>
+          ${e}.zip
+        </button>
+        which contains three files with different encodings:
+      </p>
+      <ul>
+        <li><code>data1.csv</code
+
+--- q-use-devtools ---
+r={};I(lr,{default:()=>ts});import{html as es}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function ts({user:t,weight:o=1}){let e="q-use-devtools",r="Use DevTools",l=(0,ir.default)(`${t.email}#${e}`)().toString(36).slice(-10),s=es`
+    <div class="mb-3">
+      <input type="hidden" value="${l}" />
+      <p>Just above this paragraph, there's a hidden input with a secret value.</p>
+
+      <label for="${e}" class="form-label">What is the value in the hidden input?</label>
+      <input class="form-control" id="${e}" name="${e}" />
+    </div>
+  `;return{id:e,title:r,weight:o,question:s,answer:l}}var ir,cr=S(()=>{"use strict";ir=$(L(),1)});var dr={};I(dr,{default:()=>rs});import{html as os}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function rs({user:t,weight:o=1}){let e="q-use-github",r="Use GitHub",n=async s=>{if(!new URL(s).hostname.includes("raw.githubusercontent.com"))throw new Error("URL should be https://raw.githubusercontent.com/...");let i=await fetch(s).then(u=>u.json());if(i.email!==t.email)throw new Error(`${JSON.stringify(i)} does not match {"email": "${t.email}"}`);return!0},l=os`
+    <d
+
+--- q-use-github ---
+r={};I(dr,{default:()=>rs});import{html as os}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function rs({user:t,weight:o=1}){let e="q-use-github",r="Use GitHub",n=async s=>{if(!new URL(s).hostname.includes("raw.githubusercontent.com"))throw new Error("URL should be https://raw.githubusercontent.com/...");let i=await fetch(s).then(u=>u.json());if(i.email!==t.email)throw new Error(`${JSON.stringify(i)} does not match {"email": "${t.email}"}`);return!0},l=os`
+    <div class="mb-3">
+      <p>
+        Let's make sure you know how to use GitHub.
+
+<a href="https://github.com/join">Create a GitHub account</a> if you don't have one. Create a new public
+        repository. Commit a single JSON file called <code>email.json</code> with the value
+        <code>{"email": "${t.email}"}</code> and push it.
+      </p>
+      <label for="${e}" class="form-label"
+        >Enter the raw Github URL of <code>email.json</code> so we can verify it. (It will begin with
+        <code>https://raw.githubusercontent.com/[GITHUB ID]/[REPO NAME]/...</code>.)</label
+      >
+      <input class="form-control" id="${e}" name="${e}" />
+    </div>
+  `;
+
+--- q-vercel-latency ---
+ort((s,a)=>s-a),r=(e.length-1)*o,n=Math.floor(r),l=r-n;return e[n+1]!==void 0?e[n]+l*(e[n+1]-e[n]):e[n]}async function ss({user:t,weight:o=1}){let e="q-vercel-latency",r="Deploy a POST analytics endpoint to Vercel",n=(0,hr.default)(`${t.email}#${e}`),l=[];for(let d of pr)for(let m=0;m<12;m++){let p=mr[Math.floor(n()*mr.length)],h=110+n()*120,g=(n()-.5)*25,f=+(h+g).toFixed(2),y=+(97.1+n()*2.4).toFixed(3);l.push({region:d,service:p,latency_ms:f,uptime_pct:y,timestamp:20250301+m})}let s={regions:Kt(pr,2,n),threshold_ms:Math.round(150+n()*40)},a=new Blob([JSON.stringify(l,null,2)],{type:"application/json"}),i=s.regions.map(d=>{let m=l.filter(f=>f.region===d),p=m.map(f=>f.latency_ms),h=m.map(f=>f.uptime_pct),g=m.filter(f=>f.latency_ms>s.threshold_ms).length;return{region:d,avg_latency:Number((p.reduce((f,y)=>f+y,0)/p.length).toFixed(2)),p95_latency:Number(ns(p,.95).toFixed(2)),avg_uptime:Number((h.reduce((f,y)=>f+y,0)/h.length).toFixed(3)),breaches:g}}),u=async d=>{if(d=d.trim(),!new URL(d).hostname.includes("vercel.app"))throw new Error("Deploy to Vercel so the hostname ends with vercel.app");let p=await fetch(d,{method:"POST",headers:{
