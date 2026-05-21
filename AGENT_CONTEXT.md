@@ -42,6 +42,8 @@ The app runs locally in the browser, loads a solver registry for the selected ex
 - `check.mjs`: smoke test for registries and server behavior
 - `ga7-verify.html`: browser verifier page for GA7
 - `ga7-verify.js`: GA7 batch verification logic
+- `verify.html`: Universal Solver Verification Hub dashboard
+- `verify.js`: Dynamic ESM solver verification logic for all terms/exams
 - `tds-config.json`: dynamic welcome screen config + term/exam registry metadata
 - `solvers/T12026/`: all T1 2026 exam solver folders
 - `solvers/T22026/`: T2 2026 solvers (GA0 finalized)
@@ -392,12 +394,10 @@ The smoke check covers:
 These are reasonable next steps:
 
 - add real browser E2E tests
-- add compare-two-emails mode for GA7 debugging
+- add compare-two-emails mode for GA7/GA0 debugging
 - add verifier mode like "run only failed"
 - improve accessibility further with stronger ARIA/live-region coverage
 - add offline caching if this is meant to be reused heavily
-- add GA8 verification page similar to `ga7-verify.html`
-- add a GA0 browser verifier page similar to `ga7-verify.html`
 - fix or upgrade the installed Graphify CLI so it no longer throws `_os` after successful rebuilds
 - consider moving the Q16 bonus builder out of `app.js` into a dedicated solver file for consistency
 

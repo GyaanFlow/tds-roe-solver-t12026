@@ -117,6 +117,7 @@ async function checkServerRoutes() {
     const checks = [
       ['/', 200],
       ['/ga7-verify.html', 200],
+      ['/verify.html', 200],
       ['/style.css', 200],
       ['/solvers/T12026/ga7/registry.js', 200],
       ['/solvers/T12026/ga8/registry.js', 200]
