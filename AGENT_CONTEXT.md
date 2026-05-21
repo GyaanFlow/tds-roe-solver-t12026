@@ -277,7 +277,7 @@ The GA0 suite contains 25 solvers covering data science basics, shell scripting,
 - **Official Bundle Alignment**: IDs/order are matched against `exam-tds-2026-05-ga0.js` from `https://exam.sanand.workers.dev/exam-tds-2026-05-ga0.js`.
 - **Deterministic RNG**: Seeded solvers use `rng(seed)` from `utils.js` (bridged to `Math.seedrandom` in `index.html`) to mirror official `seedrandom` behavior.
 - **Forensic Accuracy**: Q1, Q3, Q6, Q7, Q9, Q14, Q15, Q22, and Q23 use constants or generation logic derived from the official exam bundle.
-- **Automation Scripts**: Q16 (Move/Rename) and Q19 (Bulk Replace) provide complete Python scripts for direct local execution.
+- **Automation Scripts**: Q16 (Move/Rename) provides a complete Python script for direct local execution, and Q19 (Bulk Replace) provides a direct deterministic JavaScript solver along with a verification Python script.
 - **Hosted/API Tasks**: Q5, Q10, Q11, Q18, and Q25 provide validator-compatible endpoints or deployment instructions, including CORS and expected JSON shapes.
 
 ### Recent GA0 Production Hardening
@@ -289,6 +289,7 @@ The GA0 suite contains 25 solvers covering data science basics, shell scripting,
 - Q11 FastAPI Sentiment has a broader deterministic rule set for the hidden official sentence pool.
 - Q12 LLM Yes targets the exact case-sensitive word `Yes`.
 - Q14 Image Grayscale rebuilds the official 5x5 jigsaw mapping and applies Rec.709 grayscale weights.
+- Q19 Replace Across Files has been upgraded to a direct deterministic JS solver, dynamically generating the random documents and replacing strings under the user's email seed to compute the SHA-256 hash in pure JS.
 - Q25 Vercel Latency accepts POST on both `/` and `/api/latency`, computes per-region mean, p95, uptime, and breach count.
 
 ### UI Formatting
