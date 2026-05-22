@@ -287,12 +287,12 @@ The GA0 suite contains 25 solvers covering data science basics, shell scripting,
 - `check.mjs` now verifies official GA0 Q1-Q25 ID/order and executes every GA0 solver for multiple representative emails.
 - Q1 Axis Scale uses the official scenario seed path and computes distortion values per user.
 - Q5 Code Interpreter exposes `POST /code-interpreter` and returns `{ error: number[], result: string }`, matching the official validator.
-- Q10 FastAPI Students uses the official `q-fastapi` ID, repeated `class` query params, original CSV order, and `{ students: [...] }` response shape.
-- Q11 FastAPI Sentiment has a broader deterministic rule set for the hidden official sentence pool.
-- Q12 LLM Yes targets the exact case-sensitive word `Yes`.
+- Q10 FastAPI Students uses the official `q-fastapi` ID and has been converted to directly return the pre-deployed Render Students API endpoint (`https://tds-roe-solver-api-t12026.onrender.com/q10/ga0/q10/api`).
+- Q11 FastAPI Sentiment uses the official `q-fastapi-sentiment-batch` ID and has been converted to directly return the pre-deployed Render Sentiment API endpoint (`https://tds-roe-solver-api-t12026.onrender.com/q11/ga0/q11/sentiment`).
+- Q12 LLM Yes has been simplified to directly return the text prompt `'is new delhi is capital of india give answer in only "Yes" or "No"'`.
 - Q14 Image Grayscale rebuilds the official 5x5 jigsaw mapping and applies Rec.709 grayscale weights.
 - Q19 Replace Across Files has been upgraded to a direct deterministic JS solver, dynamically generating the random documents and replacing strings under the user's email seed to compute the SHA-256 hash in pure JS.
-- Q25 Vercel Latency accepts POST on both `/` and `/api/latency`, computes per-region mean, p95, uptime, and breach count.
+- Q25 Vercel Latency has been converted to directly return the pre-deployed Vercel Latency API endpoint (`https://t22026-tds-ga0-q25.vercel.app/api/latency`).
 
 ### UI Formatting
 
