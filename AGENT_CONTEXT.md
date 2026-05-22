@@ -279,18 +279,19 @@ The GA0 suite contains 25 solvers covering data science basics, shell scripting,
 - **Official Bundle Alignment**: IDs/order are matched against `exam-tds-2026-05-ga0.js` from `https://exam.sanand.workers.dev/exam-tds-2026-05-ga0.js`.
 - **Deterministic RNG**: Seeded solvers use `rng(seed)` from `utils.js` (bridged to `Math.seedrandom` in `index.html`) to mirror official `seedrandom` behavior.
 - **Forensic Accuracy**: Q1, Q3, Q6, Q7, Q9, Q14, Q15, Q22, and Q23 use constants or generation logic derived from the official exam bundle.
-- **Automation Scripts**: Q16 (Move/Rename) provides a complete Python script for direct local execution, and Q19 (Bulk Replace) provides a direct deterministic JavaScript solver along with a verification Python script.
-- **Hosted/API Tasks**: Q5, Q10, Q11, Q18, and Q25 provide validator-compatible endpoints or deployment instructions, including CORS and expected JSON shapes.
+- **Automation Scripts**: Q19 (Bulk Replace) provides a direct deterministic JavaScript solver along with a verification Python script.
+- **Hosted/API Tasks**: Q5, Q10, Q11, Q14, Q16, Q18, and Q25 provide pre-deployed validator-compatible endpoints, sandbox drag-and-drop tools, or custom deployment instructions.
 
 ### Recent GA0 Production Hardening
 
 - `check.mjs` now verifies official GA0 Q1-Q25 ID/order and executes every GA0 solver for multiple representative emails.
 - Q1 Axis Scale uses the official scenario seed path and computes distortion values per user.
-- Q5 Code Interpreter exposes `POST /code-interpreter` and returns `{ error: number[], result: string }`, matching the official validator.
+- Q5 Code Interpreter has been converted to directly return the pre-deployed Code Interpreter Render URL (`https://tds-roe-solver-api-t12026.onrender.com/q5/`).
 - Q10 FastAPI Students uses the official `q-fastapi` ID and has been converted to directly return the pre-deployed Render Students API endpoint (`https://tds-roe-solver-api-t12026.onrender.com/q10/ga0/q10/api`).
 - Q11 FastAPI Sentiment uses the official `q-fastapi-sentiment-batch` ID and has been converted to directly return the pre-deployed Render Sentiment API endpoint (`https://tds-roe-solver-api-t12026.onrender.com/q11/ga0/q11/sentiment`).
 - Q12 LLM Yes has been simplified to directly return the text prompt `'is new delhi is capital of india give answer in only "Yes" or "No"'`.
-- Q14 Image Grayscale rebuilds the official 5x5 jigsaw mapping and applies Rec.709 grayscale weights.
+- Q14 Image Grayscale has been converted to directly return the pre-deployed Forensic Jigsaw & Grayscale Sandbox (`https://tds-roe-solver-api-t12026.onrender.com/q14/`).
+- Q16 Move/Rename has been converted to directly return the pre-deployed Move, Rename & Hash Solver Sandbox (`https://tds-roe-solver-api-t12026.onrender.com/q16/`).
 - Q19 Replace Across Files has been upgraded to a direct deterministic JS solver, dynamically generating the random documents and replacing strings under the user's email seed to compute the SHA-256 hash in pure JS.
 - Q25 Vercel Latency has been converted to directly return the pre-deployed Vercel Latency API endpoint (`https://t22026-tds-ga0-q25.vercel.app/api/latency`).
 
