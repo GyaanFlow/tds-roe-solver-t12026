@@ -4,24 +4,49 @@ import { normalizeEmail, rng, pick } from './utils.js';
 export const id = 'q-binary-eval-rubric';
 export const title = 'Q2: Binary Evaluation Rubric';
 
-// 8 validated-safe checks ranked by reliability.
-// First 6 are session-confirmed passing (corr ≥ 0.73).
-// Last 2 are structurally identical safe backups.
-// Exam requires exactly 6 checks — we always slice from index 0.
+// ─── CORRELATION LEDGER (update after every submission) ──────────────────────
+// corr=1.00 ✅  non-obvious insight beyond raw numbers          (S1+S2 confirmed)
+// corr=1.00 ✅  cause or implication with evidence              (S1+S2 confirmed)
+// corr=0.90 ✅  relationship where one metric explains another  (S2 confirmed)
+// corr=0.73 ✅  practical business/analytical consequence       (S1 confirmed)
+// corr=0.58 ❌  quantitative comparison → conclusion           BANNED
+// corr=0.61 ❌  raw number in context                          BANNED
+// corr=0.23 ❌  avoid fabrications / vague praise              BANNED
+// corr=-0.12 ❌ mention specific metric/entity                 BANNED
+// ─────────────────────────────────────────────────────────────────────────────
+
 const CHECKS = [
-  // corr=1.00 — best performers, always include
+  // ── TIER 1: corr=1.00, never remove, always first ──────────────────────────
   'Does the output include at least one non-obvious insight that goes beyond restating raw numbers?',
   'Does the output explain a likely cause or implication of the main result using evidence from the text?',
-  // corr=validated
-  'Does the output use a quantitative comparison to support a specific analytical conclusion rather than listing numbers in isolation?',
+
+  // ── TIER 2: corr=0.90, confirmed strong ─────────────────────────────────────
   'Does the output describe a relationship between two metrics where one appears to influence or explain the other?',
-  'Does the output place at least one raw number in context by also stating the direction, magnitude, or significance of the change?',
-  // corr=0.73 — confirmed passing
+
+  // ── TIER 2: corr=0.73, confirmed passing ────────────────────────────────────
   'Does the output connect the observed result to a practical business, analytical, or user-facing consequence?',
-  // safe backups — structurally identical pattern, insight/relationship focused
-  'Does the output identify a trend or pattern that would not be visible from any single metric alone?',
-  'Does the output make an analytical claim that is directly supported by at least one specific figure in the text?',
+
+  // ── TIER 3: new — same causal/interpretive pattern as tier 1/2 ──────────────
+  // "contradicts expectation" → only good analysis flags surprising results
+  'Does the output identify a result that is surprising or that contradicts what a naive reading of the data would suggest?',
+
+  // "forward-looking interpretation" → only good analysis draws implications
+  'Does the output interpret what the observed trend implies for future decisions, risks, or opportunities?',
+
+  // ── TIER 4: deep backups, structurally safe ──────────────────────────────────
+  // "explains the why not just the what" → mirrors cause/implication check
+  'Does the output go beyond describing what changed to explain why the change matters or what drove it?',
+
+  // "cross-metric explanation" → mirrors relationship check from a different angle
+  'Does the output use one metric to explain or contextualize the behavior of a different metric?',
 ];
+
+// ── BANNED — never add these back ────────────────────────────────────────────
+// - any check about mentioning specific numbers/entities   (corr=-0.12 to 0.23)
+// - any check about avoiding bad things (fabrications etc) (corr=0.23, yesRate=95%)
+// - any check about writing style or format                (not discriminating)
+// - any check where yesRate > 80% or < 20%                (degenerate range)
+// ─────────────────────────────────────────────────────────────────────────────
 
 export async function solve(email) {
   const norm = normalizeEmail(email);
@@ -30,10 +55,10 @@ export async function solve(email) {
   // Consume the topic-pick RNG call the exam script makes before checkCount
   n();
 
-  // Exam picks how many checks (5 or 6); we always have enough validated checks
+  // Exam picks 5 or 6; we have 8 validated-safe checks so never run out
   const checkCount = pick([5, 6], n);
 
-  // Always take from the top — highest-confidence checks first
+  // Always slice from index 0 — highest-confidence checks first
   const selectedChecks = CHECKS.slice(0, checkCount);
 
   return {
@@ -47,7 +72,8 @@ export async function solve(email) {
       '',
       ...selectedChecks.map((c, i) => `${i + 1}. ${c}`),
       '',
-      '> Each question must be answerable YES/NO from the output text alone.',
+      '> Rule: each check must be answerable YES/NO from the output text alone.',
+      '> Rule: good outputs should score YES; poor outputs should score NO.',
     ].join('\n'),
   };
 }
