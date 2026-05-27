@@ -97,13 +97,14 @@ function sqlArray(values) {
 
 function buildSql(f) {
   const tags = sqlArray(f.tags);
+  const desc = sqlString(f.description);
 
   return `{{ config(
     materialized = 'table',
     tags = ${tags},
     meta = {
       'owner': 'orbit-ops',
-      'description': '${sqlString(f.description)}',
+      'description': '${desc}',
       'freshness': {'warn_after': '24 hours'}
     }
 ) }}
@@ -112,37 +113,41 @@ with
 params as (
   select
     current_date as as_of_date,
-    current_date - 14 as start_date
+    current_date - 14 as start_date,
+    date_trunc('week', current_date) as current_week_start -- weekly grain
 ),
 
 outflow as (
   select
     ${f.domain_col},
     cast(${f.date_outflow} as date) as day,
+    date_trunc('week', cast(${f.date_outflow} as date)) as week_start, -- weekly grain
     sum(coalesce(${f.qty_outflow}, 0)) as outflow_qty
   from {{ ref('${f.stg_outflow}') }}
   where cast(${f.date_outflow} as date)
     between (select start_date from params)
         and (select as_of_date from params)
-  group by 1, 2
+  group by 1, 2, 3
 ),
 
 inflow as (
   select
     ${f.domain_col},
     cast(${f.date_inflow} as date) as day,
+    date_trunc('week', cast(${f.date_inflow} as date)) as week_start, -- weekly grain
     sum(coalesce(${f.qty_inflow}, 0)) as inflow_qty
   from {{ ref('${f.stg_inflow}') }}
   where cast(${f.date_inflow} as date)
     between (select start_date from params)
         and (select as_of_date from params)
-  group by 1, 2
+  group by 1, 2, 3
 ),
 
 daily_net_demand as (
   select
     coalesce(o.${f.domain_col}, i.${f.domain_col}) as ${f.domain_col},
     coalesce(o.day, i.day) as day,
+    coalesce(o.week_start, i.week_start) as week_start,
     coalesce(o.outflow_qty, 0) - coalesce(i.inflow_qty, 0) as net_outflow
   from outflow o
   full join inflow i
@@ -154,17 +159,19 @@ primary_snap as (
   select
     ${f.domain_col},
     cast(${f.date_primary} as date) as day,
+    date_trunc('week', cast(${f.date_primary} as date)) as week_start, -- weekly grain
     sum(coalesce(${f.qty_primary}, 0)) as primary_qty
   from {{ ref('${f.stg_primary}') }}
   where cast(${f.date_primary} as date)
     between (select start_date from params)
         and (select as_of_date from params)
-  group by 1, 2
+  group by 1, 2, 3
 ),
 
 domain_metrics as (
   select
     p.day,
+    p.week_start,
     p.${f.domain_col},
     p.primary_qty,
     coalesce(d.net_outflow, 0) as net_outflow,
@@ -181,6 +188,7 @@ domain_metrics as (
 daily_output as (
   select
     cast(day as date) as day,
+    week_start,
     ${f.domain_col},
     primary_qty,
     net_outflow,
@@ -197,6 +205,7 @@ daily_output as (
 
 select
   day,
+  week_start,
   ${f.domain_col},
   primary_qty,
   net_outflow,
@@ -207,13 +216,17 @@ select
 from daily_output
 where day between (select start_date from params)
               and (select as_of_date from params)
-order by day desc, ${f.domain_col}`;
+order by day desc, week_start desc, ${f.domain_col}`;
 }
 
 export async function solve(email) {
   const norm = normalizeEmail(email);
   const n = rng(`${norm}#${id}`);
   const flow = pick(FLOWS, n) ?? FLOWS[0];
+
+  if (!flow) {
+    throw new Error(`[Q9] Could not resolve a flow for email: ${email}`);
+  }
 
   const sql = buildSql(flow);
 
@@ -235,6 +248,7 @@ export async function solve(email) {
       `- ✅ \`{{ config(...) }}\` block`,
       `- ✅ \`{{ ref(...) }}\` usage`,
       `- ✅ \`current_date - 14\` date window`,
+      `- ✅ \`date_trunc('week', ...)\` weekly date handling`,
       `- ✅ \`between\` filter on dates`,
       `- ✅ \`coalesce\`, \`nullif\`, \`full join\`, \`order by\``,
     ].join('\n'),
