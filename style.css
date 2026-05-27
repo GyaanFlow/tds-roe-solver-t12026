@@ -274,13 +274,40 @@ body {
 .status-error { background: var(--error); }
 
 .sidebar-footer {
-  min-height: 48px; border-top: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 20px;
+  min-height: 64px; border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; align-items: stretch; gap: 8px; padding: 12px 20px;
   flex-shrink: 0;
-  flex-wrap: wrap;
 }
 .connection-status { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
 .dot.green { width: 8px; height: 8px; border-radius: 50%; background: var(--success); box-shadow: 0 0 8px var(--success); }
+
+.creator-credits {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  padding-top: 6px;
+}
+.creator-credits strong {
+  color: var(--text-secondary);
+}
+.credit-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.credit-links a {
+  color: var(--text-muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+}
+.credit-links a:hover {
+  color: #f59e0b; /* Amber accent */
+  transform: translateY(-1px);
+}
 
 /* ── Main Editor ── */
 #editor {
