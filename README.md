@@ -51,7 +51,7 @@ The portal supports a diverse range of exam targets, each with specialized logic
 
 | Engine | Scope | Key Highlights |
 | :--- | :--- | :--- |
-| **GA0 (T22026)** | Intro to Data Science | 25-question suite including **Implementation Guides** for FastAPI & GitHub Actions. |
+| **GA0 (T22026)** | Intro to Data Science | 25-question suite including **Implementation Guides** for FastAPI, ngrok, Ollama CORS, Forensic Drag & Drop Sandbox. |
 | **ROE** | Re-exam Workflows | Complex regex golf, procedural maze solving, and programmatic computation. |
 | **GA7** | Data Visualization | Diverging palette sampling, prompt reverse engineering, and chartjunk analysis. |
 | **GA8** | MLOps & Cloud | Docker verification, GCP Cloud Run compute, and Gemini API extractors. |
@@ -59,16 +59,32 @@ The portal supports a diverse range of exam targets, each with specialized logic
 
 ---
 
-## ✨ Premium Workspace UX
+## ⚠️ Academic Integrity & Malpractice Prevention Lock
+
+To fully prevent student malpractice and ensure compliance with the **IIT Madras Student Code of Conduct**, the portal integrates a high-visibility, interactive security guard directly on the home screen:
+
+1. **Top-Of-Page Placement**: The "Academic Integrity & Malpractice Prevention Notice" card sits prominently at the absolute top of the welcome interface.
+2. **Glowing Attention Pulse**: When unaccepted, the card continuously loops a custom red/amber warning glow animation (`pulse-attention`) to command immediate attention.
+3. **Validation Lock & Checkbox**: All workspace initialization inputs are strictly locked. Users must read the terms and check the agreement box before proceeding.
+4. **Active Intercept & Shake**: If a user attempts to bypass the lock and click "Initialize Workspace", the engine:
+   - Blocks workspace initialization and halts solving.
+   - Shows an error toast.
+   - Smoothly scrolls the window to center the disclaimer card.
+   - Triggers a powerful CSS keyframe shake animation (`shake-attention`) on the card to capture focus.
+5. **Accepted Persistence**: Once checked, acceptance state is saved securely to `localStorage` for returning sessions.
+
+---
+
+## ✨ Premium Workspace UX & Credits
 
 The UI is crafted to provide an IDE-like experience, moving beyond static result pages:
 
 *   **Glassmorphic Design**: Modern dark mode with `backdrop-filter: blur(12px)` headers and curated HSL color palettes.
-*   **🚀 Implementation Guides**: (New) Dedicated success-themed panels for questions requiring manual steps (FastAPI, ngrok, CI/CD).
+*   **🚀 Implementation Guides**: Dedicated success-themed panels for questions requiring manual steps (FastAPI, ngrok, CI/CD) ordered elegantly above computed answers.
+*   **Creator Links & Credits**: Completely name-free creator credits featured in the sidebar footer and directly within the top navbar header. It features dynamic transitions, amber color transformations, and glow effects linking to verified LinkedIn and GitHub endpoints.
 *   **Interactive Previews**: Integrated HTML iframes for rendering document outputs in real-time.
 *   **Health Indicators**: Real-time badges for runtime speed, stability, and warning counts.
 *   **Mobile-First Navigation**: A custom slide-out drawer utilizing natural document-flow scrolling for a fluid touch experience.
-*   **One-Click Debugging**: Generate comprehensive JSON debug reports for troubleshooting.
 
 ---
 
@@ -83,16 +99,11 @@ npm start
 🌐 **URL**: `http://localhost:3000/`
 
 ### Integrity & Smoke Testing
-We maintain a rigorous testing suite to ensure no user-specific variants silently regress.
+We maintain a rigorous testing suite to ensure no user-specific variants Regress.
 ```bash
 npm run check
 ```
 *Checks performed: Registry loading, Official order parity, Seeded RNG consistency, and Full GA0 execution coverage.*
-
-### Knowledge Graph Integration
-For developers working on core abstractions, the project includes a **Graphify Knowledge Graph**:
-*   **Update Graph**: `python -m graphify update .`
-*   **Context**: Refer to `AGENT_CONTEXT.md` for high-level design decisions and known gaps.
 
 ---
 
