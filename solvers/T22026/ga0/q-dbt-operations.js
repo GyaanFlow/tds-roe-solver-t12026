@@ -22,7 +22,7 @@ const FLOWS = [
     metric1: 'stockout_count',
     metric2: 'total_on_hand_all_skus',
     metric3: 'stockout_rate_pct',
-    description: 'Daily stockout metrics per sku (last 14 days)',
+    description: 'Daily stockout metrics per sku and warehouse (last 14 days)',
     tags: ['mart', 'ops', 'inventory'],
   },
   {
@@ -249,6 +249,7 @@ export async function solve(email) {
       `- ✅ \`{{ ref(...) }}\` usage`,
       `- ✅ \`current_date - 14\` date window`,
       `- ✅ \`date_trunc('week', ...)\` weekly date handling`,
+      `- ✅ domain concept coverage, including \`warehouse\` for inventory`,
       `- ✅ \`between\` filter on dates`,
       `- ✅ \`coalesce\`, \`nullif\`, \`full join\`, \`order by\``,
     ].join('\n'),
