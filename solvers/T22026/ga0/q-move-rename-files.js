@@ -1,15 +1,98 @@
-// Solver: Q16 — Move and Rename Files (Direct Solution)
+// Solver: Q16 — Move and Rename Files
+import { normalizeEmail, rng, sha256 } from './utils.js';
+
 export const id = 'q-move-rename-files';
-export const title = 'Q16: Move and Rename Files';
+export const title = 'Q16: Move and rename files';
+
+const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+function randomName(rngFn) {
+  const length = Math.floor(rngFn() * 10) + 1;
+  return Array.from(
+    { length },
+    () => CHARS[Math.floor(rngFn() * CHARS.length)]
+  ).join('');
+}
+
+function renameDigits(filename) {
+  return filename.replace(/[0-9]/g, (digit) => String((Number(digit) + 1) % 10));
+}
 
 export async function solve(email) {
-  const directUrl = 'https://tds-roe-solver-api-t12026.onrender.com/q16/';
+  const norm = normalizeEmail(email);
+  const n = rng(`${norm}#${id}`);
+
+  const filenames = new Set();
+
+  // Mirrors the exam generator:
+  // 3 random folders, up to 10 globally unique .txt filenames each.
+  for (let folderIndex = 0; folderIndex < 3; folderIndex++) {
+    randomName(n).toLowerCase(); // folder name is generated but not used in final hash
+
+    for (let fileIndex = 0; fileIndex < 10; fileIndex++) {
+      const filename = `${randomName(n)}.txt`.toLowerCase();
+
+      if (!filenames.has(filename)) {
+        filenames.add(filename);
+      }
+    }
+  }
+
+  const grepSortedOutput = [...new Set(
+    [...filenames].map((filename) => `${renameDigits(filename)}:x\n`)
+  )].sort().join('');
+
+  const hash = await sha256(grepSortedOutput);
+
+  const bashGuide = `
+# After extracting q-move-rename-files.zip:
+mkdir -p output
+find . -mindepth 2 -type f -name '*.txt' -exec sh -c '
+  for file do
+    base=$(basename "$file")
+    new=$(printf "%s" "$base" | tr "0123456789" "1234567890")
+    mv "$file" "output/$new"
+  done
+' sh {} +
+
+cd output
+grep . * | LC_ALL=C sort | sha256sum
+`.trim();
 
   return {
     type: 'solved',
-    variant: 'Pre-deployed File Move & Rename Sandbox',
-    answer: directUrl,
-    answerDisplay: `### File Move, Rename & Hash Solver\n\nResolve this question instantly online:\n\n1. Open the **Hash Solver Tool**:\n   [${directUrl}](${directUrl})\n2. Download the exam task zip file (\`q-move-rename-files.zip\`).\n3. Upload the zip file, enter your registered student email, and copy the computed hash directly to the exam portal!`,
-    guide: `### 🚀 Submission Guide\n\n1. Click and open the pre-deployed Hash Solver tool:\n   [File Move, Rename & Hash Solver](${directUrl})\n2. Download \`q-move-rename-files.zip\` from the exam portal.\n3. Upload the zip file into the tool and enter your registered student email.\n4. Click solve to instantly compute the correct SHA-256 hash.\n5. Copy the hash and paste it into the exam portal.`,
+    variant: 'Direct deterministic hash — read Implementation Guide for details instruction how to use',
+    answer: hash,
+    guide: [
+      `### Implementation Guide`,
+      ``,
+      `The direct answer is the hash in the answer box.`,
+      ``,
+      `If you want to verify manually:`,
+      ``,
+      `1. Download and extract \`q-move-rename-files.zip\`.`,
+      `2. Move every \`.txt\` file from all subfolders into one empty folder.`,
+      `3. Rename each file by replacing every digit with the next digit: \`1 -> 2\`, \`8 -> 9\`, \`9 -> 0\`.`,
+      `4. Run this inside the final folder:`,
+      ``,
+      `\`\`\`bash`,
+      `grep . * | LC_ALL=C sort | sha256sum`,
+      `\`\`\``,
+      ``,
+      `### Bash Helper`,
+      ``,
+      `\`\`\`bash`,
+      bashGuide,
+      `\`\`\``,
+    ].join('\n'),
+    answerDisplay: [
+      `### Move and Rename Files`,
+      ``,
+      `- **Generated hash:** \`${hash}\``,
+      ``,
+      `Submit this hash as the answer.`,
+      ``,
+      `Read the Implementation Guide for details instruction how to use.`,
+    ].join('\n'),
   };
 }
