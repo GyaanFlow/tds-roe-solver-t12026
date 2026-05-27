@@ -750,8 +750,8 @@ function renderCanvas(index) {
     <div class="canvas-body">
       ${renderVariantPanel(data)}
       ${renderPreviewPanel(data)}
-      ${renderAnswerPanel(data, langClass)}
       ${renderGuidePanel(data)}
+      ${renderAnswerPanel(data, langClass)}
       ${renderNotesPanel(data)}
       ${renderDiagnosticsPanel(data.debug)}
     </div>
