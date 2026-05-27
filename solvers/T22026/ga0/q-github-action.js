@@ -54,7 +54,7 @@ jobs:
 
   return {
     type: 'solved',
-    variant: 'Email in GitHub Actions step name',
+    variant: 'Email in GitHub Actions step name — read Implementation Guide for details instruction how to use',
     answer: yaml,
     guide,
     answerDisplay: [
