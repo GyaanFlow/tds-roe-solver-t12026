@@ -386,14 +386,14 @@ body {
 
 /* Disclaimer Card */
 .disclaimer-card {
-  max-width: 540px;
+  max-width: 560px;
   margin-top: 36px;
   padding: 24px;
-  background: rgba(245, 158, 11, 0.02);
-  border: 1px solid rgba(245, 158, 11, 0.25);
+  background: rgba(245, 158, 11, 0.03);
+  border: 2px solid rgba(245, 158, 11, 0.45);
   border-radius: 12px;
   text-align: left;
-  box-shadow: 0 8px 32px rgba(245, 158, 11, 0.06), inset 0 0 12px rgba(245, 158, 11, 0.02);
+  box-shadow: 0 12px 40px rgba(245, 158, 11, 0.1), inset 0 0 16px rgba(245, 158, 11, 0.04);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -401,27 +401,28 @@ body {
 
 .disclaimer-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(245, 158, 11, 0.45);
-  box-shadow: 0 12px 40px rgba(245, 158, 11, 0.12), inset 0 0 12px rgba(245, 158, 11, 0.04);
+  border-color: rgba(239, 68, 68, 0.6); /* Highlights to red warning border on hover */
+  box-shadow: 0 16px 48px rgba(239, 68, 68, 0.15), inset 0 0 16px rgba(239, 68, 68, 0.06);
 }
 
 .disclaimer-title {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #f59e0b; /* Vibrant Amber */
+  font-size: 16px;
+  font-weight: 800; /* Ultra bold */
+  color: #ef4444; /* High-intensity Red Warning */
   margin-bottom: 12px;
   padding-bottom: 8px;
-  border-bottom: 1px solid rgba(245, 158, 11, 0.15);
+  border-bottom: 2px solid rgba(239, 68, 68, 0.2);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.25);
 }
 
 .disclaimer-title svg {
-  color: #f59e0b;
-  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.5));
+  color: #ef4444;
+  filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.6));
 }
 
 .disclaimer-body {
