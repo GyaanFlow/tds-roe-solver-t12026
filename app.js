@@ -771,6 +771,22 @@ function renderCanvas(index) {
 }
 
 async function startSolving() {
+  const agreeDisclaimerCheckbox = document.getElementById('agreeDisclaimerCheckbox');
+  if (agreeDisclaimerCheckbox && !agreeDisclaimerCheckbox.checked) {
+    const card = document.getElementById('academicDisclaimer');
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      card.classList.remove('pulse-attention');
+      card.classList.add('shake-attention');
+      setTimeout(() => {
+        card.classList.remove('shake-attention');
+        card.classList.add('pulse-attention');
+      }, 600);
+    }
+    showToast('Please read and agree to the Academic Integrity Policy first.', 'error');
+    return;
+  }
+
   const email = emailInput.value.trim();
   const currentTerm = termSelect.value;
   const currentExam = examSelect.value;
@@ -1095,6 +1111,28 @@ exportJsonBtn.addEventListener('click', () => {
   showToast('JSON export downloaded.', 'success');
   safeTrack('export_json', { exam: workspaceData.exam || 'none', total: workspaceData.answers.length });
 });
+
+// Academic Integrity Disclaimer checkbox handling
+const agreeDisclaimerCheckbox = document.getElementById('agreeDisclaimerCheckbox');
+if (agreeDisclaimerCheckbox) {
+  const hasAgreed = localStorage.getItem('academic_integrity_agreed') === 'true';
+  agreeDisclaimerCheckbox.checked = hasAgreed;
+  
+  const card = document.getElementById('academicDisclaimer');
+  if (card && !hasAgreed) {
+    card.classList.add('pulse-attention');
+  }
+
+  agreeDisclaimerCheckbox.addEventListener('change', () => {
+    if (agreeDisclaimerCheckbox.checked) {
+      localStorage.setItem('academic_integrity_agreed', 'true');
+      card?.classList.remove('pulse-attention');
+    } else {
+      localStorage.removeItem('academic_integrity_agreed');
+      card?.classList.add('pulse-attention');
+    }
+  });
+}
 
 window.addEventListener('resize', syncMobileNavState);
 syncMobileNavState();

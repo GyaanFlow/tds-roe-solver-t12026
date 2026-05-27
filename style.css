@@ -990,3 +990,109 @@ body {
     justify-content: flex-start;
   }
 }
+
+/* ── Disclaimer Action Area & Animations ── */
+.disclaimer-action {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(245, 158, 11, 0.15);
+  display: flex;
+  align-items: center;
+}
+.disclaimer-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+.disclaimer-checkbox-label:hover {
+  color: var(--text-primary);
+}
+.disclaimer-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkbox-custom {
+  position: relative;
+  flex-shrink: 0;
+  height: 18px;
+  width: 18px;
+  background-color: var(--bg-active);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.disclaimer-checkbox-label:hover .checkbox-custom {
+  border-color: rgba(245, 158, 11, 0.5);
+}
+.disclaimer-checkbox:checked ~ .checkbox-custom {
+  background-color: #f59e0b;
+  border-color: #f59e0b;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+.checkbox-custom:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 1.5px;
+  width: 4px;
+  height: 8px;
+  border: solid #0a0a0a;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.disclaimer-checkbox:checked ~ .checkbox-custom:after {
+  display: block;
+}
+.checkbox-text {
+  line-height: 1.4;
+  transition: color 0.2s ease;
+  color: var(--text-secondary);
+}
+.disclaimer-checkbox:checked ~ .checkbox-text {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Attention Grabber Pulse Animation */
+.disclaimer-card.pulse-attention {
+  animation: disclaimerGlowPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes disclaimerGlowPulse {
+  0% {
+    border-color: rgba(245, 158, 11, 0.45);
+    box-shadow: 0 12px 40px rgba(245, 158, 11, 0.1), inset 0 0 16px rgba(245, 158, 11, 0.04);
+  }
+  50% {
+    border-color: rgba(239, 68, 68, 0.7);
+    box-shadow: 0 16px 48px rgba(239, 68, 68, 0.25), inset 0 0 20px rgba(239, 68, 68, 0.08);
+  }
+  100% {
+    border-color: rgba(245, 158, 11, 0.45);
+    box-shadow: 0 12px 40px rgba(245, 158, 11, 0.1), inset 0 0 16px rgba(245, 158, 11, 0.04);
+  }
+}
+
+/* Shake Animation on unaccepted submit */
+.disclaimer-card.shake-attention {
+  animation: disclaimerShake 0.6s cubic-bezier(.36,.07,.19,.97) both;
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 32px rgba(239, 68, 68, 0.45) !important;
+}
+
+@keyframes disclaimerShake {
+  10%, 90% { transform: translate3d(-2px, 0, 0); }
+  20%, 80% { transform: translate3d(3px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+  40%, 60% { transform: translate3d(6px, 0, 0); }
+}
