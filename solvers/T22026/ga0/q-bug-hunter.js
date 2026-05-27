@@ -4,37 +4,31 @@ import { normalizeEmail, rng, pick } from './utils.js';
 export const id = 'q-bug-hunter-property-based-testing';
 export const title = 'Q3: The Bug Hunter (Property-Based Testing)';
 
-// ─── SCENARIOS ────────────────────────────────────────────────────────────
-// Exact list from original — do not reorder, RNG index depends on order
 const FUNCTIONS = [
-  { id: 'sort-1',   name: 'Inventory Sort',          fn: 'sort_inventory',              type: 'sort'    },
-  { id: 'sort-2',   name: 'Ranked Queue Sort',        fn: 'sort_ranked_queue',           type: 'sort'    },
-  { id: 'sort-3',   name: 'Metrics Sort',             fn: 'sort_metrics',                type: 'sort'    },
-  { id: 'sort-4',   name: 'Schedule Sort',            fn: 'sort_schedule',               type: 'sort'    },
-  { id: 'rev-1',    name: 'Ticket Revenue',           fn: 'compute_ticket_revenue',      type: 'revenue' },
-  { id: 'rev-2',    name: 'Ad Revenue',               fn: 'compute_ad_revenue',          type: 'revenue' },
-  { id: 'rev-3',    name: 'Subscription Revenue',     fn: 'compute_subscription_revenue',type: 'revenue' },
-  { id: 'rev-4',    name: 'Retail Revenue',           fn: 'compute_retail_revenue',      type: 'revenue' },
-  { id: 'leap-1',   name: 'Billing Date Parser',      fn: 'parse_billing_date',          type: 'date'    },
-  { id: 'leap-2',   name: 'Report Date Parser',       fn: 'parse_report_date',           type: 'date'    },
-  { id: 'leap-3',   name: 'Schedule Date Parser',     fn: 'parse_schedule_date',         type: 'date'    },
-  { id: 'dedupe-1', name: 'User Tag Dedupe',          fn: 'dedupe_user_tags',            type: 'dedupe'  },
-  { id: 'dedupe-2', name: 'Category Dedupe',          fn: 'dedupe_categories',           type: 'dedupe'  },
-  { id: 'dedupe-3', name: 'Topic Dedupe',             fn: 'dedupe_topics',               type: 'dedupe'  },
-  { id: 'page-1',   name: 'Feed Pagination',          fn: 'paginate_feed',               type: 'page'    },
-  { id: 'page-2',   name: 'Search Pagination',        fn: 'paginate_search',             type: 'page'    },
-  { id: 'page-3',   name: 'Invoice Pagination',       fn: 'paginate_invoices',           type: 'page'    },
-  { id: 'avg-1',    name: 'Sensor Moving Average',    fn: 'moving_avg_sensor',           type: 'avg'     },
-  { id: 'avg-2',    name: 'Price Moving Average',     fn: 'moving_avg_price',            type: 'avg'     },
-  { id: 'avg-3',    name: 'Latency Moving Average',   fn: 'moving_avg_latency',          type: 'avg'     },
+  { id: 'sort-1',   name: 'Inventory Sort',             fn: 'sort_inventory',               type: 'sort'    },
+  { id: 'sort-2',   name: 'Ranked Queue Sort',           fn: 'sort_ranked_queue',             type: 'sort'    },
+  { id: 'sort-3',   name: 'Metrics Sort',                fn: 'sort_metrics',                  type: 'sort'    },
+  { id: 'sort-4',   name: 'Schedule Sort',               fn: 'sort_schedule',                 type: 'sort'    },
+  { id: 'rev-1',    name: 'Ticket Revenue',              fn: 'compute_ticket_revenue',        type: 'revenue' },
+  { id: 'rev-2',    name: 'Ad Revenue',                  fn: 'compute_ad_revenue',            type: 'revenue' },
+  { id: 'rev-3',    name: 'Subscription Revenue',        fn: 'compute_subscription_revenue',  type: 'revenue' },
+  { id: 'rev-4',    name: 'Retail Revenue',              fn: 'compute_retail_revenue',        type: 'revenue' },
+  { id: 'leap-1',   name: 'Billing Date Parser',         fn: 'parse_billing_date',            type: 'date'    },
+  { id: 'leap-2',   name: 'Report Date Parser',          fn: 'parse_report_date',             type: 'date'    },
+  { id: 'leap-3',   name: 'Schedule Date Parser',        fn: 'parse_schedule_date',           type: 'date'    },
+  { id: 'dedupe-1', name: 'User Tag Dedupe',             fn: 'dedupe_user_tags',              type: 'dedupe'  },
+  { id: 'dedupe-2', name: 'Category Dedupe',             fn: 'dedupe_categories',             type: 'dedupe'  },
+  { id: 'dedupe-3', name: 'Topic Dedupe',                fn: 'dedupe_topics',                 type: 'dedupe'  },
+  { id: 'page-1',   name: 'Feed Pagination',             fn: 'paginate_feed',                 type: 'page'    },
+  { id: 'page-2',   name: 'Search Pagination',           fn: 'paginate_search',               type: 'page'    },
+  { id: 'page-3',   name: 'Invoice Pagination',          fn: 'paginate_invoices',             type: 'page'    },
+  { id: 'avg-1',    name: 'Sensor Moving Average',       fn: 'moving_avg_sensor',             type: 'avg'     },
+  { id: 'avg-2',    name: 'Price Moving Average',        fn: 'moving_avg_price',              type: 'avg'     },
+  { id: 'avg-3',    name: 'Latency Moving Average',      fn: 'moving_avg_latency',            type: 'avg'     },
 ];
 
-// ─── TEST TEMPLATES ───────────────────────────────────────────────────────
-// Each targets the known bug class for that type.
-// Assertion messages show actual vs expected for fast debugging.
 const STRATEGIES = {
 
-  // Bug: unstable sort / wrong comparator / mutates input instead of returning
   sort: (fn) => `\
 from hypothesis import given, settings, strategies as st
 
@@ -48,13 +42,14 @@ def test_${fn}_property(nums):
         f"Elements changed: {sorted(result)} != {sorted(nums)}"
 `,
 
-  // Bug: integer overflow / uses + instead of * / wrong operator
+  // Bug: 32-bit signed integer overflow — product must exceed 2,147,483,647
+  // 50,000 * 50,000 = 2,500,000,000 which overflows int32 and wraps negative
   revenue: (fn) => `\
 from hypothesis import given, settings, strategies as st
 
 @given(
-    st.integers(min_value=0, max_value=10_000),
-    st.integers(min_value=0, max_value=10_000),
+    st.integers(min_value=50_000, max_value=100_000),
+    st.integers(min_value=50_000, max_value=100_000),
 )
 @settings(max_examples=200)
 def test_${fn}_property(price, quantity):
@@ -64,7 +59,6 @@ def test_${fn}_property(price, quantity):
         f"{fn}({price}, {quantity}) = {result}, expected {expected}"
 `,
 
-  // Bug: leap year mishandled — Feb 29 crashes or parses wrong day/month
   date: (fn) => `\
 from hypothesis import given, settings, strategies as st
 from datetime import datetime
@@ -84,7 +78,6 @@ def test_${fn}_property(d):
         f"Day mismatch:   {result.day}   != {d.day}   for {date_str}"
 `,
 
-  // Bug: case-insensitive dedupe (lowercases before comparing, loses original case)
   dedupe: (fn) => `\
 from hypothesis import given, settings, strategies as st
 
@@ -104,7 +97,6 @@ def test_${fn}_property(items):
         f"Output longer than input: {len(result)} > {len(items)}"
 `,
 
-  // Bug: off-by-one in slice — uses offset+limit as end instead of slicing correctly
   page: (fn) => `\
 from hypothesis import given, settings, strategies as st
 
@@ -121,7 +113,6 @@ def test_${fn}_property(items, offset, limit):
         f"offset={offset} limit={limit}: got {result}, expected {expected}"
 `,
 
-  // Bug: window boundary off-by-one / wrong denominator in average
   avg: (fn) => `\
 import math
 from hypothesis import given, settings, strategies as st
@@ -159,23 +150,15 @@ def test_${fn}_property(values, window):
 `,
 };
 
-// ─── SOLVE ────────────────────────────────────────────────────────────────
 export async function solve(email) {
   const norm = normalizeEmail(email);
   const n = rng(`${norm}#${id}`);
 
-  // pick() = arr[Math.floor(rng() * arr.length)] — one RNG call, no burn
-  // Matches original Q3 solver pattern exactly
   const scenario = pick(FUNCTIONS, n);
 
-  // Guards — should never fire in production but prevents silent undefined crash
-  if (!scenario) {
-    throw new Error(`[Q3] No scenario resolved for email: ${email}`);
-  }
+  if (!scenario) throw new Error(`[Q3] No scenario resolved for email: ${email}`);
   const template = STRATEGIES[scenario.type];
-  if (!template) {
-    throw new Error(`[Q3] Unknown type "${scenario.type}" for scenario: ${scenario.id}`);
-  }
+  if (!template) throw new Error(`[Q3] Unknown type "${scenario.type}" for: ${scenario.id}`);
 
   const code = template(scenario.fn);
 
@@ -186,16 +169,28 @@ export async function solve(email) {
     answerDisplay: [
       `### Property-Based Test: ${scenario.name}`,
       ``,
-      `- **Function under test:** \`${scenario.fn}\``,
+      `- **Function:** \`${scenario.fn}\``,
       `- **Bug class:** \`${scenario.type}\``,
-      `- **Scenario ID:** \`${scenario.id}\``,
+      `- **Why it fails:** ${
+        scenario.type === 'revenue'
+          ? 'price × quantity overflows signed 32-bit int (> 2,147,483,647)'
+          : scenario.type === 'date'
+          ? 'leap year Feb 29 parsed incorrectly or crashes'
+          : scenario.type === 'sort'
+          ? 'unstable sort or wrong comparator'
+          : scenario.type === 'dedupe'
+          ? 'case-insensitive comparison loses original case'
+          : scenario.type === 'page'
+          ? 'off-by-one in slice boundary'
+          : 'window boundary or wrong average denominator'
+      }`,
       ``,
       `**Steps:**`,
-      `1. Copy the code from the **Answer** box`,
-      `2. Paste into the exam portal's test area for Q3`,
-      `3. Run — hypothesis will automatically find and shrink the failing case`,
+      `1. Copy code from **Answer** box`,
+      `2. Paste into exam portal Q3 test area`,
+      `3. Run — hypothesis finds and shrinks the failing case automatically`,
       ``,
-      `> Install if needed: \`pip install hypothesis\``,
+      `> \`pip install hypothesis\` if needed`,
     ].join('\n'),
   };
 }
