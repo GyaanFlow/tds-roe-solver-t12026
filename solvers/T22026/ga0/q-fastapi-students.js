@@ -4,7 +4,7 @@ export const id = 'q-fastapi';
 export const title = 'Q10: FastAPI Students CSV Service';
 
 export async function solve(email) {
-  const directUrl = 'https://tds-roe-solver-api-t12026.onrender.com/q10/ga0/q10/api';
+  const directUrl = 'https://tds-roe-solver-api-t12026.onrender.com/q-fastapi/api';
 
   return {
     type: 'solved',

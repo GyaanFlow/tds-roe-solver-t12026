@@ -3,7 +3,7 @@ export const id = 'q-fastapi-sentiment-batch';
 export const title = 'Q11: FastAPI Batch Sentiment Analysis';
 
 export async function solve(email) {
-  const directUrl = 'https://tds-roe-solver-api-t12026.onrender.com/q11/ga0/q11/sentiment';
+  const directUrl = 'https://tds-roe-solver-api-t12026.onrender.com/q-fastapi-sentiment-batch/sentiment';
 
   return {
     type: 'solved',

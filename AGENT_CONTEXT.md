@@ -286,9 +286,9 @@ The GA0 suite contains 25 solvers covering data science basics, shell scripting,
 
 - `check.mjs` now verifies official GA0 Q1-Q25 ID/order and executes every GA0 solver for multiple representative emails.
 - Q1 Axis Scale uses the official scenario seed path and computes distortion values per user.
-- Q5 Code Interpreter has been converted to directly return the pre-deployed Code Interpreter Render URL (`https://tds-roe-solver-api-t12026.onrender.com/q5/`).
-- Q10 FastAPI Students uses the official `q-fastapi` ID and has been converted to directly return the pre-deployed Render Students API endpoint (`https://tds-roe-solver-api-t12026.onrender.com/q10/ga0/q10/api`).
-- Q11 FastAPI Sentiment uses the official `q-fastapi-sentiment-batch` ID and has been converted to directly return the pre-deployed Render Sentiment API endpoint (`https://tds-roe-solver-api-t12026.onrender.com/q11/ga0/q11/sentiment`).
+- Q5 Code Interpreter has been converted to directly return the pre-deployed Code Interpreter Render URL (`https://tds-roe-solver-api-t12026.onrender.com/q-code-interpreter-ai-analysis/code-interpreter`).
+- Q10 FastAPI Students uses the official `q-fastapi` ID and has been converted to directly return the pre-deployed Render Students API endpoint (`https://tds-roe-solver-api-t12026.onrender.com/q-fastapi/api`).
+- Q11 FastAPI Sentiment uses the official `q-fastapi-sentiment-batch` ID and has been converted to directly return the pre-deployed Render Sentiment API endpoint (`https://tds-roe-solver-api-t12026.onrender.com/q-fastapi-sentiment-batch/sentiment`).
 - Q12 LLM Yes has been simplified to directly return the text prompt `'is new delhi is capital of india give answer in only "Yes" or "No"'`.
 - Q14 Image Grayscale has been converted to directly return the pre-deployed Forensic Jigsaw & Grayscale Sandbox (`https://tds-roe-solver-api-t12026.onrender.com/q14/`).
 - Q16 Move/Rename has been converted to directly return the pre-deployed Move, Rename & Hash Solver Sandbox (`https://tds-roe-solver-api-t12026.onrender.com/q16/`).
