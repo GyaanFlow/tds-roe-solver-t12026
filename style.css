@@ -357,6 +357,68 @@ body {
 .welcome-screen .version { font-size: 12px; vertical-align: top; background: var(--bg-active); border: 1px solid var(--border); padding: 2px 6px; border-radius: 4px; margin-left: 6px;}
 .welcome-screen p { max-width: 440px; font-size: 14px; line-height: 1.6; }
 
+/* Disclaimer Card */
+.disclaimer-card {
+  max-width: 540px;
+  margin-top: 36px;
+  padding: 24px;
+  background: rgba(245, 158, 11, 0.02);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 8px 32px rgba(245, 158, 11, 0.06), inset 0 0 12px rgba(245, 158, 11, 0.02);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.disclaimer-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 12px 40px rgba(245, 158, 11, 0.12), inset 0 0 12px rgba(245, 158, 11, 0.04);
+}
+
+.disclaimer-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #f59e0b; /* Vibrant Amber */
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.15);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.disclaimer-title svg {
+  color: #f59e0b;
+  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.5));
+}
+
+.disclaimer-body {
+  font-size: 13px !important;
+  line-height: 1.65 !important;
+  color: var(--text-secondary);
+  max-width: 100% !important;
+}
+
+.disclaimer-link {
+  color: #f59e0b;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px dashed rgba(245, 158, 11, 0.5);
+  transition: all 0.2s ease;
+}
+
+.disclaimer-link:hover {
+  color: #fbbf24;
+  border-bottom-color: #fbbf24;
+  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.3));
+}
+
+
 /* Displayed Answer Canvas */
 .canvas-header { margin-bottom: 32px; }
 .canvas-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 8px; }
