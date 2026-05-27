@@ -3,7 +3,7 @@ export const id = 'q-image-grayscale-rebuild';
 export const title = 'Q14: Image Grayscale Reconstruction';
 
 export async function solve(email) {
-  const directUrl = 'https://tds-roe-solver-api-t12026.onrender.com/q14/';
+  const directUrl = 'https://tds-roe-solver-api-t12026.onrender.com/q-image-grayscale-rebuild/';
 
   return {
     type: 'solved',

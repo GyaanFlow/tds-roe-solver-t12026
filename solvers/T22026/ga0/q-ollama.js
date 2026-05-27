@@ -1,29 +1,16 @@
 // Solver: Q18 — Local Ollama Endpoint (Direct Solution)
-import { fnv1a, normalizeEmail } from './utils.js';
 
 export const id = 'q-ollama';
 export const title = 'Q18: Local Ollama Endpoint';
 
 export async function solve(email) {
-  const command = `ngrok http 11434 --response-header-add "X-Email: ${email}" --response-header-add 'Access-Control-Expose-Headers: *' --response-header-add 'Access-Control-Allow-Headers: Authorization,Content-Type,User-Agent,Accept,Ngrok-skip-browser-warning'`.trim();
+  const directUrl = 'https://tds-roe-solver-api-t12026.onrender.com/q-ollama';
 
   return {
     type: 'solved',
-    variant: 'ngrok Tunnel Command',
-    answer: command,
-    guide: `### 🚀 Implementation Guide
-
-1. **Start Ollama**:
-   - Ensure Ollama is installed and running.
-   - Run the following in your terminal to allow CORS:
-     \`export OLLAMA_ORIGINS="*" && ollama serve\`
-     *(On Windows, set the environment variable in System Settings or use PowerShell: \`$env:OLLAMA_ORIGINS="*"; ollama serve\`)*
-2. **Setup Tunnel**:
-   - Install **ngrok** if you haven't already.
-   - Copy the command from the **Answer** box and run it in a new terminal window.
-3. **Submit**:
-   - Look for the \`.ngrok-free.app\` URL in the ngrok output.
-   - Copy that URL and paste it into the exam portal.`,
-    answerDisplay: `### Quick Steps\n\n1. Serve Ollama with \`OLLAMA_ORIGINS="*"\`.\n2. Run the **ngrok** command from the **Answer** box.\n3. Submit the resulting ngrok URL.`,
+    variant: 'Ollama Session Proxy & Diagnostics',
+    answer: directUrl,
+    answerDisplay: `### Ollama Proxy & Diagnostics Hub\n\nResolve this question instantly online:\n\n1. Open the **Ollama Proxy Hub**:\n   [${directUrl}](${directUrl})\n2. Follow the online guide to initialize a session and test compatibility.\n3. Enter your student email, start your ngrok tunnel, and paste the computed URL into the exam portal!`,
+    guide: `### 🚀 Submission Guide\n\n1. Click and open the pre-deployed Ollama Proxy tool:\n   [Ollama Proxy Hub](${directUrl})\n2. Run the provided tunnel setup steps to bypass local model size resource requirements.\n3. Perform validation on the page to ensure the ngrok address is 100% compatible.\n4. Copy the verified ngrok URL from the playground and submit it to the exam portal.`,
   };
 }

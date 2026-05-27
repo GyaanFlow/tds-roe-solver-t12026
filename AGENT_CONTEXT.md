@@ -290,8 +290,10 @@ The GA0 suite contains 25 solvers covering data science basics, shell scripting,
 - Q10 FastAPI Students uses the official `q-fastapi` ID and has been converted to directly return the pre-deployed Render Students API endpoint (`https://tds-roe-solver-api-t12026.onrender.com/q-fastapi/api`).
 - Q11 FastAPI Sentiment uses the official `q-fastapi-sentiment-batch` ID and has been converted to directly return the pre-deployed Render Sentiment API endpoint (`https://tds-roe-solver-api-t12026.onrender.com/q-fastapi-sentiment-batch/sentiment`).
 - Q12 LLM Yes has been simplified to directly return the text prompt `'is new delhi is capital of india give answer in only "Yes" or "No"'`.
-- Q14 Image Grayscale has been converted to directly return the pre-deployed Forensic Jigsaw & Grayscale Sandbox (`https://tds-roe-solver-api-t12026.onrender.com/q14/`).
+- Q14 Image Grayscale has been converted to directly return the pre-deployed Forensic Jigsaw & Grayscale Sandbox (`https://tds-roe-solver-api-t12026.onrender.com/q-image-grayscale-rebuild/`).
 - Q16 Move/Rename has been converted to directly return the pre-deployed Move, Rename & Hash Solver Sandbox (`https://tds-roe-solver-api-t12026.onrender.com/q16/`).
+- Q17 Network Game has been converted to directly return the pre-deployed Network Game Solver (`https://tds-games-solver.vercel.app/detective/`).
+- Q18 local Ollama has been converted to directly return the pre-deployed Ollama Proxy & Diagnostics Hub (`https://tds-roe-solver-api-t12026.onrender.com/q-ollama`).
 - Q19 Replace Across Files has been upgraded to a direct deterministic JS solver, dynamically generating the random documents and replacing strings under the user's email seed to compute the SHA-256 hash in pure JS.
 - Q25 Vercel Latency has been converted to directly return the pre-deployed Vercel Latency API endpoint (`https://t22026-tds-ga0-q25.vercel.app/api/latency`).
 
