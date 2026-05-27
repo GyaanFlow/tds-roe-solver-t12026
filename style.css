@@ -1100,7 +1100,7 @@ body {
 /* ── Welcome Screen Glow & Levitation Layout ── */
 .welcome-screen {
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Restore standard document flow and scrollbars */
   background: radial-gradient(circle at center, rgba(245, 158, 11, 0.04) 0%, transparent 65%);
   width: 100%;
   padding: 40px 24px;
