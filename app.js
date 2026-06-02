@@ -1,5 +1,7 @@
 // TDS Exam Portal - Workspace Application Engine
 
+let networkCanvas = null;
+
 const emailInput = document.getElementById('emailInput');
 const solveBtn = document.getElementById('solveBtn');
 const progressPanel = document.getElementById('progressPanel');
@@ -188,13 +190,17 @@ window.addEventListener('DOMContentLoaded', () => {
 function persistUiState() {
   localStorage.setItem(STORAGE_KEYS.term, termSelect.value);
   localStorage.setItem(STORAGE_KEYS.exam, examSelect.value);
-  localStorage.setItem(STORAGE_KEYS.email, emailInput.value.trim());
+  const emailVal = emailInput.value.trim();
+  localStorage.setItem(STORAGE_KEYS.email, emailVal);
   localStorage.setItem(STORAGE_KEYS.search, nodeSearch.value);
   localStorage.setItem(STORAGE_KEYS.selectedQuestion, String(selectedQuestionIndex));
   localStorage.setItem(STORAGE_KEYS.rawWrap, String(rawWrapEnabled));
   localStorage.setItem(STORAGE_KEYS.openPanels, JSON.stringify([...openPanels]));
   localStorage.setItem('rawFocusEnabled', String(rawFocusEnabled));
-  drawEmailIdenticon(emailInput.value.trim());
+  drawEmailIdenticon(emailVal);
+  if (networkCanvas) {
+    networkCanvas.generateNetwork(emailVal || 'anonymous');
+  }
 }
 
 function ensureToastRoot() {
@@ -385,6 +391,11 @@ function resetStoredUiState() {
   if (emailInput) {
     emailInput.value = '';
     drawEmailIdenticon('');
+  }
+
+  if (networkCanvas) {
+    networkCanvas.setDimmed(false);
+    networkCanvas.generateNetwork('anonymous');
   }
 
   if (workspaceData.answers.length) {
@@ -889,6 +900,9 @@ async function startSolving() {
 
   solveBtn.disabled = true;
   solveBtn.innerText = 'Initializing...';
+  if (networkCanvas) {
+    networkCanvas.setDimmed(true);
+  }
   questionNav.innerHTML = '';
   canvas.innerHTML = '';
   exportActions.classList.add('hidden');
@@ -1289,7 +1303,29 @@ window.addEventListener('resize', syncMobileNavState);
 syncMobileNavState();
 applySidebarFilter(nodeSearch.value.trim().toLowerCase());
 
-// Initial call to draw default identicon
-setTimeout(() => {
-  drawEmailIdenticon(emailInput.value.trim());
-}, 200);
+// Initialize WebGL background canvas dynamically to support check.mjs Node environment compatibility
+async function initNetworkCanvas() {
+  if (typeof process === 'undefined') {
+    try {
+      const module = await import('./network-canvas.js');
+      networkCanvas = new module.NetworkCanvasManager('threeCanvas');
+    } catch (e) {
+      console.warn('WebGL/Three.js background constellation could not be initialized:', e);
+    }
+  }
+}
+
+// Initial call to draw default identicon and update 3D network once dynamic import completes
+initNetworkCanvas().then(() => {
+  setTimeout(() => {
+    const initialEmail = emailInput.value.trim();
+    drawEmailIdenticon(initialEmail);
+    if (networkCanvas) {
+      networkCanvas.generateNetwork(initialEmail || 'anonymous');
+      // If workspace is already restored from cache, set dimmed state
+      if (workspaceData.answers && workspaceData.answers.length > 0) {
+        networkCanvas.setDimmed(true);
+      }
+    }
+  }, 200);
+});
