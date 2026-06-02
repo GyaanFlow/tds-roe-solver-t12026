@@ -1276,3 +1276,135 @@ body {
   filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.25));
 }
 
+/* Deterministic Seed Identicon Canvas */
+.seed-identicon-canvas {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: help;
+}
+.seed-identicon-canvas:hover {
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.2), inset 0 0 8px rgba(255, 255, 255, 0.05);
+  transform: scale(1.05);
+}
+
+/* Focus Mode Switch & Layout Rules */
+.focus-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.focus-switch-btn:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+}
+.focus-switch-btn[aria-checked="true"] {
+  border-color: rgba(245, 158, 11, 0.45);
+  background: rgba(245, 158, 11, 0.06);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+}
+.focus-switch-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.focus-switch-btn[aria-checked="true"] .focus-switch-thumb {
+  background: #f59e0b;
+  transform: translateX(4px);
+  box-shadow: 0 0 6px #f59e0b;
+}
+.canvas-body.workspace-focus-active .panel-variant,
+.canvas-body.workspace-focus-active .panel-preview,
+.canvas-body.workspace-focus-active .panel-guide,
+.canvas-body.workspace-focus-active .panel-notes,
+.canvas-body.workspace-focus-active .panel-diagnostics {
+  display: none !important;
+}
+.canvas-body.workspace-focus-active .panel-answer {
+  max-width: 720px;
+  margin: 32px auto;
+  box-shadow: 0 8px 32px rgba(245, 158, 11, 0.05);
+}
+
+/* Slide-to-Unlock Disclaimer Lock */
+.slider-disclaimer-wrapper {
+  margin-top: 16px;
+  width: 100%;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slider-track {
+  position: relative;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+}
+.slider-message {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.2s ease;
+  font-weight: 500;
+}
+.slider-glow-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.02), rgba(245, 158, 11, 0.12));
+  border-right: 1px solid rgba(245, 158, 11, 0.4);
+  z-index: 1;
+  pointer-events: none;
+}
+.slider-button-handle {
+  position: absolute;
+  left: 3px;
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  z-index: 3;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+  color: #121214;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.slider-button-handle:active {
+  cursor: grabbing;
+}
+
+

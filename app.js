@@ -31,6 +31,8 @@ const mobileQuestionPicker = document.getElementById('mobileQuestionPicker');
 const mobileQuestionPickerWrap = document.getElementById('mobileQuestionPickerWrap');
 const dashboardToggle = document.getElementById('dashboardToggle');
 
+let rawFocusEnabled = localStorage.getItem('rawFocusEnabled') === 'true';
+
 let workspaceData = {
   exam: null,
   email: '',
@@ -191,6 +193,8 @@ function persistUiState() {
   localStorage.setItem(STORAGE_KEYS.selectedQuestion, String(selectedQuestionIndex));
   localStorage.setItem(STORAGE_KEYS.rawWrap, String(rawWrapEnabled));
   localStorage.setItem(STORAGE_KEYS.openPanels, JSON.stringify([...openPanels]));
+  localStorage.setItem('rawFocusEnabled', String(rawFocusEnabled));
+  drawEmailIdenticon(emailInput.value.trim());
 }
 
 function ensureToastRoot() {
@@ -471,7 +475,7 @@ function renderVariantPanel(data) {
   return createSection(
     'Variant',
     `<pre class="meta-output">${escapeHtml(data.variant || 'No variant info')}</pre>`,
-    { open: true, compact: true }
+    { open: true, compact: true, extraClass: 'panel-variant' }
   );
 }
 
@@ -480,7 +484,7 @@ function renderPreviewPanel(data) {
   return createSection(
     'Preview',
     `<iframe class="answer-preview" sandbox="allow-scripts allow-same-origin" srcdoc="${escapeHtml(data.answer)}"></iframe>`,
-    { open: true }
+    { open: true, extraClass: 'panel-preview' }
   );
 }
 
@@ -499,13 +503,13 @@ function renderAnswerPanel(data, langClass) {
     </div>
   `;
 
-  return createSection('Answer', `${actions}${answerMarkup}`, { open: true });
+  return createSection('Answer', `${actions}${answerMarkup}`, { open: true, extraClass: 'panel-answer' });
 }
 
 function renderNotesPanel(data) {
   if (!data.answerDisplay) return '';
   const rendered = typeof marked !== 'undefined' ? marked.parse(data.answerDisplay) : data.answerDisplay;
-  return createSection('Rendered Notes', `<div class="styled-output">${rendered}</div>`);
+  return createSection('Rendered Notes', `<div class="styled-output">${rendered}</div>`, { extraClass: 'panel-notes' });
 }
 
 function renderGuidePanel(data) {
@@ -530,7 +534,8 @@ function renderDiagnosticsPanel(debug) {
         <div><strong>duration</strong><br><code>${escapeHtml(debug.durationText || 'n/a')}</code></div>
       </div>
       <div class="diagnostic-block"><strong>Warnings</strong><br>${warnings}</div>
-    `
+    `,
+    { extraClass: 'panel-diagnostics' }
   );
 }
 
@@ -624,6 +629,11 @@ function bindCanvasActions(data) {
   });
   document.getElementById('toggleWrapBtn')?.addEventListener('click', () => {
     rawWrapEnabled = !rawWrapEnabled;
+    persistUiState();
+    renderCanvas(selectedQuestionIndex);
+  });
+  document.getElementById('focusModeToggle')?.addEventListener('click', () => {
+    rawFocusEnabled = !rawFocusEnabled;
     persistUiState();
     renderCanvas(selectedQuestionIndex);
   });
@@ -736,9 +746,21 @@ function renderCanvas(index) {
 
   canvas.innerHTML = `
     <div class="canvas-header">
-      <div class="canvas-label">System Output | ${escapeHtml(typeLabel)}</div>
-      <h2 class="canvas-title">${escapeHtml(data.title)}</h2>
-      <div class="canvas-subtitle">
+      <div class="canvas-header-top" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; width: 100%;">
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div class="canvas-label">System Output | ${escapeHtml(typeLabel)}</div>
+          <h2 class="canvas-title" style="margin: 0;">${escapeHtml(data.title)}</h2>
+        </div>
+        <button role="switch" 
+                aria-checked="${rawFocusEnabled ? 'true' : 'false'}" 
+                id="focusModeToggle" 
+                aria-label="Toggle Workspace Focus Mode"
+                class="focus-switch-btn">
+          <span class="focus-switch-thumb"></span>
+          <span class="focus-switch-label">Focus Mode</span>
+        </button>
+      </div>
+      <div class="canvas-subtitle" style="margin-top: 8px;">
         <span class="canvas-chip">${escapeHtml(workspaceData.exam || 'workspace')}</span>
         <span class="canvas-chip">Question ${index + 1}</span>
         <span class="canvas-chip">${escapeHtml(data.type)}</span>
@@ -747,7 +769,7 @@ function renderCanvas(index) {
         ${health.warningCount ? `<span class="canvas-chip canvas-chip-warning">${health.warningCount} warning${health.warningCount > 1 ? 's' : ''}</span>` : ''}
       </div>
     </div>
-    <div class="canvas-body">
+    <div class="canvas-body ${rawFocusEnabled ? 'workspace-focus-active' : ''}">
       ${renderVariantPanel(data)}
       ${renderPreviewPanel(data)}
       ${renderGuidePanel(data)}
@@ -1117,17 +1139,22 @@ exportJsonBtn?.addEventListener('click', () => {
   safeTrack('export_json', { exam: workspaceData.exam || 'none', total: workspaceData.answers.length });
 });
 
-// Academic Integrity Disclaimer checkbox handling
+// Academic Integrity Disclaimer checkbox & slide-to-unlock handling
 const agreeDisclaimerCheckbox = document.getElementById('agreeDisclaimerCheckbox');
+const sliderHandle = document.getElementById('sliderButtonHandle');
+const sliderTrack = document.getElementById('sliderTrack');
+const sliderFill = document.getElementById('sliderGlowFill');
+const card = document.getElementById('academicDisclaimer');
+
 if (agreeDisclaimerCheckbox) {
   const hasAgreed = localStorage.getItem('academic_integrity_agreed') === 'true';
   agreeDisclaimerCheckbox.checked = hasAgreed;
   
-  const card = document.getElementById('academicDisclaimer');
   if (card && !hasAgreed) {
     card.classList.add('pulse-attention');
   }
 
+  // Bind change event to sync visual slide state
   agreeDisclaimerCheckbox.addEventListener('change', () => {
     if (agreeDisclaimerCheckbox.checked) {
       localStorage.setItem('academic_integrity_agreed', 'true');
@@ -1137,8 +1164,157 @@ if (agreeDisclaimerCheckbox) {
       card?.classList.add('pulse-attention');
     }
   });
+
+  // Slider Drag Mechanics
+  if (sliderHandle && sliderTrack && sliderFill) {
+    let isDragging = false;
+    let startX = 0;
+    
+    const updateSliderVisual = (travel) => {
+      sliderHandle.style.transform = `translateX(${travel}px)`;
+      const pct = (travel / getMaxTravel()) * 100;
+      sliderFill.style.width = `${pct}%`;
+    };
+
+    const getMaxTravel = () => {
+      return sliderTrack.clientWidth - sliderHandle.clientWidth - 8;
+    };
+
+    const setUnlockedState = () => {
+      const maxTravel = getMaxTravel();
+      sliderHandle.style.transform = `translateX(${maxTravel}px)`;
+      sliderFill.style.width = '100%';
+      sliderHandle.style.background = '#10b981'; // Green unlocked state
+      sliderHandle.style.boxShadow = '0 0 16px rgba(16, 185, 129, 0.4)';
+      const msg = sliderTrack.querySelector('.slider-message');
+      if (msg) msg.innerText = 'Academic Policy Agreed & Unlocked';
+    };
+
+    if (hasAgreed) {
+      setTimeout(setUnlockedState, 100);
+    }
+
+    const dragStart = (e) => {
+      if (agreeDisclaimerCheckbox.checked) return;
+      isDragging = true;
+      startX = (e.type === 'touchstart') ? e.touches[0].clientX : e.clientX;
+      sliderHandle.style.transition = 'none';
+      sliderFill.style.transition = 'none';
+    };
+
+    const dragMove = (e) => {
+      if (!isDragging) return;
+      const currentX = (e.type === 'touchmove') ? e.touches[0].clientX : e.clientX;
+      let delta = currentX - startX;
+      const maxTravel = getMaxTravel();
+      if (delta < 0) delta = 0;
+      if (delta > maxTravel) delta = maxTravel;
+
+      updateSliderVisual(delta);
+    };
+
+    const dragEnd = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      const maxTravel = getMaxTravel();
+      const currentTransform = new WebKitCSSMatrix(window.getComputedStyle(sliderHandle).transform).m41;
+
+      if (currentTransform >= maxTravel * 0.90) {
+        setUnlockedState();
+        agreeDisclaimerCheckbox.checked = true;
+        agreeDisclaimerCheckbox.dispatchEvent(new Event('change'));
+        showToast('Academic Integrity disclaimer signed. Workspace unlocked!', 'success');
+      } else {
+        sliderHandle.style.transition = 'transform 0.25s ease-out';
+        sliderFill.style.transition = 'width 0.25s ease-out';
+        updateSliderVisual(0);
+      }
+    };
+
+    sliderHandle.addEventListener('mousedown', dragStart);
+    window.addEventListener('mousemove', dragMove);
+    window.addEventListener('mouseup', dragEnd);
+
+    sliderHandle.addEventListener('touchstart', dragStart, { passive: true });
+    window.addEventListener('touchmove', dragMove, { passive: true });
+    window.addEventListener('touchend', dragEnd);
+  }
+}
+
+// Geometric Seeded Identicon rendering routine
+function drawEmailIdenticon(email) {
+  const canvas = document.getElementById('seedIdenticon');
+  if (!canvas || typeof canvas.getContext !== 'function') return;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, 36, 36);
+
+  const norm = email.trim().toLowerCase();
+  
+  // Initialize Math.seedrandom using normalized email or anonymous
+  const seedGen = new Math.seedrandom(norm || 'anonymous');
+
+  // Compute complementary primary and secondary HSL Hues
+  const primaryHue = Math.floor(seedGen() * 360);
+  const secondaryHue = (primaryHue + 135) % 360;
+  
+  // Semi-transparent base layer background
+  ctx.fillStyle = `hsla(${primaryHue}, 35%, 12%, 0.45)`;
+  ctx.fillRect(0, 0, 36, 36);
+  ctx.lineWidth = 1.5;
+
+  // Render 3 overlapping layers of mathematical geometric structures
+  for (let layer = 0; layer < 3; layer++) {
+    ctx.strokeStyle = layer % 2 === 0 
+      ? `hsla(${primaryHue}, 85%, 65%, 0.75)` 
+      : `hsla(${secondaryHue}, 90%, 55%, 0.75)`;
+    
+    ctx.fillStyle = layer % 2 === 0 
+      ? `hsla(${primaryHue}, 85%, 65%, 0.15)` 
+      : `hsla(${secondaryHue}, 90%, 55%, 0.15)`;
+
+    ctx.beginPath();
+    const type = Math.floor(seedGen() * 4);
+    const size = 6 + (layer * 4);
+    const center = 18;
+
+    if (type === 0) {
+      // Concentric circles
+      ctx.arc(center, center, size, 0, Math.PI * 2);
+    } else if (type === 1) {
+      // Seeded rotated rectangles
+      ctx.save();
+      ctx.translate(center, center);
+      ctx.rotate(seedGen() * Math.PI);
+      ctx.rect(-size/2, -size/2, size, size);
+      ctx.restore();
+    } else if (type === 2) {
+      // Seeded triangles
+      const h = size * Math.sin(Math.PI / 3);
+      ctx.moveTo(center, center - (2/3)*h);
+      ctx.lineTo(center - size/2, center + (1/3)*h);
+      ctx.lineTo(center + size/2, center + (1/3)*h);
+      ctx.closePath();
+    } else {
+      // Seeded hexagons
+      for (let i = 0; i < 6; i++) {
+        const angle = (i * Math.PI) / 3;
+        const x = center + size * Math.cos(angle);
+        const y = center + size * Math.sin(angle);
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+    }
+    ctx.fill();
+    ctx.stroke();
+  }
 }
 
 window.addEventListener('resize', syncMobileNavState);
 syncMobileNavState();
 applySidebarFilter(nodeSearch.value.trim().toLowerCase());
+
+// Initial call to draw default identicon
+setTimeout(() => {
+  drawEmailIdenticon(emailInput.value.trim());
+}, 200);

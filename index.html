@@ -79,7 +79,10 @@
               <svg class="select-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             
-            <input type="email" id="emailInput" list="emailHistory" placeholder="21f1000000@ds.study.iitm.ac.in" autocomplete="email">
+            <div class="email-input-wrapper" style="display: flex; gap: 8px; align-items: center; width: 100%;">
+              <input type="email" id="emailInput" list="emailHistory" placeholder="21f1000000@ds.study.iitm.ac.in" autocomplete="email" style="flex: 1; min-width: 0;">
+              <canvas id="seedIdenticon" width="36" height="36" class="seed-identicon-canvas" title="Deterministic Workspace RNG Fingerprint"></canvas>
+            </div>
             <datalist id="emailHistory"></datalist>
             <button id="solveBtn">Initialize Workspace</button>
           </div>
@@ -210,11 +213,19 @@
               <strong>Contact & Takedowns:</strong> If any course coordinator, representative of the IITM TDS team, or copyright owner has any questions, suggestions, or concerns regarding this educational project, please contact me directly via my <a href="https://www.linkedin.com/in/gaurav-tomar-630b2a316" target="_blank" rel="noopener noreferrer" class="disclaimer-link">LinkedIn Profile</a>. I am fully committed to addressing any feedback or concerns immediately.
             </div>
             <div class="disclaimer-action">
-              <label class="disclaimer-checkbox-label">
-                <input type="checkbox" id="agreeDisclaimerCheckbox" class="disclaimer-checkbox">
-                <span class="checkbox-custom"></span>
-                <span class="checkbox-text">I have read, understood, and agree to abide by the Academic Integrity and Malpractice Prevention Policy.</span>
-              </label>
+              <div class="slider-disclaimer-wrapper" id="sliderDisclaimerLock">
+                <div class="slider-track" id="sliderTrack">
+                  <div class="slider-glow-fill" id="sliderGlowFill"></div>
+                  <div class="slider-button-handle" id="sliderButtonHandle">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="pointer-events: none;">
+                      <polyline points="13 18 19 12 13 6"></polyline>
+                      <polyline points="6 18 12 12 6 6"></polyline>
+                    </svg>
+                  </div>
+                  <span class="slider-message">Slide to agree & unlock workspace</span>
+                </div>
+              </div>
+              <input type="checkbox" id="agreeDisclaimerCheckbox" class="disclaimer-checkbox" style="display: none;">
             </div>
           </div>
 
