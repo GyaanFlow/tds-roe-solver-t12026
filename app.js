@@ -510,9 +510,23 @@ function renderPreviewPanel(data) {
 function renderAnswerPanel(data, langClass) {
   const escapedAnswer = escapeHtml(data.answer);
   const wrapClass = rawWrapEnabled ? 'raw-output-pre' : 'raw-output-nowrap';
-  const answerMarkup = langClass
-    ? `<pre class="raw-output"><code class="${langClass}" style="background:transparent; border:none; box-shadow:none;">${escapedAnswer}</code></pre>`
-    : `<pre class="raw-output ${wrapClass}">${escapedAnswer}</pre>`;
+  
+  // Check if answer is a pure solver tool URL
+  const isUrl = /^https?:\/\/[^\s]+$/i.test(data.answer.trim());
+  
+  const answerMarkup = isUrl
+    ? `
+      <div class="url-solver-container" style="padding: 16px; background: rgba(245, 158, 11, 0.03); border: 1px dashed rgba(245, 158, 11, 0.3); border-radius: 8px; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; margin: 12px 0; text-align: center;">
+        <span style="font-size: 12px; color: var(--text-secondary);">This solver provides a pre-deployed interactive tool:</span>
+        <a href="${data.answer.trim()}" target="_blank" rel="noopener noreferrer" class="navbar-credit-btn" style="box-shadow: 0 0 16px rgba(245, 158, 11, 0.15); font-weight: 600; text-decoration: none;">
+          Open Solver Tool ↗
+        </a>
+        <code style="font-size: 11px; color: var(--text-muted); word-break: break-all;">${escapedAnswer}</code>
+      </div>
+    `
+    : langClass
+      ? `<pre class="raw-output"><code class="${langClass}" style="background:transparent; border:none; box-shadow:none;">${escapedAnswer}</code></pre>`
+      : `<pre class="raw-output ${wrapClass}">${escapedAnswer}</pre>`;
 
   const actions = `
     <div class="panel-actions">
@@ -528,13 +542,15 @@ function renderAnswerPanel(data, langClass) {
 function renderNotesPanel(data) {
   if (!data.answerDisplay) return '';
   const rendered = typeof marked !== 'undefined' ? marked.parse(data.answerDisplay) : data.answerDisplay;
-  return createSection('Rendered Notes', `<div class="styled-output">${rendered}</div>`, { extraClass: 'panel-notes' });
+  const cleanRendered = rendered.replace(/<a\s+(href="[^"]*")/gi, '<a target="_blank" rel="noopener noreferrer" $1');
+  return createSection('Rendered Notes', `<div class="styled-output">${cleanRendered}</div>`, { extraClass: 'panel-notes' });
 }
 
 function renderGuidePanel(data) {
   if (!data.guide) return '';
   const rendered = typeof marked !== 'undefined' ? marked.parse(data.guide) : data.guide;
-  return createSection('Implementation Guide', `<div class="styled-output guide-output">${rendered}</div>`, { open: true, extraClass: 'panel-guide' });
+  const cleanRendered = rendered.replace(/<a\s+(href="[^"]*")/gi, '<a target="_blank" rel="noopener noreferrer" $1');
+  return createSection('Implementation Guide', `<div class="styled-output guide-output">${cleanRendered}</div>`, { open: true, extraClass: 'panel-guide' });
 }
 
 function renderDiagnosticsPanel(debug) {
