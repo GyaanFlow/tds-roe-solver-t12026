@@ -1,6 +1,6 @@
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.min.js';
 
-// Simple deterministic random generator based on string seed (LCG)
+// Simple LCG seeded random generator
 function createSeededRandom(seedStr) {
   let hash = 0;
   const source = seedStr || 'anonymous';
@@ -20,10 +20,13 @@ export class NetworkCanvasManager {
 
     this.container = this.canvas.parentElement;
     
-    // Scene setup
+    // Scene Setup
     this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(45, this.container.clientWidth / this.container.clientHeight, 0.1, 1000);
-    this.camera.position.z = 60;
+    
+    // Position camera slightly looking down on the bonsai tree
+    this.camera = new THREE.PerspectiveCamera(40, this.container.clientWidth / this.container.clientHeight, 0.1, 1000);
+    this.camera.position.set(0, 10, 52);
+    this.camera.lookAt(0, -2, 0);
 
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
@@ -34,12 +37,7 @@ export class NetworkCanvasManager {
     this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
 
-    // Pre-bind animation loop to prevent allocation on every frame
-    this.animate = this.animate.bind(this);
-
     // Settings
-    this.maxLines = 400;
-    this.maxPulses = 30;
     this.isDimmed = false;
     this.dimFactor = 1.0; 
     
@@ -47,42 +45,42 @@ export class NetworkCanvasManager {
     this.mouse = new THREE.Vector2(9999, 9999);
     this.mouseTarget = new THREE.Vector3(0, 0, 0);
     this.raycaster = new THREE.Raycaster();
-    this.plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0); // Z=0 interaction plane
+    this.plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0); // Z=0 plane
     this.mouseActive = false;
 
-    // Node state arrays
-    this.nodes = [];
-    this.pointsGeometry = null;
-    this.pointsMesh = null;
-    
-    // Pre-allocated line structures (allocation-free updates)
-    this.linePositions = new Float32Array(this.maxLines * 2 * 3);
-    this.linesGeometry = null;
-    this.linesMesh = null;
+    // Branches/Segments Setup for physics (Hierarchical spring sway segments)
+    this.branches = [];
 
-    // Pre-allocated pulse structures (allocation-free updates)
-    this.pulsePositions = new Float32Array(this.maxPulses * 3);
-    this.lightPulses = [];
-    this.pulseGeometry = null;
-    this.pulseMesh = null;
+    // Tree Voxel arrays
+    this.groundVoxels = [];
+    this.trunkVoxels = [];
+    this.leafVoxels = [];
 
-    // Colors & Theme targets
+    // Meshes
+    this.groundMesh = null;
+    this.trunkMesh = null;
+    this.leavesMesh = null;
+
+    // Colors
     this.primaryColor = new THREE.Color('#f59e0b');
     this.secondaryColor = new THREE.Color('#ef4444');
     this.targetPrimaryColor = this.primaryColor.clone();
     this.targetSecondaryColor = this.secondaryColor.clone();
     this.themeOverridden = false;
 
-    // Math symbols particle structures
+    // Particles
     this.particles = [];
     this.particleGroup = null;
 
-    // Event bindings
+    // Pre-bind animation loops
+    this.animate = this.animate.bind(this);
+
+    // Event Bindings
     window.addEventListener('resize', this.onResize.bind(this));
     this.container.addEventListener('mousemove', this.onMouseMove.bind(this));
     this.container.addEventListener('mouseleave', this.onMouseLeave.bind(this));
 
-    // Initial default seed
+    // Generate initial bonsai tree
     this.generateNetwork('anonymous');
     this.animate();
   }
@@ -103,177 +101,210 @@ export class NetworkCanvasManager {
       this.targetPrimaryColor.setHSL(primaryHue / 360, 0.9, 0.6);
       this.targetSecondaryColor.setHSL(secondaryHue / 360, 0.85, 0.5);
       
-      if (this.nodes.length === 0) {
+      if (this.groundVoxels.length === 0) {
         this.primaryColor.copy(this.targetPrimaryColor);
         this.secondaryColor.copy(this.targetSecondaryColor);
       }
     }
 
     // Clean up old meshes
-    if (this.pointsMesh) this.scene.remove(this.pointsMesh);
-    if (this.linesMesh) this.scene.remove(this.linesMesh);
-    if (this.pulseMesh) this.scene.remove(this.pulseMesh);
+    if (this.groundMesh) this.scene.remove(this.groundMesh);
+    if (this.trunkMesh) this.scene.remove(this.trunkMesh);
+    if (this.leavesMesh) this.scene.remove(this.leavesMesh);
 
-    this.nodes = [];
-    this.lightPulses = [];
+    this.groundVoxels = [];
+    this.trunkVoxels = [];
+    this.leafVoxels = [];
 
-    // 1. Generate 3D Decision/Computation Tree Node Hierarchy
-    // Root Node (Layer 0)
-    const rootNode = {
-      origX: 0,
-      origY: -21,
-      origZ: 0,
-      x: 0,
-      y: -21,
-      z: 0,
-      vx: 0,
-      vy: 0,
-      vz: 0,
-      parentIdx: -1,
-      layer: 0,
-      windPhase: random() * Math.PI * 2,
-      windFreq: 0.8,
-      windAmp: 0.35,
-      colorWeight: 0
-    };
-    this.nodes.push(rootNode);
+    // Initialize 5 Main Physics Segments for hierarchical sways
+    this.branches = [
+      { id: 0, center: new THREE.Vector3(0, -18, 0), disp: new THREE.Vector3(), vx: 0, vy: 0, vz: 0, windFreq: 0, windAmp: 0, windPhase: 0 }, // Ground Base
+      { id: 1, center: new THREE.Vector3(0, -10, 0), disp: new THREE.Vector3(), vx: 0, vy: 0, vz: 0, windFreq: 0.75, windAmp: 0.16, windPhase: random() * Math.PI * 2 }, // Main Trunk
+      { id: 2, center: new THREE.Vector3(-3.5, -7.5, 0), disp: new THREE.Vector3(), vx: 0, vy: 0, vz: 0, windFreq: 1.05, windAmp: 0.45, windPhase: random() * Math.PI * 2 }, // Left Branch
+      { id: 3, center: new THREE.Vector3(3.5, -5.5, 0), disp: new THREE.Vector3(), vx: 0, vy: 0, vz: 0, windFreq: 0.9, windAmp: 0.5, windPhase: random() * Math.PI * 2 }, // Right Branch
+      { id: 4, center: new THREE.Vector3(0, -2, 0), disp: new THREE.Vector3(), vx: 0, vy: 0, vz: 0, windFreq: 1.25, windAmp: 0.6, windPhase: random() * Math.PI * 2 } // Top Foliage
+    ];
 
-    // BFS queue for tree branching construction
-    const queue = [{ idx: 0, pos: rootNode, layer: 0 }];
-    const maxLayers = 4;
+    const blockSize = 0.7;
 
-    while (queue.length > 0) {
-      const parent = queue.shift();
-      if (parent.layer >= maxLayers) continue;
+    // --- 1. Procedural Voxel Base Disk Generation ---
+    const baseRadius = 8;
+    for (let x = -baseRadius; x <= baseRadius; x++) {
+      for (let z = -baseRadius; z <= baseRadius; z++) {
+        const dSq = x*x + z*z;
+        if (dSq <= baseRadius * baseRadius) {
+          // Bottom Tier
+          this.groundVoxels.push({
+            x: x * blockSize,
+            y: -19,
+            z: z * blockSize
+          });
 
-      // Children branching count
-      let branchCount = 3;
-      if (parent.layer === 1) branchCount = random() > 0.4 ? 2 : 3;
-      if (parent.layer === 2) branchCount = random() > 0.5 ? 2 : 3;
-      if (parent.layer === 3) branchCount = random() > 0.3 ? 1 : 2;
+          // Middle Tier
+          if (dSq <= 25) {
+            this.groundVoxels.push({
+              x: x * blockSize,
+              y: -19 + blockSize,
+              z: z * blockSize
+            });
+          }
 
-      for (let b = 0; b < branchCount; b++) {
-        const t = branchCount > 1 ? b / (branchCount - 1) : 0.5;
-        // spread angle centered around vertical axis
-        const spreadAngle = (t - 0.5) * Math.PI * 0.55 * (1.1 - parent.layer * 0.15);
-        
-        // Compute relative positions extending upwards
-        const stepY = (11 - parent.layer * 1.5) * (0.85 + random() * 0.3);
-        const childX = parent.pos.origX + Math.sin(spreadAngle) * stepY;
-        const childY = parent.pos.origY + stepY * 0.95;
-        const childZ = parent.pos.origZ + (random() - 0.5) * stepY * 0.4;
-
-        const childNode = {
-          origX: childX,
-          origY: childY,
-          origZ: childZ,
-          x: childX,
-          y: childY,
-          z: childZ,
-          vx: 0,
-          vy: 0,
-          vz: 0,
-          parentIdx: parent.idx,
-          layer: parent.layer + 1,
-          windPhase: random() * Math.PI * 2,
-          windFreq: 0.6 + random() * 1.0,
-          windAmp: 0.45 + random() * 0.75,
-          colorWeight: (parent.layer + 1) / maxLayers
-        };
-
-        const childIdx = this.nodes.length;
-        this.nodes.push(childNode);
-        queue.push({ idx: childIdx, pos: childNode, layer: parent.layer + 1 });
+          // Top Tier Mound
+          if (dSq <= 9) {
+            this.groundVoxels.push({
+              x: x * blockSize,
+              y: -19 + blockSize * 2,
+              z: z * blockSize
+            });
+          }
+        }
       }
     }
 
-    const nodeCount = this.nodes.length;
+    // --- 2. Procedural Voxel Trunk & Branch wood ---
+    const trunkStartY = -19 + blockSize * 3; // Start on top of base mound
+    const trunkEndY = -5.0;
 
-    // Nodes Buffer Geometry
-    this.pointsGeometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(nodeCount * 3);
-    const colors = new Float32Array(nodeCount * 3);
+    // Main Column
+    for (let y = trunkStartY; y <= trunkEndY; y += blockSize) {
+      const idx = this.trunkVoxels.length;
+      const isLow = y < -12.0;
 
-    for (let i = 0; i < nodeCount; i++) {
-      positions[i * 3] = this.nodes[i].x;
-      positions[i * 3 + 1] = this.nodes[i].y;
-      positions[i * 3 + 2] = this.nodes[i].z;
-
-      const c = new THREE.Color();
-      c.copy(this.primaryColor).lerp(this.secondaryColor, this.nodes[i].colorWeight);
-      colors[i * 3] = c.r;
-      colors[i * 3 + 1] = c.g;
-      colors[i * 3 + 2] = c.b;
+      // Base trunk flare thickness
+      if (isLow) {
+        this.trunkVoxels.push({ idx: idx, origX: 0, origY: y, origZ: 0, branchId: 1, branchWeight: 0.25 });
+        this.trunkVoxels.push({ idx: idx + 1, origX: blockSize, origY: y, origZ: 0, branchId: 1, branchWeight: 0.25 });
+        this.trunkVoxels.push({ idx: idx + 2, origX: -blockSize, origY: y, origZ: 0, branchId: 1, branchWeight: 0.25 });
+        this.trunkVoxels.push({ idx: idx + 3, origX: 0, origY: y, origZ: blockSize, branchId: 1, branchWeight: 0.25 });
+        this.trunkVoxels.push({ idx: idx + 4, origX: 0, origY: y, origZ: -blockSize, branchId: 1, branchWeight: 0.25 });
+      } else {
+        const wt = (y - trunkStartY) / (trunkEndY - trunkStartY);
+        this.trunkVoxels.push({
+          idx: idx,
+          origX: 0,
+          origY: y,
+          origZ: 0,
+          branchId: 1,
+          branchWeight: wt * 0.8
+        });
+      }
     }
 
-    this.pointsGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    this.pointsGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    // Left Branch Wood
+    const leftBranchLength = 5;
+    for (let step = 1; step <= leftBranchLength; step++) {
+      const wt = step / leftBranchLength;
+      this.trunkVoxels.push({
+        idx: this.trunkVoxels.length,
+        origX: -step * blockSize,
+        origY: -11.0 + step * blockSize * 0.8,
+        origZ: 0,
+        branchId: 2,
+        branchWeight: wt
+      });
+    }
 
-    // Custom circle texture for soft glow nodes
-    const canvas = document.createElement('canvas');
-    canvas.width = 16;
-    canvas.height = 16;
-    const ctx = canvas.getContext('2d');
-    const grad = ctx.createRadialGradient(8, 8, 0, 8, 8, 8);
-    grad.addColorStop(0, 'rgba(255,255,255,1)');
-    grad.addColorStop(0.3, 'rgba(255,255,255,0.8)');
-    grad.addColorStop(1, 'rgba(255,255,255,0)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, 16, 16);
-    const pointTexture = new THREE.CanvasTexture(canvas);
+    // Right Branch Wood
+    const rightBranchLength = 5;
+    for (let step = 1; step <= rightBranchLength; step++) {
+      const wt = step / rightBranchLength;
+      this.trunkVoxels.push({
+        idx: this.trunkVoxels.length,
+        origX: step * blockSize,
+        origY: -9.0 + step * blockSize * 0.7,
+        origZ: 0,
+        branchId: 3,
+        branchWeight: wt
+      });
+    }
 
-    this.pointsMaterial = new THREE.PointsMaterial({
-      size: 1.8,
-      map: pointTexture,
-      vertexColors: true,
+    // --- 3. Procedural Spherical Leaf Canopy Clusters ---
+    const foliageClusters = [
+      { center: new THREE.Vector3(-leftBranchLength * blockSize, -11.0 + leftBranchLength * blockSize * 0.8, 0), branchId: 2, radius: 2.8 }, // Left
+      { center: new THREE.Vector3(rightBranchLength * blockSize, -9.0 + rightBranchLength * blockSize * 0.7, 0), branchId: 3, radius: 2.8 }, // Right
+      { center: new THREE.Vector3(0.5, trunkEndY + blockSize * 3, 2.2 * blockSize), branchId: 4, radius: 2.6 }, // Top Forward
+      { center: new THREE.Vector3(-0.5, trunkEndY + blockSize * 3, -2.2 * blockSize), branchId: 4, radius: 2.6 }, // Top Backward
+      { center: new THREE.Vector3(0, trunkEndY + blockSize * 4, 0), branchId: 4, radius: 3.2 } // Crown Center
+    ];
+
+    for (const cluster of foliageClusters) {
+      const c = cluster.center;
+      const r = cluster.radius;
+      const gridRadius = Math.ceil(r / blockSize) + 1;
+
+      for (let x = -gridRadius; x <= gridRadius; x++) {
+        for (let y = -gridRadius; y <= gridRadius; y++) {
+          for (let z = -gridRadius; z <= gridRadius; z++) {
+            const vx = c.x + x * blockSize;
+            const vy = c.y + y * blockSize;
+            const vz = c.z + z * blockSize;
+
+            const dx = vx - c.x;
+            const dy = vy - c.y;
+            const dz = vz - c.z;
+            const dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
+
+            if (dist < r) {
+              // Add leaves with an organic porosity noise filter
+              if (random() > 0.16) {
+                const distRatio = dist / r;
+                this.leafVoxels.push({
+                  origX: vx,
+                  origY: vy,
+                  origZ: vz,
+                  branchId: cluster.branchId,
+                  // Voxels further from center sway more (heavier branchWeight)
+                  branchWeight: 0.5 + distRatio * 0.5,
+                  // Gradient weight for colors
+                  colorWeight: Math.max(0, Math.min(1, distRatio + random() * 0.2)),
+                  randSeed: random()
+                });
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Build the geometries and instanced meshes
+    const boxGeo = new THREE.BoxGeometry(blockSize * 0.95, blockSize * 0.95, blockSize * 0.95);
+    
+    // Materials
+    this.groundMaterial = new THREE.MeshBasicMaterial({ color: new THREE.Color('#102219'), transparent: true, opacity: 0.85 });
+    this.trunkMaterial = new THREE.MeshBasicMaterial({ color: new THREE.Color('#28180c'), transparent: true, opacity: 0.85 });
+    
+    // Glowing additive leaves make the tree pop out!
+    this.leavesMaterial = new THREE.MeshBasicMaterial({
       transparent: true,
-      opacity: 0.75,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending
-    });
-
-    this.pointsMesh = new THREE.Points(this.pointsGeometry, this.pointsMaterial);
-    this.scene.add(this.pointsMesh);
-
-    // Initial build of line buffers (using pre-allocated this.linePositions)
-    this.linesGeometry = new THREE.BufferGeometry();
-    this.linesGeometry.setAttribute('position', new THREE.BufferAttribute(this.linePositions, 3));
-    this.linesMaterial = new THREE.LineBasicMaterial({
-      color: this.primaryColor,
-      transparent: true,
-      opacity: 0.25,
+      opacity: 0.85,
       blending: THREE.AdditiveBlending,
       depthWrite: false
     });
-    this.linesMesh = new THREE.LineSegments(this.linesGeometry, this.linesMaterial);
-    this.scene.add(this.linesMesh);
 
-    // Dynamic action potential pulse buffers
-    this.pulseGeometry = new THREE.BufferGeometry();
-    this.pulseGeometry.setAttribute('position', new THREE.BufferAttribute(this.pulsePositions, 3));
-    this.pulseMaterial = new THREE.PointsMaterial({
-      size: 2.4,
-      color: this.secondaryColor,
-      map: pointTexture,
-      transparent: true,
-      opacity: 0.95,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false
-    });
-    this.pulseMesh = new THREE.Points(this.pulseGeometry, this.pulseMaterial);
-    this.scene.add(this.pulseMesh);
+    const tempMatrix = new THREE.Matrix4();
 
-    // Pre-populate some action potential light pulses flowing up tree
-    for (let k = 0; k < 6; k++) {
-      this.spawnPulse(random);
+    // 1. Ground Mesh (Immobile, build once)
+    this.groundMesh = new THREE.InstancedMesh(boxGeo, this.groundMaterial, this.groundVoxels.length);
+    for (let i = 0; i < this.groundVoxels.length; i++) {
+      const v = this.groundVoxels[i];
+      tempMatrix.makeTranslation(v.x, v.y, v.z);
+      this.groundMesh.setMatrixAt(i, tempMatrix);
     }
+    this.scene.add(this.groundMesh);
 
-    // 2. Generate Floating Math Particles
+    // 2. Trunk Mesh
+    this.trunkMesh = new THREE.InstancedMesh(boxGeo, this.trunkMaterial, this.trunkVoxels.length);
+    this.scene.add(this.trunkMesh);
+
+    // 3. Leaves Mesh
+    this.leavesMesh = new THREE.InstancedMesh(boxGeo, this.leavesMaterial, this.leafVoxels.length);
+    this.scene.add(this.leavesMesh);
+
+    // Generate floating math particles
     this.createMathParticles();
   }
 
   createMathParticles() {
-    // Clean up old particle sprites
     if (this.particleGroup) {
       this.scene.remove(this.particleGroup);
       this.particleGroup.traverse(child => {
@@ -289,7 +320,6 @@ export class NetworkCanvasManager {
 
     const symbols = ['1', '0', 'λ', '∫', '√', 'π', '+', '=', '{}', '[]', 'x', 'y'];
     
-    // Render text glyphs directly onto canvas sprites
     const textures = symbols.map(sym => {
       const canvas = document.createElement('canvas');
       canvas.width = 64;
@@ -340,36 +370,6 @@ export class NetworkCanvasManager {
     }
   }
 
-  spawnPulse(optRandom) {
-    const random = optRandom || Math.random;
-    
-    // Flow pulses hierarchically from parent to child (upwards)
-    const candidates = [];
-    for (let i = 0; i < this.nodes.length; i++) {
-      const children = [];
-      for (let j = 0; j < this.nodes.length; j++) {
-        if (this.nodes[j].parentIdx === i) {
-          children.push(j);
-        }
-      }
-      if (children.length > 0) {
-        candidates.push({ parentIdx: i, children });
-      }
-    }
-
-    if (candidates.length > 0) {
-      const choice = candidates[Math.floor(random() * candidates.length)];
-      const childIdx = choice.children[Math.floor(random() * choice.children.length)];
-      
-      this.lightPulses.push({
-        from: choice.parentIdx,
-        to: childIdx,
-        progress: 0,
-        speed: 0.008 + random() * 0.012
-      });
-    }
-  }
-
   setDimmed(dimmed) {
     this.isDimmed = dimmed;
   }
@@ -397,27 +397,20 @@ export class NetworkCanvasManager {
   animate() {
     requestAnimationFrame(this.animate);
 
-    // 1. Lerp theme primary & secondary colors smoothly
+    // Lerp themes colors in WebGL loop
     this.primaryColor.lerp(this.targetPrimaryColor, 0.04);
     this.secondaryColor.lerp(this.targetSecondaryColor, 0.04);
 
     const targetDim = this.isDimmed ? 0.12 : 0.7;
     this.dimFactor += (targetDim - this.dimFactor) * 0.06;
 
-    if (this.pointsMaterial) {
-      this.pointsMaterial.opacity = 0.85 * this.dimFactor;
-      this.pointsMaterial.size = (this.isDimmed ? 1.2 : 1.8);
-    }
-    if (this.linesMaterial) {
-      this.linesMaterial.opacity = 0.28 * this.dimFactor;
-    }
-    if (this.pulseMaterial) {
-      this.pulseMaterial.opacity = 0.95 * this.dimFactor;
-    }
+    if (this.groundMaterial) this.groundMaterial.opacity = 0.85 * this.dimFactor;
+    if (this.trunkMaterial) this.trunkMaterial.opacity = 0.85 * this.dimFactor;
+    if (this.leavesMaterial) this.leavesMaterial.opacity = 0.85 * this.dimFactor;
 
     const time = performance.now() * 0.001;
 
-    // Raycast for cursor position
+    // Raycast pointer Z=0 intersection
     if (this.mouseActive) {
       this.raycaster.setFromCamera(this.mouse, this.camera);
       const intersection = new THREE.Vector3();
@@ -428,160 +421,105 @@ export class NetworkCanvasManager {
       this.mouseTarget.set(9999, 9999, 9999);
     }
 
-    // 2. Hierarchical Physics & Wind Sway Bends
-    const positionsAttr = this.pointsGeometry.getAttribute('position');
-    const positions = positionsAttr.array;
-    const colorsAttr = this.pointsGeometry.getAttribute('color');
-    const colors = colorsAttr.array;
-    const nodeCount = this.nodes.length;
-    const cColor = new THREE.Color();
+    // --- 1. Physics Calculations for the 5 Main Segments ---
+    for (let b = 1; b <= 4; b++) {
+      const branch = this.branches[b];
 
-    for (let i = 0; i < nodeCount; i++) {
-      const node = this.nodes[i];
+      // Wind force
+      const windX = Math.sin(time * branch.windFreq + branch.windPhase) * branch.windAmp;
+      const windZ = Math.cos(time * branch.windFreq * 0.85 + branch.windPhase) * branch.windAmp * 0.7;
 
-      // Wind displacement sways get stronger with height (layer)
-      const windX = Math.sin(time * node.windFreq + node.windPhase) * node.windAmp * (node.layer * 0.45);
-      const windY = Math.cos(time * node.windFreq * 0.8 + node.windPhase) * node.windAmp * (node.layer * 0.15);
-      const windZ = Math.sin(time * node.windFreq * 1.2 + node.windPhase) * node.windAmp * (node.layer * 0.35);
-
-      // Parent branch displacement propagation
-      let parentDisplacementX = 0;
-      let parentDisplacementY = 0;
-      let parentDisplacementZ = 0;
-
-      if (node.parentIdx !== -1) {
-        const parent = this.nodes[node.parentIdx];
-        parentDisplacementX = parent.x - parent.origX;
-        parentDisplacementY = parent.y - parent.origY;
-        parentDisplacementZ = parent.z - parent.origZ;
+      // Hierarchical sway offsets from trunk
+      let parentDispX = 0;
+      let parentDispY = 0;
+      let parentDispZ = 0;
+      if (b >= 2) {
+        parentDispX = this.branches[1].disp.x;
+        parentDispY = this.branches[1].disp.y;
+        parentDispZ = this.branches[1].disp.z;
       }
 
-      const targetX = node.origX + parentDisplacementX + windX;
-      const targetY = node.origY + parentDisplacementY + windY;
-      const targetZ = node.origZ + parentDisplacementZ + windZ;
+      const targetX = windX + parentDispX;
+      const targetY = parentDispY;
+      const targetZ = windZ + parentDispZ;
 
-      // Mouse repulsion (pushes branches away, spring-returns later)
+      // Mouse proximity deflection
       let forceX = 0, forceY = 0, forceZ = 0;
       if (this.mouseActive) {
-        const dx = node.x - this.mouseTarget.x;
-        const dy = node.y - this.mouseTarget.y;
-        const dz = node.z - this.mouseTarget.z;
+        const curX = branch.center.x + branch.disp.x;
+        const curY = branch.center.y + branch.disp.y;
+        const curZ = branch.center.z + branch.disp.z;
+
+        const dx = curX - this.mouseTarget.x;
+        const dy = curY - this.mouseTarget.y;
+        const dz = curZ - this.mouseTarget.z;
         const dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
-        const effectRadius = 22;
+        const effectRadius = 18;
 
         if (dist < effectRadius && dist > 0.1) {
           const factor = (1.0 - dist / effectRadius);
-          const pull = factor * factor * (this.isDimmed ? -2.0 : -6.0);
-          forceX = (dx / dist) * pull;
-          forceY = (dy / dist) * pull;
-          forceZ = (dz / dist) * pull;
+          const repel = factor * factor * (this.isDimmed ? -2.2 : -5.5);
+          forceX = (dx / dist) * repel;
+          forceY = (dy / dist) * repel;
+          forceZ = (dz / dist) * repel;
         }
       }
 
-      const spring = this.isDimmed ? 0.04 : 0.09;
+      const spring = this.isDimmed ? 0.04 : 0.08;
       const friction = 0.82;
 
-      node.vx = (node.vx + (targetX + forceX - node.x) * spring) * friction;
-      node.vy = (node.vy + (targetY + forceY - node.y) * spring) * friction;
-      node.vz = (node.vz + (targetZ + forceZ - node.z) * spring) * friction;
+      branch.vx = (branch.vx + (targetX + forceX - branch.disp.x) * spring) * friction;
+      branch.vy = (branch.vy + (targetY + forceY - branch.disp.y) * spring) * friction;
+      branch.vz = (branch.vz + (targetZ + forceZ - branch.disp.z) * spring) * friction;
 
-      node.x += node.vx;
-      node.y += node.vy;
-      node.z += node.vz;
-
-      positions[i * 3] = node.x;
-      positions[i * 3 + 1] = node.y;
-      positions[i * 3 + 2] = node.z;
-
-      // Update point colors to dynamically match primary -> secondary transition
-      cColor.copy(this.primaryColor).lerp(this.secondaryColor, node.colorWeight);
-      colors[i * 3] = cColor.r;
-      colors[i * 3 + 1] = cColor.g;
-      colors[i * 3 + 2] = cColor.b;
+      branch.disp.x += branch.vx;
+      branch.disp.y += branch.vy;
+      branch.disp.z += branch.vz;
     }
-    positionsAttr.needsUpdate = true;
-    colorsAttr.needsUpdate = true;
 
-    // 3. Line connections rebuild (draws branches + cross neural links)
-    let lineCount = 0;
-    const linesAttr = this.linesGeometry.getAttribute('position');
-    const lineArray = linesAttr.array;
+    // --- 2. Update Trunk Voxel Instance Transforms ---
+    const tempMatrix = new THREE.Matrix4();
+    if (this.trunkMesh) {
+      for (let i = 0; i < this.trunkVoxels.length; i++) {
+        const v = this.trunkVoxels[i];
+        const disp = this.branches[v.branchId].disp;
+        const w = v.branchWeight;
+        
+        const x = v.origX + disp.x * w;
+        const y = v.origY + disp.y * w;
+        const z = v.origZ + disp.z * w;
 
-    for (let i = 0; i < nodeCount; i++) {
-      const node = this.nodes[i];
-      
-      // Draw tree branch link
-      if (node.parentIdx !== -1) {
-        if (lineCount >= this.maxLines) break;
-        const parent = this.nodes[node.parentIdx];
-        const offset = lineCount * 6;
-        lineArray[offset] = node.x;
-        lineArray[offset + 1] = node.y;
-        lineArray[offset + 2] = node.z;
-        lineArray[offset + 3] = parent.x;
-        lineArray[offset + 4] = parent.y;
-        lineArray[offset + 5] = parent.z;
-        lineCount++;
+        tempMatrix.makeTranslation(x, y, z);
+        this.trunkMesh.setMatrixAt(i, tempMatrix);
       }
+      this.trunkMesh.instanceMatrix.needsUpdate = true;
+    }
 
-      // Draw thin cross-layer neural proximity links
-      for (let j = i + 1; j < nodeCount; j++) {
-        if (lineCount >= this.maxLines) break;
-        const other = this.nodes[j];
-        if (other.parentIdx === i || node.parentIdx === j) continue;
+    // --- 3. Update Leaf Voxel Instance Transforms & Colors ---
+    if (this.leavesMesh) {
+      const color = new THREE.Color();
+      for (let i = 0; i < this.leafVoxels.length; i++) {
+        const v = this.leafVoxels[i];
+        const disp = this.branches[v.branchId].disp;
+        const w = v.branchWeight;
 
-        const dx = node.x - other.x;
-        const dy = node.y - other.y;
-        const dz = node.z - other.z;
-        const dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
+        const x = v.origX + disp.x * w;
+        const y = v.origY + disp.y * w;
+        const z = v.origZ + disp.z * w;
 
-        if (dist < 11.5 && Math.abs(node.layer - other.layer) <= 1) {
-          const offset = lineCount * 6;
-          lineArray[offset] = node.x;
-          lineArray[offset + 1] = node.y;
-          lineArray[offset + 2] = node.z;
-          lineArray[offset + 3] = other.x;
-          lineArray[offset + 4] = other.y;
-          lineArray[offset + 5] = other.z;
-          lineCount++;
-        }
+        tempMatrix.makeTranslation(x, y, z);
+        this.leavesMesh.setMatrixAt(i, tempMatrix);
+
+        // Dynamic theme-lerp leaf colors with textured HSL variation
+        color.copy(this.primaryColor).lerp(this.secondaryColor, v.colorWeight);
+        color.offsetHSL((v.randSeed - 0.5) * 0.08, (v.randSeed - 0.5) * 0.1, (v.randSeed - 0.5) * 0.1);
+        this.leavesMesh.setColorAt(i, color);
       }
-    }
-    linesAttr.needsUpdate = true;
-    this.linesGeometry.setDrawRange(0, lineCount * 2);
-
-    // 4. Spawning & Updating Action Potential Pulses
-    if (Math.random() < 0.08 && this.lightPulses.length < this.maxPulses) {
-      this.spawnPulse();
+      this.leavesMesh.instanceMatrix.needsUpdate = true;
+      this.leavesMesh.instanceColor.needsUpdate = true;
     }
 
-    const pulseAttr = this.pulseGeometry.getAttribute('position');
-    const pulseArray = pulseAttr.array;
-    let activePulseCount = 0;
-
-    for (let k = this.lightPulses.length - 1; k >= 0; k--) {
-      if (activePulseCount >= this.maxPulses) break;
-      const pulse = this.lightPulses[k];
-      pulse.progress += pulse.speed;
-      
-      if (pulse.progress >= 1.0) {
-        this.lightPulses.splice(k, 1);
-        continue;
-      }
-
-      const fromNode = this.nodes[pulse.from];
-      const toNode = this.nodes[pulse.to];
-
-      const offset = activePulseCount * 3;
-      pulseArray[offset] = fromNode.x + (toNode.x - fromNode.x) * pulse.progress;
-      pulseArray[offset + 1] = fromNode.y + (toNode.y - fromNode.y) * pulse.progress;
-      pulseArray[offset + 2] = fromNode.z + (toNode.z - fromNode.z) * pulse.progress;
-      activePulseCount++;
-    }
-    pulseAttr.needsUpdate = true;
-    this.pulseGeometry.setDrawRange(0, activePulseCount);
-
-    // 5. Update Falling Math Symbol Particles
+    // --- 4. Update Floating Data Symbol Particles ---
     if (this.particles) {
       for (let i = 0; i < this.particles.length; i++) {
         const p = this.particles[i];
@@ -590,14 +528,10 @@ export class NetworkCanvasManager {
         p.sprite.position.x = p.origX + Math.sin(p.wobblePhase) * p.wobbleAmp;
         p.sprite.material.rotation += p.spinSpeed;
         
-        // Interpolate colors based on height
         const heightWeight = (p.sprite.position.y + 25) / 50;
         p.sprite.material.color.copy(this.primaryColor).lerp(this.secondaryColor, Math.max(0, Math.min(1, heightWeight)));
-        
-        // Transparency matches dimming factor
         p.sprite.material.opacity = (this.isDimmed ? 0.12 : 0.45) * this.dimFactor;
 
-        // Recycle when out of bounds
         if (p.sprite.position.y < -25) {
           p.sprite.position.y = 25;
           p.origX = (Math.random() - 0.5) * 90;
@@ -606,7 +540,7 @@ export class NetworkCanvasManager {
       }
     }
 
-    // Render scene
+    // Render Scene
     this.renderer.render(this.scene, this.camera);
   }
 }
