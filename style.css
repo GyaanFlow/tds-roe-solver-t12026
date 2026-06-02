@@ -929,21 +929,37 @@ body {
   margin-bottom: 40px;
 }
 .dashboard-card {
-  background: var(--bg-surface);
+  background: rgba(10, 10, 10, 0.7);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 20px;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.1s ease-out;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transform-style: preserve-3d;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
-.dashboard-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-focus);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+.dashboard-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120px circle at var(--x, 0) var(--y, 0), rgba(255, 255, 255, 0.08), transparent 80%);
+  border-radius: 12px;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.dashboard-card:hover::before {
+  opacity: 1;
+}
+.dashboard-card > * {
+  transform: translateZ(15px); /* Pop content out in 3D */
+  transition: transform 0.1s ease-out;
 }
 .dashboard-card.status-stable { border-left: 4px solid var(--success); }
 .dashboard-card.status-check { border-left: 4px solid var(--warning); }
@@ -1671,4 +1687,59 @@ body {
   background: rgba(245, 158, 11, 0.2);
   border-color: rgba(245, 158, 11, 0.4);
   box-shadow: 0 0 6px rgba(245, 158, 11, 0.25);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   UI Upgrades - Neon Glows, Spotlight Effects & Staggered Animations
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Staggered navigation item animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-item-animate {
+  animation: slideInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Breathing neon glowing status rings */
+@keyframes greenPulse {
+  0% { box-shadow: 0 0 4px #2ecc71, 0 0 8px rgba(46, 204, 113, 0.45); }
+  50% { box-shadow: 0 0 10px #2ecc71, 0 0 20px rgba(46, 204, 113, 0.7); }
+  100% { box-shadow: 0 0 4px #2ecc71, 0 0 8px rgba(46, 204, 113, 0.45); }
+}
+@keyframes guidePulse {
+  0% { box-shadow: 0 0 4px #f1c40f, 0 0 8px rgba(241, 196, 15, 0.45); }
+  50% { box-shadow: 0 0 10px #f1c40f, 0 0 20px rgba(241, 196, 15, 0.7); }
+  100% { box-shadow: 0 0 4px #f1c40f, 0 0 8px rgba(241, 196, 15, 0.45); }
+}
+@keyframes bypassPulse {
+  0% { box-shadow: 0 0 4px #3498db, 0 0 8px rgba(52, 152, 219, 0.45); }
+  50% { box-shadow: 0 0 10px #3498db, 0 0 20px rgba(52, 152, 219, 0.7); }
+  100% { box-shadow: 0 0 4px #3498db, 0 0 8px rgba(52, 152, 219, 0.45); }
+}
+@keyframes errorPulse {
+  0% { box-shadow: 0 0 3px #e74c3c, 0 0 6px rgba(231, 76, 60, 0.45); }
+  50% { box-shadow: 0 0 9px #e74c3c, 0 0 18px rgba(231, 76, 60, 0.75); }
+  100% { box-shadow: 0 0 3px #e74c3c, 0 0 6px rgba(231, 76, 60, 0.45); }
+}
+
+.status-solved {
+  animation: greenPulse 2.2s infinite ease-in-out;
+}
+.status-guide {
+  animation: guidePulse 2.2s infinite ease-in-out;
+}
+.status-bypass {
+  animation: bypassPulse 2.2s infinite ease-in-out;
+}
+.status-error {
+  animation: errorPulse 1.6s infinite ease-in-out;
 }

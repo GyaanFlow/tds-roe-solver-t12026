@@ -442,7 +442,8 @@ function renderSidebarNode(index, title, type) {
   const health = getHealthMeta(answer);
   const node = document.createElement('button');
   node.type = 'button';
-  node.className = 'nav-item';
+  node.className = 'nav-item nav-item-animate';
+  node.style.animationDelay = `${index * 35}ms`;
   node.dataset.idx = String(index);
   node.dataset.health = health.level;
   node.innerHTML = `
@@ -757,6 +758,32 @@ function renderDashboard() {
       </div>
     </div>
   `;
+
+  // Bind interactive card tilts & spotlight effects
+  const cards = canvas.querySelectorAll('.dashboard-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      card.style.setProperty('--x', `${x}px`);
+      card.style.setProperty('--y', `${y}px`);
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -8;
+      const rotateY = ((x - centerX) / centerX) * 8;
+      
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      card.style.removeProperty('--x');
+      card.style.removeProperty('--y');
+    });
+  });
 }
 
 function renderCanvas(index) {
@@ -1230,72 +1257,142 @@ if (agreeDisclaimerCheckbox) {
   });
 }
 
-// Geometric Seeded Identicon rendering routine
+// Geometric Seeded Identicon rendering
+let identiconAnimationId = null;
+const identiconState = {
+  seed: '',
+  angleX: 0,
+  angleY: 0,
+  hoverScale: 1.0,
+  targetHoverScale: 1.0,
+  hoverSpeed: 1.0,
+  targetHoverSpeed: 1.0,
+  vertices: [],
+  primaryColor: '',
+  secondaryColor: '',
+  bgColor: '',
+  canvas: null,
+  ctx: null
+};
+
+function updateAndDrawIdenticon() {
+  const { canvas, ctx, vertices, primaryColor, secondaryColor, bgColor } = identiconState;
+  if (!canvas || !ctx) return;
+
+  ctx.clearRect(0, 0, 36, 36);
+
+  ctx.fillStyle = bgColor;
+  ctx.fillRect(0, 0, 36, 36);
+
+  identiconState.hoverScale += (identiconState.targetHoverScale - identiconState.hoverScale) * 0.15;
+  identiconState.hoverSpeed += (identiconState.targetHoverSpeed - identiconState.hoverSpeed) * 0.15;
+
+  identiconState.angleX += 0.012 * identiconState.hoverSpeed;
+  identiconState.angleY += 0.016 * identiconState.hoverSpeed;
+
+  const cosX = Math.cos(identiconState.angleX);
+  const sinX = Math.sin(identiconState.angleX);
+  const cosY = Math.cos(identiconState.angleY);
+  const sinY = Math.sin(identiconState.angleY);
+
+  const cx = 18;
+  const cy = 18;
+  const scale = 5.2 * identiconState.hoverScale;
+
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+
+  for (let i = 0; i < vertices.length; i++) {
+    const p = vertices[i];
+
+    const y1 = p.y * cosX - p.z * sinX;
+    const z1 = p.y * sinX + p.z * cosX;
+
+    const x2 = p.x * cosY + z1 * sinY;
+    const z2 = -p.x * sinY + z1 * cosY;
+
+    const pScale = 50 / (50 + z2);
+    const px = x2 * scale * pScale + cx;
+    const py = y1 * scale * pScale + cy;
+
+    if (i === 0) {
+      ctx.moveTo(px, py);
+    } else {
+      ctx.lineTo(px, py);
+    }
+  }
+
+  const grad = ctx.createLinearGradient(0, 0, 36, 36);
+  grad.addColorStop(0, primaryColor);
+  grad.addColorStop(1, secondaryColor);
+  ctx.strokeStyle = grad;
+  ctx.stroke();
+}
+
 function drawEmailIdenticon(email) {
   const canvas = document.getElementById('seedIdenticon');
   if (!canvas || typeof canvas.getContext !== 'function') return;
   const ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, 36, 36);
-
+  
   const norm = email.trim().toLowerCase();
   
-  // Initialize Math.seedrandom using normalized email or anonymous
-  const seedGen = new Math.seedrandom(norm || 'anonymous');
+  if (identiconState.seed === norm && identiconState.canvas === canvas) {
+    return;
+  }
+  
+  if (identiconState.canvas !== canvas) {
+    canvas.addEventListener('mouseenter', () => {
+      identiconState.targetHoverScale = 1.35;
+      identiconState.targetHoverSpeed = 3.5;
+    });
+    canvas.addEventListener('mouseleave', () => {
+      identiconState.targetHoverScale = 1.0;
+      identiconState.targetHoverSpeed = 1.0;
+    });
+    
+    emailInput.addEventListener('mouseenter', () => {
+      identiconState.targetHoverScale = 1.25;
+      identiconState.targetHoverSpeed = 2.0;
+    });
+    emailInput.addEventListener('mouseleave', () => {
+      identiconState.targetHoverScale = 1.0;
+      identiconState.targetHoverSpeed = 1.0;
+    });
+  }
 
-  // Compute complementary primary and secondary HSL Hues
+  const seedGen = new Math.seedrandom(norm || 'anonymous');
   const primaryHue = Math.floor(seedGen() * 360);
   const secondaryHue = (primaryHue + 135) % 360;
   
-  // Semi-transparent base layer background
-  ctx.fillStyle = `hsla(${primaryHue}, 35%, 12%, 0.45)`;
-  ctx.fillRect(0, 0, 36, 36);
-  ctx.lineWidth = 1.5;
+  identiconState.seed = norm;
+  identiconState.canvas = canvas;
+  identiconState.ctx = ctx;
+  identiconState.primaryColor = `hsla(${primaryHue}, 90%, 65%, 0.8)`;
+  identiconState.secondaryColor = `hsla(${secondaryHue}, 95%, 55%, 0.85)`;
+  identiconState.bgColor = `hsla(${primaryHue}, 35%, 8%, 0.45)`;
 
-  // Render 3 overlapping layers of mathematical geometric structures
-  for (let layer = 0; layer < 3; layer++) {
-    ctx.strokeStyle = layer % 2 === 0 
-      ? `hsla(${primaryHue}, 85%, 65%, 0.75)` 
-      : `hsla(${secondaryHue}, 90%, 55%, 0.75)`;
-    
-    ctx.fillStyle = layer % 2 === 0 
-      ? `hsla(${primaryHue}, 85%, 65%, 0.15)` 
-      : `hsla(${secondaryHue}, 90%, 55%, 0.15)`;
+  const p = 2 + Math.floor(seedGen() * 4);
+  const q = 3 + Math.floor(seedGen() * 5);
+  const segments = 64;
+  const vertices = [];
 
-    ctx.beginPath();
-    const type = Math.floor(seedGen() * 4);
-    const size = 6 + (layer * 4);
-    const center = 18;
+  for (let i = 0; i <= segments; i++) {
+    const t = (i / segments) * Math.PI * 2 * p;
+    const r = 1.8 + 0.8 * Math.cos(q * t / p);
+    const x = r * Math.cos(t);
+    const y = r * Math.sin(t);
+    const z = 0.8 * Math.sin(q * t / p);
+    vertices.push({ x, y, z });
+  }
 
-    if (type === 0) {
-      // Concentric circles
-      ctx.arc(center, center, size, 0, Math.PI * 2);
-    } else if (type === 1) {
-      // Seeded rotated rectangles
-      ctx.save();
-      ctx.translate(center, center);
-      ctx.rotate(seedGen() * Math.PI);
-      ctx.rect(-size/2, -size/2, size, size);
-      ctx.restore();
-    } else if (type === 2) {
-      // Seeded triangles
-      const h = size * Math.sin(Math.PI / 3);
-      ctx.moveTo(center, center - (2/3)*h);
-      ctx.lineTo(center - size/2, center + (1/3)*h);
-      ctx.lineTo(center + size/2, center + (1/3)*h);
-      ctx.closePath();
-    } else {
-      // Seeded hexagons
-      for (let i = 0; i < 6; i++) {
-        const angle = (i * Math.PI) / 3;
-        const x = center + size * Math.cos(angle);
-        const y = center + size * Math.sin(angle);
-        if (i === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-      ctx.closePath();
-    }
-    ctx.fill();
-    ctx.stroke();
+  identiconState.vertices = vertices;
+
+  if (!identiconAnimationId) {
+    const loop = () => {
+      identiconAnimationId = requestAnimationFrame(loop);
+      updateAndDrawIdenticon();
+    };
+    identiconAnimationId = requestAnimationFrame(loop);
   }
 }
 
