@@ -371,20 +371,6 @@ function resetStoredUiState() {
     agreeDisclaimerCheckbox.dispatchEvent(new Event('change'));
   }
   
-  const sliderHandle = document.getElementById('sliderButtonHandle');
-  const sliderTrack = document.getElementById('sliderTrack');
-  const sliderFill = document.getElementById('sliderGlowFill');
-  if (sliderHandle && sliderTrack && sliderFill) {
-    sliderHandle.style.transition = 'transform 0.25s ease-out';
-    sliderFill.style.transition = 'width 0.25s ease-out';
-    sliderHandle.style.transform = 'translateX(0px)';
-    sliderFill.style.width = '0%';
-    sliderHandle.style.background = '';
-    sliderHandle.style.boxShadow = '';
-    const msg = sliderTrack.querySelector('.slider-message');
-    if (msg) msg.innerText = 'Slide to agree & unlock workspace';
-  }
-  
   const card = document.getElementById('academicDisclaimer');
   if (card) {
     card.classList.add('pulse-attention');
@@ -1198,109 +1184,7 @@ if (agreeDisclaimerCheckbox) {
     }
   });
 
-  // Slider Drag Mechanics
-  if (sliderHandle && sliderTrack && sliderFill) {
-    let isDragging = false;
-    let startX = 0;
-    let initialTransform = 0;
-    
-    const updateSliderVisual = (travel) => {
-      sliderHandle.style.transform = `translateX(${travel}px)`;
-      const pct = (travel / getMaxTravel()) * 100;
-      sliderFill.style.width = `${pct}%`;
-    };
 
-    const getMaxTravel = () => {
-      return sliderTrack.clientWidth - sliderHandle.clientWidth - 8;
-    };
-
-    const setUnlockedState = () => {
-      const maxTravel = getMaxTravel();
-      sliderHandle.style.transform = `translateX(${maxTravel}px)`;
-      sliderFill.style.width = '100%';
-      sliderHandle.style.background = '#10b981'; // Green unlocked state
-      sliderHandle.style.boxShadow = '0 0 16px rgba(16, 185, 129, 0.4)';
-      const msg = sliderTrack.querySelector('.slider-message');
-      if (msg) msg.innerText = 'Academic Policy Agreed & Unlocked';
-    };
-
-    if (hasAgreed) {
-      setTimeout(setUnlockedState, 100);
-    }
-
-    // Responsive alignment bug fix on window resize
-    window.addEventListener('resize', () => {
-      if (agreeDisclaimerCheckbox.checked) {
-        setUnlockedState();
-      }
-    });
-
-    const dragStart = (e) => {
-      isDragging = true;
-      startX = (e.type === 'touchstart') ? e.touches[0].clientX : e.clientX;
-      initialTransform = new WebKitCSSMatrix(window.getComputedStyle(sliderHandle).transform).m41;
-      sliderHandle.style.transition = 'none';
-      sliderFill.style.transition = 'none';
-    };
-
-    const dragMove = (e) => {
-      if (!isDragging) return;
-      const currentX = (e.type === 'touchmove') ? e.touches[0].clientX : e.clientX;
-      const maxTravel = getMaxTravel();
-      
-      let delta = currentX - startX;
-      let travel = initialTransform + delta;
-      
-      if (travel < 0) travel = 0;
-      if (travel > maxTravel) travel = maxTravel;
-
-      updateSliderVisual(travel);
-    };
-
-    const dragEnd = () => {
-      if (!isDragging) return;
-      isDragging = false;
-      const maxTravel = getMaxTravel();
-      const currentTransform = new WebKitCSSMatrix(window.getComputedStyle(sliderHandle).transform).m41;
-
-      if (currentTransform >= maxTravel * 0.90) {
-        const previouslyChecked = agreeDisclaimerCheckbox.checked;
-        setUnlockedState();
-        agreeDisclaimerCheckbox.checked = true;
-        agreeDisclaimerCheckbox.dispatchEvent(new Event('change'));
-        if (!previouslyChecked) {
-          showToast('Academic Integrity disclaimer signed. Workspace unlocked!', 'success');
-        }
-      } else {
-        const previouslyChecked = agreeDisclaimerCheckbox.checked;
-        
-        sliderHandle.style.transition = 'transform 0.25s ease-out';
-        sliderFill.style.transition = 'width 0.25s ease-out';
-        updateSliderVisual(0);
-        
-        // Reset styles back to golden/locked
-        sliderHandle.style.background = ''; // default gradient
-        sliderHandle.style.boxShadow = ''; // default shadow
-        const msg = sliderTrack.querySelector('.slider-message');
-        if (msg) msg.innerText = 'Slide to agree & unlock workspace';
-
-        agreeDisclaimerCheckbox.checked = false;
-        agreeDisclaimerCheckbox.dispatchEvent(new Event('change'));
-        
-        if (previouslyChecked) {
-          showToast('Workspace re-locked. Please agree to policies to solve.', 'warning');
-        }
-      }
-    };
-
-    sliderHandle.addEventListener('mousedown', dragStart);
-    window.addEventListener('mousemove', dragMove);
-    window.addEventListener('mouseup', dragEnd);
-
-    sliderHandle.addEventListener('touchstart', dragStart, { passive: true });
-    window.addEventListener('touchmove', dragMove, { passive: true });
-    window.addEventListener('touchend', dragEnd);
-  }
 }
 
 // Geometric Seeded Identicon rendering routine
