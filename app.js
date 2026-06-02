@@ -511,10 +511,19 @@ function renderAnswerPanel(data, langClass) {
   const escapedAnswer = escapeHtml(data.answer);
   const wrapClass = rawWrapEnabled ? 'raw-output-pre' : 'raw-output-nowrap';
   
-  // Check if answer is a pure solver tool URL
+  // Check if answer is a pure URL
   const isUrl = /^https?:\/\/[^\s]+$/i.test(data.answer.trim());
   
-  const answerMarkup = isUrl
+  // Distinguish between deployed solver web apps and copy-paste API URLs
+  const urlLower = data.answer.trim().toLowerCase();
+  const isCopyPasteApi = urlLower.includes('/api') || 
+                          urlLower.includes('/code-interpreter') || 
+                          urlLower.includes('/sentiment') || 
+                          urlLower.includes('/latency');
+                          
+  const isInteractiveSolver = isUrl && !isCopyPasteApi;
+  
+  const answerMarkup = isInteractiveSolver
     ? `
       <div class="url-solver-container" style="padding: 16px; background: rgba(245, 158, 11, 0.03); border: 1px dashed rgba(245, 158, 11, 0.3); border-radius: 8px; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; margin: 12px 0; text-align: center;">
         <span style="font-size: 12px; color: var(--text-secondary);">This solver provides a pre-deployed interactive tool:</span>
