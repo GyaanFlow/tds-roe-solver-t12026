@@ -1346,6 +1346,63 @@ body {
   box-shadow: 0 8px 32px rgba(245, 158, 11, 0.05);
 }
 
-
-
-
+/* Disclaimer Sections Styling */
+.disclaimer-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 18px;
+  margin-bottom: 22px;
+  text-align: left;
+}
+.disclaimer-section-block {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  padding: 14px 18px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.disclaimer-section-block:hover {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-1px);
+}
+.disclaimer-section-block h5 {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+.disclaimer-section-block p {
+  margin: 0;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.disclaimer-section-block.critical-policy {
+  border-left: 4px solid rgba(239, 68, 68, 0.55);
+  background: rgba(239, 68, 68, 0.015);
+  border-right-color: rgba(239, 68, 68, 0.08);
+  border-top-color: rgba(239, 68, 68, 0.08);
+  border-bottom-color: rgba(239, 68, 68, 0.08);
+}
+.disclaimer-section-block.critical-policy:hover {
+  background: rgba(239, 68, 68, 0.025);
+  border-color: rgba(239, 68, 68, 0.22) rgba(239, 68, 68, 0.12) rgba(239, 68, 68, 0.12) rgba(239, 68, 68, 0.55);
+}
+.disclaimer-section-block.critical-policy h5 {
+  color: #fca5a5;
+}
+.disclaimer-link {
+  color: #f59e0b;
+  text-decoration: none;
+  font-weight: 550;
+  border-bottom: 1px dashed rgba(245, 158, 11, 0.3);
+  transition: all 0.2s ease;
+}
+.disclaimer-link:hover {
+  color: #fbbf24;
+  border-bottom-color: rgba(245, 158, 11, 0.7);
+  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.25));
+}
