@@ -1,4 +1,4 @@
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.min.js';
+import * as THREE from 'https://unpkg.com/three@0.128.0/build/three.module.js';
 import { OrbitControls } from 'https://unpkg.com/three@0.128.0/examples/jsm/controls/OrbitControls.js';
 
 /* ─────────────────────────────────────────────────────────
@@ -110,9 +110,13 @@ export class NetworkCanvasManager {
 
     // Event listeners
     this.animate = this.animate.bind(this);
-    window.addEventListener('resize', this._onResize.bind(this));
-    this.container.addEventListener('mousemove', this._onMouseMove.bind(this));
-    this.container.addEventListener('mouseleave', this._onMouseLeave.bind(this));
+    this._onResize = this._onResize.bind(this);
+    this._onMouseMove = this._onMouseMove.bind(this);
+    this._onMouseLeave = this._onMouseLeave.bind(this);
+
+    window.addEventListener('resize', this._onResize);
+    this.container.addEventListener('mousemove', this._onMouseMove);
+    this.container.addEventListener('mouseleave', this._onMouseLeave);
 
     this.lastTime = performance.now();
     this.animate();
