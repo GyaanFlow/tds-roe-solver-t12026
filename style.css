@@ -464,7 +464,7 @@ body {
   max-width: 620px;
   margin-top: 36px;
   padding: 30px;
-  background: linear-gradient(180deg, rgba(20, 15, 15, 0.75) 0%, rgba(10, 10, 10, 0.85) 100%);
+  background: rgba(15, 10, 10, 0.55);
   border: 1px solid rgba(239, 68, 68, 0.25);
   border-radius: 16px;
   text-align: left;
@@ -474,11 +474,35 @@ body {
     inset 0 0 24px rgba(255, 255, 255, 0.015);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+  transition: transform 0.1s ease-out, 
               box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
               border-color 0.4s ease;
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   animation: disclaimerFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.disclaimer-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120px circle at var(--x, 0) var(--y, 0), rgba(255, 255, 255, 0.08), transparent 80%);
+  border-radius: 16px;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.disclaimer-card:hover::before {
+  opacity: 1;
+}
+
+.disclaimer-card > * {
+  transform: translateZ(10px); /* Pop content out in 3D */
+  transition: transform 0.1s ease-out;
 }
 
 @keyframes disclaimerFadeInUp {
@@ -493,7 +517,6 @@ body {
 }
 
 .disclaimer-card:hover {
-  transform: translateY(-2px);
   border-color: rgba(239, 68, 68, 0.45);
   box-shadow: 
     0 35px 80px rgba(0, 0, 0, 0.8), 

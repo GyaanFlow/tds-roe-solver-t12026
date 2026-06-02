@@ -1477,6 +1477,32 @@ document.querySelectorAll('.feature-mini-card').forEach(card => {
   });
 });
 
+// Bind interactive disclaimer card mouse tilt & spotlight
+const disclaimerCard = document.getElementById('academicDisclaimer');
+if (disclaimerCard) {
+  disclaimerCard.addEventListener('mousemove', (e) => {
+    const rect = disclaimerCard.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    disclaimerCard.style.setProperty('--x', `${x}px`);
+    disclaimerCard.style.setProperty('--y', `${y}px`);
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -5;
+    const rotateY = ((x - centerX) / centerX) * 5;
+    
+    disclaimerCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+  
+  disclaimerCard.addEventListener('mouseleave', () => {
+    disclaimerCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    disclaimerCard.style.removeProperty('--x');
+    disclaimerCard.style.removeProperty('--y');
+  });
+}
+
 // Initialize WebGL background canvas dynamically to support check.mjs Node environment compatibility
 async function initNetworkCanvas() {
   if (typeof process === 'undefined') {

@@ -217,7 +217,55 @@
       <div class="editor-canvas" id="canvas">
         <!-- Hero Initial Screen -->
         <div class="welcome-screen">
-          <!-- Academic Integrity Disclaimer on Top -->
+          <div class="welcome-icon" style="margin-top: 24px;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h1 id="welcomeTitle" class="gradient-text">TDS Exam Engine <span class="version-badge" id="welcomeVersion">v2</span></h1>
+          <p id="welcomeDescription" style="margin-bottom: 12px;"></p>
+          <p id="welcomeInstructions">Select your exam target in the sidebar and input your IITM email to spin up the computation workspace. Answers are generated instantly and locally.</p>
+
+          <div class="features-grid">
+            <div class="feature-mini-card">
+              <div class="feature-mini-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+                </svg>
+              </div>
+              <h4>Deterministic</h4>
+              <p>Standardized inputs & seeded RNG guarantee identical answers.</p>
+            </div>
+            <div class="feature-mini-card">
+              <div class="feature-mini-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <h4>Local Run</h4>
+              <p>Pure client-side execution running directly in your browser.</p>
+            </div>
+            <div class="feature-mini-card">
+              <div class="feature-mini-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <h4>Study Sandbox</h4>
+              <p>Comprehensive offline guides for FastAPI, ngrok, & pipelines.</p>
+            </div>
+          </div>
+
+          <div class="welcome-footer-credits">
+            <span>Project Sandbox by <a href="https://github.com/GyaanFlow" target="_blank" rel="noopener noreferrer">GyaanFlow</a></span>
+            <span class="dot-separator">•</span>
+            <span>Connect on <a href="https://www.linkedin.com/in/gaurav-tomar-630b2a316" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+          </div>
+
+          <!-- Academic Integrity Disclaimer at the Bottom -->
           <div class="disclaimer-card" id="academicDisclaimer">
             <div class="disclaimer-title">
               <svg class="disclaimer-header-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -324,55 +372,6 @@
                 <span class="checkbox-text">I formally execute this Safe Learning Agreement, pledging absolute honor compliance & code verification ethics.</span>
               </label>
             </div>
-          </div>
-
-          <div class="welcome-icon" style="margin-top: 48px;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-              <line x1="8" y1="21" x2="16" y2="21"></line>
-              <line x1="12" y1="17" x2="12" y2="21"></line>
-            </svg>
-          </div>
-          <h1 id="welcomeTitle" class="gradient-text">TDS Exam Engine <span class="version-badge" id="welcomeVersion">v2</span></h1>
-          <p id="welcomeDescription" style="margin-bottom: 12px;"></p>
-          <p id="welcomeInstructions">Select your exam target in the sidebar and input your IITM email to spin up the computation workspace. Answers are generated instantly and locally.</p>
-
-          <div class="features-grid">
-            <div class="feature-mini-card">
-              <div class="feature-mini-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
-                </svg>
-              </div>
-              <h4>Deterministic</h4>
-              <p>Standardized inputs & seeded RNG guarantee identical answers.</p>
-            </div>
-            <div class="feature-mini-card">
-              <div class="feature-mini-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                </svg>
-              </div>
-              <h4>Local Run</h4>
-              <p>Pure client-side execution running directly in your browser.</p>
-            </div>
-            <div class="feature-mini-card">
-              <div class="feature-mini-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-              </div>
-              <h4>Study Sandbox</h4>
-              <p>Comprehensive offline guides for FastAPI, ngrok, & pipelines.</p>
-            </div>
-          </div>
-
-          <div class="welcome-footer-credits">
-            <span>Project Sandbox by <a href="https://github.com/GyaanFlow" target="_blank" rel="noopener noreferrer">GyaanFlow</a></span>
-            <span class="dot-separator">•</span>
-            <span>Connect on <a href="https://www.linkedin.com/in/gaurav-tomar-630b2a316" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
-          </div>
         </div>
       </div>
     </main>
