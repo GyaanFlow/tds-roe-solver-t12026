@@ -299,17 +299,17 @@ body {
   align-items: center;
 }
 .credit-links a {
-  color: var(--text-muted);
-  transition: color 0.2s ease, transform 0.2s ease;
+  color: #f59e0b; /* Glowing amber by default */
+  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4)); /* Glowing drop shadow by default */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
 }
 .credit-links a:hover {
-  color: #f59e0b; /* Amber accent */
-  transform: translateY(-1px);
+  color: #fbbf24; /* Vibrant yellow-gold on hover */
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.75)); /* High-intensity glow shadow */
+  transform: translateY(-2px) scale(1.15); /* Sleek zoom and lift hover effect */
 }
-
-/* ── Main Editor ── */
 #editor {
   display: flex; flex-direction: column; height: 100%;
   min-width: 0;
