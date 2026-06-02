@@ -2,6 +2,15 @@
 
 let networkCanvas = null;
 
+const THEME_HUES = {
+  amber: { primary: 38, secondary: 4 },
+  cyber: { primary: 160, secondary: 220 },
+  orchid: { primary: 330, secondary: 265 },
+  frost: { primary: 190, secondary: 220 }
+};
+
+let activeTheme = localStorage.getItem('workspaceTheme') || 'amber';
+
 const emailInput = document.getElementById('emailInput');
 const solveBtn = document.getElementById('solveBtn');
 const progressPanel = document.getElementById('progressPanel');
@@ -1336,7 +1345,7 @@ function drawEmailIdenticon(email) {
   
   const norm = email.trim().toLowerCase();
   
-  if (identiconState.seed === norm && identiconState.canvas === canvas) {
+  if (identiconState.seed === norm && identiconState.canvas === canvas && identiconState.theme === activeTheme) {
     return;
   }
   
@@ -1361,12 +1370,15 @@ function drawEmailIdenticon(email) {
   }
 
   const seedGen = new Math.seedrandom(norm || 'anonymous');
-  const primaryHue = Math.floor(seedGen() * 360);
-  const secondaryHue = (primaryHue + 135) % 360;
+  
+  const themeHues = THEME_HUES[activeTheme] || THEME_HUES.amber;
+  const primaryHue = themeHues.primary;
+  const secondaryHue = themeHues.secondary;
   
   identiconState.seed = norm;
   identiconState.canvas = canvas;
   identiconState.ctx = ctx;
+  identiconState.theme = activeTheme;
   identiconState.primaryColor = `hsla(${primaryHue}, 90%, 65%, 0.8)`;
   identiconState.secondaryColor = `hsla(${secondaryHue}, 95%, 55%, 0.85)`;
   identiconState.bgColor = `hsla(${primaryHue}, 35%, 8%, 0.45)`;
@@ -1400,6 +1412,71 @@ window.addEventListener('resize', syncMobileNavState);
 syncMobileNavState();
 applySidebarFilter(nodeSearch.value.trim().toLowerCase());
 
+// --- Theme Switcher & Proximity Cards Setup ---
+const themeButtons = document.querySelectorAll('.theme-btn');
+
+const THEME_COLORS = {
+  amber: { primary: '#f59e0b', secondary: '#ef4444' },
+  cyber: { primary: '#10b981', secondary: '#3b82f6' },
+  orchid: { primary: '#ec4899', secondary: '#8b5cf6' },
+  frost: { primary: '#06b6d4', secondary: '#3b82f6' }
+};
+
+function switchTheme(theme) {
+  activeTheme = theme;
+  localStorage.setItem('workspaceTheme', theme);
+  if (document.body && typeof document.body.setAttribute === 'function') {
+    document.body.setAttribute('data-theme', theme);
+  }
+  
+  themeButtons.forEach(btn => {
+    if (btn.dataset.themeVal === theme) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  if (networkCanvas && typeof networkCanvas.setThemeColors === 'function') {
+    const colors = THEME_COLORS[theme];
+    networkCanvas.setThemeColors(colors.primary, colors.secondary);
+  }
+
+  const emailVal = emailInput.value.trim();
+  drawEmailIdenticon(emailVal);
+}
+
+themeButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    switchTheme(btn.dataset.themeVal);
+  });
+});
+
+// Bind interactive welcome mini-cards mouse tilt & spotlight
+document.querySelectorAll('.feature-mini-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    card.style.setProperty('--x', `${x}px`);
+    card.style.setProperty('--y', `${y}px`);
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -10;
+    const rotateY = ((x - centerX) / centerX) * 10;
+    
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+  
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    card.style.removeProperty('--x');
+    card.style.removeProperty('--y');
+  });
+});
+
 // Initialize WebGL background canvas dynamically to support check.mjs Node environment compatibility
 async function initNetworkCanvas() {
   if (typeof process === 'undefined') {
@@ -1414,6 +1491,8 @@ async function initNetworkCanvas() {
 
 // Initial call to draw default identicon and update 3D network once dynamic import completes
 initNetworkCanvas().then(() => {
+  switchTheme(activeTheme);
+  
   setTimeout(() => {
     const initialEmail = emailInput.value.trim();
     drawEmailIdenticon(initialEmail);
