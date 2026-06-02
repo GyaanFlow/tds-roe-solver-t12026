@@ -1,34 +1,26 @@
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.min.js';
 
 /* ─────────────────────────────────────────────────────────
-   Ultra-Advanced Procedural 3D Bonsai Tree
+   Voxel Art 3D Bonsai — Floating Island Edition
    ─────────────────────────────────────────────────────────
-   • Organic recursive branching (L-system inspired)
-   • Tube geometry with smooth taper
-   • Instanced leaf clusters with spring-wind physics
-   • Sakura petal fall particle system
-   • Firefly glow particle system
-   • Mouse-responsive gentle camera orbit
-   • Post-process bloom via additive scene overlay
+   Matching the reference project's blocky cube aesthetic:
+   • Floating island with grass / dirt / stone layers
+   • Thick voxel trunk with branching
+   • Dense cube-based canopy clusters
+   • Ground decoration cubes (flowers, mushrooms)
+   • Falling petal cubes
+   • Twinkling star sprites
+   • Warm cinematic lighting with auto-rotation
+   • Reflection glow beneath the island
    • Full theme color synchronization
    ───────────────────────────────────────────────────────── */
 
-// ── Seeded RNG ───────────────────────────────────────────
-function createSeededRandom(seedStr) {
-  let hash = 0;
-  const source = seedStr || 'bonsai';
-  for (let i = 0; i < source.length; i++)
-    hash = source.charCodeAt(i) + ((hash << 5) - hash);
-  return function () {
-    const x = Math.sin(hash++) * 10000;
-    return x - Math.floor(x);
-  };
-}
-
-// ── Helper: Smooth curve from points ─────────────────────
-function createBranchCurve(points) {
-  const vecs = points.map(p => new THREE.Vector3(p[0], p[1], p[2]));
-  return new THREE.CatmullRomCurve3(vecs, false, 'catmullrom', 0.5);
+// ── Seeded PRNG ──────────────────────────────────────────
+function seededRandom(seed) {
+  let h = 0;
+  const s = seed || 'bonsai';
+  for (let i = 0; i < s.length; i++) h = s.charCodeAt(i) + ((h << 5) - h);
+  return () => { const x = Math.sin(h++) * 10000; return x - Math.floor(x); };
 }
 
 export class NetworkCanvasManager {
@@ -37,804 +29,733 @@ export class NetworkCanvasManager {
     if (!this.canvas) return;
     this.container = this.canvas.parentElement;
 
-    // ── Scene & Camera ──
+    /* ── Scene ── */
     this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(
-      35,
-      this.container.clientWidth / this.container.clientHeight,
-      0.1,
-      500
-    );
-    this.camera.position.set(0, 6, 38);
-    this.camera.lookAt(0, 5, 0);
-    this.cameraBasePos = this.camera.position.clone();
-    this.cameraTarget = new THREE.Vector3(0, 5, 0);
 
-    // ── Renderer ──
+    /* ── Camera ── */
+    const w = this.container.clientWidth, h = this.container.clientHeight;
+    this.camera = new THREE.PerspectiveCamera(32, w / h, 0.1, 300);
+    this.camera.position.set(0, 8, 34);
+    this.camera.lookAt(0, 2, 0);
+
+    /* ── Renderer ── */
     this.renderer = new THREE.WebGLRenderer({
-      canvas: this.canvas,
-      antialias: true,
-      alpha: true,
+      canvas: this.canvas, antialias: true, alpha: true,
       powerPreference: 'high-performance'
     });
-    this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+    this.renderer.setSize(w, h);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.2;
+    this.renderer.toneMappingExposure = 1.3;
 
-    // ── State ──
+    /* ── State ── */
     this.isDimmed = false;
     this.dimFactor = 1.0;
     this.mouse = new THREE.Vector2(0, 0);
     this.mouseSmooth = new THREE.Vector2(0, 0);
-    this.growthProgress = 0; // 0→1 growth animation
-    this.growthSpeed = 0.008;
 
-    // ── Theme colors ──
-    this.primaryColor = new THREE.Color('#f59e0b');
+    /* ── Theme colors ── */
+    this.primaryColor   = new THREE.Color('#f59e0b');
     this.secondaryColor = new THREE.Color('#ef4444');
-    this.targetPrimaryColor = this.primaryColor.clone();
-    this.targetSecondaryColor = this.secondaryColor.clone();
+    this.targetPrimary  = this.primaryColor.clone();
+    this.targetSecondary = this.secondaryColor.clone();
     this.themeOverridden = false;
 
-    // ── Storage ──
-    this.branchMeshes = [];
-    this.branchMetas = []; // {mesh, maxGrowth, depth}
-    this.leafInstances = [];
-    this.leafMesh = null;
-    this.petalParticles = [];
+    /* ── Collections ── */
+    this.mainGroup = new THREE.Group();
+    this.scene.add(this.mainGroup);
+    this.meshes = [];          // all disposable meshes
+    this.leafData = [];        // per-instance leaf metadata
+    this.leavesMesh = null;
+    this.detailMesh = null;
+    this.detailData = [];
+    this.stars = [];
+    this.starGroup = null;
+    this.petals = [];
     this.petalGroup = null;
-    this.fireflyParticles = [];
-    this.fireflyGroup = null;
-    this.groundMesh = null;
-    this.treeGroup = new THREE.Group();
-    this.scene.add(this.treeGroup);
+    this.reflectionPlane = null;
 
-    // ── Bindings ──
+    /* ── Lighting ── */
+    this._setupLights();
+
+    /* ── Bindings ── */
     this.animate = this.animate.bind(this);
-    window.addEventListener('resize', this.onResize.bind(this));
-    this.container.addEventListener('mousemove', this.onMouseMove.bind(this));
-    this.container.addEventListener('mouseleave', this.onMouseLeave.bind(this));
+    window.addEventListener('resize', this._onResize.bind(this));
+    this.container.addEventListener('mousemove', this._onMouseMove.bind(this));
+    this.container.addEventListener('mouseleave', this._onMouseLeave.bind(this));
 
-    // ── Build ──
-    this.setupLighting();
+    /* ── Go ── */
     this.generateNetwork('anonymous');
     this.animate();
   }
 
-  /* ━━━━━━━━━━━━━━━━━━━━━━━ LIGHTING ━━━━━━━━━━━━━━━━━━━━━━ */
-  setupLighting() {
+  /* ━━━━━━━━━━━━━━━━━ LIGHTING ━━━━━━━━━━━━━━━━━━━━━━━━ */
+  _setupLights() {
     // Warm ambient
-    this.ambientLight = new THREE.AmbientLight(0x2a1a0e, 0.6);
-    this.scene.add(this.ambientLight);
+    this.scene.add(new THREE.AmbientLight(0x3a2818, 0.7));
 
-    // Key light (warm sun)
-    this.keyLight = new THREE.DirectionalLight(0xffe4c4, 1.2);
-    this.keyLight.position.set(8, 20, 12);
-    this.scene.add(this.keyLight);
+    // Key (warm sun)
+    const key = new THREE.DirectionalLight(0xffeedd, 1.4);
+    key.position.set(10, 18, 10);
+    this.scene.add(key);
 
-    // Fill light (cool)
-    this.fillLight = new THREE.DirectionalLight(0x4488cc, 0.3);
-    this.fillLight.position.set(-6, 8, -8);
-    this.scene.add(this.fillLight);
+    // Fill (cool)
+    const fill = new THREE.DirectionalLight(0x88aacc, 0.25);
+    fill.position.set(-8, 5, -6);
+    this.scene.add(fill);
 
-    // Rim light (accent)
-    this.rimLight = new THREE.PointLight(0xff8844, 0.8, 40);
-    this.rimLight.position.set(-10, 12, -5);
+    // Rim
+    this.rimLight = new THREE.PointLight(0xff9944, 0.5, 40);
+    this.rimLight.position.set(-8, 12, -6);
     this.scene.add(this.rimLight);
 
-    // Bottom atmosphere glow
-    this.groundGlow = new THREE.PointLight(0x442200, 0.4, 25);
-    this.groundGlow.position.set(0, -2, 5);
-    this.scene.add(this.groundGlow);
+    // Under-glow
+    const under = new THREE.PointLight(0x442200, 0.35, 20);
+    under.position.set(0, -5, 4);
+    this.scene.add(under);
   }
 
-  /* ━━━━━━━━━━━━━━━━━━━━━ THEME ━━━━━━━━━━━━━━━━━━━━━━━━ */
-  setThemeColors(primaryHex, secondaryHex) {
-    this.targetPrimaryColor.set(primaryHex);
-    this.targetSecondaryColor.set(secondaryHex);
+  /* ━━━━━━━━━━━━━━━━━ THEME API ━━━━━━━━━━━━━━━━━━━━━━━ */
+  setThemeColors(p, s) {
+    this.targetPrimary.set(p);
+    this.targetSecondary.set(s);
     this.themeOverridden = true;
   }
+  setDimmed(d) { this.isDimmed = d; }
 
-  /* ━━━━━━━━━━━━━━━━━━ GENERATE TREE ━━━━━━━━━━━━━━━━━━━ */
+  /* ━━━━━━━━━━━━━━━ GENERATE ━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   generateNetwork(seedStr) {
-    const random = createSeededRandom(seedStr);
+    const R = seededRandom(seedStr);
 
     if (!this.themeOverridden) {
-      const hue = random() * 360;
-      this.targetPrimaryColor.setHSL(hue / 360, 0.9, 0.6);
-      this.targetSecondaryColor.setHSL(((hue + 120) % 360) / 360, 0.85, 0.5);
-      if (this.branchMeshes.length === 0) {
-        this.primaryColor.copy(this.targetPrimaryColor);
-        this.secondaryColor.copy(this.targetSecondaryColor);
+      const hue = R() * 360;
+      this.targetPrimary.setHSL(hue / 360, 0.9, 0.6);
+      this.targetSecondary.setHSL(((hue + 120) % 360) / 360, 0.85, 0.5);
+      if (this.meshes.length === 0) {
+        this.primaryColor.copy(this.targetPrimary);
+        this.secondaryColor.copy(this.targetSecondary);
       }
     }
 
-    // Clean up
-    this.clearTree();
-    this.growthProgress = 0;
+    this._clear();
 
-    // ─── Generate branch structure (recursive L-system) ───
-    const branches = [];
-    const leaves = [];
+    const B = 0.5;   // block size (world units)
+    const G = 0.47;  // geometry size (gap between blocks)
 
-    const generateBranch = (origin, dir, length, radius, depth, maxDepth) => {
-      if (depth > maxDepth || radius < 0.02) return;
+    // Collect voxel positions for each material type
+    const grass = [], dirt = [], stone = [], gold = [];
+    const trunk = [], leaves = [], details = [];
 
-      const segments = 6 + Math.floor(random() * 4);
-      const points = [origin.clone()];
-      const current = origin.clone();
-      const currentDir = dir.clone().normalize();
+    /* ── 1. FLOATING ISLAND ── */
+    this._genIsland(R, B, grass, dirt, stone, gold);
 
-      for (let i = 1; i <= segments; i++) {
-        const t = i / segments;
-        const segLen = length / segments;
+    /* ── 2. BONSAI TREE ── */
+    this._genTree(R, B, trunk, leaves);
 
-        // Add organic wiggle
-        const wobble = new THREE.Vector3(
-          (random() - 0.5) * 0.6 * (depth * 0.3 + 0.5),
-          (random() - 0.3) * 0.2,
-          (random() - 0.5) * 0.6 * (depth * 0.3 + 0.5)
-        );
+    /* ── 3. GROUND DETAILS ── */
+    this._genDetails(R, B, details, grass);
 
-        // Phototropism - slight upward tendency
-        currentDir.y += 0.03;
-        currentDir.add(wobble).normalize();
+    /* ── 4. BUILD INSTANCED MESHES ── */
+    const boxGeo = new THREE.BoxGeometry(G, G, G);
 
-        current.addScaledVector(currentDir, segLen);
-        points.push(current.clone());
-      }
-
-      const endPoint = points[points.length - 1];
-      const startRadius = radius;
-      const endRadius = radius * (0.55 + random() * 0.15);
-
-      branches.push({
-        points,
-        startRadius,
-        endRadius,
-        depth,
-        length
+    // Helper: build an InstancedMesh from positions with a flat color
+    const buildSolid = (arr, color, roughness) => {
+      if (!arr.length) return null;
+      const mat = new THREE.MeshLambertMaterial({
+        color: new THREE.Color(color),
+        transparent: true, opacity: 1.0
       });
-
-      // Spawn child branches
-      const childCount = depth === 0
-        ? 3 + Math.floor(random() * 2)
-        : depth < 3
-          ? 2 + Math.floor(random() * 2)
-          : Math.floor(random() * 2);
-
-      for (let c = 0; c < childCount; c++) {
-        const splitT = 0.4 + random() * 0.5;
-        const splitIdx = Math.floor(splitT * (points.length - 1));
-        const branchOrigin = points[Math.min(splitIdx, points.length - 1)].clone();
-
-        // Direction divergence
-        const childDir = currentDir.clone();
-        const spreadAngle = 0.5 + random() * 0.8;
-        const rotAxis = new THREE.Vector3(
-          random() - 0.5,
-          random() * 0.3,
-          random() - 0.5
-        ).normalize();
-
-        childDir.applyAxisAngle(rotAxis, spreadAngle * (random() > 0.5 ? 1 : -1));
-        childDir.y = Math.max(childDir.y, 0.15); // keep growing upward
-
-        const childLength = length * (0.55 + random() * 0.2);
-        const childRadius = endRadius * (0.5 + random() * 0.25);
-
-        generateBranch(branchOrigin, childDir, childLength, childRadius, depth + 1, maxDepth);
+      const mesh = new THREE.InstancedMesh(boxGeo, mat, arr.length);
+      const m4 = new THREE.Matrix4();
+      for (let i = 0; i < arr.length; i++) {
+        m4.makeTranslation(arr[i].x, arr[i].y, arr[i].z);
+        mesh.setMatrixAt(i, m4);
       }
-
-      // Add leaves at branch tips (depth >= 2)
-      if (depth >= 2) {
-        const leafCount = 5 + Math.floor(random() * 15);
-        for (let l = 0; l < leafCount; l++) {
-          const t = 0.5 + random() * 0.5;
-          const pIdx = Math.floor(t * (points.length - 1));
-          const base = points[Math.min(pIdx, points.length - 1)];
-
-          const offset = new THREE.Vector3(
-            (random() - 0.5) * 2.5,
-            (random() - 0.3) * 1.8,
-            (random() - 0.5) * 2.5
-          );
-
-          leaves.push({
-            position: base.clone().add(offset),
-            scale: 0.3 + random() * 0.6,
-            colorWeight: random(),
-            windPhase: random() * Math.PI * 2,
-            windSpeed: 0.5 + random() * 1.5,
-            windAmp: 0.15 + random() * 0.4,
-            depth
-          });
-        }
-      }
+      mesh.instanceMatrix.needsUpdate = true;
+      this.mainGroup.add(mesh);
+      this.meshes.push(mesh);
+      return mesh;
     };
 
-    // Root position
-    const trunkOrigin = new THREE.Vector3(0, -1, 0);
-    const trunkDir = new THREE.Vector3(0, 1, 0.05);
+    buildSolid(grass, '#4a9438', 0.7);
+    buildSolid(dirt,  '#7a5a30', 0.85);
+    buildSolid(stone, '#3a3530', 0.9);
+    buildSolid(gold,  '#c4a040', 0.6);
+    buildSolid(trunk, '#4a2812', 0.85);
 
-    // Generate multiple main trunks for a bonsai-like form
-    generateBranch(trunkOrigin, trunkDir, 8, 0.55, 0, 5);
+    // Leaves – with per-instance color
+    if (leaves.length) {
+      const leafMat = new THREE.MeshLambertMaterial({
+        transparent: true, opacity: 1.0
+      });
+      this.leavesMesh = new THREE.InstancedMesh(boxGeo, leafMat, leaves.length);
+      const m4 = new THREE.Matrix4();
+      for (let i = 0; i < leaves.length; i++) {
+        m4.makeTranslation(leaves[i].x, leaves[i].y, leaves[i].z);
+        this.leavesMesh.setMatrixAt(i, m4);
+      }
+      this.leavesMesh.instanceMatrix.needsUpdate = true;
+      this.mainGroup.add(this.leavesMesh);
+      this.meshes.push(this.leavesMesh);
+      this.leafData = leaves;
+    }
 
-    // Secondary trunk with a slight lean
-    const trunk2Dir = new THREE.Vector3(-0.2, 1, -0.1);
-    generateBranch(
-      trunkOrigin.clone().add(new THREE.Vector3(-0.3, 0, 0.1)),
-      trunk2Dir,
-      6,
-      0.35,
-      0,
-      4
-    );
+    // Detail cubes – with per-instance color
+    if (details.length) {
+      const detMat = new THREE.MeshLambertMaterial({ transparent: true, opacity: 1.0 });
+      this.detailMesh = new THREE.InstancedMesh(boxGeo, detMat, details.length);
+      const m4 = new THREE.Matrix4();
+      for (let i = 0; i < details.length; i++) {
+        m4.makeTranslation(details[i].x, details[i].y, details[i].z);
+        this.detailMesh.setMatrixAt(i, m4);
+      }
+      this.detailMesh.instanceMatrix.needsUpdate = true;
+      this.mainGroup.add(this.detailMesh);
+      this.meshes.push(this.detailMesh);
+      this.detailData = details;
+    }
 
-    // ─── Build Branch Meshes ───
-    const trunkColor = new THREE.Color('#3a2514');
-    const barkColor = new THREE.Color('#5a3a20');
+    /* ── 5. REFLECTION GLOW ── */
+    this._createReflection();
 
-    for (const branch of branches) {
-      const curve = createBranchCurve(
-        branch.points.map(p => [p.x, p.y, p.z])
-      );
+    /* ── 6. STARS ── */
+    this._createStars(R);
 
-      // Tube with varying radius
-      const tubularSegments = Math.max(6, Math.floor(branch.points.length * 2));
-      const radialSegments = branch.depth < 2 ? 8 : 5;
+    /* ── 7. FALLING PETAL CUBES ── */
+    this._createPetals(R, G);
 
-      const geometry = new THREE.TubeGeometry(
-        curve,
-        tubularSegments,
-        branch.startRadius,
-        radialSegments,
-        false
-      );
+    boxGeo.dispose();
+  }
 
-      // Taper the tube manually
-      const posAttr = geometry.attributes.position;
-      const tubeLength = curve.getLength();
+  /* ━━━━━━━━━━━━ FLOATING ISLAND ━━━━━━━━━━━━━━━━━━━━━ */
+  _genIsland(R, B, grass, dirt, stone, gold) {
+    const radius = 8;
 
-      for (let i = 0; i < posAttr.count; i++) {
-        const v = new THREE.Vector3(
-          posAttr.getX(i),
-          posAttr.getY(i),
-          posAttr.getZ(i)
-        );
+    // Helper: noisy radius for organic edges
+    const edgeR = (angle, baseR) =>
+      baseR + Math.sin(angle * 5.3) * 0.7 + Math.cos(angle * 3.1) * 0.4;
 
-        // Find closest point on curve
-        const closestT = curve.getUtoTmapping(0, 0);
-        // Simple approximation: use Y-axis ratio for taper
-        const origin = branch.points[0];
-        const end = branch.points[branch.points.length - 1];
-        const totalLen = origin.distanceTo(end) || 1;
-        const fromOrigin = v.distanceTo(origin);
-        const t = Math.min(1, fromOrigin / (totalLen * 1.5));
-
-        const targetRadius =
-          branch.startRadius * (1 - t) + branch.endRadius * t;
-        const currentRadius = branch.startRadius;
-
-        if (currentRadius > 0.001) {
-          const ratio = targetRadius / currentRadius;
-          // Scale radially (push toward curve center)
-          const curvePoint = curve.getPointAt(Math.min(1, t));
-          const diff = v.clone().sub(curvePoint);
-          const newV = curvePoint.add(diff.multiplyScalar(ratio));
-
-          posAttr.setXYZ(i, newV.x, newV.y, newV.z);
+    // Top grass layer (y = 0)
+    for (let x = -radius; x <= radius; x++) {
+      for (let z = -radius; z <= radius; z++) {
+        const d = Math.sqrt(x * x + z * z);
+        const a = Math.atan2(z, x);
+        if (d <= edgeR(a, radius)) {
+          grass.push({ x: x * B, y: 0, z: z * B });
         }
       }
-
-      posAttr.needsUpdate = true;
-      geometry.computeVertexNormals();
-
-      // Bark material: main trunk is darker, thinner branches lighter
-      const depthRatio = branch.depth / 5;
-      const matColor = trunkColor.clone().lerp(barkColor, depthRatio);
-
-      const material = new THREE.MeshStandardMaterial({
-        color: matColor,
-        roughness: 0.85,
-        metalness: 0.05,
-        transparent: true,
-        opacity: 0
-      });
-
-      const mesh = new THREE.Mesh(geometry, material);
-      this.treeGroup.add(mesh);
-      this.branchMeshes.push(mesh);
-      this.branchMetas.push({
-        mesh,
-        depth: branch.depth,
-        maxGrowth: 0.1 + branch.depth * 0.15
-      });
     }
 
-    // ─── Build Leaf System (InstancedMesh) ───
-    const leafGeo = new THREE.IcosahedronGeometry(0.35, 0);
-
-    // Stretch to make leaf-like shape
-    const leafPositions = leafGeo.attributes.position;
-    for (let i = 0; i < leafPositions.count; i++) {
-      const y = leafPositions.getY(i);
-      const x = leafPositions.getX(i);
-      leafPositions.setX(i, x * 1.6);
-      leafPositions.setY(i, y * 0.5);
-    }
-    leafPositions.needsUpdate = true;
-    leafGeo.computeVertexNormals();
-
-    this.leafMaterial = new THREE.MeshStandardMaterial({
-      transparent: true,
-      opacity: 0,
-      roughness: 0.4,
-      metalness: 0.1,
-      side: THREE.DoubleSide,
-      emissive: new THREE.Color(0x000000),
-      emissiveIntensity: 0.3
-    });
-
-    this.leafMesh = new THREE.InstancedMesh(
-      leafGeo,
-      this.leafMaterial,
-      leaves.length
-    );
-    this.treeGroup.add(this.leafMesh);
-    this.leafInstances = leaves;
-
-    const tempMatrix = new THREE.Matrix4();
-    const tempQuat = new THREE.Quaternion();
-    const tempEuler = new THREE.Euler();
-
-    for (let i = 0; i < leaves.length; i++) {
-      const l = leaves[i];
-      tempEuler.set(
-        Math.random() * Math.PI,
-        Math.random() * Math.PI,
-        Math.random() * Math.PI * 0.5
-      );
-      tempQuat.setFromEuler(tempEuler);
-      tempMatrix.compose(
-        l.position,
-        tempQuat,
-        new THREE.Vector3(l.scale, l.scale, l.scale)
-      );
-      this.leafMesh.setMatrixAt(i, tempMatrix);
-    }
-    this.leafMesh.instanceMatrix.needsUpdate = true;
-
-    // ─── Ground Platform ───
-    this.createGround();
-
-    // ─── Sakura Petals ───
-    this.createPetals(random);
-
-    // ─── Fireflies ───
-    this.createFireflies(random);
-  }
-
-  clearTree() {
-    // Remove old meshes
-    for (const m of this.branchMeshes) {
-      this.treeGroup.remove(m);
-      m.geometry.dispose();
-      m.material.dispose();
-    }
-    this.branchMeshes = [];
-    this.branchMetas = [];
-
-    if (this.leafMesh) {
-      this.treeGroup.remove(this.leafMesh);
-      this.leafMesh.geometry.dispose();
-      this.leafMesh.material.dispose();
-      this.leafMesh = null;
-    }
-
-    if (this.groundMesh) {
-      this.scene.remove(this.groundMesh);
-      this.groundMesh.geometry.dispose();
-      this.groundMesh.material.dispose();
-      this.groundMesh = null;
-    }
-
-    if (this.petalGroup) {
-      this.scene.remove(this.petalGroup);
-      this.petalGroup.traverse(c => {
-        if (c.isMesh || c.isSprite) {
-          c.geometry && c.geometry.dispose();
-          c.material && c.material.dispose();
+    // Dirt layers (y = -1, -2)
+    for (let layer = 1; layer <= 2; layer++) {
+      const lr = radius - layer * 1.0;
+      for (let x = -Math.ceil(lr + 1); x <= Math.ceil(lr + 1); x++) {
+        for (let z = -Math.ceil(lr + 1); z <= Math.ceil(lr + 1); z++) {
+          const d = Math.sqrt(x * x + z * z);
+          const a = Math.atan2(z, x);
+          if (d <= edgeR(a, lr)) {
+            dirt.push({ x: x * B, y: -layer * B, z: z * B });
+          }
         }
-      });
-      this.petalGroup = null;
+      }
     }
 
-    if (this.fireflyGroup) {
-      this.scene.remove(this.fireflyGroup);
-      this.fireflyGroup.traverse(c => {
-        if (c.isSprite) c.material.dispose();
-      });
-      this.fireflyGroup = null;
+    // Stone layer (y = -3)
+    const stoneR = radius - 3;
+    for (let x = -Math.ceil(stoneR + 1); x <= Math.ceil(stoneR + 1); x++) {
+      for (let z = -Math.ceil(stoneR + 1); z <= Math.ceil(stoneR + 1); z++) {
+        const d = Math.sqrt(x * x + z * z);
+        const a = Math.atan2(z, x);
+        if (d <= edgeR(a, stoneR)) {
+          stone.push({ x: x * B, y: -3 * B, z: z * B });
+        }
+      }
+    }
+
+    // Hanging stalactite chunks + gold accents (y = -4 to -6)
+    for (let i = 0; i < 25; i++) {
+      const angle = R() * Math.PI * 2;
+      const r = 1 + R() * 4;
+      const bx = Math.round(Math.cos(angle) * r);
+      const bz = Math.round(Math.sin(angle) * r);
+      const depth = 4 + Math.floor(R() * 3);
+      const arr = R() < 0.35 ? gold : stone;
+      arr.push({ x: bx * B, y: -depth * B, z: bz * B });
+    }
+
+    // Gold edge accent blocks on the rim of the island
+    for (let i = 0; i < 18; i++) {
+      const angle = R() * Math.PI * 2;
+      const r = radius - 0.5 + R();
+      const bx = Math.round(Math.cos(angle) * r);
+      const bz = Math.round(Math.sin(angle) * r);
+      gold.push({ x: bx * B, y: -(1 + Math.floor(R() * 2)) * B, z: bz * B });
     }
   }
 
-  /* ━━━━━━━━━━━━━━━━━━ GROUND ━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  createGround() {
-    // Organic rock/mound base
-    const groundGeo = new THREE.CylinderGeometry(5, 6, 1.5, 32, 4);
+  /* ━━━━━━━━━━━━ BONSAI TREE ━━━━━━━━━━━━━━━━━━━━━━━━ */
+  _genTree(R, B, trunk, leaves) {
+    // ── Main trunk column ──
+    // Starts at y=1 (on top of grass), goes up to y=trunkH
+    const trunkH = 11;
+    for (let y = 1; y <= trunkH; y++) {
+      const t = (y - 1) / (trunkH - 1);
+      // Trunk width tapers from 2 to 0
+      const halfW = t < 0.35 ? 2 : t < 0.65 ? 1 : 0;
+      // Slight lean
+      const leanX = Math.floor(t * 1.2);
 
-    // Deform for organic rock look
-    const gPos = groundGeo.attributes.position;
-    for (let i = 0; i < gPos.count; i++) {
-      const x = gPos.getX(i);
-      const y = gPos.getY(i);
-      const z = gPos.getZ(i);
-      const angle = Math.atan2(z, x);
-      const radius = Math.sqrt(x * x + z * z);
-
-      // Noisy deformation
-      const noise = Math.sin(angle * 5) * 0.3 + Math.cos(angle * 3.7) * 0.2;
-      const yNoise = Math.sin(angle * 7) * 0.1;
-
-      gPos.setX(i, x + noise * 0.3);
-      gPos.setY(i, y + yNoise);
-      gPos.setZ(i, z + noise * 0.2);
+      for (let dx = -halfW; dx <= halfW; dx++) {
+        for (let dz = -halfW; dz <= halfW; dz++) {
+          // Use diamond shape for natural cross section
+          if (Math.abs(dx) + Math.abs(dz) <= halfW) {
+            trunk.push({
+              x: (dx + leanX) * B,
+              y: y * B,
+              z: dz * B
+            });
+          }
+        }
+      }
     }
-    gPos.needsUpdate = true;
-    groundGeo.computeVertexNormals();
 
-    this.groundMaterial = new THREE.MeshStandardMaterial({
-      color: new THREE.Color('#1a120a'),
-      roughness: 0.95,
-      metalness: 0.0,
+    // ── Roots spreading from base ──
+    const rootDirs = [
+      [1, 0], [-1, 0], [0, 1], [0, -1],
+      [1, 1], [-1, -1], [1, -1], [-1, 1]
+    ];
+    for (let i = 0; i < 6; i++) {
+      const dir = rootDirs[i % rootDirs.length];
+      const len = 2 + Math.floor(R() * 2);
+      for (let s = 1; s <= len; s++) {
+        trunk.push({
+          x: dir[0] * s * B,
+          y: (1 - s * 0.4) * B,
+          z: dir[1] * s * B
+        });
+      }
+    }
+
+    // ── Branch paths ──
+    // Branch 1: left-forward, starts ~y=7
+    const b1 = [];
+    for (let s = 1; s <= 5; s++) {
+      const bx = -s;
+      const by = 7 + s * 0.6;
+      const bz = s * 0.4;
+      b1.push({ x: Math.round(bx), y: Math.round(by), z: Math.round(bz) });
+      trunk.push({ x: Math.round(bx) * B, y: Math.round(by) * B, z: Math.round(bz) * B });
+    }
+
+    // Branch 2: right-back, starts ~y=8
+    const b2 = [];
+    for (let s = 1; s <= 5; s++) {
+      const bx = s * 1.1;
+      const by = 8 + s * 0.5;
+      const bz = -s * 0.5;
+      b2.push({ x: Math.round(bx), y: Math.round(by), z: Math.round(bz) });
+      trunk.push({ x: Math.round(bx) * B, y: Math.round(by) * B, z: Math.round(bz) * B });
+    }
+
+    // Branch 3: slight forward continuation for top crown
+    for (let s = 1; s <= 3; s++) {
+      trunk.push({
+        x: (1 + s * 0.2) * B,
+        y: (trunkH + s) * B,
+        z: s * 0.3 * B
+      });
+    }
+
+    // ── Canopy clusters ──
+    // Cluster 1: at end of branch 1 (left lower canopy)
+    const c1End = b1[b1.length - 1];
+    this._genCanopy(R, B, leaves,
+      c1End.x * B, (c1End.y + 2) * B, c1End.z * B,
+      3.5, 2.2
+    );
+
+    // Cluster 2: at end of branch 2 (right canopy)
+    const c2End = b2[b2.length - 1];
+    this._genCanopy(R, B, leaves,
+      c2End.x * B, (c2End.y + 2) * B, c2End.z * B,
+      3.2, 2.0
+    );
+
+    // Cluster 3: main crown on top
+    this._genCanopy(R, B, leaves,
+      1 * B, (trunkH + 4) * B, 0.3 * B,
+      4.5, 2.8
+    );
+  }
+
+  /* ── Canopy cluster: flattened ellipsoid of leaf cubes ── */
+  _genCanopy(R, B, leaves, cx, cy, cz, radiusXZ, radiusY) {
+    const rXZ = Math.ceil(radiusXZ);
+    const rY = Math.ceil(radiusY);
+
+    for (let x = -rXZ; x <= rXZ; x++) {
+      for (let y = -rY; y <= rY; y++) {
+        for (let z = -rXZ; z <= rXZ; z++) {
+          // Ellipsoid distance
+          const d = Math.sqrt(
+            (x / radiusXZ) ** 2 +
+            (y / radiusY) ** 2 +
+            (z / radiusXZ) ** 2
+          );
+          if (d <= 1.0) {
+            // Porosity — skip ~15% of interior blocks for organic look
+            if (R() < 0.15 && d > 0.3) continue;
+
+            leaves.push({
+              x: cx + x * B,
+              y: cy + y * B,
+              z: cz + z * B,
+              colorWeight: R(),       // for color interpolation
+              brightness: 0.85 + R() * 0.3,
+              edgeFactor: d           // blocks near edge are lighter
+            });
+          }
+        }
+      }
+    }
+  }
+
+  /* ━━━━━━━━━━━ GROUND DECORATIONS ━━━━━━━━━━━━━━━━━━━ */
+  _genDetails(R, B, details, grassPositions) {
+    // Scatter small colored cubes on the grass surface
+    const maxDetails = Math.min(40, Math.floor(grassPositions.length * 0.08));
+    const used = new Set();
+
+    for (let i = 0; i < maxDetails; i++) {
+      const idx = Math.floor(R() * grassPositions.length);
+      const key = `${grassPositions[idx].x},${grassPositions[idx].z}`;
+      if (used.has(key)) continue;
+      used.add(key);
+
+      const gp = grassPositions[idx];
+      // Skip blocks too close to center (trunk area)
+      if (Math.abs(gp.x) < 1.2 && Math.abs(gp.z) < 1.2) continue;
+
+      details.push({
+        x: gp.x,
+        y: gp.y + B * 0.5 + B * 0.15,  // sit on top of grass
+        z: gp.z,
+        colorWeight: R(),
+        type: R() < 0.6 ? 'flower' : 'mushroom',
+        scale: 0.4 + R() * 0.3
+      });
+    }
+  }
+
+  /* ━━━━━━━━━━━ REFLECTION GLOW ━━━━━━━━━━━━━━━━━━━━━ */
+  _createReflection() {
+    // Soft glowing disc below the island suggesting a reflection
+    const geo = new THREE.CircleGeometry(5.5, 48);
+    const mat = new THREE.MeshBasicMaterial({
+      color: 0x1a0e04,
       transparent: true,
-      opacity: 0
+      opacity: 0.25,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      side: THREE.DoubleSide
     });
-
-    this.groundMesh = new THREE.Mesh(groundGeo, this.groundMaterial);
-    this.groundMesh.position.y = -1.75;
-    this.scene.add(this.groundMesh);
+    this.reflectionPlane = new THREE.Mesh(geo, mat);
+    this.reflectionPlane.rotation.x = -Math.PI / 2;
+    this.reflectionPlane.position.y = -4.5;
+    this.mainGroup.add(this.reflectionPlane);
+    this.meshes.push(this.reflectionPlane);
   }
 
-  /* ━━━━━━━━━━━━━━━ SAKURA PETALS ━━━━━━━━━━━━━━━━━━━━━ */
-  createPetals(random) {
-    this.petalGroup = new THREE.Group();
-    this.scene.add(this.petalGroup);
-    this.petalParticles = [];
+  /* ━━━━━━━━━━━━ STAR PARTICLES ━━━━━━━━━━━━━━━━━━━━━ */
+  _createStars(R) {
+    this.starGroup = new THREE.Group();
+    this.scene.add(this.starGroup);
+    this.stars = [];
 
-    // Create petal geometry (thin elongated disc)
-    const petalGeo = new THREE.PlaneGeometry(0.18, 0.12, 1, 1);
+    // Small glow dot texture
+    const c = document.createElement('canvas');
+    c.width = 32; c.height = 32;
+    const ctx = c.getContext('2d');
+    const grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
+    grad.addColorStop(0, 'rgba(255,255,240,1)');
+    grad.addColorStop(0.3, 'rgba(255,240,220,0.6)');
+    grad.addColorStop(1, 'rgba(255,220,180,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 32, 32);
+    const tex = new THREE.CanvasTexture(c);
+    tex.minFilter = THREE.LinearFilter;
 
-    for (let i = 0; i < 60; i++) {
-      const mat = new THREE.MeshBasicMaterial({
-        transparent: true,
-        opacity: 0,
-        side: THREE.DoubleSide,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false
+    for (let i = 0; i < 120; i++) {
+      const mat = new THREE.SpriteMaterial({
+        map: tex, transparent: true, opacity: 0,
+        blending: THREE.AdditiveBlending, depthWrite: false
       });
+      const sp = new THREE.Sprite(mat);
 
+      // Distribute in a large sphere around the scene
+      const theta = R() * Math.PI * 2;
+      const phi = Math.acos(2 * R() - 1);
+      const r = 25 + R() * 45;
+      sp.position.set(
+        r * Math.sin(phi) * Math.cos(theta),
+        r * Math.sin(phi) * Math.sin(theta) * 0.6 + 5,
+        r * Math.cos(phi)
+      );
+
+      const s = 0.15 + R() * 0.35;
+      sp.scale.set(s, s, 1);
+
+      this.starGroup.add(sp);
+      this.stars.push({
+        sprite: sp,
+        pulseSpeed: 0.5 + R() * 2.5,
+        pulsePhase: R() * Math.PI * 2,
+        baseOpacity: 0.3 + R() * 0.5
+      });
+    }
+  }
+
+  /* ━━━━━━━━━━ FALLING PETAL CUBES ━━━━━━━━━━━━━━━━━━━ */
+  _createPetals(R, G) {
+    this.petalGroup = new THREE.Group();
+    this.mainGroup.add(this.petalGroup);
+    this.petals = [];
+
+    const petalGeo = new THREE.BoxGeometry(G * 0.55, G * 0.55, G * 0.55);
+
+    for (let i = 0; i < 28; i++) {
+      const mat = new THREE.MeshLambertMaterial({
+        transparent: true, opacity: 0.85,
+        side: THREE.DoubleSide
+      });
       const mesh = new THREE.Mesh(petalGeo, mat);
 
-      const startX = (random() - 0.5) * 30;
-      const startY = 8 + random() * 20;
-      const startZ = (random() - 0.5) * 20;
-      mesh.position.set(startX, startY, startZ);
+      const sx = (R() - 0.5) * 12;
+      const sy = 4 + R() * 14;
+      const sz = (R() - 0.5) * 10;
+      mesh.position.set(sx, sy, sz);
 
-      const scale = 0.8 + random() * 1.2;
-      mesh.scale.set(scale, scale, scale);
+      const sc = 0.6 + R() * 0.8;
+      mesh.scale.set(sc, sc, sc);
 
       this.petalGroup.add(mesh);
-
-      this.petalParticles.push({
+      this.petals.push({
         mesh,
-        vy: -(0.008 + random() * 0.02),
-        vx: (random() - 0.5) * 0.008,
+        vy: -(0.006 + R() * 0.015),
+        vx: (R() - 0.5) * 0.004,
         rotSpeed: new THREE.Vector3(
-          (random() - 0.5) * 0.03,
-          (random() - 0.5) * 0.04,
-          (random() - 0.5) * 0.02
+          (R() - 0.5) * 0.025,
+          (R() - 0.5) * 0.03,
+          (R() - 0.5) * 0.02
         ),
-        wobblePhase: random() * Math.PI * 2,
-        wobbleSpeed: 0.3 + random() * 0.8,
-        wobbleAmp: 0.5 + random() * 1.5,
-        origX: startX,
-        colorWeight: random()
+        wobblePhase: R() * Math.PI * 2,
+        wobbleSpeed: 0.3 + R() * 0.7,
+        wobbleAmp: 0.4 + R() * 1.0,
+        origX: sx,
+        colorWeight: R()
       });
+    }
+
+    petalGeo.dispose();
+  }
+
+  /* ━━━━━━━━━━━━━ CLEANUP ━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  _clear() {
+    for (const m of this.meshes) {
+      if (m.parent) m.parent.remove(m);
+      if (m.geometry) m.geometry.dispose();
+      if (m.material) m.material.dispose();
+    }
+    this.meshes = [];
+    this.leavesMesh = null;
+    this.leafData = [];
+    this.detailMesh = null;
+    this.detailData = [];
+    this.reflectionPlane = null;
+
+    if (this.starGroup) {
+      this.starGroup.traverse(c => {
+        if (c.isSprite && c.material) c.material.dispose();
+      });
+      this.scene.remove(this.starGroup);
+      this.starGroup = null;
+    }
+    this.stars = [];
+
+    if (this.petalGroup) {
+      this.petalGroup.traverse(c => {
+        if (c.isMesh) {
+          if (c.geometry) c.geometry.dispose();
+          if (c.material) c.material.dispose();
+        }
+      });
+      if (this.petalGroup.parent) this.petalGroup.parent.remove(this.petalGroup);
+      this.petalGroup = null;
+    }
+    this.petals = [];
+
+    // Clear children of mainGroup (but keep the group)
+    while (this.mainGroup.children.length) {
+      this.mainGroup.remove(this.mainGroup.children[0]);
     }
   }
 
-  /* ━━━━━━━━━━━━━━━ FIREFLIES ━━━━━━━━━━━━━━━━━━━━━━━━ */
-  createFireflies(random) {
-    this.fireflyGroup = new THREE.Group();
-    this.scene.add(this.fireflyGroup);
-    this.fireflyParticles = [];
-
-    // Create a soft glow texture
-    const glowCanvas = document.createElement('canvas');
-    glowCanvas.width = 64;
-    glowCanvas.height = 64;
-    const ctx = glowCanvas.getContext('2d');
-    const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-    grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
-    grad.addColorStop(0.15, 'rgba(255, 240, 200, 0.8)');
-    grad.addColorStop(0.5, 'rgba(255, 200, 100, 0.3)');
-    grad.addColorStop(1, 'rgba(255, 180, 60, 0)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, 64, 64);
-
-    const glowTexture = new THREE.CanvasTexture(glowCanvas);
-    glowTexture.minFilter = THREE.LinearFilter;
-
-    for (let i = 0; i < 30; i++) {
-      const mat = new THREE.SpriteMaterial({
-        map: glowTexture,
-        transparent: true,
-        opacity: 0,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false
-      });
-
-      const sprite = new THREE.Sprite(mat);
-      const px = (random() - 0.5) * 25;
-      const py = 2 + random() * 16;
-      const pz = (random() - 0.5) * 15;
-      sprite.position.set(px, py, pz);
-
-      const scale = 0.25 + random() * 0.5;
-      sprite.scale.set(scale, scale, 1);
-
-      this.fireflyGroup.add(sprite);
-
-      this.fireflyParticles.push({
-        sprite,
-        basePos: new THREE.Vector3(px, py, pz),
-        orbitRadius: 1 + random() * 4,
-        orbitSpeed: 0.2 + random() * 0.5,
-        orbitPhase: random() * Math.PI * 2,
-        vertOscSpeed: 0.3 + random() * 0.6,
-        vertOscAmp: 0.5 + random() * 2,
-        pulseSpeed: 1 + random() * 3,
-        pulsePhase: random() * Math.PI * 2,
-        colorWeight: random()
-      });
-    }
-  }
-
-  /* ━━━━━━━━━━━━━━━━ DIM STATE ━━━━━━━━━━━━━━━━━━━━━━━━ */
-  setDimmed(dimmed) {
-    this.isDimmed = dimmed;
-  }
-
-  /* ━━━━━━━━━━━━━━━━ EVENTS ━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  onResize() {
+  /* ━━━━━━━━━━━━ EVENTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  _onResize() {
     if (!this.container) return;
-    const w = this.container.clientWidth;
-    const h = this.container.clientHeight;
+    const w = this.container.clientWidth, h = this.container.clientHeight;
     this.camera.aspect = w / h;
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(w, h);
   }
-
-  onMouseMove(e) {
-    const rect = this.container.getBoundingClientRect();
-    this.mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-    this.mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+  _onMouseMove(e) {
+    const r = this.container.getBoundingClientRect();
+    this.mouse.x = ((e.clientX - r.left) / r.width) * 2 - 1;
+    this.mouse.y = -((e.clientY - r.top) / r.height) * 2 + 1;
   }
+  _onMouseLeave() { this.mouse.x = 0; this.mouse.y = 0; }
 
-  onMouseLeave() {
-    this.mouse.x = 0;
-    this.mouse.y = 0;
-  }
-
-  /* ━━━━━━━━━━━━━━━━ ANIMATION LOOP ━━━━━━━━━━━━━━━━━━━ */
+  /* ━━━━━━━━━━━━ ANIMATION ━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   animate() {
     requestAnimationFrame(this.animate);
-
-    const time = performance.now() * 0.001;
-    const dt = 1 / 60;
+    const t = performance.now() * 0.001;
 
     // ── Theme color lerp ──
-    this.primaryColor.lerp(this.targetPrimaryColor, 0.04);
-    this.secondaryColor.lerp(this.targetSecondaryColor, 0.04);
+    this.primaryColor.lerp(this.targetPrimary, 0.04);
+    this.secondaryColor.lerp(this.targetSecondary, 0.04);
 
-    // ── Dim factor lerp ──
-    const targetDim = this.isDimmed ? 0.08 : 1.0;
-    this.dimFactor += (targetDim - this.dimFactor) * 0.06;
+    // ── Dim factor ──
+    const targetDim = this.isDimmed ? 0.1 : 1.0;
+    this.dimFactor += (targetDim - this.dimFactor) * 0.05;
 
-    // ── Growth animation ──
-    if (this.growthProgress < 1) {
-      this.growthProgress = Math.min(1, this.growthProgress + this.growthSpeed);
-    }
-    const growth = this.easeOutExpo(this.growthProgress);
+    // ── Slow auto-rotation ──
+    this.mainGroup.rotation.y = t * 0.12; // ~52s per revolution
 
-    // ── Smooth mouse tracking ──
-    this.mouseSmooth.x += (this.mouse.x - this.mouseSmooth.x) * 0.03;
-    this.mouseSmooth.y += (this.mouse.y - this.mouseSmooth.y) * 0.03;
+    // ── Mouse-responsive camera shift ──
+    this.mouseSmooth.x += (this.mouse.x - this.mouseSmooth.x) * 0.02;
+    this.mouseSmooth.y += (this.mouse.y - this.mouseSmooth.y) * 0.02;
+    this.camera.position.x = this.mouseSmooth.x * 2.5;
+    this.camera.position.y = 8 + this.mouseSmooth.y * 1.5 + Math.sin(t * 0.15) * 0.3;
+    this.camera.lookAt(0, 2, 0);
 
-    // ── Camera orbit based on mouse ──
-    const orbitX = this.mouseSmooth.x * 3;
-    const orbitY = this.mouseSmooth.y * 1.5;
-    const autoOrbit = Math.sin(time * 0.08) * 1.5;
-
-    this.camera.position.x = this.cameraBasePos.x + orbitX + autoOrbit;
-    this.camera.position.y = this.cameraBasePos.y + orbitY * 0.5 + Math.sin(time * 0.12) * 0.3;
-    this.camera.position.z = this.cameraBasePos.z + Math.cos(time * 0.08) * 0.5;
-    this.camera.lookAt(this.cameraTarget);
-
-    // ── Update branch opacity (growth animation) ──
-    for (const meta of this.branchMetas) {
-      const branchGrowth = Math.max(0, Math.min(1,
-        (growth - meta.maxGrowth) / (1 - meta.maxGrowth + 0.01)
-      ));
-      meta.mesh.material.opacity = branchGrowth * this.dimFactor;
+    // ── Update mesh opacities ──
+    for (const m of this.meshes) {
+      if (m.material && m.material.opacity !== undefined) {
+        if (m === this.reflectionPlane) {
+          m.material.opacity = 0.2 * this.dimFactor;
+        } else {
+          m.material.opacity = this.dimFactor;
+        }
+      }
     }
 
-    // ── Update ground ──
-    if (this.groundMesh) {
-      this.groundMaterial.opacity = growth * 0.85 * this.dimFactor;
+    // ── Update leaf colors ──
+    this._updateLeafColors();
+
+    // ── Update detail colors ──
+    this._updateDetailColors();
+
+    // ── Update stars ──
+    this._updateStars(t);
+
+    // ── Update falling petals ──
+    this._updatePetals(t);
+
+    // ── Lighting sync ──
+    const rimC = this.primaryColor.clone().offsetHSL(0.05, 0, -0.1);
+    this.rimLight.color.lerp(rimC, 0.02);
+    const targetExp = this.isDimmed ? 0.35 : 1.3;
+    this.renderer.toneMappingExposure +=
+      (targetExp - this.renderer.toneMappingExposure) * 0.04;
+
+    // ── Reflection color sync ──
+    if (this.reflectionPlane) {
+      const rc = this.primaryColor.clone().multiplyScalar(0.15);
+      this.reflectionPlane.material.color.lerp(rc, 0.03);
     }
 
-    // ── Wind sway for tree group ──
-    const windX = Math.sin(time * 0.4) * 0.15 + Math.sin(time * 1.1) * 0.05;
-    const windZ = Math.cos(time * 0.35) * 0.08;
-    this.treeGroup.rotation.z = windX * 0.02;
-    this.treeGroup.rotation.x = windZ * 0.01;
-
-    // ── Update leaves ──
-    this.updateLeaves(time, growth);
-
-    // ── Update petals ──
-    this.updatePetals(time, growth);
-
-    // ── Update fireflies ──
-    this.updateFireflies(time, growth);
-
-    // ── Update lighting colors ──
-    this.updateLighting();
-
-    // ── Render ──
     this.renderer.render(this.scene, this.camera);
   }
 
-  /* ─── Leaves update ─── */
-  updateLeaves(time, growth) {
-    if (!this.leafMesh || this.leafInstances.length === 0) return;
-
-    const leafGrowth = Math.max(0, (growth - 0.3) / 0.7);
-    this.leafMaterial.opacity = leafGrowth * 0.9 * this.dimFactor;
-
-    // Dynamic emissive from theme
-    this.leafMaterial.emissive.copy(this.primaryColor).multiplyScalar(0.15);
-
-    const tempMatrix = new THREE.Matrix4();
-    const tempPos = new THREE.Vector3();
-    const tempQuat = new THREE.Quaternion();
-    const tempScale = new THREE.Vector3();
-    const tempEuler = new THREE.Euler();
+  /* ─── Leaf colors ─── */
+  _updateLeafColors() {
+    if (!this.leavesMesh || !this.leafData.length) return;
     const color = new THREE.Color();
 
-    for (let i = 0; i < this.leafInstances.length; i++) {
-      const l = this.leafInstances[i];
-
-      // Wind displacement
-      const windOffX = Math.sin(time * l.windSpeed + l.windPhase) * l.windAmp;
-      const windOffY = Math.cos(time * l.windSpeed * 0.7 + l.windPhase) * l.windAmp * 0.3;
-      const windOffZ = Math.sin(time * l.windSpeed * 0.5 + l.windPhase + 1) * l.windAmp * 0.6;
-
-      tempPos.set(
-        l.position.x + windOffX,
-        l.position.y + windOffY,
-        l.position.z + windOffZ
+    for (let i = 0; i < this.leafData.length; i++) {
+      const l = this.leafData[i];
+      color.copy(this.primaryColor).lerp(this.secondaryColor, l.colorWeight * 0.35);
+      // Brightness variation: lighter at edges, darker inside
+      const bri = l.brightness * (0.8 + l.edgeFactor * 0.3);
+      color.offsetHSL(
+        (l.colorWeight - 0.5) * 0.06,
+        (l.colorWeight - 0.5) * 0.08,
+        (l.edgeFactor - 0.5) * 0.15
       );
-
-      // Animated rotation
-      tempEuler.set(
-        Math.sin(time * 0.5 + l.windPhase) * 0.3,
-        time * 0.2 + l.windPhase,
-        Math.cos(time * 0.3 + l.windPhase) * 0.2
-      );
-      tempQuat.setFromEuler(tempEuler);
-
-      const s = l.scale * leafGrowth;
-      tempScale.set(s, s, s);
-
-      tempMatrix.compose(tempPos, tempQuat, tempScale);
-      this.leafMesh.setMatrixAt(i, tempMatrix);
-
-      // Theme-synced leaf color
-      color.copy(this.primaryColor).lerp(this.secondaryColor, l.colorWeight);
-      color.offsetHSL(0, 0, (l.colorWeight - 0.5) * 0.15);
-      this.leafMesh.setColorAt(i, color);
+      color.multiplyScalar(bri);
+      this.leavesMesh.setColorAt(i, color);
     }
-
-    this.leafMesh.instanceMatrix.needsUpdate = true;
-    if (this.leafMesh.instanceColor) {
-      this.leafMesh.instanceColor.needsUpdate = true;
+    if (this.leavesMesh.instanceColor) {
+      this.leavesMesh.instanceColor.needsUpdate = true;
     }
   }
 
-  /* ─── Petals update ─── */
-  updatePetals(time, growth) {
-    if (!this.petalParticles.length) return;
+  /* ─── Detail colors ─── */
+  _updateDetailColors() {
+    if (!this.detailMesh || !this.detailData.length) return;
+    const color = new THREE.Color();
 
-    const petalOpacity = Math.max(0, (growth - 0.5) / 0.5);
+    for (let i = 0; i < this.detailData.length; i++) {
+      const d = this.detailData[i];
+      if (d.type === 'flower') {
+        // Flowers use secondary color with variation
+        color.copy(this.secondaryColor);
+        color.offsetHSL((d.colorWeight - 0.5) * 0.15, 0, (d.colorWeight - 0.5) * 0.2);
+      } else {
+        // Mushrooms are lighter / cream
+        color.copy(this.primaryColor).offsetHSL(0, -0.4, 0.25);
+      }
+      this.detailMesh.setColorAt(i, color);
+    }
+    if (this.detailMesh.instanceColor) {
+      this.detailMesh.instanceColor.needsUpdate = true;
+    }
+  }
 
-    for (const p of this.petalParticles) {
+  /* ─── Stars ─── */
+  _updateStars(t) {
+    for (const s of this.stars) {
+      const pulse = 0.5 + 0.5 * Math.sin(t * s.pulseSpeed + s.pulsePhase);
+      s.sprite.material.opacity = s.baseOpacity * pulse * this.dimFactor;
+    }
+  }
+
+  /* ─── Petals ─── */
+  _updatePetals(t) {
+    const color = new THREE.Color();
+    for (const p of this.petals) {
       p.mesh.position.y += p.vy;
       p.wobblePhase += 0.01 * p.wobbleSpeed;
       p.mesh.position.x = p.origX + Math.sin(p.wobblePhase) * p.wobbleAmp;
-      p.mesh.position.z += Math.cos(p.wobblePhase * 0.7) * 0.003;
+      p.mesh.position.z += Math.cos(p.wobblePhase * 0.7) * 0.002;
 
-      // Tumble rotation
       p.mesh.rotation.x += p.rotSpeed.x;
       p.mesh.rotation.y += p.rotSpeed.y;
       p.mesh.rotation.z += p.rotSpeed.z;
 
-      // Color
-      const color = new THREE.Color();
+      // Color from theme
       color.copy(this.primaryColor).lerp(this.secondaryColor, p.colorWeight);
-      color.offsetHSL(0, -0.1, 0.15); // Lighter/softer petals
-      p.mesh.material.color = color;
-      p.mesh.material.opacity = petalOpacity * 0.35 * this.dimFactor;
+      color.offsetHSL(0, -0.08, 0.12);
+      p.mesh.material.color = color.clone();
+      p.mesh.material.opacity = 0.8 * this.dimFactor;
 
       // Reset when fallen
-      if (p.mesh.position.y < -5) {
-        p.mesh.position.y = 15 + Math.random() * 10;
-        p.origX = (Math.random() - 0.5) * 30;
+      if (p.mesh.position.y < -6) {
+        p.mesh.position.y = 12 + Math.random() * 8;
+        p.origX = (Math.random() - 0.5) * 12;
         p.mesh.position.x = p.origX;
-        p.mesh.position.z = (Math.random() - 0.5) * 20;
+        p.mesh.position.z = (Math.random() - 0.5) * 10;
       }
     }
-  }
-
-  /* ─── Fireflies update ─── */
-  updateFireflies(time, growth) {
-    if (!this.fireflyParticles.length) return;
-
-    const ffOpacity = Math.max(0, (growth - 0.4) / 0.6);
-
-    for (const f of this.fireflyParticles) {
-      // Orbit motion
-      const ox = Math.sin(time * f.orbitSpeed + f.orbitPhase) * f.orbitRadius;
-      const oy = Math.sin(time * f.vertOscSpeed + f.orbitPhase) * f.vertOscAmp;
-      const oz = Math.cos(time * f.orbitSpeed * 0.8 + f.orbitPhase) * f.orbitRadius * 0.7;
-
-      f.sprite.position.set(
-        f.basePos.x + ox,
-        f.basePos.y + oy,
-        f.basePos.z + oz
-      );
-
-      // Pulse glow
-      const pulse = 0.3 + 0.7 * (0.5 + 0.5 * Math.sin(time * f.pulseSpeed + f.pulsePhase));
-      f.sprite.material.opacity = pulse * ffOpacity * 0.5 * this.dimFactor;
-
-      // Color
-      const color = new THREE.Color();
-      color.copy(this.primaryColor).lerp(this.secondaryColor, f.colorWeight);
-      color.offsetHSL(0, -0.2, 0.25); // Warm glow
-      f.sprite.material.color = color;
-    }
-  }
-
-  /* ─── Lighting update ─── */
-  updateLighting() {
-    // Sync rim light to theme
-    const rimColor = this.primaryColor.clone();
-    rimColor.offsetHSL(0.05, 0, -0.1);
-    this.rimLight.color.lerp(rimColor, 0.02);
-
-    // Adjust exposure for dimmed state
-    const targetExposure = this.isDimmed ? 0.4 : 1.2;
-    this.renderer.toneMappingExposure +=
-      (targetExposure - this.renderer.toneMappingExposure) * 0.04;
-  }
-
-  /* ─── Easing ─── */
-  easeOutExpo(t) {
-    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
   }
 }
