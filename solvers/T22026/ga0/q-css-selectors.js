@@ -28,8 +28,8 @@ export async function solve(email) {
 
   return {
     type: 'solved',
-    variant: `Filtered .featured.sale sum`,
+    variant: `Filtered .featured.sale sum (${filtered.length} items matched)`,
     answer: sum.toString(),
-    answerDisplay: `### Calculation Details\n\n- **Total Sum:** \`${sum}\`\n\n**Matching Items:**\n${filtered.map(item => `- [${item.classes}] discount=${item.discount}`).join('\n')}`,
+    answerDisplay: `### Calculation Details\n\n- **Total Items Scanned:** \`${count}\`\n- **Matched (.featured.sale):** \`${filtered.length}\`\n- **Sum of Discounts:** \`${sum}\`\n\n**Matching Items:**\n${filtered.map(item => `- [${item.classes}] discount=${item.discount}`).join('\n')}`,
   };
 }

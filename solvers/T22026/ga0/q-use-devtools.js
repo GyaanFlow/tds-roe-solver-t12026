@@ -11,8 +11,8 @@ export async function solve(email) {
 
   return {
     type: 'solved',
-    variant: 'Hidden input discovery',
+    variant: 'Hidden input discovery (base-36 derivation)',
     answer: secret,
-    answerDisplay: `### Discovery Result\n\nThe secret value hidden in the page input is: **\`${secret}\`**`,
+    answerDisplay: `### Discovery Result\n\n- **Secret Value:** \`${secret}\`\n- **Method:** Seeded RNG → base-36 conversion → last 10 chars\n- **Length:** \`${secret.length}\` characters\n\nPaste this value into the exam portal. It matches the hidden \`<input type="hidden">\` value on the question page.`,
   };
 }

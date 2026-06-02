@@ -21,10 +21,19 @@ export async function solve(email) {
     return upper >= startLetter && upper <= endLetter ? sum + count : sum;
   }, 0);
 
+  const matchedLetters = Object.entries(FILE_COUNTS)
+    .filter(([letter]) => {
+      const upper = letter.toUpperCase();
+      return upper >= startLetter && upper <= endLetter;
+    })
+    .map(([letter, count]) => `${letter.toUpperCase()}=${count}`)
+    .sort()
+    .join(', ');
+
   return {
     type: 'solved',
     variant: `Letter Range: ${startLetter}-${endLetter}`,
     answer: totalCount.toString(),
-    answerDisplay: `### Crawl Results\n\n- **Target Range:** Files starting with **${startLetter}** to **${endLetter}**.\n- **Total Count:** \`${totalCount}\`\n\nPaste the count into the exam portal.`,
+    answerDisplay: `### Crawl Results\n\n- **Target Range:** Files starting with **${startLetter}** to **${endLetter}**\n- **Total Count:** \`${totalCount}\`\n- **Breakdown:** ${matchedLetters}\n\nPaste the count into the exam portal.`,
   };
 }

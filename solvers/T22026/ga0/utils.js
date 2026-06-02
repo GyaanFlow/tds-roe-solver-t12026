@@ -48,3 +48,25 @@ export function pick(arr, rngFn) {
 export function round(n, places = 2) {
   return Number(n.toFixed(places));
 }
+
+// Safe JSON parse with fallback — use for parsing LLM responses
+export function safeJsonParse(str, fallback = null) {
+  try {
+    return JSON.parse(str);
+  } catch {
+    return fallback;
+  }
+}
+
+// Retry with exponential backoff for async operations (LLM/network calls)
+export async function retryWithBackoff(fn, maxRetries = 3, baseDelay = 500) {
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      return await fn();
+    } catch (err) {
+      if (attempt === maxRetries - 1) throw err;
+      const delay = baseDelay * Math.pow(2, attempt) + Math.random() * 200;
+      await new Promise(r => setTimeout(r, delay));
+    }
+  }
+}

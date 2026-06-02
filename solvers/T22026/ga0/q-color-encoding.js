@@ -27,7 +27,6 @@ const DIV_RWG = ['#d73027','#f46d43','#fdae61','#fee08b','#ffffff','#d9ef8b','#a
 function matchedPalette(base, count) {
   // For sequential/diverging: evenly space across full ramp to keep gradient
   if (count >= base.length) return base;
-  if (count === base.length) return base;
   // Pick evenly-spaced indices across the ramp
   const step = (base.length - 1) / (count - 1);
   return Array.from({ length: count }, (_, i) => base[Math.round(i * step)]);

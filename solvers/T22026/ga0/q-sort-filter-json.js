@@ -30,7 +30,7 @@ export async function solve(email) {
       return a.name.localeCompare(b.name);
     });
 
-  const result = JSON.stringify(filtered, null, 2);
+  const result = JSON.stringify(filtered);
 
   return {
     type: 'solved',

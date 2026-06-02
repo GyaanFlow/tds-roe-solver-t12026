@@ -55,8 +55,8 @@ export async function solve(email) {
   // Consume the topic-pick RNG call the exam script makes before checkCount
   n();
 
-  // Exam picks 5 or 6; we have 8 validated-safe checks so never run out
-  const checkCount = pick([5, 6], n);
+  // Exam picks 5, 6, or 7; we have 8 validated-safe checks so never run out
+  const checkCount = pick([5, 6, 7], n);
 
   // Always slice from index 0 — highest-confidence checks first
   const selectedChecks = CHECKS.slice(0, checkCount);

@@ -22,8 +22,8 @@ export async function solve(email) {
 
   return {
     type: 'solved',
-    variant: `Sample size N=1000`,
+    variant: `Sample size N=1000, Bessel-corrected (N-1)`,
     answer: result,
-    answerDisplay: `### Calculation Results\n\n- **Sample Variance:** \`${result}\`\n- **Mean:** \`${mean.toFixed(4)}\`\n- **Count:** \`${count}\`\n\nPaste the variance value into the exam portal.`,
+    answerDisplay: `### Calculation Results\n\n- **Sample Variance (s²):** \`${result}\`\n- **Mean (x̄):** \`${mean.toFixed(4)}\`\n- **Sample Size (N):** \`${count}\`\n- **Divisor:** \`N-1 = ${count - 1}\` (Bessel's correction)\n\nPaste the variance value into the exam portal.`,
   };
 }

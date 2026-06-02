@@ -38,16 +38,32 @@ export function wrapSolverModule(mod) {
         diagnostics.warnings.push('Input email did not look like a standard address after normalization.');
       }
 
-      const result = await Promise.resolve(solveImpl(normalizedEmail));
+      try {
+        const timeoutMs = 60000; // 60 second timeout
+        const resultPromise = Promise.resolve(solveImpl(normalizedEmail));
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error(`Solver ${id} timed out after ${timeoutMs}ms`)), timeoutMs)
+        );
+        const result = await Promise.race([resultPromise, timeoutPromise]);
 
-      const durationMs = performance.now() - startedAt;
-      diagnostics.durationMs = durationMs;
-      diagnostics.durationText = formatDuration(durationMs);
+        const durationMs = performance.now() - startedAt;
+        diagnostics.durationMs = durationMs;
+        diagnostics.durationText = formatDuration(durationMs);
 
-      return {
-        ...result,
-        debug: diagnostics,
-      };
+        return {
+          ...result,
+          debug: diagnostics,
+        };
+      } catch (error) {
+        const durationMs = performance.now() - startedAt;
+        diagnostics.durationMs = durationMs;
+        diagnostics.durationText = formatDuration(durationMs);
+        diagnostics.errorType = error.message?.includes('timed out') ? 'timeout' 
+          : error.message?.includes('fetch') ? 'network_error'
+          : 'computation_error';
+        diagnostics.errorMessage = error.message;
+        throw error; // re-throw so app.js catch block handles it
+      }
     }
   };
 }

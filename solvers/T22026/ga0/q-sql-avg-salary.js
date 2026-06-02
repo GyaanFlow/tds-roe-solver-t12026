@@ -19,7 +19,7 @@ export async function solve(email) {
     };
   });
 
-  const averages = DEPARTMENTS.sort().map(dept => {
+  const averages = [...DEPARTMENTS].sort().map(dept => {
     const deptEmployees = employees.filter(e => e.department === dept);
     const sum = deptEmployees.reduce((acc, e) => acc + e.salary, 0);
     const avg = deptEmployees.length > 0 ? Math.round(sum / deptEmployees.length) : 0;
