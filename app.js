@@ -1037,16 +1037,16 @@ termSelect.addEventListener('change', () => {
 examSelect.addEventListener('change', persistUiState);
 emailInput.addEventListener('input', persistUiState);
 
-copyAllBtn.addEventListener('click', (event) => {
+copyAllBtn?.addEventListener('click', (event) => {
   const allText = workspaceData.answers.map((answer, index) => `=== Q${index + 1}: ${answer.title} ===\n${answer.answer}`).join('\n\n');
   copyToClipboard(allText, event.currentTarget);
   safeTrack('copy_all', { exam: workspaceData.exam || 'none', total: workspaceData.answers.length });
 });
-copyDebugBtn.addEventListener('click', (event) => {
+copyDebugBtn?.addEventListener('click', (event) => {
   copyToClipboard(JSON.stringify(buildDebugReport(), null, 2), event.currentTarget);
   safeTrack('copy_debug_report', { exam: workspaceData.exam || 'none' });
 });
-resetUiBtn.addEventListener('click', resetStoredUiState);
+resetUiBtn?.addEventListener('click', resetStoredUiState);
 
 const printExamBtn = document.getElementById('printExamBtn');
 if (printExamBtn) {
@@ -1095,7 +1095,7 @@ if (printExamBtn) {
   });
 }
 
-exportMdBtn.addEventListener('click', () => {
+exportMdBtn?.addEventListener('click', () => {
   let md = `# Workspace Export | ${String(workspaceData.exam || '').toUpperCase()}\n`;
   md += `**Email:** \`${workspaceData.email}\`\n\n---\n\n`;
   workspaceData.answers.forEach((answer, index) => {
@@ -1106,7 +1106,7 @@ exportMdBtn.addEventListener('click', () => {
   safeTrack('export_markdown', { exam: workspaceData.exam || 'none', total: workspaceData.answers.length });
 });
 
-exportJsonBtn.addEventListener('click', () => {
+exportJsonBtn?.addEventListener('click', () => {
   downloadFile(`workspace_${workspaceData.exam}.json`, JSON.stringify(workspaceData, null, 2), 'application/json');
   showToast('JSON export downloaded.', 'success');
   safeTrack('export_json', { exam: workspaceData.exam || 'none', total: workspaceData.answers.length });
