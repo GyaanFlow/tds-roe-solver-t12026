@@ -755,6 +755,11 @@ function renderCanvas(index) {
       ${renderNotesPanel(data)}
       ${renderDiagnosticsPanel(data.debug)}
     </div>
+    <div class="canvas-footer-credits">
+      <span>Project Sandbox by <a href="https://github.com/GyaanFlow" target="_blank" rel="noopener noreferrer">GyaanFlow</a></span>
+      <span class="dot-separator">•</span>
+      <span>Connect on <a href="https://www.linkedin.com/in/gaurav-tomar-630b2a316" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+    </div>
   `;
 
   canvas.scrollTo({ top: 0, behavior: 'auto' });

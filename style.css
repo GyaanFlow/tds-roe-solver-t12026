@@ -1242,3 +1242,37 @@ body {
 .dot-separator {
   color: rgba(255, 255, 255, 0.15);
 }
+
+/* Question Page Canvas Footer Credits */
+.canvas-footer-credits {
+  margin-top: 36px;
+  margin-bottom: 8px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  opacity: 0.55;
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.canvas-footer-credits:hover {
+  opacity: 0.95;
+}
+.canvas-footer-credits a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-bottom: 1px;
+}
+.canvas-footer-credits a:hover {
+  color: #f59e0b; /* Amber highlight */
+  border-bottom-color: rgba(245, 158, 11, 0.45);
+  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.25));
+}
+
