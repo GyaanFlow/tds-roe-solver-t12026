@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="Tools in Data Science (TDS) Solver & Exam Portal | IIT Madras">
   <meta name="twitter:description" content="Ultimate Tools in Data Science (TDS) Solver for IIT Madras diploma students. Compute deterministic answers for ROE, GA7, GA8, Project 2 and more instantly.">
   <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/seedrandom.min.js"></script>
@@ -193,44 +193,108 @@
           <!-- Academic Integrity Disclaimer on Top -->
           <div class="disclaimer-card" id="academicDisclaimer">
             <div class="disclaimer-title">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              <svg class="disclaimer-header-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M9 11l3 3 5-5"></path>
               </svg>
               Academic Integrity & Safe Learning Agreement
             </div>
             
             <div class="disclaimer-sections">
               <!-- Intent Block -->
-              <div class="disclaimer-section-block">
-                <h5>🛡️ 1. Purely Educational Simulation Sandbox</h5>
-                <p>This workspace is a client-side study simulation built solely for <strong>educational research, local automation testing, and personal sandbox audits</strong>. All solver routines execute purely in your local browser sandbox with zero network offloading or communication with official IIT Madras grading platforms.</p>
+              <div class="disclaimer-section-block sandbox-block">
+                <div class="block-icon-container">
+                  <svg class="block-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 22 7 12 12 2 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <div class="block-content-container">
+                  <div class="block-header-row">
+                    <h5>1. Purely Educational Simulation Sandbox</h5>
+                    <span class="block-status-pill sandbox-pill">SANDBOX CODE</span>
+                  </div>
+                  <p>This workspace serves strictly as a <strong>client-side offline simulation sandbox</strong> for personal study, algorithm verification, and deep-dive technical research. All solvers execute locally in your browser's sandboxed context with <strong>zero network transmissions, API telemetry, database syncs, or communication</strong> with official IIT Madras grading frameworks.</p>
+                </div>
               </div>
 
               <!-- Malpractice Block -->
-              <div class="disclaimer-section-block critical-policy">
-                <h5>⚠️ 2. Strict Malpractice Prohibition & Honor Code Compliance</h5>
-                <p>This tool is <strong>strictly prohibited</strong> from being used as a cheating aid, exam bypass, or learning proxy during any active, live, proctored, or graded evaluations. Users are fully and personally bound by the <strong>IIT Madras Student Honor Code & Academic Integrity Charter</strong>. Utilizing computed answers to circumvent original learning constitutes a direct violation of university regulations.</p>
+              <div class="disclaimer-section-block malpractice-block">
+                <div class="block-icon-container">
+                  <svg class="block-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                </div>
+                <div class="block-content-container">
+                  <div class="block-header-row">
+                    <h5>2. Malpractice Prohibition & Honor Code</h5>
+                    <span class="block-status-pill malpractice-pill">RESTRICTED</span>
+                  </div>
+                  <p>Use of this application as a cheating helper, live exam bypass, or learning proxy during active graded evaluations is <strong>strictly prohibited</strong>. By accessing these resources, you covenant to remain bound by <strong>Section 4.1 of the IIT Madras Student Code of Conduct (Academic Integrity)</strong>. You pledge to utilize this system solely to verify manual derivations, study computational patterns, and check your work. Circumventing active learning violates university regulations.</p>
+                </div>
               </div>
 
               <!-- Legal & Affiliation Block -->
-              <div class="disclaimer-section-block">
-                <h5>⚖️ 3. Absolute Non-Affiliation & Fair Use Copyright Notice</h5>
-                <p>This open-source educational utility is completely independent and maintains <strong>no affiliation, sponsorship, endorsement, or formal connection</strong> with the Indian Institute of Technology Madras (IIT Madras) or the official Tools in Data Science (TDS) course administration. All templates and guides are published for free study under the <strong>Fair Use Doctrine</strong> (educational research exemption).</p>
+              <div class="disclaimer-section-block fairuse-block">
+                <div class="block-icon-container">
+                  <svg class="block-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="2" x2="12" y2="22"></line>
+                    <line x1="5" y1="7" x2="19" y2="7"></line>
+                    <path d="M5 7L2 14c0 1.5 1.5 2.5 3 2.5s3-1 3-2.5L5 7z"></path>
+                    <path d="M19 7l-3 7c0 1.5 1.5 2.5 3 2.5s3-1 3-2.5l-3-7z"></path>
+                  </svg>
+                </div>
+                <div class="block-content-container">
+                  <div class="block-header-row">
+                    <h5>3. Non-Affiliation & Fair Use Exemption</h5>
+                    <span class="block-status-pill fairuse-pill">FAIR USE</span>
+                  </div>
+                  <p>This project is a entirely independent open-source workspace. It is <strong>NOT affiliated, sponsored, endorsed, or associated</strong> with the Indian Institute of Technology Madras (IIT Madras) or the Tools in Data Science (TDS) course administration. The mathematical algorithms, educational templates, and structural cleanroom code are published under the <strong>Fair Use Doctrine (Section 52(1)(a) of the Indian Copyright Act, 1957)</strong> strictly for private study and research exemption.</p>
+                </div>
               </div>
 
               <!-- Liability & Takedown Block -->
-              <div class="disclaimer-section-block credit-contact">
-                <h5>✉️ 4. Developer Credit, Zero-Liability & Cooperative Takedown Protocol</h5>
-                <p>The developers, contributors, and the <a href="https://github.com/GyaanFlow" target="_blank" rel="noopener noreferrer" class="disclaimer-link">GyaanFlow</a> team accept <strong>zero liability or responsibility</strong> for any academic malpractice, violations, or disciplinary issues. If any instructor, coordinator, or representative of the IITM TDS course administration has any copyright, compliance, or takedown requests, please connect with us directly via our verified <a href="https://www.linkedin.com/in/gaurav-tomar-630b2a316" target="_blank" rel="noopener noreferrer" class="disclaimer-link">LinkedIn Endpoint</a>. We are fully committed to cooperation and will address any feedback instantly.</p>
+              <div class="disclaimer-section-block liability-block">
+                <div class="block-icon-container">
+                  <svg class="block-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="block-content-container">
+                  <div class="block-header-row">
+                    <h5>4. Liability Covenant & Takedown Protocol</h5>
+                    <span class="block-status-pill liability-pill">COOPERATIVE</span>
+                  </div>
+                  <p>The developers, contributors, and the <a href="https://github.com/GyaanFlow" target="_blank" rel="noopener noreferrer" class="disclaimer-link">GyaanFlow</a> team accept <strong>zero liability or legal responsibility</strong> for individual user conduct or academic standings. We operate in complete transparency. If any representative, coordinator, or instructor from the IITM TDS course administration has compliance concerns or takedown requests, please connect with us via our verified <a href="https://www.linkedin.com/in/gaurav-tomar-630b2a316" target="_blank" rel="noopener noreferrer" class="disclaimer-link">LinkedIn Profile</a>. We pledge immediate cooperation and swift action.</p>
+                </div>
               </div>
             </div>
 
             <div class="disclaimer-action">
               <label class="disclaimer-checkbox-label">
                 <input type="checkbox" id="agreeDisclaimerCheckbox" class="disclaimer-checkbox">
-                <span class="checkbox-custom"></span>
-                <span class="checkbox-text">I have read, understood, and agree to abide by the Academic Integrity and Malpractice Prevention Policy.</span>
+                <div class="checkbox-container">
+                  <span class="checkbox-custom">
+                    <svg class="check-icon" width="10" height="8" viewBox="0 0 10 8" fill="none">
+                      <path d="M1 4L3.5 6.5L9 1" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <div class="checkbox-lock-indicator">
+                    <svg class="lock-svg closed" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <svg class="lock-svg open" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 9.9-1"></path>
+                    </svg>
+                  </div>
+                </div>
+                <span class="checkbox-text">I formally execute this Safe Learning Agreement, pledging absolute honor compliance & code verification ethics.</span>
               </label>
             </div>
           </div>

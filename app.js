@@ -1185,8 +1185,12 @@ if (agreeDisclaimerCheckbox) {
   const hasAgreed = localStorage.getItem('academic_integrity_agreed') === 'true';
   agreeDisclaimerCheckbox.checked = hasAgreed;
   
-  if (card && !hasAgreed) {
-    card.classList.add('pulse-attention');
+  if (card) {
+    if (hasAgreed) {
+      card.classList.add('agreed-state');
+    } else {
+      card.classList.add('pulse-attention');
+    }
   }
 
   // Bind change event to sync visual slide state
@@ -1194,13 +1198,13 @@ if (agreeDisclaimerCheckbox) {
     if (agreeDisclaimerCheckbox.checked) {
       localStorage.setItem('academic_integrity_agreed', 'true');
       card?.classList.remove('pulse-attention');
+      card?.classList.add('agreed-state');
     } else {
       localStorage.removeItem('academic_integrity_agreed');
       card?.classList.add('pulse-attention');
+      card?.classList.remove('agreed-state');
     }
   });
-
-
 }
 
 // Geometric Seeded Identicon rendering routine
