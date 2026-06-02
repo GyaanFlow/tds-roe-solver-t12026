@@ -952,30 +952,32 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--bg-active);
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
+  background: rgba(245, 158, 11, 0.05); /* Soft amber tint by default */
+  border: 1px solid rgba(245, 158, 11, 0.35); /* Glowing amber border by default */
+  color: #f59e0b; /* Glowing amber text by default */
   font-size: 12px;
   font-family: var(--font-sans);
   padding: 6px 12px;
   cursor: pointer;
   border-radius: 6px;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.12); /* Default glow shadow */
 }
 .navbar-credit-btn:hover {
-  background: var(--bg-hover);
-  color: #f59e0b; /* Amber glow on hover */
-  border-color: rgba(245, 158, 11, 0.4);
-  box-shadow: 0 0 12px rgba(245, 158, 11, 0.08);
-  transform: translateY(-1px);
+  background: rgba(245, 158, 11, 0.12); /* Brighter amber background on hover */
+  color: #fbbf24; /* Gold-yellow text on hover */
+  border-color: rgba(245, 158, 11, 0.7); /* High-intensity glowing border on hover */
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3), inset 0 0 8px rgba(245, 158, 11, 0.08);
+  transform: translateY(-2px); /* Slight lift hover effect */
 }
 .navbar-credit-btn svg {
-  color: var(--text-muted);
-  transition: color 0.2s ease;
+  color: #f59e0b; /* Glowing amber icon by default */
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 .navbar-credit-btn:hover svg {
-  color: #f59e0b;
+  color: #fbbf24; /* Gold-yellow icon on hover */
+  transform: scale(1.1); /* Zoom micro-animation */
 }
 
 @media (max-width: 760px) {
