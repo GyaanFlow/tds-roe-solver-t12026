@@ -870,6 +870,7 @@ body {
     height: auto;
     min-height: 100vh;
     overflow: visible;
+    z-index: auto;
   }
 
   #sidebar {
