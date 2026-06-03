@@ -1,46 +1,39 @@
 import * as THREE from 'https://unpkg.com/three@0.128.0/build/three.module.js';
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   Premium 3D Neural Network Constellation — Production Build
+   Premium Layered Neural Network — Deep Feed-Forward Architecture
    ═══════════════════════════════════════════════════════════════════════════
-   Architecture:
-   • Fixed full-viewport canvas (100vw × 100vh) — covers everything.
-   • 200 neurons in deep 3D, arranged in 5 column-layers like a real DNN.
-   • 24 large hub neurons glow brighter and repel harder from cursor.
-   • Synapse lines: distance-faded, vertex-colored, pre-allocated buffers.
-   • 45 action-potential pulses (signals) travel synapses, fade in/out.
-   • 320 background stars with slow auto-rotation.
-   • Spring-damped cursor repulsion with per-node bloom boost.
-   • Smooth HSL theme color lerp — no frame stutter on theme switch.
-   • Zero GC pressure: no heap allocations inside the render loop.
+   Visual design goals:
+   • Looks like a REAL neural network diagram, not a spider web
+   • Clear vertical neuron columns — 7 layers across the viewport
+   • Connections ONLY between adjacent layers (feed-forward, not all-pairs)
+   • Max 3 connections per neuron so lines stay sparse and purposeful
+   • Large glowing neuron nodes with pulsing halos
+   • Signal pulses travel left→right through the layers
+   • Deep star field behind for depth
+   • Subtle camera parallax on mouse move
    ═══════════════════════════════════════════════════════════════════════════ */
 
-// ── FNV-1a based seeded LCG ──────────────────────────────────────────────────
-function createSeededRandom(seedStr) {
+// Seeded LCG (FNV-1a hash)
+function seededRng(seedStr) {
   let h = 2166136261;
-  const src = (seedStr || 'anonymous').toLowerCase().trim();
-  for (let i = 0; i < src.length; i++) {
-    h = Math.imul(h ^ src.charCodeAt(i), 16777619) >>> 0;
-  }
-  let s = h;
-  return () => {
-    s ^= s << 13; s ^= s >>> 17; s ^= s << 5;
-    return (s >>> 0) / 4294967296;
-  };
+  const s = (seedStr || 'anon').toLowerCase();
+  for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619) >>> 0;
+  let st = h;
+  return () => { st ^= st << 13; st ^= st >>> 17; st ^= st << 5; return (st >>> 0) / 4294967296; };
 }
 
-// ── Build soft radial-glow canvas texture ─────────────────────────────────────
-function makeGlowTexture(size) {
+// Soft radial glow texture
+function glowTex(size, falloff = 0.5) {
   const c = document.createElement('canvas');
   c.width = size; c.height = size;
   const ctx = c.getContext('2d');
   const h = size / 2;
   const g = ctx.createRadialGradient(h, h, 0, h, h, h);
-  g.addColorStop(0,    'rgba(255,255,255,1.0)');
-  g.addColorStop(0.15, 'rgba(255,255,255,0.85)');
-  g.addColorStop(0.4,  'rgba(200,220,255,0.35)');
-  g.addColorStop(0.75, 'rgba(150,180,255,0.08)');
-  g.addColorStop(1,    'rgba(255,255,255,0.0)');
+  g.addColorStop(0,       'rgba(255,255,255,1.0)');
+  g.addColorStop(falloff, 'rgba(255,255,255,0.6)');
+  g.addColorStop(0.75,    'rgba(200,210,255,0.12)');
+  g.addColorStop(1,       'rgba(0,0,0,0)');
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, size, size);
   return new THREE.CanvasTexture(c);
@@ -51,166 +44,162 @@ export class NetworkCanvasManager {
     this.canvas = document.getElementById(canvasId);
     if (!this.canvas) return;
 
-    // ── Viewport helpers ─────────────────────────────────────────────────────
     const W = () => window.innerWidth;
     const H = () => window.innerHeight;
     this._W = W; this._H = H;
 
-    // ── Scene ────────────────────────────────────────────────────────────────
     this.scene = new THREE.Scene();
+    this.camera = new THREE.PerspectiveCamera(50, W() / H(), 1, 2000);
+    this.camera.position.set(0, 0, 90);
 
-    // ── Camera ───────────────────────────────────────────────────────────────
-    this.camera = new THREE.PerspectiveCamera(55, W() / H(), 0.5, 1200);
-    this._fitCamera();
-
-    // ── Renderer ─────────────────────────────────────────────────────────────
     this.renderer = new THREE.WebGLRenderer({
-      canvas: this.canvas,
-      antialias: true,
-      alpha: true,
+      canvas: this.canvas, antialias: true, alpha: true,
       powerPreference: 'high-performance'
     });
     this.renderer.setSize(W(), H());
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.2;
+    this.renderer.toneMappingExposure = 1.3;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-    // ── Config ───────────────────────────────────────────────────────────────
-    this.NODE_COUNT   = 200;
-    this.HUB_COUNT    = 24;
-    this.MAX_LINES    = 1400;
-    this.MAX_PULSES   = 45;
-    this.STAR_COUNT   = 320;
-    this.CONNECT_DIST = 20;
+    // ── Network architecture: 7 layers, each with N neurons ──────────────
+    this.LAYER_SIZES    = [4, 7, 10, 12, 10, 7, 4]; // neurons per layer
+    this.MAX_CONNS_PER  = 3;     // max forward connections per neuron
+    this.MAX_PULSES     = 60;    // concurrent signal pulses
+    this.STAR_COUNT     = 350;
 
-    // ── State ─────────────────────────────────────────────────────────────────
-    this.isDimmed     = false;
-    this.dimFactor    = 1.0;
-    this.nodes        = [];
-    this.lightPulses  = [];
-    this._animId      = null;
+    // State
+    this.isDimmed    = false;
+    this.dimFactor   = 1.0;
+    this.neurons     = [];   // { x, y, z, layer, idx, origY, phase, glowFreq, size, isHub }
+    this.connections = [];   // { from, to } (neuron indices)
+    this.pulses      = [];   // active signal pulses
 
-    // ── Theme colors — pre-allocated, lerped every frame (zero GC) ───────────
+    // Pre-allocated scratch colors (zero GC in render loop)
+    this._colA = new THREE.Color();
+    this._colB = new THREE.Color();
+
+    // Theme colors (lerped)
     this._primary    = new THREE.Color('#f59e0b');
     this._secondary  = new THREE.Color('#ef4444');
     this._tPrimary   = new THREE.Color('#f59e0b');
     this._tSecondary = new THREE.Color('#ef4444');
 
-    // ── Scratch colors reused every frame — NO `new THREE.Color()` in loop ───
-    this._tempA = new THREE.Color();
-    this._tempB = new THREE.Color();
-
-    // ── Pre-allocated geometry arrays (no per-frame heap) ────────────────────
-    this._linePosArr  = new Float32Array(this.MAX_LINES  * 2 * 3);
-    this._lineColArr  = new Float32Array(this.MAX_LINES  * 2 * 3);
-    this._pulsePosArr = new Float32Array(this.MAX_PULSES * 3);
-    this._pulseColArr = new Float32Array(this.MAX_PULSES * 3);
-
-    // ── Mouse state ───────────────────────────────────────────────────────────
-    this._mouse       = new THREE.Vector2(9999, 9999);
-    this._mouseWorld  = new THREE.Vector3(9999, 9999, 9999);
-    this._raycaster   = new THREE.Raycaster();
-    this._plane       = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+    // Mouse parallax
+    this._mouseNDC    = new THREE.Vector2(0, 0);
+    this._camTarget   = new THREE.Vector2(0, 0);
     this._mouseActive = false;
 
-    // ── Build scene layers ───────────────────────────────────────────────────
-    this._buildStarField();
-    this._buildNodeMesh();
+    // Build everything
+    this._buildStars();
+    this._buildNeuronMesh();
     this._buildLineMesh();
     this._buildPulseMesh();
 
-    // ── Bind & register events ───────────────────────────────────────────────
-    this.animate       = this.animate.bind(this);
-    this._onResize     = this._onResize.bind(this);
-    this._onMouseMove  = this._onMouseMove.bind(this);
-    this._onMouseLeave = this._onMouseLeave.bind(this);
+    // Bind
+    this.animate        = this.animate.bind(this);
+    this._onResize      = this._onResize.bind(this);
+    this._onMouseMove   = this._onMouseMove.bind(this);
+    this._onMouseLeave  = this._onMouseLeave.bind(this);
+    window.addEventListener('resize',    this._onResize,    { passive: true });
+    window.addEventListener('mousemove', this._onMouseMove, { passive: true });
+    window.addEventListener('mouseleave',this._onMouseLeave,{ passive: true });
 
-    window.addEventListener('resize',     this._onResize,     { passive: true });
-    window.addEventListener('mousemove',  this._onMouseMove,  { passive: true });
-    window.addEventListener('mouseleave', this._onMouseLeave, { passive: true });
-
-    // ── Seed default network and start loop ──────────────────────────────────
     this.generateNetwork('anonymous');
     this._animId = requestAnimationFrame(this.animate);
   }
 
-  // ── Camera fit: ensures all nodes visible on any aspect ratio ─────────────
-  _fitCamera() {
-    const aspect = this._W() / this._H();
-    // The network spans ~±95 wide, ±55 tall; push camera back so both fit.
-    const vFOV    = THREE.MathUtils.degToRad(55);
-    const distX   = 95 / (Math.tan(this.camera?.fov ? THREE.MathUtils.degToRad(this.camera.fov / 2) : Math.tan(vFOV / 2)) * aspect);
-    const distY   = 55 / Math.tan(vFOV / 2);
-    const zNeeded = Math.max(distX, distY) * 1.12;
-    if (this.camera) {
-      this.camera.position.set(0, 0, Math.max(70, Math.min(zNeeded, 160)));
-      this.camera.lookAt(0, 0, 0);
-      this.camera.aspect = aspect;
-      this.camera.updateProjectionMatrix();
-    }
-  }
-
-  // ── Star Field ────────────────────────────────────────────────────────────
-  _buildStarField() {
+  // ── Star field ────────────────────────────────────────────────────────────
+  _buildStars() {
     const pos = new Float32Array(this.STAR_COUNT * 3);
     const col = new Float32Array(this.STAR_COUNT * 3);
-    const rng = createSeededRandom('starfield-v3');
+    const rng = seededRng('stars-dnn');
     for (let i = 0; i < this.STAR_COUNT; i++) {
-      pos[i*3]   = (rng()-0.5)*320;
-      pos[i*3+1] = (rng()-0.5)*200;
-      pos[i*3+2] = -55 - rng()*90;
-      const b = 0.25 + rng()*0.55;
-      col[i*3]=b; col[i*3+1]=b; col[i*3+2]=b+0.18;
+      pos[i*3]   = (rng()-0.5) * 380;
+      pos[i*3+1] = (rng()-0.5) * 220;
+      pos[i*3+2] = -70 - rng() * 110;
+      const b = 0.2 + rng() * 0.45;
+      col[i*3]=b; col[i*3+1]=b; col[i*3+2]=b + 0.2;
     }
     const geo = new THREE.BufferGeometry();
     geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
     geo.setAttribute('color',    new THREE.BufferAttribute(col, 3));
-    this._starMat = new THREE.PointsMaterial({
-      size: 0.4, map: makeGlowTexture(8), vertexColors: true,
-      transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending,
-      depthWrite: false, sizeAttenuation: true
-    });
-    this._starMesh = new THREE.Points(geo, this._starMat);
+    this._starMesh = new THREE.Points(geo, new THREE.PointsMaterial({
+      size: 0.35, map: glowTex(8, 0.3), vertexColors: true,
+      transparent: true, opacity: 0.45, blending: THREE.AdditiveBlending, depthWrite: false
+    }));
     this.scene.add(this._starMesh);
   }
 
-  // ── Node Points mesh ──────────────────────────────────────────────────────
-  _buildNodeMesh() {
-    const pos = new Float32Array(this.NODE_COUNT * 3);
-    const col = new Float32Array(this.NODE_COUNT * 3);
-    this._nodeGeo = new THREE.BufferGeometry();
-    this._nodeGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    this._nodeGeo.setAttribute('color',    new THREE.BufferAttribute(col, 3));
-    this._nodeMat = new THREE.PointsMaterial({
-      size: 2.6, map: makeGlowTexture(64), vertexColors: true,
-      transparent: true, opacity: 0.94, blending: THREE.AdditiveBlending,
-      depthWrite: false, sizeAttenuation: true
+  // ── Neuron point cloud ────────────────────────────────────────────────────
+  _buildNeuronMesh() {
+    const totalNeurons = this.LAYER_SIZES.reduce((a, b) => a + b, 0);
+    const pos = new Float32Array(totalNeurons * 3);
+    const col = new Float32Array(totalNeurons * 3);
+    const sizeArr = new Float32Array(totalNeurons);
+
+    this._neurGeo = new THREE.BufferGeometry();
+    this._neurGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    this._neurGeo.setAttribute('color',    new THREE.BufferAttribute(col, 3));
+    this._neurGeo.setAttribute('size',     new THREE.BufferAttribute(sizeArr, 1));
+
+    this._neurMat = new THREE.ShaderMaterial({
+      uniforms: {
+        pointTexture: { value: glowTex(64, 0.3) }
+      },
+      vertexShader: `
+        attribute float size;
+        varying vec3 vColor;
+        void main() {
+          vColor = color;
+          vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+          gl_PointSize = size * (300.0 / -mvPosition.z);
+          gl_Position = projectionMatrix * mvPosition;
+        }
+      `,
+      fragmentShader: `
+        uniform sampler2D pointTexture;
+        varying vec3 vColor;
+        void main() {
+          gl_FragColor = vec4(vColor, 1.0) * texture2D(pointTexture, gl_PointCoord);
+        }
+      `,
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
     });
-    this._nodeMesh = new THREE.Points(this._nodeGeo, this._nodeMat);
-    this.scene.add(this._nodeMesh);
+
+    this._neurMesh = new THREE.Points(this._neurGeo, this._neurMat);
+    this.scene.add(this._neurMesh);
   }
 
-  // ── Synapse line mesh ─────────────────────────────────────────────────────
+  // ── Synapse line mesh (pre-sized for max expected connections) ─────────────
   _buildLineMesh() {
+    // Max connections: sum(layer_sizes[i] * MAX_CONNS_PER) for i in 0..5
+    const maxConns = this.LAYER_SIZES.slice(0, -1).reduce((a, b) => a + b, 0) * this.MAX_CONNS_PER;
+    this._maxLines = maxConns;
+    const pos = new Float32Array(maxConns * 2 * 3);
+    const col = new Float32Array(maxConns * 2 * 3);
     this._lineGeo = new THREE.BufferGeometry();
-    this._lineGeo.setAttribute('position', new THREE.BufferAttribute(this._linePosArr, 3));
-    this._lineGeo.setAttribute('color',    new THREE.BufferAttribute(this._lineColArr, 3));
+    this._lineGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    this._lineGeo.setAttribute('color',    new THREE.BufferAttribute(col, 3));
     this._lineMat = new THREE.LineBasicMaterial({
-      vertexColors: true, transparent: true, opacity: 0.55,
+      vertexColors: true, transparent: true, opacity: 0.35,
       blending: THREE.AdditiveBlending, depthWrite: false
     });
     this._lineMesh = new THREE.LineSegments(this._lineGeo, this._lineMat);
     this.scene.add(this._lineMesh);
   }
 
-  // ── Pulse points mesh ─────────────────────────────────────────────────────
+  // ── Signal pulse mesh ─────────────────────────────────────────────────────
   _buildPulseMesh() {
+    const pos = new Float32Array(this.MAX_PULSES * 3);
+    const col = new Float32Array(this.MAX_PULSES * 3);
     this._pulseGeo = new THREE.BufferGeometry();
-    this._pulseGeo.setAttribute('position', new THREE.BufferAttribute(this._pulsePosArr, 3));
-    this._pulseGeo.setAttribute('color',    new THREE.BufferAttribute(this._pulseColArr, 3));
+    this._pulseGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    this._pulseGeo.setAttribute('color',    new THREE.BufferAttribute(col, 3));
     this._pulseMat = new THREE.PointsMaterial({
-      size: 4.2, map: makeGlowTexture(32), vertexColors: true,
+      size: 5.5, map: glowTex(32, 0.25), vertexColors: true,
       transparent: true, opacity: 1.0, blending: THREE.AdditiveBlending,
       depthWrite: false, sizeAttenuation: true
     });
@@ -218,75 +207,156 @@ export class NetworkCanvasManager {
     this.scene.add(this._pulseMesh);
   }
 
-  // ── Generate (or regenerate) the network from an email seed ───────────────
-  generateNetwork(seedStr) {
-    const rng = createSeededRandom(seedStr || 'anonymous');
-    this.nodes = [];
-    this.lightPulses = [];
+  // ── Calculate network layout spans based on aspect ratio ─────────────────
+  _getSpans() {
+    const aspect = this.camera.aspect;
+    // Camera is at Z = 90. Height at Z = 0:
+    const visibleHeight = 2 * Math.tan((this.camera.fov * Math.PI) / 360) * 90;
+    const visibleWidth = visibleHeight * aspect;
 
-    const W = 96, H = 56, D = 44;  // spread volume
-    const LAYERS = 5;
+    // Mobile (portrait): scale narrower to fit beautifully without cutting.
+    const paddingX = aspect < 1.0 ? 0.88 : 0.82;
+    const paddingY = aspect < 1.0 ? 0.65 : 0.72;
 
-    for (let i = 0; i < this.NODE_COUNT; i++) {
-      const isHub  = i < this.HUB_COUNT;
-      const layer  = Math.floor((i / this.NODE_COUNT) * LAYERS);
-      const lxBias = ((layer / (LAYERS - 1)) - 0.5) * W * 0.85;
-
-      const x = lxBias + (rng() - 0.5) * W * 0.42;
-      const y = (rng() - 0.5) * H;
-      const z = (rng() - 0.5) * D;
-
-      this.nodes.push({
-        x, y, z, origX: x, origY: y, origZ: z,
-        vx: 0, vy: 0, vz: 0,
-        isHub, layer,
-        size:        isHub ? 2.8 + rng()*1.5 : 1.0 + rng()*1.2,
-        colorWeight: rng(),
-        windPhase:   rng() * Math.PI * 2,
-        windFreq:    0.22 + rng()*0.55,
-        windAmp:     isHub ? 0.4 + rng()*0.45 : 0.65 + rng()*1.05,
-        glowPhase:   rng() * Math.PI * 2,
-        glowFreq:    0.45 + rng()*1.1,
-      });
-    }
-
-    // Pre-populate 14 pulses
-    for (let k = 0; k < 14; k++) this._spawnPulse(rng);
-
-    // Sync initial positions to GPU buffer
-    const posArr = this._nodeGeo.getAttribute('position').array;
-    for (let i = 0; i < this.NODE_COUNT; i++) {
-      const n = this.nodes[i];
-      posArr[i*3]=n.x; posArr[i*3+1]=n.y; posArr[i*3+2]=n.z;
-    }
-    this._nodeGeo.getAttribute('position').needsUpdate = true;
+    return {
+      xSpan: visibleWidth * paddingX,
+      ySpan: visibleHeight * paddingY
+    };
   }
 
-  // ── Spawn a new action-potential signal on a random synapse ───────────────
-  _spawnPulse(optRng) {
-    const rng = optRng || Math.random;
-    const fromIdx = Math.floor(rng() * this.NODE_COUNT);
-    const from = this.nodes[fromIdx];
-    if (!from) return;
+  // ── Build layered neural network ──────────────────────────────────────────
+  generateNetwork(seedStr) {
+    const rng = seededRng(seedStr || 'anonymous');
+    this.neurons     = [];
+    this.connections = [];
+    this.pulses      = [];
 
-    let best = -1, bestDist = Infinity;
-    // Prefer a candidate in the next layer for forward-propagation feel
-    for (let i = 0; i < this.NODE_COUNT; i++) {
-      if (i === fromIdx) continue;
-      const n = this.nodes[i];
-      const dx=from.x-n.x, dy=from.y-n.y, dz=from.z-n.z;
-      const d = Math.sqrt(dx*dx+dy*dy+dz*dz);
-      if (d < this.CONNECT_DIST && d < bestDist) {
-        bestDist = d; best = i;
+    const totalLayers = this.LAYER_SIZES.length;
+    const { xSpan, ySpan } = this._getSpans();
+
+    let neuronIdx = 0;
+    const layerStartIdx = []; // neuronIdx where each layer begins
+
+    for (let l = 0; l < totalLayers; l++) {
+      layerStartIdx.push(neuronIdx);
+      const count = this.LAYER_SIZES[l];
+      
+      // Normalized X coordinate from -0.5 to +0.5
+      const nx = (totalLayers > 1) ? (l / (totalLayers - 1) - 0.5) : 0;
+      const x = nx * xSpan;
+      const isHub = (l === 0 || l === totalLayers - 1);
+
+      for (let n = 0; n < count; n++) {
+        // Normalized Y coordinate from -0.5 to +0.5
+        const ny = (count > 1) ? ((n / (count - 1)) - 0.5) : 0;
+        
+        // Add tiny normalized jitter to keep it organic
+        const nyJitter = (rng() - 0.5) * 0.03;
+        const finalNy = ny + nyJitter;
+        const y = finalNy * ySpan;
+        const z = (rng() - 0.5) * 8;
+
+        const baseSize = isHub ? 5.5 + rng() * 1.5 : 3.5 + rng() * 1.5;
+
+        this.neurons.push({
+          nx,
+          ny: finalNy,
+          x, y, z,
+          origY: y,
+          layer: l, layerN: n,
+          baseSize,
+          glowPhase: rng() * Math.PI * 2,
+          glowFreq:  0.4 + rng() * 1.0,
+          colorW:    l / (totalLayers - 1),  // 0=primary, 1=secondary
+          isHub,
+        });
+        neuronIdx++;
       }
     }
-    if (best !== -1) {
-      this.lightPulses.push({
-        from: fromIdx, to: best, progress: 0,
-        speed:       0.007 + (typeof rng === 'function' ? rng() : Math.random()) * 0.013,
-        colorWeight: typeof rng === 'function' ? rng() : Math.random()
-      });
+
+    // Build connections: each neuron in layer l connects to up to MAX_CONNS_PER
+    // neurons in layer l+1, choosing the closest ones vertically
+    for (let l = 0; l < totalLayers - 1; l++) {
+      const fromStart = layerStartIdx[l];
+      const fromEnd   = layerStartIdx[l] + this.LAYER_SIZES[l];
+      const toStart   = layerStartIdx[l + 1];
+      const toEnd     = layerStartIdx[l + 1] + this.LAYER_SIZES[l + 1];
+
+      for (let fi = fromStart; fi < fromEnd; fi++) {
+        const from = this.neurons[fi];
+        const targets = [];
+        for (let ti = toStart; ti < toEnd; ti++) {
+          const to  = this.neurons[ti];
+          const dy  = Math.abs(from.ny - to.ny);
+          targets.push({ idx: ti, dy });
+        }
+        targets.sort((a, b) => a.dy - b.dy);
+        const picks = targets.slice(0, this.MAX_CONNS_PER);
+        for (const p of picks) {
+          this.connections.push({ from: fi, to: p.idx });
+        }
+      }
     }
+
+    // Pre-fill line buffer with connection geometry (static topology)
+    this._updateLineBuffer();
+
+    // Seed initial pulses
+    for (let k = 0; k < 18; k++) this._spawnPulse(rng);
+
+    // Write initial neuron positions and sizes to GPU
+    this._syncNeuronPositions();
+  }
+
+  // ── Sync neuron positions and base sizes to GPU buffer ────────────────────
+  _syncNeuronPositions() {
+    const posArr = this._neurGeo.getAttribute('position').array;
+    const sizeArr = this._neurGeo.getAttribute('size').array;
+    for (let i = 0; i < this.neurons.length; i++) {
+      const n = this.neurons[i];
+      posArr[i*3]=n.x; posArr[i*3+1]=n.y; posArr[i*3+2]=n.z;
+      sizeArr[i] = n.baseSize;
+    }
+    this._neurGeo.getAttribute('position').needsUpdate = true;
+    this._neurGeo.getAttribute('size').needsUpdate     = true;
+  }
+
+  // ── Write all connections to the static line buffer ───────────────────────
+  _updateLineBuffer() {
+    const posArr = this._lineGeo.getAttribute('position').array;
+    const colArr = this._lineGeo.getAttribute('color').array;
+
+    for (let ci = 0; ci < this.connections.length; ci++) {
+      const { from, to } = this.connections[ci];
+      const fn = this.neurons[from], tn = this.neurons[to];
+      const off = ci * 6;
+      posArr[off]  =fn.x; posArr[off+1]=fn.y; posArr[off+2]=fn.z;
+      posArr[off+3]=tn.x; posArr[off+4]=tn.y; posArr[off+5]=tn.z;
+      // Color: dim, blended between primary and secondary by layer
+      const cw = (fn.colorW + tn.colorW) * 0.5;
+      this._colA.copy(this._primary).lerp(this._secondary, cw);
+      const br = 0.18; // intentionally dim — nodes should pop, not lines
+      colArr[off]  =this._colA.r*br; colArr[off+1]=this._colA.g*br; colArr[off+2]=this._colA.b*br;
+      colArr[off+3]=this._colA.r*br; colArr[off+4]=this._colA.g*br; colArr[off+5]=this._colA.b*br;
+    }
+    this._lineGeo.getAttribute('position').needsUpdate = true;
+    this._lineGeo.getAttribute('color').needsUpdate    = true;
+    this._lineGeo.setDrawRange(0, this.connections.length * 2);
+  }
+
+  // ── Spawn signal pulse on random connection ───────────────────────────────
+  _spawnPulse(optRng) {
+    const rng = optRng || Math.random;
+    if (this.connections.length === 0) return;
+    const ci = Math.floor((typeof rng === 'function' ? rng() : Math.random()) * this.connections.length);
+    const conn = this.connections[ci];
+    this.pulses.push({
+      connIdx: ci,
+      from: conn.from, to: conn.to,
+      progress: 0,
+      speed: 0.006 + (typeof rng === 'function' ? rng() : Math.random()) * 0.012,
+      cw: (typeof rng === 'function' ? rng() : Math.random()),
+    });
   }
 
   // ── Public API ────────────────────────────────────────────────────────────
@@ -294,197 +364,189 @@ export class NetworkCanvasManager {
     if (primary)   this._tPrimary.set(primary);
     if (secondary) this._tSecondary.set(secondary);
   }
+  setDimmed(v) { this.isDimmed = v; }
 
-  setDimmed(dimmed) { this.isDimmed = dimmed; }
-
-  // ── Window resize ─────────────────────────────────────────────────────────
+  // ── Resize ────────────────────────────────────────────────────────────────
   _onResize() {
     const w = this._W(), h = this._H();
     this.camera.aspect = w / h;
-    this._fitCamera();
+    this.camera.updateProjectionMatrix();
     this.renderer.setSize(w, h);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // Re-span current neurons dynamically to fit the new viewport
+    const { xSpan, ySpan } = this._getSpans();
+    for (let i = 0; i < this.neurons.length; i++) {
+      const n = this.neurons[i];
+      n.x = n.nx * xSpan;
+      n.origY = n.ny * ySpan;
+      n.y = n.origY;
+    }
+
+    // Refresh buffers
+    this._updateLineBuffer();
+    this._syncNeuronPositions();
   }
 
-  // ── Mouse events ──────────────────────────────────────────────────────────
+  // ── Mouse ─────────────────────────────────────────────────────────────────
   _onMouseMove(e) {
-    this._mouse.set(
+    this._mouseNDC.set(
       (e.clientX / this._W()) * 2 - 1,
      -(e.clientY / this._H()) * 2 + 1
     );
     this._mouseActive = true;
   }
-  _onMouseLeave() {
-    this._mouseActive = false;
-    this._mouseWorld.set(9999, 9999, 9999);
-  }
+  _onMouseLeave() { this._mouseActive = false; }
 
-  // ── Main render/animation loop ────────────────────────────────────────────
+  // ── Main loop ─────────────────────────────────────────────────────────────
   animate() {
     this._animId = requestAnimationFrame(this.animate);
     const t = performance.now() * 0.001;
 
-    // — Theme color lerp (pre-allocated, no GC) —
-    this._primary.lerp(this._tPrimary, 0.032);
-    this._secondary.lerp(this._tSecondary, 0.032);
+    // Theme color lerp
+    this._primary.lerp(this._tPrimary,   0.03);
+    this._secondary.lerp(this._tSecondary, 0.03);
 
-    // — Dim factor lerp —
-    const tDim = this.isDimmed ? 0.08 : 1.0;
-    this.dimFactor += (tDim - this.dimFactor) * 0.055;
+    // Dim lerp
+    const tDim = this.isDimmed ? 0.06 : 1.0;
+    this.dimFactor += (tDim - this.dimFactor) * 0.05;
+    const tExp = this.isDimmed ? 0.5 : 1.3;
+    this.renderer.toneMappingExposure += (tExp - this.renderer.toneMappingExposure) * 0.04;
 
-    // — Exposure —
-    const tExp = this.isDimmed ? 0.45 : 1.25;
-    this.renderer.toneMappingExposure += (tExp - this.renderer.toneMappingExposure) * 0.045;
-
-    // — Cursor world position —
+    // Mouse parallax camera drift
     if (this._mouseActive) {
-      this._raycaster.setFromCamera(this._mouse, this.camera);
-      const hit = new THREE.Vector3();   // minor: one alloc per frame (unavoidable with Three.js Plane API)
-      if (this._raycaster.ray.intersectPlane(this._plane, hit)) {
-        this._mouseWorld.copy(hit);
-      }
+      this._camTarget.set(this._mouseNDC.x * 5, this._mouseNDC.y * 3);
+    } else {
+      this._camTarget.set(Math.sin(t * 0.05) * 3, Math.cos(t * 0.035) * 1.8);
     }
+    this.camera.position.x += (this._camTarget.x - this.camera.position.x) * 0.04;
+    this.camera.position.y += (this._camTarget.y - this.camera.position.y) * 0.04;
+    this.camera.lookAt(0, 0, 0);
 
-    // ── Node physics & colour update ─────────────────────────────────────
-    const posAttr = this._nodeGeo.getAttribute('position');
-    const colAttr = this._nodeGeo.getAttribute('color');
-    const posArr  = posAttr.array;
-    const colArr  = colAttr.array;
+    // Neuron colour & subtle float animation
+    const posArr = this._neurGeo.getAttribute('position').array;
+    const colArr = this._neurGeo.getAttribute('color').array;
+    const sizeArr = this._neurGeo.getAttribute('size').array;
 
-    for (let i = 0; i < this.NODE_COUNT; i++) {
-      const n = this.nodes[i];
+    for (let i = 0; i < this.neurons.length; i++) {
+      const n = this.neurons[i];
 
-      // Organic multi-freq drift
-      const wx = Math.sin(t * n.windFreq       + n.windPhase)        * n.windAmp * 0.26;
-      const wy = Math.cos(t * n.windFreq*0.73  + n.windPhase + 1.05) * n.windAmp * 0.17;
-      const wz = Math.sin(t * n.windFreq*1.31  + n.windPhase + 2.18) * n.windAmp * 0.11;
-      let tX = n.origX + wx, tY = n.origY + wy, tZ = n.origZ + wz;
+      // Gentle vertical float
+      const floatY = Math.sin(t * n.glowFreq + n.glowPhase) * 0.55;
+      n.y = n.origY + floatY;
+      posArr[i*3+1] = n.y;
 
-      // Cursor repulsion
-      let proxBoost = 0;
-      if (this._mouseActive) {
-        const dx=n.x-this._mouseWorld.x, dy=n.y-this._mouseWorld.y, dz=n.z-this._mouseWorld.z;
-        const d2 = dx*dx+dy*dy+dz*dz;
-        const R  = n.isHub ? 26 : 20;
-        if (d2 < R*R) {
-          const d   = Math.sqrt(d2);
-          const fac = (1 - d/R);
-          const push = fac*fac * (this.isDimmed ? 4 : 8.5);
-          tX += (dx/d)*push; tY += (dy/d)*push; tZ += (dz/d)*push;
-          proxBoost = fac * fac;
-        }
-      }
+      // Pulsing glow brightness
+      const glow = 0.55 + 0.45 * Math.sin(t * n.glowFreq + n.glowPhase);
+      const br   = glow * this.dimFactor * (n.isHub ? 1.0 : 0.82);
 
-      // Spring-damped physics
-      const k = this.isDimmed ? 0.022 : 0.068;
-      n.vx = (n.vx + (tX - n.x)*k)*0.875;
-      n.vy = (n.vy + (tY - n.y)*k)*0.875;
-      n.vz = (n.vz + (tZ - n.z)*k)*0.875;
-      n.x += n.vx; n.y += n.vy; n.z += n.vz;
+      // Color: blend primary→secondary by layer position
+      this._colA.copy(this._primary).lerp(this._secondary, n.colorW);
+      colArr[i*3]  = this._colA.r * br;
+      colArr[i*3+1]= this._colA.g * br;
+      colArr[i*3+2]= this._colA.b * br;
 
-      posArr[i*3]=n.x; posArr[i*3+1]=n.y; posArr[i*3+2]=n.z;
-
-      // Per-vertex colour: blend by layer + pulsing glow + proximity
-      const glow = 0.5 + 0.5 * Math.sin(t * n.glowFreq + n.glowPhase);
-      const cw   = n.colorWeight*0.55 + (n.layer/4)*0.45;
-      this._tempA.copy(this._primary).lerp(this._secondary, cw);
-      if (proxBoost > 0) {
-        this._tempB.copy(this._secondary).multiplyScalar(1 + proxBoost * 1.8);
-        this._tempA.lerp(this._tempB, proxBoost * 0.65);
-      }
-      const br = glow * this.dimFactor * (n.isHub ? 1.0 : 0.72);
-      colArr[i*3]=this._tempA.r*br; colArr[i*3+1]=this._tempA.g*br; colArr[i*3+2]=this._tempA.b*br;
+      // Size pulse: make it pulsate slightly with the glow
+      sizeArr[i] = n.baseSize * (0.88 + 0.22 * Math.sin(t * n.glowFreq + n.glowPhase)) * this.dimFactor;
     }
-    posAttr.needsUpdate = true;
-    colAttr.needsUpdate = true;
+    this._neurGeo.getAttribute('position').needsUpdate = true;
+    this._neurGeo.getAttribute('color').needsUpdate    = true;
+    this._neurGeo.getAttribute('size').needsUpdate     = true;
 
-    // ── Synapse lines (pre-allocated, no GC) ─────────────────────────────
-    let lc = 0;
-    const lp = this._linePosArr, lc2 = this._lineColArr;
-    for (let i = 0; i < this.NODE_COUNT && lc < this.MAX_LINES; i++) {
-      const a = this.nodes[i];
-      for (let j = i+1; j < this.NODE_COUNT && lc < this.MAX_LINES; j++) {
-        const b = this.nodes[j];
-        const dx=a.x-b.x, dy=a.y-b.y, dz=a.z-b.z;
-        const d2 = dx*dx+dy*dy+dz*dz;
-        if (d2 < this.CONNECT_DIST*this.CONNECT_DIST) {
-          const d    = Math.sqrt(d2);
-          const alpha = (1 - d/this.CONNECT_DIST);
-          const br    = alpha * alpha * 0.7 * this.dimFactor;
-          const cw    = (a.colorWeight+b.colorWeight)*0.5;
-          this._tempA.copy(this._primary).lerp(this._secondary, cw);
-          const off = lc*6;
-          lp[off]=a.x; lp[off+1]=a.y; lp[off+2]=a.z;
-          lp[off+3]=b.x; lp[off+4]=b.y; lp[off+5]=b.z;
-          lc2[off]=this._tempA.r*br;   lc2[off+1]=this._tempA.g*br;   lc2[off+2]=this._tempA.b*br;
-          lc2[off+3]=this._tempA.r*br; lc2[off+4]=this._tempA.g*br; lc2[off+5]=this._tempA.b*br;
-          lc++;
-        }
-      }
+    // Update synapse lines (positions change with float, so update each frame)
+    const lPosArr = this._lineGeo.getAttribute('position').array;
+    const lColArr = this._lineGeo.getAttribute('color').array;
+
+    for (let ci = 0; ci < this.connections.length; ci++) {
+      const { from, to } = this.connections[ci];
+      const fn = this.neurons[from], tn = this.neurons[to];
+      const off = ci * 6;
+      // Update y positions (x,z are static)
+      lPosArr[off+1] = fn.y;
+      lPosArr[off+4] = tn.y;
+
+      // Subtle line brightening when either endpoint is glowing bright
+      const fnGlow = 0.45 + 0.55 * Math.sin(t * fn.glowFreq + fn.glowPhase);
+      const tnGlow = 0.45 + 0.55 * Math.sin(t * tn.glowFreq + tn.glowPhase);
+      const lineBr = ((fnGlow + tnGlow) * 0.5) * 0.22 * this.dimFactor;
+      const cw = (fn.colorW + tn.colorW) * 0.5;
+      this._colA.copy(this._primary).lerp(this._secondary, cw);
+      lColArr[off]  =this._colA.r*lineBr; lColArr[off+1]=this._colA.g*lineBr; lColArr[off+2]=this._colA.b*lineBr;
+      lColArr[off+3]=this._colA.r*lineBr; lColArr[off+4]=this._colA.g*lineBr; lColArr[off+5]=this._colA.b*lineBr;
     }
     this._lineGeo.getAttribute('position').needsUpdate = true;
     this._lineGeo.getAttribute('color').needsUpdate    = true;
-    this._lineGeo.setDrawRange(0, lc*2);
 
-    // ── Spawn new pulses ──────────────────────────────────────────────────
-    if (Math.random() < 0.065 && this.lightPulses.length < this.MAX_PULSES) {
+    // Spawn new pulses
+    if (Math.random() < 0.07 && this.pulses.length < this.MAX_PULSES) {
       this._spawnPulse();
     }
 
-    // ── Update pulses (no GC: reuse this._tempA/B) ────────────────────────
-    const pp = this._pulsePosArr, pc = this._pulseColArr;
+    // Update pulses
+    const pPosArr = this._pulseGeo.getAttribute('position').array;
+    const pColArr = this._pulseGeo.getAttribute('color').array;
     let activePulses = 0;
-    for (let k = this.lightPulses.length - 1; k >= 0; k--) {
+
+    for (let k = this.pulses.length - 1; k >= 0; k--) {
       if (activePulses >= this.MAX_PULSES) break;
-      const pulse = this.lightPulses[k];
-      pulse.progress += pulse.speed;
-      if (pulse.progress >= 1.0) { this.lightPulses.splice(k, 1); continue; }
+      const p = this.pulses[k];
+      p.progress += p.speed;
+      if (p.progress >= 1.0) {
+        // When a pulse reaches the end, spawn a new one from the destination
+        const destLayer = this.neurons[p.to].layer;
+        if (destLayer < this.LAYER_SIZES.length - 1) {
+          // Find a connection from this destination neuron
+          const nextConns = this.connections.filter(c => c.from === p.to);
+          if (nextConns.length > 0) {
+            const nc = nextConns[Math.floor(Math.random() * nextConns.length)];
+            this.pulses.push({
+              connIdx: this.connections.indexOf(nc),
+              from: nc.from, to: nc.to,
+              progress: 0,
+              speed: p.speed * (0.9 + Math.random() * 0.2),
+              cw: p.cw,
+            });
+          }
+        }
+        this.pulses.splice(k, 1);
+        continue;
+      }
 
-      const fn = this.nodes[pulse.from], tn = this.nodes[pulse.to];
-      const tp = pulse.progress;
+      const fn = this.neurons[p.from], tn = this.neurons[p.to];
+      const tp = p.progress;
       const off = activePulses * 3;
-      pp[off]   = fn.x + (tn.x-fn.x)*tp;
-      pp[off+1] = fn.y + (tn.y-fn.y)*tp;
-      pp[off+2] = fn.z + (tn.z-fn.z)*tp;
+      pPosArr[off]   = fn.x + (tn.x - fn.x) * tp;
+      pPosArr[off+1] = fn.y + (tn.y - fn.y) * tp;
+      pPosArr[off+2] = fn.z + (tn.z - fn.z) * tp;
 
-      const fade = Math.sin(tp * Math.PI);  // 0→1→0 bell curve
-      this._tempA.copy(this._secondary).lerp(this._primary, pulse.colorWeight);
-      const br = fade * this.dimFactor * 1.7;
-      pc[off]=this._tempA.r*br; pc[off+1]=this._tempA.g*br; pc[off+2]=this._tempA.b*br;
+      const fade = Math.sin(tp * Math.PI);
+      this._colA.copy(this._secondary).lerp(this._primary, p.cw);
+      const br = fade * 2.2 * this.dimFactor;
+      pColArr[off]  =this._colA.r*br; pColArr[off+1]=this._colA.g*br; pColArr[off+2]=this._colA.b*br;
       activePulses++;
     }
     this._pulseGeo.getAttribute('position').needsUpdate = true;
     this._pulseGeo.getAttribute('color').needsUpdate    = true;
     this._pulseGeo.setDrawRange(0, activePulses);
 
-    // ── Starfield gentle rotation ─────────────────────────────────────────
+    // Slow star rotation
     if (this._starMesh) {
-      this._starMesh.rotation.y = t * 0.007;
-      this._starMesh.rotation.x = Math.sin(t * 0.003) * 0.035;
+      this._starMesh.rotation.y = t * 0.006;
+      this._starMesh.rotation.x = Math.sin(t * 0.0025) * 0.04;
     }
-
-    // ── Subtle camera sway (parallax depth feel) ──────────────────────────
-    this.camera.position.x = Math.sin(t * 0.055) * 2.8;
-    this.camera.position.y = Math.cos(t * 0.038) * 1.6;
-    this.camera.lookAt(0, 0, 0);
 
     this.renderer.render(this.scene, this.camera);
   }
 
-  // ── Cleanup ───────────────────────────────────────────────────────────────
   dispose() {
     if (this._animId) cancelAnimationFrame(this._animId);
     window.removeEventListener('resize',     this._onResize);
     window.removeEventListener('mousemove',  this._onMouseMove);
     window.removeEventListener('mouseleave', this._onMouseLeave);
-
-    [this._nodeMesh, this._lineMesh, this._pulseMesh, this._starMesh].forEach(m => {
+    [this._neurMesh, this._lineMesh, this._pulseMesh, this._starMesh].forEach(m => {
       if (!m) return;
       m.geometry?.dispose();
-      if (m.material) {
-        if (m.material.map) m.material.map.dispose();
-        m.material.dispose();
-      }
+      if (m.material) { if (m.material.map) m.material.map.dispose(); m.material.dispose(); }
     });
     this.renderer.dispose();
   }
