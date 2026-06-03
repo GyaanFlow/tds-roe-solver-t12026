@@ -72,8 +72,11 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: 0;
-  pointer-events: none; /* let all UI events pass through */
+  pointer-events: none;
   display: block;
+  /* Subtle vignette helps UI contrast without hiding the constellation */
+  mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 55%, rgba(0,0,0,0.65) 100%);
+  -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 55%, rgba(0,0,0,0.65) 100%);
 }
 .sr-only {
   position: absolute;
@@ -135,10 +138,11 @@ body {
 
 /* ── Sidebar ── */
 #sidebar {
-  background: rgba(5, 5, 5, 0.72);
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(4, 4, 6, 0.78);
+  backdrop-filter: blur(22px) saturate(180%) brightness(0.92);
+  -webkit-backdrop-filter: blur(22px) saturate(180%) brightness(0.92);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 1px 0 0 rgba(255,255,255,0.03), 4px 0 32px rgba(0,0,0,0.45);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -247,8 +251,27 @@ body {
 #nodeSearch::placeholder { color: var(--text-muted); }
 
 /* Progress */
-.progress-bar { width: 100%; height: 4px; background: var(--bg-surface); border-radius: 2px; overflow: hidden; }
-.progress-fill { height: 100%; width: 0%; background: var(--text-primary); transition: 0.3s; }
+.progress-bar { width: 100%; height: 3px; background: rgba(255,255,255,0.06); border-radius: 999px; overflow: hidden; }
+.progress-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--theme-primary), var(--theme-secondary));
+  border-radius: 999px;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 8px var(--theme-glow);
+  position: relative;
+}
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 40px; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4));
+  animation: progressShimmer 1.2s infinite;
+}
+@keyframes progressShimmer {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(20px); }
+}
 .progress-text { font-size: 11px; color: var(--text-secondary); margin-top: 6px; font-family: var(--font-mono); }
 
 /* Global Stats */
@@ -380,18 +403,21 @@ body {
   display: flex; flex-direction: column; height: 100%;
   min-width: 0;
   min-height: 0;
-  background: transparent; /* neural network canvas behind this */
+  background: transparent;
+  /* Subtle dark gradient over canvas improves text contrast without blocking the view */
+  background-image: linear-gradient(135deg, rgba(0,0,0,0.18) 0%, transparent 50%, rgba(0,0,0,0.12) 100%);
 }
 .editor-header {
-  height: 56px; border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  height: 56px; border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 24px;
   flex-shrink: 0;
   position: relative;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 4px 24px rgba(0,0,0,0.3);
 }
 .mobile-header-row {
   display: none;
@@ -448,22 +474,32 @@ body {
   -webkit-overflow-scrolling: touch;
   position: relative;
   z-index: 1;
-  pointer-events: none; /* Let pointer events pass through empty space to constellation */
+  /* Keep pointer-events auto so iOS touch-scroll works on the container itself */
+  pointer-events: auto;
   background: transparent;
 }
 
 .editor-canvas > * {
-  pointer-events: auto; /* Re-enable pointer events for UI cards, inputs, details */
+  pointer-events: auto;
 }
 
-/* Welcome Screen */
+/* Welcome Screen — merged single definition (see also l.1370+ for animation overrides) */
 .welcome-screen {
-  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; color: var(--text-secondary);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-secondary);
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  padding: 48px 24px 40px;
+  background: radial-gradient(ellipse 70% 50% at 50% 35%, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
 }
 .welcome-icon { margin-bottom: 24px; color: var(--text-muted); }
 .welcome-screen h1 { font-size: 24px; color: var(--text-primary); margin-bottom: 12px; font-weight: 500; }
-.welcome-screen .version { font-size: 12px; vertical-align: top; background: var(--bg-active); border: 1px solid var(--border); padding: 2px 6px; border-radius: 4px; margin-left: 6px;}
 .welcome-screen p { max-width: 440px; font-size: 14px; line-height: 1.6; }
 
 /* Disclaimer Card */
@@ -719,18 +755,18 @@ body {
   }
 }
 .panel-section {
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  background: rgba(15, 15, 15, 0.45);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  background: rgba(8, 8, 12, 0.62);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.04);
   overflow: hidden;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.2s ease;
 }
 .panel-section:hover {
-  border-color: var(--theme-primary);
-  box-shadow: 0 8px 32px var(--theme-glow);
+  border-color: rgba(255,255,255,0.12);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--theme-glow), inset 0 1px 0 rgba(255,255,255,0.06);
 }
 .panel-section summary {
   list-style: none;
@@ -926,11 +962,11 @@ body {
     position: fixed;
     inset: 0 auto 0 0;
     width: min(88vw, 340px);
-    height: 100vh;
+    height: 100dvh;
     z-index: 30;
     transform: translateX(-100%);
-    transition: transform 0.25s ease;
-    box-shadow: 20px 0 40px rgba(0, 0, 0, 0.35);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 24px 0 60px rgba(0, 0, 0, 0.6), 1px 0 0 rgba(255,255,255,0.05);
   }
 
   #sidebar.mobile-open {
@@ -1038,19 +1074,20 @@ body {
   margin-bottom: 40px;
 }
 .dashboard-card {
-  background: rgba(10, 10, 10, 0.7);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  background: rgba(6, 6, 10, 0.72);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
   padding: 20px;
-  transition: border-color 0.3s, box-shadow 0.3s, transform 0.1s ease-out;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.12s ease-out;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transform-style: preserve-3d;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
 }
 .dashboard-card::before {
   content: '';
@@ -1342,14 +1379,9 @@ body {
   40%, 60% { transform: translate3d(8px, 0, 0); }
 }
 
-/* ── Welcome Screen Glow & Levitation Layout ── */
-.welcome-screen {
-  position: relative;
-  overflow: visible; /* Restore standard document flow and scrollbars */
-  background: radial-gradient(circle at center, rgba(245, 158, 11, 0.04) 0%, transparent 65%);
-  width: 100%;
-  padding: 40px 24px;
-}
+
+/* ── Welcome Screen Glow & Levitation Animations ── */
+/* Background gradient is set on the primary .welcome-screen rule above */
 
 /* Levitating float animation */
 @keyframes welcomeFloat {
@@ -1406,13 +1438,14 @@ body {
 .feature-mini-card {
   flex: 1;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 12px;
+  background: rgba(6, 6, 10, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
   text-align: center;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: border-color 0.3s, box-shadow 0.3s, transform 0.1s ease-out;
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.12s ease-out;
   position: relative;
   overflow: hidden;
   transform-style: preserve-3d;
@@ -1436,10 +1469,10 @@ body {
   transition: transform 0.1s ease-out;
 }
 .feature-mini-card:hover {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: var(--theme-primary);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25), inset 0 0 12px var(--theme-glow);
+  background: rgba(10, 10, 16, 0.72);
+  border-color: rgba(255,255,255,0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--theme-glow), inset 0 1px 0 rgba(255,255,255,0.06);
 }
 .feature-mini-icon {
   width: 36px;

@@ -207,9 +207,8 @@ function persistUiState() {
   localStorage.setItem(STORAGE_KEYS.openPanels, JSON.stringify([...openPanels]));
   localStorage.setItem('rawFocusEnabled', String(rawFocusEnabled));
   drawEmailIdenticon(emailVal);
-  if (networkCanvas) {
-    networkCanvas.generateNetwork(emailVal || 'anonymous');
-  }
+  // NOTE: generateNetwork is NOT called here to avoid rebuilding 200 nodes on every
+  // panel toggle / question select / etc. It is called only when email changes (see emailInput listener).
 }
 
 function ensureToastRoot() {
@@ -1156,7 +1155,16 @@ termSelect.addEventListener('change', () => {
   persistUiState();
 });
 examSelect.addEventListener('change', persistUiState);
-emailInput.addEventListener('input', persistUiState);
+let _lastEmailForNetwork = '';
+emailInput.addEventListener('input', () => {
+  persistUiState();
+  // Only rebuild the neural network when the email value actually changed
+  const emailVal = emailInput.value.trim();
+  if (networkCanvas && emailVal !== _lastEmailForNetwork) {
+    _lastEmailForNetwork = emailVal;
+    networkCanvas.generateNetwork(emailVal || 'anonymous');
+  }
+});
 
 copyAllBtn?.addEventListener('click', (event) => {
   const allText = workspaceData.answers.map((answer, index) => `=== Q${index + 1}: ${answer.title} ===\n${answer.answer}`).join('\n\n');
@@ -1270,6 +1278,7 @@ if (agreeDisclaimerCheckbox) {
 let identiconAnimationId = null;
 const identiconState = {
   seed: '',
+  theme: '',
   angleX: 0,
   angleY: 0,
   hoverScale: 1.0,
@@ -1521,13 +1530,21 @@ initNetworkCanvas().then(() => {
   
   setTimeout(() => {
     const initialEmail = emailInput.value.trim();
+    _lastEmailForNetwork = initialEmail; // Sync sentinel so first input event doesn't double-regenerate
     drawEmailIdenticon(initialEmail);
     if (networkCanvas) {
       networkCanvas.generateNetwork(initialEmail || 'anonymous');
+      // Apply theme colors immediately
+      const hue = THEME_HUES[activeTheme];
+      if (hue) {
+        const primary   = `hsl(${hue.primary}, 90%, 58%)`;
+        const secondary = `hsl(${hue.secondary}, 90%, 58%)`;
+        networkCanvas.setThemeColors(primary, secondary);
+      }
       // If workspace is already restored from cache, set dimmed state
       if (workspaceData.answers && workspaceData.answers.length > 0) {
         networkCanvas.setDimmed(true);
       }
     }
-  }, 200);
+  }, 150);
 });
