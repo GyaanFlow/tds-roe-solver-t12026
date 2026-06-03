@@ -1,486 +1,546 @@
 import * as THREE from 'https://unpkg.com/three@0.128.0/build/three.module.js';
-import { OrbitControls } from 'https://unpkg.com/three@0.128.0/examples/jsm/controls/OrbitControls.js';
 
-/* ─────────────────────────────────────────────────────────
-   Premium 3D Dynamic Math Wave Grid & Quantum Nebula
-   ─────────────────────────────────────────────────────────
-   • 60x60 grid of soft-glowing particles forming a wave landscape.
-   • Sharing position buffers between Points and LineSegments for 60fps.
-   • Spring-damped cursor repulsion deforming the grid into ripples.
-   • Upward-drifting, self-recycling mathematical glyph sprites.
-   • Smooth 1.2s HSL color transitions on theme selector updates.
-   ───────────────────────────────────────────────────────── */
+/* ─────────────────────────────────────────────────────────────────────────────
+   Premium 3D Neural Network Constellation
+   ─────────────────────────────────────────────────────────────────────────────
+   • Full-viewport fixed canvas — covers everything including behind the sidebar.
+   • Deterministic seed-based layout (LCG seeded RNG from user's email).
+   • 180 neurons distributed in deep 3D space, colour-weighted by layer.
+   • Up to 1 200 synapse lines; opacity fades with distance for depth-cue.
+   • Glowing action-potential pulses travel along synapses with a comet trail.
+   • Background star-field layer for additional depth.
+   • Spring-damped cursor proximity: nodes gently bloom & repel near the cursor.
+   • Smooth HSL theme interpolation — silky transition across all four themes.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+// ── Deterministic LCG random generator seeded from a string ──────────────────
+function createSeededRandom(seedStr) {
+  let hash = 2166136261; // FNV offset basis
+  const src = (seedStr || 'anonymous').toLowerCase();
+  for (let i = 0; i < src.length; i++) {
+    hash ^= src.charCodeAt(i);
+    hash = (Math.imul(hash, 16777619)) >>> 0;
+  }
+  let state = hash;
+  return function () {
+    state ^= state << 13;
+    state ^= state >>> 17;
+    state ^= state << 5;
+    return ((state >>> 0) / 4294967296);
+  };
+}
+
+// ── Build a soft radial-glow canvas texture ───────────────────────────────────
+function buildGlowTexture(size, innerStop, outerStop) {
+  const c = document.createElement('canvas');
+  c.width = size; c.height = size;
+  const ctx = c.getContext('2d');
+  const half = size / 2;
+  const g = ctx.createRadialGradient(half, half, 0, half, half, half);
+  g.addColorStop(0,          `rgba(255,255,255,${innerStop})`);
+  g.addColorStop(0.25,       `rgba(255,255,255,${innerStop * 0.7})`);
+  g.addColorStop(0.55,       `rgba(200,220,255,${innerStop * 0.25})`);
+  g.addColorStop(1,          `rgba(255,255,255,${outerStop})`);
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, size, size);
+  return new THREE.CanvasTexture(c);
+}
 
 export class NetworkCanvasManager {
   constructor(canvasId) {
     this.canvas = document.getElementById(canvasId);
     if (!this.canvas) return;
-    this.container = this.canvas.parentElement;
 
-    // Scene
+    // The canvas is fixed/full-viewport — use the window itself as the size reference
+    this._w = () => window.innerWidth;
+    this._h = () => window.innerHeight;
+
+    // ── Scene ────────────────────────────────────────────────────────────────
     this.scene = new THREE.Scene();
 
-    // Camera
-    const w = this.container.clientWidth;
-    const h = this.container.clientHeight;
-    this.camera = new THREE.PerspectiveCamera(45, w / h, 1, 1000);
-    this.camera.position.set(0, 45, 90);
-    this.camera.lookAt(0, -6, 0);
-    this.setViewOffset();
+    // ── Camera ───────────────────────────────────────────────────────────────
+    this.camera = new THREE.PerspectiveCamera(55, this._w() / this._h(), 0.5, 1000);
+    this.camera.position.set(0, 0, 72);
 
-    // Renderer
+    // ── Renderer ─────────────────────────────────────────────────────────────
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
       antialias: true,
       alpha: true,
       powerPreference: 'high-performance'
     });
-    this.renderer.setSize(w, h);
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    this.renderer.setSize(this._w(), this._h());
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.15;
+    this.renderer.toneMappingExposure = 1.2;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-    // Controls
-    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-    this.controls.enableDamping = true;
-    this.controls.dampingFactor = 0.05;
-    this.controls.minDistance = 10;
-    this.controls.maxDistance = 300;
-    this.controls.target.set(0, -6, 0);
+    // ── Configuration ─────────────────────────────────────────────────────────
+    this.NODE_COUNT    = 180;   // total neurons
+    this.HUB_COUNT     = 22;    // larger hub neurons
+    this.MAX_LINES     = 1200;  // pre-allocated synapse segments
+    this.MAX_PULSES    = 40;    // concurrent signal pulses
+    this.STAR_COUNT    = 280;   // background star field
+    this.CONNECT_DIST  = 18;    // max synapse distance
 
-    // Dimmed state flag
-    this.isDimmed = false;
-    this.dimFactor = 1.0;
+    // ── State ─────────────────────────────────────────────────────────────────
+    this.isDimmed   = false;
+    this.dimFactor  = 1.0;
+    this.nodes      = [];
+    this.lightPulses = [];
+    this.seed       = 'anonymous';
 
-    // Standard Theme Colors setup
-    this.primaryColor = new THREE.Color('#10b981');
-    this.secondaryColor = new THREE.Color('#3b82f6');
-    this.targetPrimaryColor = new THREE.Color('#10b981');
-    this.targetSecondaryColor = new THREE.Color('#3b82f6');
+    // ── Theme colors (lerped every frame) ────────────────────────────────────
+    this.primaryColor        = new THREE.Color('#f59e0b');
+    this.secondaryColor      = new THREE.Color('#ef4444');
+    this.targetPrimaryColor  = new THREE.Color('#f59e0b');
+    this.targetSecondaryColor= new THREE.Color('#ef4444');
 
-    // Create lighting
-    this._setupLights();
+    // ── Pre-allocated geometry buffers (no GC pressure) ──────────────────────
+    this.linePositions  = new Float32Array(this.MAX_LINES * 2 * 3);
+    this.lineColors     = new Float32Array(this.MAX_LINES * 2 * 3);
+    this.pulsePositions = new Float32Array(this.MAX_PULSES * 3);
+    this.pulseColors    = new Float32Array(this.MAX_PULSES * 3);
 
-    // Create 3D grid
-    this._setupGrid();
+    // ── Interaction ──────────────────────────────────────────────────────────
+    this.mouse       = new THREE.Vector2(9999, 9999);
+    this.mouseTarget = new THREE.Vector3(9999, 9999, 9999);
+    this.raycaster   = new THREE.Raycaster();
+    this.plane       = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+    this.mouseActive = false;
 
-    // Create floating symbols
-    this._setupParticles();
-
-    // Raycast setup
-    this.raycaster = new THREE.Raycaster();
-    this.mouse = new THREE.Vector2(9999, 9999);
-    this.plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 14); // Grid baseline plane at Y = -14
-
-    // Event listeners
-    this.animate = this.animate.bind(this);
-    this._onResize = this._onResize.bind(this);
+    // ── Pre-bind ─────────────────────────────────────────────────────────────
+    this.animate      = this.animate.bind(this);
+    this._onResize    = this._onResize.bind(this);
     this._onMouseMove = this._onMouseMove.bind(this);
-    this._onMouseLeave = this._onMouseLeave.bind(this);
+    this._onMouseLeave= this._onMouseLeave.bind(this);
 
-    window.addEventListener('resize', this._onResize);
-    this.container.addEventListener('mousemove', this._onMouseMove);
-    this.container.addEventListener('mouseleave', this._onMouseLeave);
+    window.addEventListener('resize',      this._onResize);
+    window.addEventListener('mousemove',   this._onMouseMove);
+    window.addEventListener('mouseleave',  this._onMouseLeave);
 
-    this.lastTime = performance.now();
-    this.animate();
+    // ── Build scene ───────────────────────────────────────────────────────────
+    this._buildStarField();
+    this._buildNetworkGeometry();
+    this.generateNetwork('anonymous');
+    this.animationId = requestAnimationFrame(this.animate);
   }
 
-  /* ━━━━━━━━━━━━━━━━━ LIGHTS SETUP ━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  _setupLights() {
-    this.ambientLight = new THREE.AmbientLight(0xffffff, 0.45);
-    this.scene.add(this.ambientLight);
-
-    this.mainLight = new THREE.DirectionalLight(0xffffff, 1.8);
-    this.mainLight.position.set(20, 60, 20);
-    this.scene.add(this.mainLight);
-  }
-
-  /* ━━━━━━━━━━━━━━━━━ RESIZE / ALIGNMENT ━━━━━━━━━━━━━━━━━━ */
-  setViewOffset() {
-    if (!this.container) return;
-    const w = this.container.clientWidth;
-    const h = this.container.clientHeight;
-    // Keep camera shifted horizontally to balance workspace layout
-    const offsetX = -w * 0.15;
-    this.camera.setViewOffset(w, h, offsetX, 0, w, h);
-  }
-
-  _onResize() {
-    if (!this.container) return;
-    const w = this.container.clientWidth;
-    const h = this.container.clientHeight;
-    this.camera.aspect = w / h;
-    this.camera.updateProjectionMatrix();
-    this.setViewOffset();
-    this.renderer.setSize(w, h);
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-  }
-
-  /* ━━━━━━━━━━━━━━━━━ GRID SETUP ━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  _setupGrid() {
-    const sizeX = 60;
-    const sizeZ = 60;
-    const spacing = 1.6;
-    const nodeCount = sizeX * sizeZ;
-
-    const positions = new Float32Array(nodeCount * 3);
-    const colors = new Float32Array(nodeCount * 3);
-
-    this.gridNodes = [];
-
-    let idx = 0;
-    for (let x = 0; x < sizeX; x++) {
-      for (let z = 0; z < sizeZ; z++) {
-        const posX = (x - sizeX / 2) * spacing;
-        const posZ = (z - sizeZ / 2) * spacing;
-        const posY = -14;
-
-        positions[idx * 3] = posX;
-        positions[idx * 3 + 1] = posY;
-        positions[idx * 3 + 2] = posZ;
-
-        // Color weight based on distance from center (creates a radial color shift)
-        const distFromCenter = Math.sqrt(posX * posX + posZ * posZ);
-        const colorWeight = Math.min(1.0, distFromCenter / 50.0);
-
-        colors[idx * 3] = 1;
-        colors[idx * 3 + 1] = 1;
-        colors[idx * 3 + 2] = 1;
-
-        this.gridNodes.push({
-          origX: posX,
-          origZ: posZ,
-          x: posX,
-          z: posZ,
-          y: posY,
-          vy: 0,
-          colorWeight
-        });
-        idx++;
-      }
+  // ── STAR FIELD ──────────────────────────────────────────────────────────────
+  _buildStarField() {
+    const starPositions = new Float32Array(this.STAR_COUNT * 3);
+    const starColors    = new Float32Array(this.STAR_COUNT * 3);
+    const rng = createSeededRandom('starfield');
+    for (let i = 0; i < this.STAR_COUNT; i++) {
+      starPositions[i * 3]     = (rng() - 0.5) * 280;
+      starPositions[i * 3 + 1] = (rng() - 0.5) * 180;
+      starPositions[i * 3 + 2] = -40 - rng() * 80;
+      const bright = 0.3 + rng() * 0.5;
+      starColors[i * 3]     = bright;
+      starColors[i * 3 + 1] = bright;
+      starColors[i * 3 + 2] = bright + 0.15;
     }
-
-    // Grid connections indices (LineSegments)
-    const indices = [];
-    for (let x = 0; x < sizeX; x++) {
-      for (let z = 0; z < sizeZ; z++) {
-        const currentIdx = x * sizeZ + z;
-        // Right link
-        if (x < sizeX - 1) {
-          const rightIdx = (x + 1) * sizeZ + z;
-          indices.push(currentIdx, rightIdx);
-        }
-        // Down link
-        if (z < sizeZ - 1) {
-          const downIdx = x * sizeZ + (z + 1);
-          indices.push(currentIdx, downIdx);
-        }
-      }
-    }
-
-    // Shared Buffer Geometry attributes for rendering points + lines
-    this.pointsGeometry = new THREE.BufferGeometry();
-    this.pointsGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    this.pointsGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-    this.linesGeometry = new THREE.BufferGeometry();
-    this.linesGeometry.setAttribute('position', this.pointsGeometry.getAttribute('position'));
-    this.linesGeometry.setAttribute('color', this.pointsGeometry.getAttribute('color'));
-    this.linesGeometry.setIndex(indices);
-
-    // Glowing circular particle texture
-    const pCanvas = document.createElement('canvas');
-    pCanvas.width = 32;
-    pCanvas.height = 32;
-    const pCtx = pCanvas.getContext('2d');
-    const grad = pCtx.createRadialGradient(16, 16, 0, 16, 16, 16);
-    grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
-    grad.addColorStop(0.2, 'rgba(240, 245, 255, 0.8)');
-    grad.addColorStop(0.5, 'rgba(200, 220, 255, 0.25)');
-    grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
-    pCtx.fillStyle = grad;
-    pCtx.fillRect(0, 0, 32, 32);
-    const pTexture = new THREE.CanvasTexture(pCanvas);
-
-    // Grid Points Material
-    this.pointsMaterial = new THREE.PointsMaterial({
-      size: 1.8,
-      map: pTexture,
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+    geo.setAttribute('color',    new THREE.BufferAttribute(starColors, 3));
+    const starTex = buildGlowTexture(8, 0.9, 0);
+    const mat = new THREE.PointsMaterial({
+      size: 0.45,
+      map: starTex,
       vertexColors: true,
       transparent: true,
-      opacity: 0.85,
+      opacity: 0.55,
       blending: THREE.AdditiveBlending,
       depthWrite: false
     });
+    this.starField = new THREE.Points(geo, mat);
+    this.scene.add(this.starField);
+  }
 
+  // ── NETWORK GEOMETRY (one-time buffer setup) ─────────────────────────────
+  _buildNetworkGeometry() {
+    // Node Points
+    this.pointsGeometry = new THREE.BufferGeometry();
+    const nodePosArr  = new Float32Array(this.NODE_COUNT * 3);
+    const nodeColArr  = new Float32Array(this.NODE_COUNT * 3);
+    const nodeSzArr   = new Float32Array(this.NODE_COUNT);
+    this.pointsGeometry.setAttribute('position', new THREE.BufferAttribute(nodePosArr, 3));
+    this.pointsGeometry.setAttribute('color',    new THREE.BufferAttribute(nodeColArr, 3));
+    this.pointsGeometry.setAttribute('size',     new THREE.BufferAttribute(nodeSzArr,  1));
+
+    const nodeTex = buildGlowTexture(64, 1.0, 0);
+    this.pointsMaterial = new THREE.PointsMaterial({
+      size: 2.2,
+      map: nodeTex,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.92,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      sizeAttenuation: true
+    });
     this.pointsMesh = new THREE.Points(this.pointsGeometry, this.pointsMaterial);
     this.scene.add(this.pointsMesh);
 
-    // Grid Lines Material
+    // Synapse Lines
+    this.linesGeometry = new THREE.BufferGeometry();
+    this.linesGeometry.setAttribute('position', new THREE.BufferAttribute(this.linePositions, 3));
+    this.linesGeometry.setAttribute('color',    new THREE.BufferAttribute(this.lineColors, 3));
     this.linesMaterial = new THREE.LineBasicMaterial({
-      color: 0xffffff,
+      vertexColors: true,
       transparent: true,
-      opacity: 0.16,
+      opacity: 0.5,
       blending: THREE.AdditiveBlending,
       depthWrite: false
     });
-
     this.linesMesh = new THREE.LineSegments(this.linesGeometry, this.linesMaterial);
     this.scene.add(this.linesMesh);
+
+    // Action Potential Pulses
+    this.pulseGeometry = new THREE.BufferGeometry();
+    this.pulseGeometry.setAttribute('position', new THREE.BufferAttribute(this.pulsePositions, 3));
+    this.pulseGeometry.setAttribute('color',    new THREE.BufferAttribute(this.pulseColors, 3));
+    const pulseTex = buildGlowTexture(32, 1.0, 0);
+    this.pulseMaterial = new THREE.PointsMaterial({
+      size: 3.8,
+      map: pulseTex,
+      vertexColors: true,
+      transparent: true,
+      opacity: 1.0,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      sizeAttenuation: true
+    });
+    this.pulseMesh = new THREE.Points(this.pulseGeometry, this.pulseMaterial);
+    this.scene.add(this.pulseMesh);
   }
 
-  /* ━━━━━━━━━━━━━━━━━ FLOATING MATH NEBULA ━━━━━━━━━━━━━━━━━━ */
-  _setupParticles() {
-    const chars = ['∫', 'λ', 'π', 'θ', '∑', '√', 'f(x)', 'dy/dx', '0', '1', 'log', 'lim', '∞'];
-    this.particles = [];
+  // ── GENERATE NETWORK from seed ────────────────────────────────────────────
+  generateNetwork(seedStr) {
+    this.seed = seedStr || 'anonymous';
+    const rng = createSeededRandom(this.seed);
 
-    // Pre-render textures for math symbols
-    const textures = chars.map(char => {
-      const canvas = document.createElement('canvas');
-      canvas.width = 64;
-      canvas.height = 64;
-      const ctx = canvas.getContext('2d');
-      ctx.fillStyle = '#ffffff';
-      ctx.font = 'bold 36px monospace';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(char, 32, 32);
-      return new THREE.CanvasTexture(canvas);
-    });
+    this.nodes = [];
+    this.lightPulses = [];
 
-    // Spawn floating characters
-    for (let i = 0; i < 35; i++) {
-      const tex = textures[Math.floor(Math.random() * textures.length)];
-      const mat = new THREE.SpriteMaterial({
-        map: tex,
-        transparent: true,
-        opacity: 0.45,
-        blending: THREE.AdditiveBlending
+    // Distribute neurons in a wide 3D volume to fill the viewport
+    const rangeX = 95, rangeY = 58, rangeZ = 45;
+
+    for (let i = 0; i < this.NODE_COUNT; i++) {
+      const isHub = i < this.HUB_COUNT;
+
+      // Spread nodes in layers (simulates a multi-layer network structure)
+      const layer    = Math.floor((i / this.NODE_COUNT) * 5);
+      const layerBias= (layer / 4 - 0.5) * rangeX * 0.8;
+      const x = layerBias + (rng() - 0.5) * rangeX * 0.55;
+      const y = (rng() - 0.5) * rangeY;
+      const z = (rng() - 0.5) * rangeZ;
+
+      this.nodes.push({
+        origX: x, origY: y, origZ: z,
+        x, y, z,
+        vx: 0, vy: 0, vz: 0,
+        layer,
+        isHub,
+        size: isHub ? (2.8 + rng() * 1.4) : (1.0 + rng() * 1.1),
+        colorWeight: rng(),
+        windPhase:  rng() * Math.PI * 2,
+        windFreq:   0.25 + rng() * 0.6,
+        windAmp:    isHub ? (0.4 + rng() * 0.5) : (0.7 + rng() * 1.1),
+        glowPhase:  rng() * Math.PI * 2,
+        glowFreq:   0.5 + rng() * 1.2
       });
+    }
 
-      const sprite = new THREE.Sprite(mat);
-      const scale = 2.0 + Math.random() * 2.5;
-      sprite.scale.set(scale, scale, 1);
+    // Pre-populate pulses
+    for (let k = 0; k < 12; k++) this._spawnPulse(rng);
 
-      // Distribute in a box volume above the wave valley
-      sprite.position.set(
-        (Math.random() - 0.5) * 90,
-        -12 + Math.random() * 45,
-        (Math.random() - 0.5) * 70
-      );
+    // Sync positions buffer
+    const posAttr = this.pointsGeometry.getAttribute('position');
+    const posArr  = posAttr.array;
+    for (let i = 0; i < this.NODE_COUNT; i++) {
+      posArr[i * 3]     = this.nodes[i].x;
+      posArr[i * 3 + 1] = this.nodes[i].y;
+      posArr[i * 3 + 2] = this.nodes[i].z;
+    }
+    posAttr.needsUpdate = true;
+  }
 
-      this.scene.add(sprite);
+  // ── SPAWN a new signal pulse ──────────────────────────────────────────────
+  _spawnPulse(optRng) {
+    const rng = optRng || Math.random;
+    const fromIdx = Math.floor(rng() * this.NODE_COUNT);
+    const fromNode = this.nodes[fromIdx];
+    if (!fromNode) return;
 
-      this.particles.push({
-        sprite,
-        mat,
-        vy: 0.03 + Math.random() * 0.05,
-        wobblePhase: Math.random() * 100,
-        wobbleSpeed: 0.6 + Math.random() * 1.2,
-        wobbleAmp: 0.2 + Math.random() * 0.4,
-        spinSpeed: (Math.random() - 0.5) * 0.015,
-        origX: sprite.position.x
+    const candidates = [];
+    for (let i = 0; i < this.NODE_COUNT; i++) {
+      if (i === fromIdx) continue;
+      const n = this.nodes[i];
+      const dx = fromNode.x - n.x;
+      const dy = fromNode.y - n.y;
+      const dz = fromNode.z - n.z;
+      if (Math.sqrt(dx*dx + dy*dy + dz*dz) < this.CONNECT_DIST) {
+        candidates.push(i);
+      }
+    }
+
+    if (candidates.length > 0) {
+      const toIdx = candidates[Math.floor(rng() * candidates.length)];
+      this.lightPulses.push({
+        from:     fromIdx,
+        to:       toIdx,
+        progress: 0,
+        speed:    0.008 + (typeof rng === 'function' ? rng() : Math.random()) * 0.014,
+        colorWeight: typeof rng === 'function' ? rng() : Math.random()
       });
     }
   }
 
-  /* ━━━━━━━━━━━━━━━━━ THEME / EXPOSURE SYNC ━━━━━━━━━━━━━━━ */
+  // ── THEME ─────────────────────────────────────────────────────────────────
   setThemeColors(primary, secondary) {
-    if (primary) this.targetPrimaryColor.set(primary);
+    if (primary)   this.targetPrimaryColor.set(primary);
     if (secondary) this.targetSecondaryColor.set(secondary);
   }
 
-  setDimmed(dimmed) {
-    this.isDimmed = dimmed;
+  setDimmed(dimmed) { this.isDimmed = dimmed; }
+
+  // ── RESIZE ────────────────────────────────────────────────────────────────
+  _onResize() {
+    const w = this._w(), h = this._h();
+    this.camera.aspect = w / h;
+    // Keep the entire network in view as window size changes
+    this.camera.position.z = Math.max(62, 95 / Math.max(w / h, 0.6));
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(w, h);
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   }
 
-  generateNetwork(seed) {
-    // Stub to align with App workspace reset flow
-  }
-
-  /* ━━━━━━━━━━━━━━━━━ MOUSE / POINTER LISTENERS ━━━━━━━━━━━ */
+  // ── MOUSE ─────────────────────────────────────────────────────────────────
   _onMouseMove(e) {
-    if (!this.container) return;
-    const rect = this.container.getBoundingClientRect();
-    this.mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-    this.mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    this.mouse.x =  (e.clientX / this._w()) * 2 - 1;
+    this.mouse.y = -(e.clientY / this._h()) * 2 + 1;
+    this.mouseActive = true;
   }
 
   _onMouseLeave() {
-    this.mouse.set(9999, 9999);
+    this.mouseActive = false;
+    this.mouseTarget.set(9999, 9999, 9999);
   }
 
-  /* ━━━━━━━━━━━━━━━━━ ANIMATION LOOP ━━━━━━━━━━━━━━━━━━━━━━ */
+  // ── ANIMATION LOOP ────────────────────────────────────────────────────────
   animate() {
     this.animationId = requestAnimationFrame(this.animate);
-    const now = performance.now();
-    const dt = (now - this.lastTime) / 1000;
-    this.lastTime = now;
+    const time = performance.now() * 0.001;
 
-    if (this.controls) this.controls.update();
+    // ── Smooth theme color lerp ────────────────────────────────────────────
+    this.primaryColor.lerp(this.targetPrimaryColor,   0.035);
+    this.secondaryColor.lerp(this.targetSecondaryColor, 0.035);
 
-    // Lerp active theme colors smoothly
-    this.primaryColor.lerp(this.targetPrimaryColor, 0.04);
-    this.secondaryColor.lerp(this.targetSecondaryColor, 0.04);
+    // ── Dimming lerp ──────────────────────────────────────────────────────
+    const targetDim = this.isDimmed ? 0.1 : 1.0;
+    this.dimFactor += (targetDim - this.dimFactor) * 0.06;
 
-    // Exposure adjustments based on focus mode / workspace layout
-    const targetExposure = this.isDimmed ? 0.45 : 1.15;
-    this.renderer.toneMappingExposure += (targetExposure - this.renderer.toneMappingExposure) * 0.05;
+    // ── Exposure ──────────────────────────────────────────────────────────
+    this.renderer.toneMappingExposure += ((this.isDimmed ? 0.5 : 1.2) - this.renderer.toneMappingExposure) * 0.05;
 
-    const dimFactor = this.isDimmed ? 0.35 : 1.0;
-    this.dimFactor += (dimFactor - this.dimFactor) * 0.05;
-
-    // Apply color changes to grid line material
-    if (this.linesMaterial) {
-      this.linesMaterial.color.copy(this.primaryColor);
-      this.linesMaterial.opacity = 0.16 * this.dimFactor;
-    }
-    if (this.pointsMaterial) {
-      this.pointsMaterial.opacity = 0.85 * this.dimFactor;
-      this.pointsMaterial.size = (this.isDimmed ? 1.3 : 1.8);
-    }
-
-    // Raycast projection for mouse interactive dip/repulsion
-    let mouseActive = false;
-    const intersectPoint = new THREE.Vector3();
-    if (this.mouse.x !== 9999) {
+    // ── Cursor raycast ────────────────────────────────────────────────────
+    if (this.mouseActive) {
       this.raycaster.setFromCamera(this.mouse, this.camera);
-      if (this.raycaster.ray.intersectPlane(this.plane, intersectPoint)) {
-        mouseActive = true;
+      const hit = new THREE.Vector3();
+      if (this.raycaster.ray.intersectPlane(this.plane, hit)) {
+        this.mouseTarget.copy(hit);
       }
     }
 
-    // Update Wave Heights and Colors
-    const positionsAttr = this.pointsGeometry.getAttribute('position');
-    const positions = positionsAttr.array;
-    const colorsAttr = this.pointsGeometry.getAttribute('color');
-    const colors = colorsAttr.array;
-    const nodeCount = this.gridNodes.length;
+    // ── Node physics + position buffer update ────────────────────────────
+    const posAttr = this.pointsGeometry.getAttribute('position');
+    const colAttr = this.pointsGeometry.getAttribute('color');
+    const posArr  = posAttr.array;
+    const colArr  = colAttr.array;
+    const tempCol = new THREE.Color();
+    const tempCol2 = new THREE.Color();
 
-    const time = now * 0.001;
-    const tempColor = new THREE.Color();
+    for (let i = 0; i < this.NODE_COUNT; i++) {
+      const node = this.nodes[i];
 
-    for (let i = 0; i < nodeCount; i++) {
-      const node = this.gridNodes[i];
+      // Organic drift (multi-freq sinusoidal)
+      const wx = Math.sin(time * node.windFreq       + node.windPhase)       * node.windAmp * 0.28;
+      const wy = Math.cos(time * node.windFreq * 0.7 + node.windPhase + 1.1) * node.windAmp * 0.18;
+      const wz = Math.sin(time * node.windFreq * 1.3 + node.windPhase + 2.2) * node.windAmp * 0.12;
 
-      // Multi-layered sine wave calculation representing math landscape
-      const wave1 = Math.sin(time * 1.3 + node.origX * 0.12) * 3.2;
-      const wave2 = Math.cos(time * 0.9 + node.origZ * 0.12) * 3.2;
-      const wave3 = Math.sin(time * 0.5 + (node.origX + node.origZ) * 0.06) * 1.5;
-      const baseWaveY = wave1 + wave2 + wave3;
+      let tX = node.origX + wx;
+      let tY = node.origY + wy;
+      let tZ = node.origZ + wz;
 
-      // Pointer repulsion (circular dip deformation)
-      let dent = 0;
-      if (mouseActive) {
-        const dx = node.x - intersectPoint.x;
-        const dz = node.z - intersectPoint.z;
-        const dist = Math.sqrt(dx * dx + dz * dz);
-        const radius = 22;
+      // Cursor proximity repulsion
+      if (this.mouseActive) {
+        const dx = node.x - this.mouseTarget.x;
+        const dy = node.y - this.mouseTarget.y;
+        const dz = node.z - this.mouseTarget.z;
+        const dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
+        const R = node.isHub ? 24 : 18;
 
-        if (dist < radius) {
-          const factor = 1.0 - dist / radius;
-          dent = -11.0 * factor * factor; // Pushes points down, creating a beautiful spring valley
+        if (dist < R && dist > 0.1) {
+          const f = (1 - dist / R);
+          const push = f * f * (this.isDimmed ? 3.5 : 7.5);
+          tX += (dx / dist) * push;
+          tY += (dy / dist) * push;
+          tZ += (dz / dist) * push;
         }
       }
 
-      const targetY = -14 + baseWaveY + dent;
-      
-      // Spring damping physics
-      const springK = this.isDimmed ? 0.05 : 0.09;
-      const friction = 0.83;
-      node.vy = (node.vy + (targetY - node.y) * springK) * friction;
+      // Spring-damped physics
+      const spring   = this.isDimmed ? 0.025 : 0.07;
+      const friction  = 0.87;
+      node.vx = (node.vx + (tX - node.x) * spring) * friction;
+      node.vy = (node.vy + (tY - node.y) * spring) * friction;
+      node.vz = (node.vz + (tZ - node.z) * spring) * friction;
+      node.x += node.vx;
       node.y += node.vy;
+      node.z += node.vz;
 
-      // Write updated Y position
-      positions[i * 3 + 1] = node.y;
+      posArr[i * 3]     = node.x;
+      posArr[i * 3 + 1] = node.y;
+      posArr[i * 3 + 2] = node.z;
 
-      // Interpolate vertex colors based on height and radial weight
-      const heightFactor = Math.max(0.0, Math.min(1.0, (node.y + 20) / 12));
-      const blendWeight = (node.colorWeight * 0.4) + (heightFactor * 0.6);
-      
-      tempColor.copy(this.primaryColor).lerp(this.secondaryColor, blendWeight);
-      colors[i * 3] = tempColor.r;
-      colors[i * 3 + 1] = tempColor.g;
-      colors[i * 3 + 2] = tempColor.b;
+      // Per-vertex colour: blend primary→secondary by layer + pulsing glow
+      const glow = 0.55 + 0.45 * Math.sin(time * node.glowFreq + node.glowPhase);
+      const cw   = node.colorWeight * 0.6 + (node.layer / 4) * 0.4;
+
+      // Proximity color boost
+      let proximityBoost = 0;
+      if (this.mouseActive) {
+        const dx = node.x - this.mouseTarget.x;
+        const dy = node.y - this.mouseTarget.y;
+        const dz = node.z - this.mouseTarget.z;
+        const d  = Math.sqrt(dx*dx + dy*dy + dz*dz);
+        if (d < 22) proximityBoost = Math.pow(1 - d / 22, 2);
+      }
+
+      tempCol.copy(this.primaryColor).lerp(this.secondaryColor, cw);
+      if (proximityBoost > 0) {
+        tempCol2.copy(this.secondaryColor).multiplyScalar(1 + proximityBoost * 1.5);
+        tempCol.lerp(tempCol2, proximityBoost * 0.7);
+      }
+      const brightness = glow * this.dimFactor * (node.isHub ? 1.0 : 0.75);
+      colArr[i * 3]     = tempCol.r * brightness;
+      colArr[i * 3 + 1] = tempCol.g * brightness;
+      colArr[i * 3 + 2] = tempCol.b * brightness;
     }
 
-    positionsAttr.needsUpdate = true;
-    colorsAttr.needsUpdate = true;
+    posAttr.needsUpdate = true;
+    colAttr.needsUpdate = true;
 
-    // Update Floating Mathematical Characters
-    for (let i = 0; i < this.particles.length; i++) {
-      const p = this.particles[i];
-      p.sprite.position.y += p.vy;
-      p.wobblePhase += dt * p.wobbleSpeed;
-      p.sprite.position.x = p.origX + Math.sin(p.wobblePhase) * p.wobbleAmp;
-      p.sprite.material.rotation += p.spinSpeed;
+    // ── Synapse lines ─────────────────────────────────────────────────────
+    let lineCount = 0;
+    const lPosArr = this.linePositions;
+    const lColArr = this.lineColors;
 
-      // Vertical coloring interpolation
-      const relativeHeight = (p.sprite.position.y + 14) / 50;
-      p.sprite.material.color.copy(this.primaryColor).lerp(this.secondaryColor, Math.max(0.0, Math.min(1.0, relativeHeight)));
+    for (let i = 0; i < this.NODE_COUNT && lineCount < this.MAX_LINES; i++) {
+      const nA = this.nodes[i];
+      for (let j = i + 1; j < this.NODE_COUNT && lineCount < this.MAX_LINES; j++) {
+        const nB = this.nodes[j];
+        const dx = nA.x - nB.x;
+        const dy = nA.y - nB.y;
+        const dz = nA.z - nB.z;
+        const dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
 
-      // Transparency fades out near top limits and matches dimmer opacity factor
-      let alpha = 0.45;
-      if (p.sprite.position.y > 20) {
-        alpha *= (1.0 - (p.sprite.position.y - 20) / 15);
-      } else if (p.sprite.position.y < -10) {
-        alpha *= ((p.sprite.position.y + 14) / 4);
-      }
-      p.sprite.material.opacity = Math.max(0.0, alpha) * this.dimFactor;
+        if (dist < this.CONNECT_DIST) {
+          const alpha  = (1 - dist / this.CONNECT_DIST);
+          const cw     = (nA.colorWeight + nB.colorWeight) * 0.5;
+          const col    = new THREE.Color().copy(this.primaryColor).lerp(this.secondaryColor, cw);
+          const bright = alpha * alpha * 0.75 * this.dimFactor;
+          const off    = lineCount * 6;
 
-      // Recycle math sprite to bottom of valley when out of bounds
-      if (p.sprite.position.y > 35) {
-        p.sprite.position.y = -14;
-        p.origX = (Math.random() - 0.5) * 90;
-        p.sprite.position.x = p.origX;
+          lPosArr[off]     = nA.x; lPosArr[off + 1] = nA.y; lPosArr[off + 2] = nA.z;
+          lPosArr[off + 3] = nB.x; lPosArr[off + 4] = nB.y; lPosArr[off + 5] = nB.z;
+          lColArr[off]     = col.r * bright; lColArr[off + 1] = col.g * bright; lColArr[off + 2] = col.b * bright;
+          lColArr[off + 3] = col.r * bright; lColArr[off + 4] = col.g * bright; lColArr[off + 5] = col.b * bright;
+          lineCount++;
+        }
       }
     }
+    const lPosAttr = this.linesGeometry.getAttribute('position');
+    const lColAttr = this.linesGeometry.getAttribute('color');
+    lPosAttr.needsUpdate = true;
+    lColAttr.needsUpdate = true;
+    this.linesGeometry.setDrawRange(0, lineCount * 2);
+
+    // ── Spawn new pulses stochastically ──────────────────────────────────
+    if (Math.random() < 0.06 && this.lightPulses.length < this.MAX_PULSES) {
+      this._spawnPulse();
+    }
+
+    // ── Update pulse positions ────────────────────────────────────────────
+    const pPosArr = this.pulsePositions;
+    const pColArr = this.pulseColors;
+    let activePulseCount = 0;
+
+    for (let k = this.lightPulses.length - 1; k >= 0; k--) {
+      if (activePulseCount >= this.MAX_PULSES) break;
+      const pulse = this.lightPulses[k];
+      pulse.progress += pulse.speed;
+
+      if (pulse.progress >= 1.0) {
+        this.lightPulses.splice(k, 1);
+        continue;
+      }
+
+      const fN = this.nodes[pulse.from];
+      const tN = this.nodes[pulse.to];
+      const t  = pulse.progress;
+
+      const off = activePulseCount * 3;
+      pPosArr[off]     = fN.x + (tN.x - fN.x) * t;
+      pPosArr[off + 1] = fN.y + (tN.y - fN.y) * t;
+      pPosArr[off + 2] = fN.z + (tN.z - fN.z) * t;
+
+      // Pulse colour: lerp from secondary to primary mid-flight
+      const fade = Math.sin(t * Math.PI); // peaks at t=0.5
+      const pc   = new THREE.Color().copy(this.secondaryColor).lerp(this.primaryColor, pulse.colorWeight);
+      const pb   = fade * this.dimFactor;
+      pColArr[off]     = pc.r * pb * 1.6;
+      pColArr[off + 1] = pc.g * pb * 1.6;
+      pColArr[off + 2] = pc.b * pb * 1.6;
+      activePulseCount++;
+    }
+
+    const pPosAttr = this.pulseGeometry.getAttribute('position');
+    const pColAttr = this.pulseGeometry.getAttribute('color');
+    pPosAttr.needsUpdate = true;
+    pColAttr.needsUpdate = true;
+    this.pulseGeometry.setDrawRange(0, activePulseCount);
+
+    // ── Slow starfield rotation ───────────────────────────────────────────
+    if (this.starField) {
+      this.starField.rotation.y = time * 0.008;
+      this.starField.rotation.x = Math.sin(time * 0.004) * 0.04;
+    }
+
+    // ── Gentle camera sway ────────────────────────────────────────────────
+    this.camera.position.x = Math.sin(time * 0.06) * 2.5;
+    this.camera.position.y = Math.cos(time * 0.04) * 1.5;
+    this.camera.lookAt(0, 0, 0);
 
     this.renderer.render(this.scene, this.camera);
   }
 
-  /* ━━━━━━━━━━━━━━━━━ CLEANUP / DISPOSE ━━━━━━━━━━━━━━━━━━ */
+  // ── DISPOSE ──────────────────────────────────────────────────────────────
   dispose() {
-    if (this.animationId) {
-      cancelAnimationFrame(this.animationId);
-    }
-
-    window.removeEventListener('resize', this._onResize);
-    if (this.container) {
-      this.container.removeEventListener('mousemove', this._onMouseMove);
-      this.container.removeEventListener('mouseleave', this._onMouseLeave);
-    }
-
-    if (this.controls) this.controls.dispose();
-
-    // Recursive dispose helper to free memory on context switch
-    this._disposeObject(this.scene);
+    if (this.animationId) cancelAnimationFrame(this.animationId);
+    window.removeEventListener('resize',     this._onResize);
+    window.removeEventListener('mousemove',  this._onMouseMove);
+    window.removeEventListener('mouseleave', this._onMouseLeave);
+    [this.pointsMesh, this.linesMesh, this.pulseMesh, this.starField].forEach(m => {
+      if (m) {
+        m.geometry?.dispose();
+        if (m.material) {
+          if (m.material.map) m.material.map.dispose();
+          m.material.dispose();
+        }
+      }
+    });
     this.renderer.dispose();
-  }
-
-  _disposeObject(obj) {
-    if (!obj) return;
-    obj.children.forEach(child => this._disposeObject(child));
-
-    if (obj.geometry) obj.geometry.dispose();
-    if (obj.material) {
-      if (Array.isArray(obj.material)) {
-        obj.material.forEach(mat => this._disposeMaterial(mat));
-      } else {
-        this._disposeMaterial(obj.material);
-      }
-    }
-  }
-
-  _disposeMaterial(mat) {
-    if (!mat) return;
-    mat.dispose();
-    for (const key in mat) {
-      if (mat[key] && typeof mat[key].dispose === 'function') {
-        mat[key].dispose();
-      }
-    }
   }
 }

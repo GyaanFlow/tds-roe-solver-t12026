@@ -35,6 +35,9 @@
   <script defer src="/_vercel/toolbar/inject-scripts.js"></script>
 </head>
 <body>
+  <!-- Full-viewport neural network constellation — behind everything -->
+  <canvas id="threeCanvas" aria-hidden="true"></canvas>
+
   <div id="mobileOverlay" class="mobile-overlay hidden" aria-hidden="true"></div>
 
   <!-- The entire app is a CSS Grid Workspace -->
@@ -174,7 +177,6 @@
 
     <!-- MAIN EDITOR CANVAS -->
     <main id="editor">
-      <canvas id="threeCanvas"></canvas>
       <header class="editor-header">
         <div class="mobile-header-row">
           <button id="mobileNavToggle" class="btn-ghost mobile-nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
