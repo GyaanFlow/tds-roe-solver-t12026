@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tds-portal-v4';
+const CACHE_NAME = 'tds-portal-v5';
 
 const CORE_ASSETS = [
   '/',
@@ -52,8 +52,8 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Ignore analytics
-  if (url.hostname.includes('vercel-insights')) {
+  // Ignore analytics and Vercel toolbar/system routes
+  if (url.hostname.includes('vercel-insights') || url.pathname.startsWith('/_vercel')) {
     return;
   }
 

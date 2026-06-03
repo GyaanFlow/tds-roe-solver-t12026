@@ -148,6 +148,7 @@ export class NetworkCanvasManager {
         pointTexture: { value: glowTex(64, 0.3) }
       },
       vertexShader: `
+        attribute vec3 color;
         attribute float size;
         varying vec3 vColor;
         void main() {
