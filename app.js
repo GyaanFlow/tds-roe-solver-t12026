@@ -834,6 +834,28 @@ function renderCanvas(index) {
   const langClass = detectLanguage(data.answer);
   const health = getHealthMeta(data);
 
+  const isSpecialGa0Backup = (workspaceData.exam === 'ga0' && (index === 9 || index === 17 || index === 24));
+  const colabBackupHtml = isSpecialGa0Backup ? `
+    <div class="colab-backup-banner" style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.35); border-left: 4px solid var(--theme-primary); padding: 18px; border-radius: 12px; margin-bottom: 24px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.25);">
+      <div style="font-weight: 600; color: var(--theme-primary); display: flex; align-items: center; gap: 8px; font-size: 15px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--theme-primary);"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>Special Case Question — Backup Google Colab Solution</span>
+      </div>
+      <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--text-secondary); text-align: left;">
+        Questions <strong>Q10, Q18, and Q25</strong> are special cases involving user-specific environments, APIs, or dynamic data. These questions are not reliably solvable through the public solver interface for every user, so repeatedly trying them on the solver may waste your time.
+      </p>
+      <div style="display: flex; align-items: center; gap: 12px; margin-top: 4px; flex-wrap: wrap;">
+        <a href="https://colab.research.google.com/drive/1pVBlYAwBpQUqRhM9pUeX6Wt2CJWF6orH?usp=sharing" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; background: var(--theme-primary); color: #000; padding: 8px 16px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 13px; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.85" onmouseout="this.style.opacity=1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          <span>Open Dedicated Google Colab Solution</span>
+        </a>
+      </div>
+      <div style="font-size: 12px; color: var(--text-muted); border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 8px; margin-top: 4px; text-align: left;">
+        💡 <em>Before running the Colab, simply edit Cell 1 and replace <code>YOUR_EMAIL</code> with your IITM exam email and <code>NGROK_TOKEN</code> with your ngrok auth token.</em>
+      </div>
+    </div>
+  ` : '';
+
   canvas.innerHTML = `
     <div class="canvas-header">
       <div class="canvas-header-top" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; width: 100%;">
@@ -860,6 +882,7 @@ function renderCanvas(index) {
       </div>
     </div>
     <div class="canvas-body ${rawFocusEnabled ? 'workspace-focus-active' : ''}">
+      ${colabBackupHtml}
       ${renderVariantPanel(data)}
       ${renderPreviewPanel(data)}
       ${renderGuidePanel(data)}
