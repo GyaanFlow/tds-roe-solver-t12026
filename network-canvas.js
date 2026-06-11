@@ -95,6 +95,7 @@ export class NetworkCanvasManager {
     this._buildNeuronMesh();
     this._buildLineMesh();
     this._buildPulseMesh();
+    this._buildDustMesh();
 
     // Bind
     this.animate        = this.animate.bind(this);
@@ -109,7 +110,7 @@ export class NetworkCanvasManager {
     this._animId = requestAnimationFrame(this.animate);
   }
 
-  // ── Star field ────────────────────────────────────────────────────────────
+  // ── Star field (Twinkling Shader) ──────────────────────────────────────────
   _buildStars() {
     const pos = new Float32Array(this.STAR_COUNT * 3);
     const col = new Float32Array(this.STAR_COUNT * 3);
@@ -118,20 +119,52 @@ export class NetworkCanvasManager {
       pos[i*3]   = (rng()-0.5) * 380;
       pos[i*3+1] = (rng()-0.5) * 220;
       pos[i*3+2] = -70 - rng() * 110;
-      const b = 0.2 + rng() * 0.45;
-      col[i*3]=b; col[i*3+1]=b; col[i*3+2]=b + 0.2;
+      const b = 0.25 + rng() * 0.45;
+      col[i*3]=b; col[i*3+1]=b; col[i*3+2]=b + 0.15;
     }
     const geo = new THREE.BufferGeometry();
     geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
     geo.setAttribute('color',    new THREE.BufferAttribute(col, 3));
-    this._starMesh = new THREE.Points(geo, new THREE.PointsMaterial({
-      size: 0.35, map: glowTex(8, 0.3), vertexColors: true,
-      transparent: true, opacity: 0.45, blending: THREE.AdditiveBlending, depthWrite: false
-    }));
+
+    this._starMat = new THREE.ShaderMaterial({
+      uniforms: {
+        pointTexture: { value: glowTex(16, 0.25) },
+        time: { value: 0 }
+      },
+      vertexShader: `
+        attribute vec3 color;
+        varying vec3 vColor;
+        varying float vTwinkle;
+        uniform float time;
+        void main() {
+          vColor = color;
+          // Seed twinkling phase using the position coords
+          vTwinkle = sin(time * (1.2 + fract(position.x * 0.05) * 1.8) + position.y * 0.23);
+          vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+          float size = 0.42 * (1.0 + 0.4 * vTwinkle);
+          gl_PointSize = size * (300.0 / -mvPosition.z);
+          gl_Position = projectionMatrix * mvPosition;
+        }
+      `,
+      fragmentShader: `
+        uniform sampler2D pointTexture;
+        varying vec3 vColor;
+        varying float vTwinkle;
+        void main() {
+          float brightness = 0.65 + 0.35 * vTwinkle;
+          gl_FragColor = vec4(vColor * brightness, 0.45 + 0.2 * vTwinkle) * texture2D(pointTexture, gl_PointCoord);
+        }
+      `,
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+
+    this._starMesh = new THREE.Points(geo, this._starMat);
     this.scene.add(this._starMesh);
   }
 
-  // ── Neuron point cloud ────────────────────────────────────────────────────
+  // ── Neuron point cloud (Glow Shader) ──────────────────────────────────────
   _buildNeuronMesh() {
     const totalNeurons = this.LAYER_SIZES.reduce((a, b) => a + b, 0);
     const pos = new Float32Array(totalNeurons * 3);
@@ -162,7 +195,10 @@ export class NetworkCanvasManager {
         uniform sampler2D pointTexture;
         varying vec3 vColor;
         void main() {
-          gl_FragColor = vec4(vColor, 1.0) * texture2D(pointTexture, gl_PointCoord);
+          vec4 tex = texture2D(pointTexture, gl_PointCoord);
+          float dist = length(gl_PointCoord - vec2(0.5));
+          float core = smoothstep(0.18, 0.0, dist) * 0.45;
+          gl_FragColor = vec4(vColor + vec3(core), 1.0) * tex;
         }
       `,
       transparent: true,
@@ -172,6 +208,101 @@ export class NetworkCanvasManager {
 
     this._neurMesh = new THREE.Points(this._neurGeo, this._neurMat);
     this.scene.add(this._neurMesh);
+  }
+
+  // ── Ambient Dust Motes System ─────────────────────────────────────────────
+  _buildDustMesh() {
+    this.DUST_COUNT = 150;
+    this.dustParticles = [];
+    
+    const pos = new Float32Array(this.DUST_COUNT * 3);
+    const colorWeight = new Float32Array(this.DUST_COUNT);
+    const sizeArr = new Float32Array(this.DUST_COUNT);
+    
+    const rng = seededRng('network-dust-motes');
+    
+    for (let i = 0; i < this.DUST_COUNT; i++) {
+      const baseX = (rng() - 0.5) * 200;
+      const baseY = (rng() - 0.5) * 120;
+      const baseZ = (rng() - 0.5) * 60;
+      
+      pos[i*3] = baseX;
+      pos[i*3+1] = baseY;
+      pos[i*3+2] = baseZ;
+      
+      colorWeight[i] = rng();
+      
+      this.dustParticles.push({
+        baseX,
+        baseY,
+        baseZ,
+        ampX: 5.0 + rng() * 15.0,
+        ampY: 4.0 + rng() * 10.0,
+        ampZ: 3.0 + rng() * 8.0,
+        freqX: 0.15 + rng() * 0.35,
+        freqY: 0.12 + rng() * 0.3,
+        freqZ: 0.08 + rng() * 0.25,
+        phaseX: rng() * Math.PI * 2,
+        phaseY: rng() * Math.PI * 2,
+        phaseZ: rng() * Math.PI * 2,
+        speed: 0.05 + rng() * 0.1,
+        angle: rng() * Math.PI * 2,
+        baseSize: 1.2 + rng() * 2.8
+      });
+      
+      sizeArr[i] = this.dustParticles[i].baseSize;
+    }
+    
+    this._dustGeo = new THREE.BufferGeometry();
+    this._dustGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    this._dustGeo.setAttribute('colorWeight', new THREE.BufferAttribute(colorWeight, 1));
+    this._dustGeo.setAttribute('size', new THREE.BufferAttribute(sizeArr, 1));
+    
+    this._dustMat = new THREE.ShaderMaterial({
+      uniforms: {
+        pointTexture: { value: glowTex(32, 0.25) },
+        primaryColor: { value: new THREE.Color().copy(this._primary) },
+        secondaryColor: { value: new THREE.Color().copy(this._secondary) },
+        time: { value: 0 },
+        dimFactor: { value: 1.0 }
+      },
+      vertexShader: `
+        attribute float colorWeight;
+        attribute float size;
+        varying vec3 vColor;
+        varying float vGlow;
+        uniform vec3 primaryColor;
+        uniform vec3 secondaryColor;
+        uniform float time;
+        uniform float dimFactor;
+        void main() {
+          vColor = mix(primaryColor, secondaryColor, colorWeight);
+          
+          float glowPhase = time * (0.8 + colorWeight * 1.2) + colorWeight * 6.28;
+          vGlow = 0.6 + 0.4 * sin(glowPhase);
+          
+          vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+          float finalSize = size * vGlow * dimFactor;
+          gl_PointSize = finalSize * (300.0 / -mvPosition.z);
+          gl_Position = projectionMatrix * mvPosition;
+        }
+      `,
+      fragmentShader: `
+        uniform sampler2D pointTexture;
+        varying vec3 vColor;
+        varying float vGlow;
+        void main() {
+          vec4 tex = texture2D(pointTexture, gl_PointCoord);
+          gl_FragColor = vec4(vColor, 0.45 * vGlow) * tex;
+        }
+      `,
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+    
+    this._dustMesh = new THREE.Points(this._dustGeo, this._dustMat);
+    this.scene.add(this._dustMesh);
   }
 
   // ── Synapse line mesh (pre-sized for max expected connections) ─────────────
@@ -530,6 +661,29 @@ export class NetworkCanvasManager {
     this._pulseGeo.getAttribute('color').needsUpdate    = true;
     this._pulseGeo.setDrawRange(0, activePulses);
 
+    // Update star time uniform for twinkling
+    if (this._starMat) {
+      this._starMat.uniforms.time.value = t;
+    }
+
+    // Update dust uniforms and positions
+    if (this._dustMat) {
+      this._dustMat.uniforms.time.value = t;
+      this._dustMat.uniforms.dimFactor.value = this.dimFactor;
+      this._dustMat.uniforms.primaryColor.value.copy(this._primary);
+      this._dustMat.uniforms.secondaryColor.value.copy(this._secondary);
+    }
+    if (this._dustMesh) {
+      const dPosArr = this._dustGeo.getAttribute('position').array;
+      for (let i = 0; i < this.DUST_COUNT; i++) {
+        const dp = this.dustParticles[i];
+        dPosArr[i*3]   = dp.baseX + Math.sin(t * dp.freqX + dp.phaseX) * dp.ampX;
+        dPosArr[i*3+1] = dp.baseY + Math.cos(t * dp.freqY + dp.phaseY) * dp.ampY;
+        dPosArr[i*3+2] = dp.baseZ + Math.sin(t * dp.freqZ + dp.phaseZ) * dp.ampZ;
+      }
+      this._dustGeo.getAttribute('position').needsUpdate = true;
+    }
+
     // Slow star rotation
     if (this._starMesh) {
       this._starMesh.rotation.y = t * 0.006;
@@ -544,10 +698,16 @@ export class NetworkCanvasManager {
     window.removeEventListener('resize',     this._onResize);
     window.removeEventListener('mousemove',  this._onMouseMove);
     window.removeEventListener('mouseleave', this._onMouseLeave);
-    [this._neurMesh, this._lineMesh, this._pulseMesh, this._starMesh].forEach(m => {
+    [this._neurMesh, this._lineMesh, this._pulseMesh, this._starMesh, this._dustMesh].forEach(m => {
       if (!m) return;
       m.geometry?.dispose();
-      if (m.material) { if (m.material.map) m.material.map.dispose(); m.material.dispose(); }
+      if (m.material) {
+        if (m.material.map) m.material.map.dispose();
+        if (m.material.uniforms && m.material.uniforms.pointTexture) {
+          m.material.uniforms.pointTexture.value?.dispose();
+        }
+        m.material.dispose();
+      }
     });
     this.renderer.dispose();
   }

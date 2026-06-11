@@ -499,41 +499,23 @@ body {
   background: radial-gradient(ellipse 70% 50% at 50% 35%, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
 }
 
-/* ── Welcome Screen Split Layout ── */
+/* ── Welcome Screen Layout ── */
 .welcome-layout-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 48px;
+  justify-content: center;
+  gap: 24px;
   width: 100%;
-  max-width: 1100px;
+  max-width: 800px;
   margin: 0 auto;
 }
 .welcome-left-content {
-  flex: 1.15;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-}
-.welcome-right-content {
-  flex: 0.85;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  text-align: center;
   width: 100%;
-}
-
-@media (max-width: 900px) {
-  .welcome-layout-container {
-    flex-direction: column;
-    gap: 32px;
-  }
-  .welcome-left-content {
-    align-items: center;
-    text-align: center;
-  }
 }
 .welcome-icon { margin-bottom: 24px; color: var(--text-muted); }
 .welcome-screen h1 { font-size: 24px; color: var(--text-primary); margin-bottom: 12px; font-weight: 500; }
@@ -1437,203 +1419,6 @@ body {
   filter: drop-shadow(0 0 24px var(--theme-glow-intense));
 }
 
-/* ── Voxel Bonsai Tree Container ── */
-.bonsai-container {
-  width: 100%;
-  max-width: 420px;
-  aspect-ratio: 1 / 1;
-  margin: 0 auto;
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-  background: rgba(6, 6, 12, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow:
-    0 8px 40px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.03),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  animation: welcomeFloat 6s ease-in-out infinite;
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
-}
-.bonsai-container:hover {
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow:
-    0 12px 50px rgba(0, 0, 0, 0.55),
-    0 0 30px var(--theme-glow),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-}
-
-#bonsaiCanvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-  cursor: grab;
-  border-radius: 18px;
-}
-#bonsaiCanvas:active {
-  cursor: grabbing;
-}
-
-/* Bonsai overlay controls */
-.bonsai-controls {
-  position: absolute;
-  bottom: 36px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 2;
-  padding: 5px 10px;
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.bonsai-seasons {
-  display: flex;
-  gap: 4px;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-  padding-right: 8px;
-  margin-right: 4px;
-}
-.bonsai-season-btn {
-  background: transparent;
-  border: none;
-  font-size: 14px;
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0.6;
-}
-.bonsai-season-btn:hover {
-  opacity: 1;
-  background: rgba(255, 255, 255, 0.08);
-  transform: scale(1.1);
-}
-.bonsai-season-btn.active {
-  opacity: 1;
-  background: var(--theme-glow);
-  border: 1px solid var(--theme-primary);
-  box-shadow: 0 0 10px var(--theme-glow);
-  transform: scale(1.1);
-}
-.bonsai-container:hover .bonsai-controls {
-  opacity: 1;
-}
-
-.bonsai-slider-label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--text-muted);
-  font-size: 11px;
-  cursor: pointer;
-}
-.bonsai-slider-label svg {
-  color: var(--theme-primary);
-  flex-shrink: 0;
-}
-
-/* Custom range slider */
-.bonsai-slider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100px;
-  height: 4px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.1);
-  outline: none;
-  cursor: pointer;
-}
-.bonsai-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--theme-primary);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 8px var(--theme-glow);
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-.bonsai-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.2);
-  box-shadow: 0 0 14px var(--theme-glow-intense);
-}
-.bonsai-slider::-moz-range-thumb {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--theme-primary);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 8px var(--theme-glow);
-  cursor: pointer;
-}
-
-/* Randomize button */
-.bonsai-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.bonsai-btn:hover {
-  background: var(--theme-glow);
-  border-color: var(--theme-primary);
-  color: var(--theme-primary);
-  box-shadow: 0 0 12px var(--theme-glow);
-}
-
-/* Keyboard hint */
-.bonsai-hint {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.2);
-  white-space: nowrap;
-  pointer-events: none;
-  transition: color 0.3s ease;
-}
-.bonsai-container:hover .bonsai-hint {
-  color: rgba(255, 255, 255, 0.35);
-}
-
-/* ── Bonsai Mobile Responsive ── */
-@media (max-width: 640px) {
-  .bonsai-container {
-    max-width: 300px;
-    margin: 8px auto 12px;
-  }
-  .bonsai-controls {
-    bottom: 30px;
-    opacity: 1; /* Always visible on mobile (no hover) */
-  }
-  .bonsai-hint {
-    font-size: 9px;
-    color: rgba(255, 255, 255, 0.25);
-  }
-}
 
 
 /* Metallic gradient text */
