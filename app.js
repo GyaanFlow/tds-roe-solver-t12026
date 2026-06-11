@@ -1565,12 +1565,17 @@ async function initBonsaiScene() {
       if (document.getElementById('bonsaiCanvas')) {
         bonsaiScene = new module.BonsaiSceneManager('bonsaiCanvas');
         
-        // Wire up explosion slider
-        const slider = document.getElementById('bonsaiExplosion');
-        if (slider) {
-          slider.addEventListener('input', (e) => {
+        // Wire up hover explosion on container
+        const container = document.getElementById('bonsaiContainer');
+        if (container) {
+          container.addEventListener('mouseenter', () => {
             if (bonsaiScene) {
-              bonsaiScene.setExplosion(parseFloat(e.target.value) / 100);
+              bonsaiScene.setExplosion(0.85);
+            }
+          });
+          container.addEventListener('mouseleave', () => {
+            if (bonsaiScene) {
+              bonsaiScene.setExplosion(0);
             }
           });
         }
@@ -1582,7 +1587,6 @@ async function initBonsaiScene() {
             if (bonsaiScene) {
               const emailVal = emailInput.value.trim() || 'anonymous';
               bonsaiScene.randomizeTree(emailVal + '-' + Date.now());
-              if (slider) slider.value = '0';
             }
           });
         }

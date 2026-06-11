@@ -498,6 +498,43 @@ body {
   padding: 48px 24px 40px;
   background: radial-gradient(ellipse 70% 50% at 50% 35%, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
 }
+
+/* ── Welcome Screen Split Layout ── */
+.welcome-layout-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.welcome-left-content {
+  flex: 1.15;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.welcome-right-content {
+  flex: 0.85;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .welcome-layout-container {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .welcome-left-content {
+    align-items: center;
+    text-align: center;
+  }
+}
 .welcome-icon { margin-bottom: 24px; color: var(--text-muted); }
 .welcome-screen h1 { font-size: 24px; color: var(--text-primary); margin-bottom: 12px; font-weight: 500; }
 .welcome-screen p { max-width: 440px; font-size: 14px; line-height: 1.6; }
@@ -1405,7 +1442,7 @@ body {
   width: 100%;
   max-width: 420px;
   aspect-ratio: 1 / 1;
-  margin: 16px auto 20px;
+  margin: 0 auto;
   position: relative;
   border-radius: 18px;
   overflow: hidden;
