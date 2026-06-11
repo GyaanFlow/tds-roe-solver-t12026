@@ -2,48 +2,12 @@
  * island-generator.js
  * 
  * Floating voxel island generator.
- * Creates a circular island with layered grass, dirt, and stone,
- * tapering downward for a floating-island silhouette.
- * Uses seeded RNG (FNV-1a + xorshift) for deterministic output.
+ * Creates a circular island with layered grass, dirt, and stone underside.
+ * Fully aligned with the Hugging Face Bonsai WebGPU demo.
  * 
  * @module island-generator
  */
 
-// ─── Color Palettes (r, g, b as 0-1 floats) ────────────────────────────────
-
-const GRASS_COLORS = [
-  [0.28, 0.58, 0.22],
-  [0.32, 0.62, 0.26],
-  [0.25, 0.52, 0.20],
-];
-
-const DIRT_COLORS = [
-  [0.42, 0.30, 0.16],
-  [0.48, 0.32, 0.18],
-  [0.38, 0.26, 0.14],
-];
-
-const STONE_COLORS = [
-  [0.48, 0.48, 0.48],
-  [0.52, 0.52, 0.52],
-  [0.42, 0.42, 0.44],
-];
-
-// ─── Layer Depths ───────────────────────────────────────────────────────────
-
-const GRASS_DEPTH = 2;
-const DIRT_DEPTH = 3;
-const STONE_DEPTH = 4;
-const TOTAL_DEPTH = GRASS_DEPTH + DIRT_DEPTH + STONE_DEPTH; // 9
-
-// ─── Seeded RNG (FNV-1a hash + xorshift LCG) ───────────────────────────────
-
-/**
- * Creates a deterministic pseudo-random number generator from a seed string.
- * Uses FNV-1a for hashing the seed and xorshift for the sequence.
- * @param {string} seedStr - Seed string for deterministic generation.
- * @returns {() => number} Function returning floats in [0, 1).
- */
 function seededRng(seedStr) {
   let h = 2166136261;
   const s = (seedStr || 'island').toLowerCase();
@@ -59,97 +23,254 @@ function seededRng(seedStr) {
   };
 }
 
-// ─── Helper Utilities ───────────────────────────────────────────────────────
-
-/**
- * Picks a random element from an array using the provided RNG.
- * @param {Array} arr - Source array.
- * @param {() => number} rng - Seeded RNG function.
- * @returns {*} Random element from the array.
- */
-function pick(arr, rng) {
-  return arr[Math.floor(rng() * arr.length)];
+function hexToRgb(hex) {
+  const num = parseInt(hex.replace('#', ''), 16);
+  return [
+    ((num >> 16) & 255) / 255,
+    ((num >> 8) & 255) / 255,
+    (num & 255) / 255
+  ];
 }
 
-// ─── Main Generator ─────────────────────────────────────────────────────────
+const Dh = ['#4a8c3f','#3d7a34','#5a9e4a','#2d6b24','#68ad58','#3f8535','#4d9040','#55a048'].map(hexToRgb);
+const Oh = ['#a0978a','#8c8478','#b5ad9e','#9a9184','#c2bab0','#7d756a','#bbb3a6','#938b7f'].map(hexToRgb);
+const Yh = ['#8B6914','#7A5C12','#6B4E10','#9C7A1E','#5C4010','#A07828','#6E5518'].map(hexToRgb);
+const Xh = ['#706860','#5E564F','#887F75','#4D4640','#63594F','#7A7068'].map(hexToRgb);
+const jh = ['#e63c2e','#f05a3a','#ff6b45','#f5a623','#ff8c42','#e8502a'].map(hexToRgb);
+const ig = ['#3a8530','#4a9540','#2d7020','#5aad50','#3d8a35'].map(hexToRgb);
+const og = ['#f5e6c8','#e8d5b0','#d4c49a','#c9b88e'].map(hexToRgb);
 
-/**
- * Generates a floating voxel island.
- * 
- * The island is a roughly circular platform that tapers downward,
- * with layered material types: grass on top, dirt in the middle, stone at bottom.
- * Edges are randomized for an organic, eroded look.
- * 
- * @param {string} seed - Seed string for deterministic generation.
- * @returns {{ voxels: Array<{x:number, y:number, z:number, r:number, g:number, b:number, type:string}> }}
- */
 export function generateIsland(seed) {
   const rng = seededRng(seed);
   const voxels = [];
-  const added = new Set(); // Prevents duplicate voxel positions
+  const added = new Set();
 
-  /**
-   * Adds a voxel if its position hasn't been used yet.
-   * @param {number} x 
-   * @param {number} y 
-   * @param {number} z 
-   * @param {number} r 
-   * @param {number} g 
-   * @param {number} b 
-   * @param {string} type 
-   */
-  function addVoxel(x, y, z, r, g, b, type) {
-    const rx = Math.round(x);
-    const ry = Math.round(y);
-    const rz = Math.round(z);
-    const key = `${rx},${ry},${rz}`;
-    if (added.has(key)) return;
-    added.add(key);
-    voxels.push({ x: rx, y: ry, z: rz, r, g, b, type });
+  function pick(arr) {
+    return arr[Math.floor(rng() * arr.length)];
   }
 
-  const radius = 9;
+  function Jh(e, t) {
+    return Math.sin(e*1.7+t*.9)*.4+Math.cos(t*2.1-e*.6)*.35+Math.sin((e+t)*1.1)*.25;
+  }
 
-  // ── Iterate over circular footprint ─────────────────────────────────────
-  // The island spans from x,z in [-radius-1, radius+1] to allow fuzzy edges
+  function addVoxel(x, y, z, rgb, type, extra = {}) {
+    const rx = Math.round(x * 100) / 100;
+    const ry = Math.round(y * 100) / 100;
+    const rz = Math.round(z * 100) / 100;
+    const key = `${Math.round(rx*100)},${Math.round(ry*100)},${Math.round(rz*100)}`;
+    if (added.has(key)) return;
+    added.add(key);
+    voxels.push({ x: rx, y: ry, z: rz, r: rgb[0], g: rgb[1], b: rgb[2], type, ...extra });
+  }
 
-  for (let x = -radius - 1; x <= radius + 1; x++) {
-    for (let z = -radius - 1; z <= radius + 1; z++) {
-      const dist = Math.sqrt(x * x + z * z);
+  const Kh = [];
+  const qh = [];
 
-      // Skip voxels outside the fuzzy radius boundary
-      if (dist > radius + rng() * 1.5) continue;
-
-      // Taper depth: center is deepest, edges are shallow
-      const maxDepth = Math.floor((1 - dist / (radius + 2)) * TOTAL_DEPTH);
-      if (maxDepth <= 0) continue;
-
-      // ── Build column downward from the surface ────────────────────────
-      // Top surface sits at y = -1 (tree grows upward from y = 0)
-
-      for (let d = 0; d < maxDepth; d++) {
-        const y = -1 - d;
-
-        // Determine material layer based on depth
-        let type, color;
-        if (d < GRASS_DEPTH) {
-          type = 'grass';
-          color = pick(GRASS_COLORS, rng);
-        } else if (d < GRASS_DEPTH + DIRT_DEPTH) {
-          type = 'dirt';
-          color = pick(DIRT_COLORS, rng);
-        } else {
-          type = 'stone';
-          color = pick(STONE_COLORS, rng);
-
-          // 15% chance to skip stone voxels near edges for organic overhangs
-          if (dist > radius * 0.5 && rng() < 0.15) continue;
-        }
-
-        addVoxel(x, y, z, color[0], color[1], color[2], type);
+  // Generate Grass top layers
+  for (let e = -8; e <= 8; e++) {
+    for (let t = -6; t <= 6; t++) {
+      if (Math.sqrt(e * e * 0.45 + t * t * 0.55) < 7.5 + Jh(e, t) * 1.5) {
+        Kh.push({ x: e, y: 0, z: t });
       }
     }
   }
+
+  for (let e = -9; e <= 9; e++) {
+    for (let t = -7; t <= 7; t++) {
+      if (Math.sqrt(e * e * 0.4 + t * t * 0.5) < 8.5 + Jh(e * 0.7, t * 0.7) * 1.2) {
+        Kh.push({ x: e, y: -1, z: t });
+      }
+    }
+  }
+
+  for (let e = -7; e <= 6; e++) {
+    for (let t = -5; t <= 5; t++) {
+      if (Math.sqrt(e * e * 0.5 + t * t * 0.6) < 6 + Jh(e, t) * 1.2) {
+        Kh.push({ x: e, y: 1, z: t });
+      }
+    }
+  }
+
+  for (let e = -5; e <= 4; e++) {
+    for (let t = -4; t <= 3; t++) {
+      if (Math.sqrt(e * e * 0.55 + t * t * 0.65) < 4.5 + Jh(e, t) * 0.9) {
+        Kh.push({ x: e, y: 2, z: t });
+      }
+    }
+  }
+
+  for (let e = -4; e <= 3; e++) {
+    for (let t = -3; t <= 2; t++) {
+      if (Math.sqrt(e * e * 0.6 + t * t * 0.7) < 3.5 + Jh(e, t) * 0.7) {
+        Kh.push({ x: e, y: 3, z: t });
+      }
+    }
+  }
+
+  for (let e = -3; e <= 2; e++) {
+    for (let t = -2; t <= 2; t++) {
+      if (Math.sqrt(e * e * 0.7 + t * t * 0.8) < 2.8 + Jh(e, t) * 0.5) {
+        Kh.push({ x: e, y: 4, z: t });
+      }
+    }
+  }
+
+  for (let e = -2; e <= 1; e++) {
+    for (let t = -1; t <= 1; t++) {
+      if (Math.sqrt(e * e + t * t) < 2) {
+        Kh.push({ x: e, y: 5, z: t });
+      }
+    }
+  }
+
+  for (let e = -1; e <= 0; e++) {
+    for (let t = -1; t <= 0; t++) {
+      Kh.push({ x: e, y: 6, z: t });
+    }
+  }
+
+  // Piles / side hills
+  for (let e = 4; e <= 8; e++) {
+    for (let t = -2; t <= 3; t++) {
+      let n = e - 6, r = t - 0.5, i = Math.sqrt(n * n + r * r);
+      if (i < 2.8 + Jh(e, t) * 0.5) Kh.push({ x: e, y: 1, z: t });
+      if (i < 2 + Jh(e, t) * 0.3) Kh.push({ x: e, y: 2, z: t });
+      if (i < 1.2) Kh.push({ x: e, y: 3, z: t });
+    }
+  }
+
+  for (let e = -6; e <= -3; e++) {
+    for (let t = -5; t <= -2; t++) {
+      let n = e + 4.5, r = t + 3.5, i = Math.sqrt(n * n + r * r);
+      if (i < 2 + Jh(e, t) * 0.4) Kh.push({ x: e, y: 1, z: t });
+      if (i < 1.2) Kh.push({ x: e, y: 2, z: t });
+    }
+  }
+
+  // Underside dirt and stone
+  for (let e = -2; e >= -14; e--) {
+    let t = Math.abs(e + 1),
+        n = Math.max(0.5, 8.5 - t * 0.55 + Math.sin(t * 0.8) * 0.8),
+        r = Math.sin(t * 0.7) * 0.4,
+        i = Math.cos(t * 0.9) * 0.3;
+    for (let a = -10; a <= 10; a++) {
+      for (let o = -8; o <= 8; o++) {
+        let s = a - r, c = o - i;
+        if (Math.sqrt(s * s * 0.45 + c * c * 0.55) < n + Jh(a * 0.8 + t * 0.3, o * 0.8 - t * 0.2) * (1 + t * 0.08)) {
+          let isDirt = t < 4;
+          qh.push({ x: a, y: e, z: o, type: isDirt ? 'dirt' : 'stone' });
+        }
+      }
+    }
+  }
+
+  // Stone columns extending downward
+  const columns = [
+    { cx: 0, cz: 0, length: 4, r: 1.2 },
+    { cx: -3, cz: -1, length: 3, r: 0.9 },
+    { cx: 2, cz: 2, length: 3, r: 0.8 },
+    { cx: -1, cz: -3, length: 2, r: 0.7 },
+    { cx: 3, cz: -2, length: 2, r: 0.6 },
+    { cx: -4, cz: 1, length: 2, r: 0.7 },
+    { cx: 1, cz: -4, length: 2, r: 0.5 },
+    { cx: -2, cz: 3, length: 3, r: 0.8 }
+  ];
+  columns.forEach(col => {
+    for (let t = -14; t >= -14 - col.length; t--) {
+      let n = Math.abs(t + 14), r = Math.max(0.3, col.r - n * 0.25);
+      for (let i = Math.floor(col.cx - r - 1); i <= Math.ceil(col.cx + r + 1); i++) {
+        for (let a = Math.floor(col.cz - r - 1); a <= Math.ceil(col.cz + r + 1); a++) {
+          let o = i - col.cx, s = a - col.cz;
+          if (Math.sqrt(o * o + s * s) < r + Jh(i + n, a - n) * 0.3) {
+            qh.push({ x: i, y: t, z: a, type: 'stone' });
+          }
+        }
+      }
+    }
+  });
+
+  // Push underside voxels
+  qh.forEach(e => {
+    let color = e.type === 'dirt' ? pick(Yh) : pick(Xh);
+    addVoxel(e.x, e.y + 0.5, e.z, color, 'underside');
+  });
+
+  // Push grass voxels
+  Kh.forEach(e => {
+    let color = pick(Dh);
+    addVoxel(e.x, e.y + 0.5, e.z, color, 'grass');
+  });
+
+  // Rocks on the surface
+  const Zh = [
+    { x: -2, y: 5, z: -1 }, { x: -1, y: 5, z: -1 }, { x: 0, y: 5, z: -1 }, { x: 1, y: 5, z: -1 },
+    { x: -2, y: 5, z: 0 }, { x: -1, y: 5, z: 0 }, { x: 0, y: 5, z: 0 }, { x: 1, y: 5, z: 0 },
+    { x: -1, y: 5, z: 1 }, { x: 0, y: 5, z: 1 }, { x: 1, y: 5, z: 1 }, { x: -2, y: 5, z: 1 },
+    { x: -1, y: 6, z: -1 }, { x: 0, y: 6, z: -1 }, { x: 1, y: 6, z: -1 }, { x: -2, y: 6, z: 0 },
+    { x: -1, y: 6, z: 0 }, { x: 0, y: 6, z: 0 }, { x: 1, y: 6, z: 0 }, { x: -1, y: 6, z: 1 },
+    { x: 0, y: 6, z: 1 }, { x: -2, y: 6, z: -1 }, { x: -1, y: 7, z: -1 }, { x: 0, y: 7, z: -1 },
+    { x: -1, y: 7, z: 0 }, { x: 0, y: 7, z: 0 }, { x: 1, y: 7, z: 0 }, { x: 0, y: 7, z: 1 },
+    { x: -1, y: 7, z: 1 }, { x: 0, y: 8, z: 0 }, { x: -1, y: 8, z: 0 }, { x: 0, y: 8, z: -1 },
+    { x: -1, y: 8, z: -1 },
+    { x: 3, y: 2, z: 2 }, { x: 3, y: 3, z: 2 }, { x: 4, y: 1, z: -1 }, { x: 4, y: 2, z: -1 },
+    { x: -4, y: 1, z: -2 }, { x: -4, y: 2, z: -2 }, { x: -3, y: 2, z: 2 }, { x: -3, y: 3, z: 2 },
+    { x: 5, y: 1, z: 1 }, { x: 5, y: 1, z: 0 }, { x: -5, y: 1, z: 0 }, { x: 2, y: 3, z: -2 },
+    { x: 2, y: 4, z: -2 }, { x: -3, y: 3, z: -1 }, { x: 6, y: 1, z: -2 }, { x: -6, y: 0, z: 2 },
+    { x: 1, y: 4, z: 2 }, { x: -2, y: 4, z: -2 }, { x: 3, y: 1, z: -3 }, { x: -2, y: 1, z: 3 },
+    { x: 6, y: 2, z: 0 }, { x: 6, y: 3, z: 0 }, { x: 7, y: 2, z: 1 }
+  ];
+  Zh.forEach(e => {
+    let color = pick(Oh);
+    addVoxel(e.x, e.y + 0.5, e.z, color, 'rock');
+  });
+
+  // Calculate surface height map for foliage
+  const heightMap = {};
+  Kh.forEach(e => {
+    let key = `${e.x},${e.z}`;
+    if (!heightMap[key] || e.y > heightMap[key]) {
+      heightMap[key] = e.y;
+    }
+  });
+
+  const rockSet = new Set(Zh.map(e => `${e.x},${e.z}`));
+
+  Object.entries(heightMap).forEach(([coord, maxH]) => {
+    const [nx, nz] = coord.split(',').map(Number);
+    const hasRock = rockSet.has(coord);
+
+    // Flowers
+    if (!hasRock && rng() < 0.4) {
+      let count = rng() < 0.3 ? 2 : 1;
+      for (let i = 0; i < count; i++) {
+        let color = pick(jh);
+        let rx = nx + (rng() - 0.5) * 0.5;
+        let ry = (maxH + 1) + 0.22;
+        let rz = nz + (rng() - 0.5) * 0.5;
+        addVoxel(rx, ry, rz, color, 'flower', { w: 0.35, h: 0.35, d: 0.35 });
+      }
+    }
+
+    // Grass tufts
+    if (!hasRock && rng() < 0.3) {
+      let color = pick(ig);
+      let rx = nx + (rng() - 0.5) * 0.6;
+      let ry = (maxH + 1) + 0.32;
+      let rz = nz + (rng() - 0.5) * 0.6;
+      let rotX = (rng() - 0.5) * 0.15;
+      let rotZ = (rng() - 0.5) * 0.15;
+      addVoxel(rx, ry, rz, color, 'grassTuft', { w: 0.25, h: 0.55, d: 0.25, rx: rotX, rz: rotZ });
+    }
+
+    // Mushrooms
+    if (!hasRock && nx < -2 && rng() < 0.15) {
+      let color = pick(og);
+      let rx = nx + (rng() - 0.5) * 0.3;
+      let ry = (maxH + 1) + 0.15;
+      let rz = nz + (rng() - 0.5) * 0.3;
+      addVoxel(rx, ry, rz, color, 'mushroom', { w: 0.25, h: 0.22, d: 0.25 });
+    }
+  });
 
   return { voxels };
 }

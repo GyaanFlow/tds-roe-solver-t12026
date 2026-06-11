@@ -1,24 +1,10 @@
-/* ═══════════════════════════════════════════════════════════════════════════
-   Voxel Bonsai Tree — Interactive 3D Scene Manager
-   ═══════════════════════════════════════════════════════════════════════════
-   Renders a procedural voxel bonsai tree on a floating island with:
-   • InstancedMesh rendering (single draw call for 5000+ voxels)
-   • Explosion/assembly animation with smooth interpolation
-   • Orbit camera controls (mouse drag + wheel zoom)
-   • Keyboard controls (arrows: rotate/explode)
-   • Floating ambient particles
-   • Cinematic lighting with soft shadows
-   • Reflection plane beneath the island
-   • Subtle fog and auto-rotation
-   • Theme color integration
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* ── Voxel Bonsai Tree — Interactive 3D Scene Manager ── */
 
 import * as THREE from 'https://unpkg.com/three@0.128.0/build/three.module.js';
 import { generateBonsai } from './bonsai-generator.js';
 import { generateIsland } from './island-generator.js';
 import { createParticleSystem } from './particle-system.js';
 
-/* ── Seeded RNG (same as bonsai-generator) ─────────────────────────────── */
 function seededRng(seedStr) {
   let h = 2166136261;
   const s = (seedStr || 'scene').toLowerCase();
@@ -26,6 +12,17 @@ function seededRng(seedStr) {
   let st = h;
   return () => { st ^= st << 13; st ^= st >>> 17; st ^= st << 5; return (st >>> 0) / 4294967296; };
 }
+
+const MATERIAL_PARAMS = {
+  grass: { rough: 0.85, metal: 0.05, clearcoat: 0, physical: false },
+  underside: { rough: 0.92, metal: 0.03, clearcoat: 0, physical: false },
+  rock: { rough: 0.75, metal: 0.1, clearcoat: 0.3, physical: true },
+  trunk: { rough: 0.9, metal: 0.05, clearcoat: 0, physical: false },
+  leaf: { rough: 0.7, metal: 0.05, clearcoat: 0.3, physical: true },
+  flower: { rough: 0.7, metal: 0, clearcoat: 0, physical: false },
+  grassTuft: { rough: 0.9, metal: 0, clearcoat: 0, physical: false },
+  mushroom: { rough: 0.8, metal: 0, clearcoat: 0, physical: false }
+};
 
 export class BonsaiSceneManager {
   constructor(canvasId) {
@@ -69,7 +66,8 @@ export class BonsaiSceneManager {
     this._isDimmed = false;
     this._dimFactor = 1;
     this._voxels = [];
-    this._instancedMesh = null;
+    this._instancedMeshes = [];
+    this._geometries = {}; // Cache geometries
     this._treeGroup = new THREE.Group();
     this.scene.add(this._treeGroup);
 
@@ -113,15 +111,10 @@ export class BonsaiSceneManager {
     this._animId = requestAnimationFrame(this.animate);
   }
 
-  /* ════════════════════════════════════════════════════════════════════════
-     Lighting Setup
-     ════════════════════════════════════════════════════════════════════════ */
   _setupLighting() {
-    // Warm orange ambient
     this._ambient = new THREE.AmbientLight(0xffa050, 0.45);
     this.scene.add(this._ambient);
 
-    // Main sun (warm, casts shadows)
     this._sunLight = new THREE.DirectionalLight(0xffe0c0, 1.3);
     this._sunLight.position.set(12, 22, 8);
     this._sunLight.castShadow = true;
@@ -134,24 +127,18 @@ export class BonsaiSceneManager {
     this._sunLight.shadow.radius = 3;
     this.scene.add(this._sunLight);
 
-    // Cool fill light (opposite side for depth)
     const fill = new THREE.DirectionalLight(0x6080c0, 0.28);
     fill.position.set(-8, 6, -10);
     this.scene.add(fill);
 
-    // Point light near tree crown for warmth glow
     this._crownLight = new THREE.PointLight(0xff9030, 0.55, 35, 2);
     this._crownLight.position.set(0, 10, 0);
     this.scene.add(this._crownLight);
 
-    // Subtle hemisphere for sky/ground coloring
     const hemi = new THREE.HemisphereLight(0x3344aa, 0x443322, 0.15);
     this.scene.add(hemi);
   }
 
-  /* ════════════════════════════════════════════════════════════════════════
-     Reflection Plane
-     ════════════════════════════════════════════════════════════════════════ */
   _setupReflection() {
     const geo = new THREE.PlaneGeometry(50, 50);
     const mat = new THREE.MeshStandardMaterial({
@@ -163,14 +150,11 @@ export class BonsaiSceneManager {
     });
     this._reflMesh = new THREE.Mesh(geo, mat);
     this._reflMesh.rotation.x = -Math.PI / 2;
-    this._reflMesh.position.y = -12;
+    this._reflMesh.position.y = -16.5; // Adjusted lower to clear the island underside (goes to -13.5)
     this._reflMesh.receiveShadow = true;
     this.scene.add(this._reflMesh);
   }
 
-  /* ════════════════════════════════════════════════════════════════════════
-     Camera Management (Spherical Orbit)
-     ════════════════════════════════════════════════════════════════════════ */
   _updateCamera() {
     const s = this._spherical;
     this.camera.position.set(
@@ -181,17 +165,14 @@ export class BonsaiSceneManager {
     this.camera.lookAt(this._target);
   }
 
-  /* ════════════════════════════════════════════════════════════════════════
-     Scene Generation
-     ════════════════════════════════════════════════════════════════════════ */
   generateScene(seed) {
-    // Clear existing mesh
-    if (this._instancedMesh) {
-      this._treeGroup.remove(this._instancedMesh);
-      this._instancedMesh.geometry.dispose();
-      this._instancedMesh.material.dispose();
-      this._instancedMesh = null;
-    }
+    // Clear existing meshes
+    this._instancedMeshes.forEach(group => {
+      this._treeGroup.remove(group.mesh);
+      group.mesh.geometry.dispose();
+      group.mesh.material.dispose();
+    });
+    this._instancedMeshes = [];
 
     // Generate voxel data
     const bonsai = generateBonsai(seed);
@@ -215,60 +196,117 @@ export class BonsaiSceneManager {
       v.edz = dz / len + (rng() - 0.5) * 0.4;
     }
 
-    // Build InstancedMesh — single draw call for all voxels
-    const boxGeo = new THREE.BoxGeometry(0.92, 0.92, 0.92);
-    const mat = new THREE.MeshStandardMaterial({ roughness: 0.6, metalness: 0.08 });
-    this._instancedMesh = new THREE.InstancedMesh(boxGeo, mat, this._voxels.length);
-    this._instancedMesh.castShadow = true;
-    this._instancedMesh.receiveShadow = true;
+    // Group voxels by category geometry key
+    const groups = {};
+    this._voxels.forEach(v => {
+      let geoKey = 'voxel';
+      if (v.w !== undefined && v.h !== undefined && v.d !== undefined) {
+        geoKey = `${v.w}_${v.h}_${v.d}`;
+      }
+      const key = `${v.type}|${geoKey}`;
+      if (!groups[key]) groups[key] = [];
+      groups[key].push(v);
+    });
+
+    // Build InstancedMesh for each key
+    Object.entries(groups).forEach(([key, list]) => {
+      const [type, geoKey] = key.split('|');
+
+      // Geometry selection
+      let geo = this._geometries[geoKey];
+      if (!geo) {
+        if (geoKey === 'voxel') {
+          geo = new THREE.BoxGeometry(0.92, 0.92, 0.92);
+        } else {
+          const [w, h, d] = geoKey.split('_').map(Number);
+          geo = new THREE.BoxGeometry(w, h, d);
+        }
+        this._geometries[geoKey] = geo;
+      }
+
+      // Material properties matching Hugging Face
+      const params = MATERIAL_PARAMS[type];
+      let mat;
+      if (params && params.physical) {
+        mat = new THREE.MeshPhysicalMaterial({
+          roughness: params.rough,
+          metalness: params.metal,
+          clearcoat: params.clearcoat,
+          clearcoatRoughness: 0.5,
+          reflectivity: 0.3,
+          ior: 1.5,
+          flatShading: true
+        });
+      } else {
+        mat = new THREE.MeshStandardMaterial({
+          roughness: params ? params.rough : 0.6,
+          metalness: params ? params.metal : 0.1,
+          flatShading: true
+        });
+      }
+
+      const instMesh = new THREE.InstancedMesh(geo, mat, list.length);
+      instMesh.castShadow = true;
+      instMesh.receiveShadow = true;
+
+      this._treeGroup.add(instMesh);
+      this._instancedMeshes.push({
+        key,
+        mesh: instMesh,
+        voxels: list
+      });
+    });
 
     // Initial positions and colors
     this._syncVoxels();
     this._syncColors();
 
-    this._treeGroup.add(this._instancedMesh);
     this._explosion = 0;
     this._targetExplosion = 0;
-    this._needsMatrixUpdate = false;
   }
 
-  /* ── Write voxel positions to InstancedMesh matrices ────────────────── */
   _syncVoxels() {
     const e = this._explosion;
     const dist = 35; // max explosion spread
 
-    for (let i = 0; i < this._voxels.length; i++) {
-      const v = this._voxels[i];
-      this._dummy.position.set(
-        v.x + v.edx * e * dist,
-        v.y + v.edy * e * dist,
-        v.z + v.edz * e * dist
-      );
-      this._dummy.rotation.set(
-        e * v.edx * Math.PI * 1.5,
-        e * v.edy * Math.PI * 1.5,
-        e * v.edz * Math.PI * 1.5
-      );
-      this._dummy.scale.setScalar(1.0 - e * 0.12);
-      this._dummy.updateMatrix();
-      this._instancedMesh.setMatrixAt(i, this._dummy.matrix);
-    }
-    this._instancedMesh.instanceMatrix.needsUpdate = true;
+    this._instancedMeshes.forEach(group => {
+      const mesh = group.mesh;
+      const list = group.voxels;
+
+      for (let i = 0; i < list.length; i++) {
+        const v = list[i];
+        this._dummy.position.set(
+          v.x + v.edx * e * dist,
+          v.y + v.edy * e * dist,
+          v.z + v.edz * e * dist
+        );
+        this._dummy.rotation.set(
+          (v.rx || 0) + e * v.edx * Math.PI * 1.5,
+          e * v.edy * Math.PI * 1.5,
+          (v.rz || 0) + e * v.edz * Math.PI * 1.5
+        );
+        this._dummy.scale.setScalar(1.0 - e * 0.12);
+        this._dummy.updateMatrix();
+        mesh.setMatrixAt(i, this._dummy.matrix);
+      }
+      mesh.instanceMatrix.needsUpdate = true;
+    });
   }
 
-  /* ── Write voxel colors to InstancedMesh ────────────────────────────── */
   _syncColors() {
-    for (let i = 0; i < this._voxels.length; i++) {
-      const v = this._voxels[i];
-      this._tempColor.setRGB(v.r, v.g, v.b);
-      this._instancedMesh.setColorAt(i, this._tempColor);
-    }
-    this._instancedMesh.instanceColor.needsUpdate = true;
+    this._instancedMeshes.forEach(group => {
+      const mesh = group.mesh;
+      const list = group.voxels;
+
+      for (let i = 0; i < list.length; i++) {
+        const v = list[i];
+        this._tempColor.setRGB(v.r, v.g, v.b);
+        mesh.setColorAt(i, this._tempColor);
+      }
+      mesh.instanceColor.needsUpdate = true;
+    });
   }
 
-  /* ════════════════════════════════════════════════════════════════════════
-     Public API
-     ════════════════════════════════════════════════════════════════════════ */
   setExplosion(value) {
     this._targetExplosion = Math.max(0, Math.min(1, value));
   }
@@ -296,9 +334,6 @@ export class BonsaiSceneManager {
 
   setDimmed(v) { this._isDimmed = v; }
 
-  /* ════════════════════════════════════════════════════════════════════════
-     Input Handlers
-     ════════════════════════════════════════════════════════════════════════ */
   _onMouseDown(e) {
     this._isDragging = true;
     this._lastMouse = { x: e.clientX, y: e.clientY };
@@ -350,7 +385,6 @@ export class BonsaiSceneManager {
   }
 
   _onKeyDown(e) {
-    // Only handle arrow keys when canvas or its container is in view
     if (!this.canvas.closest('.welcome-screen')) return;
     switch (e.key) {
       case 'ArrowLeft':  this.rotateLeft();  e.preventDefault(); break;
@@ -375,9 +409,6 @@ export class BonsaiSceneManager {
     this.camera.updateProjectionMatrix();
   }
 
-  /* ════════════════════════════════════════════════════════════════════════
-     Animation Loop
-     ════════════════════════════════════════════════════════════════════════ */
   animate() {
     this._animId = requestAnimationFrame(this.animate);
     const t = performance.now() * 0.001;
@@ -416,9 +447,6 @@ export class BonsaiSceneManager {
     this.renderer.render(this.scene, this.camera);
   }
 
-  /* ════════════════════════════════════════════════════════════════════════
-     Cleanup
-     ════════════════════════════════════════════════════════════════════════ */
   dispose() {
     if (this._animId) cancelAnimationFrame(this._animId);
     clearTimeout(this._autoResumeTimer);
@@ -437,17 +465,22 @@ export class BonsaiSceneManager {
     // Particles
     if (this._particles) this._particles.dispose();
 
-    // InstancedMesh
-    if (this._instancedMesh) {
-      this._instancedMesh.geometry.dispose();
-      this._instancedMesh.material.dispose();
-    }
+    // InstancedMeshes
+    this._instancedMeshes.forEach(group => {
+      group.mesh.geometry.dispose();
+      group.mesh.material.dispose();
+    });
+    this._instancedMeshes = [];
 
     // Reflection
     if (this._reflMesh) {
       this._reflMesh.geometry.dispose();
       this._reflMesh.material.dispose();
     }
+
+    // Geometries cache
+    Object.values(this._geometries).forEach(geo => geo.dispose());
+    this._geometries = {};
 
     // Renderer
     this.renderer.dispose();

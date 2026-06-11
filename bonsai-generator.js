@@ -2,37 +2,11 @@
  * bonsai-generator.js
  * 
  * Procedural voxel bonsai tree generator.
- * Uses seeded RNG (FNV-1a hash + LCG) for deterministic output.
- * Generates trunk, branches, foliage clusters, and occasional fruit.
+ * Fully aligned with the Hugging Face Bonsai WebGPU demo.
  * 
  * @module bonsai-generator
  */
 
-// ─── Color Palettes (r, g, b as 0-1 floats) ────────────────────────────────
-
-const TRUNK_COLORS = [
-  [0.29, 0.18, 0.10],
-  [0.42, 0.23, 0.13],
-  [0.49, 0.29, 0.17],
-];
-
-const LEAF_COLORS = [
-  [0.10, 0.36, 0.10],
-  [0.18, 0.54, 0.18],
-  [0.27, 0.60, 0.27],
-  [0.15, 0.45, 0.20],
-];
-
-const FRUIT_COLOR = [0.88, 0.15, 0.08];
-
-// ─── Seeded RNG (FNV-1a hash + xorshift LCG) ───────────────────────────────
-
-/**
- * Creates a deterministic pseudo-random number generator from a seed string.
- * Uses FNV-1a for hashing the seed and xorshift for the sequence.
- * @param {string} seedStr - Seed string for deterministic generation.
- * @returns {() => number} Function returning floats in [0, 1).
- */
 function seededRng(seedStr) {
   let h = 2166136261;
   const s = (seedStr || 'bonsai').toLowerCase();
@@ -48,209 +22,136 @@ function seededRng(seedStr) {
   };
 }
 
-// ─── Helper Utilities ───────────────────────────────────────────────────────
-
-/**
- * Picks a random element from an array using the provided RNG.
- * @param {Array} arr - Source array.
- * @param {() => number} rng - Seeded RNG function.
- * @returns {*} Random element from the array.
- */
-function pick(arr, rng) {
-  return arr[Math.floor(rng() * arr.length)];
+function hexToRgb(hex) {
+  const num = parseInt(hex.replace('#', ''), 16);
+  return [
+    ((num >> 16) & 255) / 255,
+    ((num >> 8) & 255) / 255,
+    (num & 255) / 255
+  ];
 }
 
-/**
- * Returns a random integer in [min, max] (inclusive).
- * @param {number} min 
- * @param {number} max 
- * @param {() => number} rng 
- * @returns {number}
- */
-function randInt(min, max, rng) {
-  return Math.floor(rng() * (max - min + 1)) + min;
-}
+const kh = ['#4a3728','#3d2e20','#5c4535','#2e2218','#6b5444'].map(hexToRgb);
+const Ah = ['#e63c2e','#d4452f','#f05a3a','#c93525','#ff6b45','#e8502a','#d94a30','#f24832','#ff7f50','#e06030'].map(hexToRgb);
 
-/**
- * Returns a random float in [min, max).
- * @param {number} min 
- * @param {number} max 
- * @param {() => number} rng 
- * @returns {number}
- */
-function randFloat(min, max, rng) {
-  return rng() * (max - min) + min;
-}
+const TRUNK_COORDS = [
+  {x:0,y:9,z:0},{x:-1,y:9,z:0},{x:0,y:9,z:-1},{x:-1,y:9,z:-1},
+  {x:0,y:10,z:0},{x:-1,y:10,z:0},{x:0,y:10,z:-1},{x:-1,y:10,z:-1},
+  {x:0,y:11,z:0},{x:-1,y:11,z:0},{x:0,y:11,z:-1},{x:0,y:12,z:0},
+  {x:-1,y:12,z:0},{x:0,y:12,z:-1},{x:0,y:13,z:0},{x:-1,y:13,z:0},
+  {x:0,y:14,z:0},{x:-1,y:14,z:0},{x:0,y:15,z:0},{x:0,y:16,z:0},
+  {x:-2,y:15,z:0},{x:-3,y:15,z:0},{x:-3,y:16,z:0},{x:-4,y:16,z:0},
+  {x:-4,y:16,z:1},{x:-5,y:17,z:0},{x:-5,y:17,z:1},{x:1,y:14,z:0},
+  {x:2,y:14,z:0},{x:2,y:15,z:0},{x:3,y:15,z:0},{x:3,y:16,z:0},
+  {x:4,y:16,z:0},{x:4,y:17,z:0},{x:5,y:17,z:-1},{x:0,y:14,z:1},
+  {x:0,y:15,z:1},{x:0,y:15,z:2},{x:1,y:16,z:2},{x:1,y:16,z:3},
+  {x:0,y:13,z:-1},{x:0,y:14,z:-2},{x:0,y:15,z:-2},{x:-1,y:15,z:-2},
+  {x:-1,y:16,z:-3},{x:0,y:16,z:-3},{x:0,y:17,z:0},{x:0,y:18,z:0},
+  {x:1,y:13,z:-1},{x:-2,y:14,z:-1},{x:2,y:16,z:1},{x:-3,y:17,z:-1},
+  {x:1,y:8,z:0},{x:-2,y:8,z:0},{x:0,y:8,z:1},{x:-1,y:8,z:-1},
+  {x:1,y:7,z:1},{x:-2,y:7,z:-1}
+];
 
-// ─── Main Generator ─────────────────────────────────────────────────────────
-
-/**
- * Generates a procedural voxel bonsai tree.
- * 
- * @param {string} seed - Seed string for deterministic generation.
- * @returns {{ voxels: Array<{x:number, y:number, z:number, r:number, g:number, b:number, type:string}> }}
- */
 export function generateBonsai(seed) {
   const rng = seededRng(seed);
   const voxels = [];
-  const added = new Set(); // Prevents duplicate voxel positions
+  const added = new Set();
 
-  /**
-   * Adds a voxel if its position hasn't been used yet.
-   * @param {number} x 
-   * @param {number} y 
-   * @param {number} z 
-   * @param {number} r 
-   * @param {number} g 
-   * @param {number} b 
-   * @param {string} type 
-   */
-  function addVoxel(x, y, z, r, g, b, type) {
+  function pick(arr) {
+    return arr[Math.floor(rng() * arr.length)];
+  }
+
+  function addVoxel(x, y, z, rgb, type) {
     const rx = Math.round(x);
     const ry = Math.round(y);
     const rz = Math.round(z);
     const key = `${rx},${ry},${rz}`;
     if (added.has(key)) return;
     added.add(key);
-    voxels.push({ x: rx, y: ry, z: rz, r, g, b, type });
+    voxels.push({ x: rx, y: ry, z: rz, r: rgb[0], g: rgb[1], b: rgb[2], type });
   }
 
-  // ── Parameters ──────────────────────────────────────────────────────────
+  // 1. Generate Trunk from hardcoded coords
+  TRUNK_COORDS.forEach(e => {
+    let color = pick(kh);
+    addVoxel(e.x, e.y + 0.5, e.z, color, 'trunk');
+  });
 
-  const trunkHeight = randInt(11, 14, rng);
-  const lean1 = randFloat(-1.5, 1.5, rng);  // Primary S-curve lean
-  const lean2 = randFloat(-1.0, 1.0, rng);  // Secondary lean for depth
-  const branchCount = randInt(4, 6, rng);
-
-  // Store trunk center positions at each height for branch origins
-  const trunkPath = [];
-
-  // ── 1. Root Flare ───────────────────────────────────────────────────────
-  // Thick 4×4 footprint at y=0 with noise for organic look
-
-  for (let dx = -2; dx <= 2; dx++) {
-    for (let dz = -2; dz <= 2; dz++) {
-      const distFromCenter = Math.sqrt(dx * dx + dz * dz);
-      // 100% fill in center, 60% at edges
-      if (distFromCenter > 2.5) continue;
-      if (distFromCenter > 1.5 && rng() > 0.6) continue;
-
-      const color = pick(TRUNK_COLORS, rng);
-      addVoxel(dx, 0, dz, color[0], color[1], color[2], 'trunk');
+  const Qh = [];
+  const $h = new Set();
+  function eg(e, t, n) {
+    let r = `${e},${t},${n}`;
+    if (!$h.has(r)) {
+      $h.add(r);
+      Qh.push({ x: e, y: t, z: n });
     }
   }
 
-  // ── 2. Trunk ────────────────────────────────────────────────────────────
-  // S-curve path with tapering width
-
-  for (let y = 0; y <= trunkHeight; y++) {
-    const t = y / trunkHeight; // Normalized height [0, 1]
-
-    // S-curve displacement for organic trunk shape
-    const cx = Math.sin(t * Math.PI) * lean1 + Math.sin(t * Math.PI * 2) * lean2 * 0.3;
-    const cz = Math.cos(t * Math.PI * 0.7) * lean2 * 0.5;
-
-    // Tapering width: thicker at base, thinner at top
-    let width;
-    if (y < 4) {
-      width = 2;
-    } else if (y < 8) {
-      width = 1.5;
-    } else {
-      width = 1;
-    }
-
-    // Store trunk center for branch spawning
-    trunkPath.push({ x: cx, y, z: cz });
-
-    // Fill cylindrical cross-section at this height
-    const iWidth = Math.ceil(width);
-    for (let dx = -iWidth; dx <= iWidth; dx++) {
-      for (let dz = -iWidth; dz <= iWidth; dz++) {
-        const dist = Math.sqrt(dx * dx + dz * dz);
-        const threshold = width * 0.7 + rng() * 0.3;
-        if (dist <= threshold) {
-          const color = pick(TRUNK_COLORS, rng);
-          addVoxel(cx + dx, y, cz + dz, color[0], color[1], color[2], 'trunk');
+  // 2. Generate Leaves in main sphere
+  var tg = 6.5, ng = tg / 4.5;
+  for (let e = -8; e <= 8; e++) {
+    for (let t = 15; t <= 26; t++) {
+      for (let n = -7; n <= 7; n++) {
+        let r = (t - 20) * ng;
+        if (Math.sqrt(e*e + r*r + n*n) < tg + (Math.sin(e*1.8 + n*1.4)*0.7 + Math.cos(t*1.1 + e*0.7)*0.6 + Math.sin(n*2.3 - t*0.5)*0.4) && rng() > 0.18) {
+          eg(e, t, n);
         }
       }
     }
   }
 
-  // ── 3. Branches ─────────────────────────────────────────────────────────
-  // 4-6 branches sprouting from 40-90% trunk height
+  // Smaller leaf spheres
+  const leafSpheres = [
+    { cx: -5, cy: 17, cz: 0, r: 3.5 },
+    { cx: -5, cy: 17, cz: 1, r: 2.8 },
+    { cx: 5, cy: 17, cz: -1, r: 3.5 },
+    { cx: 4, cy: 18, cz: 0, r: 3 },
+    { cx: 1, cy: 17, cz: 3, r: 3.2 },
+    { cx: 1, cy: 17, cz: -3, r: 3 },
+    { cx: -1, cy: 17, cz: -3, r: 2.8 },
+    { cx: 0, cy: 24, cz: 0, r: 3 },
+    { cx: -2, cy: 23, cz: 1, r: 2.5 },
+    { cx: 2, cy: 23, cz: -1, r: 2.5 },
+    { cx: 1, cy: 24, cz: 1, r: 2 },
+    { cx: -1, cy: 24, cz: -1, r: 2 },
+    { cx: -7, cy: 18, cz: 0, r: 2 },
+    { cx: 6, cy: 18, cz: 0, r: 2 },
+    { cx: 0, cy: 18, cz: 5, r: 2.2 },
+    { cx: 0, cy: 18, cz: -5, r: 2.2 },
+    { cx: -3, cy: 15, cz: 2, r: 2.5 },
+    { cx: 3, cy: 15, cz: -2, r: 2.5 },
+    { cx: -2, cy: 15, cz: -3, r: 2 },
+    { cx: 2, cy: 15, cz: 3, r: 2 }
+  ];
 
-  const branchTips = []; // Collect tips for foliage placement
-
-  for (let b = 0; b < branchCount; b++) {
-    // Pick a trunk position between 40% and 90% of the way up
-    const minIdx = Math.floor(trunkPath.length * 0.4);
-    const maxIdx = Math.floor(trunkPath.length * 0.9);
-    const originIdx = randInt(minIdx, maxIdx, rng);
-    const origin = trunkPath[originIdx];
-
-    // Branch direction — evenly spaced around trunk with random offset
-    const angle = (b / branchCount) * Math.PI * 2 + (rng() - 0.5) * 0.8;
-    const branchLength = randInt(3, 6, rng);
-
-    // Step along the branch
-    let bx = origin.x;
-    let by = origin.y;
-    let bz = origin.z;
-
-    for (let s = 0; s < branchLength; s++) {
-      const dyStep = 0.3 + rng() * 0.4; // Upward bias
-      bx += Math.cos(angle) * 1.0 + (rng() - 0.5) * 0.3; // Slight jitter
-      by += dyStep;
-      bz += Math.sin(angle) * 1.0 + (rng() - 0.5) * 0.3;
-
-      const color = pick(TRUNK_COLORS, rng);
-      addVoxel(bx, by, bz, color[0], color[1], color[2], 'branch');
-    }
-
-    // Record branch tip for foliage
-    branchTips.push({ x: bx, y: by, z: bz });
-  }
-
-  // Also add the trunk top as a foliage point
-  const trunkTop = trunkPath[trunkPath.length - 1];
-  branchTips.push({ x: trunkTop.x, y: trunkTop.y, z: trunkTop.z });
-
-  // ── 4. Foliage & Fruit ─────────────────────────────────────────────────
-  // Ellipsoidal leaf clusters at each branch tip and trunk top.
-  // 8% of leaf positions become fruit instead.
-
-  for (const tip of branchTips) {
-    const radius = randFloat(2, 4, rng);
-
-    const iRadius = Math.ceil(radius);
-    for (let dx = -iRadius; dx <= iRadius; dx++) {
-      for (let dy = -iRadius; dy <= iRadius; dy++) {
-        for (let dz = -iRadius; dz <= iRadius; dz++) {
-          // Squashed Y for flatter ellipsoidal shape
-          const dist = Math.sqrt(dx * dx + (dy * 1.3) * (dy * 1.3) + dz * dz);
-          if (dist > radius) continue;
-          if (rng() <= 0.3) continue; // 30% skip for organic gaps
-
-          // 8% chance of fruit
-          if (rng() < 0.08) {
-            addVoxel(
-              tip.x + dx, tip.y + dy, tip.z + dz,
-              FRUIT_COLOR[0], FRUIT_COLOR[1], FRUIT_COLOR[2],
-              'fruit'
-            );
-          } else {
-            const color = pick(LEAF_COLORS, rng);
-            addVoxel(
-              tip.x + dx, tip.y + dy, tip.z + dz,
-              color[0], color[1], color[2],
-              'leaf'
-            );
+  leafSpheres.forEach(e => {
+    for (let t = Math.floor(e.cx - e.r - 1); t <= Math.ceil(e.cx + e.r + 1); t++) {
+      for (let n = Math.floor(e.cy - e.r); n <= Math.ceil(e.cy + e.r + 1); n++) {
+        for (let r = Math.floor(e.cz - e.r - 1); r <= Math.ceil(e.cz + e.r + 1); r++) {
+          let i = t - e.cx,
+              a = (n - e.cy) * 1.15,
+              o = r - e.cz;
+          if (Math.sqrt(i*i + a*a + o*o) < e.r && rng() > 0.2) {
+            eg(t, n, r);
           }
         }
       }
     }
+  });
+
+  // Additional random foliage tufts
+  for (let e = 0; e < 25; e++) {
+    let rx = Math.round((rng() - 0.5) * 14);
+    let rz = Math.round((rng() - 0.5) * 10);
+    let ry = Math.floor(rng() * 3) + 1;
+    eg(rx, ry, rz);
   }
+
+  // Push leaf voxels
+  Qh.forEach(e => {
+    let color = pick(Ah);
+    addVoxel(e.x, e.y + 0.5, e.z, color, 'leaf');
+  });
 
   return { voxels };
 }
