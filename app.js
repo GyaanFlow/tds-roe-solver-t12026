@@ -1,6 +1,7 @@
 // TDS Exam Portal - Workspace Application Engine
 
 let networkCanvas = null;
+let bonsaiScene = null;
 
 const THEME_HUES = {
   amber: { primary: 38, secondary: 4 },
@@ -961,6 +962,10 @@ async function startSolving() {
   if (networkCanvas) {
     networkCanvas.setDimmed(true);
   }
+  if (bonsaiScene) {
+    bonsaiScene.dispose();
+    bonsaiScene = null;
+  }
   questionNav.innerHTML = '';
   canvas.innerHTML = '';
   exportActions.classList.add('hidden');
@@ -1474,6 +1479,11 @@ function switchTheme(theme) {
     networkCanvas.setThemeColors(colors.primary, colors.secondary);
   }
 
+  if (bonsaiScene && typeof bonsaiScene.setThemeColors === 'function') {
+    const colors = THEME_COLORS[theme];
+    bonsaiScene.setThemeColors(colors.primary, colors.secondary);
+  }
+
   const emailVal = emailInput.value.trim();
   drawEmailIdenticon(emailVal);
 }
@@ -1547,6 +1557,48 @@ async function initNetworkCanvas() {
   }
 }
 
+// Initialize WebGL welcome bonsai scene dynamically to support check.mjs Node environment compatibility
+async function initBonsaiScene() {
+  if (typeof process === 'undefined') {
+    try {
+      const module = await import('./bonsai-scene.js');
+      if (document.getElementById('bonsaiCanvas')) {
+        bonsaiScene = new module.BonsaiSceneManager('bonsaiCanvas');
+        
+        // Wire up explosion slider
+        const slider = document.getElementById('bonsaiExplosion');
+        if (slider) {
+          slider.addEventListener('input', (e) => {
+            if (bonsaiScene) {
+              bonsaiScene.setExplosion(parseFloat(e.target.value) / 100);
+            }
+          });
+        }
+        
+        // Wire up randomize button
+        const randomizeBtn = document.getElementById('bonsaiRandomize');
+        if (randomizeBtn) {
+          randomizeBtn.addEventListener('click', () => {
+            if (bonsaiScene) {
+              const emailVal = emailInput.value.trim() || 'anonymous';
+              bonsaiScene.randomizeTree(emailVal + '-' + Date.now());
+              if (slider) slider.value = '0';
+            }
+          });
+        }
+        
+        // Wire theme colors immediately
+        const colors = THEME_COLORS[activeTheme];
+        if (colors && typeof bonsaiScene.setThemeColors === 'function') {
+          bonsaiScene.setThemeColors(colors.primary, colors.secondary);
+        }
+      }
+    } catch (e) {
+      console.warn('WebGL/Three.js Voxel Bonsai could not be initialized:', e);
+    }
+  }
+}
+
 // Initial call to draw default identicon and update 3D network once dynamic import completes
 initNetworkCanvas().then(() => {
   switchTheme(activeTheme);
@@ -1569,5 +1621,8 @@ initNetworkCanvas().then(() => {
         networkCanvas.setDimmed(true);
       }
     }
+    
+    // Initialize Voxel Bonsai Tree
+    initBonsaiScene();
   }, 150);
 });

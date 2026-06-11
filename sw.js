@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tds-portal-v6';
+const CACHE_NAME = 'tds-portal-v7';
 
 const CORE_ASSETS = [
   '/',
@@ -7,6 +7,10 @@ const CORE_ASSETS = [
   '/style.css',
   '/manifest.json',
   '/tds-config.json',
+  '/bonsai-generator.js',
+  '/island-generator.js',
+  '/particle-system.js',
+  '/bonsai-scene.js',
   // CDNs
   'https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/seedrandom.min.js',
   'https://cdn.jsdelivr.net/npm/marked/marked.min.js',
