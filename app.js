@@ -1591,6 +1591,21 @@ async function initBonsaiScene() {
           });
         }
         
+        // Wire up season selectors
+        const seasonBtns = document.querySelectorAll('.bonsai-season-btn');
+        seasonBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            if (bonsaiScene) {
+              const season = parseInt(btn.dataset.season);
+              bonsaiScene.setSeason(season);
+              
+              // Update active button state
+              seasonBtns.forEach(b => b.classList.remove('active'));
+              btn.classList.add('active');
+            }
+          });
+        });
+
         // Wire theme colors immediately
         const colors = THEME_COLORS[activeTheme];
         if (colors && typeof bonsaiScene.setThemeColors === 'function') {

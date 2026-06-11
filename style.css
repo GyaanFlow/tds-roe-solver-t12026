@@ -1495,6 +1495,39 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+.bonsai-seasons {
+  display: flex;
+  gap: 4px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding-right: 8px;
+  margin-right: 4px;
+}
+.bonsai-season-btn {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.6;
+}
+.bonsai-season-btn:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.1);
+}
+.bonsai-season-btn.active {
+  opacity: 1;
+  background: var(--theme-glow);
+  border: 1px solid var(--theme-primary);
+  box-shadow: 0 0 10px var(--theme-glow);
+  transform: scale(1.1);
+}
 .bonsai-container:hover .bonsai-controls {
   opacity: 1;
 }
