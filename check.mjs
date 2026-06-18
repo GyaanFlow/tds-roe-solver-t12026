@@ -250,6 +250,27 @@ async function checkGa0SolversExecute(solvers) {
   }
 }
 
+async function checkGa1SolversExecute(solvers) {
+  const sampleEmails = [
+    '21f1000000@ds.study.iitm.ac.in',
+    '22f2001234@ds.study.iitm.ac.in',
+    'USER.Test+GA1@Example.COM'
+  ];
+
+  for (const email of sampleEmails) {
+    for (const solver of solvers) {
+      const result = await solver.solve(email);
+      assert(result && typeof result === 'object', `GA1 ${solver.id} returned a non-object result.`);
+      assert(typeof result.answer === 'string', `GA1 ${solver.id} answer must be a string.`);
+      assert(result.answer.length > 0, `GA1 ${solver.id} answer must not be empty.`);
+      assert(
+        ['solved', 'guide', 'bypass', 'error'].includes(result.type),
+        `GA1 ${solver.id} returned unexpected result type: ${result.type}.`
+      );
+    }
+  }
+}
+
 async function main() {
   installBrowserStubs();
 
@@ -265,19 +286,22 @@ async function main() {
   const ga8Registry = await importFresh('solvers/T12026/ga8/registry.js');
   const p2Registry = await importFresh('solvers/T12026/p2/registry.js');
   const ga0Registry = await importFresh('solvers/T22026/ga0/registry.js');
+  const ga1Registry = await importFresh('solvers/T22026/ga1/registry.js');
 
   assert(Array.isArray(ga7Registry.solvers) && ga7Registry.solvers.length > 0, 'GA7 registry did not load solvers.');
   assert(Array.isArray(roeRegistry.solvers) && roeRegistry.solvers.length > 0, 'ROE registry did not load solvers.');
   assert(Array.isArray(ga8Registry.solvers) && ga8Registry.solvers.length > 0, 'GA8 registry did not load solvers.');
   assert(Array.isArray(p2Registry.solvers) && p2Registry.solvers.length === 2, 'P2 registry should have exactly 2 solvers (Q3 + Q4).');
   assert(Array.isArray(ga0Registry.solvers) && ga0Registry.solvers.length === 25, `GA0 registry should have exactly 25 solvers, got ${ga0Registry.solvers.length}.`);
+  assert(Array.isArray(ga1Registry.solvers) && ga1Registry.solvers.length === 18, `GA1 registry should have exactly 18 solvers, got ${ga1Registry.solvers.length}.`);
   await checkGa8OfficialParity(ga8Registry.solvers);
   checkGa0OfficialOrder(ga0Registry.solvers);
   await checkGa0SolversExecute(ga0Registry.solvers);
+  await checkGa1SolversExecute(ga1Registry.solvers);
 
   await checkServerRoutes();
 
-  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}`);
+  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}`);
 }
 
 main().catch((error) => {
