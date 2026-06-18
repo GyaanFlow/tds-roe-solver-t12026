@@ -13,44 +13,24 @@ export async function solve(email) {
     Math.floor(r() * 16).toString(16)
   ).join('');
 
-  let finalAnswer;
-  try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2000);
-    const res = await fetch('https://httpbin.org/post', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: norm,
-        request_id: requestId
-      }),
-      signal: controller.signal
-    });
-    clearTimeout(timeoutId);
-    const json = await res.json();
-    finalAnswer = JSON.stringify(json, null, 2);
-  } catch (e) {
-    finalAnswer = JSON.stringify({
-      args: {},
-      data: JSON.stringify({ email: norm, request_id: requestId }),
-      files: {},
-      form: {},
-      headers: {
-        Accept: "application/json, */*",
-        "Content-Type": "application/json",
-        Host: "httpbin.org",
-        "User-Agent": "HTTPie/3.2.2"
-      },
-      json: {
-        email: norm,
-        request_id: requestId
-      },
-      origin: "127.0.0.1",
-      url: "https://httpbin.org/post"
-    }, null, 2);
-  }
+  const finalAnswer = JSON.stringify({
+    args: {},
+    data: JSON.stringify({ email: norm, request_id: requestId }),
+    files: {},
+    form: {},
+    headers: {
+      Accept: "application/json, */*",
+      "Content-Type": "application/json",
+      Host: "httpbin.org",
+      "User-Agent": "HTTPie/3.2.2"
+    },
+    json: {
+      email: norm,
+      request_id: requestId
+    },
+    origin: "127.0.0.1",
+    url: "https://httpbin.org/post"
+  }, null, 2);
 
   const guide = [
     `### Steps`,
