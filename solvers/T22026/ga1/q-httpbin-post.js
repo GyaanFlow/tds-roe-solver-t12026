@@ -15,6 +15,8 @@ export async function solve(email) {
 
   let finalAnswer;
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 2000);
     const res = await fetch('https://httpbin.org/post', {
       method: 'POST',
       headers: {
@@ -23,8 +25,10 @@ export async function solve(email) {
       body: JSON.stringify({
         email: norm,
         request_id: requestId
-      })
+      }),
+      signal: controller.signal
     });
+    clearTimeout(timeoutId);
     const json = await res.json();
     finalAnswer = JSON.stringify(json, null, 2);
   } catch (e) {
