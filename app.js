@@ -126,9 +126,7 @@ function updateWelcomeScreenNotice() {
           <span>Academic Integrity Lock Active</span>
         </div>
         <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--text-secondary);">
-          The programmatic solver for <strong>T2 2026 GA1 (Developer Tools)</strong> is currently locked for standard student emails to encourage manual study and practice. 
-          If you initialize the workspace with a standard email, you will receive step-by-step implementation guides to solve the questions manually. 
-          Whitelisted email addresses (instructors/testers) will bypass the lock.
+          The programmatic solver for <strong>T2 2026 GA1 (Developer Tools)</strong> is currently locked. You do not have permission to access the solutions or step-by-step guides for this exam without explicit authorization. Whitelisted email addresses (instructors/testers) will bypass the lock.
         </p>
       </div>
     `;

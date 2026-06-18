@@ -58,17 +58,17 @@ export function wrapSolverModule(mod) {
         diagnostics.durationText = formatDuration(durationMs);
 
         let finalResult = result;
-        if (isLocked && result.type === 'solved') {
+        if (isLocked) {
           finalResult = {
             type: 'guide',
-            answer: 'This solver is currently locked. Please refer to the Implementation Guide to solve this manually.',
-            variant: result.variant,
+            answer: 'This solver is locked. Access to answers and guides is restricted.',
+            variant: 'Locked',
             answerDisplay: [
               `### ${title}`,
-              `⚠️ **Solver Locked**: The programmatic solver is locked for this email to encourage manual study and practice.`,
-              `Please refer to the **Implementation Guide** below for step-by-step instructions to solve this question manually.`,
+              `⚠️ **Access Restricted**: This solver is locked.`,
+              `You do not have permission to access the solutions or step-by-step guides for this exam.`,
             ].join('\n'),
-            guide: result.guide || 'Refer to the question instructions to solve this manually.'
+            guide: 'Access to this solver and its guide is restricted. Please complete the tasks yourself.'
           };
         }
 
