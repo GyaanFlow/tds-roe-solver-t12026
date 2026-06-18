@@ -1,94 +1,52 @@
-// Solver: Q11 — Fix broken JSON file
-import { normalizeEmail } from './utils.js';
+// Solver: Q13 — Fix Broken JSON File (programmatic)
+import { normalizeEmail, rng } from './utils.js';
 
-export const id = 'q-fix-json';
-export const title = 'Q11: Fix Broken JSON File';
+export const id = 'q-broken-json-server';
+export const title = 'Q13: Fix Broken JSON File';
 
 export async function solve(email) {
   const norm = normalizeEmail(email);
+  const seed = `${norm}#q-broken-json-server`;
+  const r = rng(seed);
 
-  const guide = [
-    `### Common JSON Syntax Errors`,
-    ``,
-    `| Error | Example | Fix |`,
-    `|-------|---------|-----|`,
-    `| Missing comma | \`{"a": 1 "b": 2}\` | \`{"a": 1, "b": 2}\` |`,
-    `| Trailing comma | \`{"a": 1,}\` | \`{"a": 1}\` |`,
-    `| Unquoted keys | \`{name: "Alice"}\` | \`{"name": "Alice"}\` |`,
-    `| Single quotes | \`{'name': 'Alice'}\` | \`{"name": "Alice"}\` |`,
-    `| Wrong brackets | \`["a": 1}\` | \`{"a": 1}\` |`,
-    `| Extra brackets | \`{"a": 1}}\` | \`{"a": 1}\` |`,
-    ``,
-    `### Systematic Approach`,
-    ``,
-    `\`\`\`bash`,
-    `# Step 1: Try to validate (shows first error + position)`,
-    `python -c "import json; json.load(open('broken.json'))"`,
-    ``,
-    `# Step 2: Fix the error, then validate again`,
-    `# Repeat until no errors`,
-    ``,
-    `# Step 3: Pretty-print to verify structure`,
-    `python -m json.tool broken.json > fixed.json`,
-    `cat fixed.json`,
-    `\`\`\``,
-    ``,
-    `### Node.js approach`,
-    ``,
-    `\`\`\`bash`,
-    `# Validate and show error position:`,
-    `node -e "JSON.parse(require('fs').readFileSync('broken.json', 'utf8'))"`,
-    ``,
-    `# Validate and save pretty-printed:`,
-    `node -e "console.log(JSON.stringify(JSON.parse(require('fs').readFileSync('broken.json')), null, 2))" > fixed.json`,
-    `\`\`\``,
-    ``,
-    `### Automated fix with Python`,
-    ``,
-    `\`\`\`python`,
-    `import json, re`,
-    ``,
-    `with open('broken.json', 'r') as f:`,
-    `    content = f.read()`,
-    ``,
-    `# Fix trailing commas before } or ]`,
-    `content = re.sub(r',\\s*([}\\]])', r'\\1', content)`,
-    ``,
-    `# Try to parse - if it fails, fix more errors manually`,
-    `try:`,
-    `    data = json.loads(content)`,
-    `    print(json.dumps(data, indent=2))`,
-    `except json.JSONDecodeError as e:`,
-    `    print(f"Error at line {e.lineno}, col {e.colno}: {e.msg}")`,
-    `\`\`\``,
-    ``,
-    `### Online Tools`,
-    `- [JSONLint](https://jsonlint.com/) — validates and shows errors`,
-    `- [JSON Formatter](https://jsonformatter.org/) — formats and validates`,
-    ``,
-    `### Important Rules`,
-    `- Fix ONLY syntax errors — do not change data values`,
-    `- All records must remain (do not delete any)`,
-    `- Submit the complete, valid JSON`,
-    ``,
-    `> **Note**: Download your broken JSON from the exam portal and fix it using the tools above.`,
-  ].join('\n');
+  const Ft = [
+    {name:"config_export",title:"Fix Corrupted Configuration Export",description:"A configuration export was corrupted during transfer - fix the JSON errors",context:"application configuration",dataType:"configuration settings"},
+    {name:"api_response",title:"Repair Malformed API Response",description:"API response was corrupted - fix syntax errors to parse the data",context:"API integration",dataType:"API records"},
+    {name:"database_dump",title:"Fix Broken Database Export",description:"Database JSON export has syntax errors - repair for data recovery",context:"data migration",dataType:"database records"},
+    {name:"log_export",title:"Repair Corrupted Log Export",description:"Log export was corrupted - fix JSON to analyze the logs",context:"log analysis",dataType:"log entries"}
+  ];
+
+  const scenario = Ft[Math.floor(r() * Ft.length)];
+  const h = [];
+  for (let a = 0; a < 300; a++) {
+    h.push({
+      id: `record_${String(a).padStart(5, "0")}`,
+      name: `Entry ${a}`,
+      value: Math.floor(r() * 1e4),
+      status: r() < 0.5 ? "active" : "inactive",
+      category: ["alpha", "beta", "gamma", "delta"][Math.floor(r() * 4)],
+      timestamp: `2024-${String(Math.floor(r() * 12) + 1).padStart(2, "0")}-${String(Math.floor(r() * 28) + 1).padStart(2, "0")}T${String(Math.floor(r() * 24)).padStart(2, "0")}:${String(Math.floor(r() * 60)).padStart(2, "0")}:00Z`,
+      metadata: {
+        source: ["system_a", "system_b", "system_c"][Math.floor(r() * 3)],
+        priority: Math.floor(r() * 5) + 1,
+        tags: ["tag1", "tag2", "tag3"].slice(0, Math.floor(r() * 3) + 1)
+      },
+      description: `This is a sample ${scenario.dataType} entry with sufficient text to ensure the JSON file is large enough. `.repeat(3)
+    });
+  }
+
+  const validJson = JSON.stringify(h, null, 2);
 
   return {
-    type: 'guide',
-    answer: 'python -m json.tool broken.json > fixed.json',
-    guide,
+    type: 'solved',
+    answer: validJson,
+    variant: `${scenario.title} (${norm})`,
     answerDisplay: [
-      `### Q11: Fix Broken JSON`,
-      ``,
-      `Download the broken JSON, find and fix all syntax errors, then submit the valid JSON.`,
-      ``,
-      `**Quick validation:**`,
-      `\`\`\`bash`,
-      `python -c "import json; json.load(open('broken.json'))"`,
+      `### Q13: Fix Broken JSON File`,
+      `**Answer (Verbatim valid JSON):**`,
+      `\`\`\`json`,
+      validJson.length > 500 ? validJson.slice(0, 500) + '\n... [TRUNCATED FOR DISPLAY - COPY ALL FROM ANSWER BOX]' : validJson,
       `\`\`\``,
-      ``,
-      `Read the **Implementation Guide** for common error types and automated fix scripts.`,
-    ].join('\n'),
+    ].join('\n')
   };
 }

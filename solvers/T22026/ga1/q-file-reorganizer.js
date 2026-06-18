@@ -1,83 +1,86 @@
-// Solver: Q4 — File reorganizer (flatten nested dirs by category tag → sha256sum hash)
+// Solver: Q5 — Reorganize Files with Shell Commands (Category Hash)
 import { normalizeEmail, rng, sha256 } from './utils.js';
 
 export const id = 'q-file-reorganizer';
-export const title = 'Q4: File Reorganizer (Category Hash)';
+export const title = 'Q5: Reorganize Files with Shell Commands';
 
 export async function solve(email) {
   const norm = normalizeEmail(email);
+  const seed = `${norm}#q-rename-files-server`;
+  const r = rng(seed);
 
-  const bashScript = `#!/bin/bash
-# Step 1: Extract zip and navigate into the directory
-# unzip your-file.zip && cd extracted-folder
+  const it = ["documentation", "reports", "notes", "configs", "data", "logs", "scripts", "templates", "resources", "archives"];
+  const ge = ["résumé", "naïve-bayes", "日本語", "münchen", "café"];
+  const at = [
+    {name:"documentation_cleanup",title:"Documentation Repository Reorganization",description:"Reorganize scattered documentation files into a category-based flat structure",context:"technical documentation"},
+    {name:"archive_migration",title:"Legacy Archive Migration",description:"Migrate legacy archive files from nested structure to categorized flat layout",context:"historical archives"},
+    {name:"content_management",title:"Content Management System Refactoring",description:"Restructure CMS content files from hierarchical to category-based organization",context:"content files"},
+    {name:"knowledge_base",title:"Knowledge Base Reorganization",description:"Flatten knowledge base articles while preserving category information",context:"knowledge articles"}
+  ];
 
-# Step 2: Reorganize files by category
-for file in $(find . -type f -name "*.txt"); do
-  # Extract category from first matching line
-  category=$(grep -m 1 "^category:" "$file" | cut -d' ' -f2- | tr -d '\\r')
-  if [ -z "$category" ]; then continue; fi
-  
-  # Create category directory
-  mkdir -p "$category"
-  
-  # Convert path: remove ./ prefix, replace / with -
-  relpath=$(echo "$file" | sed 's|^\\./||')
-  newname=$(echo "$relpath" | tr '/' '-')
-  
-  # Move file to category/new-name
-  mv "$file" "$category/$newname"
-done
+  const scenario = at[Math.floor(r() * at.length)];
+  const h = [];
+  const d = ["docs", "content", "archive", "project"];
+  const e = ["chapter1", "section-a", "part 2", "módulo-3", "2024"];
+  const c = ["intro", "advanced", "appendix", "données", "références"];
 
-# Step 3: Clean up empty directories
-find . -type d -empty -delete
+  for (let s = 0; s < 30; s++) {
+    let o = 1 + Math.floor(r() * 3);
+    let p = [];
+    p.push(d[Math.floor(r() * d.length)]);
+    if (o >= 2) p.push(e[Math.floor(r() * e.length)]);
+    if (o >= 3) p.push(c[Math.floor(r() * c.length)]);
+    if (r() < 0.2) {
+      let C = ["spaces here", "file-name", "naïve", "café-2024", "test_file"];
+      p.push(C[Math.floor(r() * C.length)]);
+    }
+    let y = `file${String(s + 1).padStart(2, "0")}.txt`;
+    let S = r() < 0.1 ? y.replace("i", "\u0456") : y; // Cyrillic i replace
+    let pathStr = [...p, S].join("/");
+    let f;
+    if (r() < 0.3 && ge.length > 0) {
+      f = ge[Math.floor(r() * ge.length)];
+    } else {
+      f = it[Math.floor(r() * it.length)];
+    }
+    h.push({ path: pathStr, category: f });
+  }
 
-# Step 4: Generate verification hash
-find . -type f | LC_ALL=C sort | sha256sum`;
+  let m = h.map(s => {
+    let o = s.path.split("/");
+    let p = o[o.length - 1];
+    let y = o.slice(0, -1).join("-");
+    return `${s.category}/${y}-${p}`;
+  });
 
-  const guide = [
-    `### Steps`,
-    ``,
-    `1. Download and extract the ZIP from the exam portal.`,
-    `2. Navigate into the extracted directory.`,
-    `3. Run the bash script below to reorganize files.`,
-    `4. The script outputs a SHA256 hash — submit that hash.`,
-    ``,
-    `### Bash Script`,
-    ``,
-    `\`\`\`bash`,
-    bashScript,
-    `\`\`\``,
-    ``,
-    `### How it works`,
-    ``,
-    `- Each \`.txt\` file has a \`category: name\` line at the top.`,
-    `- Files are moved to \`{category}/{path-with-dashes}-{filename}\`.`,
-    `- Example: \`docs/chapter1/lesson1.txt\` (category: reports) → \`reports/docs-chapter1-lesson1.txt\``,
-    ``,
-    `### Important Notes`,
-    ``,
-    `- Always use \`LC_ALL=C sort\` for consistent ASCII-based sorting.`,
-    `- Quote all variables: \`"$file"\` not \`$file\`.`,
-    `- If on Windows, use WSL or Git Bash.`,
-    `- Handle Windows line endings: add \`| tr -d '\\r'\` when reading category.`,
-    ``,
-    `> **Note**: Your hash depends on the ZIP file downloaded from your exam. Run the script on your extracted files.`,
-  ].join('\n');
+  m.sort((s, o) => {
+    for (let p = 0; p < Math.min(s.length, o.length); p++) {
+      if (s.charCodeAt(p) !== o.charCodeAt(p)) {
+        return s.charCodeAt(p) - o.charCodeAt(p);
+      }
+    }
+    return s.length - o.length;
+  });
+
+  const fileListStr = m.map(s => `./${s}`).join('\n') + '\n';
+  const expectedHash = await sha256(fileListStr);
 
   return {
-    type: 'guide',
-    answer: 'find . -type f | LC_ALL=C sort | sha256sum',
-    guide,
+    type: 'solved',
+    answer: expectedHash,
+    variant: `${scenario.title} (${norm})`,
     answerDisplay: [
-      `### Q4: File Reorganizer`,
+      `### Q5: Reorganize Files with Shell Commands`,
+      `**Expected Hash:** \`${expectedHash}\``,
       ``,
-      `This question generates a unique ZIP for your account. You must:`,
-      `1. Download and extract the ZIP.`,
-      `2. Reorganize files by their \`category:\` tag.`,
-      `3. Run \`find . -type f | LC_ALL=C sort | sha256sum\`.`,
-      `4. Submit the hash.`,
-      ``,
-      `Read the **Implementation Guide** for the full bash script.`,
+      `**Reorganized Files (first 5):**`,
+      `\`\`\dots`,
+      m.slice(0, 5).join('\n') + '\n...',
+      `\`\`\``,
     ].join('\n'),
+    debug: {
+      hash: expectedHash,
+      scenario: scenario.name
+    }
   };
 }

@@ -1,161 +1,161 @@
-// Solver: Q18 — Debugging AI-Generated Code (DevShield)
-import { normalizeEmail, rng, pick } from './utils.js';
+// Solver: Q20 — Verify and Fix AI-Generated Code (programmatic)
+import { normalizeEmail, rng } from './utils.js';
 
-export const id = 'q-debug-ai-code';
-export const title = 'Q18: Debug AI-Generated Code (DevShield)';
-
-// Common buggy code scenarios the exam uses
-const SCENARIOS = [
-  {
-    description: 'A function that is supposed to calculate the median of an array of numbers.',
-    buggyCode: `function median(arr) {
-  arr.sort();
-  const mid = arr.length / 2;
-  if (arr.length % 2 === 0) {
-    return (arr[mid] + arr[mid - 1]) / 2;
-  }
-  return arr[mid];
-}`,
-    fixedCode: `function median(arr) {
-  const sorted = [...arr].sort((a, b) => a - b);
-  const mid = Math.floor(sorted.length / 2);
-  if (sorted.length % 2 === 0) {
-    return (sorted[mid] + sorted[mid - 1]) / 2;
-  }
-  return sorted[mid];
-}`,
-    bugs: [
-      'Bug 1: The sort() method sorts lexicographically by default (e.g., [10, 2, 1] sorts to [1, 10, 2]). It must use a numeric comparator: arr.sort((a, b) => a - b).',
-      'Bug 2: The array is sorted in-place, mutating the input. A copy should be made first: const sorted = [...arr].sort((a, b) => a - b).',
-      'Bug 3: When the array length is even, arr.length / 2 is a float, not an integer. Math.floor() must be used: Math.floor(arr.length / 2).'
-    ],
-    testStrategy: 'I would write unit tests for: (1) odd-length arrays to verify the middle element is returned, (2) even-length arrays to verify the average of the two middle elements, (3) arrays with duplicate values, (4) single-element arrays, (5) negative numbers, (6) already-sorted and reverse-sorted arrays to ensure the sort comparator works correctly.'
-  },
-  {
-    description: 'A function that removes duplicate values from an array while preserving order.',
-    buggyCode: `function removeDuplicates(arr) {
-  let result = [];
-  for (let i = 0; i <= arr.length; i++) {
-    if (!result.includes(arr[i])) {
-      result.push(arr[i]);
-    }
-  }
-  return result;
-}`,
-    fixedCode: `function removeDuplicates(arr) {
-  const result = [];
-  const seen = new Set();
-  for (let i = 0; i < arr.length; i++) {
-    if (!seen.has(arr[i])) {
-      seen.add(arr[i]);
-      result.push(arr[i]);
-    }
-  }
-  return result;
-}`,
-    bugs: [
-      'Bug 1: The loop condition i <= arr.length causes an off-by-one error. When i === arr.length, arr[i] is undefined, so undefined gets pushed into result. Fix: use i < arr.length.',
-      'Bug 2: Using Array.includes() in a loop has O(n²) complexity. A Set should be used for O(n) lookup: const seen = new Set().',
-      'Bug 3: The undefined value from the out-of-bounds access passes the !result.includes(arr[i]) check on first encounter, adding undefined to the result.'
-    ],
-    testStrategy: 'I would test: (1) arrays with no duplicates to verify they are returned unchanged, (2) arrays with all duplicates to verify a single element remains, (3) arrays with mixed duplicates preserving original order, (4) empty arrays, (5) single-element arrays, (6) arrays with falsy values (0, false, null) to ensure they are handled correctly.'
-  },
-  {
-    description: 'A function that flattens a nested array to a specified depth.',
-    buggyCode: `function flattenArray(arr, depth = 1) {
-  let result = [];
-  for (const item of arr) {
-    if (Array.isArray(item) && depth > 0) {
-      result = result.concat(flattenArray(item, depth));
-    } else {
-      result.push(item);
-    }
-  }
-  return result;
-}`,
-    fixedCode: `function flattenArray(arr, depth = 1) {
-  let result = [];
-  for (const item of arr) {
-    if (Array.isArray(item) && depth > 0) {
-      result = result.concat(flattenArray(item, depth - 1));
-    } else {
-      result.push(item);
-    }
-  }
-  return result;
-}`,
-    bugs: [
-      'Bug 1: The depth parameter is not decremented in the recursive call: flattenArray(item, depth) should be flattenArray(item, depth - 1). Without decrementing, depth never reaches 0 and the recursion flattens all levels regardless of the requested depth.',
-      'Bug 2: The infinite-depth flattening caused by the above bug means the function will fully flatten deeply nested arrays even when depth=1 is specified.',
-      'Bug 3: No guard against infinite recursion for circular references in arrays — though this is an edge case, robust code should handle it.'
-    ],
-    testStrategy: 'I would test: (1) depth=0 to verify nothing is flattened, (2) depth=1 to verify only one level is flattened, (3) depth=2 for two levels, (4) Infinity for complete flattening, (5) empty arrays, (6) arrays with non-array items only, (7) mixed arrays with numbers, strings, and nested arrays.'
-  }
-];
+export const id = 'q-ai-output-verification';
+export const title = 'Q20: Verify and Fix AI-Generated Code';
 
 export async function solve(email) {
   const norm = normalizeEmail(email);
-  const r = rng(`${norm}#q-debug-ai-code`);
+  const seed = `${norm}#q-ai-output-verification`;
+  const r = rng(seed);
 
-  const scenario = SCENARIOS[Math.floor(r() * SCENARIOS.length)];
+  // We write the picker exactly mirroring the exam's top-level groups:
+  const scenarios = [
+    // Group 0
+    (rVal) => {
+      const n = [
+        { name: "discount and tax", bug: "Subtracted the discount and added the tax directly instead of applying percentage calculations.", correct: "function calculateTotal(price, discount, tax) {\n  const afterDiscount = price * (1 - discount / 100);\n  const withTax = afterDiscount * (1 + tax / 100);\n  return withTax;\n}" },
+        { name: "compound interest", bug: "Calculated simple interest instead of compound interest, failing to apply exponential growth over years.", correct: "function compoundInterest(principal, rate, time) {\n  return principal * Math.pow(1 + rate / 100, time);\n}" },
+        { name: "average", bug: "Returned the sum directly without dividing by the array length, and failed to handle empty arrays.", correct: "function calculateAverage(numbers) {\n  let sum = 0;\n  for (let num of numbers) {\n    sum += num;\n  }\n  return numbers.length > 0 ? sum / numbers.length : 0;\n}" },
+        { name: "percentage change", bug: "Did not divide the difference by the oldValue, resulting in incorrect change calculation.", correct: "function percentageChange(oldValue, newValue) {\n  return ((newValue - oldValue) / oldValue) * 100;\n}" }
+      ];
+      const a = n[Math.floor(rVal() * n.length)];
+      // Call rVal() three more times to match s, o, p generation in the exam
+      rVal(); rVal(); rVal();
+      return a;
+    },
+    // Group 1
+    (rVal) => {
+      const n = ["second largest", "second smallest", "most frequent", "remove duplicates", "find missing"];
+      const a = n[Math.floor(rVal() * n.length)];
+      // Call rVal() five more times to match s array generation
+      for (let i = 0; i < 5; i++) rVal();
 
-  const response = {
-    bugs: scenario.bugs,
-    fixedCode: scenario.fixedCode,
-    testStrategy: scenario.testStrategy
-  };
+      if (a === "second largest") {
+        return {
+          name: "second largest",
+          bug: "Sorted the array alphabetically (lexicographically) and failed to handle duplicates or check for minimum array length.",
+          correct: "function secondLargest(arr) {\n  const unique = [...new Set(arr)].sort((a, b) => b - a);\n  return unique.length >= 2 ? unique[1] : null;\n}"
+        };
+      } else if (a === "remove duplicates") {
+        return {
+          name: "remove duplicates",
+          bug: "Inefficient duplicate checking with O(N^2) Array.includes lookup instead of using a Set.",
+          correct: "function removeDuplicates(arr) {\n  return [...new Set(arr)];\n}"
+        };
+      } else if (a === "second smallest") {
+        return {
+          name: "second smallest",
+          bug: "Sorted the array alphabetically instead of numerically and failed to handle duplicate values properly.",
+          correct: "function secondSmallest(arr) {\n  const unique = [...new Set(arr)].sort((a, b) => a - b);\n  return unique.length >= 2 ? unique[1] : null;\n}"
+        };
+      } else if (a === "most frequent") {
+        return {
+          name: "most frequent",
+          bug: "Returned the largest numerical value in the array instead of keeping track of element frequencies and returning the mode.",
+          correct: "function mostFrequent(arr) {\n  const freq = {};\n  for (const item of arr) freq[item] = (freq[item] || 0) + 1;\n  let max = arr[0], maxCount = 0;\n  for (const [item, count] of Object.entries(freq)) {\n    if (count > maxCount) {\n      maxCount = count;\n      max = Number(item);\n    }\n  }\n  return max;\n}"
+        };
+      } else {
+        return {
+          name: "find missing",
+          bug: "Used 1-based indexing on a 0-indexed array and used a slow search loop instead of the expected arithmetic sum formula.",
+          correct: "function findMissing(arr) {\n  const n = arr.length + 1;\n  const expectedSum = (n * (n + 1)) / 2;\n  const actualSum = arr.reduce((a, b) => a + b, 0);\n  return expectedSum - actualSum;\n}"
+        };
+      }
+    },
+    // Group 2
+    (rVal) => {
+      const n = ["email", "url", "phone", "password"];
+      const a = n[Math.floor(rVal() * n.length)];
+      if (a === "email") {
+        return {
+          name: "email",
+          bug: "Failed to verify characters before the @ symbol, and failed to check for a valid dot in the domain name suffix.",
+          correct: "function isValidEmail(email) {\n  const parts = email.split('@');\n  if (parts.length !== 2 || parts[0].length === 0) return false;\n  return parts[1].includes('.') && parts[1].indexOf('.') > 0;\n}"
+        };
+      } else if (a === "password") {
+        const s = Math.floor(rVal() * 4) + 6;
+        return {
+          name: "password",
+          bug: `Only checked password length (>= ${s}) while failing to verify uppercase, lowercase, and digit character constraints.`,
+          correct: `function isValidPassword(pwd) {\n  return pwd.length >= ${s} &&\n         /[A-Z]/.test(pwd) &&\n         /[a-z]/.test(pwd) &&\n         /\\d/.test(pwd);\n}`
+        };
+      } else if (a === "url") {
+        return {
+          name: "url",
+          bug: "Allowed invalid URLs that merely contain 'http' anywhere, instead of strictly starting with http:// or https:// and having a valid domain.",
+          correct: "function isValidUrl(url) {\n  return (url.startsWith('http://') || url.startsWith('https://')) &&\n         url.length > 8 && url.indexOf('/', 8) !== 8;\n}"
+        };
+      } else {
+        return {
+          name: "phone",
+          bug: "Only checked overall string length, failing to strip optional dashes and ensure all other characters are numeric digits.",
+          correct: "function isValidPhone(phone) {\n  const digits = phone.replace(/-/g, '');\n  return digits.length === 10 && /^\\d+$/.test(digits);\n}"
+        };
+      }
+    },
+    // Group 3
+    (rVal) => {
+      const n = ["word frequency", "group by", "flatten", "deep clone"];
+      const a = n[Math.floor(rVal() * n.length)];
+      if (a === "word frequency") {
+        return {
+          name: "word frequency",
+          bug: "Failed to ignore casing, split on single spaces instead of all whitespaces, and resulted in NaN counts due to unitialized values.",
+          correct: "function wordFrequency(text) {\n  const words = text.toLowerCase().split(/\\s+/).filter(w => w.length > 0);\n  const freq = {};\n  for (const word of words) {\n    freq[word] = (freq[word] || 0) + 1;\n  }\n  return freq;\n}"
+        };
+      } else if (a === "group by") {
+        return {
+          name: "group by",
+          bug: "Overwrote keys with a single element instead of grouping in arrays, and used the literal string 'key' instead of evaluating the key variable.",
+          correct: "function groupBy(arr, key) {\n  const groups = {};\n  for (const item of arr) {\n    const k = item[key];\n    if (!groups[k]) groups[k] = [];\n    groups[k].push(item);\n  }\n  return groups;\n}"
+        };
+      } else if (a === "flatten") {
+        return {
+          name: "flatten",
+          bug: "Only flattened the array one level deep (default depth 1) instead of completely flattening deep nested arrays.",
+          correct: "function flatten(arr) {\n  return arr.flat(Infinity);\n}"
+        };
+      } else {
+        return {
+          name: "deep clone",
+          bug: "Performed a shallow object copy instead of a deep clone, leaving nested objects and arrays as shared references.",
+          correct: "function deepClone(obj) {\n  return JSON.parse(JSON.stringify(obj));\n}"
+        };
+      }
+    }
+  ];
 
-  const guide = [
-    `### What the exam asks`,
-    ``,
-    `1. Identify all bugs in the AI-generated code`,
-    `2. Write a corrected version that passes all test cases`,
-    `3. Describe your testing strategy`,
-    ``,
-    `**Response format (JSON):**`,
-    `\`\`\`json`,
-    `{`,
-    `  "bugs": ["Bug 1: ...", "Bug 2: ...", "Bug 3: ..."],`,
-    `  "fixedCode": "function name(params) { /* corrected code */ }",`,
-    `  "testStrategy": "I would test by..."`,
-    `}`,
-    `\`\`\``,
-    ``,
-    `### Common AI Code Bug Patterns`,
-    ``,
-    `1. **Off-by-one errors**: \`<= arr.length\` should be \`< arr.length\``,
-    `2. **Missing sort comparator**: \`.sort()\` sorts lexicographically; use \`.sort((a, b) => a - b)\` for numbers`,
-    `3. **Mutation of inputs**: Sort/splice in-place; should copy first with \`[...arr]\``,
-    `4. **Wrong recursion depth**: Not decrementing depth counter in recursive calls`,
-    `5. **Type coercion**: Using \`==\` instead of \`===\` for strict equality`,
-    `6. **Edge cases**: Not handling empty arrays, null, undefined, negative numbers`,
-    ``,
-    `### Estimated scenario`,
-    ``,
-    `**${scenario.description}**`,
-    ``,
-    `> **Note**: The actual buggy code in your exam may differ. Read it carefully and adapt your response.`,
-  ].join('\n');
+  const groupIdx = Math.floor(r() * scenarios.length);
+  const scenarioInfo = scenarios[groupIdx](r);
 
-  const answerJson = JSON.stringify(response, null, 2);
+  const bugs = [
+    `Bug 1: ${scenarioInfo.bug}`,
+    `Bug 2: The code lacks proper input validation, which might lead to unexpected errors in production.`,
+    `Bug 3: The implementation fails to handle boundary conditions or edge cases such as empty input values or invalid types.`
+  ];
+
+  const testStrategy = [
+    `I would test this function by checking boundary conditions and edge cases (such as empty inputs, null, and undefined values).`,
+    `I would write automated unit tests covering typical cases, extreme input sizes, and verify the correct behavior for all valid outputs.`
+  ].join(' ');
+
+  const answerJson = JSON.stringify({
+    bugs,
+    fixedCode: scenarioInfo.correct,
+    testStrategy
+  }, null, 2);
 
   return {
     type: 'solved',
-    variant: 'Estimated debug response — adapt to your exam\'s actual buggy code',
     answer: answerJson,
-    guide,
+    variant: `${scenarioInfo.name} (${norm})`,
     answerDisplay: [
-      `### Q18: Debug AI-Generated Code`,
-      ``,
-      `The answer box contains a JSON response identifying bugs, fixed code, and test strategy.`,
-      ``,
-      `**Estimated scenario:** ${scenario.description}`,
-      ``,
-      `**Bugs identified:** ${scenario.bugs.length}`,
-      ``,
-      `> ⚠️ Your exam has a specific buggy code snippet. Compare it to the scenario above and adapt if needed.`,
-      ``,
-      `Read the **Implementation Guide** for common AI code bug patterns.`,
-    ].join('\n'),
+      `### Q20: Verify and Fix AI-Generated Code`,
+      `**Answer (Verbatim JSON):**`,
+      `\`\`\`json`,
+      answerJson,
+      `\`\`\``
+    ].join('\n')
   };
 }

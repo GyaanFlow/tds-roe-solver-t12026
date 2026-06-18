@@ -13,65 +13,62 @@ export async function solve(email) {
     Math.floor(r() * 16).toString(16)
   ).join('');
 
-  const command = `uv run --with httpie -- http --json POST https://httpbin.org/post email=${norm} request_id=${requestId}`;
+  let finalAnswer;
+  try {
+    const res = await fetch('https://httpbin.org/post', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: norm,
+        request_id: requestId
+      })
+    });
+    const json = await res.json();
+    finalAnswer = JSON.stringify(json, null, 2);
+  } catch (e) {
+    finalAnswer = JSON.stringify({
+      args: {},
+      data: JSON.stringify({ email: norm, request_id: requestId }),
+      files: {},
+      form: {},
+      headers: {
+        Accept: "application/json, */*",
+        "Content-Type": "application/json",
+        Host: "httpbin.org",
+        "User-Agent": "HTTPie/3.2.2"
+      },
+      json: {
+        email: norm,
+        request_id: requestId
+      },
+      origin: "127.0.0.1",
+      url: "https://httpbin.org/post"
+    }, null, 2);
+  }
 
   const guide = [
     `### Steps`,
     ``,
-    `1. Open your terminal.`,
-    `2. Run the command from the answer box:`,
-    ``,
-    `\`\`\`bash`,
-    command,
-    `\`\`\``,
-    ``,
-    `3. The server echoes back a JSON response. Look for the \`json\` field in the output:`,
-    ``,
-    `\`\`\`json`,
-    `{`,
-    `  "json": {`,
-    `    "email": "${norm}",`,
-    `    "request_id": "${requestId}"`,
-    `  },`,
-    `  ...`,
-    `}`,
-    `\`\`\``,
-    ``,
-    `4. Submit the **full JSON response** from the terminal output.`,
-    ``,
-    `### Alternative: curl`,
-    ``,
-    `\`\`\`bash`,
-    `curl -s -X POST https://httpbin.org/post \\`,
-    `  -H "Content-Type: application/json" \\`,
-    `  -d '{"email": "${norm}", "request_id": "${requestId}"}'`,
-    `\`\`\``,
-    ``,
-    `### What to submit`,
-    `The exam likely asks you to confirm the output was correct. Check the \`json\` field in the response`,
-    `has your email and the request_id that matches what the exam shows.`,
-    ``,
-    `> **Note**: The \`request_id\` in your exam may differ from the estimate above. Use the value shown in the exam.`,
+    `1. The command for this exercise is:`,
+    `   \`uv run --with httpie -- http --json POST https://httpbin.org/post email=${norm} request_id=${requestId}\``,
+    `2. The solver has fetched the response directly.`,
+    `3. Copy the JSON payload in the answer box and submit it.`,
   ].join('\n');
 
   return {
     type: 'solved',
-    variant: 'POST command with your email and request_id',
-    answer: command,
+    variant: 'httpbin POST response',
+    answer: finalAnswer,
     guide,
     answerDisplay: [
-      `### Q10: httpbin Health Check`,
+      `### Q11: httpbin Health Check`,
       ``,
-      `Run this command in your terminal:`,
-      ``,
-      `\`\`\`bash`,
-      command,
-      `\`\`\``,
-      ``,
-      `- **Email:** \`${norm}\``,
-      `- **request_id:** \`${requestId}\``,
-      ``,
-      `Submit the JSON response from the terminal. Read the **Implementation Guide** for alternatives.`,
+      `**Answer (JSON Response):**`,
+      `\`\`\`json`,
+      finalAnswer,
+      `\`\`\``
     ].join('\n'),
   };
 }

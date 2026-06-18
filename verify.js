@@ -8,7 +8,8 @@ const TERM_EXAMS = {
     { value: 'ga8', label: 'GA 8 (MLOps & DevOps)' },
   ],
   T22026: [
-    { value: 'ga0', label: 'GA 0 (Warm-up Exam)' }
+    { value: 'ga0', label: 'GA 0 (Warm-up Exam)' },
+    { value: 'ga1', label: 'GA 1 (Developer Tools)' }
   ]
 };
 

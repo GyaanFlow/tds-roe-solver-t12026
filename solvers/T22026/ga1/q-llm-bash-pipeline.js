@@ -1,71 +1,77 @@
-// Solver: Q3 — LLM bash pipeline (Simon Willison's llm tool)
-import { normalizeEmail } from './utils.js';
+// Solver: Q4 — LLM bash pipeline (Simon Willison's llm tool)
+import { normalizeEmail, rng } from './utils.js';
 
 export const id = 'q-llm-bash-pipeline';
-export const title = 'Q3: LLM Bash Pipeline';
+export const title = 'Q4: LLM Bash Pipeline';
+
+const tasks = [
+  "fetch weather data from wttr.in for London and extract just the temperature in Celsius",
+  "list all JavaScript files in the current directory and summarize their purpose in one line each",
+  "read a JSON file and convert it to a markdown table",
+  "analyze git commit messages from the last 10 commits and suggest areas for improvement",
+  "fetch the top Hacker News story title and generate 3 alternative headlines",
+  "find all TODO comments in Python files in the current directory and prioritize them by urgency",
+  "get the latest Bitcoin price from a crypto API and explain if it's a good time to buy",
+  "read a CSV file and generate a brief statistical summary with insights",
+  "fetch a random Wikipedia article summary and rewrite it for a 10-year-old audience",
+  "list all environment variables and identify which ones might contain sensitive information"
+];
+
+const taskCommands = {
+  "fetch weather data from wttr.in for London and extract just the temperature in Celsius":
+    'curl -s wttr.in/London | llm "extract just the temperature in Celsius"',
+  "list all JavaScript files in the current directory and summarize their purpose in one line each":
+    'ls *.js | llm "summarize their purpose in one line each"',
+  "read a JSON file and convert it to a markdown table":
+    'cat data.json | llm "convert this JSON to a markdown table"',
+  "analyze git commit messages from the last 10 commits and suggest areas for improvement":
+    'git log -n 10 --oneline | llm "analyze these commit messages and suggest areas for improvement"',
+  "fetch the top Hacker News story title and generate 3 alternative headlines":
+    'curl -s https://news.ycombinator.com/ | llm "extract the top Hacker News story title and generate 3 alternative headlines"',
+  "find all TODO comments in Python files in the current directory and prioritize them by urgency":
+    'find . -name "*.py" | xargs grep "TODO" | llm "prioritize these TODO comments by urgency"',
+  "get the latest Bitcoin price from a crypto API and explain if it\'s a good time to buy":
+    'curl -s https://api.coindesk.com/v1/bpi/currentprice.json | llm "extract latest Bitcoin price and explain if it\'s a good time to buy"',
+  "read a CSV file and generate a brief statistical summary with insights":
+    'cat data.csv | llm "generate a brief statistical summary with insights from this CSV"',
+  "fetch a random Wikipedia article summary and rewrite it for a 10-year-old audience":
+    'curl -s https://en.wikipedia.org/api/rest_v1/page/random/summary | llm "rewrite this Wikipedia summary for a 10-year-old audience"',
+  "list all environment variables and identify which ones might contain sensitive information":
+    'env | llm "identify which of these environment variables might contain sensitive info"'
+};
 
 export async function solve(email) {
   const norm = normalizeEmail(email);
+  const seed = `${norm}#q-llm-bash`;
+  const r = rng(seed);
+  const task = tasks[Math.floor(r() * tasks.length)];
+  const command = taskCommands[task] || `echo "input" | llm "${task}"`;
 
   const guide = [
-    `### About`,
+    `### Steps`,
     ``,
-    `This question asks you to write a bash pipeline using [Simon Willison's **llm** tool](https://llm.datasette.io/)`,
-    `to accomplish a specific task shown in the exam.`,
-    ``,
-    `### Setup`,
-    ``,
-    `\`\`\`bash`,
-    `# Install llm`,
-    `pip install llm`,
-    `# Or use uvx (no install):`,
-    `uvx llm --version`,
-    ``,
-    `# Configure your AI Pipe token as the OpenAI key:`,
-    `llm keys set openai`,
-    `# Paste your AIPipe token from https://aipipe.org/`,
-    `\`\`\``,
-    ``,
-    `### Common llm pipeline patterns`,
-    ``,
-    `\`\`\`bash`,
-    `# Prompt with input from a file:`,
-    `cat input.txt | llm "Your task here"`,
-    ``,
-    `# Prompt with a system prompt:`,
-    `echo "some input" | llm -s "System prompt here" "User prompt"`,
-    ``,
-    `# Chain with other Unix tools:`,
-    `curl -s https://example.com | llm "summarize this" | tee output.txt`,
-    `\`\`\``,
-    ``,
-    `### How to answer`,
-    ``,
-    `1. Read the specific task shown in your exam question carefully.`,
-    `2. Write a bash pipeline that uses \`llm\` to accomplish it.`,
-    `3. Your command will be verified by GPT-5 Nano — make it unambiguous.`,
-    `4. The pipeline must be a single bash command (can use pipes \`|\`).`,
-    ``,
-    `> **Note**: The task description is personalized per student. Read your exam for the exact task.`,
+    `1. Make sure Simon Willison's \`llm\` tool is installed: \`pip install llm\`.`,
+    `2. Configure your API Pipe token: \`llm keys set openai\`, then paste your token from https://aipipe.org/.`,
+    `3. The target task for this email is: **${task}**.`,
+    `4. Copy the generated command below and paste it in the answer field.`,
   ].join('\n');
 
   return {
-    type: 'guide',
-    answer: 'echo "Your input" | llm "Your task description here"',
+    type: 'solved',
+    answer: command,
     guide,
+    variant: `Task: ${task}`,
     answerDisplay: [
-      `### Q3: LLM Bash Pipeline`,
-      ``,
-      `Write a bash pipeline using \`llm\` (Simon Willison's tool) to accomplish the task shown in your exam.`,
-      ``,
-      `**Basic pattern:**`,
+      `### Q4: LLM Bash Pipeline`,
+      `**Task:** *${task}*`,
+      `**Generated Command:**`,
       `\`\`\`bash`,
-      `echo "input" | llm "task description"`,
-      `# or`,
-      `cat file.txt | llm "task description"`,
-      `\`\`\``,
-      ``,
-      `Read the **Implementation Guide** for setup instructions and common patterns.`,
+      command,
+      `\`\`\``
     ].join('\n'),
+    debug: {
+      task,
+      command
+    }
   };
 }

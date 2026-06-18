@@ -2,7 +2,7 @@
 import { normalizeEmail } from './utils.js';
 
 export const id = 'q-github-pages';
-export const title = 'Q8: GitHub Pages with Email';
+export const title = 'Q9: GitHub Pages with Email';
 
 function escapeHtml(str) {
   return String(str)
@@ -14,6 +14,23 @@ function escapeHtml(str) {
 
 export async function solve(email) {
   const norm = normalizeEmail(email);
+
+  let githubUser = '[YOUR-USERNAME]';
+  let githubRepo = 'tds-portfolio';
+  if (typeof process !== 'undefined' && process.versions && process.versions.node) {
+    try {
+      const { execSync } = await import('child_process');
+      const remote = execSync('git remote get-url origin', { encoding: 'utf8', timeout: 1000 }).trim();
+      const match = remote.match(/github\.com[/:]([^/]+)\/([^/.]+)/);
+      if (match) {
+        githubUser = match[1];
+      }
+    } catch (e) {
+      // ignore
+    }
+  }
+
+  const suggestionUrl = `https://${githubUser}.github.io/${githubRepo}/`;
 
   const pageHtml = `<!DOCTYPE html>
 <html lang="en">
@@ -32,7 +49,7 @@ export async function solve(email) {
   const guide = [
     `### Steps to publish a GitHub Pages site`,
     ``,
-    `1. Create a **public** GitHub repository (any name, e.g. \`tds-portfolio\`).`,
+    `1. Create a **public** GitHub repository named \`${githubRepo}\` (or any other name).`,
     ``,
     `2. Create an \`index.html\` file with your email wrapped in the CloudFlare anti-obfuscation tag:`,
     ``,
@@ -47,7 +64,7 @@ export async function solve(email) {
     `   - Source: Deploy from branch → \`main\` → \`/ (root)\``,
     `   - Click **Save**`,
     ``,
-    `5. Wait 1–2 minutes, then visit: \`https://[YOUR-USERNAME].github.io/[REPO-NAME]/\``,
+    `5. Wait 1–2 minutes, then visit: \`${suggestionUrl}\``,
     ``,
     `6. Submit that URL in the exam. If cache is stale, append \`?v=1\` to bust it.`,
     ``,
@@ -64,10 +81,10 @@ export async function solve(email) {
   return {
     type: 'solved',
     variant: 'HTML template with your email — follow the Implementation Guide to publish',
-    answer: `https://[YOUR-USERNAME].github.io/[REPO-NAME]/`,
+    answer: suggestionUrl,
     guide,
     answerDisplay: [
-      `### Q8: GitHub Pages`,
+      `### Q9: GitHub Pages`,
       ``,
       `Create an \`index.html\` with your email (wrapped in \`<!--email_off-->\` tags) and publish via GitHub Pages.`,
       ``,
@@ -76,7 +93,7 @@ export async function solve(email) {
       `<!--email_off-->${escapeHtml(norm)}<!--/email_off-->`,
       `\`\`\``,
       ``,
-      `**Answer format:** \`https://[USERNAME].github.io/[REPO]/\``,
+      `**Suggested Answer URL:** \`${suggestionUrl}\``,
       ``,
       `Read the **Implementation Guide** for the full page template and setup steps.`,
     ].join('\n'),

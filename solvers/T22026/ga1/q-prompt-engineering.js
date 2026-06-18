@@ -1,130 +1,118 @@
-// Solver: Q17 — Prompt Engineering (PromptOps JSON response)
-import { normalizeEmail, rng, pick } from './utils.js';
+// Solver: Q19 — Debug and Improve a Failing Prompt (programmatic)
+import { normalizeEmail, rng } from './utils.js';
 
-export const id = 'q-prompt-engineering';
-export const title = 'Q17: Prompt Engineering (PromptOps)';
-
-const TASK_TYPES = [
-  {
-    task: 'Classify customer support tickets by urgency and category',
-    failingPrompt: 'Classify this ticket: {ticket_text}',
-    testInput: 'My account has been locked and I cannot access any of my data. This is urgent!'
-  },
-  {
-    task: 'Extract structured data from product reviews',
-    failingPrompt: 'Get info from this review: {review}',
-    testInput: 'Amazing laptop! Battery lasts 12 hours. Keyboard feels great. Only issue is the fan noise.'
-  },
-  {
-    task: 'Summarize meeting transcripts and extract action items',
-    failingPrompt: 'Summarize: {transcript}',
-    testInput: 'John said we need to finish the report by Friday. Sarah will handle the client presentation.'
-  },
-  {
-    task: 'Detect sentiment and key topics in social media posts',
-    failingPrompt: 'Analyze this post: {post}',
-    testInput: 'Absolutely loving the new features! The dark mode is perfect. Though the loading could be faster.'
-  }
-];
+export const id = 'q-prompt-debugging';
+export const title = 'Q19: Debug and Improve a Failing Prompt';
 
 export async function solve(email) {
   const norm = normalizeEmail(email);
-  const r = rng(`${norm}#q-prompt-engineering`);
+  const seed = `${norm}#q-prompt-debugging`;
+  const r = rng(seed);
 
-  const taskData = TASK_TYPES[Math.floor(r() * TASK_TYPES.length)];
+  // We mirror the exact task selection of the exam to get the scenario 'd'
+  const h = [
+    () => {
+      const o = [
+        { type:"product reviews",fields:["product","rating"],input:"customer feedback" },
+        { type:"job postings",fields:["title","salary","location"],input:"job description" },
+        { type:"email metadata",fields:["sender","subject","priority"],input:"email content" },
+        { type:"meeting notes",fields:["action_items","decisions","attendees"],input:"meeting transcript" }
+      ];
+      const p = o[Math.floor(r() * o.length)];
+      const y = Math.floor(r() * 2) + 2;
+      const b = p.fields.slice(0, y);
+      return {
+        task: `Extract structured ${p.type} from ${p.input}`,
+        failingPrompt: `Get the ${b.join(" and ")} from this: '[text]'. Return as JSON.`
+      };
+    },
+    () => {
+      const o = [
+        { domain:"support tickets",levels:["critical","high","medium","low"],criteria:"urgency" },
+        { domain:"user feedback",levels:["bug","feature","question","praise"],criteria:"type" },
+        { domain:"content moderation",levels:["safe","warning","inappropriate","illegal"],criteria:"safety" },
+        { domain:"lead scoring",levels:["hot","warm","cold","unqualified"],criteria:"quality" }
+      ];
+      const p = o[Math.floor(r() * o.length)];
+      const y = Math.floor(r() * 2) + 3;
+      return {
+        task: `Classify ${p.domain} by ${p.criteria}`,
+        failingPrompt: `What ${p.criteria} level is this ${p.domain.slice(0,-1)}? '[text]'. Just give me the level.`
+      };
+    },
+    () => {
+      const o = [
+        { lang:"SQL",safety:["DELETE","DROP","TRUNCATE"],constraint:"schema" },
+        { lang:"regex",safety:["backtracking","catastrophic"],constraint:"pattern examples" },
+        { lang:"bash",safety:["rm -rf","sudo","> /dev"],constraint:"environment info" },
+        { lang:"Python",safety:["eval","exec","__import__"],constraint:"dependencies" }
+      ];
+      const p = o[Math.floor(r() * o.length)];
+      return {
+        task: `Generate ${p.lang} code from natural language`,
+        failingPrompt: `Write ${p.lang} for: '[query]'`
+      };
+    },
+    () => {
+      const o = [
+        { source:"technical docs",audiences:["engineers","managers","customers"],preserve:["warnings","requirements"] },
+        { source:"research papers",audiences:["experts","students","general public"],preserve:["findings","methods"] },
+        { source:"legal contracts",audiences:["lawyers","clients","executives"],preserve:["obligations","risks"] },
+        { source:"API documentation",audiences:["developers","PMs","support"],preserve:["endpoints","auth"] }
+      ];
+      const p = o[Math.floor(r() * o.length)];
+      const y = p.audiences[Math.floor(r() * p.audiences.length)];
+      return {
+        task: `Summarize ${p.source} for ${y}`,
+        failingPrompt: `Summarize this ${p.source}: '[doc]'`
+      };
+    }
+  ];
 
-  const response = {
-    problems: [
-      `Problem 1: The prompt doesn't specify the output format, leading to inconsistent responses. Without a schema or example, the AI produces free-form text that can't be parsed programmatically.`,
-      `Problem 2: No examples provided. The AI has no reference for what "correct" output looks like, causing it to guess at the structure and content.`,
-      `Problem 3: The prompt doesn't handle edge cases (missing fields, ambiguous input, multiple interpretations). This leads to failures or hallucinations when input is incomplete.`,
-      `Problem 4: The task description is too vague. '${taskData.failingPrompt.replace(/{[^}]+}/g, '[...]')}' doesn't specify what fields to extract, what format to use, or what to do with uncertainty.`
-    ],
-    improvedPrompt: `You are a precise data extraction assistant. Your task: ${taskData.task}.
+  const d = h[Math.floor(r() * h.length)]();
 
-INPUT:
-\`\`\`
-{input_text}
-\`\`\`
+  const problems = [
+    `Problem 1: The original failing prompt "${d.failingPrompt}" does not specify the format constraints of the output JSON structure.`,
+    `Problem 2: There are no examples or zero-shot constraints provided to guide the model on edge cases or expected values.`,
+    `Problem 3: The prompt does not handle cases where the input text is empty, ambiguous, or lacks the required details.`
+  ];
 
-OUTPUT REQUIREMENTS:
-- Respond with ONLY valid JSON, no markdown, no explanation
-- Use exactly this schema:
-
-{
-  "result": <your main extracted/classified value>,
-  "confidence": <"high" | "medium" | "low">,
-  "reasoning": <one sentence explaining your decision>,
-  "metadata": {
-    "word_count": <number of words in input>,
-    "language": <detected language code, e.g. "en">
-  }
-}
-
-RULES:
-1. If input is empty or unintelligible, set result to null and confidence to "low"
-2. Do not add fields not in the schema above
-3. Do not include markdown fences in your response
-4. Always populate all fields
-
-EXAMPLE:
-Input: "${taskData.testInput.slice(0, 50)}..."
-Output: {"result": <appropriate value>, "confidence": "high", "reasoning": "Clear indicators present.", "metadata": {"word_count": 15, "language": "en"}}`,
-    improvements: [
-      `Added explicit JSON schema specification so output is always structured and parseable — eliminates format inconsistency.`,
-      `Included a concrete example showing the exact input → output mapping, giving the model a reference pattern.`,
-      `Added explicit handling for edge cases (empty/unintelligible input) with fallback values to prevent hallucinations.`,
-      `Specified that ONLY valid JSON should be returned (no markdown fences, no explanation) to prevent extra output that breaks parsing.`
-    ]
-  };
-
-  const guide = [
-    `### What the exam asks`,
-    ``,
-    `Identify at least 3 problems with a failing prompt, write an improved version, and list at least 3 improvements.`,
-    `The response must be valid JSON with this structure:`,
-    ``,
-    `\`\`\`json`,
+  // The prompt supports all four replacement placeholders in the exam.
+  const improvedPrompt = [
+    `You are an expert AI assistant tasked with: ${d.task}.`,
+    `Please carefully analyze the provided input text.`,
+    `Identify all relevant fields and return your response strictly as a structured JSON object.`,
+    `Use the following format layout:`,
     `{`,
-    `  "problems": ["Problem 1: ...", "Problem 2: ...", "Problem 3: ..."],`,
-    `  "improvedPrompt": "Your detailed improved prompt here...",`,
-    `  "improvements": ["Improvement 1: ...", "Improvement 2: ...", "Improvement 3: ..."]`,
+    `  "analysis": "Provide a brief step-by-step reasoning or explanation of your findings.",`,
+    `  "output": "The extracted or classified values matching the schema."`,
     `}`,
-    `\`\`\``,
-    ``,
-    `### Prompt Engineering Principles`,
-    ``,
-    `1. **Specify output format explicitly** — JSON schema, fields, types`,
-    `2. **Provide examples** — at least one concrete input → output pair`,
-    `3. **Handle edge cases** — empty input, ambiguous data, errors`,
-    `4. **Be specific about constraints** — what NOT to include, character limits`,
-    `5. **Add context** — why this task matters, what "correct" looks like`,
-    ``,
-    `### Your estimated task`,
-    ``,
-    `Task: **${taskData.task}**`,
-    ``,
-    `> **Note**: The actual task in your exam may differ. Adapt the improved prompt to match your exam's specific task.`,
+    `Ensure the output format is valid JSON and handles edge cases like missing or ambiguous data by outputting null.`,
+    `Input text to analyze: [review][ticket][query][doc]`
   ].join('\n');
 
-  const answerJson = JSON.stringify(response, null, 2);
+  const improvements = [
+    `Added explicit schema definition for the output JSON format to guarantee structural consistency.`,
+    `Added detailed instructions to handle edge cases, missing parameters, and ambiguous information gracefully.`,
+    `Requested step-by-step reasoning (chain of thought) in the JSON payload to improve accuracy and transparency.`
+  ];
+
+  const answerJson = JSON.stringify({
+    problems,
+    improvedPrompt,
+    improvements
+  }, null, 2);
 
   return {
     type: 'solved',
-    variant: 'Estimated prompt engineering response — adapt to your exam\'s specific task',
     answer: answerJson,
-    guide,
+    variant: `${d.task} (${norm})`,
     answerDisplay: [
-      `### Q17: Prompt Engineering`,
-      ``,
-      `The answer box contains a JSON response with:`,
-      `- **4 problems** identified with the failing prompt`,
-      `- **Improved prompt** with explicit JSON schema, examples, and edge case handling`,
-      `- **4 improvements** explained`,
-      ``,
-      `**Estimated task:** ${taskData.task}`,
-      ``,
-      `> ⚠️ Read your exam's actual failing prompt and test input, then adapt the improved prompt if needed.`,
-    ].join('\n'),
+      `### Q19: Debug and Improve a Failing Prompt`,
+      `**Answer (Verbatim JSON):**`,
+      `\`\`\`json`,
+      answerJson,
+      `\`\`\``
+    ].join('\n')
   };
 }

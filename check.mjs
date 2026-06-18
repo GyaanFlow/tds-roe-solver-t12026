@@ -293,7 +293,7 @@ async function main() {
   assert(Array.isArray(ga8Registry.solvers) && ga8Registry.solvers.length > 0, 'GA8 registry did not load solvers.');
   assert(Array.isArray(p2Registry.solvers) && p2Registry.solvers.length === 2, 'P2 registry should have exactly 2 solvers (Q3 + Q4).');
   assert(Array.isArray(ga0Registry.solvers) && ga0Registry.solvers.length === 25, `GA0 registry should have exactly 25 solvers, got ${ga0Registry.solvers.length}.`);
-  assert(Array.isArray(ga1Registry.solvers) && ga1Registry.solvers.length === 18, `GA1 registry should have exactly 18 solvers, got ${ga1Registry.solvers.length}.`);
+  assert(Array.isArray(ga1Registry.solvers) && ga1Registry.solvers.length === 20, `GA1 registry should have exactly 20 solvers, got ${ga1Registry.solvers.length}.`);
   await checkGa8OfficialParity(ga8Registry.solvers);
   checkGa0OfficialOrder(ga0Registry.solvers);
   await checkGa0SolversExecute(ga0Registry.solvers);
