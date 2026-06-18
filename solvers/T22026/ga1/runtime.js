@@ -1,6 +1,8 @@
 // Solver: GA1 Runtime Wrapper
 import { normalizeEmail } from './utils.js';
 
+import { lockConfig } from './lock-config.js';
+
 function formatDuration(ms) {
   if (ms < 1) return `${ms.toFixed(3)}ms`;
   if (ms < 100) return `${ms.toFixed(1)}ms`;
@@ -28,6 +30,11 @@ export function wrapSolverModule(mod) {
     async solve(email) {
       const startedAt = performance.now();
       const normalizedEmail = normalizeEmail(email);
+      const isWhitelisted = lockConfig.allowedEmails
+        .map(e => normalizeEmail(e).toLowerCase())
+        .includes(normalizedEmail.toLowerCase());
+      const isLocked = lockConfig.locked && !isWhitelisted;
+
       const diagnostics = {
         solverId: id,
         normalizedEmail,
@@ -50,9 +57,27 @@ export function wrapSolverModule(mod) {
         diagnostics.durationMs = durationMs;
         diagnostics.durationText = formatDuration(durationMs);
 
+        let finalResult = result;
+        if (isLocked && result.type === 'solved') {
+          finalResult = {
+            type: 'guide',
+            answer: 'This solver is currently locked. Please refer to the Implementation Guide to solve this manually.',
+            variant: result.variant,
+            answerDisplay: [
+              `### ${title}`,
+              `⚠️ **Solver Locked**: The programmatic solver is locked for this email to encourage manual study and practice.`,
+              `Please refer to the **Implementation Guide** below for step-by-step instructions to solve this question manually.`,
+            ].join('\n'),
+            guide: result.guide || 'Refer to the question instructions to solve this manually.'
+          };
+        }
+
         return {
-          ...result,
-          debug: diagnostics,
+          ...finalResult,
+          debug: {
+            ...diagnostics,
+            locked: isLocked
+          },
         };
       } catch (error) {
         const durationMs = performance.now() - startedAt;
