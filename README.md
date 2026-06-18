@@ -16,7 +16,7 @@
 
 **TDS Portal** is a production-grade, highly secure, browser-based sandbox environment designed for the automated execution of deterministic solver logic. Engineered specifically as a local study companion for the **IIT Madras Tools in Data Science (TDS)** curriculum, the portal bridges the gap between intricate, multi-layered data pipelines and highly reproducible, instant local computations.
 
-Constructed around a core philosophy of **visual excellence** and **mathematical predictability**, the platform dynamically registers and orchestrates a suite of **70+ specialized solvers**, delivering near-instantaneous output vectors completely client-side.
+Constructed around a core philosophy of **visual excellence** and **mathematical predictability**, the platform dynamically registers and orchestrates a suite of **90+ specialized solvers**, delivering near-instantaneous output vectors completely client-side.
 
 ---
 
@@ -89,6 +89,7 @@ The registry is split into Term 1 2026 (`T12026`) and Term 2 2026 (`T22026`), co
 | Target Engine | Term | Scope | Technical Highlights & Capabilities |
 | :--- | :--- | :--- | :--- |
 | **GA0** | `T22026` | Intro to Data Science | 25 standard exam solvers, detailed ngrok setups, FastAPI templates, CORS configurations, and forensic sandboxing guides. |
+| **GA1** | `T22026` | Developer Tools | 20 standard developer tools solvers (Git history, VS Code multi-cursor edits, shell pipelines, SQL schemas, Markdown layout docs, HTTP POST requests, asciinema recordings). |
 | **ROE** | `T12026` | Re-exam Workflows | Procedural maze pathfinding, regex golf parsing, and programmatic arithmetic validation. |
 | **GA7** | `T12026` | Data Visualization | Midpoint-preserving diverging palette sampler, chartjunk analyzers, and inverse-engineered prompt structures. |
 | **GA8** | `T12026` | Cloud & MLOps | Docker verification hashes, GCP Cloud Run environments, http trigger cloud functions, and an embedded console hook script. |
