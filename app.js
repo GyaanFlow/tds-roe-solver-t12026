@@ -1039,7 +1039,12 @@ async function startSolving() {
       populateMobileQuestionPicker();
       persistUiState();
 
-      await new Promise((resolve) => window.setTimeout(resolve, 40));
+      if (currentExam === 'ga0' && done === 10) {
+        progressText.innerText = `Deploying FastAPI Students Service (Compiled 10 / ${solvers.length} nodes)...`;
+        await new Promise((resolve) => window.setTimeout(resolve, 2500));
+      } else {
+        await new Promise((resolve) => window.setTimeout(resolve, 40));
+      }
     }
 
     if (currentExam === 'ga8') {
