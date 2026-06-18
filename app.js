@@ -113,6 +113,32 @@ function populateExamSelect(term) {
   }
 }
 
+function updateWelcomeScreenNotice() {
+  const container = document.getElementById('examNoticeContainer');
+  if (!container) return;
+
+  const currentExam = examSelect.value;
+  if (currentExam === 'ga1') {
+    container.innerHTML = `
+      <div class="colab-backup-banner" style="background: rgba(231, 76, 60, 0.08); border: 1px solid rgba(231, 76, 60, 0.35); border-left: 4px solid #e74c3c; padding: 18px; border-radius: 12px; margin-bottom: 24px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); text-align: left;">
+        <div style="font-weight: 600; color: #e74c3c; display: flex; align-items: center; gap: 8px; font-size: 15px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #e74c3c;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <span>Academic Integrity Lock Active</span>
+        </div>
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--text-secondary);">
+          The programmatic solver for <strong>T2 2026 GA1 (Developer Tools)</strong> is currently locked for standard student emails to encourage manual study and practice. 
+          If you initialize the workspace with a standard email, you will receive step-by-step implementation guides to solve the questions manually. 
+          Whitelisted email addresses (instructors/testers) will bypass the lock.
+        </p>
+      </div>
+    `;
+    container.classList.remove('hidden');
+  } else {
+    container.innerHTML = '';
+    container.classList.add('hidden');
+  }
+}
+
 let selectedQuestionIndex = 0;
 let rawWrapEnabled = true;
 let searchDebounceId = null;
@@ -194,7 +220,10 @@ window.addEventListener('DOMContentLoaded', () => {
         if (instEl) instEl.innerText = config.instructions;
       }
     })
-    .catch(err => console.warn('Could not load tds-config.json', err));
+    .catch(err => console.warn('Could not load tds-config.json', err))
+    .finally(() => {
+      updateWelcomeScreenNotice();
+    });
 });
 
 function persistUiState() {
@@ -299,7 +328,8 @@ async function copyToClipboard(text, btn) {
   }
 }
 
-function getStatusClass(type) {
+function getStatusClass(type, locked = false) {
+  if (locked) return 'status-error';
   if (type === 'solved') return 'status-solved';
   if (type === 'guide') return 'status-guide';
   if (type === 'bypass') return 'status-bypass';
@@ -317,6 +347,8 @@ function getHealthMeta(answer) {
 
   if (answer?.type === 'error') {
     level = 'error';
+  } else if (answer?.debug?.locked) {
+    level = 'locked';
   } else if (answer?.type === 'bypass' || answer?.type === 'guide' || warningCount > 0) {
     level = 'watch';
   }
@@ -326,6 +358,7 @@ function getHealthMeta(answer) {
 
 function getHealthLabel(level) {
   if (level === 'error') return 'Error';
+  if (level === 'locked') return 'Locked';
   if (level === 'watch') return 'Check';
   return 'Stable';
 }
@@ -411,6 +444,7 @@ function resetStoredUiState() {
     renderCanvas(0);
   }
   showToast('Saved UI state cleared.', 'success');
+  updateWelcomeScreenNotice();
   safeTrack('ui_reset', { exam: workspaceData.exam || 'none' });
 }
 
@@ -456,7 +490,7 @@ function renderSidebarNode(index, title, type) {
   node.dataset.idx = String(index);
   node.dataset.health = health.level;
   node.innerHTML = `
-    <span class="nav-item-status ${getStatusClass(type)}"></span>
+    <span class="nav-item-status ${getStatusClass(type, answer?.debug?.locked)}"></span>
     <span class="nav-item-num">Q${index + 1}</span>
     <span class="nav-item-copy">
       <span class="nav-item-title">${escapeHtml(title)}</span>
@@ -736,6 +770,9 @@ function renderDashboard() {
     if (ans.type === 'error') {
       statusClass = 'status-error';
       badgeClass = 'badge-error';
+    } else if (ans.debug?.locked) {
+      statusClass = 'status-error';
+      badgeClass = 'badge-error';
     } else if (ans.type === 'guide') {
       statusClass = 'status-check';
       badgeClass = 'badge-check';
@@ -749,7 +786,7 @@ function renderDashboard() {
         <h3>${ans.title.split(' ')[0] || `Q${idx+1}`}</h3>
         <div class="q-title">${escapeHtml(ans.title)}</div>
         <div class="q-meta">
-          <span class="status-badge ${badgeClass}">${ans.type}</span>
+          <span class="status-badge ${badgeClass}">${ans.debug?.locked ? 'locked' : ans.type}</span>
           <span>${ans.debug?.durationText || '0ms'}</span>
         </div>
       </div>
@@ -1063,7 +1100,12 @@ async function startSolving() {
       selectedQuestionIndex = preferredQuestionIndex !== -1 ? Math.min(preferredQuestionIndex, workspaceData.answers.length - 1) : -1;
       populateMobileQuestionPicker();
       renderCanvas(selectedQuestionIndex);
-      showToast(`Workspace ready. ${workspaceData.answers.length} questions loaded.`, 'success');
+      const isLocked = workspaceData.answers.some(ans => ans.debug?.locked);
+      if (isLocked) {
+        showToast('⚠️ Solver Locked: GA1 programmatic solvers are locked for this email address. Guides loaded.', 'error');
+      } else {
+        showToast(`Workspace ready. ${workspaceData.answers.length} questions loaded.`, 'success');
+      }
       safeTrack('workspace_ready', {
         exam: currentExam,
         questionCount: workspaceData.answers.length,
@@ -1177,8 +1219,12 @@ emailInput.addEventListener('keydown', (event) => {
 termSelect.addEventListener('change', () => {
   populateExamSelect(termSelect.value);
   persistUiState();
+  updateWelcomeScreenNotice();
 });
-examSelect.addEventListener('change', persistUiState);
+examSelect.addEventListener('change', () => {
+  persistUiState();
+  updateWelcomeScreenNotice();
+});
 let _lastEmailForNetwork = '';
 emailInput.addEventListener('input', () => {
   persistUiState();

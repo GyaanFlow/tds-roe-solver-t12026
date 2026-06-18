@@ -353,6 +353,10 @@ body {
   color: #fca5a5;
   border-color: rgba(231, 76, 60, 0.3);
 }
+.nav-pill-locked {
+  color: #fca5a5;
+  border-color: rgba(231, 76, 60, 0.3);
+}
 .nav-runtime,
 .nav-warning-count {
   font-family: var(--font-mono);
