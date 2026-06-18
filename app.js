@@ -113,29 +113,6 @@ function populateExamSelect(term) {
   }
 }
 
-function updateWelcomeScreenNotice() {
-  const container = document.getElementById('examNoticeContainer');
-  if (!container) return;
-
-  const currentExam = examSelect.value;
-  if (currentExam === 'ga1') {
-    container.innerHTML = `
-      <div class="colab-backup-banner" style="background: rgba(231, 76, 60, 0.08); border: 1px solid rgba(231, 76, 60, 0.35); border-left: 4px solid #e74c3c; padding: 18px; border-radius: 12px; margin-bottom: 24px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); text-align: left;">
-        <div style="font-weight: 600; color: #e74c3c; display: flex; align-items: center; gap: 8px; font-size: 15px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #e74c3c;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-          <span>Academic Integrity Lock Active</span>
-        </div>
-        <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--text-secondary);">
-          The programmatic solver for <strong>T2 2026 GA1 (Developer Tools)</strong> is currently locked. If it is unlocked too early, students will not learn or try their best, and the educational purpose of the TDS course will be lost. Therefore, the solver is locked initially but may be unlocked in the future if deemed viable. If you are a tester, please contact the creator/instructor to obtain personal access.
-        </p>
-      </div>
-    `;
-    container.classList.remove('hidden');
-  } else {
-    container.innerHTML = '';
-    container.classList.add('hidden');
-  }
-}
 
 let selectedQuestionIndex = 0;
 let rawWrapEnabled = true;
@@ -218,10 +195,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (instEl) instEl.innerText = config.instructions;
       }
     })
-    .catch(err => console.warn('Could not load tds-config.json', err))
-    .finally(() => {
-      updateWelcomeScreenNotice();
-    });
+    .catch(err => console.warn('Could not load tds-config.json', err));
 });
 
 function persistUiState() {
@@ -258,7 +232,7 @@ function safeTrack(name, data = {}) {
   }
 }
 
-function showToast(message, tone = 'info') {
+function showToast(message, tone = 'info', duration = 2200) {
   const host = ensureToastRoot();
   window.clearTimeout(toastTimerId);
   host.innerHTML = `
@@ -276,7 +250,7 @@ function showToast(message, tone = 'info') {
         host.innerHTML = '';
       }
     }, 220);
-  }, 2200);
+  }, duration);
 }
 
 function escapeHtml(text) {
@@ -442,7 +416,6 @@ function resetStoredUiState() {
     renderCanvas(0);
   }
   showToast('Saved UI state cleared.', 'success');
-  updateWelcomeScreenNotice();
   safeTrack('ui_reset', { exam: workspaceData.exam || 'none' });
 }
 
@@ -1100,7 +1073,7 @@ async function startSolving() {
       renderCanvas(selectedQuestionIndex);
       const isLocked = workspaceData.answers.some(ans => ans.debug?.locked);
       if (isLocked) {
-        showToast('⚠️ Solver Locked: GA1 programmatic solvers are locked for this email address. Guides loaded.', 'error');
+        showToast('⚠️ Academic Integrity Lock Active: If unlocked too early, you will not learn or think yourself, defeating the purpose of the TDS course. It is locked initially, but may be unlocked in the future if deemed viable. If you are a tester, contact the creator for personal access.', 'error', 12000);
       } else {
         showToast(`Workspace ready. ${workspaceData.answers.length} questions loaded.`, 'success');
       }
@@ -1217,11 +1190,9 @@ emailInput.addEventListener('keydown', (event) => {
 termSelect.addEventListener('change', () => {
   populateExamSelect(termSelect.value);
   persistUiState();
-  updateWelcomeScreenNotice();
 });
 examSelect.addEventListener('change', () => {
   persistUiState();
-  updateWelcomeScreenNotice();
 });
 let _lastEmailForNetwork = '';
 emailInput.addEventListener('input', () => {
