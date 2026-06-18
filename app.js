@@ -126,7 +126,7 @@ function updateWelcomeScreenNotice() {
           <span>Academic Integrity Lock Active</span>
         </div>
         <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--text-secondary);">
-          The programmatic solver for <strong>T2 2026 GA1 (Developer Tools)</strong> is currently locked. You do not have permission to access the solutions or step-by-step guides for this exam without explicit authorization. Whitelisted email addresses (instructors/testers) will bypass the lock.
+          The programmatic solver for <strong>T2 2026 GA1 (Developer Tools)</strong> is currently locked. If it is unlocked too early, students will not learn or try their best, and the educational purpose of the TDS course will be lost. Therefore, the solver is locked initially but may be unlocked in the future if deemed viable. If you are a tester, please contact the creator/instructor to obtain personal access.
         </p>
       </div>
     `;
