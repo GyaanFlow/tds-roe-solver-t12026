@@ -1568,10 +1568,11 @@ async function initNetworkCanvas() {
     }
   }
 }
+// Apply theme immediately to prevent FOUC (Flash of Unstyled Content) and UI lag
+switchTheme(activeTheme);
+
 // Initial call to draw default identicon and update 3D network once dynamic import completes
 initNetworkCanvas().then(() => {
-  switchTheme(activeTheme);
-  
   setTimeout(() => {
     const initialEmail = emailInput.value.trim();
     _lastEmailForNetwork = initialEmail; // Sync sentinel so first input event doesn't double-regenerate
