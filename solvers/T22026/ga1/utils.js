@@ -2,8 +2,8 @@
 
 // Normalize email the same way as exam (ra() function in source)
 export function normalizeEmail(user) {
-  if (typeof user === 'string') return user.trim().toLowerCase();
-  return String(user?.email ?? user?.id ?? 'anonymous').trim().toLowerCase();
+  const email = typeof user === 'string' ? user : String(user?.email ?? user?.id ?? 'anonymous');
+  return email.trim().replace(/\.+$/, '').trim().toLowerCase();
 }
 
 // FNV-1a 32-bit hash (matches oa() in exam source)
