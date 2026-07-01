@@ -992,7 +992,7 @@ async function startSolving() {
   try {
     let solvers = [];
     try {
-      const registryModule = await import(`./solvers/${currentTerm}/${currentExam}/registry.js`);
+      const registryModule = await import(`./solvers/${currentTerm}/${currentExam}/registry.js?v=${Date.now()}`);
       solvers = registryModule.solvers;
     } catch (_) {
       throw new Error(`CRITICAL SYSTEM FAULT: Failed to fetch module registry for ${currentTerm}/${currentExam}. Target may be missing or corrupt.`);
