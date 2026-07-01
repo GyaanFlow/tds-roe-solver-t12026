@@ -90,6 +90,7 @@ The registry is split into Term 1 2026 (`T12026`) and Term 2 2026 (`T22026`), co
 | :--- | :--- | :--- | :--- |
 | **GA0** | `T22026` | Intro to Data Science | 25 standard exam solvers, detailed ngrok setups, FastAPI templates, CORS configurations, and forensic sandboxing guides. |
 | **GA1** | `T22026` | Developer Tools | 20 standard developer tools solvers (Git history, VS Code multi-cursor edits, shell pipelines, SQL schemas, Markdown layout docs, HTTP POST requests, asciinema recordings). |
+| **GA2** | `T22026` | API & Cloud | 10 API engineering and cloud solvers (Descriptive statistics with CORS, OAuth JWT verification, 12-factor config precedence, multi-container Redis stacks, POST analytics aggregation, Prometheus observability, local LLM integrations, idempotent POST with sliding-window rate-limiting). |
 | **ROE** | `T12026` | Re-exam Workflows | Procedural maze pathfinding, regex golf parsing, and programmatic arithmetic validation. |
 | **GA7** | `T12026` | Data Visualization | Midpoint-preserving diverging palette sampler, chartjunk analyzers, and inverse-engineered prompt structures. |
 | **GA8** | `T12026` | Cloud & MLOps | Docker verification hashes, GCP Cloud Run environments, http trigger cloud functions, and an embedded console hook script. |
@@ -123,7 +124,7 @@ tds-roe-solver/
 │   │   └── 📂 p2/
 │   │       ├── 📄 compact_facts.json # 12MB compressed Discourse dataset
 │   │       └── 📄 q-qr-forensics.js   # QR Solana RPC transaction repair solver
-│   └── 📂 T22026/                # Term 2 2026 Exam Registry (GA0 Suite)
+│   └── 📂 T22026/                # Term 2 2026 Exam Registry (GA0, GA1, GA2 Suites)
 ├── 📄 AGENT_CONTEXT.md           # Deep context trace for subsequent AI engineers
 ├── 📄 app.js                     # Central UI state machine & event dispatcher
 ├── 📄 check.mjs                  # Offline smoke testing validation script
