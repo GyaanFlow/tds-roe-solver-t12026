@@ -11,6 +11,7 @@ export const lockConfig = {
     '23f2005160@ds.study.iitm.ac.in',
     '23f3000589@ds.study.iitm.ac.in',
     '24f2008726@ds.study.iitm.ac.in',
-    '23f2005102@ds.study.iitm.ac.in'
+    '23f2005102@ds.study.iitm.ac.in',
+    '23f3002874@ds.study.iitm.ac.in'
   ]
 };
