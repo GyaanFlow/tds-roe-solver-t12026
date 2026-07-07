@@ -13,6 +13,7 @@ let activeTheme = localStorage.getItem('workspaceTheme') || 'amber';
 
 const emailInput = document.getElementById('emailInput');
 const sessionTokenInput = document.getElementById('sessionTokenInput');
+const sessionTokenWrapper = document.querySelector('.session-token-wrapper');
 const solveBtn = document.getElementById('solveBtn');
 const progressPanel = document.getElementById('progressPanel');
 const progressFill = document.getElementById('progressFill');
@@ -145,6 +146,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const activeExams = TERM_EXAMS[activeTerm] || [];
   const latestExam = activeExams.length > 0 ? activeExams[activeExams.length - 1].value : '';
   examSelect.value = savedExam || latestExam;
+  toggleSessionTokenField();
 
   if (savedEmail) emailInput.value = savedEmail;
   const savedSessionToken = localStorage.getItem(STORAGE_KEYS.sessionToken);
@@ -220,6 +222,12 @@ function persistUiState() {
   drawEmailIdenticon(emailVal);
   // NOTE: generateNetwork is NOT called here to avoid rebuilding 200 nodes on every
   // panel toggle / question select / etc. It is called only when email changes (see emailInput listener).
+}
+
+function toggleSessionTokenField() {
+  if (!sessionTokenWrapper) return;
+  const exam = examSelect.value;
+  sessionTokenWrapper.style.display = exam === 'ga3' ? '' : 'none';
 }
 
 function ensureToastRoot() {
@@ -554,7 +562,9 @@ function renderAnswerPanel(data, langClass) {
   const isCopyPasteApi = urlLower.includes('/api') || 
                           urlLower.includes('/code-interpreter') || 
                           urlLower.includes('/sentiment') || 
-                          urlLower.includes('/latency');
+                          urlLower.includes('/latency') ||
+                          urlLower.includes('onrender.com/ga3/') ||
+                          urlLower.includes('onrender.com/ga2/');
                           
   const isInteractiveSolver = isUrl && !isCopyPasteApi;
   
@@ -903,8 +913,9 @@ function renderCanvas(index) {
       ${colabBackupHtml}
       ${renderVariantPanel(data)}
       ${renderPreviewPanel(data)}
-      ${renderGuidePanel(data)}
+      ${!/onrender\.com\/ga[23]\//i.test(data.answer?.toLowerCase() || '') ? renderGuidePanel(data) : ''}
       ${renderAnswerPanel(data, langClass)}
+      ${/onrender\.com\/ga[23]\//i.test(data.answer?.toLowerCase() || '') ? renderGuidePanel(data) : ''}
       ${renderNotesPanel(data)}
       ${renderDiagnosticsPanel(data.debug)}
     </div>
@@ -963,7 +974,7 @@ async function startSolving() {
   }
 
   if (currentExam === 'ga3' && !sessionToken) {
-    showToast('Session Token / quizSign is required for GA3!', 'error');
+    showToast('aipipe.org token is required for GA3!', 'error');
     if (sessionTokenInput) {
       sessionTokenInput.focus();
       sessionTokenInput.style.borderColor = 'var(--error)';
@@ -1227,6 +1238,7 @@ termSelect.addEventListener('change', () => {
   persistUiState();
 });
 examSelect.addEventListener('change', () => {
+  toggleSessionTokenField();
   persistUiState();
 });
 let _lastEmailForNetwork = '';

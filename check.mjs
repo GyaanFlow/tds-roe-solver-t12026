@@ -91,6 +91,10 @@ function installBrowserStubs() {
     }
   });
 
+  if (!globalThis.crypto) {
+    globalThis.crypto = {};
+  }
+
   Math.seedrandom = seedrandom;
 }
 
@@ -292,6 +296,30 @@ async function checkGa2SolversExecute(solvers) {
   }
 }
 
+function checkGa3OfficialOrder(solvers) {
+  const officialIds = [
+    'q-youtube-metadata-filter-server',
+    'q-multimodal-image-qa-server',
+    'q-invoice-extract-server',
+    'q-dynamic-extract-server',
+    'q-cosine-similarity-server',
+    'q-korean-audio-dataset-server',
+    'q-structured-extraction-server',
+    'q-semantic-rank-server',
+    'q-cot-math-verifier-server',
+    'q-proof-of-work-server',
+    'q-context-window-heist-server',
+    'q-spin-up-cli-server',
+    'q-embedding-trap-neighbors-server'
+  ];
+
+  assert(solvers.length === officialIds.length, `Expected ${officialIds.length} GA3 solvers, got ${solvers.length}.`);
+  assert(
+    solvers.map((solver) => solver.id).join('|') === officialIds.join('|'),
+    'GA3 solver order/IDs no longer match the official May 2026 GA3 bundle.'
+  );
+}
+
 async function checkGa3SolversExecute(solvers) {
   const sampleEmails = [
     '21f1000000@ds.study.iitm.ac.in',
@@ -346,6 +374,7 @@ async function main() {
   await checkGa0SolversExecute(ga0Registry.solvers);
   await checkGa1SolversExecute(ga1Registry.solvers);
   await checkGa2SolversExecute(ga2Registry.solvers);
+  checkGa3OfficialOrder(ga3Registry.solvers);
   await checkGa3SolversExecute(ga3Registry.solvers);
 
   await checkServerRoutes();

@@ -1,10 +1,10 @@
-import { normalizeEmail, seededRng, shuffleArray } from './utils.js';
+import { normalizeEmail } from './utils.js';
+import seedrandom from './seedrandom.js';
 import { metadata } from './youtube-metadata.js';
 
 export const id = 'q-youtube-metadata-filter-server';
 export const title = 'Q1: Automated Video Curation Pipeline';
 
-// 200 candidate URLs from Ot in the exam JS file
 const Ot = [
   'https://www.youtube.com/watch?v=_C8kWso4ne4',
   'https://www.youtube.com/watch?v=_K_QIx1KGuA',
@@ -106,99 +106,116 @@ const Ot = [
   'https://www.youtube.com/watch?v=iWS9ogMPOI0',
   'https://www.youtube.com/watch?v=j4bhmlkpLfc',
   'https://www.youtube.com/watch?v=jCzT9XFZ5bw',
-  'https://www.youtube.com/watch?v=jDRL76yXf20',
-  'https://www.youtube.com/watch?v=jH4S-T8rQ5U',
-  'https://www.youtube.com/watch?v=jM3Zc1z6v1M',
-  'https://www.youtube.com/watch?v=jMwpyfP_jG0',
-  'https://www.youtube.com/watch?v=Jn09UdSb3aA',
-  'https://www.youtube.com/watch?v=K1pPf_u4oD8',
-  'https://www.youtube.com/watch?v=k3vBqK18tH8',
-  'https://www.youtube.com/watch?v=k5_D7-6w_nI',
-  'https://www.youtube.com/watch?v=KF-yVzG14v8',
-  'https://www.youtube.com/watch?v=kJQP7kiw5Fk',
-  'https://www.youtube.com/watch?v=KkyZ6k-0fJ8',
-  'https://www.youtube.com/watch?v=KlmS6g7xH8M',
-  'https://www.youtube.com/watch?v=L2vT_e3Dq3U',
-  'https://www.youtube.com/watch?v=LC929KjS_5U',
-  'https://www.youtube.com/watch?v=li0o3t68T7E',
-  'https://www.youtube.com/watch?v=lI9WvM6O1yU',
-  'https://www.youtube.com/watch?v=lJ_y9o0aW5g',
-  'https://www.youtube.com/watch?v=lK9tM9aXw8s',
-  'https://www.youtube.com/watch?v=Lm_S1O4m_Fw',
-  'https://www.youtube.com/watch?v=lo8L6y9oN5M',
-  'https://www.youtube.com/watch?v=Lp8z6_c0y2E',
-  'https://www.youtube.com/watch?v=LQ88y7Y5wME',
-  'https://www.youtube.com/watch?v=lu8yZ9O6uJ4',
-  'https://www.youtube.com/watch?v=m2vS3yF8wE8',
-  'https://www.youtube.com/watch?v=M5F_C1uH4jE',
-  'https://www.youtube.com/watch?v=m5X1M6F9Y_U',
-  'https://www.youtube.com/watch?v=mcOktT8T0Fw',
-  'https://www.youtube.com/watch?v=MD2o8z-yS_I',
-  'https://www.youtube.com/watch?v=mD3o8-a0eS0',
-  'https://www.youtube.com/watch?v=Mo8L6y9kPJU',
-  'https://www.youtube.com/watch?v=N4IjxVP9yJM',
-  'https://www.youtube.com/watch?v=n5d78Fk6W_s',
-  'https://www.youtube.com/watch?v=N5PZ8yP_jEw',
-  'https://www.youtube.com/watch?v=n5WhQWVXosU',
-  'https://www.youtube.com/watch?v=n8-0lAyc3Bc',
-  'https://www.youtube.com/watch?v=ND3JvDWO-BY',
-  'https://www.youtube.com/watch?v=nK9tM9aXw8s',
-  'https://www.youtube.com/watch?v=NoPuGc05Lxs',
-  'https://www.youtube.com/watch?v=O1PkNiYlkkj',
-  'https://www.youtube.com/watch?v=o5X1M6F9Y_U',
-  'https://www.youtube.com/watch?v=OaCULcv_IQY',
-  'https://www.youtube.com/watch?v=ocZZ8CvNQ6M',
-  'https://www.youtube.com/watch?v=OD3o8-a0eS0',
-  'https://www.youtube.com/watch?v=oIolxqkL7cD',
-  'https://www.youtube.com/watch?v=oIWS9ogMPOI',
-  'https://www.youtube.com/watch?v=oo8L6y9oN5M',
-  'https://www.youtube.com/watch?v=oPuGc05Lxs',
-  'https://www.youtube.com/watch?v=P4UxXK7WE8a',
-  'https://www.youtube.com/watch?v=pD3o8-a0eS0',
-  'https://www.youtube.com/watch?v=PkNiYlkkjo1',
-  'https://www.youtube.com/watch?v=pmD3o8-a0eS0',
-  'https://www.youtube.com/watch?v=pmMwpyfP_jG0',
-  'https://www.youtube.com/watch?v=po8L6y9oN5M',
-  'https://www.youtube.com/watch?v=PrZvPeUw60a',
-  'https://www.youtube.com/watch?v=PySpark_Tutorial',
-  'https://www.youtube.com/watch?v=qD3JvDWO-BY',
-  'https://www.youtube.com/watch?v=qOs0o3wzS_I',
-  'https://www.youtube.com/watch?v=r3dt4OGnU5s',
-  'https://www.youtube.com/watch?v=r5i15qFTOk9',
-  'https://www.youtube.com/watch?v=r6tNS--WetL',
-  'https://www.youtube.com/watch?v=rD3o8-a0eS0',
-  'https://www.youtube.com/watch?v=ro8L6y9oN5M',
-  'https://www.youtube.com/watch?v=rRQxMYoCOuI',
-  'https://www.youtube.com/watch?v=ru8yZ9O6uJ4',
-  'https://www.youtube.com/watch?v=s7e_Fy6NRUa',
-  'https://www.youtube.com/watch?v=sdD3o8-a0eS',
-  'https://www.youtube.com/watch?v=so8L6y9oN5M',
-  'https://www.youtube.com/watch?v=tDK70jLZBzY',
-  'https://www.youtube.com/watch?v=tDkjCaAMBGW',
-  'https://www.youtube.com/watch?v=TDkjCaAMBGWM',
-  'https://www.youtube.com/watch?v=tDkjCaAMBGWN',
-  'https://www.youtube.com/watch?v=to8L6y9oN5M',
-  'https://www.youtube.com/watch?v=ttDkjCaAMBG',
-  'https://www.youtube.com/watch?v=ttyBEsHSv7w',
-  'https://www.youtube.com/watch?v=u5WhQWVXosU',
-  'https://www.youtube.com/watch?v=uD3o8-a0eS0',
-  'https://www.youtube.com/watch?v=uo8L6y9oN5M',
+  'https://www.youtube.com/watch?v=JVQNywo4AbU',
+  'https://www.youtube.com/watch?v=jxmzY9soFXg',
+  'https://www.youtube.com/watch?v=k8asfUbWbI4',
+  'https://www.youtube.com/watch?v=K8L6KVGG-7o',
+  'https://www.youtube.com/watch?v=k9TUPpGqYTo',
+  'https://www.youtube.com/watch?v=KB2CtEDrglY',
+  'https://www.youtube.com/watch?v=KgCgpCIOkIs',
+  'https://www.youtube.com/watch?v=khKv-8q7YmY',
+  'https://www.youtube.com/watch?v=KlBPCzcQNU8',
+  'https://www.youtube.com/watch?v=kt3ZtW9MXhw',
+  'https://www.youtube.com/watch?v=KzqSDvzOFNA',
+  'https://www.youtube.com/watch?v=lbY9r0rHTQc',
+  'https://www.youtube.com/watch?v=Liv6eeb1VfE',
+  'https://www.youtube.com/watch?v=Lu8lXXlstvM',
+  'https://www.youtube.com/watch?v=LUFn-QVcmB8',
+  'https://www.youtube.com/watch?v=m42FB3RY0TQ',
+  'https://www.youtube.com/watch?v=M54UFvJqQ5I',
+  'https://www.youtube.com/watch?v=mB0EBW-vDSQ',
+  'https://www.youtube.com/watch?v=mkYBJwX_dMs',
+  'https://www.youtube.com/watch?v=MwZwr5Tvyxo',
+  'https://www.youtube.com/watch?v=mXR47qiTdWQ',
+  'https://www.youtube.com/watch?v=N5vscPTWKOk',
+  'https://www.youtube.com/watch?v=Na8h09Goovk',
+  'https://www.youtube.com/watch?v=NDFbXIiqT4o',
+  'https://www.youtube.com/watch?v=NDFMa5FSQuI',
+  'https://www.youtube.com/watch?v=NeJKaolLQqU',
+  'https://www.youtube.com/watch?v=ng2o98k983k',
+  'https://www.youtube.com/watch?v=nghuHvKLhJA',
+  'https://www.youtube.com/watch?v=NhidVhNHfeU',
+  'https://www.youtube.com/watch?v=NIWwJbo-9_8',
+  'https://www.youtube.com/watch?v=OdIHeg4jj2c',
+  'https://www.youtube.com/watch?v=OebyvmZo3w0',
+  'https://www.youtube.com/watch?v=OEJv74QnduA',
+  'https://www.youtube.com/watch?v=Oh2Dkkswy30',
+  'https://www.youtube.com/watch?v=pd-0G0MigUA',
+  'https://www.youtube.com/watch?v=PSNXoAs2FtQ',
+  'https://www.youtube.com/watch?v=PSWf2TjTGNY',
+  'https://www.youtube.com/watch?v=PUIE7CPANfo',
+  'https://www.youtube.com/watch?v=q4jPR-M0TAQ',
+  'https://www.youtube.com/watch?v=q5uM4VKywbA',
+  'https://www.youtube.com/watch?v=q7Bo_J8x_dw',
+  'https://www.youtube.com/watch?v=qbLc5a9jdXo',
+  'https://www.youtube.com/watch?v=qDwdMDQ8oX4',
+  'https://www.youtube.com/watch?v=QErlGfPRoUU',
+  'https://www.youtube.com/watch?v=qfWpPEgea2A',
+  'https://www.youtube.com/watch?v=qJPw_IVEyfc',
+  'https://www.youtube.com/watch?v=QnDWIZuWYW0',
+  'https://www.youtube.com/watch?v=QVdf0LgmICw',
+  'https://www.youtube.com/watch?v=QyhqzaMiFxk',
+  'https://www.youtube.com/watch?v=r-uOLxNrNk8',
+  'https://www.youtube.com/watch?v=R67XuYc9NQ4',
+  'https://www.youtube.com/watch?v=rkzpx5Bkbek',
+  'https://www.youtube.com/watch?v=roTZJaxjnJc',
+  'https://www.youtube.com/watch?v=rq8cL2XMM5M',
+  'https://www.youtube.com/watch?v=RSl87lqOXDE',
+  'https://www.youtube.com/watch?v=S5Dn1HjBPA4',
+  'https://www.youtube.com/watch?v=Sa_kQheCnds',
+  'https://www.youtube.com/watch?v=St48epdRDZw',
+  'https://www.youtube.com/watch?v=sugvnHA7ElY',
+  'https://www.youtube.com/watch?v=Sw79_adeUR0',
+  'https://www.youtube.com/watch?v=SwSbnmqk3zY',
+  'https://www.youtube.com/watch?v=T6y2LRcX9qM',
+  'https://www.youtube.com/watch?v=t8hG0WnyHgU',
+  'https://www.youtube.com/watch?v=T9Jh_X134l4',
+  'https://www.youtube.com/watch?v=tf3ezjeTpfI',
+  'https://www.youtube.com/watch?v=tiBeLLv5GJo',
+  'https://www.youtube.com/watch?v=TIZRskDMyA4',
+  'https://www.youtube.com/watch?v=tJxcKyFMTGo',
+  'https://www.youtube.com/watch?v=u0oDDZrDz9U',
+  'https://www.youtube.com/watch?v=U2ZN104hIcc',
+  'https://www.youtube.com/watch?v=Uh2ebFW8OYM',
+  'https://www.youtube.com/watch?v=uHd7KDesmkM',
+  'https://www.youtube.com/watch?v=UIJKdCIEXUQ',
+  'https://www.youtube.com/watch?v=uL0-6kfiH3g',
+  'https://www.youtube.com/watch?v=UlygQI2eSdg',
+  'https://www.youtube.com/watch?v=UmljXZIypDc',
+  'https://www.youtube.com/watch?v=uVNfQDohYNI',
   'https://www.youtube.com/watch?v=Vde5SH8e1OQ',
-  'https://www.youtube.com/watch?v=vDkjCaAMBGW',
-  'https://www.youtube.com/watch?v=w5WhQWVXosU',
-  'https://www.youtube.com/watch?v=wD3o8-a0eS0',
-  'https://www.youtube.com/watch?v=wo8L6y9oN5M',
-  'https://www.youtube.com/watch?v=x44PvX0Yv36',
-  'https://www.youtube.com/watch?v=xD3o8-a0eS0',
-  'https://www.youtube.com/watch?v=xo8L6y9oN5M',
-  'https://www.youtube.com/watch?v=y-vOd0UzHKY',
-  'https://www.youtube.com/watch?v=y8v3how07th',
-  'https://www.youtube.com/watch?v=yD3o8-a0eS0',
-  'https://www.youtube.com/watch?v=yo8L6y9oN5M',
-  'https://www.youtube.com/watch?v=z3dt4OGnU5s',
-  'https://www.youtube.com/watch?v=zD3o8-a0eS0',
-  'https://www.youtube.com/watch?v=zo8L6y9oN5M'
+  'https://www.youtube.com/watch?v=ve2pmm5JqmI',
+  'https://www.youtube.com/watch?v=vTX3IwquFkc',
+  'https://www.youtube.com/watch?v=vuDCndpkutQ',
+  'https://www.youtube.com/watch?v=vutyTx7IaAI',
+  'https://www.youtube.com/watch?v=W8KRzm-HUcc',
+  'https://www.youtube.com/watch?v=WbTOutpwPHs',
+  'https://www.youtube.com/watch?v=Wfx4YBzg16s',
+  'https://www.youtube.com/watch?v=WXsD0ZgxjRw',
+  'https://www.youtube.com/watch?v=x3v9zMX1s4s',
+  'https://www.youtube.com/watch?v=XBksHCvObhQ',
+  'https://www.youtube.com/watch?v=xFciV6Ew5r4',
+  'https://www.youtube.com/watch?v=XGa4onZP66Q',
+  'https://www.youtube.com/watch?v=xLw9wf9uNuw',
+  'https://www.youtube.com/watch?v=XMmfJFS_MFQ',
+  'https://www.youtube.com/watch?v=Xnbef8F_Yfc',
+  'https://www.youtube.com/watch?v=XrW2RaQnJYw',
+  'https://www.youtube.com/watch?v=xwPWcFKeIac',
+  'https://www.youtube.com/watch?v=xXibS9832FM',
+  'https://www.youtube.com/watch?v=YJC6ldI3hWk',
+  'https://www.youtube.com/watch?v=YST1sWFPDh4',
+  'https://www.youtube.com/watch?v=YYXdXT2l-Gg',
+  'https://www.youtube.com/watch?v=Z81JW1NTsO8'
 ];
+
+function fisherYatesShuffle(arr, rng) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 function getYoutubeId(url) {
   const match = url.match(/[?&]v=([^&#]+)/);
@@ -206,52 +223,45 @@ function getYoutubeId(url) {
 }
 
 export async function solve(email, sessionToken) {
-  const norm = normalizeEmail(email);
-  // Re-seed parameters matching the exact function le(email)
-  const salt = 'tds-2026-05-ga3-i';
-  const t = seededRng(`${salt}#${norm}#`);
-  
-  const d = shuffleArray([...Ot], t).slice(0, 20 + Math.floor(t() * 11));
+  const norm = String(email || '').trim().toLowerCase();
+  const salt = 'tds-2026-05-ga3-youtube-metadata-filter-v1';
+  const rng = seedrandom(`${salt}#${norm}#`);
+
+  const d = fisherYatesShuffle(Ot, rng).slice(0, 20 + Math.floor(rng() * 11));
   const u = [300, 420, 600];
   const i = [1800, 2100, 2400, 3e3];
-  
-  const minDuration = u[Math.floor(t() * u.length)];
-  const maxDuration = i[Math.floor(t() * i.length)];
+
+  const minDuration = u[Math.floor(rng() * u.length)];
+  const maxDuration = i[Math.floor(rng() * i.length)];
   const requiredWords = ["python"];
   const forbiddenWords = ["shorts", "live"];
-  const limit = 8 + Math.floor(t() * 8);
+  const limit = 8 + Math.floor(rng() * 8);
 
   const filtered = [];
-  
+
   for (const url of d) {
     const meta = metadata[url];
     if (!meta) continue;
-    
-    // 1. Duration check
+
     const duration = meta.duration || 0;
-    if (duration < minDuration || duration > maxDuration) {
-      continue;
-    }
-    
-    // 2. Keyword matching title + description (case-insensitive)
+    if (duration < minDuration || duration > maxDuration) continue;
+
     const combinedText = (meta.title + ' ' + meta.description).toLowerCase();
-    
-    const containsAllRequired = requiredWords.every(w => combinedText.includes(w.toLowerCase()));
-    const containsAnyForbidden = forbiddenWords.some(w => combinedText.includes(w.toLowerCase()));
-    
+    const containsAllRequired = requiredWords.every(w => combinedText.includes(w));
+    const containsAnyForbidden = forbiddenWords.some(w => combinedText.includes(w));
+
     if (containsAllRequired && !containsAnyForbidden) {
       filtered.push({
-        url: url,
+        url,
         upload_date: meta.upload_date || '',
         id: getYoutubeId(url)
       });
     }
   }
 
-  // Sort by upload_date DESC, resolve ties by id alphabetically ASC
   filtered.sort((a, b) => {
-    const dateCompare = b.upload_date.localeCompare(a.upload_date);
-    if (dateCompare !== 0) return dateCompare;
+    const dc = b.upload_date.localeCompare(a.upload_date);
+    if (dc !== 0) return dc;
     return a.id.localeCompare(b.id);
   });
 

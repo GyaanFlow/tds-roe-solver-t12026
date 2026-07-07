@@ -7,7 +7,9 @@ export const title = 'Q5: Cosine Similarity Search';
 const B = {
   ML: ["neural", "gradient", "backprop", "loss", "epoch", "batch", "model", "train", "feature", "weight", "activation", "layer", "dropout", "learning", "inference", "embedding", "transformer", "attention"],
   DATA: ["query", "database", "index", "schema", "table", "row", "column", "join", "aggregate", "filter", "pipeline", "etl", "warehouse", "stream", "batch", "partition", "shard", "replica"],
-  WEB: ["http", "request", "response", "cache", "cookie", "session", "token", "header", "cors", "routing", "gateway", "proxy", "auth", "oauth", "jwt", "tls", "dns", "websocket"]
+  WEB: ["http", "request", "response", "cache", "cookie", "session", "token", "api", "endpoint", "rest", "graphql", "websocket", "latency", "throughput", "bandwidth", "proxy", "cdn", "tls"],
+  MATH: ["vector", "matrix", "eigenvalue", "integral", "derivative", "probability", "distribution", "variance", "covariance", "correlation", "regression", "hypothesis", "bayes", "entropy", "gradient", "manifold"],
+  CLOUD: ["container", "kubernetes", "docker", "pod", "service", "deployment", "scaling", "ingress", "node", "cluster", "autoscale", "loadbalancer", "microservice", "serverless", "function", "bucket", "volume"]
 };
 
 const U = Object.keys(B);

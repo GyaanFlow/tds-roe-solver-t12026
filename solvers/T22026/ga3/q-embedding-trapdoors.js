@@ -51,7 +51,7 @@ function solveEmbeddingTrapdoors(email, version = "") {
 
 export async function solve(email, sessionToken) {
   const norm = normalizeEmail(email);
-  const answer = solveEmbeddingTrapdoors(norm);
+  const answer = solveEmbeddingTrapdoors(norm, 'v1');
 
   return {
     type: 'solved',
