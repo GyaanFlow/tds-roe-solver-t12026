@@ -37,8 +37,13 @@ function extractFromDocument(text) {
 }
 
 // Fallback: replicate the exam's Ao() RNG sequence exactly (two draws per fact).
+// Use the SAME normalization as the exam: String(e).trim().toLowerCase() (no dot stripping).
+function examNorm(email) {
+  return String(email || '').trim().toLowerCase();
+}
+
 function generateFromSeed(email) {
-  const norm = normalizeEmail(email);
+  const norm = examNorm(email);
   const salt = `${norm}#q-context-window-heist-server#v1`;
   const rng = seedrandom(salt);
   const answers = {};
@@ -52,7 +57,7 @@ function generateFromSeed(email) {
 }
 
 export async function solve(email, sessionToken) {
-  const norm = normalizeEmail(email);
+  const norm = examNorm(email);
 
   // If the user pasted the copied haystack document (into the token field), extract from it.
   const pasted = sessionToken && /LATEST FACT|## Haystack/i.test(sessionToken)
