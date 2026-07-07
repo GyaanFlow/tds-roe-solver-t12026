@@ -24,10 +24,12 @@ export async function solve(email, _sessionToken) {
 
   const answers = {};
   for (const fact of So) {
-    const idx = Math.floor(rng() * fact.values.length);
-    answers[fact.key] = fact.values[idx];
-    const staleCandidates = fact.values.filter((_, i) => i !== idx);
-    staleCandidates[Math.floor(rng() * staleCandidates.length)];
+    // Replicate the exam's Ao() exactly: first draw = answer, second draw (from the
+    // remaining values via qo) = staleAnswer. Only the first draw determines the answer.
+    const answer = fact.values[Math.floor(rng() * fact.values.length)];
+    const remaining = fact.values.filter(v => v !== answer);
+    remaining[Math.floor(rng() * remaining.length)]; // staleAnswer — consumed to stay in sync
+    answers[fact.key] = answer;
   }
 
   const result = {
