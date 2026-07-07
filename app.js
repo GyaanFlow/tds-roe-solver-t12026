@@ -12,6 +12,7 @@ const THEME_HUES = {
 let activeTheme = localStorage.getItem('workspaceTheme') || 'amber';
 
 const emailInput = document.getElementById('emailInput');
+const sessionTokenInput = document.getElementById('sessionTokenInput');
 const solveBtn = document.getElementById('solveBtn');
 const progressPanel = document.getElementById('progressPanel');
 const progressFill = document.getElementById('progressFill');
@@ -59,7 +60,8 @@ const STORAGE_KEYS = {
   selectedQuestion: 'tdsSelectedQuestion',
   rawWrap: 'tdsRawWrap',
   openPanels: 'tdsOpenPanels',
-  emailHistory: 'tdsEmailHistory'
+  emailHistory: 'tdsEmailHistory',
+  sessionToken: 'tdsSessionToken'
 };
 
 // Term → exam registry
@@ -73,7 +75,8 @@ const TERM_EXAMS = {
   T22026: [
     { group: 'Weekly Graded Assignments', value: 'ga0', label: 'GA 0 (Warm-up Exam)' },
     { group: 'Weekly Graded Assignments', value: 'ga1', label: 'GA 1 (Developer Tools)' },
-    { group: 'Weekly Graded Assignments', value: 'ga2', label: 'GA 2 (API Engineering & Cloud Services)' }
+    { group: 'Weekly Graded Assignments', value: 'ga2', label: 'GA 2 (API Engineering & Cloud Services)' },
+    { group: 'Weekly Graded Assignments', value: 'ga3', label: 'GA 3 (System & API Architecture)' }
   ]
 };
 
@@ -144,6 +147,8 @@ window.addEventListener('DOMContentLoaded', () => {
   examSelect.value = savedExam || latestExam;
 
   if (savedEmail) emailInput.value = savedEmail;
+  const savedSessionToken = localStorage.getItem(STORAGE_KEYS.sessionToken);
+  if (savedSessionToken && sessionTokenInput) sessionTokenInput.value = savedSessionToken;
   if (savedSearch) nodeSearch.value = savedSearch;
   if (Number.isInteger(savedSelectedQuestion) && savedSelectedQuestion >= 0) {
     selectedQuestionIndex = savedSelectedQuestion;
@@ -208,6 +213,9 @@ function persistUiState() {
   localStorage.setItem(STORAGE_KEYS.selectedQuestion, String(selectedQuestionIndex));
   localStorage.setItem(STORAGE_KEYS.rawWrap, String(rawWrapEnabled));
   localStorage.setItem(STORAGE_KEYS.openPanels, JSON.stringify([...openPanels]));
+  if (sessionTokenInput) {
+    localStorage.setItem(STORAGE_KEYS.sessionToken, sessionTokenInput.value.trim());
+  }
   localStorage.setItem('rawFocusEnabled', String(rawFocusEnabled));
   drawEmailIdenticon(emailVal);
   // NOTE: generateNetwork is NOT called here to avoid rebuilding 200 nodes on every
@@ -941,6 +949,7 @@ async function startSolving() {
   const currentTerm = termSelect.value;
   const currentExam = examSelect.value;
   const preferredQuestionIndex = selectedQuestionIndex;
+  const sessionToken = sessionTokenInput ? sessionTokenInput.value.trim() : '';
 
   if (!email) {
     emailInput.focus();
@@ -951,6 +960,18 @@ async function startSolving() {
   if (!currentExam) {
     showToast('No exam available for this term yet.', 'error');
     return;
+  }
+
+  if (currentExam === 'ga3' && !sessionToken) {
+    showToast('Session Token / quizSign is required for GA3!', 'error');
+    if (sessionTokenInput) {
+      sessionTokenInput.focus();
+      sessionTokenInput.style.borderColor = 'var(--error)';
+    }
+    return;
+  }
+  if (sessionTokenInput) {
+    sessionTokenInput.style.borderColor = 'var(--border)';
   }
 
   emailInput.style.borderColor = 'var(--border)';
@@ -1002,7 +1023,7 @@ async function startSolving() {
 
     for (const solver of solvers) {
       try {
-        const result = await Promise.resolve(solver.solve(email));
+        const result = await Promise.resolve(solver.solve(email, sessionToken));
         workspaceData.answers.push({
           title: solver.title,
           answer: result.answer,
@@ -1193,6 +1214,14 @@ solveBtn.addEventListener('click', startSolving);
 emailInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') startSolving();
 });
+if (sessionTokenInput) {
+  sessionTokenInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') startSolving();
+  });
+  sessionTokenInput.addEventListener('input', () => {
+    persistUiState();
+  });
+}
 termSelect.addEventListener('change', () => {
   populateExamSelect(termSelect.value);
   persistUiState();

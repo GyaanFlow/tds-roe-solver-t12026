@@ -10,7 +10,8 @@ const TERM_EXAMS = {
   T22026: [
     { value: 'ga0', label: 'GA 0 (Warm-up Exam)' },
     { value: 'ga1', label: 'GA 1 (Developer Tools)' },
-    { value: 'ga2', label: 'GA 2 (API Engineering & Cloud Services)' }
+    { value: 'ga2', label: 'GA 2 (API Engineering & Cloud Services)' },
+    { value: 'ga3', label: 'GA 3 (System & API Architecture)' }
   ]
 };
 
