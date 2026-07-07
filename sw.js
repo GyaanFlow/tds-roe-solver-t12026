@@ -1,9 +1,7 @@
-const CACHE_NAME = 'tds-portal-v11';
+const CACHE_NAME = 'tds-portal-v12';
 
 const CORE_ASSETS = [
   '/',
-  '/index.html',
-  '/app.js',
   '/style.css',
   '/manifest.json',
   '/tds-config.json',
@@ -57,11 +55,10 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Network-first strategy (Stale-While-Revalidate hybrid)
+  // Network-first strategy — always fetch from network, fall back to cache on failure
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       const fetchPromise = fetch(event.request).then((networkResponse) => {
-        // Only cache valid responses
         if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
           const responseToCache = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
@@ -70,16 +67,11 @@ self.addEventListener('fetch', (event) => {
         }
         return networkResponse;
       }).catch((err) => {
-        console.warn('[ServiceWorker] Network fetch failed, falling back to cache if available', err);
-        // If we have a cached response, return it. Otherwise, let it fail.
-        if (cachedResponse) {
-           return cachedResponse;
-        }
+        if (cachedResponse) return cachedResponse;
         throw err;
       });
 
-      // Return cached immediately if available, otherwise wait for network
-      return cachedResponse || fetchPromise;
+      return fetchPromise;
     })
   );
 });
