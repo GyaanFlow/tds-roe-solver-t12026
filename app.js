@@ -594,8 +594,13 @@ function renderAnswerPanel(data, langClass) {
   const isHeist = data.title && data.title.toLowerCase().includes('heist');
   const isSolved = data.type === 'solved';
   const shouldOpen = !isHeist || isSolved;
+  const highlightStyle = (isHeist && isSolved) ? 'border: 1px solid var(--theme-primary); box-shadow: 0 0 16px var(--theme-glow);' : '';
 
-  return createSection('Answer', `${actions}${answerMarkup}`, { open: shouldOpen, extraClass: 'panel-answer' });
+  return createSection('Answer', `${actions}${answerMarkup}`, { 
+    open: shouldOpen, 
+    extraClass: 'panel-answer',
+    style: highlightStyle
+  });
 }
 
 function renderNotesPanel(data) {
@@ -604,8 +609,9 @@ function renderNotesPanel(data) {
   const cleanRendered = rendered.replace(/<a\s+(href="[^"]*")/gi, '<a target="_blank" rel="noopener noreferrer" $1');
   
   const isHeist = data.title && data.title.toLowerCase().includes('heist');
+  const isSolved = data.type === 'solved';
   const isOpen = isHeist || openPanels.has('Rendered Notes');
-  const highlightStyle = isHeist ? 'border: 1px solid var(--theme-primary); box-shadow: 0 0 16px var(--theme-glow);' : '';
+  const highlightStyle = (isHeist && !isSolved) ? 'border: 1px solid var(--theme-primary); box-shadow: 0 0 16px var(--theme-glow);' : '';
 
   return createSection('Rendered Notes', `<div class="styled-output">${cleanRendered}</div>`, {
     open: isOpen,
@@ -927,11 +933,20 @@ function renderCanvas(index) {
       ${colabBackupHtml}
       ${renderVariantPanel(data)}
       ${renderPreviewPanel(data)}
-      ${!/onrender\.com\/ga[23]\//i.test(data.answer?.toLowerCase() || '') ? renderGuidePanel(data) : ''}
-      ${renderAnswerPanel(data, langClass)}
-      ${/onrender\.com\/ga[23]\//i.test(data.answer?.toLowerCase() || '') ? renderGuidePanel(data) : ''}
-      ${renderNotesPanel(data)}
-      ${renderDiagnosticsPanel(data.debug)}
+      ${isHeist 
+        ? `
+          ${renderNotesPanel(data)}
+          ${renderAnswerPanel(data, langClass)}
+          ${renderDiagnosticsPanel(data.debug)}
+        `
+        : `
+          ${!/onrender\.com\/ga[23]\//i.test(data.answer?.toLowerCase() || '') ? renderGuidePanel(data) : ''}
+          ${renderAnswerPanel(data, langClass)}
+          ${/onrender\.com\/ga[23]\//i.test(data.answer?.toLowerCase() || '') ? renderGuidePanel(data) : ''}
+          ${renderNotesPanel(data)}
+          ${renderDiagnosticsPanel(data.debug)}
+        `
+      }
     </div>
     <div class="canvas-footer-credits">
       <span>Project Sandbox by <a href="https://github.com/GyaanFlow" target="_blank" rel="noopener noreferrer">GyaanFlow</a></span>
