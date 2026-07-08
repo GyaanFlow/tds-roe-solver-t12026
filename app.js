@@ -881,6 +881,7 @@ function renderCanvas(index) {
 
   const langClass = detectLanguage(data.answer);
   const health = getHealthMeta(data);
+  const isHeist = data.title && data.title.toLowerCase().includes('heist');
 
   const isSpecialGa0Backup = (workspaceData.exam === 'ga0' && (index === 9 || index === 17 || index === 24));
   const colabBackupHtml = isSpecialGa0Backup ? `
