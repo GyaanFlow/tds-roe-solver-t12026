@@ -109,6 +109,17 @@ ${statusAlert}
     <div id="pow-estimate" style="font-size: 12px; color: var(--text-secondary); min-height: 18px; margin: 4px 0;"></div>
     <button id="gen-colab-script-btn" style="background: var(--theme-primary); color: #000; border: none; padding: 8px 18px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px var(--theme-glow); transition: transform 0.2s; align-self: flex-start;">Generate Colab Script</button>
     <div id="colab-script-area" style="display: none;">
+      <div style="background: rgba(16, 185, 129, 0.06); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 6px; padding: 10px 14px; font-size: 11px; line-height: 1.6; color: var(--text-secondary); margin-bottom: 8px;">
+        <strong style="color: #34d399;">How to use:</strong>
+        <ol style="margin: 4px 0 0 0; padding-left: 18px;">
+          <li>Click <strong>Copy Script</strong> below (or select all and copy).</li>
+          <li>Open <a href="https://colab.research.google.com/" target="_blank" rel="noopener" style="color: var(--theme-primary);">Google Colab</a> → <strong>File &gt; New Notebook</strong>.</li>
+          <li>Paste the script into the first cell.</li>
+          <li>Click the <strong>Run</strong> button (▶) and wait for mining to finish.</li>
+          <li>Copy the <strong>Nonce</strong> number from the highlighted output box.</li>
+          <li>Paste it into the field below and click <strong>Use This Nonce</strong>.</li>
+        </ol>
+      </div>
       <textarea id="colab-script-output" readonly style="width: 100%; height: 240px; border: 1px solid var(--border); background: var(--bg-input); color: var(--text-primary); padding: 10px 14px; border-radius: 6px; font-size: 11px; font-family: monospace; outline: none; box-sizing: border-box; resize: vertical;"></textarea>
       <div style="display: flex; gap: 8px; flex-wrap: wrap;">
         <button id="copy-colab-script-btn" style="background: transparent; color: var(--text-secondary); border: 1px solid var(--border); padding: 6px 14px; border-radius: 6px; font-size: 11px; font-weight: 600; cursor: pointer;">Copy Script</button>
