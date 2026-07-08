@@ -47,9 +47,9 @@ export async function solve(email, sessionToken) {
     token = parts[0].trim();
     difficulty = parseInt(parts[1], 10);
     
-    if (parts.length >= 4) {
+    if (parts.length >= 3) {
       preMinedNonce = parts[2].trim();
-      preMinedTime = parts[3].trim();
+      preMinedTime = parts.length >= 4 ? parts[3].trim() : 'pre-computed';
     }
     
     if (token && !isNaN(difficulty)) {
@@ -60,7 +60,7 @@ export async function solve(email, sessionToken) {
   if (isInputProvided) {
     try {
       let nonce, time;
-      if (preMinedNonce !== null && preMinedTime !== null) {
+      if (preMinedNonce !== null) {
         nonce = preMinedNonce;
         time = preMinedTime;
       } else {
@@ -70,9 +70,10 @@ export async function solve(email, sessionToken) {
         time = result.time;
       }
 
+      const timeLabel = time === 'pre-computed' ? 'externally' : time === 'colab' ? 'via Colab' : `in ${time}s`;
       const outputMsg = `
         <div style="background: rgba(16, 185, 129, 0.08); border: 1px dashed rgba(16, 185, 129, 0.4); padding: 12px; border-radius: 8px; color: var(--text-primary); font-size: 13px; margin-bottom: 16px; line-height: 1.5;">
-          <span style="color: #34d399; font-weight: bold;">Success:</span> Nonce mined successfully in ${time} seconds!
+          <span style="color: #34d399; font-weight: bold;">Success:</span> Nonce mined ${timeLabel}!
         </div>
       `.trim();
 
@@ -112,10 +113,10 @@ ${nonce}
       };
     }
   } else {
-    // Return config input form
+    // Return config input form with both options
     const statusAlert = `
       <div style="background: rgba(245, 158, 11, 0.08); border: 1px dashed rgba(245, 158, 11, 0.4); padding: 12px; border-radius: 8px; color: var(--text-primary); font-size: 13px; margin-bottom: 16px; line-height: 1.5;">
-        <span style="color: #fbbf24; font-weight: bold;">Mining Required:</span> Paste your Token and Difficulty below to start mining in your browser.
+        <span style="color: #fbbf24; font-weight: bold;">Mining Required:</span> Paste your Token and Difficulty below, then choose a mining method.
       </div>
     `.trim();
 
@@ -125,8 +126,11 @@ ${nonce}
 ${statusAlert}
 
 <details open class="panel-section" style="margin-bottom: 16px; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(255, 255, 255, 0.01);">
-  <summary style="cursor: pointer; font-size: 13px; font-weight: 600; color: var(--theme-primary); outline: none; user-select: none;">📄 Browser Auto-Miner Configuration</summary>
+  <summary style="cursor: pointer; font-size: 13px; font-weight: 600; color: var(--theme-primary); outline: none; user-select: none;">⚡ Browser Miner — Built-in (~15-60s at diff 26)</summary>
   <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 10px;" class="heist-card-panel">
+    <p style="font-size: 12px; color: var(--text-muted); margin: 0;">
+      Mines in your browser using all CPU cores. No setup needed — just click start.
+    </p>
     <div style="display: flex; flex-direction: column; gap: 4px;">
       <label style="font-size: 11px; color: var(--text-secondary); font-weight: 600;">YOUR TOKEN</label>
       <input type="text" id="pow-token-input" placeholder="Paste token from exam page" style="width: 100%; border: 1px solid var(--border); background: var(--bg-input); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 13px; outline: none; box-sizing: border-box;">
@@ -139,11 +143,33 @@ ${statusAlert}
     <button id="pow-mine-btn" style="background: var(--theme-primary); color: #000; border: none; padding: 8px 18px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px var(--theme-glow); transition: transform 0.2s; align-self: flex-start; margin-top: 4px;">Start Mining Nonce</button>
   </div>
 </details>
+
+<details class="panel-section" style="margin-bottom: 16px; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(255, 255, 255, 0.01);">
+  <summary style="cursor: pointer; font-size: 13px; font-weight: 600; color: var(--theme-primary); outline: none; user-select: none;">🚀 Colab Miner — Faster (~2-10s at diff 26)</summary>
+  <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 10px;" class="heist-card-panel">
+    <p style="font-size: 12px; color: var(--text-muted); margin: 0;">
+      Python's native hashlib is 10-20x faster than browser crypto. Generate a script, paste it into a
+      <a href="https://colab.research.google.com/" target="_blank" rel="noopener" style="color: var(--theme-primary);">Google Colab</a>
+      cell, run it, then paste the nonce back here.
+    </p>
+    <button id="gen-colab-script-btn" style="background: transparent; color: var(--theme-primary); border: 1px solid var(--theme-primary); padding: 8px 18px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s; align-self: flex-start;">Generate Colab Script</button>
+    <div id="colab-script-area" style="display: none;">
+      <textarea id="colab-script-output" readonly style="width: 100%; height: 260px; border: 1px solid var(--border); background: var(--bg-input); color: var(--text-primary); padding: 10px 14px; border-radius: 6px; font-size: 11px; font-family: monospace; outline: none; box-sizing: border-box; resize: vertical;"></textarea>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button id="copy-colab-script-btn" style="background: transparent; color: var(--text-secondary); border: 1px solid var(--border); padding: 6px 14px; border-radius: 6px; font-size: 11px; font-weight: 600; cursor: pointer;">Copy Script</button>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: center; margin-top: 8px; flex-wrap: wrap;">
+        <input type="text" id="colab-nonce-input" placeholder="Paste nonce from Colab output" style="flex: 1; min-width: 180px; border: 1px solid var(--border); background: var(--bg-input); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 13px; outline: none; box-sizing: border-box;">
+        <button id="submit-colab-nonce-btn" style="background: var(--theme-primary); color: #000; border: none; padding: 8px 18px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px var(--theme-glow);">Use This Nonce</button>
+      </div>
+    </div>
+  </div>
+</details>
     `.trim();
 
     return {
       type: 'guide',
-      answer: 'Please enter your Token and Difficulty in the card panel and click "Start Mining Nonce" to solve.',
+      answer: 'Enter your Token and Difficulty, then pick a mining method.',
       variant: 'No token configured',
       answerDisplay: htmlContent
     };

@@ -1819,7 +1819,84 @@ document.addEventListener('click', async (event) => {
     }
   } else if (event.target.id === 'pow-clear-btn') {
     localStorage.removeItem('tdsNonceInput');
+    const colabArea = document.getElementById('colab-script-area');
+    if (colabArea) colabArea.style.display = 'none';
     showToast('Proof-of-work input cleared.', 'info');
+    startSolving();
+  } else if (event.target.id === 'gen-colab-script-btn') {
+    const token = document.getElementById('pow-token-input')?.value.trim();
+    const difficulty = document.getElementById('pow-difficulty-input')?.value.trim();
+    if (!token || !difficulty) {
+      showToast('Enter token and difficulty first!', 'error');
+      return;
+    }
+    const script = `# Q10 Proof-of-Work Miner — Google Colab
+# 1. Paste this into a Colab cell (https://colab.research.google.com)
+# 2. Run the cell
+# 3. Copy the Nonce from the output and paste it back in the solver
+
+import hashlib, time, multiprocessing as mp
+
+TOKEN = "${token}"
+DIFFICULTY = ${difficulty}
+
+def leading_zero_bits(d):
+    bits = 0
+    for b in d:
+        if b == 0: bits += 8
+        else:
+            while b < 128: bits += 1; b <<= 1
+            break
+    return bits
+
+def mine(args):
+    t, diff, start, step = args
+    n = start
+    pref = (t + ":").encode()
+    while True:
+        h = hashlib.sha256(pref + str(n).encode()).digest()
+        if leading_zero_bits(h) >= diff: return n
+        n += step
+
+if __name__ == "__main__":
+    t0 = time.time()
+    nw = mp.cpu_count()
+    print(f"Mining with {nw} workers...")
+    with mp.Pool(nw) as p:
+        for r in p.imap_unordered(mine, [(TOKEN, DIFFICULTY, i, nw) for i in range(nw)]):
+            print(f"\\nNonce: {r}")
+            print(f"Time: {time.time()-t0:.2f}s")
+            p.terminate()
+            break`;
+
+    const area = document.getElementById('colab-script-area');
+    const output = document.getElementById('colab-script-output');
+    if (area && output) {
+      area.style.display = 'block';
+      output.value = script;
+    }
+    showToast('Colab script generated! Copy and run it.', 'success');
+  } else if (event.target.id === 'copy-colab-script-btn') {
+    const output = document.getElementById('colab-script-output');
+    if (!output || !output.value) return;
+    try {
+      await navigator.clipboard.writeText(output.value);
+      showToast('Script copied to clipboard!', 'success');
+    } catch {
+      output.select();
+      document.execCommand('copy');
+      showToast('Script copied!', 'success');
+    }
+  } else if (event.target.id === 'submit-colab-nonce-btn') {
+    const token = document.getElementById('pow-token-input')?.value.trim();
+    const difficulty = document.getElementById('pow-difficulty-input')?.value.trim();
+    const nonce = document.getElementById('colab-nonce-input')?.value.trim();
+    if (!token || !difficulty || !nonce) {
+      showToast('Enter token, difficulty, and nonce!', 'error');
+      return;
+    }
+    localStorage.setItem('tdsNonceInput', `${token}|${difficulty}|${nonce}|colab`);
+    showToast('Nonce submitted! Re-solving...', 'success');
     startSolving();
   }
 });
