@@ -9,7 +9,8 @@ function leadingZeroBits(digest) {
     if (digest[i] === 0) {
       bits += 8;
     } else {
-      bits += digest[i].toString(2).padStart(8, '0').indexOf('1');
+      let b = digest[i];
+      while (b < 128) { bits++; b <<= 1; }
       break;
     }
   }
@@ -128,11 +129,11 @@ ${statusAlert}
   <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 10px;" class="heist-card-panel">
     <div style="display: flex; flex-direction: column; gap: 4px;">
       <label style="font-size: 11px; color: var(--text-secondary); font-weight: 600;">YOUR TOKEN</label>
-      <input type="text" id="pow-token-input" placeholder="e.g. 03f96129a8f5ce79" style="width: 100%; border: 1px solid var(--border); background: var(--bg-input); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 13px; outline: none; box-sizing: border-box;">
+      <input type="text" id="pow-token-input" placeholder="Paste token from exam page" style="width: 100%; border: 1px solid var(--border); background: var(--bg-input); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 13px; outline: none; box-sizing: border-box;">
     </div>
     <div style="display: flex; flex-direction: column; gap: 4px;">
       <label style="font-size: 11px; color: var(--text-secondary); font-weight: 600;">REQUIRED DIFFICULTY (ZERO BITS)</label>
-      <input type="number" id="pow-difficulty-input" placeholder="e.g. 26" style="width: 100%; border: 1px solid var(--border); background: var(--bg-input); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 13px; outline: none; box-sizing: border-box;">
+      <input type="number" id="pow-difficulty-input" placeholder="Enter difficulty from exam" style="width: 100%; border: 1px solid var(--border); background: var(--bg-input); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 13px; outline: none; box-sizing: border-box;">
       <div id="pow-estimate" style="font-size: 11px; color: var(--text-muted); min-height: 16px; margin-top: 2px;"></div>
     </div>
     <button id="pow-mine-btn" style="background: var(--theme-primary); color: #000; border: none; padding: 8px 18px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px var(--theme-glow); transition: transform 0.2s; align-self: flex-start; margin-top: 4px;">Start Mining Nonce</button>

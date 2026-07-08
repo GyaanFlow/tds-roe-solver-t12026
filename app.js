@@ -1745,7 +1745,8 @@ document.addEventListener('click', async (event) => {
             if (digest[i] === 0) {
               bits += 8;
             } else {
-              bits += digest[i].toString(2).padStart(8, '0').indexOf('1');
+              let b = digest[i];
+              while (b < 128) { bits++; b <<= 1; }
               break;
             }
           }
@@ -1753,23 +1754,32 @@ document.addEventListener('click', async (event) => {
         }
 
         const enc = new TextEncoder();
+        const prefix = token + ":";
         let nonce = workerId;
         const start = Date.now();
-        let iterations = 0;
+        let hashes = 0;
+        let nextReport = 100000;
+        const BATCH = 4;
         
         while (true) {
-          const data = enc.encode(token + ":" + nonce);
-          const hash = await crypto.subtle.digest('SHA-256', data);
-          const bytes = new Uint8Array(hash);
-          if (leadingZeroBits(bytes) >= difficulty) {
-            const elapsed = ((Date.now() - start) / 1000).toFixed(1);
-            self.postMessage({ status: 'done', nonce, time: elapsed, workerId });
-            return;
+          const batch = new Array(BATCH);
+          for (let i = 0; i < BATCH; i++) {
+            batch[i] = crypto.subtle.digest('SHA-256', enc.encode(prefix + (nonce + i * totalWorkers)));
           }
-          nonce += totalWorkers;
-          iterations++;
-          if (iterations % 100000 === 0) {
-            self.postMessage({ status: 'progress', checked: iterations, workerId });
+          const results = await Promise.all(batch);
+          for (let i = 0; i < BATCH; i++) {
+            const bytes = new Uint8Array(results[i]);
+            if (leadingZeroBits(bytes) >= difficulty) {
+              const elapsed = ((Date.now() - start) / 1000).toFixed(1);
+              self.postMessage({ status: 'done', nonce: nonce + i * totalWorkers, time: elapsed, workerId });
+              return;
+            }
+          }
+          nonce += BATCH * totalWorkers;
+          hashes += BATCH;
+          if (hashes >= nextReport) {
+            self.postMessage({ status: 'progress', checked: hashes, workerId });
+            nextReport += 100000;
           }
         }
       };
