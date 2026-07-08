@@ -523,10 +523,11 @@ function moveSelection(delta) {
 }
 
 function createSection(title, body, options = {}) {
-  const { open = false, compact = false, extraClass = '' } = options;
+  const { open = false, compact = false, extraClass = '', style = '' } = options;
   const isOpen = openPanels.has(title) || open;
+  const styleAttr = style ? `style="${style}"` : '';
   return `
-    <details class="panel-section ${compact ? 'panel-section-compact' : ''} ${extraClass}" data-panel-title="${escapeHtml(title)}" ${isOpen ? 'open' : ''}>
+    <details class="panel-section ${compact ? 'panel-section-compact' : ''} ${extraClass}" data-panel-title="${escapeHtml(title)}" ${isOpen ? 'open' : ''} ${styleAttr}>
       <summary>${escapeHtml(title)}</summary>
       <div class="panel-section-body">${body}</div>
     </details>
@@ -590,14 +591,27 @@ function renderAnswerPanel(data, langClass) {
     </div>
   `;
 
-  return createSection('Answer', `${actions}${answerMarkup}`, { open: true, extraClass: 'panel-answer' });
+  const isHeist = data.title && data.title.toLowerCase().includes('heist');
+  const isSolved = data.type === 'solved';
+  const shouldOpen = !isHeist || isSolved;
+
+  return createSection('Answer', `${actions}${answerMarkup}`, { open: shouldOpen, extraClass: 'panel-answer' });
 }
 
 function renderNotesPanel(data) {
   if (!data.answerDisplay) return '';
   const rendered = typeof marked !== 'undefined' ? marked.parse(data.answerDisplay) : data.answerDisplay;
   const cleanRendered = rendered.replace(/<a\s+(href="[^"]*")/gi, '<a target="_blank" rel="noopener noreferrer" $1');
-  return createSection('Rendered Notes', `<div class="styled-output">${cleanRendered}</div>`, { extraClass: 'panel-notes' });
+  
+  const isHeist = data.title && data.title.toLowerCase().includes('heist');
+  const isOpen = isHeist || openPanels.has('Rendered Notes');
+  const highlightStyle = isHeist ? 'border: 1px solid var(--theme-primary); box-shadow: 0 0 16px var(--theme-glow);' : '';
+
+  return createSection('Rendered Notes', `<div class="styled-output">${cleanRendered}</div>`, {
+    open: isOpen,
+    extraClass: 'panel-notes',
+    style: highlightStyle
+  });
 }
 
 function renderGuidePanel(data) {
