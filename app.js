@@ -1712,12 +1712,16 @@ document.addEventListener('click', async (event) => {
     }
     const diff = parseInt(difficulty, 10);
     const expectedHashes = Math.pow(2, diff);
-    // Estimate: Colab 2-core ~4M hashes/sec aggregate
-    const estSec = Math.round(expectedHashes / 4000000);
-    let timeStr;
-    if (estSec < 60) timeStr = `~${estSec}s`;
-    else if (estSec < 3600) timeStr = `~${Math.floor(estSec / 60)}min ${estSec % 60}s`;
-    else timeStr = `~${(estSec / 3600).toFixed(1)}h`;
+    // Conservative estimate: Colab free tier ~1M hashes/sec (2-core aggregate)
+    // Actual varies 0.8-2M/sec depending on throttling
+    const estLow = Math.round(expectedHashes / 2000000);
+    const estHigh = Math.round(expectedHashes / 800000);
+    function fmt(s) {
+      if (s < 60) return `~${s}s`;
+      if (s < 3600) return `~${Math.floor(s / 60)}min ${s % 60}s`;
+      return `~${(s / 3600).toFixed(1)}h`;
+    }
+    const timeStr = `${fmt(estLow)} – ${fmt(estHigh)}`;
 
     const estimateEl = document.getElementById('pow-estimate');
     if (estimateEl) {
@@ -1746,10 +1750,12 @@ def zb(d):
 
 def mine(a):
     t, d, s, st = a
-    p = (t + ":").encode()
+    base = hashlib.sha256((t + ":").encode())
     n = s
     while True:
-        if zb(hashlib.sha256(p + str(n).encode()).digest()) >= d: return n
+        h = base.copy()
+        h.update(str(n).encode())
+        if zb(h.digest()) >= d: return n
         n += st
 
 if __name__ == "__main__":
