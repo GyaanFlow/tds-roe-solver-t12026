@@ -30,129 +30,97 @@ async function mineNonce(token, difficulty) {
 export async function solve(email, sessionToken) {
   const norm = normalizeEmail(email);
 
+  let token = '';
+  let difficulty = 26;
+  let isInputProvided = false;
+
   if (sessionToken && sessionToken.includes('|')) {
     const parts = sessionToken.split('|');
-    const token = parts[0].trim();
-    const difficulty = parseInt(parts[1], 10);
+    token = parts[0].trim();
+    difficulty = parseInt(parts[1], 10);
     if (token && !isNaN(difficulty)) {
-      try {
-        const result = await mineNonce(token, difficulty);
-        return {
-          type: 'solved',
-          answer: String(result.nonce),
-          variant: `POW nonce for ${norm}`,
-          answerDisplay: `Nonce: ${result.nonce} (${result.time}s at difficulty ${difficulty})`
-        };
-      } catch (e) {
-        return {
-          type: 'error',
-          answer: '',
-          variant: 'Mining failed',
-          answerDisplay: `Error mining: ${e.message}`
-        };
-      }
+      isInputProvided = true;
     }
   }
 
-  const minerScript = `
-import hashlib, sys, time
+  if (isInputProvided) {
+    try {
+      const result = await mineNonce(token, difficulty);
+      const outputMsg = `
+        <div style="background: rgba(16, 185, 129, 0.08); border: 1px dashed rgba(16, 185, 129, 0.4); padding: 12px; border-radius: 8px; color: var(--text-primary); font-size: 13px; margin-bottom: 16px; line-height: 1.5;">
+          <span style="color: #34d399; font-weight: bold;">Success:</span> Nonce mined successfully in ${result.time} seconds!
+        </div>
+      `.trim();
 
-TOKEN = "PASTE_YOUR_TOKEN_HERE"
-DIFFICULTY = 0  # REPLACE with your difficulty (e.g. 22)
+      const htmlContent = `
+### Q10: Proof-of-Work Nonce Hunt
 
-def leading_zero_bits(digest):
-    bits = 0
-    for byte in digest:
-        if byte == 0:
-            bits += 8
-            continue
-        bits += 8 - byte.bit_length()
-        break
-    return bits
+${outputMsg}
 
-nonce = 0
-start = time.time()
-while True:
-    d = hashlib.sha256(f"{TOKEN}:{nonce}".encode()).digest()
-    if leading_zero_bits(d) >= DIFFICULTY:
-        print(f"NONCE = {nonce}")
-        print(f"Time: {time.time() - start:.1f}s")
-        break
-    nonce += 1
-`.trim();
+<details open class="panel-section" style="margin-bottom: 16px; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(255, 255, 255, 0.01);">
+  <summary style="cursor: pointer; font-size: 13px; font-weight: 600; color: var(--theme-primary); outline: none; user-select: none;">📄 Mining Config</summary>
+  <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 8px;" class="heist-card-panel">
+    <div style="font-size: 12px; color: var(--text-secondary);">Mined for Token: <code style="color: var(--theme-primary); font-weight: bold;">${token}</code> at difficulty <code style="color: var(--theme-primary); font-weight: bold;">${difficulty}</code></div>
+    <div style="display: flex; gap: 8px;">
+      <button id="pow-clear-btn" style="background: transparent; color: var(--text-secondary); border: 1px solid var(--border); border-radius: 6px; padding: 8px 18px; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Reset Miner</button>
+    </div>
+  </div>
+</details>
 
-  const parallelMiner = `
-import hashlib, multiprocessing as mp, time
+#### Mined Nonce Answer
+\`\`\`text
+${result.nonce}
+\`\`\`
+      `.trim();
 
-TOKEN = "PASTE_YOUR_TOKEN_HERE"
-DIFFICULTY = 0
+      return {
+        type: 'solved',
+        answer: String(result.nonce),
+        variant: `POW nonce for ${norm}`,
+        answerDisplay: htmlContent
+      };
+    } catch (e) {
+      return {
+        type: 'error',
+        answer: '',
+        variant: 'Mining failed',
+        answerDisplay: `Error mining: ${e.message}`
+      };
+    }
+  } else {
+    // Return config input form
+    const statusAlert = `
+      <div style="background: rgba(245, 158, 11, 0.08); border: 1px dashed rgba(245, 158, 11, 0.4); padding: 12px; border-radius: 8px; color: var(--text-primary); font-size: 13px; margin-bottom: 16px; line-height: 1.5;">
+        <span style="color: #fbbf24; font-weight: bold;">Mining Required:</span> Paste your Token and Difficulty below to start mining in your browser.
+      </div>
+    `.trim();
 
-def lzb(d):
-    b = 0
-    for byte in d:
-        if byte == 0: b += 8; continue
-        b += 8 - byte.bit_length(); break
-    return b
+    const htmlContent = `
+### Q10: Proof-of-Work Nonce Hunt
 
-def worker(start, step, q):
-    n = start
-    while True:
-        if lzb(hashlib.sha256(f"{TOKEN}:{n}".encode()).digest()) >= DIFFICULTY:
-            q.put(n); return
-        n += step
+${statusAlert}
 
-if __name__ == "__main__":
-    cores = mp.cpu_count()
-    q = mp.Queue()
-    procs = [mp.Process(target=worker, args=(i, cores, q), daemon=True) for i in range(cores)]
-    for p in procs: p.start()
-    print("NONCE =", q.get())
-`.trim();
+<details open class="panel-section" style="margin-bottom: 16px; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(255, 255, 255, 0.01);">
+  <summary style="cursor: pointer; font-size: 13px; font-weight: 600; color: var(--theme-primary); outline: none; user-select: none;">📄 Browser Auto-Miner Configuration</summary>
+  <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 10px;" class="heist-card-panel">
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <label style="font-size: 11px; color: var(--text-secondary); font-weight: 600;">YOUR TOKEN</label>
+      <input type="text" id="pow-token-input" placeholder="e.g. 03f96129a8f5ce79" style="width: 100%; border: 1px solid var(--border); background: var(--bg-input); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 13px; outline: none; box-sizing: border-box;">
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <label style="font-size: 11px; color: var(--text-secondary); font-weight: 600;">REQUIRED DIFFICULTY (ZERO BITS)</label>
+      <input type="number" id="pow-difficulty-input" placeholder="e.g. 26" value="26" style="width: 100%; border: 1px solid var(--border); background: var(--bg-input); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 13px; outline: none; box-sizing: border-box;">
+    </div>
+    <button id="pow-mine-btn" style="background: var(--theme-primary); color: #000; border: none; padding: 8px 18px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px var(--theme-glow); transition: transform 0.2s; align-self: flex-start; margin-top: 4px;">Start Mining Nonce</button>
+  </div>
+</details>
+    `.trim();
 
-  return {
-    type: 'guide',
-    answer: 'Mine the nonce using instructions in the guide.',
-    variant: `POW Miner for ${norm}`,
-    answerDisplay: [
-      `### Q10: Proof-of-Work Nonce Hunt`,
-      `Find your token and difficulty in the exam iframe, then mine the nonce.`,
-      '',
-      `**Tip:** Paste \`token|difficulty\` in the aipipe.org field above, then click Solve.`,
-      '',
-      '#### Steps',
-      '1. Open the exam page and locate the iframe showing your **Token** and **Difficulty**',
-      '2. If difficulty is **27 or less**, use the single-threaded script below',
-      '3. If difficulty is **28+**, use the parallel miner (much faster)',
-      '4. Paste the nonce into the answer field and click Check',
-      '',
-      '#### Single-threaded miner (difficulty ≤ 27)',
-      '```python',
-      minerScript,
-      '```',
-      '',
-      '#### Parallel miner (difficulty ≥ 28 — faster)',
-      '```python',
-      parallelMiner,
-      '```'
-    ].join('\n'),
-    guide: [
-      '## Q10: Proof-of-Work Nonce Hunt',
-      '',
-      '### How it works',
-      '1. Each student gets a unique **token** and **difficulty** (shown in an iframe on the exam page)',
-      '2. Find a non-negative integer **nonce** such that `SHA-256(token + ":" + nonce)` has at least N leading zero bits',
-      '3. Mining is brute-force — SHA-256 cannot be reversed',
-      '4. Any valid nonce is accepted (not necessarily the smallest)',
-      '',
-      '### Auto-miner (session token hack)',
-      'Paste `token|difficulty` in the aipipe.org field and click Solve. The solver will mine in-browser.',
-      'Works best for difficulty ≤ 26 (higher difficulties are slow in JS).',
-      '',
-      '### Performance',
-      '- difficulty 22: ~0.3s (Python), ~0.1s (JS)',
-      '- difficulty 25: ~2s (Python)',
-      '- difficulty 27: ~84s (Python)',
-      '- difficulty 28: ~160s (Python single-thread)'
-    ].join('\n')
-  };
+    return {
+      type: 'guide',
+      answer: 'Please enter your Token and Difficulty in the card panel and click "Start Mining Nonce" to solve.',
+      variant: 'No token configured',
+      answerDisplay: htmlContent
+    };
+  }
 }

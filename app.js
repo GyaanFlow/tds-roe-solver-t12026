@@ -591,10 +591,10 @@ function renderAnswerPanel(data, langClass) {
     </div>
   `;
 
-  const isHeist = data.title && data.title.toLowerCase().includes('heist');
+  const isSpecial = data.title && (data.title.toLowerCase().includes('heist') || data.title.toLowerCase().includes('nonce') || data.title.toLowerCase().includes('proof-of-work'));
   const isSolved = data.type === 'solved';
-  const shouldOpen = !isHeist || isSolved;
-  const highlightStyle = (isHeist && isSolved) ? 'border: 1px solid var(--theme-primary); box-shadow: 0 0 16px var(--theme-glow);' : '';
+  const shouldOpen = !isSpecial || isSolved;
+  const highlightStyle = (isSpecial && isSolved) ? 'border: 1px solid var(--theme-primary); box-shadow: 0 0 16px var(--theme-glow);' : '';
 
   return createSection('Answer', `${actions}${answerMarkup}`, { 
     open: shouldOpen, 
@@ -608,10 +608,10 @@ function renderNotesPanel(data) {
   const rendered = typeof marked !== 'undefined' ? marked.parse(data.answerDisplay) : data.answerDisplay;
   const cleanRendered = rendered.replace(/<a\s+(href="[^"]*")/gi, '<a target="_blank" rel="noopener noreferrer" $1');
   
-  const isHeist = data.title && data.title.toLowerCase().includes('heist');
+  const isSpecial = data.title && (data.title.toLowerCase().includes('heist') || data.title.toLowerCase().includes('nonce') || data.title.toLowerCase().includes('proof-of-work'));
   const isSolved = data.type === 'solved';
-  const isOpen = isHeist || openPanels.has('Rendered Notes');
-  const highlightStyle = (isHeist && !isSolved) ? 'border: 1px solid var(--theme-primary); box-shadow: 0 0 16px var(--theme-glow);' : '';
+  const isOpen = isSpecial || openPanels.has('Rendered Notes');
+  const highlightStyle = (isSpecial && !isSolved) ? 'border: 1px solid var(--theme-primary); box-shadow: 0 0 16px var(--theme-glow);' : '';
 
   return createSection('Rendered Notes', `<div class="styled-output">${cleanRendered}</div>`, {
     open: isOpen,
@@ -881,7 +881,7 @@ function renderCanvas(index) {
 
   const langClass = detectLanguage(data.answer);
   const health = getHealthMeta(data);
-  const isHeist = data.title && data.title.toLowerCase().includes('heist');
+  const isSpecial = data.title && (data.title.toLowerCase().includes('heist') || data.title.toLowerCase().includes('nonce') || data.title.toLowerCase().includes('proof-of-work'));
 
   const isSpecialGa0Backup = (workspaceData.exam === 'ga0' && (index === 9 || index === 17 || index === 24));
   const colabBackupHtml = isSpecialGa0Backup ? `
@@ -934,7 +934,7 @@ function renderCanvas(index) {
       ${colabBackupHtml}
       ${renderVariantPanel(data)}
       ${renderPreviewPanel(data)}
-      ${isHeist 
+      ${isSpecial 
         ? `
           ${renderNotesPanel(data)}
           ${renderAnswerPanel(data, langClass)}
@@ -992,6 +992,7 @@ async function startSolving() {
   const preferredQuestionIndex = selectedQuestionIndex;
   const sessionToken = sessionTokenInput ? sessionTokenInput.value.trim() : '';
   const heistDocument = localStorage.getItem('tdsHeistDocument') || '';
+  const powInput = localStorage.getItem('tdsNonceInput') || '';
 
   if (!email) {
     emailInput.focus();
@@ -1065,9 +1066,11 @@ async function startSolving() {
 
     for (const solver of solvers) {
       try {
-        const inputToken = (solver.id === 'q-context-window-heist-server' && heistDocument)
-          ? heistDocument
-          : sessionToken;
+        const inputToken = (solver.id === 'q-proof-of-work-server' && powInput)
+          ? powInput
+          : ((solver.id === 'q-context-window-heist-server' && heistDocument)
+            ? heistDocument
+            : sessionToken);
         const result = await Promise.resolve(solver.solve(email, inputToken));
         workspaceData.answers.push({
           title: solver.title,
@@ -1693,6 +1696,23 @@ document.addEventListener('click', async (event) => {
   } else if (event.target.id === 'heist-card-clear-btn') {
     localStorage.removeItem('tdsHeistDocument');
     showToast('Pasted document cleared.', 'info');
+    startSolving();
+  } else if (event.target.id === 'pow-mine-btn') {
+    const tokenEl = document.getElementById('pow-token-input');
+    const diffEl = document.getElementById('pow-difficulty-input');
+    if (!tokenEl || !diffEl) return;
+    const token = tokenEl.value.trim();
+    const difficulty = diffEl.value.trim();
+    if (!token || !difficulty) {
+      showToast('Please enter both Token and Difficulty!', 'error');
+      return;
+    }
+    localStorage.setItem('tdsNonceInput', `${token}|${difficulty}`);
+    showToast('Mining nonce in browser...', 'info');
+    startSolving();
+  } else if (event.target.id === 'pow-clear-btn') {
+    localStorage.removeItem('tdsNonceInput');
+    showToast('Proof-of-work input cleared.', 'info');
     startSolving();
   }
 });
