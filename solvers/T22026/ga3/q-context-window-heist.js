@@ -119,21 +119,26 @@ export async function solve(email, sessionToken) {
         <strong>Success:</strong> Answers verified and extracted directly from pasted document.
        </div>`
     : `<div style="background: rgba(245, 158, 11, 0.15); border: 1px solid #d97706; padding: 10px; border-radius: 6px; color: #fbbf24; font-size: 13px; margin-bottom: 12px;">
-        <strong>Notice:</strong> Currently using default seed values. For 100% accuracy, paste your Q11 document below and click <strong>Extract & Solve</strong>.
+        <strong>Notice:</strong> Currently using default seed values. For 100% accuracy, paste your Q11 document below.
        </div>`;
+
+  const detailsOpen = pasted ? 'open' : '';
 
   const htmlContent = `
 ### Q11: Context Window Heist
 
 ${statusAlert}
 
-<div class="heist-card-panel" style="margin-bottom: 16px; width: 100%;">
-  <textarea id="heist-card-textarea" placeholder="Paste Q11 Heist Document here..." style="width: 100%; height: 120px; border: 1px solid var(--border); background: var(--bg-input); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 12px; outline: none; margin-bottom: 8px; font-family: monospace; resize: vertical; box-sizing: border-box;">${pasted || ''}</textarea>
-  <div style="display: flex; gap: 8px;">
-    <button id="heist-card-solve-btn" style="background: #f59e0b; color: #000; border: none; padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: bold; cursor: pointer; transition: opacity 0.2s;">Extract & Solve</button>
-    ${pasted ? '<button id="heist-card-clear-btn" style="background: transparent; color: var(--text-secondary); border: 1px solid var(--border); padding: 8px 16px; border-radius: 6px; font-size: 12px; cursor: pointer;">Clear Document</button>' : ''}
+<details ${detailsOpen} style="margin-top: 8px; margin-bottom: 16px; border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; background: rgba(255, 255, 255, 0.01);">
+  <summary style="cursor: pointer; font-size: 13px; font-weight: bold; color: var(--text-secondary); outline: none; user-select: none;">📄 Solve from pasted document</summary>
+  <div style="margin-top: 10px;" class="heist-card-panel">
+    <textarea id="heist-card-textarea" placeholder="Paste Q11 Heist Document here..." style="width: 100%; height: 120px; border: 1px solid var(--border); background: var(--bg-input); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 12px; outline: none; margin-bottom: 8px; font-family: monospace; resize: vertical; box-sizing: border-box;">${pasted || ''}</textarea>
+    <div style="display: flex; gap: 8px;">
+      <button id="heist-card-solve-btn" style="background: #f59e0b; color: #000; border: none; padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: bold; cursor: pointer; transition: opacity 0.2s;">Extract & Solve</button>
+      ${pasted ? '<button id="heist-card-clear-btn" style="background: transparent; color: var(--text-secondary); border: 1px solid var(--border); padding: 8px 16px; border-radius: 6px; font-size: 12px; cursor: pointer;">Clear Document</button>' : ''}
+    </div>
   </div>
-</div>
+</details>
 
 #### Generated JSON Output
 \`\`\`json
