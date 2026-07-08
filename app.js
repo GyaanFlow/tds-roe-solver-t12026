@@ -14,6 +14,8 @@ let activeTheme = localStorage.getItem('workspaceTheme') || 'amber';
 const emailInput = document.getElementById('emailInput');
 const sessionTokenInput = document.getElementById('sessionTokenInput');
 const sessionTokenWrapper = document.querySelector('.session-token-wrapper');
+const heistDocumentInput = document.getElementById('heistDocumentInput');
+const heistDocumentWrapper = document.querySelector('.heist-document-wrapper');
 const solveBtn = document.getElementById('solveBtn');
 const progressPanel = document.getElementById('progressPanel');
 const progressFill = document.getElementById('progressFill');
@@ -151,6 +153,8 @@ window.addEventListener('DOMContentLoaded', () => {
   if (savedEmail) emailInput.value = savedEmail;
   const savedSessionToken = localStorage.getItem(STORAGE_KEYS.sessionToken);
   if (savedSessionToken && sessionTokenInput) sessionTokenInput.value = savedSessionToken;
+  const savedHeistDocument = localStorage.getItem('tdsHeistDocument');
+  if (savedHeistDocument && heistDocumentInput) heistDocumentInput.value = savedHeistDocument;
   if (savedSearch) nodeSearch.value = savedSearch;
   if (Number.isInteger(savedSelectedQuestion) && savedSelectedQuestion >= 0) {
     selectedQuestionIndex = savedSelectedQuestion;
@@ -218,6 +222,9 @@ function persistUiState() {
   if (sessionTokenInput) {
     localStorage.setItem(STORAGE_KEYS.sessionToken, sessionTokenInput.value.trim());
   }
+  if (heistDocumentInput) {
+    localStorage.setItem('tdsHeistDocument', heistDocumentInput.value.trim());
+  }
   localStorage.setItem('rawFocusEnabled', String(rawFocusEnabled));
   drawEmailIdenticon(emailVal);
   // NOTE: generateNetwork is NOT called here to avoid rebuilding 200 nodes on every
@@ -228,6 +235,9 @@ function toggleSessionTokenField() {
   if (!sessionTokenWrapper) return;
   const exam = examSelect.value;
   sessionTokenWrapper.style.display = exam === 'ga3' ? '' : 'none';
+  if (heistDocumentWrapper) {
+    heistDocumentWrapper.style.display = exam === 'ga3' ? '' : 'none';
+  }
 }
 
 function ensureToastRoot() {
@@ -961,6 +971,7 @@ async function startSolving() {
   const currentExam = examSelect.value;
   const preferredQuestionIndex = selectedQuestionIndex;
   const sessionToken = sessionTokenInput ? sessionTokenInput.value.trim() : '';
+  const heistDocument = heistDocumentInput ? heistDocumentInput.value.trim() : '';
 
   if (!email) {
     emailInput.focus();
@@ -1034,7 +1045,10 @@ async function startSolving() {
 
     for (const solver of solvers) {
       try {
-        const result = await Promise.resolve(solver.solve(email, sessionToken));
+        const inputToken = (solver.id === 'q-context-window-heist-server' && heistDocument)
+          ? heistDocument
+          : sessionToken;
+        const result = await Promise.resolve(solver.solve(email, inputToken));
         workspaceData.answers.push({
           title: solver.title,
           answer: result.answer,
@@ -1230,6 +1244,11 @@ if (sessionTokenInput) {
     if (event.key === 'Enter') startSolving();
   });
   sessionTokenInput.addEventListener('input', () => {
+    persistUiState();
+  });
+}
+if (heistDocumentInput) {
+  heistDocumentInput.addEventListener('input', () => {
     persistUiState();
   });
 }
