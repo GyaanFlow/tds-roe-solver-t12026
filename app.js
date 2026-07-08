@@ -1672,24 +1672,6 @@ initNetworkCanvas().then(() => {
   }, 150);
 });
 
-// Update Q10 mining time estimate when difficulty input changes
-document.addEventListener('input', (event) => {
-  if (event.target.id === 'pow-difficulty-input') {
-    const estimateEl = document.getElementById('pow-estimate');
-    if (!estimateEl) return;
-    const diff = parseInt(event.target.value, 10);
-    if (isNaN(diff) || diff < 1) { estimateEl.textContent = ''; return; }
-    const expectedHashes = Math.pow(2, diff);
-    const workers = Math.max(1, Math.min(navigator.hardwareConcurrency || 4, 8));
-    const estSec = Math.round(expectedHashes / (350000 * workers));
-    let timeStr;
-    if (estSec < 60) timeStr = `~${estSec}s`;
-    else if (estSec < 3600) timeStr = `~${Math.floor(estSec / 60)}min ${estSec % 60}s`;
-    else timeStr = `~${(estSec / 3600).toFixed(1)}h`;
-    estimateEl.textContent = `Expected ~${expectedHashes.toExponential(1)} hashes → ${timeStr} with ${workers} workers (rough estimate)`;
-  }
-});
-
 // Delegated click handler for Q11 Context Heist card actions
 document.addEventListener('click', async (event) => {
   if (!event.target) return;
@@ -1715,108 +1697,6 @@ document.addEventListener('click', async (event) => {
     localStorage.removeItem('tdsHeistDocument');
     showToast('Pasted document cleared.', 'info');
     startSolving();
-  } else if (event.target.id === 'pow-mine-btn') {
-    const tokenEl = document.getElementById('pow-token-input');
-    const diffEl = document.getElementById('pow-difficulty-input');
-    const mineBtn = document.getElementById('pow-mine-btn');
-    if (!tokenEl || !diffEl || !mineBtn) return;
-    const token = tokenEl.value.trim();
-    const difficultyVal = diffEl.value.trim();
-    const difficulty = parseInt(difficultyVal, 10);
-    if (!token || isNaN(difficulty)) {
-      showToast('Please enter both Token and Difficulty!', 'error');
-      return;
-    }
-
-    mineBtn.disabled = true;
-    mineBtn.style.opacity = '0.7';
-    mineBtn.style.cursor = 'not-allowed';
-
-    const NUM_WORKERS = Math.max(1, Math.min(navigator.hardwareConcurrency || 4, 8));
-    mineBtn.innerText = `Launching ${NUM_WORKERS} parallel workers...`;
-
-    const workerCode = `
-      self.onmessage = async (e) => {
-        const { token, difficulty, workerId, totalWorkers } = e.data;
-        
-        function leadingZeroBits(digest) {
-          let bits = 0;
-          for (let i = 0; i < digest.length; i++) {
-            if (digest[i] === 0) {
-              bits += 8;
-            } else {
-              let b = digest[i];
-              while (b < 128) { bits++; b <<= 1; }
-              break;
-            }
-          }
-          return bits;
-        }
-
-        const enc = new TextEncoder();
-        const prefix = token + ":";
-        let nonce = workerId;
-        const start = Date.now();
-        let hashes = 0;
-        let nextReport = 100000;
-        const BATCH = 4;
-        
-        while (true) {
-          const batch = new Array(BATCH);
-          for (let i = 0; i < BATCH; i++) {
-            batch[i] = crypto.subtle.digest('SHA-256', enc.encode(prefix + (nonce + i * totalWorkers)));
-          }
-          const results = await Promise.all(batch);
-          for (let i = 0; i < BATCH; i++) {
-            const bytes = new Uint8Array(results[i]);
-            if (leadingZeroBits(bytes) >= difficulty) {
-              const elapsed = ((Date.now() - start) / 1000).toFixed(1);
-              self.postMessage({ status: 'done', nonce: nonce + i * totalWorkers, time: elapsed, workerId });
-              return;
-            }
-          }
-          nonce += BATCH * totalWorkers;
-          hashes += BATCH;
-          if (hashes >= nextReport) {
-            self.postMessage({ status: 'progress', checked: hashes, workerId });
-            nextReport += 100000;
-          }
-        }
-      };
-    `;
-
-    const blob = new Blob([workerCode], { type: 'application/javascript' });
-    const workerUrl = URL.createObjectURL(blob);
-    const workers = [];
-    const workerChecked = new Array(NUM_WORKERS).fill(0);
-    const mineStart = Date.now();
-    let found = false;
-
-    for (let i = 0; i < NUM_WORKERS; i++) {
-      const worker = new Worker(workerUrl);
-      workers.push(worker);
-
-      worker.onmessage = (msg) => {
-        if (found) return;
-        const data = msg.data;
-        if (data.status === 'progress') {
-          workerChecked[data.workerId] = data.checked;
-          const totalHashes = workerChecked.reduce((a, b) => a + b, 0);
-          const elapsed = ((Date.now() - mineStart) / 1000).toFixed(1);
-          const rate = (totalHashes / Math.max(1, Date.now() - mineStart) * 1000).toFixed(0);
-          mineBtn.innerText = `Mining... ${totalHashes.toLocaleString()} hashes (${rate}/s, ${NUM_WORKERS} workers)`;
-        } else if (data.status === 'done') {
-          found = true;
-          for (const w of workers) w.terminate();
-          URL.revokeObjectURL(workerUrl);
-          localStorage.setItem('tdsNonceInput', `${token}|${difficulty}|${data.nonce}|${data.time}`);
-          showToast(`Nonce mined in ${data.time}s`, 'success');
-          startSolving();
-        }
-      };
-
-      worker.postMessage({ token, difficulty, workerId: i, totalWorkers: NUM_WORKERS });
-    }
   } else if (event.target.id === 'pow-clear-btn') {
     localStorage.removeItem('tdsNonceInput');
     const colabArea = document.getElementById('colab-script-area');
@@ -1830,42 +1710,63 @@ document.addEventListener('click', async (event) => {
       showToast('Enter token and difficulty first!', 'error');
       return;
     }
-    const script = `# Q10 Proof-of-Work Miner — Google Colab
-# 1. Paste this into a Colab cell (https://colab.research.google.com)
-# 2. Run the cell
-# 3. Copy the Nonce from the output and paste it back in the solver
+    const diff = parseInt(difficulty, 10);
+    const expectedHashes = Math.pow(2, diff);
+    // Estimate: Colab 2-core ~4M hashes/sec aggregate
+    const estSec = Math.round(expectedHashes / 4000000);
+    let timeStr;
+    if (estSec < 60) timeStr = `~${estSec}s`;
+    else if (estSec < 3600) timeStr = `~${Math.floor(estSec / 60)}min ${estSec % 60}s`;
+    else timeStr = `~${(estSec / 3600).toFixed(1)}h`;
+
+    const estimateEl = document.getElementById('pow-estimate');
+    if (estimateEl) {
+      estimateEl.innerHTML = `Expected: ~${expectedHashes.toExponential(1)} hashes → ${timeStr} on Colab (2 cores)`;
+    }
+
+    const tokenShort = token.length > 16 ? token.slice(0, 8) + '...' + token.slice(-4) : token;
+    const script = `# Q10 POW Miner - Google Colab
+# 1. Paste into https://colab.research.google.com and run
+# 2. Copy the Nonce number from the highlighted box
 
 import hashlib, time, multiprocessing as mp
 
-TOKEN = "${token}"
-DIFFICULTY = ${difficulty}
+T, D = "${token}", ${diff}
 
-def leading_zero_bits(d):
-    bits = 0
-    for b in d:
-        if b == 0: bits += 8
-        else:
-            while b < 128: bits += 1; b <<= 1
-            break
-    return bits
+L = [0]*256
+for i in range(256):
+    b, c = i, 0
+    while b < 128: c += 1; b <<= 1
+    L[i] = c
 
-def mine(args):
-    t, diff, start, step = args
-    n = start
-    pref = (t + ":").encode()
+def zb(d):
+    for i, b in enumerate(d):
+        if b: return i*8 + L[b]
+    return 256
+
+def mine(a):
+    t, d, s, st = a
+    p = (t + ":").encode()
+    n = s
     while True:
-        h = hashlib.sha256(pref + str(n).encode()).digest()
-        if leading_zero_bits(h) >= diff: return n
-        n += step
+        if zb(hashlib.sha256(p + str(n).encode()).digest()) >= d: return n
+        n += st
 
 if __name__ == "__main__":
     t0 = time.time()
     nw = mp.cpu_count()
     print(f"Mining with {nw} workers...")
     with mp.Pool(nw) as p:
-        for r in p.imap_unordered(mine, [(TOKEN, DIFFICULTY, i, nw) for i in range(nw)]):
-            print(f"\\nNonce: {r}")
-            print(f"Time: {time.time()-t0:.2f}s")
+        for r in p.imap_unordered(mine, [(T, D, i, nw) for i in range(nw)]):
+            secs = time.time() - t0
+            print("=" * 42)
+            print("  ** Q10 MINER RESULT **")
+            print("=" * 42)
+            print("  Token:      ${tokenShort}")
+            print("  Difficulty: ${diff}")
+            print("  Nonce:      " + str(r) + "      <---- COPY THIS")
+            print("  Time:       " + f"{secs:.2f}s")
+            print("=" * 42)
             p.terminate()
             break`;
 
