@@ -14,8 +14,6 @@ let activeTheme = localStorage.getItem('workspaceTheme') || 'amber';
 const emailInput = document.getElementById('emailInput');
 const sessionTokenInput = document.getElementById('sessionTokenInput');
 const sessionTokenWrapper = document.querySelector('.session-token-wrapper');
-const heistDocumentInput = document.getElementById('heistDocumentInput');
-const heistDocumentWrapper = document.querySelector('.heist-document-wrapper');
 const solveBtn = document.getElementById('solveBtn');
 const progressPanel = document.getElementById('progressPanel');
 const progressFill = document.getElementById('progressFill');
@@ -153,8 +151,6 @@ window.addEventListener('DOMContentLoaded', () => {
   if (savedEmail) emailInput.value = savedEmail;
   const savedSessionToken = localStorage.getItem(STORAGE_KEYS.sessionToken);
   if (savedSessionToken && sessionTokenInput) sessionTokenInput.value = savedSessionToken;
-  const savedHeistDocument = localStorage.getItem('tdsHeistDocument');
-  if (savedHeistDocument && heistDocumentInput) heistDocumentInput.value = savedHeistDocument;
   if (savedSearch) nodeSearch.value = savedSearch;
   if (Number.isInteger(savedSelectedQuestion) && savedSelectedQuestion >= 0) {
     selectedQuestionIndex = savedSelectedQuestion;
@@ -222,9 +218,6 @@ function persistUiState() {
   if (sessionTokenInput) {
     localStorage.setItem(STORAGE_KEYS.sessionToken, sessionTokenInput.value.trim());
   }
-  if (heistDocumentInput) {
-    localStorage.setItem('tdsHeistDocument', heistDocumentInput.value.trim());
-  }
   localStorage.setItem('rawFocusEnabled', String(rawFocusEnabled));
   drawEmailIdenticon(emailVal);
   // NOTE: generateNetwork is NOT called here to avoid rebuilding 200 nodes on every
@@ -235,9 +228,6 @@ function toggleSessionTokenField() {
   if (!sessionTokenWrapper) return;
   const exam = examSelect.value;
   sessionTokenWrapper.style.display = exam === 'ga3' ? '' : 'none';
-  if (heistDocumentWrapper) {
-    heistDocumentWrapper.style.display = exam === 'ga3' ? '' : 'none';
-  }
 }
 
 function ensureToastRoot() {
@@ -971,7 +961,7 @@ async function startSolving() {
   const currentExam = examSelect.value;
   const preferredQuestionIndex = selectedQuestionIndex;
   const sessionToken = sessionTokenInput ? sessionTokenInput.value.trim() : '';
-  const heistDocument = heistDocumentInput ? heistDocumentInput.value.trim() : '';
+  const heistDocument = localStorage.getItem('tdsHeistDocument') || '';
 
   if (!email) {
     emailInput.focus();
@@ -1244,11 +1234,6 @@ if (sessionTokenInput) {
     if (event.key === 'Enter') startSolving();
   });
   sessionTokenInput.addEventListener('input', () => {
-    persistUiState();
-  });
-}
-if (heistDocumentInput) {
-  heistDocumentInput.addEventListener('input', () => {
     persistUiState();
   });
 }
@@ -1652,4 +1637,32 @@ initNetworkCanvas().then(() => {
       }
     }
   }, 150);
+});
+
+// Delegated click handler for Q11 Context Heist card actions
+document.addEventListener('click', async (event) => {
+  if (!event.target) return;
+
+  if (event.target.id === 'heist-card-solve-btn') {
+    const textarea = document.getElementById('heist-card-textarea');
+    if (!textarea) return;
+    const docText = textarea.value.trim();
+    if (!docText) {
+      showToast('Please paste the heist document first!', 'error');
+      return;
+    }
+    const emailVal = emailInput.value.trim();
+    if (!emailVal) {
+      showToast('Please enter your email in the sidebar first!', 'error');
+      emailInput.focus();
+      return;
+    }
+    localStorage.setItem('tdsHeistDocument', docText);
+    showToast('Extracting facts...', 'info');
+    startSolving();
+  } else if (event.target.id === 'heist-card-clear-btn') {
+    localStorage.removeItem('tdsHeistDocument');
+    showToast('Pasted document cleared.', 'info');
+    startSolving();
+  }
 });
