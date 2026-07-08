@@ -1729,52 +1729,99 @@ document.addEventListener('click', async (event) => {
     }
 
     const tokenShort = token.length > 16 ? token.slice(0, 8) + '...' + token.slice(-4) : token;
-    const script = `# Q10 POW Miner - Google Colab
+    const script = `# Q10 Proof-of-Work Miner — Robust CPU version — Google Colab
 # 1. Paste into https://colab.research.google.com and run
-# 2. Copy the Nonce number from the highlighted box
+# 2. Copy the Nonce number from the output
 
 import hashlib, time, multiprocessing as mp
 
-T, D = "${token}", ${diff}
+TOKEN = "${token}"
+DIFFICULTY = ${diff}
 
-L = [0]*256
-for i in range(256):
-    b, c = i, 0
-    while b < 128: c += 1; b <<= 1
-    L[i] = c
+def mine_worker(args):
+    token, difficulty, start, step, report_every = args
+    pref = (token + ":").encode()
+    full_bytes = difficulty // 8
+    rem_bits = difficulty % 8
+    mask = (0xFF << (8 - rem_bits)) & 0xFF if rem_bits else 0
+    zero_prefix = b'\\x00' * full_bytes
+    sha256 = hashlib.sha256
 
-def zb(d):
-    for i, b in enumerate(d):
-        if b: return i*8 + L[b]
-    return 256
-
-def mine(a):
-    t, d, s, st = a
-    base = hashlib.sha256((t + ":").encode())
-    n = s
+    n = start
     while True:
-        h = base.copy()
-        h.update(str(n).encode())
-        if zb(h.digest()) >= d: return n
-        n += st
+        h = sha256(pref + str(n).encode()).digest()
+        if h[:full_bytes] == zero_prefix and (rem_bits == 0 or (h[full_bytes] & mask) == 0):
+            return n
+        n += step
+
+
+def verify_nonce(token, difficulty, nonce):
+    """Double-check the winning nonce actually satisfies the difficulty."""
+    pref = (token + ":").encode()
+    h = hashlib.sha256(pref + str(nonce).encode()).digest()
+    full_bytes = difficulty // 8
+    rem_bits = difficulty % 8
+    mask = (0xFF << (8 - rem_bits)) & 0xFF if rem_bits else 0
+    zero_prefix = b'\\x00' * full_bytes
+    return h[:full_bytes] == zero_prefix and (rem_bits == 0 or (h[full_bytes] & mask) == 0)
+
+
+def main():
+    t0 = time.time()
+    nw = max(1, mp.cpu_count())
+    print(f"Token: {TOKEN}")
+    print(f"Difficulty: {DIFFICULTY} bits")
+    print(f"Mining with {nw} worker(s)...\\n")
+
+    pool = None
+    try:
+        pool = mp.Pool(nw)
+        args = [(TOKEN, DIFFICULTY, i, nw, 500_000) for i in range(nw)]
+        result = None
+
+        for r in pool.imap_unordered(mine_worker, args):
+            result = r
+            break
+
+        pool.terminate()
+        pool.join()
+
+        if result is None:
+            print("Mining failed — no nonce found.")
+            return
+
+        elapsed = time.time() - t0
+
+        if not verify_nonce(TOKEN, DIFFICULTY, result):
+            print("WARNING: nonce failed verification — this should not happen.")
+            print("Retry running the cell.")
+            return
+
+        print(f"\\n{'=' * 42}")
+        print("  ** Q10 MINER RESULT **")
+        print(f"{'=' * 42}")
+        print(f"  Token:      ${tokenShort}")
+        print(f"  Difficulty: ${diff}")
+        print(f"  Nonce:      {result}      <---- COPY THIS")
+        print(f"  Time:       {elapsed:.2f}s")
+        print(f"  Verified:   valid ({DIFFICULTY}-bit difficulty confirmed)")
+        print(f"{'=' * 42}")
+
+    except KeyboardInterrupt:
+        print("\\nMining interrupted by user.")
+        if pool:
+            pool.terminate()
+            pool.join()
+    except Exception as e:
+        print(f"Error during mining: {e}")
+        if pool:
+            pool.terminate()
+            pool.join()
+        raise
+
 
 if __name__ == "__main__":
-    t0 = time.time()
-    nw = mp.cpu_count()
-    print(f"Mining with {nw} workers...")
-    with mp.Pool(nw) as p:
-        for r in p.imap_unordered(mine, [(T, D, i, nw) for i in range(nw)]):
-            secs = time.time() - t0
-            print("=" * 42)
-            print("  ** Q10 MINER RESULT **")
-            print("=" * 42)
-            print("  Token:      ${tokenShort}")
-            print("  Difficulty: ${diff}")
-            print("  Nonce:      " + str(r) + "      <---- COPY THIS")
-            print("  Time:       " + f"{secs:.2f}s")
-            print("=" * 42)
-            p.terminate()
-            break`;
+    main()`;
 
     const area = document.getElementById('colab-script-area');
     const output = document.getElementById('colab-script-output');
