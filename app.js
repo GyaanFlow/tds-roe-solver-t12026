@@ -1672,6 +1672,24 @@ initNetworkCanvas().then(() => {
   }, 150);
 });
 
+// Update Q10 mining time estimate when difficulty input changes
+document.addEventListener('input', (event) => {
+  if (event.target.id === 'pow-difficulty-input') {
+    const estimateEl = document.getElementById('pow-estimate');
+    if (!estimateEl) return;
+    const diff = parseInt(event.target.value, 10);
+    if (isNaN(diff) || diff < 1) { estimateEl.textContent = ''; return; }
+    const expectedHashes = Math.pow(2, diff);
+    const workers = Math.max(1, Math.min(navigator.hardwareConcurrency || 4, 8));
+    const estSec = Math.round(expectedHashes / (350000 * workers));
+    let timeStr;
+    if (estSec < 60) timeStr = `~${estSec}s`;
+    else if (estSec < 3600) timeStr = `~${Math.floor(estSec / 60)}min ${estSec % 60}s`;
+    else timeStr = `~${(estSec / 3600).toFixed(1)}h`;
+    estimateEl.textContent = `Expected ~${expectedHashes.toExponential(1)} hashes → ${timeStr} with ${workers} workers (rough estimate)`;
+  }
+});
+
 // Delegated click handler for Q11 Context Heist card actions
 document.addEventListener('click', async (event) => {
   if (!event.target) return;
@@ -1713,11 +1731,13 @@ document.addEventListener('click', async (event) => {
     mineBtn.disabled = true;
     mineBtn.style.opacity = '0.7';
     mineBtn.style.cursor = 'not-allowed';
-    mineBtn.innerText = 'Initializing Background Worker...';
+
+    const NUM_WORKERS = Math.max(1, Math.min(navigator.hardwareConcurrency || 4, 8));
+    mineBtn.innerText = `Launching ${NUM_WORKERS} parallel workers...`;
 
     const workerCode = `
       self.onmessage = async (e) => {
-        const { token, difficulty } = e.data;
+        const { token, difficulty, workerId, totalWorkers } = e.data;
         
         function leadingZeroBits(digest) {
           let bits = 0;
@@ -1733,23 +1753,23 @@ document.addEventListener('click', async (event) => {
         }
 
         const enc = new TextEncoder();
-        let nonce = 0;
+        let nonce = workerId;
         const start = Date.now();
+        let iterations = 0;
         
         while (true) {
           const data = enc.encode(token + ":" + nonce);
           const hash = await crypto.subtle.digest('SHA-256', data);
           const bytes = new Uint8Array(hash);
           if (leadingZeroBits(bytes) >= difficulty) {
-            const time = ((Date.now() - start) / 1000).toFixed(1);
-            self.postMessage({ status: 'done', nonce, time });
+            const elapsed = ((Date.now() - start) / 1000).toFixed(1);
+            self.postMessage({ status: 'done', nonce, time: elapsed, workerId });
             return;
           }
-          nonce++;
-          if (nonce % 100000 === 0) {
-            self.postMessage({ status: 'progress', checked: nonce });
-            // Yield CPU cycles
-            await new Promise(r => setTimeout(r, 0));
+          nonce += totalWorkers;
+          iterations++;
+          if (iterations % 100000 === 0) {
+            self.postMessage({ status: 'progress', checked: iterations, workerId });
           }
         }
       };
@@ -1757,22 +1777,36 @@ document.addEventListener('click', async (event) => {
 
     const blob = new Blob([workerCode], { type: 'application/javascript' });
     const workerUrl = URL.createObjectURL(blob);
-    const worker = new Worker(workerUrl);
+    const workers = [];
+    const workerChecked = new Array(NUM_WORKERS).fill(0);
+    const mineStart = Date.now();
+    let found = false;
 
-    worker.onmessage = (msg) => {
-      const data = msg.data;
-      if (data.status === 'progress') {
-        mineBtn.innerText = `Mining... (${data.checked.toLocaleString()} nonces)`;
-      } else if (data.status === 'done') {
-        worker.terminate();
-        URL.revokeObjectURL(workerUrl);
-        localStorage.setItem('tdsNonceInput', `${token}|${difficulty}|${data.nonce}|${data.time}`);
-        showToast('Nonce mined successfully!', 'success');
-        startSolving();
-      }
-    };
+    for (let i = 0; i < NUM_WORKERS; i++) {
+      const worker = new Worker(workerUrl);
+      workers.push(worker);
 
-    worker.postMessage({ token, difficulty });
+      worker.onmessage = (msg) => {
+        if (found) return;
+        const data = msg.data;
+        if (data.status === 'progress') {
+          workerChecked[data.workerId] = data.checked;
+          const totalHashes = workerChecked.reduce((a, b) => a + b, 0);
+          const elapsed = ((Date.now() - mineStart) / 1000).toFixed(1);
+          const rate = (totalHashes / Math.max(1, Date.now() - mineStart) * 1000).toFixed(0);
+          mineBtn.innerText = `Mining... ${totalHashes.toLocaleString()} hashes (${rate}/s, ${NUM_WORKERS} workers)`;
+        } else if (data.status === 'done') {
+          found = true;
+          for (const w of workers) w.terminate();
+          URL.revokeObjectURL(workerUrl);
+          localStorage.setItem('tdsNonceInput', `${token}|${difficulty}|${data.nonce}|${data.time}`);
+          showToast(`Nonce mined in ${data.time}s`, 'success');
+          startSolving();
+        }
+      };
+
+      worker.postMessage({ token, difficulty, workerId: i, totalWorkers: NUM_WORKERS });
+    }
   } else if (event.target.id === 'pow-clear-btn') {
     localStorage.removeItem('tdsNonceInput');
     showToast('Proof-of-work input cleared.', 'info');

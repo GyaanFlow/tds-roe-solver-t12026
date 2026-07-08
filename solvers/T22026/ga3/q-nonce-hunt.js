@@ -132,7 +132,8 @@ ${statusAlert}
     </div>
     <div style="display: flex; flex-direction: column; gap: 4px;">
       <label style="font-size: 11px; color: var(--text-secondary); font-weight: 600;">REQUIRED DIFFICULTY (ZERO BITS)</label>
-      <input type="number" id="pow-difficulty-input" placeholder="e.g. 26" value="26" style="width: 100%; border: 1px solid var(--border); background: var(--bg-input); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 13px; outline: none; box-sizing: border-box;">
+      <input type="number" id="pow-difficulty-input" placeholder="e.g. 26" style="width: 100%; border: 1px solid var(--border); background: var(--bg-input); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 13px; outline: none; box-sizing: border-box;">
+      <div id="pow-estimate" style="font-size: 11px; color: var(--text-muted); min-height: 16px; margin-top: 2px;"></div>
     </div>
     <button id="pow-mine-btn" style="background: var(--theme-primary); color: #000; border: none; padding: 8px 18px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px var(--theme-glow); transition: transform 0.2s; align-self: flex-start; margin-top: 4px;">Start Mining Nonce</button>
   </div>
