@@ -1700,16 +1700,79 @@ document.addEventListener('click', async (event) => {
   } else if (event.target.id === 'pow-mine-btn') {
     const tokenEl = document.getElementById('pow-token-input');
     const diffEl = document.getElementById('pow-difficulty-input');
-    if (!tokenEl || !diffEl) return;
+    const mineBtn = document.getElementById('pow-mine-btn');
+    if (!tokenEl || !diffEl || !mineBtn) return;
     const token = tokenEl.value.trim();
-    const difficulty = diffEl.value.trim();
-    if (!token || !difficulty) {
+    const difficultyVal = diffEl.value.trim();
+    const difficulty = parseInt(difficultyVal, 10);
+    if (!token || isNaN(difficulty)) {
       showToast('Please enter both Token and Difficulty!', 'error');
       return;
     }
-    localStorage.setItem('tdsNonceInput', `${token}|${difficulty}`);
-    showToast('Mining nonce in browser...', 'info');
-    startSolving();
+
+    mineBtn.disabled = true;
+    mineBtn.style.opacity = '0.7';
+    mineBtn.style.cursor = 'not-allowed';
+    mineBtn.innerText = 'Initializing Background Worker...';
+
+    const workerCode = `
+      self.onmessage = async (e) => {
+        const { token, difficulty } = e.data;
+        
+        function leadingZeroBits(digest) {
+          let bits = 0;
+          for (let i = 0; i < digest.length; i++) {
+            if (digest[i] === 0) {
+              bits += 8;
+            } else {
+              bits += digest[i].toString(2).padStart(8, '0').indexOf('1');
+              break;
+            }
+          }
+          return bits;
+        }
+
+        const enc = new TextEncoder();
+        let nonce = 0;
+        const start = Date.now();
+        
+        while (true) {
+          const data = enc.encode(token + ":" + nonce);
+          const hash = await crypto.subtle.digest('SHA-256', data);
+          const bytes = new Uint8Array(hash);
+          if (leadingZeroBits(bytes) >= difficulty) {
+            const time = ((Date.now() - start) / 1000).toFixed(1);
+            self.postMessage({ status: 'done', nonce, time });
+            return;
+          }
+          nonce++;
+          if (nonce % 100000 === 0) {
+            self.postMessage({ status: 'progress', checked: nonce });
+            // Yield CPU cycles
+            await new Promise(r => setTimeout(r, 0));
+          }
+        }
+      };
+    `;
+
+    const blob = new Blob([workerCode], { type: 'application/javascript' });
+    const workerUrl = URL.createObjectURL(blob);
+    const worker = new Worker(workerUrl);
+
+    worker.onmessage = (msg) => {
+      const data = msg.data;
+      if (data.status === 'progress') {
+        mineBtn.innerText = `Mining... (${data.checked.toLocaleString()} nonces)`;
+      } else if (data.status === 'done') {
+        worker.terminate();
+        URL.revokeObjectURL(workerUrl);
+        localStorage.setItem('tdsNonceInput', `${token}|${difficulty}|${data.nonce}|${data.time}`);
+        showToast('Nonce mined successfully!', 'success');
+        startSolving();
+      }
+    };
+
+    worker.postMessage({ token, difficulty });
   } else if (event.target.id === 'pow-clear-btn') {
     localStorage.removeItem('tdsNonceInput');
     showToast('Proof-of-work input cleared.', 'info');
