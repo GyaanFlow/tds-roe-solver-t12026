@@ -5,10 +5,13 @@ export const title = 'Q3: Anti-Hallucination Grounded Answer API';
 
 const HOST = 'https://tds-roe-solver-api-t12026.onrender.com';
 
-export async function solve(email) {
+export async function solve(email, sessionToken) {
   const norm = normalizeEmail(email);
-  const base = `${HOST}/ga4/${encodeURIComponent(norm)}`;
-  const url = `${base}/grounded-answer`;
+  const enc  = encodeURIComponent(norm);
+  const tok  = sessionToken ? encodeURIComponent(sessionToken) : '<TOKEN>';
+  const llmBase = `${HOST}/ga4/${enc}/${tok}`;
+  const url     = `${llmBase}/grounded-answer`;
+  const health  = `${HOST}/ga4/${enc}/health`;
 
   return {
     type: 'solved',
@@ -20,9 +23,10 @@ export async function solve(email) {
       `\`\`\``,
       url,
       `\`\`\``,
-      `The grader POSTs \`{"question", "chunks"}\` to this endpoint and expects`,
+      `The grader POSTs \`{"question", "chunks":[{"chunk_id","text"}]}\` to this endpoint and expects`,
       `\`{"answer", "citations", "confidence", "answerable"}\` back.`,
-      `Warm the dyno before submitting: \`GET ${base}/health\` (cold start ~50s).`
+      `Your AIPipe token is embedded in the URL path — the server bills LLM calls to your token.`,
+      `Warm the dyno before submitting: \`GET ${health}\` (cold start ~50 s).`
     ].join('\n')
   };
 }

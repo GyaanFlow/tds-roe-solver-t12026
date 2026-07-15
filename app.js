@@ -1007,8 +1007,8 @@ async function startSolving() {
     return;
   }
 
-  if (currentExam === 'ga3' && !sessionToken) {
-    showToast('aipipe.org token is required for GA3!', 'error');
+  if ((currentExam === 'ga3' || currentExam === 'ga4') && !sessionToken) {
+    showToast(`aipipe.org token is required for ${currentExam.toUpperCase()}!`, 'error');
     if (sessionTokenInput) {
       sessionTokenInput.focus();
       sessionTokenInput.style.borderColor = 'var(--error)';
