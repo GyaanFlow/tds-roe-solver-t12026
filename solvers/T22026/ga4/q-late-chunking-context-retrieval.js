@@ -112,9 +112,9 @@ export async function solve(email) {
     doc.sections.forEach(section => {
       const sents = section.sentences;
       let w = 0;
-      // Only full-size windows: "sliding-window chunks of chunk_sentence_count
-      // sentences" means each chunk holds exactly csc sentences (no partial tail).
-      for (let p = 0; p + csc <= sents.length; p += csc - cso) {
+      // Sliding window stepping by (count - overlap); the final window may be
+      // partial (fewer than csc sentences), matching the reference generator.
+      for (let p = 0; p < sents.length; p += csc - cso) {
         const window = sents.slice(p, p + csc);
         const chunkText = window.join(' ');
         const chunkId = `${doc.doc_id}:${section.section_id}:w${pad(w, 2)}`;
@@ -139,22 +139,26 @@ export async function solve(email) {
     });
     const qTokens = tokenize(queryText);
     const uniqQ = [...new Set(qTokens)];
-    const df = new Map();
+    // idf per unique query term (df = number of chunks containing the term).
+    const idf = new Map();
     uniqQ.forEach(t => {
-      let count = 0;
-      docTokens.forEach(dt => { if (dt.includes(t)) count++; });
-      df.set(t, count);
+      let dfT = 0;
+      docTokens.forEach(dt => { if (dt.includes(t)) dfT++; });
+      idf.set(t, Math.log((N - dfT + 0.5) / (dfT + 0.5) + 1));
     });
     const scores = chunks.map((c, idx) => {
       const dt = docTokens[idx];
+      const dl = dt.length;
+      const tf = new Map();
+      for (const t of dt) tf.set(t, (tf.get(t) || 0) + 1);
       let score = 0;
-      uniqQ.forEach(t => {
-        const dfT = df.get(t) || 0;
-        const idf = Math.log((N - dfT + 0.5) / (dfT + 0.5) + 1);
-        const f = dt.filter(x => x === t).length;
-        if (f === 0) return;
-        score += idf * f * (k1 + 1) / (f + k1 * (1 - b + b * dt.length / avgdl));
-      });
+      // Iterate ALL query tokens (including duplicates): a term repeated in the
+      // query text contributes once per occurrence, matching the reference.
+      for (const t of qTokens) {
+        const f = tf.get(t);
+        if (!f) continue;
+        score += idf.get(t) * f * (k1 + 1) / (f + k1 * (1 - b + b * dl / avgdl));
+      }
       return { chunk_id: c.chunk_id, score };
     });
     scores.sort((a2, b2) => {
