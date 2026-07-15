@@ -342,6 +342,63 @@ async function checkGa3SolversExecute(solvers) {
   }
 }
 
+function checkGa4OfficialOrder(solvers) {
+  const officialIds = [
+    'q-rag-chunking-hybrid-search-server',
+    'q-rag-evaluation-harness-server',
+    'q-grounded-answer-api-server',
+    'q-vector-search-rerank-api-server',
+    'q-graphrag-pipeline-api-server',
+    'q-late-chunking-context-retrieval-server',
+    'q-semantic-cache-query-augmentation-server',
+    'q-multimodal-embedding-calibration-server',
+    'q-hyde-hypothetical-retrieval-server',
+    'q-ann-index-recall-latency-server',
+    'q-semantic-dedup-numeric-guardrail-server',
+    'q-context-assembly-lost-middle-server',
+    'q-rrf-fusion-server'
+  ];
+
+  assert(solvers.length === officialIds.length, `Expected ${officialIds.length} GA4 solvers, got ${solvers.length}.`);
+  assert(
+    solvers.map((solver) => solver.id).join('|') === officialIds.join('|'),
+    'GA4 solver order/IDs no longer match the official May 2026 GA4 bundle.'
+  );
+}
+
+async function checkGa4SolversExecute(solvers) {
+  const sampleEmails = [
+    '21f1000000@ds.study.iitm.ac.in',
+    '22f2001234@ds.study.iitm.ac.in',
+    'USER.Test+GA4@Example.COM',
+    '' // empty email must not crash a solver
+  ];
+  const sessionToken = 'quiz_sign_mock_token_1234';
+
+  for (const email of sampleEmails) {
+    for (const solver of solvers) {
+      const result = await solver.solve(email, sessionToken);
+      assert(result && typeof result === 'object', `GA4 ${solver.id} returned a non-object result.`);
+      assert(typeof result.answer === 'string', `GA4 ${solver.id} answer must be a string.`);
+      assert(result.answer.length > 0, `GA4 ${solver.id} answer must not be empty.`);
+      assert(
+        ['solved', 'guide', 'bypass', 'error'].includes(result.type),
+        `GA4 ${solver.id} returned unexpected result type: ${result.type}.`
+      );
+      if (result.answer.trim().startsWith('{') || result.answer.trim().startsWith('[')) {
+        try {
+          JSON.parse(result.answer);
+        } catch (e) {
+          assert(false, `GA4 ${solver.id} answer is not valid JSON: ${e.message}`);
+        }
+      }
+      // Determinism: same email must yield the same answer every time.
+      const result2 = await solver.solve(email, sessionToken);
+      assert(result.answer === result2.answer, `GA4 ${solver.id} is non-deterministic for the same email.`);
+    }
+  }
+}
+
 async function main() {
   installBrowserStubs();
 
@@ -360,6 +417,7 @@ async function main() {
   const ga1Registry = await importFresh('solvers/T22026/ga1/registry.js');
   const ga2Registry = await importFresh('solvers/T22026/ga2/registry.js');
   const ga3Registry = await importFresh('solvers/T22026/ga3/registry.js');
+  const ga4Registry = await importFresh('solvers/T22026/ga4/registry.js');
 
   assert(Array.isArray(ga7Registry.solvers) && ga7Registry.solvers.length > 0, 'GA7 registry did not load solvers.');
   assert(Array.isArray(roeRegistry.solvers) && roeRegistry.solvers.length > 0, 'ROE registry did not load solvers.');
@@ -369,6 +427,7 @@ async function main() {
   assert(Array.isArray(ga1Registry.solvers) && ga1Registry.solvers.length === 20, `GA1 registry should have exactly 20 solvers, got ${ga1Registry.solvers.length}.`);
   assert(Array.isArray(ga2Registry.solvers) && ga2Registry.solvers.length === 10, `GA2 registry should have exactly 10 solvers, got ${ga2Registry.solvers.length}.`);
   assert(Array.isArray(ga3Registry.solvers) && ga3Registry.solvers.length === 13, `GA3 registry should have exactly 13 solvers, got ${ga3Registry.solvers.length}.`);
+  assert(Array.isArray(ga4Registry.solvers) && ga4Registry.solvers.length === 13, `GA4 registry should have exactly 13 solvers, got ${ga4Registry.solvers.length}.`);
   await checkGa8OfficialParity(ga8Registry.solvers);
   checkGa0OfficialOrder(ga0Registry.solvers);
   await checkGa0SolversExecute(ga0Registry.solvers);
@@ -376,10 +435,12 @@ async function main() {
   await checkGa2SolversExecute(ga2Registry.solvers);
   checkGa3OfficialOrder(ga3Registry.solvers);
   await checkGa3SolversExecute(ga3Registry.solvers);
+  checkGa4OfficialOrder(ga4Registry.solvers);
+  await checkGa4SolversExecute(ga4Registry.solvers);
 
   await checkServerRoutes();
 
-  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}`);
+  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}`);
 }
 
 main().catch((error) => {
