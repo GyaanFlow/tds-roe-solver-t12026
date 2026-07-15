@@ -1,4 +1,4 @@
-// GA3 Lock Configuration
+// GA4 Lock Configuration
 export const lockConfig = {
   // Whitelist: allowed student email addresses
   allowedEmails: [
@@ -12,5 +12,5 @@ export const lockConfig = {
     '23f2005102@ds.study.iitm.ac.in'
   ],
   // Master lock switch
-  locked: false
+  locked: true
 };
