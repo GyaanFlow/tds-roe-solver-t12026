@@ -22,14 +22,20 @@ function hashKey(str) {
   return String(str || '').trim().toLowerCase().split('').reduce((o, i) => (Math.imul(o, 33) + i.charCodeAt(0)) >>> 0, 5381);
 }
 
-function generateDataset(email) {
+// Mirrors the exam's Gt(n): ONE generator seeded once, drawn DIM times.
+function Gt(n) {
+  const rng = seedrandom(`${SALT}#${n}`);
+  return normVec(Array.from({ length: DIM }, () => rng() * 2 - 1));
+}
+
+export function generateDataset(email) {
   const o = normalizeEmail(email);
   const i = hashKey(o);
   const s = [];
   let m = 0;
   const d = [];
   for (let e = 0; e < NUM_FAMILIES; e++) {
-    const r = normVec(Array.from({ length: DIM }, () => seedrandom(`${SALT}#family-${o}-${e}`)() * 2 - 1));
+    const r = Gt(`family-${o}-${e}`);
     const c = 3000 + (e * 37 + i) % 90 * 500;
     const t = 3 + (e * 7 + i) % 5;
     d.push({ baseVector: r, numericFact: c });
@@ -46,7 +52,7 @@ function generateDataset(email) {
     s.push({ doc_id: `SD_${pad(m, 4)}`, embedding: jitter(r.baseVector, seedrandom(`${o}#trap#${e}`), NOISE), numeric_fact: r.numericFact + c * t });
   }
   for (let e = 0; e < NUM_SINGLETONS; e++) {
-    const r = normVec(Array.from({ length: DIM }, () => seedrandom(`${SALT}#singleton-${o}-${e}`)() * 2 - 1));
+    const r = Gt(`singleton-${o}-${e}`);
     m += 1;
     s.push({ doc_id: `SD_${pad(m, 4)}`, embedding: jitter(r, seedrandom(`${o}#single#${e}`), NOISE), numeric_fact: 3000 + (e * 53 + i) % 90 * 500 });
   }

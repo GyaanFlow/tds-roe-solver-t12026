@@ -35,13 +35,17 @@ function jitter(v, rng, mag) {
   return normVec(v.map(x => x + (rng() * 2 - 1) * mag));
 }
 
-function generateDataset(email) {
+// Mirrors the exam's St(n): ONE generator seeded once, drawn 36 times.
+// (Creating a fresh seedrandom per element would yield 36 identical values.)
+function St(n) {
+  const rng = seedrandom(`${SALT}#vector#${n}`);
+  return normVec(Array.from({ length: 36 }, () => rng() * 2 - 1));
+}
+
+export function generateDataset(email) {
   const o = normalizeEmail(email);
   const i = seedrandom(`${SALT}#${o}#semantic-cache-data`);
-  const topicVecs = G.map((e, r) => {
-    const rng2 = seedrandom(`${SALT}#vector#${r}-${e.join('-')}`);
-    return normVec(Array.from({ length: 36 }, () => rng2() * 2 - 1));
-  });
+  const topicVecs = G.map((e, r) => St(`${r}-${e.join('-')}`));
   const m = [];
   for (let e = 0; e < 960; e++) {
     const r = e % G.length;
@@ -69,7 +73,7 @@ function generateDataset(email) {
     const y = `${a[(e + 2) % a.length]} ${a[(e + 3) % a.length]} status ${h}`;
     const k = r
       ? jitter(c.embedding, seedrandom(`${o}#request-hit#${e}`), 0.025)
-      : jitter(normVec(Array.from({ length: 36 }, () => seedrandom(`${SALT}#vector#miss-${e}-${o}`)() * 2 - 1)), seedrandom(`${o}#request-miss#${e}`), 0.12);
+      : jitter(St(`miss-${e}-${o}`), seedrandom(`${o}#request-miss#${e}`), 0.12);
     d.push({ request_id: `SC_R_${pad(e + 1, 3)}`, tenant: h, channel: u, language: g, at_minute: w, query: y, embedding: k });
   }
   return { cache_entries: m, requests: d, expansion_map: EXPANSION_MAP, rules: { ttl_minutes: 480, similarity_threshold: 0.91 } };

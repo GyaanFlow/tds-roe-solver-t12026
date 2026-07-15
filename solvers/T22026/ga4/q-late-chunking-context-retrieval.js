@@ -42,7 +42,7 @@ function buildSentences({ service, region, release, heading, owner, priority, do
   ];
 }
 
-function generateDataset(email) {
+export function generateDataset(email) {
   const o = normalizeEmail(email);
   const i = fnv1aLike(o);
   const s = seedrandom(`${SALT}#${o}#late-context-data`);

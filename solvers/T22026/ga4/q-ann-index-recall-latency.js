@@ -20,12 +20,18 @@ function normVec(v) {
 }
 function jitter(v, rng, mag) { return normVec(v.map(x => x + (rng() * 2 - 1) * mag)); }
 
-function generateDataset(email) {
+// Mirrors the exam's fo(n): ONE generator seeded once, drawn DIM times.
+function fo(n) {
+  const rng = seedrandom(`${SALT}#${n}`);
+  return normVec(Array.from({ length: DIM }, () => rng() * 2 - 1));
+}
+
+export function generateDataset(email) {
   const o = normalizeEmail(email);
   const i = seedrandom(`${SALT}#${o}#ann-data`);
   const s = Array.from({ length: NUM_CENTROIDS }, (e, r) => ({
     centroid_id: `CEN_${pad(r, 2)}`,
-    embedding: normVec(Array.from({ length: DIM }, () => seedrandom(`${SALT}#centroid-${o}-${r}`)() * 2 - 1))
+    embedding: fo(`centroid-${o}-${r}`)
   }));
   const m = [];
   for (let e = 0; e < NUM_ITEMS; e++) {

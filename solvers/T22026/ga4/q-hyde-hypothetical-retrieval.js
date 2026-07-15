@@ -21,11 +21,17 @@ function sumVecs(vecs) {
   return normVec(out);
 }
 
-function generateDataset(email) {
+// Mirrors the exam's Nt(n): ONE generator seeded once, drawn 32 times.
+function Nt(n) {
+  const rng = seedrandom(`${SALT}#${n}`);
+  return normVec(Array.from({ length: 32 }, () => rng() * 2 - 1));
+}
+
+export function generateDataset(email) {
   const o = normalizeEmail(email);
   const i = seedrandom(`${SALT}#${o}#hyde-data`);
-  const s = Object.fromEntries(Q_CATS.map(r => [r, normVec(Array.from({ length: 32 }, () => seedrandom(`${SALT}#category-${r}`)() * 2 - 1))]));
-  const m = Object.fromEntries(W_YEARS.map(r => [r, normVec(Array.from({ length: 32 }, () => seedrandom(`${SALT}#year-${r}`)() * 2 - 1))]));
+  const s = Object.fromEntries(Q_CATS.map(r => [r, Nt(`category-${r}`)]));
+  const m = Object.fromEntries(W_YEARS.map(r => [r, Nt(`year-${r}`)]));
 
   const d = [];
   for (let r = 0; r < 500; r++) {

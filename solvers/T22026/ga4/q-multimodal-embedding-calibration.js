@@ -23,12 +23,18 @@ function sumVecs(vecs) {
   return normVec(out);
 }
 
-function generateDataset(email) {
+// Mirrors the exam's Se(n): ONE generator seeded once, drawn 48 times.
+function Se(n) {
+  const rng = seedrandom(`${SALT}#${n}`);
+  return normVec(Array.from({ length: 48 }, () => rng() * 2 - 1));
+}
+
+export function generateDataset(email) {
   const o = normalizeEmail(email);
   const i = seedrandom(`${SALT}#${o}#multimodal-data`);
-  const s = Object.fromEntries(H.map(t => [t, normVec(Array.from({ length: 48 }, () => seedrandom(`${SALT}#category-${t}`)() * 2 - 1))]));
-  const m = Object.fromEntries(U.map(t => [t, normVec(Array.from({ length: 48 }, () => seedrandom(`${SALT}#color-${t}`)() * 2 - 1))]));
-  const d = Object.fromEntries(V.map(t => [t, normVec(Array.from({ length: 48 }, () => seedrandom(`${SALT}#layout-${t}`)() * 2 - 1))]));
+  const s = Object.fromEntries(H.map(t => [t, Se(`category-${t}`)]));
+  const m = Object.fromEntries(U.map(t => [t, Se(`color-${t}`)]));
+  const d = Object.fromEntries(V.map(t => [t, Se(`layout-${t}`)]));
   const l = normVec(Array.from({ length: 48 }, (t, a) => (a % 5 - 2) / 50));
 
   const e = [];
