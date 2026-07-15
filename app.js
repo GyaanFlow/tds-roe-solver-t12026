@@ -228,7 +228,7 @@ function persistUiState() {
 function toggleSessionTokenField() {
   if (!sessionTokenWrapper) return;
   const exam = examSelect.value;
-  sessionTokenWrapper.style.display = exam === 'ga3' ? '' : 'none';
+  sessionTokenWrapper.style.display = (exam === 'ga3' || exam === 'ga4') ? '' : 'none';
 }
 
 function ensureToastRoot() {
