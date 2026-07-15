@@ -102,10 +102,13 @@ export async function solve(email) {
     });
     const addedTermsSorted = [...addedTerms].sort();
 
-    const candidates = cache_entries.filter(c =>
-      c.tenant === req.tenant && c.channel === req.channel && c.language === req.language &&
-      (req.at_minute - c.created_minute) <= rules.ttl_minutes
-    );
+    // A cache only holds entries that already exist (created at/before the request)
+    // and have not expired (age within ttl_minutes).
+    const candidates = cache_entries.filter(c => {
+      const age = req.at_minute - c.created_minute;
+      return c.tenant === req.tenant && c.channel === req.channel && c.language === req.language &&
+        age >= 0 && age <= rules.ttl_minutes;
+    });
 
     let best = null, bestSim = -Infinity;
     for (const c of candidates) {

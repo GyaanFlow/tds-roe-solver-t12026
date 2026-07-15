@@ -112,9 +112,10 @@ export async function solve(email) {
     doc.sections.forEach(section => {
       const sents = section.sentences;
       let w = 0;
-      for (let p = 0; p < sents.length; p += csc - cso) {
+      // Only full-size windows: "sliding-window chunks of chunk_sentence_count
+      // sentences" means each chunk holds exactly csc sentences (no partial tail).
+      for (let p = 0; p + csc <= sents.length; p += csc - cso) {
         const window = sents.slice(p, p + csc);
-        if (window.length === 0) break;
         const chunkText = window.join(' ');
         const chunkId = `${doc.doc_id}:${section.section_id}:w${pad(w, 2)}`;
         const contextualText = fillTemplate(rules.contextual_template, {
@@ -123,7 +124,6 @@ export async function solve(email) {
         });
         chunks.push({ chunk_id: chunkId, text: contextualText });
         w++;
-        if (p + csc >= sents.length) break;
       }
     });
   });
@@ -159,7 +159,8 @@ export async function solve(email) {
     });
     scores.sort((a2, b2) => {
       if (b2.score !== a2.score) return b2.score - a2.score;
-      return a2.chunk_id.localeCompare(b2.chunk_id);
+      // Lexicographic (code-point) chunk-ID ascending, matching "chunk ID ascending".
+      return a2.chunk_id < b2.chunk_id ? -1 : a2.chunk_id > b2.chunk_id ? 1 : 0;
     });
     answer[q.query_id] = scores.slice(0, top_k).map(s => s.chunk_id);
   }
