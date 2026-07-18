@@ -8,9 +8,24 @@ const HOST = 'https://tds-roe-solver-api-t12026.onrender.com';
 export async function solve(email, sessionToken) {
   const norm = normalizeEmail(email);
   const enc = encodeURIComponent(norm);
-  const tok = sessionToken ? encodeURIComponent(sessionToken) : '<TOKEN>';
-  const base = `${HOST}/ga5/${enc}/${tok}`;
   const health = `${HOST}/ga5/${enc}/health`;
+
+  if (!sessionToken) {
+    return {
+      type: 'guide',
+      answer: '',
+      variant: `Token required for Q9 (${norm})`,
+      answerDisplay: [
+        `### Q9: Lethal-Trifecta Mailroom Action Gate`,
+        `⚠️ **AIPipe token is required for this question.**`,
+        `Enter your aipipe.org token in the token field above and click Solve again.`,
+        `The token is embedded in the URL path for per-user LLM routing.`,
+        `Warm the dyno first: \`GET ${health}\` (cold start ~50 s).`
+      ].join('\n')
+    };
+  }
+
+  const base = `${HOST}/ga5/${enc}/${encodeURIComponent(sessionToken)}`;
   const url = `${base}/mailroom`;
 
   return {

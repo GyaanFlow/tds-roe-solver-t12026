@@ -8,10 +8,25 @@ const HOST = 'https://tds-roe-solver-api-t12026.onrender.com';
 export async function solve(email, sessionToken) {
   const norm = normalizeEmail(email);
   const enc = encodeURIComponent(norm);
-  const tok = sessionToken ? encodeURIComponent(sessionToken) : '<TOKEN>';
-  const base = `${HOST}/ga5/${enc}/${tok}/a2a/`;
-  const dashboard = `${HOST}/ga5/`;
   const health = `${HOST}/ga5/${enc}/health`;
+  const dashboard = `${HOST}/ga5/`;
+
+  if (!sessionToken) {
+    return {
+      type: 'guide',
+      answer: '',
+      variant: `Token required for Q10 (${norm})`,
+      answerDisplay: [
+        `### Q10: A2A Invoice Action Agent`,
+        `⚠️ **AIPipe token is required for this question.**`,
+        `Enter your aipipe.org token in the token field above and click Solve again.`,
+        `The token is embedded in the base URL path for per-user LLM routing.`,
+        `Warm the dyno first: \`GET ${health}\` (cold start ~50 s).`
+      ].join('\n')
+    };
+  }
+
+  const base = `${HOST}/ga5/${enc}/${encodeURIComponent(sessionToken)}/a2a/`;
 
   return {
     type: 'solved',

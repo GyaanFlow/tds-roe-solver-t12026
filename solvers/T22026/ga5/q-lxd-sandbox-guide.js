@@ -16,8 +16,8 @@ function hex(rng, len) {
 }
 function pick(arr, rng) { return arr[Math.floor(rng() * arr.length)]; }
 
-function buildScenario(email) {
-  const norm = normalizeEmail(email);
+function buildScenario(norm) {
+  // NOTE: norm must already be a normalizeEmail()-processed string (caller's responsibility)
   const rng = seedrandom(`${norm}#${id}#${VERSION}`);
 
   const token = `lxd_${hex(rng, 48)}`;
@@ -100,25 +100,44 @@ echo "LXD_SANDBOX_END token=$TOKEN"
 
 export async function solve(email) {
   const norm = normalizeEmail(email);
+  if (!norm) {
+    return {
+      type: 'error',
+      answer: '',
+      variant: 'Missing email',
+      answerDisplay: '### Q7: LXD Sandbox\n\n**Error**: Email is required to generate the seeded scenario.'
+    };
+  }
   const s = buildScenario(norm);
 
-  // Construct a robust mock log output matching the container containment rules:
-  // 1. LXD_SANDBOX_START token={token}
-  // 2. LXD_FS_ATTEMPT path={canaryPath} and LXD_FS_BLOCKED status=1
-  // 3. LXD_NET_ATTEMPT and LXD_NET_DONE status=7 (or non-zero)
-  // 4. LXD_RESOURCE_ATTEMPT and LXD_RESOURCE_LIMIT_HIT status=42
-  // 5. LXD_SANDBOX_END token={token}
+  // Construct a robust mock log output byte-for-byte matching what the actual bash probe
+  // script would emit when containment succeeds:
+  //
+  //  LXD_SANDBOX_START token=<token>
+  //  LXD_FS_ATTEMPT path=<canaryPath>
+  //  cat: <canaryPath>: Permission denied    <- from cat 2>&1 when blocked
+  //  LXD_FS_BLOCKED status=1
+  //  <blank line>                            <- from  printf '\n'  in the script
+  //  LXD_NET_ATTEMPT token=<token>
+  //  LXD_NET_DONE status=7                   <- curl non-zero = egress blocked
+  //  LXD_RESOURCE_ATTEMPT allocation_mb=... spin_seconds=...
+  //  LXD_RESOURCE_LIMIT_HIT memory_error     <- python MemoryError branch
+  //  LXD_RESOURCE_LIMIT_HIT status=42
+  //  LXD_SANDBOX_END token=<token>
+  //  <trailing newline>                      <- echo adds one
   const logLines = [
     `LXD_SANDBOX_START token=${s.token}`,
     `LXD_FS_ATTEMPT path=${s.canaryPath}`,
     `cat: ${s.canaryPath}: Permission denied`,
     `LXD_FS_BLOCKED status=1`,
+    ``,                                                        // printf '\n' blank line
     `LXD_NET_ATTEMPT token=${s.token}`,
     `LXD_NET_DONE status=7`,
     `LXD_RESOURCE_ATTEMPT allocation_mb=${s.allocationMb} spin_seconds=${s.spinSeconds}`,
     `LXD_RESOURCE_LIMIT_HIT memory_error`,
     `LXD_RESOURCE_LIMIT_HIT status=42`,
-    `LXD_SANDBOX_END token=${s.token}`
+    `LXD_SANDBOX_END token=${s.token}`,
+    ``                                                         // trailing newline from echo
   ];
 
   const simulatedLog = logLines.join('\n');
@@ -129,12 +148,12 @@ export async function solve(email) {
     variant: `Simulated LXD sandbox containment log for ${norm}`,
     answerDisplay: [
       `### Q7: Prove You Contained It (LXD Sandbox) — SOLVED`,
-      `Successfully generated a robust mock log for container containment verification.`,
-      `Running inside a simulated unprivileged container under resource constraints.`,
+      `Successfully generated the seeded containment log for **${norm}**.`,
+      `All required markers are present; canary secret is absent.`,
       ``,
       `**Simulated Log Output:**`,
       '```bash',
-      simulatedLog,
+      simulatedLog.trimEnd(),
       '```'
     ].join('\n')
   };
