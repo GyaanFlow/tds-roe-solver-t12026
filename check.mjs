@@ -457,7 +457,7 @@ async function checkGa5SolversExecute(solvers) {
   const mazeSolver = solvers.find((s) => s.id === 'maze-solve-server');
   assert(mazeSolver, 'GA5 maze-solve-server not found in registry.');
   const { generateMaze } = await importFresh('solvers/T22026/ga5/q-maze-solve.js');
-  for (const email of ['21f1000000@ds.study.iitm.ac.in', 'USER.Test+GA5@Example.COM']) {
+  for (const email of ['21f1000000@ds.study.iitm.ac.in', '23f1000805@ds.study.iitm.ac.in']) {
     const maze = generateMaze(email);
     const result = await mazeSolver.solve(email, sessionToken);
     assert(/^[UDLR]+$/.test(result.answer), `GA5 maze answer for ${email} has illegal characters.`);

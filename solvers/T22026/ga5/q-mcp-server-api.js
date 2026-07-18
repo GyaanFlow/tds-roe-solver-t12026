@@ -20,10 +20,14 @@ export async function solve(email) {
       `\`\`\``,
       url,
       `\`\`\``,
-      `No AIPipe token needed — pure deterministic policy.`,
-      `The grader POSTs JSON-RPC 2.0 (\`initialize\`, \`tools/list\`, \`tools/call\`).`,
-      `On \`tools/call\`, it reads the \`X-Exam-Challenge\` header and expects`,
-      `\`sha256(challenge:email)\` truncated to 16 hex chars back.`,
+      `No AIPipe token needed — real MCP protocol (JSON-RPC 2.0), no LLM.`,
+      `Handles \`initialize\`, \`notifications/initialized\` (202, no body), \`tools/list\``,
+      `(one tool: \`solve_challenge\`), and \`tools/call\`.`,
+      `On \`tools/call\`, it reads the \`X-Exam-Challenge\` HTTP header (not the JSON body)`,
+      `and returns:`,
+      '```json',
+      `{"content":[{"type":"text","text":"<first 16 hex chars of SHA-256(challenge:normalizedEmail)>"}],"isError":false}`,
+      '```',
       `Warm the dyno before submitting: \`GET ${base}/health\` (cold start ~50 s).`
     ].join('\n')
   };

@@ -12,5 +12,5 @@ export const lockConfig = {
     '23f2005102@ds.study.iitm.ac.in'
   ],
   // Master lock switch
-  locked: false
+  locked: true
 };
