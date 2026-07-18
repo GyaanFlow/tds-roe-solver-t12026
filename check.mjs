@@ -399,6 +399,80 @@ async function checkGa4SolversExecute(solvers) {
   }
 }
 
+function checkGa5OfficialOrder(solvers) {
+  const officialIds = [
+    'maze-solve-server',
+    'q-spec-driven-correction-server',
+    'q-agent-tool-guardrail-server',
+    'q-skill-safety-audit-server',
+    'q-agent-budget-loop-guardrail-server',
+    'q-mcp-server-live-server',
+    'q-lxd-sandbox-live-server',
+    'q-agent-guardrail-redteam-server',
+    'q-taint-aware-agent-executor-server',
+    'q-a2a-durable-delegate-server',
+    'q-agent-trace-integrity-server'
+  ];
+
+  assert(solvers.length === officialIds.length, `Expected ${officialIds.length} GA5 solvers, got ${solvers.length}.`);
+  assert(
+    solvers.map((solver) => solver.id).join('|') === officialIds.join('|'),
+    'GA5 solver order/IDs no longer match the official May 2026 GA5 bundle.'
+  );
+}
+
+async function checkGa5SolversExecute(solvers) {
+  const sampleEmails = [
+    '21f1000000@ds.study.iitm.ac.in',
+    '22f2001234@ds.study.iitm.ac.in',
+    'USER.Test+GA5@Example.COM',
+    '' // empty email must not crash a solver
+  ];
+  const sessionToken = 'quiz_sign_mock_token_1234';
+
+  for (const email of sampleEmails) {
+    for (const solver of solvers) {
+      const result = await solver.solve(email, sessionToken);
+      assert(result && typeof result === 'object', `GA5 ${solver.id} returned a non-object result.`);
+      assert(typeof result.answer === 'string', `GA5 ${solver.id} answer must be a string.`);
+      assert(result.answer.length > 0, `GA5 ${solver.id} answer must not be empty.`);
+      assert(
+        ['solved', 'guide', 'bypass', 'error'].includes(result.type),
+        `GA5 ${solver.id} returned unexpected result type: ${result.type}.`
+      );
+      if (result.answer.trim().startsWith('{') || result.answer.trim().startsWith('[')) {
+        try {
+          JSON.parse(result.answer);
+        } catch (e) {
+          assert(false, `GA5 ${solver.id} answer is not valid JSON: ${e.message}`);
+        }
+      }
+      // Determinism: same email must yield the same answer every time.
+      const result2 = await solver.solve(email, sessionToken);
+      assert(result.answer === result2.answer, `GA5 ${solver.id} is non-deterministic for the same email.`);
+    }
+  }
+
+  // The maze solver's answer must be a legal, complete U/D/L/R path from start to end.
+  const mazeSolver = solvers.find((s) => s.id === 'maze-solve-server');
+  assert(mazeSolver, 'GA5 maze-solve-server not found in registry.');
+  const { generateMaze } = await importFresh('solvers/T22026/ga5/q-maze-solve.js');
+  for (const email of ['21f1000000@ds.study.iitm.ac.in', 'USER.Test+GA5@Example.COM']) {
+    const maze = generateMaze(email);
+    const result = await mazeSolver.solve(email, sessionToken);
+    assert(/^[UDLR]+$/.test(result.answer), `GA5 maze answer for ${email} has illegal characters.`);
+    const DIR = { U: [0, -1, 1], R: [1, 0, 2], D: [0, 1, 4], L: [-1, 0, 8] };
+    let [x, y] = maze.start;
+    for (const ch of result.answer) {
+      const [dx, dy, bit] = DIR[ch];
+      assert((maze.openMask[y][x] & bit) !== 0, `GA5 maze answer for ${email} makes an illegal move through a wall.`);
+      x += dx;
+      y += dy;
+    }
+    assert(x === maze.end[0] && y === maze.end[1], `GA5 maze answer for ${email} does not end at the maze exit.`);
+  }
+}
+
 async function main() {
   installBrowserStubs();
 
@@ -418,6 +492,7 @@ async function main() {
   const ga2Registry = await importFresh('solvers/T22026/ga2/registry.js');
   const ga3Registry = await importFresh('solvers/T22026/ga3/registry.js');
   const ga4Registry = await importFresh('solvers/T22026/ga4/registry.js');
+  const ga5Registry = await importFresh('solvers/T22026/ga5/registry.js');
 
   assert(Array.isArray(ga7Registry.solvers) && ga7Registry.solvers.length > 0, 'GA7 registry did not load solvers.');
   assert(Array.isArray(roeRegistry.solvers) && roeRegistry.solvers.length > 0, 'ROE registry did not load solvers.');
@@ -428,6 +503,7 @@ async function main() {
   assert(Array.isArray(ga2Registry.solvers) && ga2Registry.solvers.length === 10, `GA2 registry should have exactly 10 solvers, got ${ga2Registry.solvers.length}.`);
   assert(Array.isArray(ga3Registry.solvers) && ga3Registry.solvers.length === 13, `GA3 registry should have exactly 13 solvers, got ${ga3Registry.solvers.length}.`);
   assert(Array.isArray(ga4Registry.solvers) && ga4Registry.solvers.length === 13, `GA4 registry should have exactly 13 solvers, got ${ga4Registry.solvers.length}.`);
+  assert(Array.isArray(ga5Registry.solvers) && ga5Registry.solvers.length === 11, `GA5 registry should have exactly 11 solvers, got ${ga5Registry.solvers.length}.`);
   await checkGa8OfficialParity(ga8Registry.solvers);
   checkGa0OfficialOrder(ga0Registry.solvers);
   await checkGa0SolversExecute(ga0Registry.solvers);
@@ -437,10 +513,12 @@ async function main() {
   await checkGa3SolversExecute(ga3Registry.solvers);
   checkGa4OfficialOrder(ga4Registry.solvers);
   await checkGa4SolversExecute(ga4Registry.solvers);
+  checkGa5OfficialOrder(ga5Registry.solvers);
+  await checkGa5SolversExecute(ga5Registry.solvers);
 
   await checkServerRoutes();
 
-  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}`);
+  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}, GA5 solvers=${ga5Registry.solvers.length}`);
 }
 
 main().catch((error) => {

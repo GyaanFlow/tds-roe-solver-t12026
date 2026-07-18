@@ -78,7 +78,8 @@ const TERM_EXAMS = {
     { group: 'Weekly Graded Assignments', value: 'ga1', label: 'GA 1 (Developer Tools)' },
     { group: 'Weekly Graded Assignments', value: 'ga2', label: 'GA 2 (API Engineering & Cloud Services)' },
     { group: 'Weekly Graded Assignments', value: 'ga3', label: 'GA 3 (System & API Architecture)' },
-    { group: 'Weekly Graded Assignments', value: 'ga4', label: 'GA 4 (RAG & Vector Search)' }
+    { group: 'Weekly Graded Assignments', value: 'ga4', label: 'GA 4 (RAG & Vector Search)' },
+    { group: 'Weekly Graded Assignments', value: 'ga5', label: 'GA 5 (Agentic Systems Safety)' }
   ]
 };
 
@@ -228,7 +229,7 @@ function persistUiState() {
 function toggleSessionTokenField() {
   if (!sessionTokenWrapper) return;
   const exam = examSelect.value;
-  sessionTokenWrapper.style.display = (exam === 'ga3' || exam === 'ga4') ? '' : 'none';
+  sessionTokenWrapper.style.display = (exam === 'ga3' || exam === 'ga4' || exam === 'ga5') ? '' : 'none';
 }
 
 function ensureToastRoot() {
@@ -567,6 +568,7 @@ function renderAnswerPanel(data, langClass) {
                           urlLower.includes('/latency') ||
                           urlLower.includes('onrender.com/ga3/') ||
                           urlLower.includes('onrender.com/ga4/') ||
+                          urlLower.includes('onrender.com/ga5/') ||
                           urlLower.includes('onrender.com/ga2/');
                           
   const isInteractiveSolver = isUrl && !isCopyPasteApi;
