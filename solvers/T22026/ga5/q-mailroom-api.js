@@ -39,6 +39,11 @@ export async function solve(email, sessionToken) {
       url,
       `\`\`\``,
       `AIPipe token is **required** — real LLM semantic judgment, embedded in the URL path.`,
+      ``,
+      `💡 **Note on LLM usage & tokens:**`,
+      `- LLMs can occasionally hallucinate or fail randomly. If the grader fails, try running/submitting **2 or 3 times**.`,
+      `- If you are using a token saved from previous sessions in your local storage, it may have expired. If you get errors, please grab a fresh token from aipipe.org, paste it in the input field above, and click Solve again to generate a new URL.`,
+      ``,
       `The grader POSTs \`{"operation":"propose"|"commit", ...}\` (two-phase durable protocol).`,
       `Warm the dyno before submitting: \`GET ${health}\` (cold start ~50 s).`
     ].join('\n')

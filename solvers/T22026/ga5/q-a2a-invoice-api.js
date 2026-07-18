@@ -43,6 +43,11 @@ export async function solve(email, sessionToken) {
       `(\`/.well-known/agent-card.json\`), which the A2A spec requires.`,
       ``,
       `AIPipe token is **required** — embedded in the URL path.`,
+      ``,
+      `💡 **Note on LLM usage & tokens:**`,
+      `- LLMs can occasionally hallucinate or fail randomly. If the grader fails, try running/submitting **2 or 3 times**.`,
+      `- If you are using a token saved from previous sessions in your local storage, it may have expired. If you get errors, please grab a fresh token from aipipe.org, paste it in the input field above, and click Solve again to generate a new URL.`,
+      ``,
       `A2A 1.0 protocol at \`${base}message:send\`, \`${base}tasks/{id}\`, \`${base}tasks\`, \`${base}tasks/{id}:cancel\`.`,
       `Requires \`Authorization: Bearer <TOKEN>\` and \`A2A-Version: 1.0\` headers on every call.`,
       `Warm the dyno before submitting: \`GET ${health}\` (cold start ~50 s).`

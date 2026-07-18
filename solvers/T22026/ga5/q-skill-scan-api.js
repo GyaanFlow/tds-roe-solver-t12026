@@ -32,6 +32,11 @@ export async function solve(email, sessionToken) {
         ? `AIPipe token is embedded — uses the more accurate LLM pass.`
         : `No AIPipe token set — this uses the regex heuristic (works, just less accurate).` +
           ` Set a token in the workspace to switch to \`/ga5/${enc}/<TOKEN>/skill-scan\` for the LLM pass.`,
+      ``,
+      `💡 **Note on LLM usage & tokens:**`,
+      `- LLMs can occasionally hallucinate or fail randomly. If the grader fails, try running/submitting **2 or 3 times**.`,
+      `- If you are using a token saved from previous sessions in your local storage, it may have expired. If you get errors, please grab a fresh token from aipipe.org, paste it in the input field above, and click Solve again to generate a new URL.`,
+      ``,
       `The grader POSTs \`{"skill": "<markdown text>"}\``,
       `and expects \`{"categories": [...]}\` back`,
       `(subset of \`hardcoded_secret\`, \`prompt_injection\`, \`excessive_permissions\`, \`unclear_provenance\`).`,
