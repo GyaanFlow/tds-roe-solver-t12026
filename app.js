@@ -152,8 +152,12 @@ window.addEventListener('DOMContentLoaded', () => {
   toggleSessionTokenField();
 
   if (savedEmail) emailInput.value = savedEmail;
-  const savedSessionToken = localStorage.getItem(STORAGE_KEYS.sessionToken);
-  if (savedSessionToken && sessionTokenInput) sessionTokenInput.value = savedSessionToken;
+  // AIPipe tokens expire when the user's aipipe.org session ends — never restore a stale
+  // token from a previous session. Always require it to be typed in fresh (see also
+  // persistUiState(), which correspondingly never writes this field to localStorage).
+  if (sessionTokenInput) sessionTokenInput.value = '';
+  // Clean up any token persisted by older versions of this app.
+  localStorage.removeItem(STORAGE_KEYS.sessionToken);
   if (savedSearch) nodeSearch.value = savedSearch;
   if (Number.isInteger(savedSelectedQuestion) && savedSelectedQuestion >= 0) {
     selectedQuestionIndex = savedSelectedQuestion;
@@ -218,9 +222,8 @@ function persistUiState() {
   localStorage.setItem(STORAGE_KEYS.selectedQuestion, String(selectedQuestionIndex));
   localStorage.setItem(STORAGE_KEYS.rawWrap, String(rawWrapEnabled));
   localStorage.setItem(STORAGE_KEYS.openPanels, JSON.stringify([...openPanels]));
-  if (sessionTokenInput) {
-    localStorage.setItem(STORAGE_KEYS.sessionToken, sessionTokenInput.value.trim());
-  }
+  // Intentionally never persist sessionTokenInput — AIPipe tokens expire when the user's
+  // aipipe.org session ends, and a stale saved token silently produces wrong API answers.
   localStorage.setItem('rawFocusEnabled', String(rawFocusEnabled));
   drawEmailIdenticon(emailVal);
   // NOTE: generateNetwork is NOT called here to avoid rebuilding 200 nodes on every
@@ -1271,9 +1274,7 @@ if (sessionTokenInput) {
   sessionTokenInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') startSolving();
   });
-  sessionTokenInput.addEventListener('input', () => {
-    persistUiState();
-  });
+  // No 'input' listener here on purpose — the token is intentionally never persisted.
 }
 termSelect.addEventListener('change', () => {
   populateExamSelect(termSelect.value);
