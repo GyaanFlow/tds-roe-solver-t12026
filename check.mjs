@@ -473,6 +473,47 @@ async function checkGa5SolversExecute(solvers) {
   }
 }
 
+function checkP1OfficialOrder(solvers) {
+  const officialIds = [
+    'q-interview-requirements-audio',
+    'q-model-intelligence-diff',
+    'q-gcp-cloud-gcp-cli-server',
+    'q-gcp-cloud-eval-dataset-server'
+  ];
+
+  assert(solvers.length === officialIds.length, `Expected ${officialIds.length} P1 solvers, got ${solvers.length}.`);
+  assert(
+    solvers.map((solver) => solver.id).join('|') === officialIds.join('|'),
+    'P1 solver order/IDs no longer match the official May 2026 P1 bundle.'
+  );
+}
+
+async function checkP1SolversExecute(solvers) {
+  const sampleEmails = [
+    '21f1000000@ds.study.iitm.ac.in',
+    '22f2001234@ds.study.iitm.ac.in',
+    'USER.Test+P1@Example.COM',
+    '' // empty email must not crash a solver
+  ];
+  const sessionToken = 'quiz_sign_mock_token_1234';
+
+  for (const email of sampleEmails) {
+    for (const solver of solvers) {
+      const result = await solver.solve(email, sessionToken);
+      assert(result && typeof result === 'object', `P1 ${solver.id} returned a non-object result.`);
+      assert(typeof result.answer === 'string', `P1 ${solver.id} answer must be a string.`);
+      assert(result.answer.length > 0, `P1 ${solver.id} answer must not be empty.`);
+      assert(
+        ['solved', 'guide', 'bypass', 'error'].includes(result.type),
+        `P1 ${solver.id} returned unexpected result type: ${result.type}.`
+      );
+      // Determinism: same email must yield the same answer every time.
+      const result2 = await solver.solve(email, sessionToken);
+      assert(result.answer === result2.answer, `P1 ${solver.id} is non-deterministic for the same email.`);
+    }
+  }
+}
+
 async function main() {
   installBrowserStubs();
 
@@ -493,6 +534,7 @@ async function main() {
   const ga3Registry = await importFresh('solvers/T22026/ga3/registry.js');
   const ga4Registry = await importFresh('solvers/T22026/ga4/registry.js');
   const ga5Registry = await importFresh('solvers/T22026/ga5/registry.js');
+  const p1Registry = await importFresh('solvers/T22026/p1/registry.js');
 
   assert(Array.isArray(ga7Registry.solvers) && ga7Registry.solvers.length > 0, 'GA7 registry did not load solvers.');
   assert(Array.isArray(roeRegistry.solvers) && roeRegistry.solvers.length > 0, 'ROE registry did not load solvers.');
@@ -504,6 +546,7 @@ async function main() {
   assert(Array.isArray(ga3Registry.solvers) && ga3Registry.solvers.length === 13, `GA3 registry should have exactly 13 solvers, got ${ga3Registry.solvers.length}.`);
   assert(Array.isArray(ga4Registry.solvers) && ga4Registry.solvers.length === 13, `GA4 registry should have exactly 13 solvers, got ${ga4Registry.solvers.length}.`);
   assert(Array.isArray(ga5Registry.solvers) && ga5Registry.solvers.length === 11, `GA5 registry should have exactly 11 solvers, got ${ga5Registry.solvers.length}.`);
+  assert(Array.isArray(p1Registry.solvers) && p1Registry.solvers.length === 4, `P1 registry should have exactly 4 solvers, got ${p1Registry.solvers.length}.`);
   await checkGa8OfficialParity(ga8Registry.solvers);
   checkGa0OfficialOrder(ga0Registry.solvers);
   await checkGa0SolversExecute(ga0Registry.solvers);
@@ -515,10 +558,12 @@ async function main() {
   await checkGa4SolversExecute(ga4Registry.solvers);
   checkGa5OfficialOrder(ga5Registry.solvers);
   await checkGa5SolversExecute(ga5Registry.solvers);
+  checkP1OfficialOrder(p1Registry.solvers);
+  await checkP1SolversExecute(p1Registry.solvers);
 
   await checkServerRoutes();
 
-  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}, GA5 solvers=${ga5Registry.solvers.length}`);
+  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}, GA5 solvers=${ga5Registry.solvers.length}, P1 solvers=${p1Registry.solvers.length}`);
 }
 
 main().catch((error) => {
