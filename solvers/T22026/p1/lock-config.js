@@ -1,6 +1,8 @@
-// P1 Lock Configuration
 export const lockConfig = {
-  // Whitelist: allowed student email addresses
+  // Set to true to lock the solver for all non-whitelisted emails, or false to unlock it for everyone.
+  locked: false,
+
+  // Whitelist of emails allowed to get programmatic solved answers when locked is true.
   allowedEmails: [
     '21f1000000@ds.study.iitm.ac.in',
     'beindian05@gmail.com',
@@ -10,7 +12,5 @@ export const lockConfig = {
     '23f3000589@ds.study.iitm.ac.in',
     '24f2008726@ds.study.iitm.ac.in',
     '23f2005102@ds.study.iitm.ac.in'
-  ],
-  // Master lock switch
-  locked: false
+  ]
 };
