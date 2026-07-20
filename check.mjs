@@ -512,6 +512,31 @@ async function checkP1SolversExecute(solvers) {
       assert(result.answer === result2.answer, `P1 ${solver.id} is non-deterministic for the same email.`);
     }
   }
+
+  // Q2's answer is real submitted JSON. Mirror the exam's own client-side validator
+  // exactly (pair is GPT/GEMINI, prompt is non-empty, <=1000 words) so a structural
+  // failure is caught here rather than at submission time.
+  const q2Solver = solvers.find((s) => s.id === 'q-model-intelligence-diff');
+  assert(q2Solver, 'P1 q-model-intelligence-diff not found in registry.');
+  const seenPrompts = new Set();
+  for (const email of ['21f1000000@ds.study.iitm.ac.in', '23f1000805@ds.study.iitm.ac.in', 'a@x.com', 'b@x.com', 'c@x.com']) {
+    const result = await q2Solver.solve(email, sessionToken);
+    let parsed;
+    try {
+      parsed = JSON.parse(result.answer);
+    } catch (e) {
+      assert(false, `P1 Q2 answer for ${email} is not valid JSON: ${e.message}`);
+    }
+    const pair = String(parsed.pair || '').trim().toUpperCase();
+    const prompt = String(parsed.prompt || '').trim();
+    assert(pair === 'GPT' || pair === 'GEMINI', `P1 Q2 "pair" for ${email} must be GPT or GEMINI, got "${parsed.pair}".`);
+    assert(prompt.length > 0, `P1 Q2 "prompt" for ${email} must not be empty.`);
+    const words = prompt.split(/\s+/).filter(Boolean).length;
+    assert(words <= 1000, `P1 Q2 prompt for ${email} exceeds the 1000-word limit (${words} words).`);
+    assert(/\b(YES|NO)\b/i.test(prompt), `P1 Q2 prompt for ${email} does not mention YES/NO at all.`);
+    seenPrompts.add(prompt);
+  }
+  assert(seenPrompts.size > 1, 'P1 Q2 returns the identical prompt for every email — must vary per user.');
 }
 
 async function main() {
