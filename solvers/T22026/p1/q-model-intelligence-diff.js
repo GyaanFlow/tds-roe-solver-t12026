@@ -156,18 +156,26 @@ export async function solve(email) {
   ].join('\n');
 
   return {
-    type: 'guide',
+    // Unlike Q1/Q3/Q4, this question has no per-student server-side data at all (no
+    // seed, no authenticated download) — the exam only validates the submitted JSON's
+    // shape client-side and grades content offline. That makes it the one P1 question
+    // that can be a real direct/computed solver, same as GA0-GA5, rather than a guide.
+    type: 'solved',
     answer,
-    variant: `Draft adversarial prompt (${pair} pair) for ${norm}`,
+    variant: `Adversarial prompt (${pair} pair) for ${norm}`,
     answerDisplay: [
       `### Q2: Differentiating Model Intelligence`,
       ``,
-      `Your seeded draft (**${pair}** pair, ${wc} words) — **test it against both real models`,
-      `first** and refine it before submitting, since unmodified AI drafts all score low together:`,
+      `Auto-generated draft (**${pair}** pair, ${wc} words), seeded uniquely to your email so`,
+      `it differs from other students' drafts:`,
       ``,
       '```json',
       answer,
       '```',
+      ``,
+      `**Recommended before submitting:** test it against both real models (see the guide`,
+      `below) — the exam scores relatively, and TAs run your exact prompt live, so verifying`,
+      `it actually splits the two models first is worth the two extra minutes.`,
       ``,
       `Full guide below explains why this reasoning trap works, how to test it, and the exact`,
       `submission rules.`
