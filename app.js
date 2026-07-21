@@ -614,7 +614,7 @@ function renderAnswerPanel(data, langClass) {
 function renderNotesPanel(data) {
   if (!data.answerDisplay) return '';
   const rendered = typeof marked !== 'undefined' ? marked.parse(data.answerDisplay) : data.answerDisplay;
-  const cleanRendered = rendered.replace(/<a\s+(href="[^"]*")/gi, '<a target="_blank" rel="noopener noreferrer" $1');
+  const cleanRendered = addCodeCopyButtons(rendered.replace(/<a\s+(href="[^"]*")/gi, '<a target="_blank" rel="noopener noreferrer" $1'));
   
   const isSpecial = data.title && (data.title.toLowerCase().includes('heist') || data.title.toLowerCase().includes('nonce') || data.title.toLowerCase().includes('proof-of-work'));
   const isSolved = data.type === 'solved';
@@ -628,10 +628,18 @@ function renderNotesPanel(data) {
   });
 }
 
+// Wraps every rendered <pre><code>...</code></pre> block with a "Copy" button so users
+// never have to manually select code (e.g. multi-cell Colab snippets in P1/GA guides).
+function addCodeCopyButtons(html) {
+  return html.replace(/<pre>(<code[^>]*>[\s\S]*?<\/code>)<\/pre>/g, (_match, codeInner) => {
+    return `<div class="code-block-wrapper"><pre>${codeInner}</pre><button type="button" class="code-copy-btn" title="Copy code">Copy</button></div>`;
+  });
+}
+
 function renderGuidePanel(data) {
   if (!data.guide) return '';
   const rendered = typeof marked !== 'undefined' ? marked.parse(data.guide) : data.guide;
-  const cleanRendered = rendered.replace(/<a\s+(href="[^"]*")/gi, '<a target="_blank" rel="noopener noreferrer" $1');
+  const cleanRendered = addCodeCopyButtons(rendered.replace(/<a\s+(href="[^"]*")/gi, '<a target="_blank" rel="noopener noreferrer" $1'));
   return createSection('Implementation Guide', `<div class="styled-output guide-output">${cleanRendered}</div>`, { open: true, extraClass: 'panel-guide' });
 }
 
@@ -1681,6 +1689,13 @@ initNetworkCanvas().then(() => {
 // Delegated click handler for Q11 Context Heist card actions
 document.addEventListener('click', async (event) => {
   if (!event.target) return;
+
+  if (event.target.classList?.contains('code-copy-btn')) {
+    const wrapper = event.target.closest('.code-block-wrapper');
+    const codeEl = wrapper?.querySelector('code');
+    if (codeEl) copyToClipboard(codeEl.innerText, event.target);
+    return;
+  }
 
   if (event.target.id === 'heist-card-solve-btn') {
     const textarea = document.getElementById('heist-card-textarea');
