@@ -40,7 +40,7 @@ export async function solve(email, sessionToken) {
       `AIPipe token is **required** — embedded in the URL path.`,
       ``,
       `💡 **Note on LLM usage & tokens:**`,
-      `- LLMs can occasionally hallucinate or fail randomly. If the grader fails, try running/submitting **2 or3 times**.`,
+      `- LLMs can occasionally hallucinate or fail randomly. If the grader fails, try running/submitting **2 or 3 times**.`,
       `- If you are using a token saved from previous sessions in your local storage, it may have expired. If you get errors, please grab a fresh token from aipipe.org, paste it in the input field above, and click Solve again to generate a new URL.`,
       ``,
       `Endpoints the grader will call:`,
