@@ -72,11 +72,7 @@ function buildQ3NotebookCells({ bucketName, location, aipipeToken }) {
       '    "Every key in the pool failed just now (likely all temporarily rate-limited). "',
       '    "Wait a minute and re-run this cell."',
       ')',
-      '',
-      '# Persist which key won so Q4 can recover it automatically in a fresh notebook.',
-      'with open("/content/gcp_keys/_active_key.txt", "w") as f:',
-      '    f.write(f"{CHOSEN_KEY}\\n{PROJECT_ID}\\n")',
-      'print("\\nSaved to /content/gcp_keys/_active_key.txt — needed for Q4.")'
+      'print("Ready.")'
     ] },
     { type: 'markdown', source: ['## Cell 3 — Your bucket details (already filled in from your form input)'] },
     { type: 'code', source: [
@@ -191,8 +187,8 @@ function buildQ3NotebookCells({ bucketName, location, aipipeToken }) {
     { type: 'markdown', source: [
       'Copy the printed text into the exam\'s `agent_log_jsonl_file content` field for **Q3**.',
       '',
-      '**Before closing this notebook**, keep it open or note `CHOSEN_KEY`\'s filename — Q4 needs',
-      'to reuse this exact same key (it is also saved for you in `/content/gcp_keys/_active_key.txt`).'
+      'You do not need to keep this notebook open or remember anything for Q4 — Q4 has its own',
+      'distinct bucket and picks its own key from the pool independently, so it works standalone.'
     ] }
   ];
 }
@@ -308,11 +304,11 @@ export async function solve(email) {
     `be rate-limited from concurrent class use, it automatically tries the next one instead of`,
     `failing. This spreads load across the whole pool so no single key gets hammered.`,
     ``,
-    `⚠️ **Do exactly one thing differently for Q4**: reuse the **exact same key** you land on`,
-    `here, don't pick a fresh random one — the bucket you create belongs to whichever project`,
-    `that key is tied to. Cell 2 below automatically records which key it picked, so Q4 can`,
-    `recover it on its own — you don't need to write anything down (as long as \`/content\``,
-    `hasn't been wiped, e.g. Colab restarted). Details in Q4's guide.`,
+    `ℹ️ **Good news for Q4**: you do **not** need to reuse this same key there — Q4 has its own`,
+    `distinct assigned bucket and its Method 3 picks a fresh key from the pool independently.`,
+    `So Q4 works standalone even if you solve it in a different session, skip Q3 entirely, or`,
+    `use a different method there. (Cell 2 below still saves which key it picked, in case you`,
+    `personally want to keep everything on one project — but it's optional, not required.)`,
     ``,
     `### 3.1 — Open a new Colab notebook`,
     `Go to [colab.research.google.com](https://colab.research.google.com) → **New notebook**.`,
@@ -375,10 +371,6 @@ export async function solve(email) {
     `        continue`,
     ``,
     `    PROJECT_ID, CHOSEN_KEY = pid, candidate`,
-    `    # Record which key won so Q4 can recover it automatically, even in a fresh notebook —`,
-    `    # you don't have to retype or even remember the filename.`,
-    `    with open("/content/gcp_keys/_active_key.txt", "w") as f:`,
-    `        f.write(f"{CHOSEN_KEY}\\n{PROJECT_ID}\\n")`,
     `    print(f"\\nUsing key: {name}  (project: {PROJECT_ID})")`,
     `    break`,
     ``,
@@ -494,9 +486,9 @@ export async function solve(email) {
     `with open("q3_agent_log.jsonl") as f:`,
     `    print(f.read())`,
     '```',
-    `Copy the printed text into the exam's \`agent_log_jsonl_file content\` field. If you'll`,
-    `continue Q4 in the **same** Colab session, there's nothing else to do — Cell 2 already`,
-    `saved which key it picked to \`/content/gcp_keys/_active_key.txt\` for Q4 to find on its own.`,
+    `Copy the printed text into the exam's \`agent_log_jsonl_file content\` field. Q4 is a`,
+    `separate, independent question — it picks its own key and creates its own bucket, so`,
+    `there's nothing you need to carry over from this notebook.`,
     ``,
     `### What "good" looks like`,
     `Cell 2 lands on a working key within a few tries (occasional "rate-limited" skips are`,
