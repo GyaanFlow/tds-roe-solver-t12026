@@ -478,7 +478,8 @@ function checkP1OfficialOrder(solvers) {
     'q-interview-requirements-audio',
     'q-model-intelligence-diff',
     'q-gcp-cloud-gcp-cli-server',
-    'q-gcp-cloud-eval-dataset-server'
+    'q-gcp-cloud-eval-dataset-server',
+    'q-tds-project-telegram-bot'
   ];
 
   assert(solvers.length === officialIds.length, `Expected ${officialIds.length} P1 solvers, got ${solvers.length}.`);
@@ -571,7 +572,7 @@ async function main() {
   assert(Array.isArray(ga3Registry.solvers) && ga3Registry.solvers.length === 13, `GA3 registry should have exactly 13 solvers, got ${ga3Registry.solvers.length}.`);
   assert(Array.isArray(ga4Registry.solvers) && ga4Registry.solvers.length === 13, `GA4 registry should have exactly 13 solvers, got ${ga4Registry.solvers.length}.`);
   assert(Array.isArray(ga5Registry.solvers) && ga5Registry.solvers.length === 11, `GA5 registry should have exactly 11 solvers, got ${ga5Registry.solvers.length}.`);
-  assert(Array.isArray(p1Registry.solvers) && p1Registry.solvers.length === 4, `P1 registry should have exactly 4 solvers, got ${p1Registry.solvers.length}.`);
+  assert(Array.isArray(p1Registry.solvers) && p1Registry.solvers.length === 5, `P1 registry should have exactly 5 solvers, got ${p1Registry.solvers.length}.`);
   await checkGa8OfficialParity(ga8Registry.solvers);
   checkGa0OfficialOrder(ga0Registry.solvers);
   await checkGa0SolversExecute(ga0Registry.solvers);
