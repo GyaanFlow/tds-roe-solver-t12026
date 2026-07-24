@@ -1,8 +1,13 @@
 import { normalizeEmail } from './utils.js';
 import { downloadIpynb, validateNotebookInputs } from './notebook-builder.js';
+import { buildAgentVariation, systemPromptLines } from './agent-variations.js';
 
 export const id = 'q-gcp-cloud-eval-dataset-server';
 export const title = 'Q4: AI Agent Dataset Upload to GCS';
+
+// Set by solve() on every run; read by the once-registered download handler. See the same
+// note in q-gcp-bucket-setup.js.
+let currentVariation = null;
 
 function pyStr(value) {
   return String(value).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
@@ -17,7 +22,7 @@ function readFileAsBase64(file) {
   });
 }
 
-function buildQ4NotebookCells({ bucketName, location, aipipeToken, fileB64, fileName }) {
+function buildQ4NotebookCells({ bucketName, location, aipipeToken, fileB64, fileName, variation }) {
   const b = pyStr(bucketName.trim());
   const loc = pyStr(location.trim());
   const tok = pyStr(aipipeToken.trim());
@@ -141,21 +146,11 @@ function buildQ4NotebookCells({ bucketName, location, aipipeToken, fileB64, file
       '',
       'messages = [',
       '    {"role": "system", "content": (',
-      '        "You are a cloud engineer agent running inside a Google Colab notebook. "',
-      '        "You can run shell commands using the run_command tool. gcloud is already "',
-      '        "authenticated as a service account for this project — do not run gcloud auth "',
-      '        "login or activate-service-account again. This is always a Linux bash shell. "',
-      '        "CRITICAL: Never wrap gcloud commands in your own if/else or && success-checking "',
-      '        "logic, and never redirect stderr (no \'2>&1\', no \'2>/dev/null\'). Run each gcloud "',
-      '        "command directly and unwrapped so its real exit code and error text propagate to "',
-      '        "the caller. Prefer --format=json over --format=value(...) for describe commands, "',
-      '        "since unquoted parentheses can break under a plain shell call. Do not invent your "',
-      '        "own \'STEP X ERROR\' messages that replace the actual error — always let the true "',
-      '        "stderr from the command show through."',
+      ...systemPromptLines(variation),
       '    )},',
       '    {"role": "user", "content": f"""',
-      'Complete this task autonomously, printing a clear "STEP X DONE: ..." status line after',
-      'each step. If a command fails, print the exact error and try one reasonable fix.',
+      variation.taskIntro,
+      `Use exactly this status-line format after each completed step: ${variation.statusFormat}`,
       '',
       'Project ID: {PROJECT_ID}',
       'Bucket name: {BUCKET_NAME}',
@@ -203,7 +198,7 @@ function buildQ4NotebookCells({ bucketName, location, aipipeToken, fileB64, file
       '    }',
       '}]',
       '',
-      'MAX_ITERATIONS = 20',
+      `MAX_ITERATIONS = ${variation.maxIterations}`,
       'for step in range(MAX_ITERATIONS):',
       '    response = client.chat.completions.create(model="gpt-5-nano", messages=messages, tools=tools)',
       '    msg = response.choices[0].message',
@@ -224,14 +219,14 @@ function buildQ4NotebookCells({ bucketName, location, aipipeToken, fileB64, file
       'else:',
       '    print("\\nReached max iterations without finishing — check the log above for a stuck loop.")',
       '',
-      'with open("q4_agent_log.jsonl", "w") as f:',
+      `with open("${variation.logFile}", "w") as f:`,
       '    for m in messages:',
       '        f.write(json.dumps(m) + "\\n")',
-      'print("\\nSaved log to q4_agent_log.jsonl")'
+      `print("\\nSaved log to ${variation.logFile}")`
     ] },
     { type: 'markdown', source: ['## Cell 6 — Get the log to paste into the exam'] },
     { type: 'code', source: [
-      'with open("q4_agent_log.jsonl") as f:',
+      `with open("${variation.logFile}") as f:`,
       '    print(f.read())'
     ] },
     { type: 'markdown', source: [
@@ -277,7 +272,14 @@ function registerQ4Interactive() {
       }
     }
 
-    const cells = buildQ4NotebookCells({ bucketName, location, aipipeToken, fileB64, fileName });
+    const cells = buildQ4NotebookCells({
+      bucketName,
+      location,
+      aipipeToken,
+      fileB64,
+      fileName,
+      variation: currentVariation || buildAgentVariation('', id, 'serviceAccount', 'q4')
+    });
     downloadIpynb('q4_gcp_dataset_upload.ipynb', cells);
 
     if (statusEl) {
@@ -292,6 +294,11 @@ function registerQ4Interactive() {
 export async function solve(email) {
   registerQ4Interactive();
   const norm = normalizeEmail(email);
+  // Per-student agent wording, distinct from this student's Q3 wording because the seed
+  // includes the question id — so Q3 and Q4 logs never look like copies of each other.
+  const varM3 = buildAgentVariation(norm, id, 'serviceAccount', 'q4');
+  const varM2 = buildAgentVariation(norm, id, 'userAccount', 'q4');
+  currentVariation = varM3;
 
   const summary = [
     `Download your private "eval.jsonl" from the live exam page (not from here — it's tied to`,
@@ -540,7 +547,7 @@ export async function solve(email) {
     `    }`,
     `}]`,
     ``,
-    `MAX_ITERATIONS = 20`,
+    `MAX_ITERATIONS = ${varM3.maxIterations}`,
     `for step in range(MAX_ITERATIONS):`,
     `    response = client.chat.completions.create(model="gpt-5-nano", messages=messages, tools=tools)`,
     `    msg = response.choices[0].message`,
@@ -561,15 +568,15 @@ export async function solve(email) {
     `else:`,
     `    print("\\nReached max iterations without finishing — check the log above for a stuck loop.")`,
     ``,
-    `with open("q4_agent_log.jsonl", "w") as f:`,
+    `with open("${varM3.logFile}", "w") as f:`,
     `    for m in messages:`,
     `        f.write(json.dumps(m) + "\\n")`,
-    `print("\\nSaved log to q4_agent_log.jsonl")`,
+    `print("\\nSaved log to ${varM3.logFile}")`,
     '```',
     ``,
     `### 3.6 — Cell 6: get the log to paste into the exam`,
     '```python',
-    `with open("q4_agent_log.jsonl") as f:`,
+    `with open("${varM3.logFile}") as f:`,
     `    print(f.read())`,
     '```',
     `Copy the printed text into the exam's \`agent_log_jsonl_file content\` field for **Q4**.`,
@@ -701,7 +708,7 @@ export async function solve(email) {
     `    }`,
     `}]`,
     ``,
-    `MAX_ITERATIONS = 20`,
+    `MAX_ITERATIONS = ${varM2.maxIterations}`,
     `for step in range(MAX_ITERATIONS):`,
     `    response = client.chat.completions.create(model="gpt-5-nano", messages=messages, tools=tools)`,
     `    msg = response.choices[0].message`,
@@ -722,15 +729,15 @@ export async function solve(email) {
     `else:`,
     `    print("\\nReached max iterations without finishing — check the log above for a stuck loop.")`,
     ``,
-    `with open("q4_agent_log.jsonl", "w") as f:`,
+    `with open("${varM2.logFile}", "w") as f:`,
     `    for m in messages:`,
     `        f.write(json.dumps(m) + "\\n")`,
-    `print("\\nSaved log to q4_agent_log.jsonl")`,
+    `print("\\nSaved log to ${varM2.logFile}")`,
     '```',
     ``,
     `### 2.5 — Cell 5: get the log to paste into the exam`,
     '```python',
-    `with open("q4_agent_log.jsonl") as f:`,
+    `with open("${varM2.logFile}") as f:`,
     `    print(f.read())`,
     '```',
     `Copy the printed text and paste it into the exam's \`agent_log_jsonl_file content\` field`,

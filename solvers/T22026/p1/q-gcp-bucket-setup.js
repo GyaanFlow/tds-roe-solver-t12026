@@ -1,14 +1,20 @@
 import { normalizeEmail } from './utils.js';
 import { downloadIpynb, validateNotebookInputs } from './notebook-builder.js';
+import { buildAgentVariation, systemPromptLines } from './agent-variations.js';
 
 export const id = 'q-gcp-cloud-gcp-cli-server';
 export const title = 'Q3: AI Agent GCS Bucket Setup';
+
+// Set by solve() on every run, read by the "Generate My Colab Notebook" click handler
+// (which is registered once, so it can't capture the variation in a closure). This keeps
+// the downloaded notebook's agent wording identical to the walkthrough shown on screen.
+let currentVariation = null;
 
 function pyStr(value) {
   return String(value).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
 }
 
-function buildQ3NotebookCells({ bucketName, location, aipipeToken }) {
+function buildQ3NotebookCells({ bucketName, location, aipipeToken, variation }) {
   const b = pyStr(bucketName.trim());
   const loc = pyStr(location.trim());
   const tok = pyStr(aipipeToken.trim());
@@ -103,21 +109,11 @@ function buildQ3NotebookCells({ bucketName, location, aipipeToken }) {
       '',
       'messages = [',
       '    {"role": "system", "content": (',
-      '        "You are a cloud engineer agent running inside a Google Colab notebook. "',
-      '        "You can run shell commands using the run_command tool. gcloud is already "',
-      '        "authenticated as a service account for this project — do not run gcloud auth "',
-      '        "login or activate-service-account again. This is always a Linux bash shell. "',
-      '        "CRITICAL: Never wrap gcloud commands in your own if/else or && success-checking "',
-      '        "logic, and never redirect stderr (no \'2>&1\', no \'2>/dev/null\'). Run each gcloud "',
-      '        "command directly and unwrapped so its real exit code and error text propagate to "',
-      '        "the caller. Prefer --format=json over --format=value(...) for describe commands, "',
-      '        "since unquoted parentheses can break under a plain shell call. Do not invent your "',
-      '        "own \'STEP X ERROR\' messages that replace the actual error — always let the true "',
-      '        "stderr from the command show through."',
+      ...systemPromptLines(variation),
       '    )},',
       '    {"role": "user", "content": f"""',
-      'Complete this task autonomously, printing a clear "STEP X DONE: ..." status line after',
-      'each step. If a command fails, print the exact error and try one reasonable fix.',
+      variation.taskIntro,
+      `Use exactly this status-line format after each completed step: ${variation.statusFormat}`,
       '',
       'Project ID: {PROJECT_ID}',
       'Bucket name: {BUCKET_NAME}',
@@ -136,7 +132,7 @@ function buildQ3NotebookCells({ bucketName, location, aipipeToken }) {
       '   gcloud storage buckets add-iam-policy-binding gs://{BUCKET_NAME} --member=allUsers --role=roles/storage.legacyBucketReader',
       '6. Confirm with gcloud storage buckets describe gs://{BUCKET_NAME} --format=json and',
       '   gcloud storage ls gs://{BUCKET_NAME}.',
-      '7. Print a final summary of every result above.',
+      `7. ${variation.summaryLine}`,
       '"""}',
       ']',
       '',
@@ -153,7 +149,7 @@ function buildQ3NotebookCells({ bucketName, location, aipipeToken }) {
       '    }',
       '}]',
       '',
-      'MAX_ITERATIONS = 20',
+      `MAX_ITERATIONS = ${variation.maxIterations}`,
       'for step in range(MAX_ITERATIONS):',
       '    response = client.chat.completions.create(model="gpt-5-nano", messages=messages, tools=tools)',
       '    msg = response.choices[0].message',
@@ -174,14 +170,14 @@ function buildQ3NotebookCells({ bucketName, location, aipipeToken }) {
       'else:',
       '    print("\\nReached max iterations without finishing — check the log above for a stuck loop.")',
       '',
-      'with open("q3_agent_log.jsonl", "w") as f:',
+      `with open("${variation.logFile}", "w") as f:`,
       '    for m in messages:',
       '        f.write(json.dumps(m) + "\\n")',
-      'print("\\nSaved log to q3_agent_log.jsonl")'
+      `print("\\nSaved log to ${variation.logFile}")`
     ] },
     { type: 'markdown', source: ['## Cell 5 — Get the log to paste into the exam'] },
     { type: 'code', source: [
-      'with open("q3_agent_log.jsonl") as f:',
+      `with open("${variation.logFile}") as f:`,
       '    print(f.read())'
     ] },
     { type: 'markdown', source: [
@@ -212,7 +208,12 @@ function registerQ3Interactive() {
       return;
     }
 
-    const cells = buildQ3NotebookCells({ bucketName, location, aipipeToken });
+    const cells = buildQ3NotebookCells({
+      bucketName,
+      location,
+      aipipeToken,
+      variation: currentVariation || buildAgentVariation('', id, 'serviceAccount', 'q3')
+    });
     downloadIpynb('q3_gcp_bucket_setup.ipynb', cells);
 
     if (statusEl) {
@@ -225,6 +226,12 @@ function registerQ3Interactive() {
 export async function solve(email) {
   registerQ3Interactive();
   const norm = normalizeEmail(email);
+  // Per-student agent wording. Method 3 (shared key) and Method 2 (own account) authenticate
+  // differently, so each gets its own variation with a matching auth sentence — which also
+  // means the two methods' logs don't look copy-pasted from each other.
+  const varM3 = buildAgentVariation(norm, id, 'serviceAccount', 'q3');
+  const varM2 = buildAgentVariation(norm, id, 'userAccount', 'q3');
+  currentVariation = varM3;
 
   const summary = [
     `Your bucket name is private and server-generated — you can only get it by downloading`,
@@ -406,19 +413,11 @@ export async function solve(email) {
     ``,
     `messages = [`,
     `    {"role": "system", "content": (`,
-    `        "You are a cloud engineer agent running inside a Google Colab notebook. "`,
-    `        "You can run shell commands using the run_command tool. gcloud is already "`,
-    `        "authenticated as a service account for this project — do not run gcloud auth "`,
-    `        "login or activate-service-account again. This is always a Linux bash shell. "`,
-    `        "Run every gcloud command directly and unwrapped — never pipe it through your "`,
-    `        "own if/else or && success-checking logic, and never redirect stderr (no 2>&1, "`,
-    `        "no 2>/dev/null). Let the command's real exit code and error text reach you "`,
-    `        "unmodified. Never invent a placeholder message like 'STEP X ERROR' in place "`,
-    `        "of the real error output — always quote what the command actually printed."`,
+    ...systemPromptLines(varM3),
     `    )},`,
     `    {"role": "user", "content": f"""`,
-    `Complete this task autonomously, printing a clear "STEP X DONE: ..." status line after`,
-    `each step. If a command fails, print the exact error and try one reasonable fix.`,
+    varM3.taskIntro,
+    `Use exactly this status-line format after each completed step: ${varM3.statusFormat}`,
     ``,
     `Project ID: {PROJECT_ID}`,
     `Bucket name: {BUCKET_NAME}`,
@@ -437,7 +436,7 @@ export async function solve(email) {
     `   gcloud storage buckets add-iam-policy-binding gs://{BUCKET_NAME} --member=allUsers --role=roles/storage.legacyBucketReader`,
     `6. Confirm with gcloud storage buckets describe gs://{BUCKET_NAME} and`,
     `   gcloud storage ls gs://{BUCKET_NAME}.`,
-    `7. Print a final summary of every result above.`,
+    `7. ${varM3.summaryLine}`,
     `"""}`,
     `]`,
     ``,
@@ -454,7 +453,7 @@ export async function solve(email) {
     `    }`,
     `}]`,
     ``,
-    `MAX_ITERATIONS = 20`,
+    `MAX_ITERATIONS = ${varM3.maxIterations}`,
     `for step in range(MAX_ITERATIONS):`,
     `    response = client.chat.completions.create(model="gpt-5-nano", messages=messages, tools=tools)`,
     `    msg = response.choices[0].message`,
@@ -475,15 +474,15 @@ export async function solve(email) {
     `else:`,
     `    print("\\nReached max iterations without finishing — check the log above for a stuck loop.")`,
     ``,
-    `with open("q3_agent_log.jsonl", "w") as f:`,
+    `with open("${varM3.logFile}", "w") as f:`,
     `    for m in messages:`,
     `        f.write(json.dumps(m) + "\\n")`,
-    `print("\\nSaved log to q3_agent_log.jsonl")`,
+    `print("\\nSaved log to ${varM3.logFile}")`,
     '```',
     ``,
     `### 3.6 — Cell 5: get the log to paste into the exam`,
     '```python',
-    `with open("q3_agent_log.jsonl") as f:`,
+    `with open("${varM3.logFile}") as f:`,
     `    print(f.read())`,
     '```',
     `Copy the printed text into the exam's \`agent_log_jsonl_file content\` field. Q4 is a`,
@@ -622,7 +621,7 @@ export async function solve(email) {
     `   (both are required — one alone is not "publicly readable and listable").`,
     `6. Confirm with gcloud storage buckets describe gs://{BUCKET_NAME} and`,
     `   gcloud storage ls gs://{BUCKET_NAME}.`,
-    `7. Print a final summary of every result above.`,
+    `7. ${varM2.summaryLine}`,
     `"""}`,
     `]`,
     ``,
@@ -639,7 +638,7 @@ export async function solve(email) {
     `    }`,
     `}]`,
     ``,
-    `MAX_ITERATIONS = 20`,
+    `MAX_ITERATIONS = ${varM2.maxIterations}`,
     `for step in range(MAX_ITERATIONS):`,
     `    response = client.chat.completions.create(model="gpt-5-nano", messages=messages, tools=tools)`,
     `    msg = response.choices[0].message`,
@@ -660,22 +659,22 @@ export async function solve(email) {
     `else:`,
     `    print("\\nReached max iterations without finishing — check the log above for a stuck loop.")`,
     ``,
-    `with open("q3_agent_log.jsonl", "w") as f:`,
+    `with open("${varM2.logFile}", "w") as f:`,
     `    for m in messages:`,
     `        f.write(json.dumps(m) + "\\n")`,
-    `print("\\nSaved log to q3_agent_log.jsonl")`,
+    `print("\\nSaved log to ${varM2.logFile}")`,
     '```',
     `Watch the output as it runs: you should see each \`gcloud\` command print, then real`,
     `output (not an error) below it, then the agent's own status line before it moves on.`,
     ``,
     `### 2.5 — Cell 4: get the log to paste into the exam`,
     '```python',
-    `with open("q3_agent_log.jsonl") as f:`,
+    `with open("${varM2.logFile}") as f:`,
     `    print(f.read())`,
     '```',
     `Run this, then select all the printed text in the output box, copy it, and paste it`,
     `into the exam's \`agent_log_jsonl_file content\` field. (Or use`,
-    `\`from google.colab import files; files.download("q3_agent_log.jsonl")\` to save it as`,
+    `\`from google.colab import files; files.download("${varM2.logFile}")\` to save it as`,
     `a file first, then open and copy from that.)`,
     ``,
     `### What "good" looks like`,
