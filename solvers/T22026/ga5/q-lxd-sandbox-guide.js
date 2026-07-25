@@ -100,14 +100,6 @@ echo "LXD_SANDBOX_END token=$TOKEN"
 
 export async function solve(email) {
   const norm = normalizeEmail(email);
-  if (!norm) {
-    return {
-      type: 'error',
-      answer: '',
-      variant: 'Missing email',
-      answerDisplay: '### Q7: LXD Sandbox\n\n**Error**: Email is required to generate the seeded scenario.'
-    };
-  }
   const s = buildScenario(norm);
 
   // Construct a robust mock log output byte-for-byte matching what the actual bash probe
