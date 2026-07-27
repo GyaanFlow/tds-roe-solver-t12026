@@ -4,7 +4,12 @@ export const id = 'q-scrape-books-server';
 export const title = 'Q7: Scrape Books to Scrape by Category and Value';
 
 const HOST = 'https://tds-roe-solver-api-t12026.onrender.com';
-const FETCH_TIMEOUT_MS = 55000; // Render free-tier cold start can take ~50s
+// Deliberately short: a Render free-tier cold start can take ~50s, but making the whole
+// workspace-compile animation stall that long on one node is a worse experience than falling
+// back to the (still complete, still correct) manual crawl guide quickly — same as every other
+// GA6 question resolving near-instantly. If the API happens to already be warm, this still
+// gets the live digest; if not, the manual guide is not a downgrade in correctness, just method.
+const FETCH_TIMEOUT_MS = 3000;
 
 function buildManualGuide(norm) {
   return [
@@ -96,8 +101,11 @@ function buildManualGuide(norm) {
   ].join('\n');
 }
 
-const MAX_RETRIES = 3;
-const RETRY_BACKOFF_MS = 1500;
+// Single attempt, no backoff loop — a retry-with-wait strategy only makes sense when a failure
+// is quick (a genuine 502 blip), but stacking multiple 3s timeouts back-to-back reintroduces
+// the same "workspace feels stuck" problem this file's whole timeout change exists to avoid.
+const MAX_RETRIES = 1;
+const RETRY_BACKOFF_MS = 0;
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
