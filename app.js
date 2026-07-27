@@ -956,6 +956,12 @@ function renderCanvas(index) {
   const health = getHealthMeta(data);
   const isSpecial = data.title && (data.title.toLowerCase().includes('heist') || data.title.toLowerCase().includes('nonce') || data.title.toLowerCase().includes('proof-of-work'));
 
+  // Direct-answer ("solved") questions already show the answer up front and the guide
+  // collapsed — put the guide box below the answer too, so it doesn't visually precede
+  // the thing the user actually came for. The onrender ga2/ga3 URL-answer case had the
+  // same need for the same reason before "solved" had its own collapse behavior.
+  const guideAfterAnswer = data.type === 'solved' || /onrender\.com\/ga[23]\//i.test(data.answer?.toLowerCase() || '');
+
   const isSpecialGa0Backup = (workspaceData.exam === 'ga0' && (index === 9 || index === 17 || index === 24));
   const colabBackupHtml = isSpecialGa0Backup ? `
     <div class="colab-backup-banner" style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.35); border-left: 4px solid var(--theme-primary); padding: 18px; border-radius: 12px; margin-bottom: 24px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.25);">
@@ -1014,9 +1020,9 @@ function renderCanvas(index) {
           ${renderDiagnosticsPanel(data.debug)}
         `
         : `
-          ${!/onrender\.com\/ga[23]\//i.test(data.answer?.toLowerCase() || '') ? renderGuidePanel(data) : ''}
+          ${!guideAfterAnswer ? renderGuidePanel(data) : ''}
           ${renderAnswerPanel(data, langClass)}
-          ${/onrender\.com\/ga[23]\//i.test(data.answer?.toLowerCase() || '') ? renderGuidePanel(data) : ''}
+          ${guideAfterAnswer ? renderGuidePanel(data) : ''}
           ${renderNotesPanel(data)}
           ${renderDiagnosticsPanel(data.debug)}
         `
