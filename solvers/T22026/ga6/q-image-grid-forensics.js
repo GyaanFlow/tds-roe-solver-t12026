@@ -390,7 +390,7 @@ function registerQ1Interactive() {
       if (token) {
         setStatus(`✅ Reconstructed and read the token automatically.`, '#198754');
         if (resultEl) {
-          resultEl.innerHTML = `<strong style="color:#86efac;">Recovered token:</strong> <code style="font-size:16px;background:#0b1930;padding:4px 10px;border-radius:6px;">${token}</code>`;
+          resultEl.innerHTML = `<div style="background:#0f2b1d;border:1px solid #198754;padding:14px;border-radius:10px;margin-top:12px;"><strong style="color:#86efac;font-size:14px;">Direct Answer Token:</strong> <code style="font-size:18px;background:#0b1930;color:#a6e3a1;padding:6px 12px;border-radius:6px;margin:0 8px;">${token}</code><button onclick="navigator.clipboard.writeText('${token}')" style="background:#198754;color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:12px;font-weight:bold;cursor:pointer;">📋 Copy Direct Answer</button></div>`;
         }
       } else {
         setStatus(`⚠️ Reconstruction complete, but automatic OCR couldn't confidently read the token — read it yourself from the image above (it may be rendered slightly imperfectly if a couple of tiles were misplaced, or the WHOLE image may need a quick rotate/flip below — relative tile placement and global orientation are solved separately).`, '#d97706');
@@ -482,15 +482,15 @@ export async function solve(email) {
   ].join('\n');
 
   return {
-    type: 'solved',
-    answer: "OPS-XXXXXXXXXX (Upload puzzle BMP below)",
+    type: 'guide',
+    answer: summary,
     variant: `Rotated grid forensics (upload-and-solve) for ${norm}`,
     answerDisplay: [
       `### Q1: Image Forensics — Recover a Rotated and Mirrored Grid`,
       ``,
-      `Upload your downloaded 600×600 BMP puzzle in the guide panel below to automatically reconstruct the 6×6 grid layout and read your \`OPS-XXXXXXXXXX\` token.`,
+      `Upload your downloaded 600×600 BMP puzzle in the guide panel below to automatically reconstruct the 6×6 grid layout and extract your direct \`OPS-XXXXXXXXXX\` answer.`,
       ``,
-      `**Token Format:** \`OPS-XXXXXXXXXX\``
+      summary
     ].join('\n'),
     guide
   };

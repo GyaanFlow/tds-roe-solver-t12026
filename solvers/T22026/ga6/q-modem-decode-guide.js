@@ -158,6 +158,7 @@ export async function solve(email) {
     '  <input id="ga6q10File" type="file" accept="audio/wav,audio/*" onchange="window._ga6q10Decode(this)" style="width:100%;padding:10px;border-radius:8px;border:1px solid #3d5f96;background:#0b1930;color:#e8f0fe;font-size:13px;box-sizing:border-box;" />',
     '  <div id="ga6q10Status" style="margin-top:12px;font-size:13px;min-height:18px;font-weight:600;"></div>',
     '  <input id="ga6q10Output" type="text" readonly placeholder="Decoded 5-character token will appear here..." style="width:100%;margin-top:10px;padding:10px;border-radius:8px;border:1px solid #3d5f96;background:#0b1930;color:#a6e3a1;font-family:monospace;font-size:16px;box-sizing:border-box;" />',
+    '  <button onclick="navigator.clipboard.writeText(document.getElementById(\'ga6q10Output\').value)" style="margin-top:10px;background:#198754;color:#fff;border:none;border-radius:8px;padding:10px 18px;font-weight:700;font-size:13px;cursor:pointer;">📋 Copy Direct Answer</button>',
     '  <div style="margin-top:12px;font-size:12px;color:#8fb0dd;">🔒 Audio processing runs 100% locally in your browser using WebAudio API + Goertzel filters.</div>',
     '</div>',
     ``,
@@ -173,13 +174,13 @@ export async function solve(email) {
   ].join('\n');
 
   return {
-    type: 'solved',
+    type: 'guide',
     answer: summary,
     variant: `Modem Audio Demodulator for ${norm}`,
     answerDisplay: [
       `### Q10: Decode a Hidden Modem Signal in Audio`,
       ``,
-      `Upload your downloaded \`signal-capture.wav\` in the guide panel below to automatically demodulate the FSK tones and decode your 5-character token in < 1 second.`,
+      `Upload your downloaded \`signal-capture.wav\` in the guide panel below to automatically demodulate the FSK tones and decode your direct 5-character token.`,
       ``,
       summary
     ].join('\n'),

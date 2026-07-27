@@ -136,18 +136,13 @@ export async function solve(email) {
   ].join('\n');
 
   return {
-    type: 'solved',
-    answer: defaultSqlQuery,
+    type: 'guide',
+    answer: 'Enter your 3 exam page values (Location, Min Sqft, Min Month) in the generator form below to generate your direct DuckDB SQL query.',
     variant: `DuckDB Regression Query Generator for ${norm}`,
     answerDisplay: [
       `### Q3: DuckDB Multi-Table Linear Regression`,
       ``,
-      `**Direct SQL Query Answer:**`,
-      '```sql',
-      defaultSqlQuery,
-      '```',
-      ``,
-      `Enter your 3 exam page values (Location, Min Sqft, Min Month) in the generator panel below to fill in your exact thresholds.`
+      `Enter your 3 exam page values (Location, Min Sqft, Min Month) in the generator panel below to output your exact filled DuckDB SQL query.`
     ].join('\n'),
     guide
   };
