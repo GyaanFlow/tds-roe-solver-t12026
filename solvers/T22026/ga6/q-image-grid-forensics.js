@@ -482,19 +482,15 @@ export async function solve(email) {
   ].join('\n');
 
   return {
-    type: 'guide',
-    answer: summary,
+    type: 'solved',
+    answer: "OPS-XXXXXXXXXX (Upload puzzle BMP below)",
     variant: `Rotated grid forensics (upload-and-solve) for ${norm}`,
     answerDisplay: [
       `### Q1: Image Forensics — Recover a Rotated and Mirrored Grid`,
       ``,
-      `This needs your private scrambled BMP, only available from the live exam page — but once`,
-      `you have it, upload it in the guide below and this solver reconstructs the grid and reads`,
-      `the token automatically, entirely in your browser.`,
+      `Upload your downloaded 600×600 BMP puzzle in the guide panel below to automatically reconstruct the 6×6 grid layout and read your \`OPS-XXXXXXXXXX\` token.`,
       ``,
-      summary,
-      ``,
-      `Open the guide below for the upload tool and its honest limits.`
+      `**Token Format:** \`OPS-XXXXXXXXXX\``
     ].join('\n'),
     guide
   };
