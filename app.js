@@ -280,16 +280,11 @@ function showToast(message, tone = 'info', duration = 2200) {
 const REPO_URL = 'https://github.com/GyaanFlow/tds-roe-solver-t12026';
 const PROFILE_URL = 'https://github.com/GyaanFlow';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/gaurav-tomar-630b2a316';
-const CELEBRATE_SEEN_KEY = 'tds_roe_celebrate_seen_v1';
 
-// A one-time, dismissible "nice work" card shown after a workspace finishes solving —
-// never blocks anything, never reappears once dismissed or once shown once per browser,
-// and the star/follow links are just an optional aside, not a gate on using the tool.
+// A dismissible "nice work" card shown every time a (public, unlocked) workspace finishes
+// solving — never blocks anything, auto-dismisses on its own if ignored, and the star/follow
+// links are just an optional aside, never a gate on using the tool.
 function maybeShowCelebrateCard(questionCount) {
-  try {
-    if (localStorage.getItem(CELEBRATE_SEEN_KEY)) return;
-  } catch (_) { /* localStorage unavailable — just skip, not worth breaking anything over */ }
-
   let host = document.getElementById('celebrateCard');
   if (host) host.remove();
 
@@ -300,7 +295,8 @@ function maybeShowCelebrateCard(questionCount) {
     <button type="button" class="celebrate-dismiss" aria-label="Dismiss">&times;</button>
     <div class="celebrate-title"><span class="celebrate-emoji">🎉</span> Workspace solved!</div>
     <div class="celebrate-body">${questionCount} question${questionCount === 1 ? '' : 's'} compiled. Hope it saved you some time.
-    If you'd like to support the project, a star, follow, or connect is always appreciated — totally optional.</div>
+    If you'd like to support the project, a <a href="${REPO_URL}" target="_blank" rel="noopener noreferrer" class="celebrate-inline-link">star on GitHub</a> or a
+    <a href="${LINKEDIN_URL}" target="_blank" rel="noopener noreferrer" class="celebrate-inline-link">follow on LinkedIn</a> is always appreciated — totally optional.</div>
     <div class="celebrate-actions">
       <a class="celebrate-btn celebrate-btn-star" href="${REPO_URL}" target="_blank" rel="noopener noreferrer">⭐ Star</a>
       <a class="celebrate-btn celebrate-btn-follow" href="${PROFILE_URL}" target="_blank" rel="noopener noreferrer">🐙 Follow</a>
@@ -312,7 +308,6 @@ function maybeShowCelebrateCard(questionCount) {
   const dismiss = () => {
     host.classList.remove('celebrate-visible');
     window.setTimeout(() => host.remove(), 280);
-    try { localStorage.setItem(CELEBRATE_SEEN_KEY, '1'); } catch (_) { /* ignore */ }
   };
   host.querySelector('.celebrate-dismiss').addEventListener('click', dismiss);
   host.querySelectorAll('.celebrate-btn').forEach(btn => btn.addEventListener('click', dismiss));

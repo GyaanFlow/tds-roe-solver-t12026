@@ -200,6 +200,13 @@ body {
   line-height: 1.55;
   margin-bottom: 14px;
 }
+.celebrate-inline-link {
+  color: #93c5fd;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.celebrate-inline-link:hover { color: #bfdbfe; }
 .celebrate-actions {
   display: flex;
   gap: 8px;
