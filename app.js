@@ -640,6 +640,7 @@ function renderAnswerPanel(data, langClass) {
   const actions = `
     <div class="panel-actions">
       <button class="btn-ghost panel-btn" id="copyAnswerBtn">Copy Answer</button>
+      <button class="btn-ghost panel-btn" id="downloadAnswerBtn">Download .txt</button>
       <button class="btn-ghost panel-btn" id="copyVariantBtn">Copy Variant</button>
       <button class="btn-ghost panel-btn" id="toggleWrapBtn">${rawWrapEnabled ? 'No Wrap' : 'Wrap Lines'}</button>
     </div>
@@ -802,6 +803,11 @@ function bindCanvasActions(data) {
   });
   document.getElementById('copyVariantBtn')?.addEventListener('click', (event) => {
     copyToClipboard(data.variant || '', event.currentTarget);
+  });
+  document.getElementById('downloadAnswerBtn')?.addEventListener('click', () => {
+    const safeName = (data.title || 'answer').replace(/[^a-z0-9]+/gi, '_').replace(/^_+|_+$/g, '').toLowerCase() || 'answer';
+    downloadFile(`${safeName}.txt`, data.answer || '', 'text/plain');
+    showToast('Answer downloaded as .txt', 'success');
   });
   document.getElementById('toggleWrapBtn')?.addEventListener('click', () => {
     rawWrapEnabled = !rawWrapEnabled;
