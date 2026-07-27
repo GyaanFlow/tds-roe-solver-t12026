@@ -5,8 +5,6 @@ export const id = 'q-scrape-books-server';
 export const title = 'Q7: Scrape Books to Scrape by Category and Value';
 
 const HOST = 'https://tds-roe-solver-api-t12026.onrender.com';
-const FETCH_TIMEOUT_MS = 25000;
-const MAX_RETRIES = 2;
 
 const ALL_CATEGORIES = [
   { name: "Travel", slug: "travel_2" },
@@ -92,59 +90,66 @@ export function computeSeededQ7Targets(email) {
   };
 }
 
-async function fetchDigestOnce(url) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
-  try {
-    const res = await fetch(url, { signal: controller.signal });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    if (!data || typeof data.digest !== 'string' || !/^[0-9a-f]{64}$/i.test(data.digest)) {
-      throw new Error('Invalid digest returned');
-    }
-    return data;
-  } finally {
-    clearTimeout(timeout);
-  }
-}
+function registerQ7Interactive() {
+  if (typeof window === 'undefined' || window._ga6q7Registered) return;
+  window._ga6q7Registered = true;
 
-async function fetchDigestWithRetry(url) {
-  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
-    try {
-      return await fetchDigestOnce(url);
-    } catch (err) {
-      if (attempt === MAX_RETRIES - 1) throw err;
-      await new Promise(r => setTimeout(r, 1000));
+  window._ga6q7FetchDigest = async function (email) {
+    const statusEl = document.getElementById('ga6q7Status');
+    const outputEl = document.getElementById('ga6q7Output');
+    if (statusEl) {
+      statusEl.style.color = '#4da6ff';
+      statusEl.textContent = 'Fetching live SHA-256 digest on-demand…';
     }
-  }
+
+    try {
+      const url = `${HOST}/ga6/${encodeURIComponent(email)}/scrape-books`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      if (data && data.digest) {
+        if (statusEl) {
+          statusEl.style.color = '#198754';
+          statusEl.textContent = `✅ Live SHA-256 digest fetched successfully!`;
+        }
+        if (outputEl) {
+          outputEl.value = data.digest;
+        }
+      } else {
+        throw new Error('Invalid digest format returned');
+      }
+    } catch (err) {
+      if (statusEl) {
+        statusEl.style.color = '#d97706';
+        statusEl.textContent = `⚠️ On-demand fetch note: ${err.message}. Run the Python scraper below for offline calculation.`;
+      }
+    }
+  };
 }
 
 export async function solve(email) {
+  registerQ7Interactive();
   const norm = normalizeEmail(email);
   const targets = computeSeededQ7Targets(norm);
-  const url = `${HOST}/ga6/${encodeURIComponent(norm)}/scrape-books`;
-
-  let digest = null;
-  let matchCount = null;
-  try {
-    const data = await fetchDigestWithRetry(url);
-    digest = data.digest;
-    matchCount = data.matchCount;
-  } catch (err) {
-    console.warn(`[Q7] Live API fetch fallback: ${err.message}`);
-  }
-
-  const answer = digest || `Categories: ${targets.categoryNames.join(', ')} | Price: £${targets.minPrice}-£${targets.maxPrice} | Rating >= ${targets.minRating}`;
+  const answer = `Categories: ${targets.categoryNames.join(', ')} | Price: £${targets.minPrice}-£${targets.maxPrice} | Rating >= ${targets.minRating} | Availability >= ${targets.minAvailability}`;
 
   const guide = [
     `## Q7 — Scrape Books to Scrape by Category and Value (for ${norm})`,
     ``,
-    `### Assigned Seeded Target Parameters`,
+    `### Assigned Seeded Target Parameters (0ms Instant Load)`,
     `- **Categories:** ${targets.categoryNames.join(', ')}`,
     `- **Minimum Rating:** ${targets.minRating}`,
     `- **Price Range:** £${targets.minPrice} – £${targets.maxPrice}`,
     `- **Minimum Availability:** ${targets.minAvailability}`,
-    digest ? `- **Live SHA-256 Digest:** \`${digest}\`` : `- **API Status:** Waking up / live scraper endpoint: \`${url}\``,
+    ``,
+    `### ⚡ Optional On-Demand SHA-256 Digest Fetcher`,
+    `<div style="background:linear-gradient(135deg,#0f2444 0%,#1a3a6b 100%);border-radius:14px;padding:20px;margin:16px 0;color:#e8f0fe;border:1px solid #2d4d80;">`,
+    `  <div style="font-size:12px;letter-spacing:1px;color:#4da6ff;text-transform:uppercase;margin-bottom:10px;font-weight:700;">Zero-Latency Initial Load — Click Below to Fetch Digest On-Demand</div>`,
+    `  <button onclick="window._ga6q7FetchDigest('${norm}')" style="background:#3b82f6;color:#fff;border:none;border-radius:8px;padding:10px 18px;font-weight:700;font-size:13px;cursor:pointer;">⚡ Fetch Live SHA-256 Digest On-Demand</button>`,
+    `  <div id="ga6q7Status" style="margin-top:10px;font-size:13px;font-weight:600;min-height:18px;"></div>`,
+    `  <input id="ga6q7Output" type="text" readonly placeholder="Live SHA-256 digest will appear here..." style="width:100%;margin-top:10px;padding:10px;border-radius:8px;border:1px solid #3d5f96;background:#0b1930;color:#a6e3a1;font-family:monospace;font-size:14px;box-sizing:border-box;" />`,
+    `  <button onclick="navigator.clipboard.writeText(document.getElementById('ga6q7Output').value)" style="margin-top:10px;background:#198754;color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:700;font-size:13px;cursor:pointer;">📋 Copy Digest Answer</button>`,
+    `</div>`,
     ``,
     `### Python Scraper Code (Auto-Scrapes Live books.toscrape.com)`,
     '```python',
@@ -190,19 +195,18 @@ export async function solve(email) {
   ].join('\n');
 
   return {
-    type: 'solved',
+    type: 'guide',
     answer,
-    variant: `Books to Scrape digest for ${norm}`,
+    variant: `Books to Scrape target parameters for ${norm} (0ms instant load, no blocking network calls)`,
     answerDisplay: [
       `### Q7: Scrape Books to Scrape by Category and Value`,
       ``,
-      `**Computed SHA-256 Digest (Direct Answer):**`,
+      `Your assigned target parameters (computed locally in 0ms, zero network calls):`,
       '```text',
       answer,
       '```',
       ``,
-      `**Assigned Target Categories:** ${targets.categoryNames.join(', ')}`,
-      `**Rating ≥** ${targets.minRating} | **Price:** £${targets.minPrice}–£${targets.maxPrice} | **Availability ≥** ${targets.minAvailability}`
+      `Click the **"⚡ Fetch Live SHA-256 Digest On-Demand"** button in the guide panel below to get the 64-character SHA-256 digest on-demand without delaying initial page load.`
     ].join('\n'),
     guide
   };
