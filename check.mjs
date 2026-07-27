@@ -473,6 +473,89 @@ async function checkGa5SolversExecute(solvers) {
   }
 }
 
+function checkGa6OfficialOrder(solvers) {
+  const officialIds = [
+    'q-rotated-image-grid-forensics-server',
+    'q-minimal-prompt-robustness',
+    'q-duckdb-regression-analysis',
+    'q-playwright-shadow-incident-audit-server',
+    'q-duckdb-json-ledger-reconciliation-server',
+    'q-politeness-audit-server',
+    'q-scrape-books-server',
+    'q-github-action-playwright',
+    'q-playwright-table-server',
+    'q-modem-in-static-server'
+  ];
+
+  assert(solvers.length === officialIds.length, `Expected ${officialIds.length} GA6 solvers, got ${solvers.length}.`);
+  assert(
+    solvers.map((solver) => solver.id).join('|') === officialIds.join('|'),
+    'GA6 solver order/IDs no longer match the official May 2026 GA6 bundle.'
+  );
+}
+
+async function checkGa6SolversExecute(solvers) {
+  const sampleEmails = [
+    '21f1000000@ds.study.iitm.ac.in',
+    '22f2001234@ds.study.iitm.ac.in',
+    'USER.Test+GA6@Example.COM',
+    '' // empty email must not crash a solver
+  ];
+
+  for (const email of sampleEmails) {
+    for (const solver of solvers) {
+      const result = await solver.solve(email);
+      assert(result && typeof result === 'object', `GA6 ${solver.id} returned a non-object result.`);
+      assert(typeof result.answer === 'string', `GA6 ${solver.id} answer must be a string.`);
+      assert(result.answer.length > 0, `GA6 ${solver.id} answer must not be empty.`);
+      assert(
+        ['solved', 'guide', 'bypass', 'error'].includes(result.type),
+        `GA6 ${solver.id} returned unexpected result type: ${result.type}.`
+      );
+      if (result.answer.trim().startsWith('{') || result.answer.trim().startsWith('[')) {
+        try {
+          JSON.parse(result.answer);
+        } catch (e) {
+          assert(false, `GA6 ${solver.id} answer is not valid JSON: ${e.message}`);
+        }
+      }
+      // Determinism: same email must yield the same answer every time.
+      const result2 = await solver.solve(email);
+      assert(result.answer === result2.answer, `GA6 ${solver.id} is non-deterministic for the same email.`);
+    }
+  }
+
+  // Sanity-check the shape of the 4 real "solved" JSON answers beyond just "is valid JSON".
+  const promptAudit = solvers.find((s) => s.id === 'q-minimal-prompt-robustness');
+  assert(promptAudit, 'GA6 q-minimal-prompt-robustness not found in registry.');
+  const promptResult = await promptAudit.solve('23f1000805@ds.study.iitm.ac.in');
+  assert(/^I\d+(, I\d+)*; \d+; \d+\.\d+; \d+\.\d+$/.test(promptResult.answer), `GA6 prompt robustness answer has an unexpected format: ${promptResult.answer}`);
+
+  const ledger = solvers.find((s) => s.id === 'q-duckdb-json-ledger-reconciliation-server');
+  assert(ledger, 'GA6 q-duckdb-json-ledger-reconciliation-server not found in registry.');
+  const ledgerResult = JSON.parse((await ledger.solve('23f1000805@ds.study.iitm.ac.in')).answer);
+  for (const key of ['invoice_count', 'net_usd', 'top_sku', 'top_sku_usd']) {
+    assert(key in ledgerResult, `GA6 ledger reconciliation answer missing key "${key}".`);
+  }
+
+  const incidentAudit = solvers.find((s) => s.id === 'q-playwright-shadow-incident-audit-server');
+  assert(incidentAudit, 'GA6 q-playwright-shadow-incident-audit-server not found in registry.');
+  const incidentResult = JSON.parse((await incidentAudit.solve('23f1000805@ds.study.iitm.ac.in')).answer);
+  for (const key of ['resolved_incidents', 'downtime_minutes', 'loss_usd', 'p95_minutes']) {
+    assert(key in incidentResult, `GA6 incident audit answer missing key "${key}".`);
+  }
+
+  const politeness = solvers.find((s) => s.id === 'q-politeness-audit-server');
+  assert(politeness, 'GA6 q-politeness-audit-server not found in registry.');
+  const politenessResult = JSON.parse((await politeness.solve('23f1000805@ds.study.iitm.ac.in')).answer);
+  assert(/^[0-9a-f]{64}$/.test(politenessResult.data_hash), `GA6 politeness audit data_hash is not a 64-char lowercase hex digest: ${politenessResult.data_hash}`);
+
+  const tableSum = solvers.find((s) => s.id === 'q-playwright-table-server');
+  assert(tableSum, 'GA6 q-playwright-table-server not found in registry.');
+  const tableSumResult = await tableSum.solve('23f1000805@ds.study.iitm.ac.in');
+  assert(/^\d+$/.test(tableSumResult.answer), `GA6 table sum answer is not a plain integer: ${tableSumResult.answer}`);
+}
+
 function checkP1OfficialOrder(solvers) {
   const officialIds = [
     'q-interview-requirements-audio',
@@ -560,6 +643,7 @@ async function main() {
   const ga3Registry = await importFresh('solvers/T22026/ga3/registry.js');
   const ga4Registry = await importFresh('solvers/T22026/ga4/registry.js');
   const ga5Registry = await importFresh('solvers/T22026/ga5/registry.js');
+  const ga6Registry = await importFresh('solvers/T22026/ga6/registry.js');
   const p1Registry = await importFresh('solvers/T22026/p1/registry.js');
 
   assert(Array.isArray(ga7Registry.solvers) && ga7Registry.solvers.length > 0, 'GA7 registry did not load solvers.');
@@ -572,6 +656,7 @@ async function main() {
   assert(Array.isArray(ga3Registry.solvers) && ga3Registry.solvers.length === 13, `GA3 registry should have exactly 13 solvers, got ${ga3Registry.solvers.length}.`);
   assert(Array.isArray(ga4Registry.solvers) && ga4Registry.solvers.length === 13, `GA4 registry should have exactly 13 solvers, got ${ga4Registry.solvers.length}.`);
   assert(Array.isArray(ga5Registry.solvers) && ga5Registry.solvers.length === 11, `GA5 registry should have exactly 11 solvers, got ${ga5Registry.solvers.length}.`);
+  assert(Array.isArray(ga6Registry.solvers) && ga6Registry.solvers.length === 10, `GA6 registry should have exactly 10 solvers, got ${ga6Registry.solvers.length}.`);
   assert(Array.isArray(p1Registry.solvers) && p1Registry.solvers.length === 5, `P1 registry should have exactly 5 solvers, got ${p1Registry.solvers.length}.`);
   await checkGa8OfficialParity(ga8Registry.solvers);
   checkGa0OfficialOrder(ga0Registry.solvers);
@@ -584,12 +669,14 @@ async function main() {
   await checkGa4SolversExecute(ga4Registry.solvers);
   checkGa5OfficialOrder(ga5Registry.solvers);
   await checkGa5SolversExecute(ga5Registry.solvers);
+  checkGa6OfficialOrder(ga6Registry.solvers);
+  await checkGa6SolversExecute(ga6Registry.solvers);
   checkP1OfficialOrder(p1Registry.solvers);
   await checkP1SolversExecute(p1Registry.solvers);
 
   await checkServerRoutes();
 
-  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}, GA5 solvers=${ga5Registry.solvers.length}, P1 solvers=${p1Registry.solvers.length}`);
+  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}, GA5 solvers=${ga5Registry.solvers.length}, GA6 solvers=${ga6Registry.solvers.length}, P1 solvers=${p1Registry.solvers.length}`);
 }
 
 main().catch((error) => {

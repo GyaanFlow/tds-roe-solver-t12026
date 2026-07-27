@@ -1,0 +1,118 @@
+import { normalizeEmail } from './utils.js';
+
+export const id = 'q-rotated-image-grid-forensics-server';
+export const title = 'Q1: Image Forensics — Recover a Rotated and Mirrored Grid';
+
+export async function solve(email) {
+  const norm = normalizeEmail(email);
+
+  const summary = [
+    `Download your private scrambled 6×6 forensic-grid BMP from the live exam page (not from`,
+    `here — the image is generated per-student and only released via an authenticated`,
+    `\`questionData\` request tied to your login session). Split it into 36 tiles, figure out`,
+    `each tile's rotation/mirror, solve the 6×6 layout as a constraint problem, and read off the`,
+    `token printed across the reassembled centre.`
+  ].join(' ');
+
+  const guide = [
+    `## Q1 — Rotated Image-Grid Forensics: step-by-step (for ${norm})`,
+    ``,
+    `### Why this solver can't give you the puzzle or the answer`,
+    `The 600×600 BMP is generated and scrambled uniquely per student, downloaded only via an`,
+    `authenticated \`questionData?email=...&quizSign=...\` request on the live exam page — this`,
+    `offline tool has no access to that session. Everything below is the exact method to solve`,
+    `it once you have your image.`,
+    ``,
+    `### The setup`,
+    `A placard was cut into a **6×6 grid of 100×100 tiles**. All 36 tiles were randomly`,
+    `permuted, each independently rotated by a multiple of 90°, and optionally mirrored — one`,
+    `of **8 possible D4 orientations** per tile (4 rotations × mirrored-or-not).`,
+    ``,
+    `### Step 1 — Download and split`,
+    `1. Log into the real TDS exam page with your own account (${norm}) and download your BMP.`,
+    `2. Load it losslessly (no rescale/recompress/blur/colour-correct) and slice into exactly`,
+    `   36 tiles of 100×100 pixels each, e.g. with Pillow:`,
+    '```python',
+    `from PIL import Image`,
+    `img = Image.open("puzzle.bmp")`,
+    `tiles = [img.crop((c*100, r*100, c*100+100, r*100+100)) for r in range(6) for c in range(6)]`,
+    '```',
+    ``,
+    `### Step 2 — Enumerate every tile's 8 orientations`,
+    `For each tile, generate all 8 D4 transforms (identity, rot90, rot180, rot270, and each`,
+    `mirrored) — Pillow's \`transpose()\` covers all of them:`,
+    '```python',
+    `from PIL import Image`,
+    `def all_orientations(tile):`,
+    `    variants = []`,
+    `    for rot in [Image.ROTATE_0, Image.ROTATE_90, Image.ROTATE_180, Image.ROTATE_270]:`,
+    `        base = tile if rot == Image.ROTATE_0 else tile.transpose(rot)`,
+    `        variants.append(base)`,
+    `        variants.append(base.transpose(Image.FLIP_LEFT_RIGHT))`,
+    `    return variants  # 8 orientations`,
+    '```',
+    ``,
+    `### Step 3 — Score edge compatibility between oriented tiles`,
+    `Every original tile shares a narrow **16-sample colour signature** with its true neighbour`,
+    `along the touching edge. Extract each oriented tile's 4 edge strips (top/right/bottom/left,`,
+    `16 samples each) as small arrays, then score two tiles' compatibility as the negative`,
+    `colour-distance (e.g. sum of squared differences) between one tile's edge and the`,
+    `*reversed* sequence of the touching tile's opposite edge — **edge sequences reverse under`,
+    `some orientations**, so always compare against both the direct and reversed sequence and`,
+    `keep whichever is better; don't assume orientation alone tells you which to use.`,
+    ``,
+    `### Step 4 — Identify the frame`,
+    `The outer border of the full placard has a **dark solid border plus a dashed light`,
+    `sentinel** pattern baked into the outermost edges. Tiles that sit on the placard's border`,
+    `(row 0, row 5, col 0, col 5) will show this pattern on their outward-facing edge in their`,
+    `*correct* orientation — use this to anchor the 4 corners and the border tiles first, which`,
+    `dramatically shrinks the search space for the interior 4×4 tiles.`,
+    ``,
+    `### Step 5 — Solve the assignment, don't greedily place tiles`,
+    `⚠️ **This is the step that actually determines whether you get the right token.** A greedy`,
+    `"place the best-scoring neighbour next" approach can lock in a locally-good match early`,
+    `and never recover, landing on a globally inconsistent layout (edges look fine pairwise but`,
+    `the whole grid doesn't reconstruct a coherent image). Instead:`,
+    `- Formulate it as a **constraint-satisfaction / assignment problem**: 36 tile-orientation`,
+    `  pairs to 36 grid positions, maximizing total edge-compatibility score across all shared`,
+    `  edges simultaneously.`,
+    `- A **backtracking search with edge-compatibility pruning** (place border/corners first`,
+    `  from Step 4, then fill interior cells constrained by already-placed neighbours) is`,
+    `  tractable for 36 tiles and reliably finds the globally consistent layout.`,
+    `- Alternatively, a **beam search** keeping the top-K partial layouts by cumulative edge`,
+    `  score at each step avoids the single-path trap of pure greedy placement.`,
+    ``,
+    `### Step 6 — Reassemble and read the token`,
+    `Once every tile has a confirmed position + orientation, paste them into a single 600×600`,
+    `canvas in the correct order and orientation. The reconstructed centre displays a token in`,
+    `the form \`OPS-XXXXXXXXXX\`.`,
+    ``,
+    `### Submit`,
+    `Paste the recovered token exactly as printed (format \`OPS-XXXXXXXXXX\`) into the answer box.`,
+    ``,
+    `### Common mistakes`,
+    `- Rescaling/recompressing tiles before comparing edges — this corrupts the exact colour`,
+    `  signature the puzzle relies on. Work with the lossless original pixels throughout.`,
+    `- Forgetting to check the **reversed** edge sequence when comparing oriented tiles — half`,
+    `  of the 8 orientations reverse the edge's sample order relative to the original.`,
+    `- Greedy placement instead of a global assignment/backtracking solve (see Step 5).`
+  ].join('\n');
+
+  return {
+    type: 'guide',
+    answer: summary,
+    variant: `Rotated grid forensics walkthrough for ${norm}`,
+    answerDisplay: [
+      `### Q1: Image Forensics — Recover a Rotated and Mirrored Grid`,
+      ``,
+      `This needs your private scrambled BMP, only available from the live exam page (tied to`,
+      `your login session) — this offline solver cannot fetch or reconstruct it for you.`,
+      ``,
+      summary,
+      ``,
+      `Full step-by-step method (tile splitting, D4 orientation enumeration, edge-signature`,
+      `scoring, frame detection, and why greedy placement fails) is in the guide below.`
+    ].join('\n'),
+    guide
+  };
+}
