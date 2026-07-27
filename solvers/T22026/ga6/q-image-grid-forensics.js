@@ -222,7 +222,7 @@ function loadImageFromFile(file) {
   return new Promise((resolve, reject) => {
     const url = URL.createObjectURL(file);
     const img = new Image();
-    img.onload = () => { resolve(img); };
+    img.onload = () => { URL.revokeObjectURL(url); resolve(img); };
     img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('Could not decode the uploaded image — is it a valid BMP/PNG?')); };
     img.src = url;
   });

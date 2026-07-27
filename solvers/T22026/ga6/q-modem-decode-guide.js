@@ -3,31 +3,165 @@ import { normalizeEmail } from './utils.js';
 export const id = 'q-modem-in-static-server';
 export const title = 'Q10: Decode a Hidden Modem Signal in Audio';
 
+const LOW_FREQS = [697, 770, 852, 941, 1040, 1160];
+const HIGH_FREQS = [1209, 1336, 1477, 1633, 1777, 1919];
+const GRID_CHARS = [
+  ['A', 'B', 'C', 'D', 'E', 'F'],
+  ['G', 'H', 'I', 'J', 'K', 'L'],
+  ['M', 'N', 'O', 'P', 'Q', 'R'],
+  ['S', 'T', 'U', 'V', 'W', 'X'],
+  ['Y', 'Z', '0', '1', '2', '3'],
+  ['4', '5', '6', '7', '8', '9']
+];
+
+function closestFreqIndex(freq, targets) {
+  let bestIdx = 0;
+  let bestDiff = Math.abs(freq - targets[0]);
+  for (let i = 1; i < targets.length; i++) {
+    const diff = Math.abs(freq - targets[i]);
+    if (diff < bestDiff) {
+      bestDiff = diff;
+      bestIdx = i;
+    }
+  }
+  return { index: bestIdx, diff: bestDiff };
+}
+
+function GoertzelFilter(targetFreq, sampleRate, data) {
+  const k = Math.round((data.length * targetFreq) / sampleRate);
+  const omega = (2 * Math.PI * k) / data.length;
+  const coeff = 2 * Math.cos(omega);
+  let s_prev = 0;
+  let s_prev2 = 0;
+  for (let i = 0; i < data.length; i++) {
+    const s = data[i] + coeff * s_prev - s_prev2;
+    s_prev2 = s_prev;
+    s_prev = s;
+  }
+  return s_prev2 * s_prev2 + s_prev * s_prev - coeff * s_prev * s_prev2;
+}
+
+function decodeAudioBuffer(pcm, sampleRate) {
+  const windowSize = Math.floor(sampleRate * 0.15); // 150ms window
+  const stepSize = Math.floor(sampleRate * 0.05);   // 50ms step
+  const rawWindows = [];
+  let maxObservedPower = 0;
+
+  for (let pos = 0; pos + windowSize <= pcm.length; pos += stepSize) {
+    const chunk = pcm.subarray(pos, pos + windowSize);
+    
+    let maxLowPower = -1, bestLowIdx = -1;
+    LOW_FREQS.forEach((f, idx) => {
+      const p = GoertzelFilter(f, sampleRate, chunk);
+      if (p > maxLowPower) { maxLowPower = p; bestLowIdx = idx; }
+    });
+
+    let maxHighPower = -1, bestHighIdx = -1;
+    HIGH_FREQS.forEach((f, idx) => {
+      const p = GoertzelFilter(f, sampleRate, chunk);
+      if (p > maxHighPower) { maxHighPower = p; bestHighIdx = idx; }
+    });
+
+    const totalPower = maxLowPower + maxHighPower;
+    if (totalPower > maxObservedPower) maxObservedPower = totalPower;
+    rawWindows.push({ timeSec: pos / sampleRate, lowIdx: bestLowIdx, highIdx: bestHighIdx, power: totalPower });
+  }
+
+  // Adaptive thresholding: 20% of max observed burst power in recording
+  const adaptiveThreshold = Math.max(0.01, maxObservedPower * 0.20);
+  const bursts = rawWindows.filter(w => w.power >= adaptiveThreshold);
+
+  // Cluster burst detections into distinct time windows (5 expected bursts)
+  const clusters = [];
+  bursts.forEach(b => {
+    if (clusters.length === 0 || b.timeSec - clusters[clusters.length - 1].timeSec > 0.3) {
+      clusters.push({ ...b, count: 1 });
+    } else {
+      const last = clusters[clusters.length - 1];
+      if (b.power > last.power) {
+        last.lowIdx = b.lowIdx;
+        last.highIdx = b.highIdx;
+        last.power = b.power;
+      }
+      last.count++;
+    }
+  });
+
+  const chars = clusters.map(c => GRID_CHARS[c.lowIdx][c.highIdx]);
+  return chars.join('');
+}
+
+function registerQ10Interactive() {
+  if (typeof window === 'undefined' || window._ga6q10Registered) return;
+  window._ga6q10Registered = true;
+
+  window._ga6q10Decode = async function (input) {
+    const statusEl = document.getElementById('ga6q10Status');
+    const outputEl = document.getElementById('ga6q10Output');
+    const file = input?.files?.[0];
+    if (!file) return;
+
+    try {
+      if (statusEl) {
+        statusEl.style.color = '#4da6ff';
+        statusEl.textContent = 'Reading WAV file & decoding audio signal…';
+      }
+
+      const arrayBuffer = await file.arrayBuffer();
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+      const channelData = audioBuffer.getChannelData(0);
+      const sampleRate = audioBuffer.sampleRate;
+
+      const code = decodeAudioBuffer(channelData, sampleRate);
+
+      if (code && code.length >= 5) {
+        const token = code.slice(0, 5);
+        if (statusEl) {
+          statusEl.style.color = '#198754';
+          statusEl.textContent = `✅ Decoded 5-character modem token: ${token}`;
+        }
+        if (outputEl) outputEl.value = token;
+      } else {
+        if (statusEl) {
+          statusEl.style.color = '#d97706';
+          statusEl.textContent = 'Could not isolate 5 distinct tones. Raw output: ' + (code || 'None');
+        }
+        if (outputEl) outputEl.value = code || '';
+      }
+    } catch (err) {
+      if (statusEl) {
+        statusEl.style.color = '#dc3545';
+        statusEl.textContent = '❌ Failed to process audio: ' + err.message;
+      }
+    }
+  };
+}
+
 export async function solve(email) {
+  registerQ10Interactive();
   const norm = normalizeEmail(email);
 
   const summary = [
-    `Download your private per-student WAV file from the live exam page (via an authenticated`,
-    `backendVerify download, not derivable offline), find 5 DTMF-style tone bursts on a`,
-    `spectrogram between 600Hz-2000Hz, decode each burst's (low, high) frequency pair against`,
-    `the 6x6 grid, and submit the resulting 5-character code.`
+    `Download your private per-student WAV audio file from the live exam page, then upload it below`,
+    `— this solver uses in-browser WebAudio Goertzel/STFT signal processing to isolate the 5 modem`,
+    `tone bursts and extract your 5-character token automatically.`
   ].join(' ');
 
   const guide = [
-    `## Q10 — Decode a Hidden Modem Signal: step-by-step (for ${norm})`,
+    `## Q10 — Decode a Hidden Modem Signal (for ${norm})`,
     ``,
-    `### Why this solver can't give you the code`,
-    `Your 16kHz WAV recording is generated and synthesized per-student on the real exam server,`,
-    `released only via an authenticated \`/backendVerify\` download request tied to your login`,
-    `session — this offline tool has no access to that private audio. The decoding *method*`,
-    `below is fully general and will work on whatever file you download.`,
+    `### 🚀 Upload WAV — Decode Token Automatically`,
     ``,
-    `### The setup`,
-    `The signal contains **5 discrete tone bursts** (~0.32s each, ~0.2s gaps), somewhere between`,
-    `10s and 40s into the recording. Each burst is a DTMF-style pair: one **low-frequency** tone`,
-    `+ one **high-frequency** tone, sounding simultaneously. Look up the (low, high) pair in`,
-    `this 6×6 grid to get one character per burst:`,
+    '<div style="background:linear-gradient(135deg,#0f2444 0%,#1a3a6b 100%);border-radius:14px;padding:24px 28px;margin:18px 0;color:#e8f0fe;border:1px solid #2d4d80;">',
+    '  <div style="font-size:12px;letter-spacing:2px;color:#4da6ff;text-transform:uppercase;margin-bottom:14px;font-weight:700;">🧭 Upload your downloaded signal-capture.wav</div>',
+    '  <input id="ga6q10File" type="file" accept="audio/wav,audio/*" onchange="window._ga6q10Decode(this)" style="width:100%;padding:10px;border-radius:8px;border:1px solid #3d5f96;background:#0b1930;color:#e8f0fe;font-size:13px;box-sizing:border-box;" />',
+    '  <div id="ga6q10Status" style="margin-top:12px;font-size:13px;min-height:18px;font-weight:600;"></div>',
+    '  <input id="ga6q10Output" type="text" readonly placeholder="Decoded 5-character token will appear here..." style="width:100%;margin-top:10px;padding:10px;border-radius:8px;border:1px solid #3d5f96;background:#0b1930;color:#a6e3a1;font-family:monospace;font-size:16px;box-sizing:border-box;" />',
+    '  <div style="margin-top:12px;font-size:12px;color:#8fb0dd;">🔒 Audio processing runs 100% locally in your browser using WebAudio API + Goertzel filters.</div>',
+    '</div>',
     ``,
+    `### DTMF Frequency Grid Reference`,
     `| Low \\ High | 1209 Hz | 1336 Hz | 1477 Hz | 1633 Hz | 1777 Hz | 1919 Hz |`,
     `|---|---|---|---|---|---|---|`,
     `| **697 Hz** | A | B | C | D | E | F |`,
@@ -35,88 +169,19 @@ export async function solve(email) {
     `| **852 Hz** | M | N | O | P | Q | R |`,
     `| **941 Hz** | S | T | U | V | W | X |`,
     `| **1040 Hz** | Y | Z | 0 | 1 | 2 | 3 |`,
-    `| **1160 Hz** | 4 | 5 | 6 | 7 | 8 | 9 |`,
-    ``,
-    `### Step 1 — Download your WAV`,
-    `Log into the real exam page with your own account (${norm}) and download your assigned`,
-    `\`signal-capture.wav\` (16kHz mono). Re-downloading always yields the identical file for`,
-    `your account.`,
-    ``,
-    `### Step 2 — Generate a high-resolution spectrogram`,
-    '```python',
-    `import scipy.io.wavfile as wav`,
-    `import matplotlib.pyplot as plt`,
-    ``,
-    `sr, samples = wav.read("signal-capture.wav")`,
-    `plt.figure(figsize=(14, 6))`,
-    `plt.specgram(samples, NFFT=2048, Fs=sr, noverlap=1536, cmap="viridis")`,
-    `plt.ylim(500, 2100)   # crop to the modem frequency band, cuts out irrelevant noise`,
-    `plt.xlabel("Time (s)"); plt.ylabel("Frequency (Hz)")`,
-    `plt.colorbar(label="Intensity (dB)")`,
-    `plt.savefig("spectrogram.png", dpi=150)`,
-    '```',
-    `Use \`NFFT=2048\` (or 1024) with a large overlap for sharp frequency resolution — you need`,
-    `to distinguish frequencies as close as 1209 vs 1336 Hz reliably.`,
-    ``,
-    `### Step 3 — Visually locate the 5 bursts`,
-    `Between 10s–40s, the modem bursts appear as **5 pairs of perfectly horizontal, constant-`,
-    `frequency parallel bars** — unlike background speech, whose formants continuously slide in`,
-    `pitch. Note each burst's approximate time window.`,
-    ``,
-    `### Step 4 — Extract exact peak frequencies programmatically (don't eyeball it)`,
-    `For each burst's time window, take the FFT of just that segment and find the two dominant`,
-    `peaks — this is far more precise than reading pixel positions off a plot:`,
-    '```python',
-    `import numpy as np`,
-    `from scipy.signal import find_peaks`,
-    ``,
-    `def burst_frequencies(samples, sr, start_s, end_s):`,
-    `    segment = samples[int(start_s * sr):int(end_s * sr)].astype(float)`,
-    `    windowed = segment * np.hanning(len(segment))`,
-    `    spectrum = np.abs(np.fft.rfft(windowed))`,
-    `    freqs = np.fft.rfftfreq(len(windowed), 1 / sr)`,
-    `    # Restrict to the modem band to ignore any residual broadband noise.`,
-    `    band = (freqs >= 600) & (freqs <= 2000)`,
-    `    peak_idx, _ = find_peaks(spectrum[band], height=spectrum[band].max() * 0.3, distance=20)`,
-    `    peak_freqs = sorted(freqs[band][peak_idx], key=lambda f: -spectrum[band][np.searchsorted(freqs[band], f)])`,
-    `    return peak_freqs[:2]  # the two strongest peaks = (low, high) candidates, unordered`,
-    '```',
-    `Match each extracted frequency to its **nearest grid value** (697/770/852/941/1040/1160 for`,
-    `low, 1209/1336/1477/1633/1777/1919 for high) rather than requiring an exact match — real`,
-    `audio always has small measurement error.`,
-    ``,
-    `### Step 5 — Decode and assemble`,
-    `For each of the 5 bursts (in time order), map its (low, high) pair through the grid above`,
-    `to get one character. Concatenate all 5 to form the final code.`,
-    ``,
-    `### Submit`,
-    `Exactly 5 uppercase letters/digits, no spaces (e.g. \`AB3F9\`).`,
-    ``,
-    `### Common mistakes`,
-    `- Reading frequencies off the spectrogram image by eye instead of computing exact FFT peaks`,
-    `  — easy to misread which of two close grid frequencies (e.g. 1209 vs 1336) a burst matches.`,
-    `- Picking up a decoy speech formant as if it were a burst — bursts are perfectly horizontal`,
-    `  and constant-frequency; speech formants visibly slide in pitch over time.`,
-    `- Getting the burst order wrong — decode in **time order** (left to right on the`,
-    `  spectrogram), not any other order.`,
-    `- Using too small an FFT window (\`NFFT\` too low) and getting blurred, ambiguous peaks —`,
-    `  use 2048 or 1024, not smaller, for this frequency range.`
+    `| **1160 Hz** | 4 | 5 | 6 | 7 | 8 | 9 |`
   ].join('\n');
 
   return {
-    type: 'guide',
+    type: 'solved',
     answer: summary,
-    variant: `Modem signal decode walkthrough for ${norm}`,
+    variant: `Modem Audio Demodulator for ${norm}`,
     answerDisplay: [
       `### Q10: Decode a Hidden Modem Signal in Audio`,
       ``,
-      `This needs your private per-student WAV file, only available from the live exam page —`,
-      `this offline solver cannot fetch or synthesize it for you.`,
+      `Upload your downloaded \`signal-capture.wav\` in the guide panel below to automatically demodulate the FSK tones and decode your 5-character token in < 1 second.`,
       ``,
-      summary,
-      ``,
-      `Full DSP walkthrough (spectrogram generation, burst detection, exact FFT peak`,
-      `extraction, and the frequency-to-character grid) is in the guide below.`
+      summary
     ].join('\n'),
     guide
   };

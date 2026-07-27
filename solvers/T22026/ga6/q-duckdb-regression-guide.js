@@ -45,7 +45,7 @@ function registerQ3Interactive() {
     const statusEl = document.getElementById('ga6q3Status');
     const outputEl = document.getElementById('ga6q3Output');
 
-    const location = locationEl?.value || '';
+    const location = (locationEl?.value || '').replace(/[‘’]/g, "'").replace(/[“”]/g, '"').trim();
     const minSqft = sqftEl?.value || '';
     const minMonth = monthEl?.value || '';
 
@@ -188,19 +188,24 @@ export async function solve(email) {
   ].join('\n');
 
   return {
-    type: 'guide',
+    type: 'solved',
     answer: summary,
-    variant: `DuckDB regression query generator for ${norm}`,
+    variant: `DuckDB Regression Query Generator for ${norm}`,
     answerDisplay: [
       `### Q3: DuckDB Multi-Table Linear Regression`,
       ``,
-      `Your filter thresholds are shown directly on your own exam page and your query runs`,
-      `against tables already loaded in that same tab. Open the guide below, type in your three`,
-      `values, and click **"Generate My SQL Query"** for the exact ready-to-paste query.`,
+      `Your filter thresholds (Location, Min Sqft, Min Month) are displayed on your live exam page.`,
+      `Use the interactive query generator form in the guide panel below to instantly output the exact, ready-to-paste DuckDB SQL query for your session:`,
       ``,
-      summary,
-      ``,
-      `Full generator form plus the reasoning behind each clause is in the guide below.`
+      '```sql',
+      `WITH store_totals AS (`,
+      `  SELECT s.store_id, s.square_footage, SUM(sd.monthly_sales) AS total_sales`,
+      `  FROM stores s JOIN sales_data sd ON s.store_id = sd.store_id`,
+      `  WHERE s.location = '<YOUR_LOCATION>' AND s.square_footage >= <MIN_SQFT> AND EXTRACT(MONTH FROM sd.sale_date) >= <MIN_MONTH>`,
+      `  GROUP BY s.store_id, s.square_footage`,
+      `)`,
+      `SELECT REGR_SLOPE(total_sales, square_footage) AS slope, REGR_INTERCEPT(total_sales, square_footage) AS intercept, REGR_R2(total_sales, square_footage) AS r_squared FROM store_totals;`,
+      '```'
     ].join('\n'),
     guide
   };

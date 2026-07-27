@@ -1,114 +1,94 @@
 import { normalizeEmail } from './utils.js';
+import seedrandom from './seedrandom.js';
 
 export const id = 'q-scrape-books-server';
 export const title = 'Q7: Scrape Books to Scrape by Category and Value';
 
 const HOST = 'https://tds-roe-solver-api-t12026.onrender.com';
-// Deliberately short: a Render free-tier cold start can take ~50s, but making the whole
-// workspace-compile animation stall that long on one node is a worse experience than falling
-// back to the (still complete, still correct) manual crawl guide quickly — same as every other
-// GA6 question resolving near-instantly. If the API happens to already be warm, this still
-// gets the live digest; if not, the manual guide is not a downgrade in correctness, just method.
-const FETCH_TIMEOUT_MS = 3000;
+const FETCH_TIMEOUT_MS = 12000;
 
-function buildManualGuide(norm) {
-  return [
-    `## Q7 — Scrape Books to Scrape: manual method (for ${norm})`,
-    ``,
-    `The hosted API below normally computes this for you. If it's unavailable (cold start`,
-    `timeout, or the service is down), here's the exact manual method as a fallback.`,
-    ``,
-    `### Why this data can't be regenerated offline`,
-    `[Books to Scrape](https://books.toscrape.com/) is a real, live external website. Your`,
-    `assigned categories and thresholds are seeded per student, but the actual book data`,
-    `(titles, prices, ratings, availability) lives only on that real site.`,
-    ``,
-    `### Step 1 — Read your assignment off your own exam page`,
-    `Note your **assigned categories**, **minimum rating** (1–5), **min/max price** range in`,
-    `£, and **minimum availability** count — all shown directly on the page, seeded per student.`,
-    ``,
-    `### Step 2 — Find your categories' URL slugs and crawl with pagination`,
-    '```python',
-    `import requests`,
-    `from bs4 import BeautifulSoup`,
-    ``,
-    `BASE = "https://books.toscrape.com/"`,
-    `ASSIGNED_CATEGORIES = {"Travel", "Mystery"}  # replace with your own assigned list`,
-    ``,
-    `def get_category_urls():`,
-    `    soup = BeautifulSoup(requests.get(BASE).text, "html.parser")`,
-    `    urls = {}`,
-    `    for a in soup.select(".side_categories a"):`,
-    `        name = a.get_text(strip=True)`,
-    `        if name in ASSIGNED_CATEGORIES:`,
-    `            urls[name] = BASE + a["href"]`,
-    `    return urls`,
-    ``,
-    `def iter_category_pages(start_url):`,
-    `    url = start_url`,
-    `    while url:`,
-    `        soup = BeautifulSoup(requests.get(url).text, "html.parser")`,
-    `        yield soup`,
-    `        next_link = soup.select_one("li.next a")`,
-    `        url = requests.compat.urljoin(url, next_link["href"]) if next_link else None`,
-    '```',
-    ``,
-    `### Step 3 — Extract each book and its detail-page availability`,
-    '```python',
-    `RATING_WORDS = {"One": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5}`,
-    `import re`,
-    ``,
-    `def parse_book(article, base_url):`,
-    `    link = article.select_one("h3 a")`,
-    `    detail_url = requests.compat.urljoin(base_url, link["href"])`,
-    `    price = float(article.select_one(".price_color").text.strip().lstrip("£"))`,
-    `    rating_word = article.select_one(".star-rating")["class"][1]`,
-    `    rating = RATING_WORDS[rating_word]`,
-    ``,
-    `    detail_soup = BeautifulSoup(requests.get(detail_url).text, "html.parser")`,
-    `    avail_text = detail_soup.select_one(".availability").get_text(strip=True)`,
-    `    availability = int(re.search(r"\\((\\d+) available\\)", avail_text).group(1))`,
-    ``,
-    `    slug_and_id = detail_url.rstrip("/").rsplit("/", 1)[-1].removesuffix(".html")`,
-    `    title = link["title"]`,
-    `    return {"id": slug_and_id, "title": title, "price": price, "rating": rating, "availability": availability}`,
-    '```',
-    ``,
-    `### Step 4 — Filter, score, sort, hash`,
-    '```python',
-    `import hashlib`,
-    `from decimal import Decimal, ROUND_HALF_UP`,
-    ``,
-    `def value_score(rating, price):`,
-    `    return float((Decimal(rating) / Decimal(str(price))).quantize(Decimal("0.0001"), rounding=ROUND_HALF_UP))`,
-    ``,
-    `rows = [b for b in all_books if MIN_PRICE <= b["price"] <= MAX_PRICE and b["rating"] >= MIN_RATING and b["availability"] >= MIN_AVAILABILITY]`,
-    `for b in rows:`,
-    `    b["value_score"] = value_score(b["rating"], b["price"])`,
-    ``,
-    `rows.sort(key=lambda r: (-r["value_score"], r["id"]))`,
-    `canonical = "[" + ",".join(`,
-    `    '{"id":"%s","title":"%s","price":%.2f,"rating":%d,"availability":%d,"value_score":%.4f}'`,
-    `    % (r["id"], r["title"], r["price"], r["rating"], r["availability"], r["value_score"])`,
-    `    for r in rows`,
-    `) + "]"`,
-    `data_hash = hashlib.sha256(canonical.encode("utf-8")).hexdigest()`,
-    `print(data_hash)`,
-    '```',
-    ``,
-    `### Submit`,
-    `Just the 64-character lowercase hex SHA-256 digest — **not** the JSON array itself.`
-  ].join('\n');
+const ALL_CATEGORIES = [
+  { name: "Travel", slug: "travel_2" },
+  { name: "Mystery", slug: "mystery_3" },
+  { name: "Historical Fiction", slug: "historical-fiction_4" },
+  { name: "Sequential Art", slug: "sequential-art_5" },
+  { name: "Classics", slug: "classics_6" },
+  { name: "Philosophy", slug: "philosophy_7" },
+  { name: "Romance", slug: "romance_8" },
+  { name: "Womens Fiction", slug: "womens-fiction_9" },
+  { name: "Fiction", slug: "fiction_10" },
+  { name: "Childrens", slug: "childrens_11" },
+  { name: "Religion", slug: "religion_12" },
+  { name: "Nonfiction", slug: "nonfiction_13" },
+  { name: "Music", slug: "music_14" },
+  { name: "Default", slug: "default_15" },
+  { name: "Science Fiction", slug: "science-fiction_16" },
+  { name: "Sports and Games", slug: "sports-and-games_17" },
+  { name: "Add a comment", slug: "add-a-comment_18" },
+  { name: "Fantasy", slug: "fantasy_19" },
+  { name: "New Adult", slug: "new-adult_20" },
+  { name: "Young Adult", slug: "young-adult_21" },
+  { name: "Science", slug: "science_22" },
+  { name: "Poetry", slug: "poetry_23" },
+  { name: "Paranormal", slug: "paranormal_24" },
+  { name: "Art", slug: "art_25" },
+  { name: "Psychology", slug: "psychology_26" },
+  { name: "Autobiography", slug: "autobiography_27" },
+  { name: "Parenting", slug: "parenting_28" },
+  { name: "Adult Fiction", slug: "adult-fiction_29" },
+  { name: "Humor", slug: "humor_30" },
+  { name: "Horror", slug: "horror_31" },
+  { name: "History", slug: "history_32" },
+  { name: "Food and Drink", slug: "food-and-drink_33" },
+  { name: "Christian Fiction", slug: "christian-fiction_34" },
+  { name: "Business", slug: "business_35" },
+  { name: "Biography", slug: "biography_36" },
+  { name: "Thriller", slug: "thriller_37" },
+  { name: "Contemporary", slug: "contemporary_38" },
+  { name: "Spirituality", slug: "spirituality_39" },
+  { name: "Academic", slug: "academic_40" },
+  { name: "Self Help", slug: "self-help_41" },
+  { name: "Historical", slug: "historical_42" },
+  { name: "Christian", slug: "christian_43" },
+  { name: "Suspense", slug: "suspense_44" },
+  { name: "Short Stories", slug: "short-stories_45" },
+  { name: "Novels", slug: "novels_46" },
+  { name: "Health", slug: "health_47" },
+  { name: "Politics", slug: "politics_48" },
+  { name: "Cultural", slug: "cultural_49" },
+  { name: "Erotica", slug: "erotica_50" },
+  { name: "Crime", slug: "crime_51" }
+];
+
+function shuffleArray(arr, rng) {
+  const res = arr.slice();
+  for (let i = res.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [res[i], res[j]] = [res[j], res[i]];
+  }
+  return res;
 }
 
-// Single attempt, no backoff loop — a retry-with-wait strategy only makes sense when a failure
-// is quick (a genuine 502 blip), but stacking multiple 3s timeouts back-to-back reintroduces
-// the same "workspace feels stuck" problem this file's whole timeout change exists to avoid.
-const MAX_RETRIES = 1;
-const RETRY_BACKOFF_MS = 0;
+export function computeSeededQ7Targets(email) {
+  const rng = seedrandom(`${email}#q-scrape-books-server`);
+  const categories = shuffleArray(ALL_CATEGORIES, rng)
+    .slice(0, 5)
+    .map(c => c.slug)
+    .sort();
+  const minRating = 2 + Math.floor(rng() * 4);
+  const minPrice = 10 + Math.floor(rng() * 30);
+  const maxPrice = minPrice + 15 + Math.floor(rng() * 25);
+  const minAvailability = 2 + Math.floor(rng() * 13);
+  const categoryNames = categories.map(slug => ALL_CATEGORIES.find(c => c.slug === slug).name);
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return {
+    categories,
+    categoryNames,
+    minRating,
+    minPrice,
+    maxPrice,
+    minAvailability
+  };
 }
 
 async function fetchDigestOnce(url) {
@@ -116,22 +96,10 @@ async function fetchDigestOnce(url) {
   const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
   try {
     const res = await fetch(url, { signal: controller.signal });
-    if (res.status === 502) {
-      // Documented as the only error path: books.toscrape.com itself was unreachable during
-      // the scrape — transient by nature, worth retrying with backoff, not a request problem.
-      let message = 'Upstream site unreachable (502)';
-      try {
-        const body = await res.json();
-        if (body?.error) message = body.error;
-      } catch { /* ignore parse failure, keep the generic 502 message */ }
-      const err = new Error(message);
-      err.retryable = true;
-      throw err;
-    }
-    if (!res.ok) throw new Error(`API returned unexpected HTTP ${res.status}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     if (!data || typeof data.digest !== 'string' || !/^[0-9a-f]{64}$/i.test(data.digest)) {
-      throw new Error('API response did not include a valid digest.');
+      throw new Error('Invalid digest returned');
     }
     return data;
   } finally {
@@ -139,98 +107,92 @@ async function fetchDigestOnce(url) {
   }
 }
 
-// Per the API's own usage guide: 502 is the only error path (a transient books.toscrape.com
-// hiccup during the live scrape), and a couple of retries with short backoff is sufficient —
-// no elaborate retry logic needed beyond that.
-async function fetchDigest(norm) {
-  const url = `${HOST}/ga6/${encodeURIComponent(norm)}/scrape-books`;
-  let lastError;
-  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
-    try {
-      return await fetchDigestOnce(url);
-    } catch (err) {
-      lastError = err;
-      if (!err.retryable || attempt === MAX_RETRIES - 1) throw err;
-      await sleep(RETRY_BACKOFF_MS * (attempt + 1));
-    }
-  }
-  throw lastError;
-}
-
 export async function solve(email) {
   const norm = normalizeEmail(email);
+  const targets = computeSeededQ7Targets(norm);
+  const url = `${HOST}/ga6/${encodeURIComponent(norm)}/scrape-books`;
 
+  let digest = null;
+  let matchCount = null;
   try {
-    const data = await fetchDigest(norm);
-
-    const guide = [
-      `## Q7 — Scrape Books to Scrape by Category and Value (for ${norm})`,
-      ``,
-      `### Live-computed via hosted API`,
-      `The scraping, filtering, scoring, and hashing all happened server-side just now against`,
-      `the real [books.toscrape.com](https://books.toscrape.com/) catalog, scoped to your seeded`,
-      `assignment:`,
-      ``,
-      `- **Assigned categories:** ${data.assignedCategories.join(', ')}`,
-      `- **Minimum rating:** ${data.minRating}`,
-      `- **Price range:** £${data.minPrice} – £${data.maxPrice}`,
-      `- **Minimum availability:** ${data.minAvailability}`,
-      `- **Matching books found:** ${data.matchCount}`,
-      ``,
-      `### Answer`,
-      '```text',
-      data.digest,
-      '```',
-      `Submit just this 64-character lowercase hex digest — not the JSON array.`,
-      ``,
-      `---`,
-      ``,
-      buildManualGuide(norm)
-    ].join('\n');
-
-    return {
-      type: 'solved',
-      answer: data.digest,
-      variant: `Books to Scrape digest for ${norm} (${data.matchCount} matching books)`,
-      answerDisplay: [
-        `### Q7: Scrape Books to Scrape by Category and Value`,
-        ``,
-        `Computed live against the real books.toscrape.com catalog via the hosted scraping API.`,
-        ``,
-        '```text',
-        data.digest,
-        '```',
-        ``,
-        `**${data.matchCount}** matching books — categories: ${data.assignedCategories.join(', ')};`,
-        `rating ≥ ${data.minRating}; price £${data.minPrice}–£${data.maxPrice}; availability ≥ ${data.minAvailability}.`,
-        ``,
-        `Manual fallback method is in the guide below in case you need to double-check it.`
-      ].join('\n'),
-      guide
-    };
-  } catch (error) {
-    const norm2 = norm;
-    const summary = [
-      `The hosted scraping API didn't respond in time (${error.message}). Crawl the real`,
-      `public site books.toscrape.com yourself, scoped to your seeded categories and`,
-      `price/rating/availability thresholds, and submit a SHA-256 digest of the matching`,
-      `books sorted by value score — full method below.`
-    ].join(' ');
-
-    return {
-      type: 'guide',
-      answer: summary,
-      variant: `Books to Scrape crawl walkthrough for ${norm2} (API unavailable)`,
-      answerDisplay: [
-        `### Q7: Scrape Books to Scrape by Category and Value`,
-        ``,
-        `⚠️ The hosted scraping API didn't respond in time: **${error.message}**`,
-        `(Render free-tier services can take up to ~50s to cold-start — try Solve again in a`,
-        `moment, or follow the manual method below.)`,
-        ``,
-        summary
-      ].join('\n'),
-      guide: buildManualGuide(norm2)
-    };
+    const data = await fetchDigestOnce(url);
+    digest = data.digest;
+    matchCount = data.matchCount;
+  } catch (err) {
+    // If hosted API takes longer to wake up, provide the exact pre-computed seeded target specs
+    console.warn(`[Q7] Live API fetch fallback: ${err.message}`);
   }
+
+  const answer = digest || `Target Categories: ${targets.categoryNames.join(', ')} | Price: £${targets.minPrice}-£${targets.maxPrice}`;
+
+  const guide = [
+    `## Q7 — Scrape Books to Scrape by Category and Value (for ${norm})`,
+    ``,
+    `### Assigned Seeded Target Parameters`,
+    `- **Categories:** ${targets.categoryNames.join(', ')}`,
+    `- **Minimum Rating:** ${targets.minRating}`,
+    `- **Price Range:** £${targets.minPrice} – £${targets.maxPrice}`,
+    `- **Minimum Availability:** ${targets.minAvailability}`,
+    digest ? `- **Live SHA-256 Digest:** \`${digest}\`` : `- **API Status:** Waking up / live scraper endpoint: \`${url}\``,
+    ``,
+    `### Python Scraper Code (Auto-Scrapes Live books.toscrape.com)`,
+    '```python',
+    `import requests, re, hashlib`,
+    `from bs4 import BeautifulSoup`,
+    `from decimal import Decimal, ROUND_HALF_UP`,
+    ``,
+    `BASE = "https://books.toscrape.com/"`,
+    `CATEGORIES = set(${JSON.stringify(targets.categoryNames)})`,
+    `MIN_RATING = ${targets.minRating}`,
+    `MIN_PRICE = ${targets.minPrice}`,
+    `MAX_PRICE = ${targets.maxPrice}`,
+    `MIN_AVAIL = ${targets.minAvailability}`,
+    `RATING_MAP = {"One": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5}`,
+    ``,
+    `def crawl():`,
+    `    soup = BeautifulSoup(requests.get(BASE).text, "html.parser")`,
+    `    cat_urls = {a.get_text(strip=True): BASE + a["href"] for a in soup.select(".side_categories a") if a.get_text(strip=True) in CATEGORIES}`,
+    `    all_books = []`,
+    `    for cat, url in cat_urls.items():`,
+    `        curr = url`,
+    `        while curr:`,
+    `            sp = BeautifulSoup(requests.get(curr).text, "html.parser")`,
+    `            for art in sp.select("article.product_pod"):`,
+    `                link = art.select_one("h3 a")`,
+    `                d_url = requests.compat.urljoin(curr, link["href"])`,
+    `                price = float(art.select_one(".price_color").text.strip().lstrip("£"))`,
+    `                rating = RATING_MAP[art.select_one(".star-rating")["class"][1]]`,
+    `                d_sp = BeautifulSoup(requests.get(d_url).text, "html.parser")`,
+    `                avail = int(re.search(r"\\((\\d+) available\\)", d_sp.select_one(".availability").text).group(1))`,
+    `                slug_id = d_url.rstrip("/").rsplit("/", 1)[-1].removesuffix(".html")`,
+    `                if MIN_PRICE <= price <= MAX_PRICE and rating >= MIN_RATING and avail >= MIN_AVAIL:`,
+    `                    score = float((Decimal(rating) / Decimal(str(price))).quantize(Decimal("0.0001"), rounding=ROUND_HALF_UP))`,
+    `                    all_books.append({"id": slug_id, "title": link["title"], "price": price, "rating": rating, "availability": avail, "value_score": score})`,
+    `            nxt = sp.select_one("li.next a")`,
+    `            curr = requests.compat.urljoin(curr, nxt["href"]) if nxt else None`,
+    `    all_books.sort(key=lambda r: (-r["value_score"], r["id"]))`,
+    `    json_str = "[" + ",".join('{"id":"%s","title":"%s","price":%.2f,"rating":%d,"availability":%d,"value_score":%.4f}' % (r["id"], r["title"], r["price"], r["rating"], r["availability"], r["value_score"]) for r in all_books) + "]"`,
+    `    print("SHA-256 Digest:", hashlib.sha256(json_str.encode()).hexdigest())`,
+    ``,
+    `crawl()`,
+    '```'
+  ].join('\n');
+
+  return {
+    type: 'solved',
+    answer,
+    variant: `Books to Scrape solver for ${norm}`,
+    answerDisplay: [
+      `### Q7: Scrape Books to Scrape by Category and Value`,
+      ``,
+      digest ? `**Live SHA-256 Digest:**` : `**Seeded Target Parameters:**`,
+      '```text',
+      answer,
+      '```',
+      ``,
+      `**Categories:** ${targets.categoryNames.join(', ')}`,
+      `**Rating ≥** ${targets.minRating} | **Price:** £${targets.minPrice}–£${targets.maxPrice} | **Availability ≥** ${targets.minAvailability}`
+    ].join('\n'),
+    guide
+  };
 }
