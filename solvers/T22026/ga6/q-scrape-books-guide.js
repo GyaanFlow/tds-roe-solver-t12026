@@ -96,13 +96,31 @@ function buildManualGuide(norm) {
   ].join('\n');
 }
 
-async function fetchDigest(norm) {
-  const url = `${HOST}/ga6/${encodeURIComponent(norm)}/scrape-books`;
+const MAX_RETRIES = 3;
+const RETRY_BACKOFF_MS = 1500;
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function fetchDigestOnce(url) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
   try {
     const res = await fetch(url, { signal: controller.signal });
-    if (!res.ok) throw new Error(`API returned HTTP ${res.status}`);
+    if (res.status === 502) {
+      // Documented as the only error path: books.toscrape.com itself was unreachable during
+      // the scrape — transient by nature, worth retrying with backoff, not a request problem.
+      let message = 'Upstream site unreachable (502)';
+      try {
+        const body = await res.json();
+        if (body?.error) message = body.error;
+      } catch { /* ignore parse failure, keep the generic 502 message */ }
+      const err = new Error(message);
+      err.retryable = true;
+      throw err;
+    }
+    if (!res.ok) throw new Error(`API returned unexpected HTTP ${res.status}`);
     const data = await res.json();
     if (!data || typeof data.digest !== 'string' || !/^[0-9a-f]{64}$/i.test(data.digest)) {
       throw new Error('API response did not include a valid digest.');
@@ -111,6 +129,24 @@ async function fetchDigest(norm) {
   } finally {
     clearTimeout(timeout);
   }
+}
+
+// Per the API's own usage guide: 502 is the only error path (a transient books.toscrape.com
+// hiccup during the live scrape), and a couple of retries with short backoff is sufficient —
+// no elaborate retry logic needed beyond that.
+async function fetchDigest(norm) {
+  const url = `${HOST}/ga6/${encodeURIComponent(norm)}/scrape-books`;
+  let lastError;
+  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    try {
+      return await fetchDigestOnce(url);
+    } catch (err) {
+      lastError = err;
+      if (!err.retryable || attempt === MAX_RETRIES - 1) throw err;
+      await sleep(RETRY_BACKOFF_MS * (attempt + 1));
+    }
+  }
+  throw lastError;
 }
 
 export async function solve(email) {
