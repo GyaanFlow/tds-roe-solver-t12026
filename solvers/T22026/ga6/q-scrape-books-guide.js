@@ -3,39 +3,26 @@ import { normalizeEmail } from './utils.js';
 export const id = 'q-scrape-books-server';
 export const title = 'Q7: Scrape Books to Scrape by Category and Value';
 
-export async function solve(email) {
-  const norm = normalizeEmail(email);
+const HOST = 'https://tds-roe-solver-api-t12026.onrender.com';
+const FETCH_TIMEOUT_MS = 55000; // Render free-tier cold start can take ~50s
 
-  const summary = [
-    `Crawl the real public site books.toscrape.com, scoped to a seeded subset of categories`,
-    `and price/rating/availability thresholds shown on your exam page, and submit a SHA-256`,
-    `digest of the matching books sorted by value score. This needs live network access to a`,
-    `real external site (blocked by CORS from this offline tool's origin), so it stays a guide.`
-  ].join(' ');
-
-  const guide = [
-    `## Q7 — Scrape Books to Scrape: step-by-step (for ${norm})`,
+function buildManualGuide(norm) {
+  return [
+    `## Q7 — Scrape Books to Scrape: manual method (for ${norm})`,
     ``,
-    `### Why this solver can't compute the answer for you`,
+    `The hosted API below normally computes this for you. If it's unavailable (cold start`,
+    `timeout, or the service is down), here's the exact manual method as a fallback.`,
+    ``,
+    `### Why this data can't be regenerated offline`,
     `[Books to Scrape](https://books.toscrape.com/) is a real, live external website. Your`,
-    `assigned categories and thresholds are seeded per student and shown directly on your exam`,
-    `page, but the actual book data (titles, prices, ratings, availability) lives only on that`,
-    `real site — this offline tool can't fetch it (cross-origin requests from this app's own`,
-    `origin to books.toscrape.com are blocked by the browser's CORS policy, and the catalog`,
-    `itself isn't something we can regenerate deterministically). You need a real scrape.`,
+    `assigned categories and thresholds are seeded per student, but the actual book data`,
+    `(titles, prices, ratings, availability) lives only on that real site.`,
     ``,
     `### Step 1 — Read your assignment off your own exam page`,
-    `Note your **assigned categories** (a list of names like "Travel", "Mystery", etc.), the`,
-    `**minimum rating** (1–5), the **min/max price** range in £, and the **minimum`,
-    `availability** count — all shown directly on the page, seeded per student.`,
+    `Note your **assigned categories**, **minimum rating** (1–5), **min/max price** range in`,
+    `£, and **minimum availability** count — all shown directly on the page, seeded per student.`,
     ``,
-    `### Step 2 — Find your categories' URL slugs`,
-    `Start from [books.toscrape.com](https://books.toscrape.com/) and parse the left sidebar`,
-    `navigation — each category link's \`href\` gives you its slug`,
-    `(e.g. \`catalogue/category/books/travel_2/index.html\`). The slugs are **not** given to you`,
-    `directly — you must match your assigned category *names* against the sidebar text.`,
-    ``,
-    `### Step 3 — Crawl only your assigned categories (with pagination)`,
+    `### Step 2 — Find your categories' URL slugs and crawl with pagination`,
     '```python',
     `import requests`,
     `from bs4 import BeautifulSoup`,
@@ -61,10 +48,7 @@ export async function solve(email) {
     `        url = requests.compat.urljoin(url, next_link["href"]) if next_link else None`,
     '```',
     ``,
-    `### Step 4 — Extract each book and its detail-page availability`,
-    `The rating word is a CSS class on the star element (\`<p class="star-rating Three">\`), the`,
-    `price is on the listing page, and **exact availability requires the detail page**`,
-    `(\`In stock (19 available)\`):`,
+    `### Step 3 — Extract each book and its detail-page availability`,
     '```python',
     `RATING_WORDS = {"One": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5}`,
     `import re`,
@@ -85,9 +69,7 @@ export async function solve(email) {
     `    return {"id": slug_and_id, "title": title, "price": price, "rating": rating, "availability": availability}`,
     '```',
     ``,
-    `### Step 5 — Filter, score, sort, hash`,
-    `Keep a book only if **all** of these hold: in an assigned category, price between your`,
-    `min/max (inclusive), rating ≥ your minimum, availability ≥ your minimum.`,
+    `### Step 4 — Filter, score, sort, hash`,
     '```python',
     `import hashlib`,
     `from decimal import Decimal, ROUND_HALF_UP`,
@@ -110,33 +92,101 @@ export async function solve(email) {
     '```',
     ``,
     `### Submit`,
-    `Just the 64-character lowercase hex SHA-256 digest — **not** the JSON array itself.`,
-    ``,
-    `### Common mistakes`,
-    `- Crawling the whole catalog instead of only your assigned categories.`,
-    `- Using the listing page's price without checking the **detail page** for exact`,
-    `  availability — the listing page doesn't show the number.`,
-    `- Sorting by string instead of numeric \`value_score\` (or forgetting the ascending-\`id\``,
-    `  tie-break for exact ties).`,
-    `- Reformatting \`price\`/\`value_score\` with different rounding than the exact 2/4-decimal`,
-    `  spec — the hash is byte-sensitive to formatting.`
+    `Just the 64-character lowercase hex SHA-256 digest — **not** the JSON array itself.`
   ].join('\n');
+}
 
-  return {
-    type: 'guide',
-    answer: summary,
-    variant: `Books to Scrape crawl walkthrough for ${norm}`,
-    answerDisplay: [
-      `### Q7: Scrape Books to Scrape by Category and Value`,
+async function fetchDigest(norm) {
+  const url = `${HOST}/ga6/${encodeURIComponent(norm)}/scrape-books`;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  try {
+    const res = await fetch(url, { signal: controller.signal });
+    if (!res.ok) throw new Error(`API returned HTTP ${res.status}`);
+    const data = await res.json();
+    if (!data || typeof data.digest !== 'string' || !/^[0-9a-f]{64}$/i.test(data.digest)) {
+      throw new Error('API response did not include a valid digest.');
+    }
+    return data;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+export async function solve(email) {
+  const norm = normalizeEmail(email);
+
+  try {
+    const data = await fetchDigest(norm);
+
+    const guide = [
+      `## Q7 — Scrape Books to Scrape by Category and Value (for ${norm})`,
       ``,
-      `This needs a live scrape of a real external site — blocked by CORS from this offline`,
-      `tool's own origin, and the catalog isn't something we can regenerate deterministically.`,
+      `### Live-computed via hosted API`,
+      `The scraping, filtering, scoring, and hashing all happened server-side just now against`,
+      `the real [books.toscrape.com](https://books.toscrape.com/) catalog, scoped to your seeded`,
+      `assignment:`,
       ``,
-      summary,
+      `- **Assigned categories:** ${data.assignedCategories.join(', ')}`,
+      `- **Minimum rating:** ${data.minRating}`,
+      `- **Price range:** £${data.minPrice} – £${data.maxPrice}`,
+      `- **Minimum availability:** ${data.minAvailability}`,
+      `- **Matching books found:** ${data.matchCount}`,
       ``,
-      `Full crawl code (category discovery, pagination, detail-page availability, canonical`,
-      `hash) is in the guide below.`
-    ].join('\n'),
-    guide
-  };
+      `### Answer`,
+      '```text',
+      data.digest,
+      '```',
+      `Submit just this 64-character lowercase hex digest — not the JSON array.`,
+      ``,
+      `---`,
+      ``,
+      buildManualGuide(norm)
+    ].join('\n');
+
+    return {
+      type: 'solved',
+      answer: data.digest,
+      variant: `Books to Scrape digest for ${norm} (${data.matchCount} matching books)`,
+      answerDisplay: [
+        `### Q7: Scrape Books to Scrape by Category and Value`,
+        ``,
+        `Computed live against the real books.toscrape.com catalog via the hosted scraping API.`,
+        ``,
+        '```text',
+        data.digest,
+        '```',
+        ``,
+        `**${data.matchCount}** matching books — categories: ${data.assignedCategories.join(', ')};`,
+        `rating ≥ ${data.minRating}; price £${data.minPrice}–£${data.maxPrice}; availability ≥ ${data.minAvailability}.`,
+        ``,
+        `Manual fallback method is in the guide below in case you need to double-check it.`
+      ].join('\n'),
+      guide
+    };
+  } catch (error) {
+    const norm2 = norm;
+    const summary = [
+      `The hosted scraping API didn't respond in time (${error.message}). Crawl the real`,
+      `public site books.toscrape.com yourself, scoped to your seeded categories and`,
+      `price/rating/availability thresholds, and submit a SHA-256 digest of the matching`,
+      `books sorted by value score — full method below.`
+    ].join(' ');
+
+    return {
+      type: 'guide',
+      answer: summary,
+      variant: `Books to Scrape crawl walkthrough for ${norm2} (API unavailable)`,
+      answerDisplay: [
+        `### Q7: Scrape Books to Scrape by Category and Value`,
+        ``,
+        `⚠️ The hosted scraping API didn't respond in time: **${error.message}**`,
+        `(Render free-tier services can take up to ~50s to cold-start — try Solve again in a`,
+        `moment, or follow the manual method below.)`,
+        ``,
+        summary
+      ].join('\n'),
+      guide: buildManualGuide(norm2)
+    };
+  }
 }
