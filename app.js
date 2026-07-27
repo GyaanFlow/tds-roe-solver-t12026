@@ -277,6 +277,51 @@ function showToast(message, tone = 'info', duration = 2200) {
   }, duration);
 }
 
+const REPO_URL = 'https://github.com/GyaanFlow/tds-roe-solver-t12026';
+const PROFILE_URL = 'https://github.com/GyaanFlow';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/gaurav-tomar-630b2a316';
+const CELEBRATE_SEEN_KEY = 'tds_roe_celebrate_seen_v1';
+
+// A one-time, dismissible "nice work" card shown after a workspace finishes solving —
+// never blocks anything, never reappears once dismissed or once shown once per browser,
+// and the star/follow links are just an optional aside, not a gate on using the tool.
+function maybeShowCelebrateCard(questionCount) {
+  try {
+    if (localStorage.getItem(CELEBRATE_SEEN_KEY)) return;
+  } catch (_) { /* localStorage unavailable — just skip, not worth breaking anything over */ }
+
+  let host = document.getElementById('celebrateCard');
+  if (host) host.remove();
+
+  host = document.createElement('div');
+  host.id = 'celebrateCard';
+  host.className = 'celebrate-card';
+  host.innerHTML = `
+    <button type="button" class="celebrate-dismiss" aria-label="Dismiss">&times;</button>
+    <div class="celebrate-title"><span class="celebrate-emoji">🎉</span> Workspace solved!</div>
+    <div class="celebrate-body">${questionCount} question${questionCount === 1 ? '' : 's'} compiled. Hope it saved you some time.
+    If you'd like to support the project, a star, follow, or connect is always appreciated — totally optional.</div>
+    <div class="celebrate-actions">
+      <a class="celebrate-btn celebrate-btn-star" href="${REPO_URL}" target="_blank" rel="noopener noreferrer">⭐ Star</a>
+      <a class="celebrate-btn celebrate-btn-follow" href="${PROFILE_URL}" target="_blank" rel="noopener noreferrer">🐙 Follow</a>
+      <a class="celebrate-btn celebrate-btn-linkedin" href="${LINKEDIN_URL}" target="_blank" rel="noopener noreferrer">💼 Connect</a>
+    </div>
+  `;
+  document.body.appendChild(host);
+
+  const dismiss = () => {
+    host.classList.remove('celebrate-visible');
+    window.setTimeout(() => host.remove(), 280);
+    try { localStorage.setItem(CELEBRATE_SEEN_KEY, '1'); } catch (_) { /* ignore */ }
+  };
+  host.querySelector('.celebrate-dismiss').addEventListener('click', dismiss);
+  host.querySelectorAll('.celebrate-btn').forEach(btn => btn.addEventListener('click', dismiss));
+
+  window.requestAnimationFrame(() => host.classList.add('celebrate-visible'));
+  // Auto-dismiss (without re-showing later) after a while so it never lingers/annoys.
+  window.setTimeout(dismiss, 16000);
+}
+
 function escapeHtml(text) {
   return String(text)
     .replace(/&/g, '&amp;')
@@ -641,7 +686,12 @@ function renderGuidePanel(data) {
   if (!data.guide) return '';
   const rendered = typeof marked !== 'undefined' ? marked.parse(data.guide) : data.guide;
   const cleanRendered = addCodeCopyButtons(rendered.replace(/<a\s+(href="[^"]*")/gi, '<a target="_blank" rel="noopener noreferrer" $1'));
-  return createSection('Implementation Guide', `<div class="styled-output guide-output">${cleanRendered}</div>`, { open: true, extraClass: 'panel-guide' });
+  // Direct-answer questions ("solved") already show the answer front-and-center in the Answer
+  // panel above — keep the guide collapsed by default so the answer is what the user sees
+  // first, without an extra click. Guide/bypass types have no standalone answer worth
+  // surfacing on its own, so their guide stays expanded as before.
+  const isSolved = data.type === 'solved';
+  return createSection('Implementation Guide', `<div class="styled-output guide-output">${cleanRendered}</div>`, { open: !isSolved, extraClass: 'panel-guide' });
 }
 
 function renderDiagnosticsPanel(debug) {
@@ -969,6 +1019,8 @@ function renderCanvas(index) {
     <div class="canvas-footer-credits">
       <span>Project Sandbox by <a href="https://github.com/GyaanFlow" target="_blank" rel="noopener noreferrer">GyaanFlow</a></span>
       <span class="dot-separator">•</span>
+      <span>If this helped, <a href="https://github.com/GyaanFlow/tds-roe-solver-t12026" target="_blank" rel="noopener noreferrer">⭐ star the repo</a></span>
+      <span class="dot-separator">•</span>
       <span>Connect on <a href="https://www.linkedin.com/in/gaurav-tomar-630b2a316" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
     </div>
   `;
@@ -1168,6 +1220,7 @@ async function startSolving() {
         showToast('⚠️ Academic Integrity Lock Active: If unlocked too early, you will not learn or think yourself, defeating the purpose of the TDS course. It is locked initially, but may be unlocked in the future if deemed viable. If you are a tester, contact the creator for personal access.', 'error', 12000);
       } else {
         showToast(`Workspace ready. ${workspaceData.answers.length} questions loaded.`, 'success');
+        maybeShowCelebrateCard(workspaceData.answers.length);
       }
       safeTrack('workspace_ready', {
         exam: currentExam,
