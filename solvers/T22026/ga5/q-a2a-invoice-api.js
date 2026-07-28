@@ -50,7 +50,14 @@ export async function solve(email, sessionToken) {
       ``,
       `A2A 1.0 protocol at \`${base}message:send\`, \`${base}tasks/{id}\`, \`${base}tasks\`, \`${base}tasks/{id}:cancel\`.`,
       `Requires \`Authorization: Bearer <TOKEN>\` and \`A2A-Version: 1.0\` headers on every call.`,
-      `Warm the dyno before submitting: \`GET ${health}\` (cold start ~50 s).`
+      `Warm the dyno before submitting: \`GET ${health}\` (cold start ~50 s).`,
+      ``,
+      `### 🔁 Backup answer endpoints (if the above doesn't respond)`,
+      `If the primary API is cold/down and retrying doesn't help, try these alternate deployments`,
+      `of the same A2A agent instead:`,
+      `- \`https://ga5-tds.onrender.com/a2a\``,
+      `- \`https://tds-ga5.onrender.com/a2a\``,
+      `These are separate hosted instances — submit whichever one actually responds.`
     ].join('\n')
   };
 }
