@@ -64,7 +64,7 @@ Rather than bloating runtime memory with pre-cached assets, the engine employs a
     ```
 
 ### 3. Graphify AST Indexing
-The codebase is mapped inside an interactive knowledge graph (`graphify-out/`), tracing relationships between 545 nodes and 1,050 edges across 40 distinct architectural communities. Major high-degree hubs include `rng()`, `normalizeEmail()`, and `renderCanvas()`.
+The codebase is mapped inside an interactive knowledge graph (`graphify-out/`), tracing relationships between 1,517 nodes and 2,715 edges across 188 distinct architectural communities. Major high-degree hubs include `normalizeEmail()`, `rng()`, and `renderCanvas()`.
 
 ---
 
@@ -93,7 +93,8 @@ The registry is split into Term 1 2026 (`T12026`) and Term 2 2026 (`T22026`), co
 | **GA2** | `T22026` | API & Cloud | 10 API engineering and cloud solvers (Descriptive statistics with CORS, OAuth JWT verification, 12-factor config precedence, multi-container Redis stacks, POST analytics aggregation, Prometheus observability, local LLM integrations, idempotent POST with sliding-window rate-limiting). |
 | **GA3** | `T22026` | System & API Architecture | 13 solvers covering automated video metadata curation, multimodal QA, fixed/dynamic schema extraction, cosine similarity query-document mapping, a browser-based Proof-of-Work nonce miner, a Context Window Heist extractor, asciinema CLI pipelines, and semantic nearest neighbors. |
 | **GA4** | `T22026` | RAG & Retrieval Engineering | 13 solvers covering hybrid-search chunking, RRF fusion, HyDE, GraphRAG pipelines, late chunking, ANN recall/latency tuning, semantic caching, multimodal embedding calibration, RAG eval harnesses, lost-middle context assembly, semantic dedup guardrails, and grounded-answer/vector-rerank APIs. |
-| **GA5** | `T22026` | Agentic Systems & Guardrails | 11 solvers covering MCP servers, A2A invoice protocols, budget guards, skill scanning, redteam/guardrail APIs, incident-response agents, mailroom triage, proration, an LXD sandbox guide, and a maze solver. |
+| **GA5** | `T22026` | Agentic Systems & Guardrails | 11 solvers covering MCP servers, A2A invoice protocols, budget guards, skill scanning, redteam/guardrail APIs, incident-response agents, mailroom triage, proration, an LXD sandbox guide, and a maze solver. Q9/Q10/Q11 also ship personal backup-API endpoints, shown in a dedicated styled box above the answer. |
+| **GA6** | `T22026` | Data Forensics & Automation | 10 solvers: seeded prompt-robustness audit, shadow-DOM incident audit, DuckDB ledger reconciliation, politeness/robots.txt audit, and Playwright table-sum are real client-side `solved` computations; rotated/mirrored image-grid forensics and hidden-modem audio decode are genuine **upload-and-solve** CV/DSP pipelines running entirely in-browser on the student's own downloaded exam file; DuckDB regression is an interactive SQL-query generator; Scrape Books to Scrape and GitHub Action + Playwright are `guide`-type with an optional on-demand live-fetch button and precomputed expected values respectively. |
 | **P1** | `T22026` | Project 1 | 4 questions: a requirements-interview guide, a seeded model-intelligence-differentiation solver (real client-side compute), and two Colab AI-agent guides (GCS bucket setup + dataset upload) offering three methods each — a shared service-account key pool, the student's own GCP account, or a local Cline/VS Code agent. |
 | **ROE** | `T12026` | Re-exam Workflows | Procedural maze pathfinding, regex golf parsing, and programmatic arithmetic validation. |
 | **GA7** | `T12026` | Data Visualization | Midpoint-preserving diverging palette sampler, chartjunk analyzers, and inverse-engineered prompt structures. |
@@ -128,7 +129,7 @@ tds-roe-solver/
 │   │   └── 📂 p2/
 │   │       ├── 📄 compact_facts.json # 12MB compressed Discourse dataset
 │   │       └── 📄 q-qr-forensics.js   # QR Solana RPC transaction repair solver
-│   └── 📂 T22026/                # Term 2 2026 Exam Registry (GA0, GA1, GA2 Suites)
+│   └── 📂 T22026/                # Term 2 2026 Exam Registry (GA0–GA6 + P1 Suites)
 ├── 📄 AGENT_CONTEXT.md           # Deep context trace for subsequent AI engineers
 ├── 📄 app.js                     # Central UI state machine & event dispatcher
 ├── 📄 check.mjs                  # Offline smoke testing validation script
@@ -137,6 +138,18 @@ tds-roe-solver/
 ├── 📄 style.css                  # Master stylesheets containing keyframe animations
 └── 📄 verify.html                # Universal Solver Verification Hub Dashboard
 ```
+
+---
+
+## ✨ Recent Enhancements (2026-07-28)
+
+*   **Answer-first layout**: for direct-answer (`solved`-type) questions, the Implementation Guide panel now collapses by default and renders *below* the Answer panel instead of above it — the answer is what you came for, so it's what you see first.
+*   **Download Answer as `.txt`**: sits next to Copy Answer in every question's action row.
+*   **Backup Answer Endpoints box**: a distinct amber-gradient box above the Answer panel, shown automatically whenever a solver ships alternate/fallback API endpoints (currently GA5 Q9/Q10/Q11) — each with its own one-click Copy button.
+*   **GA6 upload-and-solve**: Q1 (image-grid forensics) and Q10 (hidden-modem audio) now let students upload their own downloaded exam file and run a real client-side CV/DSP pipeline (Canvas 2D tile reconstruction + beam search, Web Audio FFT burst decoding) — nothing is ever uploaded to a server.
+*   **Home navigation**: both the sidebar "TDS Portal" logo and the "tds-portal" breadcrumb now return to the welcome screen from anywhere.
+*   **Post-solve support prompt**: a small, fully dismissible celebration card appears after every successful public workspace compile, with optional ⭐ Star / 🐙 Follow / 💼 Connect links — never gates or blocks anything.
+*   **Decluttered navbar**: removed the standalone Export MD / Export JSON buttons (Copy All + per-answer Download .txt already cover this), and warmed up the GitHub/LinkedIn credit links' wording.
 
 ---
 
