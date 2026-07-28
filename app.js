@@ -1311,6 +1311,11 @@ breadcrumbs?.addEventListener('click', (event) => {
   }
 });
 
+// Sidebar "TDS Portal" brand header is a Home link too, same reasoning as above.
+document.getElementById('brandHome')?.addEventListener('click', () => {
+  window.location.reload();
+});
+
 dashboardToggle?.addEventListener('click', () => {
   renderCanvas(-1);
   if (window.innerWidth <= 768) {
