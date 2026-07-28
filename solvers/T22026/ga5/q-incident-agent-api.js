@@ -31,6 +31,9 @@ export async function solve(email, sessionToken) {
     type: 'solved',
     answer: base,
     variant: `Incident-response agent base URL for ${norm}`,
+    backupEndpoints: [
+      { label: 'Backup', url: 'https://tds-ga5.onrender.com/' }
+    ],
     answerDisplay: [
       `### Q11: Build an Observable Incident-Response Agent`,
       `Submit this base URL as your answer (grader appends the sub-paths):`,
@@ -48,13 +51,7 @@ export async function solve(email, sessionToken) {
       `- \`POST ${base}/v2/incidents/{runId}/receipts\``,
       `- \`GET ${base}/v2/incidents/{runId}\``,
       `Durable diagnose → approve → effect agent with an OTLP trace.`,
-      `Warm the dyno before submitting: \`GET ${health}\` (cold start ~50 s).`,
-      ``,
-      `### 🔁 Backup answer endpoint (if the above doesn't respond)`,
-      `If the primary API is cold/down and retrying doesn't help, try this alternate deployment`,
-      `instead:`,
-      `- \`https://tds-ga5.onrender.com/\``,
-      `This is a separate hosted instance — submit it if the primary one doesn't respond.`
+      `Warm the dyno before submitting: \`GET ${health}\` (cold start ~50 s).`
     ].join('\n')
   };
 }

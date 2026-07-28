@@ -598,6 +598,24 @@ function renderPreviewPanel(data) {
   );
 }
 
+function renderBackupEndpointsPanel(data) {
+  if (!Array.isArray(data.backupEndpoints) || data.backupEndpoints.length === 0) return '';
+  const rows = data.backupEndpoints.map((ep, i) => `
+    <div class="backup-endpoint-row">
+      <span class="backup-endpoint-label">${escapeHtml(ep.label || `Backup ${i + 1}`)}</span>
+      <code class="backup-endpoint-url">${escapeHtml(ep.url)}</code>
+      <button type="button" class="backup-copy-btn" data-backup-url="${escapeHtml(ep.url)}">Copy</button>
+    </div>
+  `).join('');
+
+  return `
+    <div class="backup-endpoints-box">
+      <div class="backup-endpoints-title">🔁 Backup answer endpoints <span>(if the above doesn't respond)</span></div>
+      <div class="backup-endpoints-list">${rows}</div>
+    </div>
+  `;
+}
+
 function renderAnswerPanel(data, langClass) {
   const escapedAnswer = escapeHtml(data.answer);
   const wrapClass = rawWrapEnabled ? 'raw-output-pre' : 'raw-output-nowrap';
@@ -804,6 +822,11 @@ function bindCanvasActions(data) {
     downloadFile(`${safeName}.txt`, data.answer || '', 'text/plain');
     showToast('Answer downloaded as .txt', 'success');
   });
+  canvas.querySelectorAll('.backup-copy-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      copyToClipboard(btn.dataset.backupUrl || '', btn);
+    });
+  });
   document.getElementById('toggleWrapBtn')?.addEventListener('click', () => {
     rawWrapEnabled = !rawWrapEnabled;
     persistUiState();
@@ -1008,14 +1031,16 @@ function renderCanvas(index) {
       ${colabBackupHtml}
       ${renderVariantPanel(data)}
       ${renderPreviewPanel(data)}
-      ${isSpecial 
+      ${isSpecial
         ? `
           ${renderNotesPanel(data)}
+          ${renderBackupEndpointsPanel(data)}
           ${renderAnswerPanel(data, langClass)}
           ${renderDiagnosticsPanel(data.debug)}
         `
         : `
           ${!guideAfterAnswer ? renderGuidePanel(data) : ''}
+          ${renderBackupEndpointsPanel(data)}
           ${renderAnswerPanel(data, langClass)}
           ${guideAfterAnswer ? renderGuidePanel(data) : ''}
           ${renderNotesPanel(data)}
@@ -1155,7 +1180,8 @@ async function startSolving() {
           variant: result.variant,
           answerDisplay: result.answerDisplay,
           guide: result.guide,
-          debug: result.debug
+          debug: result.debug,
+          backupEndpoints: result.backupEndpoints
         });
       } catch (error) {
         workspaceData.answers.push({

@@ -32,6 +32,10 @@ export async function solve(email, sessionToken) {
     type: 'solved',
     answer: url,
     variant: `Mailroom action gate endpoint for ${norm}`,
+    backupEndpoints: [
+      { label: 'Backup 1', url: 'https://ga5-tds.onrender.com/q9/mailroom' },
+      { label: 'Backup 2', url: 'https://tds-ga5.onrender.com/q9/mailroom' }
+    ],
     answerDisplay: [
       `### Q9: Lethal-Trifecta Mailroom Action Gate`,
       `Submit this URL as your answer:`,
@@ -45,14 +49,7 @@ export async function solve(email, sessionToken) {
       `- If you are using a token saved from previous sessions in your local storage, it may have expired. If you get errors, please grab a fresh token from aipipe.org, paste it in the input field above, and click Solve again to generate a new URL.`,
       ``,
       `The grader POSTs \`{"operation":"propose"|"commit", ...}\` (two-phase durable protocol).`,
-      `Warm the dyno before submitting: \`GET ${health}\` (cold start ~50 s).`,
-      ``,
-      `### 🔁 Backup answer endpoints (if the above doesn't respond)`,
-      `If the primary API is cold/down and retrying doesn't help, try these alternate deployments`,
-      `of the same mailroom endpoint instead:`,
-      `- \`https://ga5-tds.onrender.com/q9/mailroom\``,
-      `- \`https://tds-ga5.onrender.com/q9/mailroom\``,
-      `These are separate hosted instances — submit whichever one actually responds.`
+      `Warm the dyno before submitting: \`GET ${health}\` (cold start ~50 s).`
     ].join('\n')
   };
 }
