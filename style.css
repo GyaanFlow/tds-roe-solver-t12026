@@ -664,6 +664,14 @@ body {
 }
 .breadcrumbs { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-secondary); }
 .crumb { font-family: var(--font-mono); }
+.crumb-home {
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+.crumb-home:hover {
+  color: var(--theme-primary);
+  text-decoration: underline;
+}
 .separator { color: var(--text-muted); }
 
 .editor-actions { display: flex; align-items: center; gap: 8px; }

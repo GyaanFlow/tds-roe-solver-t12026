@@ -856,7 +856,7 @@ function renderDashboard() {
   dashboardToggle.classList.add('active');
 
   breadcrumbs.innerHTML = `
-    <span class="crumb">tds-portal</span>
+    <span class="crumb crumb-home" id="breadcrumbHome" title="Back to home">tds-portal</span>
     <span class="separator">/</span>
     <span class="crumb">${escapeHtml(workspaceData.exam || 'workspace')}</span>
     <span class="separator">/</span>
@@ -963,7 +963,7 @@ function renderCanvas(index) {
         : 'Runtime Error';
 
   breadcrumbs.innerHTML = `
-    <span class="crumb">tds-portal</span>
+    <span class="crumb crumb-home" id="breadcrumbHome" title="Back to home">tds-portal</span>
     <span class="separator">/</span>
     <span class="crumb">${escapeHtml(workspaceData.exam || 'workspace')}</span>
     <span class="separator">/</span>
@@ -1298,6 +1298,18 @@ function downloadFile(filename, content, mime) {
   anchor.click();
   URL.revokeObjectURL(url);
 }
+
+// "tds-portal" breadcrumb acts as a Home link. Delegated on the container (not the crumb
+// itself) since breadcrumbs.innerHTML gets fully rebuilt on every navigation — a direct
+// listener on the span would be destroyed each time. A full reload is deliberate here: the
+// welcome screen's markup lives statically in index.html and isn't reconstructable from JS
+// state alone, and DOMContentLoaded already re-fills the term/email/exam fields from
+// localStorage, so nothing the user typed is lost.
+breadcrumbs?.addEventListener('click', (event) => {
+  if (event.target.closest('.crumb-home')) {
+    window.location.reload();
+  }
+});
 
 dashboardToggle?.addEventListener('click', () => {
   renderCanvas(-1);
