@@ -1051,9 +1051,9 @@ function renderCanvas(index) {
     <div class="canvas-footer-credits">
       <span>Project Sandbox by <a href="https://github.com/GyaanFlow" target="_blank" rel="noopener noreferrer">GyaanFlow</a></span>
       <span class="dot-separator">•</span>
-      <span>If this helped, <a href="https://github.com/GyaanFlow/tds-roe-solver-t12026" target="_blank" rel="noopener noreferrer">⭐ star the repo</a></span>
+      <span class="support-highlight">If this helped, <a href="https://github.com/GyaanFlow/tds-roe-solver-t12026" target="_blank" rel="noopener noreferrer">⭐ star the repo</a></span>
       <span class="dot-separator">•</span>
-      <span>Connect on <a href="https://www.linkedin.com/in/gaurav-tomar-630b2a316" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+      <span class="support-highlight">Connect on <a href="https://www.linkedin.com/in/gaurav-tomar-630b2a316" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
     </div>
   `;
 
