@@ -9,7 +9,7 @@ const THEME_HUES = {
   frost: { primary: 190, secondary: 220 }
 };
 
-let activeTheme = localStorage.getItem('workspaceTheme') || 'amber';
+let activeTheme = safeStorageGet('workspaceTheme') || 'amber';
 
 const emailInput = document.getElementById('emailInput');
 const sessionTokenInput = document.getElementById('sessionTokenInput');
@@ -44,7 +44,7 @@ const mobileQuestionPicker = document.getElementById('mobileQuestionPicker');
 const mobileQuestionPickerWrap = document.getElementById('mobileQuestionPickerWrap');
 const dashboardToggle = document.getElementById('dashboardToggle');
 
-let rawFocusEnabled = localStorage.getItem('rawFocusEnabled') === 'true';
+let rawFocusEnabled = safeStorageGet('rawFocusEnabled') === 'true';
 
 let workspaceData = {
   exam: null,
@@ -52,6 +52,48 @@ let workspaceData = {
   answers: [],
   meta: {}
 };
+
+// localStorage can THROW, not just fail quietly: Safari Private Browsing, browsers with
+// site data blocked, and a full quota all raise on setItem. Because persistUiState() runs on
+// almost every interaction (selecting a question, toggling a panel, typing in search), an
+// unguarded throw propagates out of the click handler and aborts the render — the UI simply
+// stops responding. These wrappers degrade to "state isn't remembered" instead, which is a
+// far better failure mode than a dead page.
+// Deliberately permissive — the goal is to catch the realistic typo (missing domain,
+// missing @, trailing comma, a stray space in the middle), not to police exotic-but-legal
+// addresses. Anything with a local part, an @, and a dotted domain passes.
+function isPlausibleEmail(value) {
+  // Domain labels are restricted to alphanumerics/hyphens and the TLD to letters, so common
+  // copy-paste artefacts (a trailing comma or semicolon) are rejected rather than silently
+  // becoming part of the seed.
+  return /^[^\s@]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/.test(String(value).trim());
+}
+
+function safeStorageSet(key, value) {
+  try {
+    localStorage.setItem(key, value);
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
+
+function safeStorageGet(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch (_) {
+    return null;
+  }
+}
+
+function safeStorageRemove(key) {
+  try {
+    localStorage.removeItem(key);
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
 
 const STORAGE_KEYS = {
   term: 'tdsTerm',
@@ -132,13 +174,13 @@ let toastRoot = null;
 let openPanels = new Set(['Variant', 'Preview', 'Answer', 'Diagnostics']);
 
 window.addEventListener('DOMContentLoaded', () => {
-  const savedTerm  = localStorage.getItem(STORAGE_KEYS.term);
-  const savedEmail = localStorage.getItem(STORAGE_KEYS.email);
-  const savedExam  = localStorage.getItem(STORAGE_KEYS.exam);
-  const savedSearch = localStorage.getItem(STORAGE_KEYS.search);
-  const savedSelectedQuestion = Number(localStorage.getItem(STORAGE_KEYS.selectedQuestion));
-  const savedRawWrap = localStorage.getItem(STORAGE_KEYS.rawWrap);
-  const savedOpenPanels = localStorage.getItem(STORAGE_KEYS.openPanels);
+  const savedTerm  = safeStorageGet(STORAGE_KEYS.term);
+  const savedEmail = safeStorageGet(STORAGE_KEYS.email);
+  const savedExam  = safeStorageGet(STORAGE_KEYS.exam);
+  const savedSearch = safeStorageGet(STORAGE_KEYS.search);
+  const savedSelectedQuestion = Number(safeStorageGet(STORAGE_KEYS.selectedQuestion));
+  const savedRawWrap = safeStorageGet(STORAGE_KEYS.rawWrap);
+  const savedOpenPanels = safeStorageGet(STORAGE_KEYS.openPanels);
 
   // Restore term first, then populate exam list, then restore exam
   const termKeys = Object.keys(TERM_EXAMS);
@@ -158,7 +200,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // persistUiState(), which correspondingly never writes this field to localStorage).
   if (sessionTokenInput) sessionTokenInput.value = '';
   // Clean up any token persisted by older versions of this app.
-  localStorage.removeItem(STORAGE_KEYS.sessionToken);
+  safeStorageRemove(STORAGE_KEYS.sessionToken);
   if (savedSearch) nodeSearch.value = savedSearch;
   if (Number.isInteger(savedSelectedQuestion) && savedSelectedQuestion >= 0) {
     selectedQuestionIndex = savedSelectedQuestion;
@@ -179,7 +221,7 @@ window.addEventListener('DOMContentLoaded', () => {
   ensureToastRoot();
 
   // Load email history
-  const savedEmailHistory = localStorage.getItem(STORAGE_KEYS.emailHistory);
+  const savedEmailHistory = safeStorageGet(STORAGE_KEYS.emailHistory);
   if (savedEmailHistory) {
     try {
       const history = JSON.parse(savedEmailHistory);
@@ -215,17 +257,17 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function persistUiState() {
-  localStorage.setItem(STORAGE_KEYS.term, termSelect.value);
-  localStorage.setItem(STORAGE_KEYS.exam, examSelect.value);
+  safeStorageSet(STORAGE_KEYS.term, termSelect.value);
+  safeStorageSet(STORAGE_KEYS.exam, examSelect.value);
   const emailVal = emailInput.value.trim();
-  localStorage.setItem(STORAGE_KEYS.email, emailVal);
-  localStorage.setItem(STORAGE_KEYS.search, nodeSearch.value);
-  localStorage.setItem(STORAGE_KEYS.selectedQuestion, String(selectedQuestionIndex));
-  localStorage.setItem(STORAGE_KEYS.rawWrap, String(rawWrapEnabled));
-  localStorage.setItem(STORAGE_KEYS.openPanels, JSON.stringify([...openPanels]));
+  safeStorageSet(STORAGE_KEYS.email, emailVal);
+  safeStorageSet(STORAGE_KEYS.search, nodeSearch.value);
+  safeStorageSet(STORAGE_KEYS.selectedQuestion, String(selectedQuestionIndex));
+  safeStorageSet(STORAGE_KEYS.rawWrap, String(rawWrapEnabled));
+  safeStorageSet(STORAGE_KEYS.openPanels, JSON.stringify([...openPanels]));
   // Intentionally never persist sessionTokenInput — AIPipe tokens expire when the user's
   // aipipe.org session ends, and a stale saved token silently produces wrong API answers.
-  localStorage.setItem('rawFocusEnabled', String(rawFocusEnabled));
+  safeStorageSet('rawFocusEnabled', String(rawFocusEnabled));
   drawEmailIdenticon(emailVal);
   // NOTE: generateNetwork is NOT called here to avoid rebuilding 200 nodes on every
   // panel toggle / question select / etc. It is called only when email changes (see emailInput listener).
@@ -446,8 +488,8 @@ function buildDebugReport() {
 }
 
 function resetStoredUiState() {
-  Object.values(STORAGE_KEYS).forEach((key) => localStorage.removeItem(key));
-  localStorage.removeItem('academic_integrity_agreed');
+  Object.values(STORAGE_KEYS).forEach((key) => safeStorageRemove(key));
+  safeStorageRemove('academic_integrity_agreed');
   
   const agreeDisclaimerCheckbox = document.getElementById('agreeDisclaimerCheckbox');
   if (agreeDisclaimerCheckbox) {
@@ -1136,12 +1178,26 @@ async function startSolving() {
   const currentExam = examSelect.value;
   const preferredQuestionIndex = selectedQuestionIndex;
   const sessionToken = sessionTokenInput ? sessionTokenInput.value.trim() : '';
-  const heistDocument = localStorage.getItem('tdsHeistDocument') || '';
-  const powInput = localStorage.getItem('tdsNonceInput') || '';
+  const heistDocument = safeStorageGet('tdsHeistDocument') || '';
+  const powInput = safeStorageGet('tdsNonceInput') || '';
 
   if (!email) {
     emailInput.focus();
     emailInput.style.borderColor = 'var(--error)';
+    showToast('Enter your exam email address first.', 'error');
+    return;
+  }
+
+  // Every answer in this app is seeded from the email, so a typo does not fail loudly — it
+  // produces a complete set of confident, plausible, WRONG answers. (e.g. dropping the
+  // domain changes GA6 Q9's total from 2502117 to 2543363, with nothing on screen to hint
+  // that anything is off.) The input is type="email" but it is not inside a <form>, so the
+  // browser never runs its own validation; check it explicitly here instead.
+  if (!isPlausibleEmail(email)) {
+    emailInput.focus();
+    emailInput.select();
+    emailInput.style.borderColor = 'var(--error)';
+    showToast(`"${email}" doesn't look like a full email address. Answers are generated from your email, so a typo silently produces wrong answers for every question.`, 'error', 7000);
     return;
   }
 
@@ -1163,15 +1219,15 @@ async function startSolving() {
   }
 
   emailInput.style.borderColor = 'var(--border)';
-  localStorage.setItem(STORAGE_KEYS.term, currentTerm);
-  localStorage.setItem(STORAGE_KEYS.email, email);
-  localStorage.setItem(STORAGE_KEYS.exam, currentExam);
+  safeStorageSet(STORAGE_KEYS.term, currentTerm);
+  safeStorageSet(STORAGE_KEYS.email, email);
+  safeStorageSet(STORAGE_KEYS.exam, currentExam);
 
   // Update email history
   let history = [];
-  try { history = JSON.parse(localStorage.getItem(STORAGE_KEYS.emailHistory) || '[]'); } catch (_) {}
+  try { history = JSON.parse(safeStorageGet(STORAGE_KEYS.emailHistory) || '[]'); } catch (_) {}
   history = [email, ...history.filter(e => e !== email)].slice(0, 10);
-  localStorage.setItem(STORAGE_KEYS.emailHistory, JSON.stringify(history));
+  safeStorageSet(STORAGE_KEYS.emailHistory, JSON.stringify(history));
   const datalist = document.getElementById('emailHistory');
   if (datalist) datalist.innerHTML = history.map(e => `<option value="${e}">`).join('');
 
@@ -1371,7 +1427,7 @@ dashboardToggle?.addEventListener('click', () => {
 nodeSearch.addEventListener('input', (event) => {
   clearTimeout(searchDebounceId);
   const term = event.target.value.toLowerCase();
-  localStorage.setItem(STORAGE_KEYS.search, term);
+  safeStorageSet(STORAGE_KEYS.search, term);
   searchDebounceId = window.setTimeout(() => applySidebarFilter(term), 80);
 });
 
@@ -1535,7 +1591,7 @@ const sliderFill = document.getElementById('sliderGlowFill');
 const card = document.getElementById('academicDisclaimer');
 
 if (agreeDisclaimerCheckbox) {
-  const hasAgreed = localStorage.getItem('academic_integrity_agreed') === 'true';
+  const hasAgreed = safeStorageGet('academic_integrity_agreed') === 'true';
   agreeDisclaimerCheckbox.checked = hasAgreed;
   
   if (card) {
@@ -1549,11 +1605,11 @@ if (agreeDisclaimerCheckbox) {
   // Bind change event to sync visual slide state
   agreeDisclaimerCheckbox.addEventListener('change', () => {
     if (agreeDisclaimerCheckbox.checked) {
-      localStorage.setItem('academic_integrity_agreed', 'true');
+      safeStorageSet('academic_integrity_agreed', 'true');
       card?.classList.remove('pulse-attention');
       card?.classList.add('agreed-state');
     } else {
-      localStorage.removeItem('academic_integrity_agreed');
+      safeStorageRemove('academic_integrity_agreed');
       card?.classList.add('pulse-attention');
       card?.classList.remove('agreed-state');
     }
@@ -1719,7 +1775,7 @@ const THEME_COLORS = {
 
 function switchTheme(theme) {
   activeTheme = theme;
-  localStorage.setItem('workspaceTheme', theme);
+  safeStorageSet('workspaceTheme', theme);
   if (document.body && typeof document.body.setAttribute === 'function') {
     document.body.setAttribute('data-theme', theme);
   }
@@ -1860,15 +1916,15 @@ document.addEventListener('click', async (event) => {
       emailInput.focus();
       return;
     }
-    localStorage.setItem('tdsHeistDocument', docText);
+    safeStorageSet('tdsHeistDocument', docText);
     showToast('Extracting facts...', 'info');
     startSolving();
   } else if (event.target.id === 'heist-card-clear-btn') {
-    localStorage.removeItem('tdsHeistDocument');
+    safeStorageRemove('tdsHeistDocument');
     showToast('Pasted document cleared.', 'info');
     startSolving();
   } else if (event.target.id === 'pow-clear-btn') {
-    localStorage.removeItem('tdsNonceInput');
+    safeStorageRemove('tdsNonceInput');
     const colabArea = document.getElementById('colab-script-area');
     if (colabArea) colabArea.style.display = 'none';
     showToast('Proof-of-work input cleared.', 'info');
@@ -2019,7 +2075,7 @@ if __name__ == "__main__":
       showToast('Enter token, difficulty, and nonce!', 'error');
       return;
     }
-    localStorage.setItem('tdsNonceInput', `${token}|${difficulty}|${nonce}|colab`);
+    safeStorageSet('tdsNonceInput', `${token}|${difficulty}|${nonce}|colab`);
     showToast('Nonce submitted! Re-solving...', 'success');
     startSolving();
   }
