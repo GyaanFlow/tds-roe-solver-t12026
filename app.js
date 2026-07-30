@@ -598,6 +598,48 @@ function renderPreviewPanel(data) {
   );
 }
 
+// ── Hosted-API status notice ───────────────────────────────────────────────────────────
+// Shown automatically on any question whose answer/notes/guide references a hosted API host
+// listed in `hosts`. Purely presentational — it never changes an answer or blocks anything.
+//
+// TO TURN IT OFF once the API is healthy again: set `enabled: false` (or delete the entry
+// from `hosts`). Nothing else needs editing — no solver files reference this.
+// TO REUSE IT for a future outage: flip `enabled` back to true and update `title`/`body`.
+const API_STATUS_NOTICE = {
+  enabled: true,
+  // Host substrings that mark a question as depending on the affected API.
+  hosts: ['tds-roe-solver-api-t12026.onrender.com'],
+  title: '⏳ Hosted API endpoints are temporarily down',
+  body: [
+    'The hosted API for this question is offline right now — the Render account hit its free',
+    '5 GB monthly quota, so the service is suspended. It is expected back on',
+    '<strong>1 August</strong>, after which this answer will work normally again with no',
+    'change needed on your side.'
+  ].join(' '),
+  footnote: 'Everything else on this page still works — only the live API call is affected.'
+};
+
+function questionUsesAffectedApi(data) {
+  if (!API_STATUS_NOTICE.enabled) return false;
+  // Explicit opt-in, for solvers that call the API from JS without ever printing the URL
+  // (e.g. GA6 Q7's on-demand digest button) — text matching alone can't see those.
+  if (data.usesHostedApi) return true;
+  if (!API_STATUS_NOTICE.hosts?.length) return false;
+  const haystack = `${data.answer || ''}\n${data.answerDisplay || ''}\n${data.guide || ''}`.toLowerCase();
+  return API_STATUS_NOTICE.hosts.some((host) => haystack.includes(host.toLowerCase()));
+}
+
+function renderApiStatusNotice(data) {
+  if (!questionUsesAffectedApi(data)) return '';
+  return `
+    <div class="api-status-box">
+      <div class="api-status-title">${escapeHtml(API_STATUS_NOTICE.title)}</div>
+      <div class="api-status-body">${API_STATUS_NOTICE.body}</div>
+      ${API_STATUS_NOTICE.footnote ? `<div class="api-status-note">${escapeHtml(API_STATUS_NOTICE.footnote)}</div>` : ''}
+    </div>
+  `;
+}
+
 function renderBackupEndpointsPanel(data) {
   if (!Array.isArray(data.backupEndpoints) || data.backupEndpoints.length === 0) return '';
   const rows = data.backupEndpoints.map((ep, i) => `
@@ -1034,12 +1076,14 @@ function renderCanvas(index) {
       ${isSpecial
         ? `
           ${renderNotesPanel(data)}
+          ${renderApiStatusNotice(data)}
           ${renderBackupEndpointsPanel(data)}
           ${renderAnswerPanel(data, langClass)}
           ${renderDiagnosticsPanel(data.debug)}
         `
         : `
           ${!guideAfterAnswer ? renderGuidePanel(data) : ''}
+          ${renderApiStatusNotice(data)}
           ${renderBackupEndpointsPanel(data)}
           ${renderAnswerPanel(data, langClass)}
           ${guideAfterAnswer ? renderGuidePanel(data) : ''}
@@ -1181,7 +1225,8 @@ async function startSolving() {
           answerDisplay: result.answerDisplay,
           guide: result.guide,
           debug: result.debug,
-          backupEndpoints: result.backupEndpoints
+          backupEndpoints: result.backupEndpoints,
+          usesHostedApi: result.usesHostedApi
         });
       } catch (error) {
         workspaceData.answers.push({

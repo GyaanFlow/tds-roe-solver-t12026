@@ -7,10 +7,19 @@ function escapeSqlString(value) {
   return String(value).replace(/'/g, "''");
 }
 
+// Numeric fields are emitted unquoted. When solve() renders the blank template it passes
+// placeholders like '<MIN_SQFT>', which Number() would turn into NaN — producing
+// `square_footage >= NaN`, i.e. broken SQL in a block labelled "ready to paste". So only
+// coerce when the value really is numeric, otherwise pass the placeholder through verbatim.
+function formatNumericField(value) {
+  const n = Number(value);
+  return (value !== '' && Number.isFinite(n)) ? n : String(value);
+}
+
 function buildQuery({ location, minSqft, minMonth }) {
   const loc = escapeSqlString(location.trim());
-  const sqft = Number(minSqft);
-  const month = Number(minMonth);
+  const sqft = formatNumericField(minSqft);
+  const month = formatNumericField(minMonth);
   return [
     'WITH store_totals AS (',
     '  SELECT',
