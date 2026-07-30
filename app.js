@@ -23,8 +23,6 @@ const navTitle = document.getElementById('navTitle');
 const solverCountEl = document.getElementById('solverCount');
 const exportActions = document.getElementById('exportActions');
 const canvas = document.getElementById('canvas');
-const exportMdBtn = document.getElementById('exportMdBtn');
-const exportJsonBtn = document.getElementById('exportJsonBtn');
 const copyAllBtn = document.getElementById('copyAllBtn');
 const copyDebugBtn = document.getElementById('copyDebugBtn');
 const resetUiBtn = document.getElementById('resetUiBtn');
@@ -1565,23 +1563,6 @@ if (printExamBtn) {
     safeTrack('print_exam', { exam: workspaceData.exam });
   });
 }
-
-exportMdBtn?.addEventListener('click', () => {
-  let md = `# Workspace Export | ${String(workspaceData.exam || '').toUpperCase()}\n`;
-  md += `**Email:** \`${workspaceData.email}\`\n\n---\n\n`;
-  workspaceData.answers.forEach((answer, index) => {
-    md += `### [${answer.type.toUpperCase()}] Q${index + 1}: ${answer.title}\n\`\`\`\n${answer.answer}\n\`\`\`\n\n`;
-  });
-  downloadFile(`workspace_${workspaceData.exam}.md`, md, 'text/markdown');
-  showToast('Markdown export downloaded.', 'success');
-  safeTrack('export_markdown', { exam: workspaceData.exam || 'none', total: workspaceData.answers.length });
-});
-
-exportJsonBtn?.addEventListener('click', () => {
-  downloadFile(`workspace_${workspaceData.exam}.json`, JSON.stringify(workspaceData, null, 2), 'application/json');
-  showToast('JSON export downloaded.', 'success');
-  safeTrack('export_json', { exam: workspaceData.exam || 'none', total: workspaceData.answers.length });
-});
 
 // Academic Integrity Disclaimer checkbox & slide-to-unlock handling
 const agreeDisclaimerCheckbox = document.getElementById('agreeDisclaimerCheckbox');
