@@ -2362,10 +2362,27 @@ body[data-theme="blueprint"] .welcome-blueprint { display: block; }
 
 body[data-theme="blueprint"] .welcome-screen {
   background: none;
-  padding: 0;
+  padding: 0 0 40px;
   align-items: stretch;
   justify-content: flex-start;
-  overflow-y: auto;
+  text-align: left;
+  flex: unset;
+  overflow: visible;
+}
+/* The .editor-canvas scrolls; the welcome-screen just needs to be tall enough
+   to contain the Blueprint landing page naturally without its own flex:1 fighting it. */
+body[data-theme="blueprint"] .welcome-screen h1 { font-size: unset; text-align: unset; }
+body[data-theme="blueprint"] .welcome-screen p  { max-width: unset; }
+/* Keep the footer pill and disclaimer card centered & constrained even though
+   the parent is now align-items:stretch for the full-bleed Blueprint layout. */
+body[data-theme="blueprint"] .welcome-screen .welcome-footer-credits {
+  align-self: center;
+  text-align: center;
+}
+body[data-theme="blueprint"] .welcome-screen .disclaimer-card {
+  align-self: center;
+  width: 100%;
+  max-width: 680px;
 }
 
 .welcome-blueprint {
@@ -2695,6 +2712,21 @@ body[data-theme="blueprint"] {
 }
 body[data-theme="blueprint"] .dot-separator { color: rgba(26, 26, 26, 0.25); }
 
+/* Footer credits pill — on Blueprint, restyle from amber-dark to subtle blue-light */
+body[data-theme="blueprint"] .welcome-footer-credits {
+  border-color: rgba(0, 71, 255, 0.2);
+  background: linear-gradient(120deg, rgba(0, 71, 255, 0.06), rgba(124, 92, 255, 0.04));
+  color: var(--text-secondary);
+}
+body[data-theme="blueprint"] .welcome-footer-credits a {
+  color: var(--text-secondary);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+body[data-theme="blueprint"] .welcome-footer-credits a:hover {
+  color: var(--theme-primary);
+  filter: none;
+}
+
 /* The starfield/network canvas is a dark-space visual — doesn't fit a light editorial
    look, so it's faded out rather than left fighting the new palette. Opacity, not
    display:none, since app.js keeps drawing to it regardless of theme. */
@@ -2954,6 +2986,13 @@ body[data-theme="blueprint"][data-bp-mode="dark"] .disclaimer-link {
   color: #4d7fff;
 }
 body[data-theme="blueprint"][data-bp-mode="dark"] .dot-separator { color: rgba(255, 255, 255, 0.2); }
+body[data-theme="blueprint"][data-bp-mode="dark"] .welcome-footer-credits {
+  border-color: rgba(77, 127, 255, 0.2);
+  background: linear-gradient(120deg, rgba(77, 127, 255, 0.08), rgba(124, 92, 255, 0.05));
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .welcome-footer-credits a {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
 body[data-theme="blueprint"][data-bp-mode="dark"] .nav-pill-stable,
 body[data-theme="blueprint"][data-bp-mode="dark"] .canvas-chip-stable { color: #6ee7b7; }
 body[data-theme="blueprint"][data-bp-mode="dark"] .nav-pill-watch,
