@@ -3251,3 +3251,28 @@ body[data-theme="blueprint"][data-bp-mode="dark"] .welcome-blueprint .bp-catalog
 }
 
 /* ═══════════════════════════════════════ END BLUEPRINT THEME ═══════════════════════════ */
+
+/* Responsive containment for the Blueprint landing page. */
+body[data-theme="blueprint"] #editor,
+body[data-theme="blueprint"] .editor-canvas,
+body[data-theme="blueprint"] .welcome-screen,
+body[data-theme="blueprint"] .welcome-blueprint { min-width: 0; max-width: 100%; }
+body[data-theme="blueprint"] .welcome-blueprint section,
+body[data-theme="blueprint"] .welcome-blueprint .bp-hero-title,
+body[data-theme="blueprint"] .welcome-blueprint .bp-hero-sub,
+body[data-theme="blueprint"] .welcome-blueprint .bp-catalog-sub,
+body[data-theme="blueprint"] .welcome-blueprint .bp-cta-sub { overflow-wrap: anywhere; word-break: normal; }
+body[data-theme="blueprint"] .welcome-blueprint .bp-hero-title { font-size: clamp(2.5rem, 6vw, 5.5rem); letter-spacing: 0; text-wrap: balance; }
+body[data-theme="blueprint"] .email-input-wrapper,
+body[data-theme="blueprint"] #emailInput,
+body[data-theme="blueprint"] #sessionTokenInput { min-width: 0; max-width: 100%; }
+body[data-theme="blueprint"] #emailInput { overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 860px) {
+  body[data-theme="blueprint"] .welcome-blueprint .bp-hero-title { font-size: clamp(2.5rem, 8vw, 4.5rem); }
+}
+@media (max-width: 480px) {
+  body[data-theme="blueprint"] .welcome-blueprint section { padding: 36px 16px; }
+  body[data-theme="blueprint"] .welcome-blueprint .bp-hero-title { font-size: clamp(2.2rem, 12vw, 3.25rem); }
+  body[data-theme="blueprint"] .welcome-blueprint .bp-chip-row { gap: 6px; }
+  body[data-theme="blueprint"] .welcome-blueprint .bp-chip { padding: 6px 10px; }
+}
