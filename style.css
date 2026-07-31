@@ -1857,6 +1857,12 @@ body {
   color: #fde68a !important;
   filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.5));
 }
+.creator-nickname {
+  font-weight: 700;
+  color: var(--theme-primary);
+  text-shadow: 0 0 10px var(--theme-glow);
+}
+body[data-theme="blueprint"] .creator-nickname { color: var(--theme-primary); text-shadow: none; }
 
 /* Question Page Canvas Footer Credits */
 .canvas-footer-credits {
@@ -2241,6 +2247,67 @@ body {
   gap: 8px;
   margin-top: 4px;
 }
+.theme-buttons-container-single { grid-template-columns: 1fr; margin-bottom: 12px; }
+.theme-group-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+.theme-group-toggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+.theme-group-toggle:hover { color: var(--text-secondary); }
+.theme-group-toggle-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 9px;
+}
+.theme-group-toggle[aria-expanded="true"] .theme-group-toggle-arrow {
+  transform: rotate(90deg);
+}
+/* Collapsed by default — Classic UI's 4 buttons only appear once the label above is
+   clicked, so a first-time (or default-Blueprint) visitor's sidebar isn't cluttered with
+   4 extra buttons for a UI they may never switch to. */
+.theme-buttons-container-collapsed {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  transition: grid-template-rows 0.25s ease, opacity 0.2s ease, margin-top 0.25s ease;
+}
+.theme-buttons-container-collapsed > * { min-height: 0; }
+.theme-buttons-container-collapsed.expanded {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: 8px;
+}
+.theme-buttons-container-collapsed:not(.expanded) { grid-template-columns: repeat(4, 1fr); }
+/* The grid-rows collapse trick can leave a few px of residual, hit-testable track height
+   even at opacity 0 (confirmed: ~18px, enough for an invisible button to still register a
+   click) — belt-and-suspenders it with pointer-events so nothing is clickable while hidden. */
+.theme-buttons-container-collapsed:not(.expanded) { pointer-events: none; }
+.theme-buttons-container-collapsed:not(.expanded) button { visibility: hidden; }
+.theme-btn-new {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: var(--theme-primary);
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-top: -2px;
+}
 .theme-btn {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border);
@@ -2279,3 +2346,869 @@ body {
   color: var(--text-primary);
   font-weight: 600;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════════════════
+   BLUEPRINT THEME — editorial landing-page redesign of the welcome screen only.
+   Self-contained on purpose: everything it needs lives in this one block (variables,
+   fonts already added in index.html's <head> font link) so it can be deleted wholesale, or
+   swapped for a different experimental design later, without touching anything above.
+   Toggled purely by `body[data-theme="blueprint"]` — no other theme's CSS is affected.
+   Structurally modeled on a landing page with a hero, a "what this is" stats section,
+   a numbered capabilities list, and a closing CTA; all copy/branding is TDS Portal's own.
+   ═══════════════════════════════════════════════════════════════════════════════════════ */
+.welcome-blueprint { display: none; }
+body[data-theme="blueprint"] .welcome-classic { display: none; }
+body[data-theme="blueprint"] .welcome-blueprint { display: block; }
+
+body[data-theme="blueprint"] .welcome-screen {
+  background: none;
+  padding: 0;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.welcome-blueprint {
+  --bp-bg: #f7f7f5;
+  --bp-ink: #1a1a1a;
+  --bp-ink-70: rgba(26, 26, 26, 0.7);
+  --bp-ink-60: rgba(26, 26, 26, 0.6);
+  --bp-ink-50: rgba(26, 26, 26, 0.5);
+  --bp-ink-30: rgba(26, 26, 26, 0.3);
+  --bp-border: #d8d8d2;
+  --bp-panel: #ebebeb;
+  --bp-accent: #0047ff;
+  --bp-accent-hover: #2a63ff;
+  --bp-font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --bp-font-body: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --bp-font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  background: var(--bp-bg);
+  color: var(--bp-ink);
+  font-family: var(--bp-font-body);
+  text-align: left;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+/* Thin gradient accent strip along the top edge — a small but deliberate "designed" touch
+   rather than a flat solid-color box starting immediately. */
+.welcome-blueprint::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--bp-accent), #7c5cff, var(--bp-accent));
+  background-size: 200% 100%;
+  animation: bp-accent-shift 6s ease-in-out infinite;
+}
+@keyframes bp-accent-shift {
+  0%, 100% { background-position: 0% 0; }
+  50% { background-position: 100% 0; }
+}
+.welcome-blueprint section {
+  position: relative;
+  padding: 72px clamp(24px, 6vw, 96px);
+  border-bottom: 1px solid var(--bp-border);
+}
+.welcome-blueprint section:last-child { border-bottom: none; }
+.welcome-blueprint section > * { position: relative; z-index: 1; }
+
+/* Soft gradient glows instead of a flat solid section background — this is the single
+   biggest lever for "impressive vs flat," and costs nothing functionally. */
+.welcome-blueprint .bp-hero { overflow: hidden; }
+.welcome-blueprint .bp-hero::before {
+  content: '';
+  position: absolute;
+  inset: -15%;
+  background:
+    radial-gradient(560px circle at 12% -8%, rgba(0, 71, 255, 0.14), transparent 60%),
+    radial-gradient(480px circle at 92% 25%, rgba(124, 92, 255, 0.11), transparent 60%);
+  z-index: 0;
+  pointer-events: none;
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .welcome-blueprint .bp-hero::before {
+  background:
+    radial-gradient(560px circle at 12% -8%, rgba(77, 127, 255, 0.28), transparent 60%),
+    radial-gradient(480px circle at 92% 25%, rgba(124, 92, 255, 0.2), transparent 60%);
+}
+.welcome-blueprint .bp-cta { overflow: hidden; }
+.welcome-blueprint .bp-cta::before {
+  content: '';
+  position: absolute;
+  inset: -15%;
+  background: radial-gradient(500px circle at 85% 0%, rgba(0, 71, 255, 0.28), transparent 65%);
+  z-index: 0;
+  pointer-events: none;
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .welcome-blueprint .bp-cta::before {
+  background: radial-gradient(500px circle at 85% 0%, rgba(77, 127, 255, 0.35), transparent 65%);
+}
+
+.welcome-blueprint .bp-eyebrow {
+  font-family: var(--bp-font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--bp-ink-50);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.welcome-blueprint .bp-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background: var(--bp-accent);
+  flex-shrink: 0;
+}
+
+/* ── Hero ── */
+.welcome-blueprint .bp-hero-title {
+  font-family: var(--bp-font-display);
+  font-weight: 400;
+  font-size: clamp(40px, 7vw, 96px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin-bottom: 28px;
+  color: var(--bp-ink);
+}
+.welcome-blueprint .bp-accent {
+  font-weight: 700;
+  color: var(--bp-accent);
+}
+.welcome-blueprint .bp-hero-sub {
+  max-width: 560px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--bp-ink-70);
+  margin-bottom: 32px;
+}
+.welcome-blueprint .bp-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+.welcome-blueprint .bp-btn {
+  font-family: var(--bp-font-mono);
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 26px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  display: inline-block;
+}
+.welcome-blueprint .bp-btn-primary {
+  background: var(--bp-accent);
+  color: #fff;
+}
+.welcome-blueprint .bp-btn-primary:hover { background: var(--bp-accent-hover); transform: translateY(-2px); }
+.welcome-blueprint .bp-btn-ghost {
+  background: transparent;
+  color: var(--bp-ink);
+  border-color: var(--bp-ink-30);
+}
+.welcome-blueprint .bp-btn-ghost:hover { border-color: var(--bp-ink); transform: translateY(-2px); }
+
+.welcome-blueprint .bp-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.welcome-blueprint .bp-chip {
+  font-family: var(--bp-font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--bp-ink-60);
+  background: var(--bp-panel);
+  border: 1px solid var(--bp-border);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+.welcome-blueprint .bp-stat-line {
+  font-family: var(--bp-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--bp-accent);
+  font-weight: 500;
+}
+.welcome-blueprint .bp-creator-line {
+  font-family: var(--bp-font-mono);
+  font-size: 12px;
+  color: var(--bp-ink-50);
+  margin-top: 8px;
+}
+.welcome-blueprint .bp-creator-line a { color: var(--bp-ink-70); }
+.welcome-blueprint .bp-creator-line a:hover { color: var(--bp-accent); }
+
+/* ── Stats / "what this is" ── */
+.welcome-blueprint .bp-stats { background: #fff; }
+.welcome-blueprint .bp-stats-copy {
+  max-width: 620px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--bp-ink-70);
+  margin-bottom: 44px;
+}
+.welcome-blueprint .bp-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.welcome-blueprint .bp-stat { display: flex; flex-direction: column; gap: 6px; }
+.welcome-blueprint .bp-stat-num {
+  font-family: var(--bp-font-display);
+  font-size: clamp(28px, 3.4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--bp-ink);
+}
+.welcome-blueprint .bp-stat-label {
+  font-family: var(--bp-font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--bp-ink-50);
+}
+
+/* ── Capabilities ── */
+.welcome-blueprint .bp-h2 {
+  font-family: var(--bp-font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 40px;
+  color: var(--bp-ink);
+}
+.welcome-blueprint .bp-cap-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.welcome-blueprint .bp-cap-card {
+  border: 1px solid var(--bp-border);
+  border-radius: 10px;
+  padding: 28px 24px;
+  background: #fff;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.welcome-blueprint .bp-cap-card:hover { border-color: var(--bp-accent); transform: translateY(-3px); }
+.welcome-blueprint .bp-cap-num {
+  font-family: var(--bp-font-mono);
+  font-size: 12px;
+  color: var(--bp-accent);
+  letter-spacing: 0.6px;
+}
+.welcome-blueprint .bp-cap-card h3 {
+  font-family: var(--bp-font-display);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 12px 0 8px;
+  color: var(--bp-ink);
+}
+.welcome-blueprint .bp-cap-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--bp-ink-60);
+}
+
+/* ── Closing CTA ── */
+.welcome-blueprint .bp-cta { background: var(--bp-ink); color: #f7f7f5; }
+.welcome-blueprint .bp-cta .bp-eyebrow { color: rgba(247, 247, 245, 0.5); }
+.welcome-blueprint .bp-cta .bp-h2 { color: #f7f7f5; }
+.welcome-blueprint .bp-cta-sub {
+  max-width: 520px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(247, 247, 245, 0.7);
+  margin-bottom: 32px;
+}
+.welcome-blueprint .bp-cta .bp-btn-primary { background: var(--bp-accent); }
+.welcome-blueprint .bp-cta .bp-btn-primary:hover { background: var(--bp-accent-hover); }
+
+@media (max-width: 860px) {
+  .welcome-blueprint section { padding: 48px 22px; }
+  .welcome-blueprint .bp-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .welcome-blueprint .bp-cap-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .welcome-blueprint .bp-stats-grid { grid-template-columns: 1fr; }
+  .welcome-blueprint .bp-hero-ctas { flex-direction: column; align-items: stretch; }
+  .welcome-blueprint .bp-btn { text-align: center; }
+}
+/* ── Full-app shell reskin: light/editorial, extends beyond just the welcome screen ──
+   Most of the app's chrome (sidebar, panels, buttons, nav items, dashboard cards) is
+   already built on the --bg/--text/--border/--font-* custom properties defined in :root,
+   so overriding them here on body[data-theme="blueprint"] cascades correctly through all
+   of that for free — no per-component rewrite needed for anything that already used a
+   variable. The blocks below are only for the handful of components that use LITERAL
+   hardcoded colors instead of variables (toasts, celebrate card, status/backup boxes,
+   disclaimer card) and therefore don't inherit the swap automatically. */
+body[data-theme="blueprint"] {
+  --bg: #f7f7f5;
+  --bg-sidebar: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-hover: rgba(0, 0, 0, 0.04);
+  --bg-active: rgba(0, 0, 0, 0.07);
+
+  --border: #d8d8d2;
+  --border-focus: rgba(0, 71, 255, 0.45);
+
+  --text-primary: #1a1a1a;
+  --text-secondary: rgba(26, 26, 26, 0.65);
+  --text-muted: rgba(26, 26, 26, 0.4);
+
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Fira Code', monospace;
+
+  --theme-primary: #0047ff;
+  --theme-primary-hover: #2a63ff;
+  --theme-secondary: #7c5cff;
+  --theme-glow: rgba(0, 71, 255, 0.22);
+  --theme-glow-intense: rgba(0, 71, 255, 0.4);
+
+  /* Semantic status colors (--success/--warning/--info/--error) were tuned bright/pastel
+     for a near-black background (e.g. --warning: #f1c40f is a vivid yellow, contrast ~1.7
+     on white — nearly invisible, as seen on the "paste a fresh token" hint text). Darker,
+     same-hue-family shades stay legible on white while keeping their semantic meaning. */
+  --success: #15803d;
+  --warning: #b45309;
+  --info: #1d4ed8;
+  --error: #b91c1c;
+
+  color-scheme: light;
+}
+body[data-theme="blueprint"] .dot-separator { color: rgba(26, 26, 26, 0.25); }
+
+/* The starfield/network canvas is a dark-space visual — doesn't fit a light editorial
+   look, so it's faded out rather than left fighting the new palette. Opacity, not
+   display:none, since app.js keeps drawing to it regardless of theme. */
+body[data-theme="blueprint"] #threeCanvas { opacity: 0.04; }
+
+body[data-theme="blueprint"] .toast {
+  background: #ffffff;
+  border-color: var(--border);
+  color: var(--text-primary);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+body[data-theme="blueprint"] .toast-success { border-color: rgba(16, 185, 129, 0.5); }
+body[data-theme="blueprint"] .toast-error { border-color: rgba(231, 76, 60, 0.5); }
+
+body[data-theme="blueprint"] .celebrate-card {
+  background: linear-gradient(160deg, #ffffff, #f7f7f5);
+  border-color: rgba(0, 71, 255, 0.25);
+  color: var(--text-primary);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.14);
+}
+body[data-theme="blueprint"] .celebrate-body { color: var(--text-secondary); }
+body[data-theme="blueprint"] .celebrate-dismiss { color: var(--text-muted); }
+body[data-theme="blueprint"] .celebrate-dismiss:hover { color: var(--text-primary); }
+
+body[data-theme="blueprint"] .api-status-box {
+  background: linear-gradient(140deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.03));
+  border-color: rgba(239, 68, 68, 0.35);
+  color: var(--text-primary);
+}
+body[data-theme="blueprint"] .api-status-title { color: #b91c1c; }
+body[data-theme="blueprint"] .api-status-body { color: var(--text-secondary); }
+body[data-theme="blueprint"] .api-status-body strong { color: #b91c1c; }
+
+body[data-theme="blueprint"] .backup-endpoints-box {
+  background: linear-gradient(140deg, rgba(0, 71, 255, 0.06), rgba(0, 71, 255, 0.02));
+  border-color: rgba(0, 71, 255, 0.3);
+}
+body[data-theme="blueprint"] .backup-endpoints-title { color: var(--theme-primary); }
+body[data-theme="blueprint"] .backup-endpoint-row {
+  background: #ffffff;
+  border-color: var(--border);
+}
+body[data-theme="blueprint"] .backup-endpoint-label {
+  color: var(--theme-primary);
+  background: rgba(0, 71, 255, 0.1);
+}
+body[data-theme="blueprint"] .backup-endpoint-url { color: var(--text-primary); }
+body[data-theme="blueprint"] .backup-copy-btn {
+  color: var(--theme-primary);
+  background: rgba(0, 71, 255, 0.08);
+  border-color: rgba(0, 71, 255, 0.35);
+}
+body[data-theme="blueprint"] .backup-copy-btn:hover { background: rgba(0, 71, 255, 0.16); }
+
+body[data-theme="blueprint"] .disclaimer-card {
+  background: #ffffff;
+  border-color: var(--border);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+}
+
+/* Most of the app's chrome is built as translucent dark glass over the (now near-invisible)
+   starfield canvas — #sidebar, .editor-header, .editor-canvas's contrast gradient, and
+   .panel-section (every Answer/Guide/Variant/Diagnostics box) all hardcode a dark
+   background+shadow directly rather than using --bg-surface, so they don't inherit the
+   variable swap above and need their own light-glass equivalents. */
+body[data-theme="blueprint"] #sidebar {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  border-right: 1px solid var(--border);
+  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.02), 4px 0 32px rgba(0, 0, 0, 0.06);
+}
+body[data-theme="blueprint"] .editor-header {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom-color: var(--border);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02), 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+body[data-theme="blueprint"] .editor-canvas {
+  background-image: none;
+}
+body[data-theme="blueprint"] .panel-section {
+  background: #ffffff;
+  border-color: var(--border);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+body[data-theme="blueprint"] .panel-section:hover {
+  border-color: rgba(0, 71, 255, 0.3);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--theme-glow);
+}
+body[data-theme="blueprint"] .panel-section summary {
+  background: rgba(0, 0, 0, 0.02);
+  color: var(--text-secondary);
+}
+body[data-theme="blueprint"] .styled-output pre {
+  background: #f4f4f2;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+/* Syntax-highlighted code blocks (Prism "tomorrow" theme) are dark by design — on a light
+   shell they'd read as a jarring black hole. Force a plain light code surface instead. */
+body[data-theme="blueprint"] pre.raw-output,
+body[data-theme="blueprint"] pre[class*="language-"] {
+  background: #ffffff !important;
+  border: 1px solid var(--border);
+  color: var(--text-primary) !important;
+}
+body[data-theme="blueprint"] code[class*="language-"] { color: var(--text-primary) !important; }
+
+/* The disclaimer card's 4 policy blocks (sandbox/malpractice/fairuse/liability) each carry
+   their own cyan/red/violet/amber identity, with headings and pills tinted as near-white
+   pastels — designed to glow against the original near-black translucent card. Overriding
+   just the card's background to white left that same text nearly invisible (contrast
+   ratio ~1.1–1.2, i.e. essentially unreadable) while ALSO erasing the 4-color distinction
+   that gave this card its character. Recalibrated to darker shades of the exact same 4
+   hues instead of collapsing everything to gray — legible on white, and the color-per-
+   section identity survives. */
+body[data-theme="blueprint"] .disclaimer-section-block.sandbox-block h5 { color: #0e7490; }
+body[data-theme="blueprint"] .disclaimer-section-block.malpractice-block h5 { color: #b91c1c; }
+body[data-theme="blueprint"] .disclaimer-section-block.fairuse-block h5 { color: #6d28d9; }
+body[data-theme="blueprint"] .disclaimer-section-block.liability-block h5 { color: #b45309; }
+body[data-theme="blueprint"] .disclaimer-section-block p { color: var(--text-secondary); }
+body[data-theme="blueprint"] .sandbox-pill { background: rgba(6, 182, 212, 0.12); color: #0e7490; border-color: rgba(6, 182, 212, 0.35); }
+body[data-theme="blueprint"] .malpractice-pill { background: rgba(239, 68, 68, 0.1); color: #b91c1c; border-color: rgba(239, 68, 68, 0.35); }
+body[data-theme="blueprint"] .fairuse-pill { background: rgba(139, 92, 246, 0.1); color: #6d28d9; border-color: rgba(139, 92, 246, 0.35); }
+body[data-theme="blueprint"] .liability-pill { background: rgba(245, 158, 11, 0.12); color: #b45309; border-color: rgba(245, 158, 11, 0.35); }
+
+/* Ancillary amber accents (version badge, footer "star/follow" links, disclaimer links)
+   were tuned for the dark amber theme's near-black background and are similarly unreadable
+   on white (contrast ~1.5–2.2). Rather than just darkening amber, these unify to the
+   Blueprint accent blue instead — one consistent brand color running through hero, CTAs,
+   backup-endpoint box, and now these small accents too, instead of a leftover amber patch
+   that no longer matches the rest of the skin. */
+body[data-theme="blueprint"] .version-badge {
+  background: rgba(0, 71, 255, 0.08);
+  border-color: rgba(0, 71, 255, 0.25);
+  color: var(--theme-primary);
+  -webkit-text-fill-color: var(--theme-primary);
+  box-shadow: none;
+}
+body[data-theme="blueprint"] .support-highlight a { color: var(--theme-primary) !important; border-bottom-color: rgba(0, 71, 255, 0.4) !important; }
+body[data-theme="blueprint"] .support-highlight a:hover { color: var(--theme-primary-hover) !important; filter: none; }
+body[data-theme="blueprint"] .disclaimer-link { color: var(--theme-primary); border-bottom-color: rgba(0, 71, 255, 0.3); }
+body[data-theme="blueprint"] .disclaimer-link:hover { color: var(--theme-primary-hover); border-bottom-color: var(--theme-primary-hover); filter: none; }
+
+/* Same pastel-on-dark problem again: the sidebar health pills (.nav-pill-*) and canvas
+   health chips (.canvas-chip-*) use near-white greens/yellows/reds meant to pop against
+   near-black — nearly invisible (~1.2–1.3 contrast) on white. Darker same-hue shades. */
+body[data-theme="blueprint"] .nav-pill-stable, body[data-theme="blueprint"] .canvas-chip-stable { color: #15803d; }
+body[data-theme="blueprint"] .nav-pill-watch, body[data-theme="blueprint"] .canvas-chip-watch, body[data-theme="blueprint"] .canvas-chip-warning { color: #b45309; }
+body[data-theme="blueprint"] .nav-pill-error, body[data-theme="blueprint"] .nav-pill-locked, body[data-theme="blueprint"] .canvas-chip-error { color: #b91c1c; }
+
+/* Not covered by this pass: individual solvers embed their own inline `style="..."` HTML
+   for question-specific guide/answer content (e.g. GA6 Q1/Q3's colored banner boxes) —
+   those are per-solver JS template strings, not theme CSS, and reskinning every one of
+   them is a separate, much larger content-level task, not a CSS theme swap. */
+
+/* ── Blueprint dark mode: same fonts/layout/blue accent, dark surfaces instead of light ──
+   For users who are used to a dark UI and don't want the light editorial look forced on
+   them. Toggled via `data-bp-mode="dark"` on <body> (in addition to data-theme="blueprint"),
+   persisted in localStorage, independent of the other 4 themes' own dark palettes. Every
+   selector below is `body[data-theme="blueprint"][data-bp-mode="dark"]` — two attribute
+   selectors plus whatever the light rule had — which is always at least as specific as the
+   light-mode rule it needs to override, so these can simply be appended after rather than
+   requiring every light rule above to be rewritten. */
+body[data-theme="blueprint"][data-bp-mode="dark"] {
+  --bg: #0b0d12;
+  --bg-sidebar: #0e1015;
+  --bg-surface: #12141a;
+  --bg-hover: rgba(255, 255, 255, 0.05);
+  --bg-active: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-focus: rgba(77, 127, 255, 0.5);
+  --text-primary: #f1f1ef;
+  --text-secondary: rgba(241, 241, 239, 0.68);
+  --text-muted: rgba(241, 241, 239, 0.42);
+  --theme-primary: #4d7fff;
+  --theme-primary-hover: #6d97ff;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --info: #60a5fa;
+  --error: #f87171;
+  color-scheme: dark;
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] #threeCanvas { opacity: 0.08; }
+body[data-theme="blueprint"][data-bp-mode="dark"] .welcome-blueprint {
+  --bp-bg: #0b0d12;
+  --bp-ink: #f1f1ef;
+  --bp-ink-70: rgba(241, 241, 239, 0.7);
+  --bp-ink-60: rgba(241, 241, 239, 0.6);
+  --bp-ink-50: rgba(241, 241, 239, 0.5);
+  --bp-ink-30: rgba(241, 241, 239, 0.3);
+  --bp-border: rgba(255, 255, 255, 0.12);
+  --bp-panel: rgba(255, 255, 255, 0.06);
+  --bp-accent: #4d7fff;
+  --bp-accent-hover: #6d97ff;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .bp-stats,
+body[data-theme="blueprint"][data-bp-mode="dark"] .bp-cap-card,
+body[data-theme="blueprint"][data-bp-mode="dark"] .backup-endpoint-row {
+  background: #12141a;
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .bp-chip { background: rgba(255, 255, 255, 0.06); }
+body[data-theme="blueprint"][data-bp-mode="dark"] .bp-btn-ghost { color: var(--bp-ink); }
+/* .bp-cta's background is `var(--bp-ink)` — an intentional "inverted" dark section on the
+   light page. In dark mode --bp-ink itself flips to near-white, so this section would
+   silently become light-on-light with its own (still light) hardcoded text color. Give it
+   an explicit dark background instead of following --bp-ink here. */
+body[data-theme="blueprint"][data-bp-mode="dark"] .bp-cta { background: #14161c; }
+
+body[data-theme="blueprint"][data-bp-mode="dark"] #sidebar {
+  background: rgba(10, 11, 15, 0.85);
+  border-right-color: rgba(255, 255, 255, 0.08);
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .editor-header {
+  background: rgba(10, 11, 15, 0.8);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .panel-section {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .panel-section summary { background: rgba(255, 255, 255, 0.03); }
+body[data-theme="blueprint"][data-bp-mode="dark"] .styled-output pre {
+  background: #0d0f14;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .toast {
+  background: #14161c;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .celebrate-card {
+  background: linear-gradient(160deg, #14161c, #0b0d12);
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .api-status-box {
+  background: linear-gradient(140deg, rgba(239, 68, 68, 0.14), rgba(239, 68, 68, 0.04));
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .api-status-title { color: #f87171; }
+body[data-theme="blueprint"][data-bp-mode="dark"] .api-status-body strong { color: #f87171; }
+body[data-theme="blueprint"][data-bp-mode="dark"] .backup-endpoints-box {
+  background: linear-gradient(140deg, rgba(77, 127, 255, 0.14), rgba(77, 127, 255, 0.04));
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .disclaimer-card {
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .disclaimer-section-block.sandbox-block h5 { color: #67e8f9; }
+body[data-theme="blueprint"][data-bp-mode="dark"] .disclaimer-section-block.malpractice-block h5 { color: #fca5a5; }
+body[data-theme="blueprint"][data-bp-mode="dark"] .disclaimer-section-block.fairuse-block h5 { color: #c4b5fd; }
+body[data-theme="blueprint"][data-bp-mode="dark"] .disclaimer-section-block.liability-block h5 { color: #fcd34d; }
+body[data-theme="blueprint"][data-bp-mode="dark"] .version-badge,
+body[data-theme="blueprint"][data-bp-mode="dark"] .support-highlight a,
+body[data-theme="blueprint"][data-bp-mode="dark"] .disclaimer-link {
+  color: #4d7fff;
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .dot-separator { color: rgba(255, 255, 255, 0.2); }
+body[data-theme="blueprint"][data-bp-mode="dark"] .nav-pill-stable,
+body[data-theme="blueprint"][data-bp-mode="dark"] .canvas-chip-stable { color: #6ee7b7; }
+body[data-theme="blueprint"][data-bp-mode="dark"] .nav-pill-watch,
+body[data-theme="blueprint"][data-bp-mode="dark"] .canvas-chip-watch,
+body[data-theme="blueprint"][data-bp-mode="dark"] .canvas-chip-warning { color: #fcd34d; }
+body[data-theme="blueprint"][data-bp-mode="dark"] .nav-pill-error,
+body[data-theme="blueprint"][data-bp-mode="dark"] .nav-pill-locked,
+body[data-theme="blueprint"][data-bp-mode="dark"] .canvas-chip-error { color: #fca5a5; }
+
+/* Navbar Classic-UI escape hatch + dark/light toggle — lives in the persistent header
+   (not just the landing page), but only means anything while Blueprint is active, so it's
+   hidden entirely for the other 4 (Classic) themes. */
+.navbar-bp-controls { display: none; align-items: center; gap: 8px; }
+body[data-theme="blueprint"] .navbar-bp-controls { display: flex; }
+#bpModeToggle .bp-icon-moon { display: none; }
+body[data-theme="blueprint"][data-bp-mode="dark"] #bpModeToggle .bp-icon-sun { display: none; }
+body[data-theme="blueprint"][data-bp-mode="dark"] #bpModeToggle .bp-icon-moon { display: block; }
+@media (max-width: 900px) {
+  .navbar-bp-controls .navbar-credit-btn span:not(#bpModeToggleLabel) { display: none; }
+}
+
+/* ── Full solver catalog section ── */
+.welcome-blueprint .bp-catalog-sub {
+  max-width: 620px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--bp-ink-60);
+  margin-bottom: 24px;
+}
+.welcome-blueprint .bp-catalog-status {
+  font-family: var(--bp-font-mono);
+  font-size: 12px;
+  color: var(--bp-ink-50);
+  margin-top: 12px;
+}
+.welcome-blueprint .bp-catalog-container {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.welcome-blueprint .bp-catalog-group {
+  border: 1px solid var(--bp-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.welcome-blueprint .bp-catalog-group summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--bp-font-display);
+  font-weight: 700;
+  font-size: 15px;
+  background: rgba(0, 0, 0, 0.02);
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .welcome-blueprint .bp-catalog-group summary { background: rgba(255, 255, 255, 0.04); }
+.welcome-blueprint .bp-catalog-group summary::-webkit-details-marker { display: none; }
+.welcome-blueprint .bp-catalog-group summary::after { content: '+'; color: var(--bp-accent); font-size: 18px; }
+.welcome-blueprint .bp-catalog-group[open] summary::after { content: '−'; }
+.welcome-blueprint .bp-catalog-count {
+  font-family: var(--bp-font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--bp-ink-50);
+  margin-left: 10px;
+}
+.welcome-blueprint .bp-catalog-questions {
+  list-style: none;
+  padding: 6px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.welcome-blueprint .bp-catalog-questions li {
+  font-size: 13.5px;
+  color: var(--bp-ink-70);
+  padding: 6px 8px;
+  border-bottom: 1px dashed var(--bp-border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease, padding-left 0.12s ease;
+}
+.welcome-blueprint .bp-catalog-questions li:last-child { border-bottom: none; }
+.welcome-blueprint .bp-catalog-questions li:hover {
+  background: rgba(0, 71, 255, 0.06);
+  color: var(--bp-accent);
+  padding-left: 14px;
+}
+body[data-theme="blueprint"][data-bp-mode="dark"] .welcome-blueprint .bp-catalog-questions li:hover { background: rgba(77, 127, 255, 0.12); }
+.welcome-blueprint .bp-catalog-questions li.bp-catalog-empty,
+.welcome-blueprint p.bp-catalog-empty { cursor: default; color: var(--bp-ink-50); }
+.welcome-blueprint .bp-catalog-questions li.bp-catalog-empty:hover { background: none; padding-left: 8px; color: var(--bp-ink-50); }
+.welcome-blueprint .bp-catalog-error { color: #b91c1c; font-size: 13px; padding: 8px 18px 14px; }
+body[data-theme="blueprint"][data-bp-mode="dark"] .welcome-blueprint .bp-catalog-error { color: #fca5a5; }
+
+/* ── Catalog toolbar: term tabs + search + expand/collapse ── */
+.welcome-blueprint .bp-catalog-ui { margin-top: 20px; }
+.welcome-blueprint .bp-catalog-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.welcome-blueprint .bp-catalog-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.welcome-blueprint .bp-catalog-tab {
+  font-family: var(--bp-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--bp-border);
+  background: transparent;
+  color: var(--bp-ink-60);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.welcome-blueprint .bp-catalog-tab:hover { border-color: var(--bp-accent); color: var(--bp-ink); }
+.welcome-blueprint .bp-catalog-tab.active {
+  background: var(--bp-accent);
+  border-color: var(--bp-accent);
+  color: #fff;
+  font-weight: 700;
+}
+.welcome-blueprint .bp-catalog-search-wrap { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.welcome-blueprint .bp-catalog-search {
+  font-family: var(--bp-font-body);
+  font-size: 13px;
+  padding: 9px 14px;
+  min-width: 240px;
+  border-radius: 8px;
+  border: 1px solid var(--bp-border);
+  background: #fff;
+  color: var(--bp-ink);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.welcome-blueprint .bp-catalog-search:focus { border-color: var(--bp-accent); }
+body[data-theme="blueprint"][data-bp-mode="dark"] .welcome-blueprint .bp-catalog-search { background: rgba(255, 255, 255, 0.05); }
+.welcome-blueprint .bp-catalog-mini-btn {
+  font-family: var(--bp-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 7px;
+  border: 1px solid var(--bp-border);
+  background: transparent;
+  color: var(--bp-ink-60);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.welcome-blueprint .bp-catalog-mini-btn:hover { border-color: var(--bp-accent); color: var(--bp-accent); }
+
+.welcome-blueprint .bp-catalog-no-results {
+  font-size: 14px;
+  color: var(--bp-ink-50);
+  padding: 20px 0;
+  font-style: italic;
+}
+
+.welcome-blueprint .bp-catalog-term-panel { display: none; }
+.welcome-blueprint .bp-catalog-term-panel.active { display: flex; flex-direction: column; gap: 22px; }
+.welcome-blueprint .bp-catalog-category-title {
+  font-family: var(--bp-font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--bp-ink-50);
+  margin-bottom: 10px;
+}
+.welcome-blueprint .bp-catalog-category { display: flex; flex-direction: column; gap: 8px; }
+.welcome-blueprint .bp-catalog-category .bp-catalog-group + .bp-catalog-group { margin-top: 8px; }
+
+@media (max-width: 640px) {
+  .welcome-blueprint .bp-catalog-toolbar { flex-direction: column; align-items: stretch; }
+  .welcome-blueprint .bp-catalog-search { min-width: 0; flex: 1 1 auto; }
+}
+
+/* ── Scroll-reveal for each landing section (fade + rise, once, via IntersectionObserver
+   in app.js). Respects prefers-reduced-motion by simply never hiding content in the first
+   place, rather than animating then snapping — see the media query below. ── */
+.welcome-blueprint .bp-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.welcome-blueprint .bp-reveal.bp-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .welcome-blueprint .bp-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .welcome-blueprint::before { animation: none; }
+}
+
+/* ── Catalog loading state: spinner + shimmering skeleton rows instead of static "Loading…" ── */
+.welcome-blueprint .bp-catalog-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--bp-font-mono);
+  font-size: 12px;
+  color: var(--bp-ink-50);
+  margin-top: 12px;
+}
+.welcome-blueprint .bp-spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--bp-border);
+  border-top-color: var(--bp-accent);
+  animation: bp-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes bp-spin { to { transform: rotate(360deg); } }
+.welcome-blueprint .bp-skeleton-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+.welcome-blueprint .bp-skeleton-row {
+  height: 46px;
+  border-radius: 10px;
+  border: 1px solid var(--bp-border);
+  background: linear-gradient(100deg, var(--bp-panel) 30%, rgba(0, 71, 255, 0.08) 50%, var(--bp-panel) 70%);
+  background-size: 200% 100%;
+  animation: bp-shimmer 1.4s ease-in-out infinite;
+}
+@keyframes bp-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .welcome-blueprint .bp-spinner { animation: none; }
+  .welcome-blueprint .bp-skeleton-row { animation: none; }
+}
+
+/* Button micro-interaction: a subtle press without relying on browser default outlines only */
+.welcome-blueprint .bp-btn:active,
+.welcome-blueprint .bp-catalog-tab:active,
+#bpSwitchToClassic:active,
+#bpModeToggle:active {
+  transform: scale(0.97);
+}
+
+/* ═══════════════════════════════════════ END BLUEPRINT THEME ═══════════════════════════ */

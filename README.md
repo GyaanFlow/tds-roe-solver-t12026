@@ -16,7 +16,7 @@
 
 **TDS Portal** is a production-grade, highly secure, browser-based sandbox environment designed for the automated execution of deterministic solver logic. Engineered specifically as a local study companion for the **IIT Madras Tools in Data Science (TDS)** curriculum, the portal bridges the gap between intricate, multi-layered data pipelines and highly reproducible, instant local computations.
 
-Constructed around a core philosophy of **visual excellence** and **mathematical predictability**, the platform dynamically registers and orchestrates a suite of **90+ specialized solvers**, delivering near-instantaneous output vectors completely client-side.
+Constructed around a core philosophy of **visual excellence** and **mathematical predictability**, the platform dynamically registers and orchestrates a suite of **154+ specialized solvers across 12 exam suites**, delivering near-instantaneous output vectors completely client-side.
 
 ---
 
@@ -84,7 +84,7 @@ To align fully with the **IIT Madras Student Code of Conduct**, the workspace im
 
 ## 🎯 Exam Registry & Computational Engines
 
-The registry is split into Term 1 2026 (`T12026`) and Term 2 2026 (`T22026`), covering 70+ deterministic tasks:
+The registry is split into Term 1 2026 (`T12026`) and Term 2 2026 (`T22026`), covering 154+ deterministic tasks across 12 exam suites (verified live via `npm run check` and the homepage's own "Full Solver Catalog," which is built dynamically from these same registries):
 
 | Target Engine | Term | Scope | Technical Highlights & Capabilities |
 | :--- | :--- | :--- | :--- |
