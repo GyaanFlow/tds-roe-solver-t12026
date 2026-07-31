@@ -3276,3 +3276,16 @@ body[data-theme="blueprint"] #emailInput { overflow: hidden; text-overflow: elli
   body[data-theme="blueprint"] .welcome-blueprint .bp-chip-row { gap: 6px; }
   body[data-theme="blueprint"] .welcome-blueprint .bp-chip { padding: 6px 10px; }
 }
+
+/* Blueprint landing pages must contribute their full natural height to the editor scroll pane. */
+body[data-theme="blueprint"] .welcome-screen {
+  flex: 0 0 auto;
+  height: auto;
+  overflow: visible;
+}
+body[data-theme="blueprint"] .welcome-blueprint {
+  display: block;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+}
