@@ -10,9 +10,12 @@ const THEME_HUES = {
   blueprint: { primary: 223, secondary: 260 }
 };
 
-// Blueprint is now the default for new visitors; the original 4 dark themes are preserved
-// as "Classic UI" for anyone who explicitly picks one (or already had one saved).
-let activeTheme = safeStorageGet('workspaceTheme') || 'blueprint';
+// Classic Amber is the default; Blueprint remains available as an optional New UI.
+const storedTheme = safeStorageGet('workspaceTheme');
+const themeMigrationDone = safeStorageGet('workspaceThemeClassicDefault') === 'true';
+let activeTheme = !themeMigrationDone && storedTheme === 'blueprint'
+  ? 'amber'
+  : (['amber', 'cyber', 'orchid', 'frost', 'blueprint'].includes(storedTheme) ? storedTheme : 'amber');
 
 const emailInput = document.getElementById('emailInput');
 const sessionTokenInput = document.getElementById('sessionTokenInput');
@@ -1450,8 +1453,7 @@ document.getElementById('bpModeToggle')?.addEventListener('click', () => {
 });
 applyBlueprintMode();
 
-// Classic UI's 4 theme buttons are collapsed in the sidebar by default (decluttering the
-// common case) and only expand once this label is clicked.
+// Classic UI theme buttons are visible by default and can still be collapsed.
 document.getElementById('classicUiToggle')?.addEventListener('click', (event) => {
   const toggle = event.currentTarget;
   const container = document.getElementById('classicUiButtons');
@@ -2025,6 +2027,7 @@ const THEME_COLORS = {
 function switchTheme(theme) {
   activeTheme = theme;
   safeStorageSet('workspaceTheme', theme);
+  safeStorageSet('workspaceThemeClassicDefault', 'true');
   if (document.body && typeof document.body.setAttribute === 'function') {
     document.body.setAttribute('data-theme', theme);
   }
