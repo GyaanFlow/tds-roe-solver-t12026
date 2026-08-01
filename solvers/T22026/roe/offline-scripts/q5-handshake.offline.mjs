@@ -17,10 +17,25 @@
 import { createHmac } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 
+process.on('uncaughtException', (err) => {
+  console.error(`Unexpected error: ${err.message}`);
+  process.exit(1);
+});
+
 const DEFAULT_TAG_LENGTH = 16;
 
 function normalizeEmail(email) {
   return String(email || '').trim().toLowerCase();
+}
+
+function resolveTagLength(tagLenStr) {
+  if (tagLenStr === undefined) return DEFAULT_TAG_LENGTH;
+  const n = Number(tagLenStr);
+  if (!Number.isFinite(n) || n <= 0) {
+    console.error(`WARNING: ignoring invalid tagLength "${tagLenStr}" — using default ${DEFAULT_TAG_LENGTH}.`);
+    return DEFAULT_TAG_LENGTH;
+  }
+  return Math.floor(n);
 }
 
 function makeCode(key, tag, message, tagLength) {
@@ -33,13 +48,11 @@ const [, , mode, ...rest] = process.argv;
 if (mode === 'challenge') {
   const [key, email, tagLenStr] = rest;
   if (!key || !email) { console.error('Usage: challenge <your-key> <classmate-email> [tagLength]'); process.exit(1); }
-  const tagLength = tagLenStr ? Number(tagLenStr) : DEFAULT_TAG_LENGTH;
-  console.log(makeCode(key, 'c', normalizeEmail(email), tagLength));
+  console.log(makeCode(key, 'c', normalizeEmail(email), resolveTagLength(tagLenStr)));
 } else if (mode === 'respond') {
   const [key, challenge, tagLenStr] = rest;
   if (!key || !challenge) { console.error('Usage: respond <your-key> <challenge-string> [tagLength]'); process.exit(1); }
-  const tagLength = tagLenStr ? Number(tagLenStr) : DEFAULT_TAG_LENGTH;
-  console.log(makeCode(key, 'r', challenge, tagLength));
+  console.log(makeCode(key, 'r', challenge, resolveTagLength(tagLenStr)));
 } else if (mode === 'assemble') {
   const filePath = rest[0];
   const raw = filePath ? readFileSync(filePath, 'utf8') : readFileSync(0, 'utf8');

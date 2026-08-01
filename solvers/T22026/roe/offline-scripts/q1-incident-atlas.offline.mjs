@@ -13,6 +13,11 @@
 
 import { readFileSync } from 'node:fs';
 
+process.on('uncaughtException', (err) => {
+  console.error(`Unexpected error while processing the artifact: ${err.message}`);
+  process.exit(1);
+});
+
 const filePath = process.argv[2];
 if (!filePath) {
   console.error('Usage: node q1-incident-atlas.offline.mjs <artifact.json>');

@@ -10,6 +10,11 @@
 // Usage:
 //   node q4-streetview-osint.offline.mjs "Place Name" "Country Name" "37.0902" "-119.4179 W"
 
+process.on('uncaughtException', (err) => {
+  console.error(`Unexpected error: ${err.message}`);
+  process.exit(1);
+});
+
 const [, , place, country, lat, lon] = process.argv;
 if (place === undefined || country === undefined || lat === undefined || lon === undefined) {
   console.error('Usage: node q4-streetview-osint.offline.mjs "Place" "Country" "Latitude" "Longitude"');
@@ -41,10 +46,15 @@ function W(e, o = 4) {
   return `${u}${m.slice(0, b) || '0'}.${m.slice(b)}`;
 }
 
+const latNorm = W(lat);
+const lonNorm = W(lon);
+if (latNorm === null) console.error(`WARNING: could not parse latitude "${lat}" as a number (with optional hemisphere letter).`);
+if (lonNorm === null) console.error(`WARNING: could not parse longitude "${lon}" as a number (with optional hemisphere letter).`);
+
 console.log(JSON.stringify({
   place_normalized: ve(place),
   country_normalized: be(country),
-  latitude_normalized: W(lat),
-  longitude_normalized: W(lon),
-  submit_as: `${place}, ${country}, ${W(lat)}, ${W(lon)}`
+  latitude_normalized: latNorm,
+  longitude_normalized: lonNorm,
+  submit_as: `${place}, ${country}, ${latNorm ?? lat}, ${lonNorm ?? lon}`
 }, null, 2));
