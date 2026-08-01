@@ -107,7 +107,10 @@ function registerHttpCacheInteractive() {
 
       let storedEntries = [];
       let originRequestCount = 0;
-      const probeDeliveries = [];
+      // Keyed by request_id rather than a plain array: the spec requires the output to follow
+      // `probe_request_ids` order, which is NOT necessarily the order requests appear in the
+      // trace. Collect every GET's delivery here, then emit in the required order below.
+      const deliveryById = new Map();
 
       function getOriginRow(uri, t) {
         const matching = schedule.filter(row => row.uri === uri && Number(row.effective_at) <= Number(t));
@@ -122,7 +125,6 @@ function registerHttpCacheInteractive() {
         const uri = req.uri;
         const t = Number(req.time ?? req.t ?? req.timestamp ?? 0);
         const reqHeaders = normalizeHeaders(req.headers);
-        const isProbe = probeIds.includes(reqId) || req.is_probe;
 
         if (method !== 'GET') {
           originRequestCount++;
@@ -222,17 +224,41 @@ function registerHttpCacheInteractive() {
           }
         }
 
-        if (isProbe) {
-          probeDeliveries.push({
-            request_id: reqId,
-            body_version: deliveredBodyVersion,
-            source: deliverySource
-          });
-        }
+        // Record every GET, not just the ones currently flagged as probes. Which ids are
+        // probes is decided purely by `probe_request_ids` after the loop, so recording all
+        // of them means a probe can never be silently missing from the output.
+        deliveryById.set(reqId, {
+          request_id: reqId,
+          body_version: deliveredBodyVersion,
+          source: deliverySource
+        });
       }
 
       function entryStoredAt(e) { return Number(e.stored_at); }
       function entryFreshnessLifetime(e) { return Number(e.freshness_lifetime); }
+
+      // Emit deliveries in `probe_request_ids` order — the spec is explicit that every id must
+      // appear "exactly once and in that listed order", and deliveries carry 65% of the marks.
+      // Fall back to any per-request is_probe flags only if no explicit list was supplied.
+      let effectiveProbeIds = Array.isArray(probeIds) ? probeIds.filter(Boolean) : [];
+      if (effectiveProbeIds.length === 0) {
+        effectiveProbeIds = trace.filter(r => r.is_probe).map(r => r.request_id || r.id).filter(Boolean);
+      }
+      if (effectiveProbeIds.length === 0) {
+        throw new Error(
+          'No probe request ids found. Expected a "probe_request_ids" array (or per-request "is_probe" flags) ' +
+          'in the artifact. Submitting an empty probe list would score zero, so this is treated as an error ' +
+          'rather than guessed. Artifact top-level keys seen: ' + Object.keys(data).join(', ')
+        );
+      }
+      const missingProbes = effectiveProbeIds.filter(id => !deliveryById.has(id));
+      if (missingProbes.length > 0) {
+        throw new Error(
+          `These probe ids are listed but never appear as a GET in the request trace: ${missingProbes.join(', ')}. ` +
+          'The submission requires every probe id, so this would be rejected as incomplete.'
+        );
+      }
+      const probeDeliveries = effectiveProbeIds.map(id => deliveryById.get(id));
 
       storedEntries.sort((a, b) => {
         const keyA = a.uri + '\n' + a.vary_values.map(([n, v]) => n + ':' + v).join('\n');

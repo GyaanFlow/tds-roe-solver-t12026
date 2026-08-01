@@ -55,14 +55,34 @@ function registerIncidentAtlasInteractive() {
         throw new Error('Invalid JSON format. Make sure you copy the complete JSON artifact from the questionData frame.');
       }
 
+      const keysSeen = () => 'Artifact top-level keys seen: ' + Object.keys(data).join(', ');
+
       const rawIncidents = data.incidents || data.incident_records || data.pixels || [];
       const edges = data.edges || data.road_network?.edges || data.graph?.edges || [];
       const rawNodes = data.nodes || data.vertices || data.road_network?.nodes || [];
-      const affine = data.affine || data.affine_transform || [1, 0, 0, 0, 1, 0];
       const turnRestrictions = data.turn_restrictions || data.turnRestrictions || [];
       const mandatoryCheckpoint = data.mandatory_checkpoint || data.checkpoint;
       const startNode = data.start_node || data.startNode || data.origin;
       const endNode = data.end_node || data.endNode || data.destination;
+
+      // The affine transform is what maps atlas pixels onto map coordinates. Defaulting it to
+      // the identity matrix (as an earlier version did) does NOT degrade gracefully — it snaps
+      // every incident to the wrong edge, so both the incident list and the route come out
+      // wrong while still looking like a valid certificate. It must come from the artifact.
+      const affine = data.affine || data.affine_transform;
+      if (!affine) {
+        throw new Error(
+          'No affine transform found in the artifact (looked for "affine", "affine_transform"). ' +
+          'Without it, pixel coordinates cannot be georegistered onto road edges, and every ' +
+          'incident would be assigned to the wrong edge. ' + keysSeen()
+        );
+      }
+      if (!Array.isArray(edges) || edges.length === 0) {
+        throw new Error(
+          'No road-network edges found (looked for "edges", "road_network.edges", "graph.edges"). ' +
+          keysSeen()
+        );
+      }
 
       const nodesMap = new Map();
       if (Array.isArray(rawNodes)) {
@@ -140,14 +160,24 @@ function registerIncidentAtlasInteractive() {
         return Math.hypot(px - (x1 + t * (x2 - x1)), py - (y1 + t * (y2 - y1)));
       }
 
-      if (edges.length === 0 || !startNode || !endNode) {
+      // Incidents and the route are credited separately, so emitting incidents alone is a
+      // legitimate partial answer when the route can't be computed. What is NOT legitimate is
+      // echoing data.route_edge_ids / data.arrival_seconds back out: those are inputs, not
+      // computed results, and passing them off as an answer looks like a solved route while
+      // being unverified. Emit an explicitly empty route and say so instead.
+      if (!startNode || !endNode) {
         const partialResult = {
           incidents: decodedIncidents,
-          route_edge_ids: data.route_edge_ids || [],
-          arrival_seconds: Number(data.arrival_seconds || 0)
+          route_edge_ids: [],
+          arrival_seconds: 0
         };
         outEl.value = JSON.stringify(partialResult, null, 2);
-        setStatus(`Decoded ${decodedIncidents.length} incidents from atlas!`, '#198754');
+        setStatus(
+          `Decoded ${decodedIncidents.length} incidents, but no start/end node was found in the ` +
+          `artifact, so the route could NOT be computed — route_edge_ids is empty on purpose. ` +
+          `Incidents are graded separately, so this still earns partial credit.`,
+          '#d97706'
+        );
         return;
       }
 
@@ -235,14 +265,29 @@ function registerIncidentAtlasInteractive() {
         return restrictions.some(r => (r.from_edge === fromEdge && r.to_edge === toEdge) || (r[0] === fromEdge && r[1] === toEdge));
       }
 
+      // Same rule as the partial-result path above: never echo the artifact's own
+      // route_edge_ids / arrival_seconds back out as if the search had produced them.
       const finalResult = {
         incidents: decodedIncidents,
-        route_edge_ids: bestRoute ? bestRoute.pathEdges : (data.route_edge_ids || []),
-        arrival_seconds: bestRoute ? bestRoute.time : Number(data.arrival_seconds || 0)
+        route_edge_ids: bestRoute ? bestRoute.pathEdges : [],
+        arrival_seconds: bestRoute ? bestRoute.time : 0
       };
 
       outEl.value = JSON.stringify(finalResult, null, 2);
-      setStatus(`Decoded ${decodedIncidents.length} incidents. Route total arrival: ${finalResult.arrival_seconds} seconds!`, '#198754');
+      if (bestRoute) {
+        setStatus(
+          `Decoded ${decodedIncidents.length} incidents. Route found: ${bestRoute.pathEdges.length} edges, ` +
+          `arrival at ${finalResult.arrival_seconds}s.`,
+          '#198754'
+        );
+      } else {
+        setStatus(
+          `Decoded ${decodedIncidents.length} incidents, but NO valid route was found under the ` +
+          `direction, turn-restriction and closure-window constraints — route_edge_ids is empty on ` +
+          `purpose rather than guessed. Incidents are graded separately, so this still earns partial credit.`,
+          '#d97706'
+        );
+      }
     } catch (err) {
       setStatus(`Solver failed: ${err.message}`, '#dc3545');
       if (outEl) outEl.value = '';

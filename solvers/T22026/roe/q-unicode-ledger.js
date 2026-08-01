@@ -81,10 +81,31 @@ function registerUnicodeLedgerInteractive() {
         throw new Error('No events array found in the provided JSON artifact.');
       }
 
-      const rawIgnorable = data.default_ignorable || data.default_ignorable_scalars || data.ignorable || ["\u200B", "\u200C", "\u200D", "\u00AD", "\u200E", "\u200F", "\uFEFF"];
+      // These two tables MUST come from the artifact. The exam is explicit that canonicalization
+      // removes "only the listed default-ignorable scalars" and applies "the supplied confusable
+      // map" \u2014 so substituting a guessed list, or silently falling back to an empty map, changes
+      // every downstream result (dedup, eligibility, net, digest) while still producing
+      // confident-looking output. Failing loudly is the only safe behaviour here.
+      const rawIgnorable = data.default_ignorable || data.default_ignorable_scalars || data.ignorable;
+      if (!Array.isArray(rawIgnorable) || rawIgnorable.length === 0) {
+        throw new Error(
+          'No default-ignorable scalar list found in the artifact (looked for "default_ignorable", ' +
+          '"default_ignorable_scalars", "ignorable"). Canonicalization must remove ONLY the listed ' +
+          'scalars, so guessing a list would silently corrupt every field of the certificate. ' +
+          'Artifact top-level keys seen: ' + Object.keys(data).join(', ')
+        );
+      }
       const ignorableSet = new Set(rawIgnorable.map(parseCodePoint));
 
-      const rawConfusableMap = data.confusable_map || data.confusables || data.confusableMap || {};
+      const rawConfusableMap = data.confusable_map || data.confusables || data.confusableMap;
+      if (!rawConfusableMap || typeof rawConfusableMap !== 'object' || Object.keys(rawConfusableMap).length === 0) {
+        throw new Error(
+          'No confusable map found in the artifact (looked for "confusable_map", "confusables", ' +
+          '"confusableMap"). Mapping look-alike scripts onto Latin is the core of this question \u2014 ' +
+          'running without it would merge nothing and produce a wrong certificate that still looks ' +
+          'plausible. Artifact top-level keys seen: ' + Object.keys(data).join(', ')
+        );
+      }
       const confusableMap = {};
       for (const [k, v] of Object.entries(rawConfusableMap)) {
         confusableMap[parseCodePoint(k)] = parseCodePoint(v);
@@ -172,10 +193,31 @@ function registerUnicodeLedgerInteractive() {
         }
       });
 
+      // Amounts are signed MINOR units, i.e. plain integers. Two silent-corruption traps are
+      // guarded here rather than papered over:
+      //   1. Defaulting a missing amount to 0 would quietly under-count the net (and if the
+      //      field name simply didn't match, EVERY amount would be 0 and the net would be 0).
+      //   2. Truncating "12.5" -> "12" (and "-0.5" -> "-0" -> 0n) silently changes the answer.
+      // Either case means the amount field wasn't what we assumed, so fail loudly instead.
       let netMinor = 0n;
-      acceptedEvents.forEach(evt => {
-        const amt = evt.amount_minor ?? evt.amount ?? evt.minor_units ?? evt.net_minor ?? 0;
-        netMinor += BigInt(String(amt).split('.')[0]);
+      acceptedEvents.forEach((evt, idx) => {
+        const raw = evt.amount_minor ?? evt.amount ?? evt.minor_units ?? evt.net_minor;
+        const evtLabel = evt.event_id || evt.id || `#${idx}`;
+        if (raw === undefined || raw === null || String(raw).trim() === '') {
+          throw new Error(
+            `Event ${evtLabel} has no amount (looked for "amount_minor", "amount", "minor_units", ` +
+            `"net_minor"). Treating it as 0 would silently understate net_minor_units. ` +
+            `Keys on this event: ${Object.keys(evt).join(', ')}`
+          );
+        }
+        const s = String(raw).trim();
+        if (!/^[+-]?\d+$/.test(s)) {
+          throw new Error(
+            `Event ${evtLabel} has a non-integer amount ${JSON.stringify(s)}. Amounts must be signed ` +
+            `minor units (whole numbers) — silently truncating the decimal part would change the net.`
+          );
+        }
+        netMinor += BigInt(s);
       });
 
       const acceptedEventIds = acceptedEvents.map(e => String(e.event_id || e.id)).filter(Boolean);
