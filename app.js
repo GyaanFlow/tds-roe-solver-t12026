@@ -652,7 +652,10 @@ function renderPreviewPanel(data) {
 // from `hosts`). Nothing else needs editing — no solver files reference this.
 // TO REUSE IT for a future outage: flip `enabled` back to true and update `title`/`body`.
 const API_STATUS_NOTICE = {
-  enabled: true,
+  // Verified back online 2026-08-01 (HTTP 200 on the live scrape-books endpoint) —
+  // disabled rather than deleted so this exact copy/host list is ready to flip back on
+  // instantly for any future outage.
+  enabled: false,
   // Host substrings that mark a question as depending on the affected API.
   hosts: ['tds-roe-solver-api-t12026.onrender.com'],
   title: '⏳ Hosted API endpoints are temporarily down',
