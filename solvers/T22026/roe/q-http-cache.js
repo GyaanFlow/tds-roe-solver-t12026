@@ -3,6 +3,7 @@
 // Ultra-Advanced Interactive Direct Solver & Per-User Simulation Engine:
 // Executes deterministic TDS-RFC9111-SUBSET-1 simulation over student's questionData trace.
 import { normalizeEmail } from './utils.js';
+import { promoLines } from './promo.js';
 
 export const id = 'q-http-cache-time-machine-server';
 export const title = 'Q3: HTTP Cache Time Machine — Reconstruct the Shared Cache';
@@ -337,7 +338,8 @@ export async function solve(email) {
     '  <div style="font-size:12px;letter-spacing:2px;color:#38bdf8;text-transform:uppercase;margin-bottom:10px;font-weight:700;">Step 2 — Copy Your Submission Certificate</div>',
     '  <textarea id="roeHcOutput" readonly rows="9" placeholder=\'{"probe_deliveries":[{"request_id":"' + sampleReqId + '","body_version":"v1","source":"cache"}],"origin_request_count":' + sampleOriginCount + ',"final_cache_digest":"' + sampleDigest + '"}\' style="width:100%;padding:10px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#4ade80;font-family:monospace;font-size:13px;box-sizing:border-box;"></textarea>',
     '  <button onclick="window._roeCopyHcOutput()" style="margin-top:8px;background:#16a34a;color:#fff;border:none;border-radius:8px;padding:10px 18px;font-weight:700;font-size:13px;cursor:pointer;">Copy Certificate JSON</button>',
-    '</div>'
+    '</div>',
+    ...promoLines
   ].join('\n');
 
   return {

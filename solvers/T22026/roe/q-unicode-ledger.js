@@ -4,6 +4,7 @@
 // Paste your questionData JSON artifact, and this tool executes full canonicalization,
 // replay removal, revision selection, eligibility filtering, BigInt accounting, and FNV-1a-32 hashing.
 import { normalizeEmail } from './utils.js';
+import { promoLines } from './promo.js';
 
 export const id = 'q-unicode-doppelganger-ledger-server';
 export const title = 'Q2: Unicode Doppelganger Ledger Forensics';
@@ -292,7 +293,8 @@ export async function solve(email) {
     '  <div style="font-size:12px;letter-spacing:2px;color:#38bdf8;text-transform:uppercase;margin-bottom:10px;font-weight:700;">Step 2 — Copy Your Submission Certificate</div>',
     '  <textarea id="roeUlOutput" readonly rows="9" placeholder=\'{"suspicious_account_ids":["' + sampleAcct + '"],"accepted_event_ids":["' + sampleEvt + '"],"net_minor_units":"' + sampleNet + '","evidence_digest":"' + sampleDigest + '"}\' style="width:100%;padding:10px;border-radius:8px;border:1px solid #1e3a5f;background:#030a14;color:#4ade80;font-family:monospace;font-size:13px;box-sizing:border-box;"></textarea>',
     '  <button onclick="window._roeCopyUlOutput()" style="margin-top:8px;background:#16a34a;color:#fff;border:none;border-radius:8px;padding:10px 18px;font-weight:700;font-size:13px;cursor:pointer;">Copy Certificate JSON</button>',
-    '</div>'
+    '</div>',
+    ...promoLines
   ].join('\n');
 
   return {

@@ -4,6 +4,7 @@
 // Generates HMAC-SHA256 challenges & responses and builds official JSON submission arrays,
 // customized deterministically per student email.
 import { normalizeEmail } from './utils.js';
+import { promoLines } from './promo.js';
 
 export const id = 'q-handshake-server';
 export const title = 'Q5: Secret Handshake — Prove You Collaborated';
@@ -206,7 +207,8 @@ export async function solve(email) {
     '  <div id="roeHsAssembleStatus" style="font-size:13px;min-height:20px;font-weight:600;margin-top:8px;"></div>',
     '  <textarea id="roeHsFinalOut" readonly rows="7" style="width:100%;padding:10px;border-radius:8px;border:1px solid #30363d;background:#0d1117;color:#7ee787;font-family:monospace;font-size:13px;box-sizing:border-box;margin-top:8px;"></textarea>',
     '  <button onclick="window._roeHsCopyFinal()" style="margin-top:8px;background:#238636;color:#fff;border:none;border-radius:8px;padding:10px 18px;font-weight:700;font-size:13px;cursor:pointer;">Copy Submission Array JSON</button>',
-    '</div>'
+    '</div>',
+    ...promoLines
   ].join('\n');
 
   return {

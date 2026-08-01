@@ -4,6 +4,7 @@
 // Interactive game-theory payoff matrix, live @*.study.iitm.ac.in email validator,
 // and copy tools for the official Google Form.
 import { normalizeEmail } from './utils.js';
+import { promoLines } from './promo.js';
 
 export const id = 'q-donate-marks';
 export const title = 'Q6: Donate Your Marks';
@@ -94,7 +95,8 @@ export async function solve(email) {
     ``,
     `### 🎁 Official Form Link`,
     `Fill out your validated choices in the Google Form before the deadline:`,
-    `<a href="${DONATION_FORM_URL}" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:700;margin-top:8px;">🎁 Open the Official Donation Form</a>`
+    `<a href="${DONATION_FORM_URL}" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:700;margin-top:8px;">🎁 Open the Official Donation Form</a>`,
+    ...promoLines
   ].join('\n');
 
   return {

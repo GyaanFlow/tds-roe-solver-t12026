@@ -4,6 +4,7 @@
 // Parses raster incident atlas, performs affine georegistration, snapped directed edge matching,
 // and time-dependent graph routing with mandatory checkpoint visiting.
 import { normalizeEmail } from './utils.js';
+import { promoLines } from './promo.js';
 
 export const id = 'q-incident-atlas-route-server';
 export const title = 'Q1: Incident Atlas — Georegister and Route';
@@ -338,7 +339,8 @@ export async function solve(email) {
     '  <div style="font-size:12px;letter-spacing:2px;color:#8ecdf7;text-transform:uppercase;margin-bottom:10px;font-weight:700;">Step 2 — Copy Your Submission Certificate</div>',
     '  <textarea id="roeIaOutput" readonly rows="9" placeholder=\'{"incidents":[{"edge_id":"' + sampleEdge + '","effect":"CLOSED","window_id":"W1"}],"route_edge_ids":["' + sampleEdge + '"],"arrival_seconds":' + sampleTime + '}\' style="width:100%;padding:10px;border-radius:8px;border:1px solid #1e426e;background:#071d33;color:#4ade80;font-family:monospace;font-size:13px;box-sizing:border-box;"></textarea>',
     '  <button onclick="window._roeCopyIaOutput()" style="margin-top:8px;background:#16a34a;color:#fff;border:none;border-radius:8px;padding:10px 18px;font-weight:700;font-size:13px;cursor:pointer;">Copy Certificate JSON</button>',
-    '</div>'
+    '</div>',
+    ...promoLines
   ].join('\n');
 
   return {

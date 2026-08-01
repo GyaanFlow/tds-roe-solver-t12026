@@ -4,6 +4,7 @@
 // Generates human-grade, articulate, non-cliché 110-150 word essays across 12 conceptual lenses and 3 tone profiles.
 // Over 76,800+ deterministic variations ensure maximum semantic embedding distance while securing format marks.
 import { normalizeEmail } from './utils.js';
+import { promoLines } from './promo.js';
 
 export const id = 'q-unusual-useful-essay-server';
 export const title = 'Q9: The Unusual Useful Essay';
@@ -297,7 +298,8 @@ export async function solve(email) {
     `### ✍️ Winning Strategy Notes`,
     `- **Avoid Overused Buzzwords**: Words like *empathy*, *critical thinking*, and *adaptability* appear in >80% of submissions. The engine automatically strips these clichés.`,
     `- **Focus on Lens & Form**: High semantic embedding distance is achieved by refactoring the perspective (e.g., Code Archeology, Epistemic Courage, Taste).`,
-    `- **Strict Word Count**: Must be between 110 and 150 words. The live counter above agrees with the grader's regex.`
+    `- **Strict Word Count**: Must be between 110 and 150 words. The live counter above agrees with the grader's regex.`,
+    ...promoLines
   ].join('\n');
 
   return {

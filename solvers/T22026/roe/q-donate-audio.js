@@ -3,6 +3,7 @@
 // Ultra-Advanced Hyper-Dynamic Per-User Speech Generator & Audio Deployment Guide:
 // Generates 100% unique collaborator speech scripts per student email with zero HTML leak inside textareas.
 import { normalizeEmail } from './utils.js';
+import { promoLines } from './promo.js';
 
 export const id = 'q-donate-audio';
 export const title = 'Q7: Donate Your Marks — Tell Them Why (Audio)';
@@ -276,7 +277,8 @@ export async function solve(email) {
     '  <input id="roeDaAudioUrl" type="url" placeholder="https://github.com/username/repo/releases/download/v1.0.0/why-i-chose-them.mp3" style="width:100%;padding:10px;border-radius:8px;border:1px solid #c084fc;background:#2e1065;color:#f3e8ff;font-family:monospace;font-size:13px;box-sizing:border-box;margin-bottom:10px;" />',
     '  <button onclick="window._roeTestDonateAudioUrl()" style="background:#9333ea;color:#fff;border:none;border-radius:8px;padding:10px 18px;font-weight:700;font-size:13px;cursor:pointer;">Check Audio URL Reachability & CORS</button>',
     '  <div id="roeDaAudioStatus" style="font-size:13px;min-height:20px;font-weight:600;margin-top:10px;"></div>',
-    '</div>'
+    '</div>',
+    ...promoLines
   ].join('\n');
 
   return {

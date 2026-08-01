@@ -3,6 +3,7 @@
 // Ultra-Advanced Per-User Dynamic Speech Engine & Audio Inspector:
 // Generates 100% unique speech scripts (<= 120s spoken time) per student email with zero HTML leak inside textareas.
 import { normalizeEmail } from './utils.js';
+import { promoLines } from './promo.js';
 
 export const id = 'q-initiative-audio';
 export const title = 'Q8: Something You Did On Your Own Initiative (Audio)';
@@ -259,7 +260,8 @@ export async function solve(email) {
     '  <input id="roeIaAudioUrl" type="url" placeholder="https://github.com/username/repo/releases/download/v1.0.0/my-recording.mp3" style="width:100%;padding:10px;border-radius:8px;border:1px solid #34d399;background:#022c22;color:#ecfdf5;font-family:monospace;font-size:13px;box-sizing:border-box;margin-bottom:10px;" />',
     '  <button onclick="window._roeTestInitiativeAudioUrl()" style="background:#059669;color:#fff;border:none;border-radius:8px;padding:10px 18px;font-weight:700;font-size:13px;cursor:pointer;">Check Audio URL & Duration</button>',
     '  <div id="roeIaAudioStatus" style="font-size:13px;min-height:20px;font-weight:600;margin-top:10px;"></div>',
-    '</div>'
+    '</div>',
+    ...promoLines
   ].join('\n');
 
   return {
