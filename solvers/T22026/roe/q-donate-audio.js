@@ -186,7 +186,10 @@ function registerDonateAudioInteractive() {
 
     function setStatus(text, color) {
       if (!statusEl) return;
-      statusEl.innerHTML = text;
+      // textContent, not innerHTML: `text` embeds the response's Content-Type header, which is
+      // fully attacker-controlled if the student tests someone else's URL — treat it as data,
+      // never markup.
+      statusEl.textContent = text;
       statusEl.style.color = color || '#9fc6ff';
     }
 

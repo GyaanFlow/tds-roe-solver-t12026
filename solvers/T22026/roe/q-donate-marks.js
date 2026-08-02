@@ -26,6 +26,10 @@ function registerDonateMarksInteractive() {
       statusEl.style.color = color || '#9fc6ff';
     }
 
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+    }
+
     const rawList = emailsInput.split(/[\s,;:\n]+/).filter(Boolean);
     const emails = rawList.map(normalizeEmail);
     const size = Number(groupSizeEl?.value || 4);
@@ -41,7 +45,7 @@ function registerDonateMarksInteractive() {
     let msg = `<strong>Reciprocal Yield:</strong> A mutual group of ${size} earns <strong>${yieldPerPerson} marks</strong> per member (Maximum: 1.5 marks).`;
     
     if (invalidEmails.length > 0) {
-      msg += `<br/><span style="color:#f87171;">⚠️ ${invalidEmails.length} email(s) do not match @*.study.iitm.ac.in requirement (${invalidEmails.slice(0, 2).join(', ')})</span>`;
+      msg += `<br/><span style="color:#f87171;">⚠️ ${invalidEmails.length} email(s) do not match @*.study.iitm.ac.in requirement (${escapeHtml(invalidEmails.slice(0, 2).join(', '))})</span>`;
       setStatus(msg, '#fbbf24');
     } else if (isSelfPicked) {
       msg += `<br/><span style="color:#f87171;">⚠️ Rule violation: You cannot pick yourself.</span>`;
