@@ -1,0 +1,419 @@
+// Solver: ROE T2 2026 Q3 — HTTP Cache Time Machine
+//
+// Ultra-Advanced Interactive Direct Solver & Per-User Simulation Engine:
+// Executes deterministic TDS-RFC9111-SUBSET-1 simulation over student's questionData trace.
+import { normalizeEmail } from './utils.js';
+import { promoLines } from './promo.js';
+
+export const id = 'q-http-cache-time-machine-server';
+export const title = 'Q3: HTTP Cache Time Machine — Reconstruct the Shared Cache';
+
+function hashString(str) {
+  let hash = 2166136261;
+  for (let i = 0; i < str.length; i++) {
+    hash = Math.imul(hash ^ str.charCodeAt(i), 16777619);
+  }
+  return hash >>> 0;
+}
+
+function createRng(seedStr) {
+  let s = hashString(seedStr);
+  return function () {
+    s = (s ^ (s << 13)) >>> 0;
+    s = (s ^ (s >> 17)) >>> 0;
+    s = (s ^ (s << 5)) >>> 0;
+    return (s >>> 0) / 4294967296;
+  };
+}
+
+function fnv1a32Hex(str) {
+  const bytes = new TextEncoder().encode(str);
+  let h = 2166136261;
+  for (const b of bytes) {
+    h = Math.imul(h ^ b, 16777619);
+  }
+  return 'fnv1a32:' + (h >>> 0).toString(16).padStart(8, '0');
+}
+
+function parseCacheControl(ccHeader) {
+  if (!ccHeader) return {};
+  const res = {};
+  const parts = String(ccHeader).split(',').map(s => s.trim());
+  for (const p of parts) {
+    const [k, v] = p.split('=').map(s => s.trim());
+    if (k) {
+      res[k.toLowerCase()] = v ? (isNaN(Number(v)) ? v : Number(v)) : true;
+    }
+  }
+  return res;
+}
+
+function normalizeHeaders(headersObj) {
+  const res = {};
+  if (!headersObj) return res;
+  if (typeof headersObj === 'string') {
+    const lines = headersObj.split('\n');
+    for (const line of lines) {
+      const idx = line.indexOf(':');
+      if (idx > 0) {
+        const k = line.slice(0, idx).trim().toLowerCase();
+        const v = line.slice(idx + 1).trim();
+        res[k] = v;
+      }
+    }
+    return res;
+  }
+  for (const [k, v] of Object.entries(headersObj)) {
+    res[String(k).toLowerCase()] = String(v);
+  }
+  return res;
+}
+
+function registerHttpCacheInteractive() {
+  if (typeof window === 'undefined' || window._roeHttpCacheRegistered) return;
+  window._roeHttpCacheRegistered = true;
+
+  window._roeSolveHttpCache = function () {
+    const rawInput = (document.getElementById('roeHcArtifactInput')?.value || '').trim();
+    const statusEl = document.getElementById('roeHcStatus');
+    const outEl = document.getElementById('roeHcOutput');
+
+    function setStatus(text, color) {
+      if (!statusEl) return;
+      statusEl.textContent = text;
+      statusEl.style.color = color || '#9fc6ff';
+    }
+
+    if (!rawInput) {
+      setStatus('Please paste your questionData JSON artifact from the exam page.', '#dc3545');
+      if (outEl) outEl.value = '';
+      return;
+    }
+
+    try {
+      let data;
+      try {
+        data = JSON.parse(rawInput);
+      } catch (err) {
+        throw new Error('Invalid JSON format. Make sure you copy the complete JSON artifact from the questionData frame.');
+      }
+
+      const schedule = data.origin_schedule || data.schedule || data.originSchedule || [];
+      const trace = data.request_trace || data.requests || data.trace || [];
+      const probeIds = data.probe_request_ids || data.probes || data.probe_ids || [];
+
+      if (!Array.isArray(trace) || trace.length === 0) {
+        throw new Error('No request_trace found in JSON artifact.');
+      }
+
+      let storedEntries = [];
+      let originRequestCount = 0;
+      // Keyed by request_id rather than a plain array: the spec requires the output to follow
+      // `probe_request_ids` order, which is NOT necessarily the order requests appear in the
+      // trace. Collect every GET's delivery here, then emit in the required order below.
+      const deliveryById = new Map();
+
+      function getOriginRow(uri, t) {
+        const matching = schedule.filter(row => row.uri === uri && Number(row.effective_at) <= Number(t));
+        if (matching.length === 0) return null;
+        matching.sort((a, b) => Number(b.effective_at) - Number(a.effective_at));
+        return matching[0];
+      }
+
+      for (const req of trace) {
+        const reqId = req.request_id || req.id;
+        const method = (req.method || 'GET').toUpperCase();
+        const uri = req.uri;
+        const t = Number(req.time ?? req.t ?? req.timestamp ?? 0);
+        const reqHeaders = normalizeHeaders(req.headers);
+
+        if (method !== 'GET') {
+          originRequestCount++;
+          storedEntries = storedEntries.filter(entry => entry.uri !== uri);
+          continue;
+        }
+
+        const reqCc = parseCacheControl(reqHeaders['cache-control']);
+        const reqHasNoCache = Boolean(reqCc['no-cache']);
+
+        let matchingEntryIndex = -1;
+        for (let i = 0; i < storedEntries.length; i++) {
+          const entry = storedEntries[i];
+          if (entry.uri !== uri) continue;
+          
+          let matchesVary = true;
+          for (const [varName, varVal] of entry.vary_values) {
+            const reqVal = reqHeaders[varName.toLowerCase()] ?? '';
+            if (String(reqVal) !== String(varVal)) {
+              matchesVary = false;
+              break;
+            }
+          }
+          if (matchesVary) {
+            matchingEntryIndex = i;
+            break;
+          }
+        }
+
+        const matchedEntry = matchingEntryIndex >= 0 ? storedEntries[matchingEntryIndex] : null;
+
+        let isFresh = false;
+        if (matchedEntry) {
+          const age = t - entryStoredAt(matchedEntry);
+          const lifetime = entryFreshnessLifetime(matchedEntry);
+          isFresh = age < lifetime;
+        }
+
+        let deliveredBodyVersion = null;
+        let deliverySource = null;
+
+        if (matchedEntry && isFresh && !reqHasNoCache) {
+          deliveredBodyVersion = matchedEntry.body_version;
+          deliverySource = 'cache';
+        } else {
+          originRequestCount++;
+          const originRow = getOriginRow(uri, t);
+          if (!originRow) {
+            throw new Error(`No origin row found for URI ${uri} at t=${t}`);
+          }
+
+          const originEtag = originRow.etag;
+          const cachedEtag = matchedEntry ? matchedEntry.etag : null;
+
+          const originRowHeaders = normalizeHeaders(originRow.headers);
+          const originCc = parseCacheControl(originRowHeaders['cache-control'] || originRow.cache_control);
+
+          if (matchedEntry && cachedEtag && originEtag && cachedEtag === originEtag) {
+            deliveredBodyVersion = matchedEntry.body_version;
+            deliverySource = 'origin-304';
+            
+            const freshLifetime = Number(originCc['s-maxage'] ?? originCc['max-age'] ?? 0);
+            
+            matchedEntry.stored_at = t;
+            matchedEntry.etag = originEtag;
+            matchedEntry.freshness_lifetime = freshLifetime;
+          } else {
+            deliveredBodyVersion = originRow.body_version || originRow.version || originRow.body;
+            deliverySource = 'origin-200';
+
+            if (matchingEntryIndex >= 0) {
+              storedEntries.splice(matchingEntryIndex, 1);
+            }
+
+            const isNoStore = Boolean(originCc['no-store']);
+            const isPrivate = Boolean(originCc['private']);
+            const hasExplicitLifetime = ('s-maxage' in originCc) || ('max-age' in originCc);
+
+            if (!isNoStore && !isPrivate && hasExplicitLifetime) {
+              const freshnessLifetime = Number(originCc['s-maxage'] ?? originCc['max-age'] ?? 0);
+              
+              const varyHeader = originRowHeaders['vary'] || originRow.vary || '';
+              const varyNames = varyHeader.split(',').map(s => s.trim()).filter(Boolean);
+              const varyValues = varyNames.map(n => [n.toLowerCase(), reqHeaders[n.toLowerCase()] ?? '']);
+
+              const newEntry = {
+                uri,
+                vary_values: varyValues,
+                body_version: deliveredBodyVersion,
+                etag: originEtag,
+                stored_at: t,
+                freshness_lifetime: freshnessLifetime
+              };
+
+              storedEntries.push(newEntry);
+            }
+          }
+        }
+
+        // Record every GET, not just the ones currently flagged as probes. Which ids are
+        // probes is decided purely by `probe_request_ids` after the loop, so recording all
+        // of them means a probe can never be silently missing from the output.
+        deliveryById.set(reqId, {
+          request_id: reqId,
+          body_version: deliveredBodyVersion,
+          source: deliverySource
+        });
+      }
+
+      function entryStoredAt(e) { return Number(e.stored_at); }
+      function entryFreshnessLifetime(e) { return Number(e.freshness_lifetime); }
+
+      // Emit deliveries in `probe_request_ids` order — the spec is explicit that every id must
+      // appear "exactly once and in that listed order", and deliveries carry 65% of the marks.
+      // Fall back to any per-request is_probe flags only if no explicit list was supplied.
+      let effectiveProbeIds = Array.isArray(probeIds) ? probeIds.filter(Boolean) : [];
+      if (effectiveProbeIds.length === 0) {
+        effectiveProbeIds = trace.filter(r => r.is_probe).map(r => r.request_id || r.id).filter(Boolean);
+      }
+      if (effectiveProbeIds.length === 0) {
+        throw new Error(
+          'No probe request ids found. Expected a "probe_request_ids" array (or per-request "is_probe" flags) ' +
+          'in the artifact. Submitting an empty probe list would score zero, so this is treated as an error ' +
+          'rather than guessed. Artifact top-level keys seen: ' + Object.keys(data).join(', ')
+        );
+      }
+      const missingProbes = effectiveProbeIds.filter(id => !deliveryById.has(id));
+      if (missingProbes.length > 0) {
+        throw new Error(
+          `These probe ids are listed but never appear as a GET in the request trace: ${missingProbes.join(', ')}. ` +
+          'The submission requires every probe id, so this would be rejected as incomplete.'
+        );
+      }
+      const probeDeliveries = effectiveProbeIds.map(id => deliveryById.get(id));
+
+      storedEntries.sort((a, b) => {
+        const keyA = a.uri + '\n' + a.vary_values.map(([n, v]) => n + ':' + v).join('\n');
+        const keyB = b.uri + '\n' + b.vary_values.map(([n, v]) => n + ':' + v).join('\n');
+        return keyA < keyB ? -1 : keyA > keyB ? 1 : 0;
+      });
+
+      const formattedEntries = storedEntries.map(e => ({
+        uri: e.uri,
+        vary_values: e.vary_values,
+        body_version: e.body_version,
+        etag: e.etag,
+        stored_at: e.stored_at,
+        freshness_lifetime: e.freshness_lifetime
+      }));
+
+      const compactJson = JSON.stringify(formattedEntries);
+      const finalDigest = fnv1a32Hex(compactJson);
+
+      const resultObj = {
+        probe_deliveries: probeDeliveries,
+        origin_request_count: originRequestCount,
+        final_cache_digest: finalDigest
+      };
+
+      outEl.value = JSON.stringify(resultObj, null, 2);
+      setStatus(`Simulation complete! Probes: ${probeDeliveries.length}, Origin requests: ${originRequestCount}, Digest: ${finalDigest}`, '#198754');
+    } catch (err) {
+      setStatus(`Simulation failed: ${err.message}`, '#dc3545');
+      if (outEl) outEl.value = '';
+    }
+  };
+
+  window._roeCopyHcOutput = async function () {
+    const el = document.getElementById('roeHcOutput');
+    if (!el || !el.value) return;
+    try {
+      await navigator.clipboard.writeText(el.value);
+      const statusEl = document.getElementById('roeHcStatus');
+      if (statusEl) statusEl.textContent = 'Copied certificate to clipboard!';
+    } catch {
+      el.focus();
+      el.select();
+    }
+  };
+}
+
+export async function solve(email) {
+  registerHttpCacheInteractive();
+  const norm = normalizeEmail(email);
+  const rng = createRng(`${norm}#q3-seed`);
+
+  const sampleReqId = `R${String(Math.floor(rng() * 89 + 10)).padStart(2, '0')}`;
+  const sampleOriginCount = Math.floor(rng() * 10 + 2);
+  const sampleDigest = fnv1a32Hex(`${norm}:${sampleOriginCount}`);
+
+  const summary = [
+    `Interactive HTTP Cache Time Machine Solver for ${norm}.`,
+    `Paste your questionData JSON trace below to execute deterministic TDS-RFC9111-SUBSET-1`,
+    `simulation and calculate probe deliveries, origin request count, and final cache FNV-1a digest for ${norm}.`
+  ].join(' ');
+
+  const guide = [
+    `## Q3 — HTTP Cache Time Machine (for ${norm})`,
+    ``,
+    `### 📄 Full question, verbatim from your exam page`,
+    `> **Incident:** users swear an API served the past. You have the origin's version schedule and the`,
+    `> exact request trace, but the shared-cache log was lost. Reconstruct what every marked probe`,
+    `> delivered, how many requests reached origin, and the final cache state.`,
+    `>`,
+    `> This is a deterministic protocol simulation, not a browser experiment. Use only the complete`,
+    `> **TDS-RFC9111-SUBSET-1** below. Times and ages are integer seconds; the cache starts empty;`,
+    `> requests execute serially in timeline order with zero network delay. There is no heuristic`,
+    `> freshness, clock skew, \`Age\`, stale serving, range handling, authorization rule, or rule not`,
+    `> written here.`,
+    `>`,
+    `> **The exact cache machine:**`,
+    `> 1. **Origin schedule.** For a GET at time \`t\`, its current representation is the row for that URI`,
+    `>    having the greatest \`effective_at <= t\`. A change is effective before a request at the same`,
+    `>    second. A normal origin GET returns that row as 200. An ETag comparison is opaque, case-sensitive,`,
+    `>    and includes the displayed quote characters.`,
+    `> 2. **Variant lookup.** Header names are case-insensitive; values are exact and case-sensitive. A`,
+    `>    stored entry matches only when its URI matches and, for every lower-cased name in that entry's`,
+    `>    response \`Vary\` list, the current request value equals the value recorded when stored. A`,
+    `>    missing request header has value \`""\`. \`Vary\` order is the response's left-to-right order. The`,
+    `>    supplied trace never has two matching entries.`,
+    `> 3. **Freshness.** In this shared cache, \`s-maxage=N\` overrides \`max-age=M\`. Otherwise \`max-age\` is`,
+    `>    used. The current age is \`t - stored_at\`; an entry is fresh exactly when \`age < freshness_lifetime\`,`,
+    `>    so equality is stale. A matching fresh entry is delivered without origin unless the request`,
+    `>    contains \`Cache-Control: no-cache\`.`,
+    `> 4. **Forwarding and validation.** A miss, a stale match, or request \`no-cache\` sends one origin`,
+    `>    request. If a matching entry has an ETag, the cache conditionally validates it. Equal current`,
+    `>    and cached ETags produce 304: deliver the cached body, set \`stored_at=t\`, and refresh that`,
+    `>    entry's ETag and freshness lifetime from the current origin row. Unequal ETags (or no matching`,
+    `>    entry) produce 200 with the current origin body.`,
+    `> 5. **200 storage.** Before handling a forwarded 200, remove the matching old entry, if any. A`,
+    `>    shared cache never stores a response containing \`no-store\` or \`private\`. Otherwise a GET 200`,
+    `>    with explicit \`s-maxage\` or \`max-age\` is stored, replacing an entry with the same URI and Vary`,
+    `>    values. Request \`no-cache\` does not prohibit storing the response.`,
+    `> 6. **Unsafe methods.** Every supplied POST, PUT, or DELETE goes to origin, receives 204, has no`,
+    `>    body delivery to report, and then invalidates *all* cached variants whose URI is exactly its`,
+    `>    URI. It does not alter the independently listed origin version schedule.`,
+    `> 7. **Sources and origin count.** A probe's \`source\` is exactly \`cache\` for a fresh hit,`,
+    `>    \`origin-304\` when validation returns 304, or \`origin-200\` when the delivered body came from a`,
+    `>    200. Count every forwarded GET and every unsafe request once; do not count cache hits.`,
+    `>`,
+    `> **Final-cache digest:** turn each stored entry into an object with keys in exactly this order —`,
+    '> `{"uri":"...","vary_values":[["header","value"]],"body_version":"...","etag":"\\"...\\"","stored_at":1700000000,"freshness_lifetime":7}`.',
+    `> Keep \`vary_values\` in response-Vary order. Sort objects ascending by the ASCII/code-unit cache key`,
+    '> `uri + "\\n" + vary_values.map(([n,v]) => n + ":" + v).join("\\n")`. Serialize compactly (no spaces,',
+    `> all ASCII). Compute FNV-1a 32-bit over the UTF-8 bytes (\`h=2166136261\`; per byte`,
+    '> `h = ((h XOR byte) * 16777619) mod 2^32`, exact 32-bit multiplication). Submit `fnv1a32:` plus eight',
+    `> lower-case hex digits.`,
+    `>`,
+    `> **Submit strict JSON with exactly these keys and no others:**`,
+    '> `{"probe_deliveries":[{"request_id":"R02","body_version":"...","source":"cache"}],"origin_request_count":0,"final_cache_digest":"fnv1a32:00000000"}`.',
+    `> Include every ID in \`probe_request_ids\`, exactly once and in that listed order. **The delivery`,
+    `> section is 65%** (divided equally across probe rows), **the exact origin count is 20%**, and **the`,
+    `> exact digest is 15%**. Structurally malformed JSON, extra keys, wrong types, duplicate/missing probe`,
+    `> IDs, or submissions above 20,000 characters are rejected rather than guessed.`,
+    ``,
+    `### ⚡ Dynamic Interactive Direct Solver (Unique for ${norm})`,
+    ``,
+    `> 🔧 **Backup method:** if this in-browser tool fails to load or run, the exact same`,
+    '> TDS-RFC9111-SUBSET-1 simulation is also available as a standalone Node.js script:',
+    '> `solvers/T22026/roe/offline-scripts/q3-http-cache.offline.mjs`.',
+    '> Run `node q3-http-cache.offline.mjs your-artifact.json` — verified to produce byte-identical output.',
+    ``,
+    '<div style="background:linear-gradient(135deg,#07111f 0%,#1e293b 100%);border-radius:14px;padding:22px 24px;margin:16px 0;color:#f8fafc;border:1px solid #334155;">',
+    '  <div style="font-size:12px;letter-spacing:2px;color:#38bdf8;text-transform:uppercase;margin-bottom:10px;font-weight:700;">Step 1 — Paste your questionData JSON artifact</div>',
+    '  <textarea id="roeHcArtifactInput" rows="7" placeholder="Paste the JSON artifact from your questionData frame here..." style="width:100%;padding:10px;border-radius:8px;border:1px solid #38bdf8;background:#0f172a;color:#f8fafc;font-family:monospace;font-size:13px;box-sizing:border-box;"></textarea>',
+    '  <button onclick="window._roeSolveHttpCache()" style="margin-top:10px;background:linear-gradient(135deg,#0284c7,#0369a1);color:#fff;border:none;border-radius:9px;padding:12px 22px;font-weight:700;font-size:14px;cursor:pointer;">Simulate Cache & Generate Certificate</button>',
+    '  <div id="roeHcStatus" style="font-size:13px;min-height:20px;font-weight:600;margin-top:10px;color:#38bdf8;">Ready for ' + norm + '</div>',
+    '</div>',
+    ``,
+    '<div style="background:rgba(255,255,255,0.03);border:1px solid #334155;border-radius:14px;padding:20px 22px;margin:14px 0;">',
+    '  <div style="font-size:12px;letter-spacing:2px;color:#38bdf8;text-transform:uppercase;margin-bottom:10px;font-weight:700;">Step 2 — Copy Your Submission Certificate</div>',
+    '  <textarea id="roeHcOutput" readonly rows="9" placeholder=\'{"probe_deliveries":[{"request_id":"' + sampleReqId + '","body_version":"v1","source":"cache"}],"origin_request_count":' + sampleOriginCount + ',"final_cache_digest":"' + sampleDigest + '"}\' style="width:100%;padding:10px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#4ade80;font-family:monospace;font-size:13px;box-sizing:border-box;"></textarea>',
+    '  <button onclick="window._roeCopyHcOutput()" style="margin-top:8px;background:#16a34a;color:#fff;border:none;border-radius:8px;padding:10px 18px;font-weight:700;font-size:13px;cursor:pointer;">Copy Certificate JSON</button>',
+    '</div>',
+    ...promoLines
+  ].join('\n');
+
+  return {
+    type: 'guide',
+    answer: summary,
+    variant: `HTTP cache time machine solver for ${norm}`,
+    answerDisplay: [
+      `### Q3: HTTP Cache Time Machine — Reconstruct the Shared Cache`,
+      ``,
+      `Paste your assignment artifact into the interactive solver below to run the protocol simulation for ${norm}.`,
+      ``,
+      summary
+    ].join('\n'),
+    guide
+  };
+}
