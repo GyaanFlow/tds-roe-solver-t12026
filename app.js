@@ -1,5 +1,11 @@
 // TDS Exam Portal - Workspace Application Engine
 
+// One stable value per page load, not per import() call. A fresh Date.now() on every dynamic
+// import forces the browser to re-fetch and re-execute every solver module from scratch on
+// every question switch or catalog load -- with this, repeat imports within the same page load
+// resolve from the module cache instead, while a hard reload still busts any stale HTTP cache.
+const MODULE_CACHE_BUST = Date.now();
+
 let networkCanvas = null;
 
 const THEME_HUES = {
@@ -1265,7 +1271,7 @@ async function startSolving() {
   try {
     let solvers = [];
     try {
-      const registryModule = await import(`./solvers/${currentTerm}/${currentExam}/registry.js?v=${Date.now()}`);
+      const registryModule = await import(`./solvers/${currentTerm}/${currentExam}/registry.js?v=${MODULE_CACHE_BUST}`);
       solvers = registryModule.solvers;
     } catch (_) {
       throw new Error(`CRITICAL SYSTEM FAULT: Failed to fetch module registry for ${currentTerm}/${currentExam}. Target may be missing or corrupt.`);
@@ -1623,7 +1629,7 @@ document.getElementById('bpLoadCatalogBtn')?.addEventListener('click', async (ev
       const groupName = exam.group || 'Other';
       if (!catalogData[term][groupName]) catalogData[term][groupName] = [];
       try {
-        const mod = await import(`./solvers/${term}/${exam.value}/registry.js?v=${Date.now()}`);
+        const mod = await import(`./solvers/${term}/${exam.value}/registry.js?v=${MODULE_CACHE_BUST}`);
         const solvers = mod.solvers || [];
         totalQuestions += solvers.length;
         loadedCount += 1;
