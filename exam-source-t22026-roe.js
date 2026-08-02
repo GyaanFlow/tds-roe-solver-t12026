@@ -1,4 +1,170 @@
-var ce=Object.defineProperty;var p=(e,o)=>()=>(e&&(o=e(e=0)),o);var y=(e,o)=>{for(var a in o)ce(e,a,{get:o[a],enumerable:!0})};var L={};y(L,{default:()=>ue});import{html as he}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function ue({user:e,weight:o=4,version:a=""}){let t="q-incident-atlas-route-server",r="tds-2026-05-roe",i="Incident Atlas \u2014 Georegister and Route",s=`./questionData?email=${encodeURIComponent(e.email)}&quizSign=${encodeURIComponent(e.quizSign||"")}&quiz=${encodeURIComponent(r)}&questionId=${encodeURIComponent(t)}&version=${encodeURIComponent(a)}`,l=he`
+var ue=Object.defineProperty;var f=(e,o)=>()=>(e&&(o=e(e=0)),o);var g=(e,o)=>{for(var r in o)ue(e,r,{get:o[r],enumerable:!0})};var M={};g(M,{default:()=>pe});import{html as _}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function pe({user:e,weight:o=4,version:r=""}){let t="q-streetview-geolocation-server",n="Street View OSINT: Where Is This?",l=`./questionData?email=${encodeURIComponent(e.email)}&quizSign=${encodeURIComponent(e.quizSign||"")}&questionId=${encodeURIComponent(t)}&version=${encodeURIComponent(r)}`,i=null,a=null;try{let p=await fetch(l);if(!p.ok)throw new Error(await p.text()||`HTTP ${p.status}`);i=await p.json()}catch(p){a=p instanceof Error?p.message:String(p)}if(!i){let p=_`
+      <div class="alert alert-danger" role="alert">
+        <strong><i class="bi bi-exclamation-triangle-fill"></i> Could not load this question's data.</strong>
+        <p class="mb-0">${a}</p>
+        <p class="mb-0">Try reloading the page. If this persists, contact the exam team.</p>
+      </div>
+    `;return{id:t,title:n,weight:o,question:p,answer:async()=>({correct:!1,message:a})}}let s=`${he}/${i.file}`,d=i.toleranceMetres??100,c=_`
+    <div class="mb-3">
+      <div style="background:linear-gradient(135deg,#0c2d48 0%,#145da0 100%);border-radius:12px;padding:22px 26px;margin-bottom:20px;color:#e6f3ff;">
+        <div style="font-size:11px;letter-spacing:2px;color:#8ecdf7;text-transform:uppercase;margin-bottom:6px;">OSINT · Street View Geolocation</div>
+        <div style="font-size:20px;font-weight:700;margin-bottom:8px;">🌍 Where in the world is this?</div>
+        <div style="font-size:15px;line-height:1.6;">
+          You've been given <strong>one</strong> Street View image below. Using only publicly available
+          information (visual clues, reverse image search, road signs, architecture, vegetation, language on
+          signage, etc.), identify where it was taken.
+        </div>
+      </div>
+
+      <img
+        src="${s}"
+        alt="Street View location to identify"
+        loading="lazy"
+        style="display:block;max-width:100%;width:100%;border-radius:10px;border:1px solid #dee2e6;margin-bottom:18px;"
+      />
+
+      <h5><i class="bi bi-list-check"></i> What to submit</h5>
+      <p>
+        Enter your answer as <strong>4 comma-separated values, in this order</strong>:
+        <code>Place, Country, Latitude, Longitude</code>. This question is
+        <strong>all-or-nothing</strong>: there is <strong>no partial credit</strong>. You earn the full
+        ${o} ${o==1?"mark":"marks"} only if the place, the country, <em>and</em> the
+        coordinates are all correct. Getting the place and country right on their own scores <strong>zero</strong>.
+      </p>
+
+      <input
+        class="form-control font-monospace"
+        id="${t}"
+        name="${t}"
+        placeholder="California, United States, 37.0902, -119.4179"
+        autocomplete="off"
+      />
+
+      <div class="alert alert-info mt-3" role="alert">
+        <strong><i class="bi bi-info-circle-fill"></i> Grading notes</strong>
+        <ul class="mb-0 mt-1">
+          <li>Place and country matching ignores case, spacing, and punctuation — but write the full name
+            (e.g. "United States", not "USA").</li>
+          <li>Latitude/longitude are correct if your pin is within
+            <strong>${d} metres</strong> of the true spot. You don't need the exact decimals — get
+            the right street corner and you're in. You can write a hemisphere letter
+            (e.g. <code>94.5583 W</code>) instead of a minus sign if you prefer.</li>
+          <li>Each <kbd>Check</kbd> is graded on the server, so it needs a moment. Your final submission is
+            re-verified the same way.</li>
+        </ul>
+      </div>
+
+      <p class="text-muted">
+        Worth <strong>${o} ${o==1?"mark":"marks"}</strong>.
+      </p>
+    </div>
+  `;return{id:t,title:n,weight:o,question:c,answer:async p=>{let w=await fetch("/backendVerify",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:e.email,quizSign:e.quizSign,response:p,weight:o,questionId:t,version:r})}),x=await w.json();if(!w.ok)throw new Error(x.error||"Verification failed.");return x}}}var he,j=f(()=>{"use strict";he="https://files.s-anand.net/pages/tds-roe-2026-05-images"});var D={};g(D,{default:()=>ye});import{html as fe}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function ye({user:e,weight:o=.2}){let r="q-donate-marks",t="Donate Your Marks",n=fe`
+    <div class="mb-3">
+      <p>
+        This is a small experiment in <strong>trust and collaboration</strong>, worth up to
+        <strong>1.5 marks</strong>. You can <strong>donate your marks to up to 3 classmates</strong>. You
+        cannot pick yourself, and every email must be a valid <code>@*.study.iitm.ac.in</code> address.
+      </p>
+
+      <p class="mb-1"><strong>How the marks work</strong> &mdash; you <em>receive</em> whatever others choose to donate to you:</p>
+      <table class="table table-sm table-bordered w-auto">
+        <thead>
+          <tr><th>You pick&hellip;</th><th>Each person you pick gets</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1 person</td><td><strong>1.0</strong> mark</td></tr>
+          <tr><td>2 people</td><td><strong>0.6</strong> each</td></tr>
+          <tr><td>3 people</td><td><strong>0.5</strong> each</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Submitting a valid answer (1&ndash;3 valid emails, not yourself) earns you <strong>0.2 marks</strong>
+        just for taking part.
+      </p>
+
+      <p>
+        <strong>You are welcome to barter.</strong> If two of you donate to each other, you each walk away
+        with 1 mark. A group of 3 who all donate to each other gets <strong>1.2 each</strong>; a group of 4
+        gets <strong>1.5 each</strong> &mdash; the maximum. To earn the most, collaborate as widely as you
+        can&hellip; but of course, <em>that requires trust</em>. They have to put your name down too. Will they?
+      </p>
+
+      <p>
+        <strong>You <em>could</em> cheat</strong>. Make false promises to 10 people, get 10 marks, donate only to some.
+        But the list of donations <em>will be made public</em> after the deadline.
+      </p>
+
+      <label class="form-label" for="${r}"><strong>Donate to (1&ndash;3 email IDs)</strong></label>
+      <textarea class="form-control font-monospace" id="${r}" name="${r}" rows="3"
+        placeholder="one@ds.study.iitm.ac.in, two@ds.study.iitm.ac.in"></textarea>
+      <div class="form-text">Separate email IDs with commas, spaces, semicolons, or new lines.</div>
+      <p class="text-muted small mt-2">
+        A valid portal submission earns <strong>${o} ${o==1?"mark":"marks"}</strong> for
+        participation. Marks donated to you are settled after the deadline and added to your final grade.
+      </p>
+    </div>
+  `;return{id:r,title:t,weight:o,question:n,answer:async i=>{let a=String(i||"").trim().split(/[,;\s]+/).filter(Boolean).map(s=>s.toLowerCase());if(a.length<1||a.length>3)throw new Error("Enter 1 to 3 email IDs.");if(new Set(a).size!==a.length)throw new Error("Enter each email ID only once.");if(!a.every(s=>ge.test(s)))throw new Error("Each email must be a valid @*.study.iitm.ac.in address.");if(a.includes(String(e?.email||"").trim().toLowerCase()))throw new Error("You cannot donate marks to yourself.");return{correct:!0,score:o,validMessage:"Saved. Your portal submission as of the deadline is final."}}}}var ge,P=f(()=>{"use strict";ge=/^[^@\s]+@[a-z0-9-]+\.study\.iitm\.ac\.in$/i});var Y={};g(Y,{default:()=>we});import{html as be}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function we({weight:e=.2}={}){let o="q-donate-audio",r="Why Did You Donate (Audio)",t=async l=>{let i=(l||"").trim();if(!i)throw new Error("Submission is empty. Paste your public, CORS-enabled audio URL.");let a;try{a=new URL(i)}catch{throw new Error(`Not a valid URL: "${i.slice(0,80)}"`)}if(!/^https?:$/.test(a.protocol))throw new Error("URL must start with http:// or https://");let s="We couldn't fetch it from the browser. Make sure it's public, CORS-enabled, actually an audio file, and stays live for at least 1 week after the ROE. It will be graded offline.",d;try{let c=await fetch(i,{method:"GET",mode:"cors",cache:"no-store"});if(c.ok){let m=c.headers.get("content-type")||"";ve.test(m)?(d="\u2705 Reachable and CORS-enabled, and it looks like audio. Keep it live for 1 week after the ROE.",s=null):s=`Reachable and CORS-enabled, but the Content-Type is "${m||"unknown"}", not audio/*. Double-check you linked the audio file itself.`}else s=`The URL returned HTTP ${c.status}. Make sure it's publicly accessible. Graded offline.`}catch{}return s?{correct:!1,score:0,invalidMessage:s}:{correct:!0,score:e,validMessage:`Saved. ${d}`}},n=be`
+    <div class="mb-3">
+      <div style="background:linear-gradient(135deg,#3b0764 0%,#7e22ce 100%);border-radius:12px;padding:22px 26px;margin-bottom:20px;color:#f3e8ff;">
+        <div style="font-size:11px;letter-spacing:2px;color:#e9d5ff;text-transform:uppercase;margin-bottom:6px;">Follow-up to “Donate Your Marks”</div>
+        <div style="font-size:20px;font-weight:700;margin-bottom:8px;">🎙️ Tell them <em>why</em> — in your own voice</div>
+        <div style="font-size:15px;line-height:1.6;">
+          Record a short audio in which you <strong>name the collaborators you donated your marks to</strong>
+          (their names and email IDs) and explain <strong>why you chose each of them</strong>. The person you
+          donated to will hear this — and an AI, <em>speaking as that person</em>, will judge whether it sounds
+          genuine.
+        </div>
+      </div>
+
+      <h5 class="mt-4"><i class="bi bi-list-check"></i> What to submit</h5>
+      <div style="display:grid;gap:10px;margin-bottom:18px;">
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="background:#7e22ce;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:13px;">1</div>
+          <div><strong>Record your voice</strong> naming your collaborators (names + email IDs) and your honest reason for choosing each. Speak naturally — a thoughtful, specific reason scores higher than generic flattery.</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="background:#7e22ce;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:13px;">2</div>
+          <div>
+            <strong>Host the audio at a public, CORS-enabled URL</strong> that stays live for
+            <strong>at least 1 week after the ROE</strong>. The link must point directly at the audio file
+            (e.g. <code>.mp3</code>, <code>.m4a</code>, <code>.webm</code>, <code>.opus</code>) and return an
+            <code>audio/*</code> content type with <code>Access-Control-Allow-Origin: *</code>.
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="background:#7e22ce;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:13px;">3</div>
+          <div><strong>Paste the audio URL below</strong> and press <kbd>Check</kbd> — we'll try to fetch it from your browser and tell you whether the CORS setup works.</div>
+        </div>
+      </div>
+
+      <div class="alert alert-warning" role="alert">
+        <strong><i class="bi bi-graph-up-arrow"></i> Relative grading, judged offline.</strong>
+        This is scored <strong>relative to everyone else</strong> by an LLM playing the role of the person you
+        donated to. A generic, AI-sounding "you're a great teammate" scores like every other generic answer —
+        which is low. Be specific about <em>why</em>. Barter is a perfectly valid reason. So is cheating.
+      </div>
+
+      <div class="alert alert-danger" role="alert">
+        <strong><i class="bi bi-megaphone-fill"></i> This recording will be shared publicly.</strong>
+        Your audio and its transcript become part of the public reveal. If the link is broken, private, not an
+        audio file, or taken down before the reveal, you lose the audio marks.
+      </div>
+
+      <p class="text-muted">
+        Worth <strong>${e} ${e==1?"mark":"marks"}</strong> now for a valid submission; the
+        professor may raise this to <strong>up to 2 marks</strong>, decided later from the offline evaluation.
+      </p>
+
+      <label for="${o}" class="form-label"><strong>Public, CORS-enabled audio URL</strong></label>
+      <input
+        type="url"
+        class="form-control font-monospace"
+        id="${o}"
+        name="${o}"
+        placeholder="https://your-host.example.com/why-i-chose-them.mp3"
+      />
+    </div>
+  `;return{id:o,title:r,weight:e,question:n,answer:t}}var ve,N=f(()=>{"use strict";ve=/^audio\//i});var B={};g(B,{default:()=>ke});import{html as xe}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function ke({user:e,weight:o=4,version:r=""}){let t="q-incident-atlas-route-server",n="tds-2026-05-roe",l="Incident Atlas \u2014 Georegister and Route",i=`./questionData?email=${encodeURIComponent(e.email)}&quizSign=${encodeURIComponent(e.quizSign||"")}&quiz=${encodeURIComponent(n)}&questionId=${encodeURIComponent(t)}&version=${encodeURIComponent(r)}`,a=xe`
     <div class="mb-3">
       <p class="lead text-primary">
         A response team has a directed road network and a separately exported raster incident atlas. Recover the
@@ -13,7 +179,7 @@ var ce=Object.defineProperty;var p=(e,o)=>()=>(e&&(o=e(e=0)),o);var y=(e,o)=>{fo
 
       <iframe
         title="Your authenticated incident-atlas assignment"
-        src="${s}"
+        src="${i}"
         style="width:100%;height:760px;border:1px solid #cbd5e1;border-radius:12px;background:#fff"
       ></iframe>
 
@@ -31,7 +197,7 @@ var ce=Object.defineProperty;var p=(e,o)=>()=>(e&&(o=e(e=0)),o);var y=(e,o)=>{fo
         does. Well-formed work earns separate credit for decoded incidents and for the route certificate.
       </p>
     </div>
-  `;return{id:t,title:i,weight:o,question:l,answer:async c=>{let h=await fetch("/backendVerify",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:e.email,quizSign:e.quizSign,quiz:r,response:c,weight:o,questionId:t,version:a})}),n=await h.json();if(!h.ok)throw new Error(n.error||"Unable to verify the route certificate.");return n}}}var _=p(()=>{"use strict"});var P={};y(P,{default:()=>pe});import{html as me}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function pe({user:e,weight:o=5,version:a=""}){let t="q-unicode-doppelganger-ledger-server",r="tds-2026-05-roe",i="Unicode Doppelganger Ledger Forensics",s=`./questionData?email=${encodeURIComponent(e.email)}&quizSign=${encodeURIComponent(e.quizSign||"")}&quiz=${encodeURIComponent(r)}&questionId=${encodeURIComponent(t)}&version=${encodeURIComponent(a)}`,l=me`
+  `;return{id:t,title:l,weight:o,question:a,answer:async d=>{let c=await fetch("/backendVerify",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:e.email,quizSign:e.quizSign,quiz:n,response:d,weight:o,questionId:t,version:r})}),m=await c.json();if(!c.ok)throw new Error(m.error||"Unable to verify the route certificate.");return m}}}var H=f(()=>{"use strict"});var W={};g(W,{default:()=>Se});import{html as $e}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function Se({user:e,weight:o=5,version:r=""}){let t="q-unicode-doppelganger-ledger-server",n="tds-2026-05-roe",l="Unicode Doppelganger Ledger Forensics",i=`./questionData?email=${encodeURIComponent(e.email)}&quizSign=${encodeURIComponent(e.quizSign||"")}&quiz=${encodeURIComponent(n)}&questionId=${encodeURIComponent(t)}&version=${encodeURIComponent(r)}`,a=$e`
     <div class="mb-3">
       <p class="lead text-primary">
         <strong>Incident:</strong> A payments ledger may have merged Unicode doppelganger identities and replayed
@@ -46,7 +212,7 @@ var ce=Object.defineProperty;var p=(e,o)=>()=>(e&&(o=e(e=0)),o);var y=(e,o)=>{fo
 
       <iframe
         title="Your Unicode doppelganger ledger artifact"
-        src="${s}"
+        src="${i}"
         style="width:100%;height:590px;border:1px solid #dee2e6;border-radius:12px;background:#07111f"
       ></iframe>
 
@@ -86,7 +252,7 @@ var ce=Object.defineProperty;var p=(e,o)=>()=>(e&&(o=e(e=0)),o);var y=(e,o)=>{fo
         duplicate IDs, extra keys, or oversized submissions are rejected.
       </small>
     </div>
-  `;return{id:t,title:i,weight:o,question:l,answer:async c=>{let h=await fetch("/backendVerify",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:e.email,quizSign:e.quizSign,quiz:r,response:c,weight:o,questionId:t,version:a})}),n=await h.json();if(!h.ok)throw new Error(n.error||"Unable to verify the forensic certificate.");return n}}}var N=p(()=>{"use strict"});var D={};y(D,{HTTP_CACHE_TIME_MACHINE_QUESTION_ID:()=>j,default:()=>ge});import{html as fe}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function ge({user:e,weight:o=4,version:a=""}){let t=j,r="tds-2026-05-roe",i="HTTP Cache Time Machine \u2014 Reconstruct the Shared Cache",s=`./questionData?email=${encodeURIComponent(e.email)}&quizSign=${encodeURIComponent(e.quizSign||"")}&quiz=${encodeURIComponent(r)}&questionId=${encodeURIComponent(t)}&version=${encodeURIComponent(a)}`,l=fe`
+  `;return{id:t,title:l,weight:o,question:a,answer:async d=>{let c=await fetch("/backendVerify",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:e.email,quizSign:e.quizSign,quiz:n,response:d,weight:o,questionId:t,version:r})}),m=await c.json();if(!c.ok)throw new Error(m.error||"Unable to verify the forensic certificate.");return m}}}var F=f(()=>{"use strict"});var J={};g(J,{HTTP_CACHE_TIME_MACHINE_QUESTION_ID:()=>V,default:()=>Te});import{html as Ie}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function Te({user:e,weight:o=4,version:r=""}){let t=V,n="tds-2026-05-roe",l="HTTP Cache Time Machine \u2014 Reconstruct the Shared Cache",i=`./questionData?email=${encodeURIComponent(e.email)}&quizSign=${encodeURIComponent(e.quizSign||"")}&quiz=${encodeURIComponent(n)}&questionId=${encodeURIComponent(t)}&version=${encodeURIComponent(r)}`,a=Ie`
     <div class="mb-3">
       <p class="lead text-primary">
         <strong>Incident:</strong> users swear an API served the past. You have the origin's version schedule and the
@@ -102,7 +268,7 @@ var ce=Object.defineProperty;var p=(e,o)=>()=>(e&&(o=e(e=0)),o);var y=(e,o)=>{fo
 
       <iframe
         title="Assigned HTTP cache timeline"
-        src="${s}"
+        src="${i}"
         style="width:100%;height:650px;border:1px solid #334155;border-radius:12px;background:#07111f"
       ></iframe>
 
@@ -205,400 +371,97 @@ var ce=Object.defineProperty;var p=(e,o)=>()=>(e&&(o=e(e=0)),o);var y=(e,o)=>{fo
         placeholder='{"probe_deliveries":[],"origin_request_count":0,"final_cache_digest":"fnv1a32:00000000"}'
       ></textarea>
     </div>
-  `;return{id:t,title:i,weight:o,question:l,answer:async c=>{let h=await fetch("/backendVerify",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:e.email,quizSign:e.quizSign,quiz:r,response:c,weight:o,questionId:t,version:a})}),n=await h.json();if(!h.ok)throw new Error(n.error||"Unable to verify the cache certificate.");return n}}}var j,H=p(()=>{"use strict";j="q-http-cache-time-machine-server"});async function x(e){let a=new TextEncoder().encode(e),t=await crypto.subtle.digest("SHA-256",a);return Array.from(new Uint8Array(t)).map(s=>s.toString(16).padStart(2,"0")).join("")}var M=p(()=>{"use strict"});var F={};y(F,{default:()=>xe});import{html as Y}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";function be(e){return String(e??"").trim().toLowerCase().replace(/[.’']/g,"").replace(/\s+/g," ").trim()}function ve(e){return String(e??"").trim().toLowerCase().replace(/[^a-z0-9]/g,"")}function W(e,o=4){let a=String(e??"").trim().replace(/\s+/g," ").replace(/°/g,"").replace(/,/g,"");if(!a)return null;let t=!1,r=a.match(/^([NSEWnsew])\s*(.+)$/)||a.match(/^(.+?)\s*([NSEWnsew])$/);if(r){let[,v,S]=r,A=/^[NSEWnsew]$/.test(v),C=A?v:S;a=(A?S:v).trim(),t=/[SWsw]/.test(C)}let i=a.match(/^([+-]?)(\d+)(?:\.(\d+))?$/);if(!i)return null;let[,s,l,d=""]=i,c=s==="-"!==t,h=d.padEnd(o+1,"0"),n=h.slice(0,o),f=h[o]>="5",m=l+n;f&&(m=(BigInt(m)+1n).toString().padStart(m.length,"0"));let k=/^0+$/.test(m),u=c&&!k?"-":"",b=m.length-o;return`${u}${m.slice(0,b)||"0"}.${m.slice(b)}`}function we(e){let o=String(e??"").split(",").map(s=>s.trim());if(o.length!==4||o.some(s=>!s))throw new Error("Answer must be 4 comma-separated values: Place, Country, Latitude, Longitude.");let[a,t,r,i]=o;return{place:a,country:t,lat:r,lon:i}}async function xe({user:e,weight:o=4,version:a=""}){let t="q-streetview-geolocation-server",r="Street View OSINT: Where Is This?",i=`./questionData?email=${encodeURIComponent(e.email)}&quizSign=${encodeURIComponent(e.quizSign||"")}&questionId=${encodeURIComponent(t)}&version=${encodeURIComponent(a)}`,s=null,l=null;try{let n=await fetch(i);if(!n.ok)throw new Error(await n.text()||`HTTP ${n.status}`);s=await n.json()}catch(n){l=n instanceof Error?n.message:String(n)}if(!s){let n=Y`
-      <div class="alert alert-danger" role="alert">
-        <strong><i class="bi bi-exclamation-triangle-fill"></i> Could not load this question's data.</strong>
-        <p class="mb-0">${l}</p>
-        <p class="mb-0">Try reloading the page. If this persists, contact the exam team.</p>
-      </div>
-    `;return{id:t,title:r,weight:o,question:n,answer:async()=>({correct:!1,message:l})}}let d=`${ye}/${s.file}`,c=Y`
+  `;return{id:t,title:l,weight:o,question:a,answer:async d=>{let c=await fetch("/backendVerify",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:e.email,quizSign:e.quizSign,quiz:n,response:d,weight:o,questionId:t,version:r})}),m=await c.json();if(!c.ok)throw new Error(m.error||"Unable to verify the cache certificate.");return m}}}var V,G=f(()=>{"use strict";V="q-http-cache-time-machine-server"});var K={};g(K,{default:()=>Ae});import{html as qe}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";function Ee(e){return e.trim()?e.trim().split(/\s+/u).length:0}async function Ae({weight:e=2}){let o="q-ai-content-detection",r="Prompt for Detecting AI-Generated Content",t=qe`
     <div class="mb-3">
-      <div style="background:linear-gradient(135deg,#0c2d48 0%,#145da0 100%);border-radius:12px;padding:22px 26px;margin-bottom:20px;color:#e6f3ff;">
-        <div style="font-size:11px;letter-spacing:2px;color:#8ecdf7;text-transform:uppercase;margin-bottom:6px;">OSINT · Street View Geolocation</div>
-        <div style="font-size:20px;font-weight:700;margin-bottom:8px;">🌍 Where in the world is this?</div>
-        <div style="font-size:15px;line-height:1.6;">
-          You've been given <strong>one</strong> Street View image below. Using only publicly available
-          information (visual clues, reverse image search, road signs, architecture, vegetation, language on
-          signage, etc.), identify exactly where it was taken.
-        </div>
-      </div>
-
-      <img
-        src="${d}"
-        alt="Street View location to identify"
-        loading="lazy"
-        style="display:block;max-width:100%;width:100%;border-radius:10px;border:1px solid #dee2e6;margin-bottom:18px;"
-      />
-
-      <h5><i class="bi bi-list-check"></i> What to submit</h5>
       <p>
-        Enter your answer as <strong>4 comma-separated values, in this order</strong>:
-        <code>Place, Country, Latitude, Longitude</code>. Each of the 4 values is graded
-        independently and worth <strong>25% of this question</strong> — partial credit is given for
-        whichever parts you get right.
+        Submit one prompt of 5 to 500 characters for an LLM or agent to detect
+        AI-generated content in an article. Define the rubric and judgement criteria in
+        the prompt.
       </p>
-
-      <input
-        class="form-control font-monospace"
-        id="${t}"
-        name="${t}"
-        placeholder="California, United States, 37.0902, -119.4179"
-        autocomplete="off"
-      />
-
-      <div class="alert alert-info mt-3" role="alert">
-        <strong><i class="bi bi-info-circle-fill"></i> Grading notes</strong>
-        <ul class="mb-0 mt-1">
-          <li>Place and country matching ignores case, spacing, and punctuation — but write the full name
-            (e.g. "United States", not "USA").</li>
-          <li>Latitude/longitude must match to <strong>exactly 4 decimal places</strong> — no tolerance. You
-            can write a hemisphere letter (e.g. <code>94.5583 W</code>) instead of a minus sign if you
-            prefer.</li>
-          <li>Checking your answer here is instant and never calls an external API — everything is verified
-            against a one-way hash, so the correct answer can't be read off the network. Your final
-            submission is independently re-verified on the server the same way.</li>
-        </ul>
-      </div>
-
-      <p class="text-muted">
-        Worth <strong>${o} ${o==1?"mark":"marks"}</strong> total, split evenly across the
-        four values above.
+      <p>
+        The evaluator will run the prompt on hidden article variants and assess both the
+        rubric and the resulting judgements. The rubric should require concrete
+        evidence, distinguish AI-generated content from ordinary style, avoid certainty
+        about authorship, and handle articles with few or no indicators.
       </p>
-    </div>
-  `;return{id:t,title:r,weight:o,question:c,answer:async n=>{let f=we(n),m=ve(f.place),k=be(f.country),u=W(f.lat),b=W(f.lon),[v,S,A,C]=await Promise.all([x(m),x(k),x(u??""),x(b??"")]),R={place:v===s.hashes.place,country:S===s.hashes.country,lat:u!==null&&A===s.hashes.lat,lon:b!==null&&C===s.hashes.lon},I=Object.entries(R).reduce((g,[ne,le])=>g+(le?q[ne]:0),0),E=Object.keys(q).filter(g=>R[g]).map(g=>B[g]),re=Object.keys(q).filter(g=>!R[g]).map(g=>B[g]),U=I===1?Number(o):Math.round(Number(o)*I*1e4)/1e4,ie=I===1?"All four correct: place, country, latitude, and longitude all match.":`${E.length}/4 correct. Matched: ${E.length?E.join(", "):"none"}. Recheck: ${re.join(", ")}.`;return{correct:U>0,score:U,message:ie}}}}var ye,q,B,G=p(()=>{"use strict";M();ye="https://temp.mynkpdr.in";q={place:.25,country:.25,lat:.25,lon:.25},B={place:"place",country:"country",lat:"latitude",lon:"longitude"}});var K={};y(K,{default:()=>Ae});import{html as O}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function Se(e,o){let a=o.textContent;try{await navigator.clipboard.writeText(e),o.textContent="Copied"}catch{o.textContent="Press Ctrl+C"}setTimeout(()=>o.textContent=a,1200)}async function Ae({user:e,weight:o=5,version:a=""}){let t="q-handshake-server",r="Secret Handshake: Prove You Collaborated",i=`./questionData?email=${encodeURIComponent(e.email)}&quizSign=${encodeURIComponent(e.quizSign||"")}&questionId=${encodeURIComponent(t)}&version=${encodeURIComponent(a)}`,s=null,l=null;try{let u=await fetch(i);if(!u.ok)throw new Error(await u.text()||`HTTP ${u.status}`);s=await u.json()}catch(u){l=u instanceof Error?u.message:String(u)}if(!s){let u=O`
-      <div class="alert alert-danger" role="alert">
-        <strong><i class="bi bi-exclamation-triangle-fill"></i> Could not load this question's data.</strong>
-        <p class="mb-0">${l}</p>
-        <p class="mb-0">Try reloading the page. If this persists, contact the exam team.</p>
-      </div>
-    `;return{id:t,title:r,weight:o,question:u,answer:async()=>({correct:!1,message:l})}}let{key:d,email:c,target:h,tagLength:n}=s,f=ke(d),m=O`
-    <div class="mb-3">
-      <p class="fs-5 border-start border-4 border-primary ps-3 mb-4">
-        Shake hands with <strong>${h} classmates</strong>. A handshake takes two codes, and each of you
-        can only compute one of them — so you cannot do this alone, and a code copied from a group chat will
-        never work for you.
+      <p>A valid submission earns 0.1 mark.
+        Your prompt be evaluated <em>offline</em> in two stages. In stage 1, a smart model
+        will check how good your prompt is likely to be at differentiating AI and human
+        content. This fetches up to one mark.
       </p>
-
-      <h6 class="text-uppercase text-secondary fw-semibold" style="letter-spacing:.06em">Your identity</h6>
-      <div class="border rounded p-3 mb-4">
-        <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-          <span class="text-secondary" style="min-width:6rem">Your email</span>
-          <code class="fs-6">${c}</code>
-          ${$(c)}
-          <span class="form-text w-100 m-0">Classmates must use exactly this when making a code for you.</span>
-        </div>
-        <div class="d-flex flex-wrap align-items-center gap-2">
-          <span class="text-secondary" style="min-width:6rem">Your key</span>
-          <code class="fs-6">${d}</code>
-          ${$(d)}
-          <span class="form-text w-100 m-0">Yours alone. Keep it private — anyone with it can act as you.</span>
-        </div>
-      </div>
-
-      <h6 class="text-uppercase text-secondary fw-semibold" style="letter-spacing:.06em">How it works</h6>
-      <ol class="mb-4">
-        <li class="mb-1">
-          Pick a classmate. Run <code>code("c", their_email)</code> and send them the result. That is your
-          <strong>challenge</strong>.
-        </li>
-        <li class="mb-1">
-          They run <code>code("r", your_challenge)</code> with <em>their</em> key and send it back. That is the
-          <strong>response</strong>. Only they can produce it.
-        </li>
-        <li class="mb-1">Save the row, then do the same for them so you both get credit.</li>
-        <li>Repeat until you have ${h} different classmates.</li>
-      </ol>
-
-      <h6 class="text-uppercase text-secondary fw-semibold" style="letter-spacing:.06em">
-        Your code, ready to run
-        <span class="badge text-bg-light border align-middle ms-1 fw-normal text-lowercase">key already filled in</span>
-      </h6>
-      <div class="position-relative mb-2">
-        <div class="position-absolute top-0 end-0 p-2">${$(f,"Copy code")}</div>
-        <pre class="border rounded bg-body-tertiary p-3 mb-0"><code>${f}</code></pre>
-      </div>
-      <details class="mb-4">
-        <summary class="text-secondary small">Exact recipe, if you would rather write your own</summary>
-        <p class="form-text mb-0">
-          HMAC-SHA256, keeping the first <strong>${n}</strong> characters of the lowercase hex digest.
-          The key and the message are both plain UTF-8 text — do not hex-decode the key. Emails are lowercased
-          and trimmed. The separator is one <code>|</code> with no spaces, so the messages are
-          <code>"c|" + their_email</code> and <code>"r|" + challenge</code>.
-        </p>
-      </details>
-
-      <h6 class="text-uppercase text-secondary fw-semibold" style="letter-spacing:.06em">What to submit</h6>
-      <p class="mb-2">One row per classmate. Partial work counts, so submit whatever you have.</p>
-      <div class="position-relative mb-3">
-        <div class="position-absolute top-0 end-0 p-2">${$(V,"Copy format")}</div>
-        <pre class="border rounded bg-body-tertiary p-3 mb-0"><code>${V}</code></pre>
-      </div>
-
-      <label for="${t}" class="form-label fw-semibold">Your handshakes</label>
+      <p>
+        In stage 2, only the top scoring answers (maybe 100) amongst these will be run against real
+        human and AI-generated content. These will earn up to 0.9 marks based on their
+        performance and distinctness (i.e you'll score less if you copy - but if you copy
+        from someone smart, you might score more.)
+      </p>
+      <p>
+        Scores are normalized across submissions, and prompt
+        distinctness is assessed using embedding distance.
+      </p>
+      <label for="${o}" class="form-label"><strong>Your prompt</strong></label>
       <textarea
-        class="form-control font-monospace"
-        id="${t}"
-        name="${t}"
-        rows="7"
-        spellcheck="false"
-        placeholder='[{"peer":"classmate1@ds.study.iitm.ac.in","challenge":"...","response":"..."}]'
+        class="form-control"
+        id="${o}"
+        name="${o}"
+        required
+        spellcheck="true"
       ></textarea>
-
-      <p class="form-text mt-3 mb-0">
-        Worth <strong>${o} ${o==1?"mark":"marks"}</strong>, scaled by verified classmates
-        (${h} for full marks). Each classmate counts once; you cannot shake your own hand. If a row
-        fails, the feedback names which half was wrong — a bad challenge is yours to fix, a bad response is
-        theirs.
-      </p>
     </div>
-  `;return{id:t,title:r,weight:o,question:m,answer:async u=>{let b=await fetch("/backendVerify",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:e.email,quizSign:e.quizSign,response:u,weight:o,questionId:t,version:a})}),v=await b.json();if(!b.ok)throw new Error(v.error||"Verification failed.");return v}}}var ke,V,$,J=p(()=>{"use strict";ke=e=>`import hashlib
-import hmac
-
-MY_KEY = "${e}"
-
-
-def code(tag, message):
-    mac = hmac.new(MY_KEY.encode(), f"{tag}|{message}".encode(), hashlib.sha256)
-    return mac.hexdigest()[:16]
-
-
-# Step 1 -- your challenge for a classmate. Send them what this prints.
-print(code("c", "classmate@ds.study.iitm.ac.in"))
-
-# Step 2 -- your reply to a challenge they sent you. Send it back to them.
-print(code("r", "paste-their-challenge-here"))`,V=`[
-  { "peer": "classmate1@ds.study.iitm.ac.in", "challenge": "9d62f8f2634e1a32", "response": "2650e57a80bd4aaa" },
-  { "peer": "classmate2@ds.study.iitm.ac.in", "challenge": "b7230cf892f795cb", "response": "7ce1e72f8b0f04ea" }
-]`;$=(e,o="Copy")=>O`<button
-    type="button"
-    class="btn btn-sm btn-outline-secondary"
-    @click=${a=>Se(e,a.currentTarget)}
-  >${o}</button>`});var Q={};y(Q,{default:()=>Ce});import{html as $e}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function Ce({weight:e=.2}){let o="q-donate-marks",a="Donate Your Marks",t=$e`
+  `;return{id:o,title:r,weight:e,question:t,answer:l=>{if(typeof l!="string"||Ee(l)===0)throw new Error("Submit one non-empty prompt.");if(l.length<5||l.length>500)throw new Error("The prompt must contain 5 to 500 characters.");return{correct:!0,score:.1,validMessage:"Format accepted. The remaining 1.9 marks will be evaluated offline."}}}}var Q=f(()=>{"use strict"});var X={};g(X,{default:()=>Oe});import{html as Re}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";function Ue(e,o){let r=2166136261;for(let t of new TextEncoder().encode(`${String(e||"").trim().toLowerCase()}#ai-opportunity-discovery#${o}`))r=Math.imul(r^t,16777619)>>>0;return r<2147483648?"A":"B"}async function Oe({user:e,weight:o=2,version:r="roe-2026-05-v1"}){let t="q-ai-opportunity-discovery",n=Ue(e.email,r),i=Re`
     <div class="mb-3">
+      <h5>AI opportunity discovery: SkyWave Direct</h5>
       <p>
-        This is a small experiment in <strong>trust and collaboration</strong>, worth up to
-        <strong>1.5 marks</strong>. You can <strong>donate your marks to up to 3 classmates</strong>. You
-        cannot pick yourself, and every email must be a valid <code>@*.study.iitm.ac.in</code> address.
-      </p>
-
-      <p class="mb-1"><strong>How the marks work</strong> &mdash; you <em>receive</em> whatever others choose to donate to you:</p>
-      <table class="table table-sm table-bordered w-auto">
-        <thead>
-          <tr><th>You pick&hellip;</th><th>Each person you pick gets</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>1 person</td><td><strong>1.0</strong> mark</td></tr>
-          <tr><td>2 people</td><td><strong>0.6</strong> each</td></tr>
-          <tr><td>3 people</td><td><strong>0.5</strong> each</td></tr>
-        </tbody>
-      </table>
-      <p>
-        Submitting a valid answer (1&ndash;3 valid emails, not yourself) earns you <strong>0.2 marks</strong>
-        just for taking part.
-      </p>
-
-      <p>
-        <strong>You are welcome to barter.</strong> If two of you donate to each other, you each walk away
-        with 1 mark. A group of 3 who all donate to each other gets <strong>1.2 each</strong>; a group of 4
-        gets <strong>1.5 each</strong> &mdash; the maximum. To earn the most, collaborate as widely as you
-        can&hellip; but of course, <em>that requires trust</em>. They have to put your name down too. Will they?
-      </p>
-
-      
-
-      <p>
-        <strong>Record your donations in the Google Form</strong> (your emails stay private there until the
-        public reveal &mdash; they are not shown in the exam results):
+        You have joined SkyWave Direct's AI Innovation team. In your first week, you receive a partial
+        internal data room containing strategy and process documents, operational datasets, financial or
+        retention records, and selected communications.
       </p>
       <p>
-        <a href="${Te}" target="_blank" rel="noopener" class="btn btn-primary">
-          🎁 Open the Donation Form
-        </a>
+        Download your assigned data room: <a href="${n==="A"?ze:Ce}" target="_blank" rel="noreferrer">Case ${n}</a>.
+        Your assignment remains the same if you refresh. The materials are incomplete: some later records,
+        internal discussions, and incident evidence are unavailable.
       </p>
+      <p>
+        Do not build an AI system yet. First decide what the organization should investigate and where AI could
+        create value safely. Treat every metric and document as evidence produced by a process, not as ground truth.
+      </p>
+      <p>
+        <strong>Warning</strong>: Some information has been deliberately hidden, like in a real organization.
+        This may be because of politics, organization structure, real-life data quality issues, or just plain forgetfulness.
+        However, some signals will leak through. Your agent may not be able to find these. But can you?
+      </p>
+      <p>Submit a Markdown memo of at most <strong>1,800 words</strong>, using exactly this structure:</p>
+      <pre class="border rounded bg-body-tertiary p-3"><code># Organization and process map
+Brief narrative: departments, systems, decisions, and information flows.
 
-      <div class="form-check mt-4">
-        <input class="form-check-input" type="checkbox" id="${o}-ack" onchange="
-          this.form['${o}'].value = this.checked ? 'acknowledged' : '';
-          this.closest('.was-validated')?.classList.remove('was-validated');
-          this.form.dispatchEvent(new Event('input', { bubbles: true }));
-        ">
-        <label class="form-check-label" for="${o}-ack">
-          I have read the rules above and recorded my choice in the Donation Form.
-        </label>
-      </div>
-      <input type="hidden" class="form-control" name="${o}" id="${o}">
-      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onload="
-        setTimeout(() => {
-          const form = this.closest('form');
-          if (!form) return;
-          const hiddenInput = form['${o}'];
-          setInterval(() => {
-            const val = hiddenInput.value || '';
-            if (val !== this.dataset.lastVal) {
-              this.dataset.lastVal = val;
-              const cb = form.querySelector('#${o}-ack');
-              if (cb) cb.checked = val === 'acknowledged';
-            }
-          }, 300);
-        }, 50);
-      " style="display:none;" alt="">
-      <p class="text-muted small mt-2">
-        This card records your <strong>participation</strong> (${e} ${e==1?"mark":"marks"}).
-        The rest of the 1.5 marks &mdash; whatever classmates donate to you &mdash; is settled from the Form
-        after the deadline and added to your final grade.
+## Interview questions
+| # | Stakeholder/team | Question | Why this matters | Evidence prompting it |
+|---|---|---|---|---|
+| 1 | ... | ... | ... | filename, field/date/query/passage |
+<!-- Include exactly 8 rows. -->
+
+## Ranked AI use cases
+| Rank | Use case and business decision | Evidence | Value | Difficulty | Risks and validation step |
+|---|---|---|---|---|---|
+| 1 | ... | ... | High/Medium/Low | High/Medium/Low | ... |
+<!-- Include exactly 3 rows. -->
+
+## Safest first action
+One prioritized, reversible action and why it is safe under the current uncertainty.</code></pre>
+      <p>
+        Cite filenames and relevant fields, dates, cohorts, passages, or queries precisely. This is evaluated
+        offline and relatively within your assigned case for evidence traceability, investigative judgment,
+        calibration, and usefulness. A valid saved submission is required; final marks are assigned after offline evaluation.
       </p>
+      <p>
+        This will be evaluated offline by an agent that knows what was withheld and will check
+        if you can uncover the right signals and penalize you for following the wrong ones.
+        <strong>Intuition helps.</strong>
+      </p>
+      <label for="${t}" class="form-label"><strong>Your memo</strong></label>
+      <textarea class="form-control" id="${t}" name="${t}" rows="18" required spellcheck="true"></textarea>
     </div>
-  `;return{id:o,title:a,weight:e,question:t,answer:async i=>{if(!i)throw new Error("Tick the box to confirm you have recorded your choice in the Donation Form.");return{correct:!0,score:e,validMessage:"Acknowledged. Remember: your Form responses as of the deadline are final."}}}}var Te,X=p(()=>{"use strict";Te="https://forms.gle/FXwQbFnC4kTNTXo8A"});var Z={};y(Z,{default:()=>Ee});import{html as Re}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function Ee({weight:e=.2}={}){let o="q-donate-audio",a="Donate Your Marks \u2014 Tell Them Why (Audio)",t=async i=>{let s=(i||"").trim();if(!s)throw new Error("Submission is empty. Paste your public, CORS-enabled audio URL.");let l;try{l=new URL(s)}catch{throw new Error(`Not a valid URL: "${s.slice(0,80)}"`)}if(!/^https?:$/.test(l.protocol))throw new Error("URL must start with http:// or https://");let d="\u26A0\uFE0F We couldn't fetch it from the browser. Make sure it's public, CORS-enabled, actually an audio file, and stays live for at least 1 week after the ROE. It will be graded offline.";try{let c=await fetch(s,{method:"GET",mode:"cors",cache:"no-store"});if(c.ok){let h=c.headers.get("content-type")||"";d=Ie.test(h)?"\u2705 Reachable and CORS-enabled, and it looks like audio. Keep it live for 1 week after the ROE.":`\u26A0\uFE0F Reachable and CORS-enabled, but the Content-Type is "${h||"unknown"}", not audio/*. Double-check you linked the audio file itself.`}else d=`\u26A0\uFE0F The URL returned HTTP ${c.status}. Make sure it's publicly accessible. Graded offline.`}catch{}return{correct:!0,score:e,validMessage:`Saved. ${d}`}},r=Re`
-    <div class="mb-3">
-      <div style="background:linear-gradient(135deg,#3b0764 0%,#7e22ce 100%);border-radius:12px;padding:22px 26px;margin-bottom:20px;color:#f3e8ff;">
-        <div style="font-size:11px;letter-spacing:2px;color:#e9d5ff;text-transform:uppercase;margin-bottom:6px;">Follow-up to “Donate Your Marks”</div>
-        <div style="font-size:20px;font-weight:700;margin-bottom:8px;">🎙️ Tell them <em>why</em> — in your own voice</div>
-        <div style="font-size:15px;line-height:1.6;">
-          Record a short audio in which you <strong>name the collaborators you donated your marks to</strong>
-          (their names and email IDs) and explain <strong>why you chose each of them</strong>. The person you
-          donated to will hear this — and an AI, <em>speaking as that person</em>, will judge whether it sounds
-          genuine.
-        </div>
-      </div>
-
-      <h5 class="mt-4"><i class="bi bi-list-check"></i> What to submit</h5>
-      <div style="display:grid;gap:10px;margin-bottom:18px;">
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="background:#7e22ce;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:13px;">1</div>
-          <div><strong>Record your voice</strong> naming your collaborators (names + email IDs) and your honest reason for choosing each. Speak naturally — a thoughtful, specific reason scores higher than generic flattery.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="background:#7e22ce;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:13px;">2</div>
-          <div>
-            <strong>Host the audio at a public, CORS-enabled URL</strong> that stays live for
-            <strong>at least 1 week after the ROE</strong>. The link must point directly at the audio file
-            (e.g. <code>.mp3</code>, <code>.m4a</code>, <code>.webm</code>, <code>.wav</code>) and return an
-            <code>audio/*</code> content type with <code>Access-Control-Allow-Origin: *</code>.
-          </div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="background:#7e22ce;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:13px;">3</div>
-          <div><strong>Paste the audio URL below</strong> and press <kbd>Check</kbd> — we'll try to fetch it from your browser and tell you whether the CORS setup works.</div>
-        </div>
-      </div>
-
-      <div class="alert alert-warning" role="alert">
-        <strong><i class="bi bi-graph-up-arrow"></i> Relative grading, judged offline.</strong>
-        This is scored <strong>relative to everyone else</strong> by an LLM playing the role of the person you
-        donated to. A generic, AI-sounding "you're a great teammate" scores like every other generic answer —
-        which is low. Be specific about <em>why</em>.
-      </div>
-
-      <div class="alert alert-danger" role="alert">
-        <strong><i class="bi bi-megaphone-fill"></i> This recording will be shared publicly.</strong>
-        Your audio and its transcript become part of the public reveal. If the link is broken, private, not an
-        audio file, or taken down before the reveal, you lose the audio marks.
-      </div>
-
-      <p class="text-muted">
-        Worth <strong>${e} ${e==1?"mark":"marks"}</strong> now for a valid submission; the
-        professor may raise this to <strong>up to 2 marks</strong>, decided later from the offline evaluation.
-      </p>
-
-      <label for="${o}" class="form-label"><strong>Public, CORS-enabled audio URL</strong></label>
-      <input
-        type="url"
-        class="form-control font-monospace"
-        id="${o}"
-        name="${o}"
-        placeholder="https://your-host.example.com/why-i-chose-them.mp3"
-      />
-    </div>
-  `;return{id:o,title:a,weight:e,question:r,answer:t}}var Ie,ee=p(()=>{"use strict";Ie=/^audio\//i});var te={};y(te,{default:()=>Le});import{html as qe}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";function ze(e){return new Promise(o=>{let a=!1,t=s=>{a||(a=!0,clearTimeout(i),r.removeAttribute("src"),o(s))},r=new Audio;r.preload="metadata",r.crossOrigin="anonymous",r.addEventListener("loadedmetadata",()=>{let s=r.duration;t(Number.isFinite(s)&&s>0?s:null)}),r.addEventListener("error",()=>t(null));let i=setTimeout(()=>t(null),Ue);r.src=e})}async function Le({weight:e=.2}={}){let o="q-initiative-audio",a="Something You Did On Your Own Initiative (Audio)",t=async i=>{let s=(i||"").trim();if(!s)throw new Error("Submission is empty. Paste your public, CORS-enabled audio URL.");let l;try{l=new URL(s)}catch{throw new Error(`Not a valid URL: "${s.slice(0,80)}"`)}if(!/^https?:$/.test(l.protocol))throw new Error("URL must start with http:// or https://");let d="\u26A0\uFE0F We couldn't fetch it from the browser. Make sure it's public, CORS-enabled, actually an audio file, and stays live for at least 1 week after the ROE. It will be graded offline.";try{let c=await fetch(s,{method:"GET",mode:"cors",cache:"no-store"});if(c.ok){let h=c.headers.get("content-type")||"";if(Oe.test(h)){let n=await ze(s);n==null?d=`\u2705 Reachable and CORS-enabled, and it looks like audio. We couldn't measure its duration from the browser (this check is optional) \u2014 keep it under ${T}s and live for 1 week after the ROE.`:n<=T+2?d=`\u2705 Reachable and CORS-enabled, audio, and about ${Math.round(n)}s long (\u2264 ${T}s). Keep it live for 1 week after the ROE.`:d=`\u26A0\uFE0F Reachable and CORS-enabled, and it's audio, but it looks like ~${Math.round(n)}s long \u2014 over the ${T}s limit. This duration check is advisory only and won't block this mark, but it will count against you offline.`}else d=`\u26A0\uFE0F Reachable and CORS-enabled, but the Content-Type is "${h||"unknown"}", not audio/*. Double-check you linked the audio file itself.`}else d=`\u26A0\uFE0F The URL returned HTTP ${c.status}. Make sure it's publicly accessible. Graded offline.`}catch{}return{correct:!0,score:e,validMessage:`Saved. ${d}`}},r=qe`
-    <div class="mb-3">
-      <div style="background:linear-gradient(135deg,#064e3b 0%,#059669 100%);border-radius:12px;padding:22px 26px;margin-bottom:20px;color:#ecfdf5;">
-        <div style="font-size:11px;letter-spacing:2px;color:#a7f3d0;text-transform:uppercase;margin-bottom:6px;">The classic interview question</div>
-        <div style="font-size:20px;font-weight:700;margin-bottom:8px;">🎙️ "Tell me about something you did on your own initiative"</div>
-        <div style="font-size:15px;line-height:1.6;">
-          Record a short voice answer (<strong>at most 120 seconds</strong>) about a task you did
-          <strong>because you chose to</strong> — nobody assigned it, asked for it, or required it. Then,
-          <em>in the same recording</em>, explain how an agent with only internet access could verify (a) that
-          this really happened, and (b) that it was genuinely self-initiated rather than something someone
-          told you to do.
-        </div>
-      </div>
-
-      <h5 class="mt-4"><i class="bi bi-list-check"></i> What to submit</h5>
-      <div style="display:grid;gap:10px;margin-bottom:18px;">
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="background:#059669;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:13px;">1</div>
-          <div>
-            <strong>Record your voice, ≤ 120 seconds</strong>, telling the story: what you did, why you chose
-            to do it, and — most importantly — <strong>one specific public artifact</strong> an agent could look
-            up online to confirm it. State the exact URL, name, or ID out loud (spell it if it's unusual).
-          </div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="background:#059669;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:13px;">2</div>
-          <div>
-            <strong>Explain how the agent can tell it was your initiative, not an assignment.</strong> For
-            example: contrast it with what was actually required of you at the time, point to a timestamp that
-            predates any related deadline or announcement, or explain the motivation in your own words.
-          </div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="background:#059669;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:13px;">3</div>
-          <div>
-            <strong>Host the audio at a public, CORS-enabled URL</strong> that stays live for
-            <strong>at least 1 week after the ROE</strong>. The link must point directly at the audio file
-            (e.g. <code>.mp3</code>, <code>.m4a</code>, <code>.webm</code>, <code>.wav</code>) and return an
-            <code>audio/*</code> content type with <code>Access-Control-Allow-Origin: *</code>.
-          </div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="background:#059669;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:13px;">4</div>
-          <div><strong>Paste the audio URL below</strong> and press <kbd>Check</kbd> — we'll try to fetch it from your browser, and if possible, estimate its duration.</div>
-        </div>
-      </div>
-
-      <h5 class="mt-4"><i class="bi bi-globe"></i> What counts as a good public artifact?</h5>
-      <p>Anything a stranger (or an agent) can independently find and check, such as:</p>
-      <ul>
-        <li>A GitHub repo, commit, issue, or pull request — <strong>ideally dated well before this exam</strong>, but just before or even during the exam window is acceptable</li>
-        <li>A blog post, forum post, or Stack Overflow answer with a visible date and your name/handle</li>
-        <li>A published package (npm, PyPI, etc.), a live demo/website, or a dataset/notebook you released publicly</li>
-        <li>A hackathon or competition entry, leaderboard placement, or a public certificate-verification page</li>
-        <li>A video, talk, or public post you can link to, with a visible upload/publish date</li>
-      </ul>
-      <p class="text-muted">
-        Vague claims with nothing an agent can look up ("I read a book on weekends") will score low, even if
-        true — the whole point is <em>verifiability</em>.
-      </p>
-
-      <div class="alert alert-warning" role="alert">
-        <strong><i class="bi bi-graph-up-arrow"></i> Relative grading, judged offline.</strong>
-        This is scored <strong>relative to everyone else</strong> by an agent that (1) judges how clearly you
-        articulated a verification method, and then (2) actually attempts that verification online. A
-        generic, unverifiable, or clearly-assigned task scores like every other weak answer — which is low.
-      </div>
-
-      <div class="alert alert-danger" role="alert">
-        <strong><i class="bi bi-shield-lock-fill"></i> Don't share private information.</strong>
-        Only point to artifacts that are already public. Do not include anyone else's private data, and do
-        not link to anything that could get taken down before the offline evaluation runs.
-      </div>
-
-      <p class="text-muted">
-        Worth <strong>${e} ${e==1?"mark":"marks"}</strong> now for a valid submission; the
-        professor may raise this based on how well you articulated the verification method and whether the
-        agent's offline verification actually succeeds.
-      </p>
-
-      <label for="${o}" class="form-label"><strong>Public, CORS-enabled audio URL</strong></label>
-      <input
-        type="url"
-        class="form-control font-monospace"
-        id="${o}"
-        name="${o}"
-        placeholder="https://your-host.example.com/my-initiative.mp3"
-      />
-    </div>
-  `;return{id:o,title:a,weight:e,question:r,answer:t}}var Oe,T,Ue,oe=p(()=>{"use strict";Oe=/^audio\//i,T=120,Ue=6e3});var ae={};y(ae,{default:()=>Ne});import{html as _e}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function Ne({user:e,weight:o=.2}={}){let a="q-unusual-useful-essay-server",t="The Unusual Useful Essay",r=async s=>{let l=await fetch("/backendVerify",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:e.email,quizSign:e.quizSign,response:s,weight:o,questionId:a})}),d=await l.json();if(!l.ok)throw new Error(d.error||"Unable to validate your essay.");return d},i=_e`
+  `;return{id:t,title:"AI Opportunity Discovery",weight:o,question:i,answer:s=>{let d=String(s||"").trim();if(d.length<500)throw new Error("Submit a substantive memo (at least 500 characters).");if(d.split(/\s+/u).length>1800)throw new Error("Keep the memo to at most 1,800 words.");for(let c of["# Organization and process map","## Interview questions","## Ranked AI use cases","## Safest first action"])if(!d.includes(c))throw new Error(`Include the required heading: ${c}`);return!0}}}var ze,Ce,Z=f(()=>{"use strict";ze="https://drive.google.com/drive/folders/13-pfSILZ9SlepNhwj8XFzVffoD-fJlyn?usp=drive_link",Ce="https://drive.google.com/drive/folders/1EjFSdmrUQ1f2zN3WoqeLAYfK_IzkIN8q?usp=drive_link"});var ee={};g(ee,{default:()=>Me});import{html as Le}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";async function Me({user:e,weight:o=.2}={}){let r="q-unusual-useful-essay-server",t="The Unusual Useful Essay",n=async i=>{let a=await fetch("/backendVerify",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:e.email,quizSign:e.quizSign,response:i,weight:o,questionId:r})}),s=await a.json();if(!a.ok)throw new Error(s.error||"Unable to validate your essay.");return s},l=Le`
     <div class="mb-3">
       <div class="rounded-3 p-4 mb-3 text-white" style="background:linear-gradient(135deg,#0f172a,#4338ca)">
         <div class="small text-uppercase" style="letter-spacing:.12em;color:#c7d2fe">Public · distinct writing · offline marks</div>
@@ -646,7 +509,7 @@ print(code("r", "paste-their-challenge-here"))`,V=`[
 
       <p class="lead">Write a <strong>110–150 word</strong> piece answering this shared topic:</p>
       <blockquote class="blockquote border-start border-primary border-4 ps-3 py-1 mb-3">
-        <p class="mb-0">${Pe}</p>
+        <p class="mb-0">${_e}</p>
       </blockquote>
 
       <div class="alert alert-warning">
@@ -664,35 +527,489 @@ print(code("r", "paste-their-challenge-here"))`,V=`[
         anyone else.
       </div>
 
-      <label for="${a}" class="form-label"><strong>Your essay</strong></label>
+      <label for="${r}" class="form-label"><strong>Your essay</strong></label>
       <textarea
         class="form-control"
-        id="${a}"
-        name="${a}"
+        id="${r}"
+        name="${r}"
         rows="9"
         maxlength="1800"
         placeholder="Write 110–150 words…"
-        aria-describedby="counter-${a}"
+        aria-describedby="counter-${r}"
         oninput="
           const words = (this.value.match(/[\\p{L}\\p{N}]+(?:['’][\\p{L}\\p{N}]+)*/gu) || []).length;
-          document.getElementById('counter-${a}').textContent = words + ' / 110–150 words';
+          document.getElementById('counter-${r}').textContent = words + ' / 110–150 words';
           this.closest('.was-validated')?.classList.remove('was-validated');
         "
       ></textarea>
-      <div id="counter-${a}" class="text-end text-muted small mt-1">0 / 110–150 words</div>
+      <div id="counter-${r}" class="text-end text-muted small mt-1">0 / 110–150 words</div>
     </div>
-  `;return{id:a,title:t,weight:o,question:i,answer:r}}var Pe,se=p(()=>{"use strict";Pe="Which human skills will matter most in the AI era, and why?"});import{html as w,render as de}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";function z(e,o){let a=w`<ol class="mt-3">
-    ${e.map(({id:i,title:s,weight:l})=>w`<li><a href="#h${i}">${s}</a> (${l} ${l==1?"mark":"marks"})</li>`)}
-  </ol>`,t=[w`<h1 class="display-6">Questions</h1>`,a,...e.map(({id:i,title:s,weight:l,question:d,help:c},h)=>(c&&!Array.isArray(c)&&(c=[c]),w`
-        <div class="card my-5" data-question="${i}" id="h${i}">
-          <div class="card-header">
-            <span class="badge text-bg-primary me-2">${h+1}</span>
-            ${s} (${l} ${l==1?"mark":"marks"})
-          </div>
-          ${c?c.map(n=>w`<div class="card-body border-bottom">${n}</div>`):""}
-          <div class="card-body">${d}</div>
-          <div class="card-footer d-flex">
-            <button type="button" class="btn btn-primary check-answer" data-question="${i}">Check</button>
+  `;return{id:r,title:t,weight:o,question:l,answer:n}}var _e,te=f(()=>{"use strict";_e="Which human skills will matter most in the AI era, and why?"});var re={};g(re,{default:()=>Be});import{html as je}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";function oe(e,o){let r;try{r=new URL(e)}catch{throw new Error(`${o} is not a valid URL: "${e.slice(0,80)}"`)}if(!/^https?:$/.test(r.protocol))throw new Error(`${o} must start with http:// or https://`);return r.href}function Ye(e){let o=(e||"").trim();if(!o)throw new Error("Submission is empty. Paste your audio URL, optionally followed by a proof link.");let r=o.search(/\s/),t=r===-1?o:o.slice(0,r),n=r===-1?"":o.slice(r).trim(),l=oe(t,"Audio URL");if(n)for(let i of n.split(/\s+/).filter(Boolean))oe(i,"Proof link");return{audioUrl:l,proofRaw:n}}function Ne(e){return new Promise(o=>{let r=!1,t=i=>{r||(r=!0,clearTimeout(l),n.removeAttribute("src"),o(i))},n=new Audio;n.preload="metadata",n.crossOrigin="anonymous",n.addEventListener("loadedmetadata",()=>{let i=n.duration;t(Number.isFinite(i)&&i>0?i:null)}),n.addEventListener("error",()=>t(null));let l=setTimeout(()=>t(null),Pe);n.src=e})}async function Be({weight:e=.2}={}){let o="q-initiative-audio",r="Something You Did On Your Own Initiative (Audio)",t=async l=>{let{audioUrl:i,proofRaw:a}=Ye(l),s="\u26A0\uFE0F We couldn't fetch the audio from the browser. Make sure it's public, CORS-enabled, actually an audio file, and stays live for at least 1 week after the ROE. It will be graded offline.";try{let c=await fetch(i,{method:"GET",mode:"cors",cache:"no-store"});if(c.ok){let m=c.headers.get("content-type")||"";if(De.test(m)){let p=await Ne(i);p==null?s=`\u2705 Audio is reachable and CORS-enabled. We couldn't measure its duration from the browser (this check is optional) \u2014 keep it under ${I}s and live for 1 week after the ROE.`:p<=I+2?s=`\u2705 Audio is reachable and CORS-enabled, and about ${Math.round(p)}s long (\u2264 ${I}s). Keep it live for 1 week after the ROE.`:s=`\u26A0\uFE0F Audio is reachable and CORS-enabled, but it looks like ~${Math.round(p)}s long \u2014 over the ${I}s limit. This duration check is advisory only and won't block this mark, but it will count against you offline.`}else s=`\u26A0\uFE0F Audio URL is reachable and CORS-enabled, but the Content-Type is "${m||"unknown"}", not audio/*. Double-check you linked the audio file itself.`}else s=`\u26A0\uFE0F The audio URL returned HTTP ${c.status}. Make sure it's publicly accessible. Graded offline.`}catch{}let d=a?` Proof link saved (${a.split(/\s+/).length} URL${a.split(/\s+/).length===1?"":"s"}).`:" No proof link provided \u2014 you can still add one (space-separated after the audio URL).";return{correct:!0,score:e,validMessage:`Saved. ${s}${d}`}},n=je`
+    <div class="mb-3">
+      <div style="background:linear-gradient(135deg,#064e3b 0%,#059669 100%);border-radius:12px;padding:22px 26px;margin-bottom:20px;color:#ecfdf5;">
+        <div style="font-size:11px;letter-spacing:2px;color:#a7f3d0;text-transform:uppercase;margin-bottom:6px;">The classic interview question</div>
+        <div style="font-size:20px;font-weight:700;margin-bottom:8px;">🎙️ "Tell me about something you did on your own initiative"</div>
+        <div style="font-size:15px;line-height:1.6;">
+          Record a short voice answer (<strong>at most 120 seconds</strong>) about a task you did
+          <strong>because you chose to</strong> — nobody assigned it, asked for it, or required it. Then,
+          <em>in the same recording</em>, explain how an agent with only internet access could verify (a) that
+          this really happened, and (b) that it was genuinely self-initiated rather than something someone
+          told you to do.
+        </div>
+      </div>
+
+      <div class="alert alert-primary border-start border-4 border-primary" role="alert">
+        <strong><i class="bi bi-skip-forward-fill"></i> You <em>could</em> skip this question if you have nothing credible to show.</strong>
+        But would you do that in an interview?
+        Remember: an agent will verify your claim offline, and if it cannot find the evidence you describe, you score nothing.
+      </div>
+
+      <h5 class="mt-4"><i class="bi bi-list-check"></i> What to submit</h5>
+      <div style="display:grid;gap:10px;margin-bottom:18px;">
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="background:#059669;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:13px;">1</div>
+          <div>
+            <strong>Record your voice, ≤ 120 seconds</strong>, telling the story: what you did, why you chose
+            to do it, and — most importantly — <strong>one specific public artifact</strong> an agent could look
+            up online to confirm it. State the exact URL, name, or ID out loud (spell it if it's unusual).
           </div>
         </div>
-      `))],r={index:a,questions:t};for(let[i,s]of o)de(r[s],i)}async function et(e,o){let a=[{...await Promise.resolve().then(()=>(_(),L)).then(t=>t.default({user:e,weight:5,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(N(),P)).then(t=>t.default({user:e,weight:5,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(H(),D)).then(t=>t.default({user:e,weight:5,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(G(),F)).then(t=>t.default({user:e,weight:5,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(J(),K)).then(t=>t.default({user:e,weight:5,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(X(),Q)).then(t=>t.default({user:e,weight:.2,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(ee(),Z)).then(t=>t.default({user:e,weight:.2,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(oe(),te)).then(t=>t.default({user:e,weight:.2,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(se(),ae)).then(t=>t.default({user:e,weight:.2}))}];return z(a,o),Object.fromEntries(a.map(({id:t,...r})=>[t,r]))}export{et as questions};
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="background:#059669;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:13px;">2</div>
+          <div>
+            <strong>Explain how the agent can tell it was your initiative, not an assignment.</strong> For
+            example: contrast it with what was actually required of you at the time, point to a timestamp that
+            predates any related deadline or announcement, or explain the motivation in your own words.
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="background:#059669;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:13px;">3</div>
+          <div>
+            <strong>Host the audio at a public, CORS-enabled URL</strong> that stays live for
+            <strong>at least 1 week after the ROE</strong>. The link must point directly at the audio file
+            (e.g. <code>.mp3</code>, <code>.m4a</code>, <code>.webm</code>, <code>.wav</code>) and return an
+            <code>audio/*</code> content type with <code>Access-Control-Allow-Origin: *</code>.
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="background:#059669;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:13px;">4</div>
+          <div>
+            <strong>Paste below, space-separated:</strong>
+            <code>audio_url</code> and (strongly recommended)
+            <code>proof_url</code> — any public link that backs up what you claimed (GitHub PR, blog post,
+            package page, etc.). Press <kbd>Check</kbd> — we'll try to fetch the audio from your browser, and
+            if possible, estimate its duration. The proof link is only validated as a URL here; an agent
+            checks it offline.
+          </div>
+        </div>
+      </div>
+
+      <h5 class="mt-4"><i class="bi bi-globe"></i> What counts as a good public artifact?</h5>
+      <p>Anything a stranger (or an agent) can independently find and check. For each type, paste
+        <code>audio_url</code> then a space then the proof link — for example:</p>
+      <ul>
+        <li class="mb-3">
+          A GitHub repo, commit, issue, or pull request — <strong>ideally dated well before this exam</strong>,
+          but just before or even during the exam window is acceptable
+          <div class="form-text font-monospace mt-1 mb-0">
+            https://cdn.example.com/initiative.mp3 https://github.com/you/repo/pull/42
+          </div>
+        </li>
+        <li class="mb-3">
+          A blog post, forum post, or Stack Overflow answer with a visible date and your name/handle
+          <div class="form-text font-monospace mt-1 mb-0">
+            https://cdn.example.com/initiative.mp3 https://stackoverflow.com/a/12345678
+          </div>
+        </li>
+        <li class="mb-3">
+          A published package (npm, PyPI, etc.), a live demo/website, or a dataset/notebook you released publicly
+          <div class="form-text font-monospace mt-1 mb-0">
+            https://cdn.example.com/initiative.mp3 https://pypi.org/project/your-package/
+          </div>
+        </li>
+        <li class="mb-3">
+          A hackathon or competition entry, leaderboard placement, or a public certificate-verification page
+          <div class="form-text font-monospace mt-1 mb-0">
+            https://cdn.example.com/initiative.mp3 https://devpost.com/software/your-project
+          </div>
+        </li>
+        <li class="mb-3">
+          A video, talk, or public post you can link to, with a visible upload/publish date
+          <div class="form-text font-monospace mt-1 mb-0">
+            https://cdn.example.com/initiative.mp3 https://www.youtube.com/watch?v=dQw4w9WgXcQ
+          </div>
+        </li>
+      </ul>
+      <p class="text-muted">
+        Vague claims with nothing an agent can look up ("I read a book on weekends") will score low, even if
+        true — the whole point is <em>verifiability</em>. If none of the examples above fit something you
+        already did, <strong>skip this question</strong>.
+      </p>
+
+      <div class="alert alert-warning" role="alert">
+        <strong><i class="bi bi-graph-up-arrow"></i> Relative grading, judged offline.</strong>
+        This is scored <strong>relative to everyone else</strong> by an agent that (1) judges how clearly you
+        articulated a verification method, and then (2) actually attempts that verification online. A
+        generic, unverifiable, or clearly-assigned task scores like every other weak answer — which is low.
+      </div>
+
+      <div class="alert alert-danger" role="alert">
+        <strong><i class="bi bi-shield-lock-fill"></i> Don't share private information.</strong>
+        Only point to artifacts that are already public. Do not include anyone else's private data, and do
+        not link to anything that could get taken down before the offline evaluation runs.
+      </div>
+
+      <p class="text-muted">
+        Worth <strong>${e} ${e==1?"mark":"marks"}</strong> now for a valid submission; the
+        professor may raise this based on how well you articulated the verification method and whether the
+        agent's offline verification actually succeeds.
+      </p>
+
+      <label for="${o}" class="form-label">
+        <strong>Audio URL</strong>
+        <span class="text-muted fw-normal"> + optional proof link(s), space-separated</span>
+      </label>
+      <input
+        type="text"
+        class="form-control font-monospace"
+        id="${o}"
+        name="${o}"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="https://your-host.example.com/my-initiative.mp3 https://github.com/you/repo/pull/12"
+      />
+      <p class="form-text">
+        Format: <code>https://…/audio.mp3 https://…/proof</code>. Audio first; then any proof URL(s).
+        Audio alone is accepted, but a proof link makes offline verification much easier.
+      </p>
+    </div>
+  `;return{id:o,title:r,weight:e,question:n,answer:t}}var De,I,Pe,ae=f(()=>{"use strict";De=/^audio\//i,I=120,Pe=6e3});var ie={};g(ie,{default:()=>We});import{html as He}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";function A(e){return e.trim()?e.trim().split(/\s+/u).length:0}async function We({weight:e=2}){let o="q-external-dataset-insight",r="Insights from NSS80 Telecom Data",t=He`
+    <div class="mb-3">
+      <p>
+        Use the MoSPI MCP at
+        <a href="https://mcp.mospi.gov.in/" target="_blank" rel="noreferrer">https://mcp.mospi.gov.in/</a>
+        to work with the <strong>Comprehensive Modular Survey: Telecom (NSS 80th Round)</strong>
+        dataset.
+      </p>
+      <p>
+        Find exactly three impactful, practical, and surprising insights.
+      </p>
+      <p>
+        Return a JSON array containing exactly three objects. Each object must contain
+        exactly these text fields:
+      </p>
+      <ul>
+        <li><code>title</code>: a newspaper headline explaining the insight. Max 8 words.</li>
+        <li><code>body</code>: an explanation of the insight, as if for a popular newspaper, to educate and engage the readers. Max 100 words.</li>
+        <li><code>verification</code>: a step-by-step method to help a journalist verify the correctness of the insight from the provided source. Max 200 words.</li>
+      </ul>
+      <p>
+        A valid submission earns 0.1 mark. The remaining 1.9 marks will be awarded
+        offline:
+      </p>
+      <ul>
+        <li>1 mark: a low-cost LLM evaluates the quality and correctness of all submissions.</li>
+        <li>0.9 marks: after normalizing the scores, a higher-cost agent evaluates the top 100 submissions.</li>
+      </ul>
+      <p>
+        Scores are graded relatively across submissions, including insight quality,
+        correctness, verification quality, and distinctness. Distinctness is assessed
+        using embedding distance.
+      </p>
+      <label for="${o}" class="form-label"><strong>Your JSON answer</strong></label>
+      <textarea
+        class="form-control"
+        id="${o}"
+        name="${o}"
+        required
+        spellcheck="true"
+      ></textarea>
+    </div>
+  `;return{id:o,title:r,weight:e,question:t,answer:l=>{let i;try{i=JSON.parse(l)}catch{throw new Error("Submit a valid JSON array.")}if(!Array.isArray(i)||i.length!==3)throw new Error("Submit exactly three insight objects in a JSON array.");for(let[a,s]of i.entries()){if(!s||typeof s!="object"||Array.isArray(s))throw new Error(`Insight ${a+1} must be an object.`);if(Object.keys(s).sort().join(",")!=="body,title,verification")throw new Error(`Insight ${a+1} must contain only title, body, and verification.`);for(let c of["title","body","verification"])if(typeof s[c]!="string"||!s[c].trim())throw new Error(`Insight ${a+1} must have a non-empty ${c} field.`);if(A(s.title)>8)throw new Error(`Insight ${a+1} title must contain at most 8 words.`);if(A(s.body)>100)throw new Error(`Insight ${a+1} body must contain at most 100 words.`);if(A(s.verification)>200)throw new Error(`Insight ${a+1} verification must contain at most 200 words.`)}return{correct:!0,score:.1,validMessage:"Format accepted. The remaining 1.9 marks will be evaluated offline."}}}}var se=f(()=>{"use strict"});var le={};g(le,{default:()=>Qe});import{html as Fe}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";import Ve from"https://cdn.jsdelivr.net/npm/marked-katex-extension@5/+esm";import{Marked as Je}from"https://cdn.jsdelivr.net/npm/marked@13/+esm";function Ge(e){return e?String(e).replace(/\\\[([\s\S]*?)\\\]/g,(o,r)=>`$$${r.trim()}$$`).replace(/\\\(([\s\S]*?)\\\)/g,(o,r)=>`$${r.trim()}$`):""}function Ke(e){return String(e||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}async function Qe({user:e,weight:o=1,version:r=""}){let t="AI Tutor Challenge",n=`/questionData?email=${encodeURIComponent(e.email)}&quizSign=${encodeURIComponent(e.quizSign||"")}&questionId=${encodeURIComponent(u)}&version=${encodeURIComponent(r)}`;setTimeout(()=>{let a=document.getElementById(`${u}-root`),s=a?.closest("form");if(!a||!s)return;let d=document.getElementById(u),c=document.getElementById(`${u}-message`),m=document.getElementById(`${u}-ask`),p=document.getElementById(`${u}-token`),w=document.getElementById(`${u}-transcript`),x=document.getElementById(`${u}-status`),T=document.getElementById(`${u}-charcount`),q=document.getElementById(`${u}-iframe`),de=document.querySelector(`.check-answer[data-question="${u}"]`),k={transcript:[]},R=()=>{s.dispatchEvent(new Event("input",{bubbles:!0})),a.closest(".was-validated")?.classList.remove("was-validated")},z=()=>{w.innerHTML=k.transcript.length?k.transcript.map(h=>`<div class="atc-turn atc-turn--${h.role==="assistant"?"tutor":"you"}">
+                  <span class="atc-turn-label">${h.role==="assistant"?"Tutor":"You"}</span>
+                  <span class="atc-turn-content">${h.role==="assistant"?ne.parse(Ge(h.content)):Ke(h.content)}</span>
+                </div>`).join(""):'<div class="atc-empty">No tutor interactions yet \u2014 ask a question above.</div>'},C=(h=!1)=>(h&&(globalThis.aiPipeToken=""),globalThis.aiPipeToken||(globalThis.aiPipeToken=prompt("Enter your AI Pipe token (from aipipe.org)")||""),globalThis.aiPipeToken),y=(h,S)=>{x.className=`atc-status atc-status--${h}`,x.textContent=S,x.hidden=!1};q?.addEventListener("load",()=>{try{let h=q.contentDocument?.body?.scrollHeight;h&&(q.style.height=`${h+24}px`)}catch{}}),c.addEventListener("input",()=>{let h=c.value.length;T.textContent=`${h} / ${v}`,T.style.color=h>v*.9?"#ff8866":""}),d.addEventListener("input",R),p.addEventListener("click",()=>{C(!0),globalThis.aiPipeToken&&y("info","Token updated.")}),m.addEventListener("click",async()=>{let h=c.value.trim();if(!h){y("warning","Type a question for the tutor first.");return}if(h.length>v){y("warning",`Message too long (max ${v} characters).`);return}let S=C();if(!S){y("warning","Enter an AI Pipe token to use the tutor.");return}m.disabled=!0,m.innerHTML='<span class="atc-spinner" role="status" aria-label="Loading"></span> Thinking\u2026',y("info","Asking the tutor\u2026");try{let b=await fetch("/aiTutorChat",{method:"POST",headers:{"Content-Type":"application/json",Authorization:`Bearer ${S}`},body:JSON.stringify({email:e.email,quizSign:e.quizSign,message:h,transcript:k.transcript,version:r})}),E=await b.json().catch(()=>({}));if(!b.ok){let O=E?.error?.message||E?.message||`Tutor service returned HTTP ${b.status}`;b.status===401||b.status===402||b.status===429?y("warning",`${O}  \u2014  Try another AI Pipe token if your quota ran out.`):y("danger",O);return}let U=String(E?.choices?.[0]?.message?.content||"").trim();if(!U){y("danger","Tutor returned an empty response. Try again.");return}k.transcript.push({role:"user",content:h}),k.transcript.push({role:"assistant",content:U}),c.value="",T.textContent=`0 / ${v}`,y("success","Tutor replied \u2014 enter your computed answer below when ready."),z(),w.scrollTop=w.scrollHeight}catch(b){y("danger",b instanceof Error?b.message:String(b))}finally{m.disabled=!1,m.textContent="Ask tutor"}}),de?.addEventListener("click",R),z()},100);let l=Fe`
+    <div id="${u}-root" class="mb-3">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+      <style>
+        /* ---- layout & reset ---- */
+        #${u}-root { font-family: 'Inter', 'Segoe UI', sans-serif; }
+
+        /* ---- intro text ---- */
+        .atc-intro { margin-bottom: 1rem; line-height: 1.65; color: #9aabbf; font-size: 0.9rem; }
+        .atc-intro a { color: #6c8aff; }
+        .atc-intro strong { color: #c9d1e0; }
+        .atc-intro code {
+          font-family: 'Fira Mono', monospace;
+          background: #1a1d27;
+          border-radius: 3px;
+          padding: 0 0.3em;
+          font-size: 0.82em;
+          color: #a9d4ff;
+        }
+
+        /* ---- how-to steps ---- */
+        .atc-steps {
+          margin: 0 0 1.25rem;
+          padding: 0;
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 0.35rem;
+        }
+        .atc-steps li {
+          font-size: 0.85rem;
+          color: #9aabbf;
+          line-height: 1.6;
+          padding-left: 1.4rem;
+          position: relative;
+        }
+        .atc-steps li::before {
+          content: counter(atc-step);
+          counter-increment: atc-step;
+          position: absolute;
+          left: 0;
+          font-weight: 700;
+          color: #6c8aff;
+        }
+        .atc-steps { counter-reset: atc-step; }
+        .atc-steps li strong { color: #c9d1e0; }
+        .atc-steps code {
+          font-family: 'Fira Mono', monospace;
+          background: #1a1d27;
+          border-radius: 3px;
+          padding: 0 0.3em;
+          font-size: 0.82em;
+          color: #a9d4ff;
+        }
+
+        /* ---- iframe card (table is served from authenticated server route) ---- */
+        .atc-iframe-card {
+          border: 1px solid #2d3147;
+          border-radius: 10px;
+          overflow: hidden;
+          margin-bottom: 1.25rem;
+          background: #0f1117;
+        }
+        .atc-iframe-card iframe {
+          display: block;
+          width: 100%;
+          border: none;
+          min-height: 300px;
+          transition: height 0.2s ease;
+        }
+
+        /* ---- tutor section ---- */
+        .atc-tutor-section {
+          border: 1px solid #2d3147;
+          border-radius: 10px;
+          padding: 1.25rem 1.5rem;
+          margin-bottom: 1.25rem;
+          background: #12141e;
+        }
+        .atc-tutor-title {
+          font-size: 0.7rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: #9988dd;
+          margin: 0 0 0.75rem;
+          font-weight: 700;
+        }
+        #${u}-message {
+          display: block;
+          width: 100%;
+          min-height: 4.2rem;
+          padding: 0.5rem 0.75rem;
+          font-size: 0.92rem;
+          line-height: 1.55;
+          color: #c9d1e0;
+          background: #0f1117;
+          border: 1px solid #2d3147;
+          border-radius: 7px;
+          resize: vertical;
+          box-sizing: border-box;
+          transition: border-color 0.15s;
+        }
+        #${u}-message:focus {
+          border-color: #6c8aff;
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(108, 138, 255, 0.18);
+        }
+        .atc-charcount {
+          font-size: 0.7rem;
+          color: #445;
+          text-align: right;
+          margin-top: 0.2rem;
+        }
+        .atc-actions {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+          flex-wrap: wrap;
+          margin-top: 0.65rem;
+        }
+        .atc-btn-ask {
+          padding: 0.42rem 1.1rem;
+          background: linear-gradient(135deg, #4a6cf7, #7c3aed);
+          color: #fff;
+          border: none;
+          border-radius: 6px;
+          font-size: 0.88rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: opacity 0.15s, transform 0.1s;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+        }
+        .atc-btn-ask:disabled { opacity: 0.5; cursor: not-allowed; }
+        .atc-btn-ask:not(:disabled):hover { opacity: 0.88; transform: translateY(-1px); }
+        .atc-btn-token {
+          padding: 0.4rem 0.9rem;
+          background: transparent;
+          color: #7788aa;
+          border: 1px solid #2d3147;
+          border-radius: 6px;
+          font-size: 0.82rem;
+          cursor: pointer;
+          transition: border-color 0.15s, color 0.15s;
+        }
+        .atc-btn-token:hover { border-color: #6c8aff; color: #aab; }
+
+        /* ---- spinner ---- */
+        .atc-spinner {
+          display: inline-block;
+          width: 0.9em;
+          height: 0.9em;
+          border: 2px solid rgba(255, 255, 255, 0.35);
+          border-top-color: #fff;
+          border-radius: 50%;
+          animation: atc-spin 0.6s linear infinite;
+          vertical-align: middle;
+        }
+        @keyframes atc-spin { to { transform: rotate(360deg); } }
+
+        /* ---- status messages ---- */
+        .atc-status {
+          margin-top: 0.6rem;
+          padding: 0.45rem 0.9rem;
+          border-radius: 6px;
+          font-size: 0.85rem;
+        }
+        .atc-status--info    { background: #1a2840; color: #88bbff; border: 1px solid #224; }
+        .atc-status--success { background: #0f2018; color: #7dd98a; border: 1px solid #234; }
+        .atc-status--warning { background: #251d08; color: #ffcc66; border: 1px solid #432; }
+        .atc-status--danger  { background: #200e0e; color: #ff8888; border: 1px solid #422; }
+
+        /* ---- transcript ---- */
+        #${u}-transcript {
+          margin-top: 0.75rem;
+          max-height: 280px;
+          overflow-y: auto;
+          padding-right: 4px;
+        }
+        .atc-empty { font-size: 0.82rem; color: #445; font-style: italic; }
+        .atc-turn {
+          display: flex;
+          gap: 0.5rem;
+          margin-bottom: 0.6rem;
+          font-size: 0.85rem;
+          line-height: 1.5;
+        }
+        .atc-turn-label { flex-shrink: 0; font-weight: 700; width: 3.5rem; }
+        .atc-turn--you .atc-turn-label { color: #88aaff; }
+        .atc-turn--tutor .atc-turn-label { color: #9988dd; }
+        .atc-turn-content { color: #b0bcd4; white-space: pre-wrap; word-break: break-word; }
+
+        /* ---- final answer section ---- */
+        .atc-answer-section { margin-top: 0.5rem; }
+        .atc-answer-label { font-weight: 600; margin-bottom: 0.4rem; display: block; color: #c9d1e0; }
+        .atc-answer-hint { font-size: 0.78rem; color: #556; margin-top: 0.35rem; }
+      </style>
+
+      <!-- Intro -->
+      <div class="atc-intro">
+        <p>
+          A <strong>unique arithmetic puzzle</strong> has been generated just for you.
+          Each fictional operator (e.g. <code>ZOK</code>, <code>VEX</code>) follows a hidden
+          mathematical formula. Study the worked examples, deduce the formula, then compute
+          the <strong>target row's output</strong> (marked <code style="color:#a8d98a">?</code>).
+        </p>
+      </div>
+
+      <!-- How-to steps -->
+      <ol class="atc-steps">
+        <li>
+          <strong>Observe.</strong> Each row shows <code>Op(A, B) = Output</code>.
+          Look for patterns — does the output scale with A? Does swapping A and B change the result?
+        </li>
+        <li>
+          <strong>Hypothesise.</strong> The formula may be linear (<code>p*A + q*B</code>),
+          quadratic (<code>p*A^2 + q*B</code>), a shifted product, or XOR-based.
+          Try to pin down the formula type before guessing coefficients.
+        </li>
+        <li>
+          <strong>Ask the tutor.</strong> Describe your hypothesis and the tutor will
+          confirm or correct your reasoning. Once you know the exact formula, plug in
+          the target values yourself — the tutor will not compute the final answer for you.
+        </li>
+      </ol>
+
+      <!-- Artifact table (rendered server-side; formula code never reaches browser) -->
+      <div class="atc-iframe-card">
+        <iframe
+          id="${u}-iframe"
+          title="Your assigned rule table"
+          src="${n}"
+        ></iframe>
+      </div>
+
+      <!-- Tutor chat -->
+      <div class="atc-tutor-section">
+        <p class="atc-tutor-title">Chat here with AI</p>
+        <textarea
+          id="${u}-message"
+          maxlength="${v}"
+          placeholder='e.g. "I think ZOK multiplies A by something and adds B — is that right?"'
+          rows="3"
+        ></textarea>
+        <div class="atc-charcount"><span id="${u}-charcount">0 / ${v}</span></div>
+        <div class="atc-actions">
+          <button type="button" class="atc-btn-ask" id="${u}-ask">Ask tutor</button>
+          <button type="button" class="atc-btn-token" id="${u}-token">Use another AI Pipe token</button>
+        </div>
+        <div id="${u}-status" hidden></div>
+        <div id="${u}-transcript"></div>
+      </div>
+
+      <!-- Final answer -->
+      <div class="atc-answer-section">
+        <label for="${u}" class="atc-answer-label">Your computed output for the target row</label>
+        <input
+          class="form-control"
+          id="${u}"
+          name="${u}"
+          autocomplete="off"
+          placeholder="Enter the numeric output, e.g. 42"
+          style="max-width: 200px; font-family: monospace; font-size: 1.05rem;"
+        />
+        <p class="atc-answer-hint">
+          Scoring is all-or-none: full marks for the correct value, zero otherwise.
+        </p>
+      </div>
+    </div>
+  `;return{id:u,title:t,weight:o,question:l,answer:async a=>{let s=await fetch("/backendVerify",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:e.email,quizSign:e.quizSign,response:a,weight:o,questionId:u,version:r})}),d=await s.json();if(!s.ok)throw new Error(d.error||"Unable to verify your answer.");return d}}}var ne,u,v,ce=f(()=>{"use strict";ne=new Je;ne.use(Ve({throwOnError:!1,nonStandard:!0}));u="q-ai-tutor-challenge-server",v=700});import{html as $,render as me}from"https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";function L(e,o){let r=$`<ol class="mt-3">
+    ${e.map(({id:l,title:i,weight:a})=>$`<li><a href="#h${l}">${i}</a> (${a} ${a==1?"mark":"marks"})</li>`)}
+  </ol>`,t=[$`<h1 class="display-6">Questions</h1>`,r,...e.map(({id:l,title:i,weight:a,question:s,help:d},c)=>(d&&!Array.isArray(d)&&(d=[d]),$`
+        <div class="card my-5" data-question="${l}" id="h${l}">
+          <div class="card-header">
+            <span class="badge text-bg-primary me-2">${c+1}</span>
+            ${i} (${a} ${a==1?"mark":"marks"})
+          </div>
+          ${d?d.map(m=>$`<div class="card-body border-bottom">${m}</div>`):""}
+          <div class="card-body">${s}</div>
+          <div class="card-footer d-flex">
+            <button type="button" class="btn btn-primary check-answer" data-question="${l}">Check</button>
+          </div>
+        </div>
+      `))],n={index:r,questions:t};for(let[l,i]of o)me(n[i],l)}async function gt(e,o){let r=[{...await Promise.resolve().then(()=>(j(),M)).then(t=>t.default({user:e,weight:5,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(P(),D)).then(t=>t.default({user:e,weight:.2,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(N(),Y)).then(t=>t.default({user:e,weight:.2,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(H(),B)).then(t=>t.default({user:e,weight:5,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(F(),W)).then(t=>t.default({user:e,weight:5,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(G(),J)).then(t=>t.default({user:e,weight:5,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(Q(),K)).then(t=>t.default({user:e,weight:2}))},{...await Promise.resolve().then(()=>(Z(),X)).then(t=>t.default({user:e,weight:2,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(te(),ee)).then(t=>t.default({user:e,weight:.2}))},{...await Promise.resolve().then(()=>(ae(),re)).then(t=>t.default({user:e,weight:.2,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(se(),ie)).then(t=>t.default({user:e,weight:2,version:"roe-2026-05-v1"}))},{...await Promise.resolve().then(()=>(ce(),le)).then(t=>t.default({user:e,weight:1,version:"roe-2026-05-v1"}))}];return L(r,o),Object.fromEntries(r.map(({id:t,...n})=>[t,n]))}export{gt as questions};
