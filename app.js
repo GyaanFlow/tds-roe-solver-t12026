@@ -719,38 +719,9 @@ function renderAnswerPanel(data, langClass) {
   const escapedAnswer = escapeHtml(data.answer);
   const wrapClass = rawWrapEnabled ? 'raw-output-pre' : 'raw-output-nowrap';
   
-  // Check if answer is a pure URL
-  const isUrl = /^https?:\/\/[^\s]+$/i.test(data.answer.trim());
-  
-  // Distinguish between deployed solver web apps and copy-paste API URLs
-  const urlLower = data.answer.trim().toLowerCase();
-  const isCopyPasteApi = urlLower.includes('/api') || 
-                          urlLower.includes('/code-interpreter') || 
-                          urlLower.includes('/sentiment') || 
-                          urlLower.includes('/latency') ||
-                          urlLower.includes('/corroborate') ||
-                          urlLower.includes('/action-firewall') ||
-                          urlLower.includes('/sanitize-output') ||
-                          urlLower.includes('/terraform') ||
-                          urlLower.includes('/release-gate') ||
-                          urlLower.includes('onrender.com/') ||
-                          urlLower.includes('workers.dev');
-                          
-  const isInteractiveSolver = isUrl && !isCopyPasteApi;
-  
-  const answerMarkup = isInteractiveSolver
-    ? `
-      <div class="url-solver-container" style="padding: 16px; background: rgba(245, 158, 11, 0.03); border: 1px dashed rgba(245, 158, 11, 0.3); border-radius: 8px; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; margin: 12px 0; text-align: center;">
-        <span style="font-size: 12px; color: var(--text-secondary);">This solver provides a pre-deployed interactive tool:</span>
-        <a href="${data.answer.trim()}" target="_blank" rel="noopener noreferrer" class="navbar-credit-btn" style="box-shadow: 0 0 16px rgba(245, 158, 11, 0.15); font-weight: 600; text-decoration: none;">
-          Open Solver Tool ↗
-        </a>
-        <code style="font-size: 11px; color: var(--text-muted); word-break: break-all;">${escapedAnswer}</code>
-      </div>
-    `
-    : langClass
-      ? `<pre class="raw-output"><code class="${langClass}" style="background:transparent; border:none; box-shadow:none;">${escapedAnswer}</code></pre>`
-      : `<pre class="raw-output ${wrapClass}">${escapedAnswer}</pre>`;
+  const answerMarkup = langClass
+    ? `<pre class="raw-output"><code class="${langClass}" style="background:transparent; border:none; box-shadow:none;">${escapedAnswer}</code></pre>`
+    : `<pre class="raw-output ${wrapClass}">${escapedAnswer}</pre>`;
 
   const actions = `
     <div class="panel-actions">
