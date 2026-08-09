@@ -74,12 +74,19 @@ function registerReleaseGateInteractive() {
     function setStatus(text, color) { if (statusEl) { statusEl.textContent = text; statusEl.style.color = color || '#9fc6ff'; } }
 
     if (!workflowUrl) {
-      setStatus('Paste your GitHub Actions workflow run URL (or the workflow file URL) first -- this half is on you, the API cannot create it for you.', '#dc3545');
+      setStatus('Paste your GitHub Actions workflow PAGE url first (…/actions/workflows/FILE.yml) -- this half is on you, the API cannot create it for you.', '#dc3545');
       if (outEl) outEl.value = '';
       return;
     }
-    if (!/^https:\/\/github\.com\//i.test(workflowUrl)) {
-      setStatus('That should be a https://github.com/… URL pointing at your public workflow. Double-check before submitting.', '#d97706');
+    // The exam is explicit: "Submit the workflow page URL, not an individual run URL." A run URL
+    // (/actions/runs/12345) is the single most likely mistake here and silently costs the 25%.
+    let urlWarning = '';
+    if (/\/actions\/runs\//i.test(workflowUrl)) {
+      urlWarning = '⚠️ That looks like an individual RUN url. The exam wants the workflow PAGE url instead: …/actions/workflows/YOUR-FILE.yml';
+    } else if (!/^https:\/\/github\.com\//i.test(workflowUrl)) {
+      urlWarning = '⚠️ That should be a https://github.com/… url pointing at your public workflow page.';
+    } else if (!/\/actions\/workflows\//i.test(workflowUrl)) {
+      urlWarning = '⚠️ Expected a workflow page url of the form https://github.com/OWNER/REPO/actions/workflows/FILE.yml';
     }
     let answer;
     try {
@@ -90,9 +97,10 @@ function registerReleaseGateInteractive() {
       return;
     }
     if (outEl) outEl.value = JSON.stringify(answer, null, 2);
-    if (/^https:\/\/github\.com\//i.test(workflowUrl)) {
-      setStatus('✅ Submission JSON ready. Copy this into the exam answer box.', '#198754');
-    }
+    setStatus(
+      urlWarning || '✅ Submission JSON ready. Copy this into the exam answer box.',
+      urlWarning ? '#d97706' : '#198754'
+    );
   };
 
   window._ga7RgCopyAnswer = async function () {
@@ -109,7 +117,7 @@ export async function solve(email) {
 
   const summary = [
     `CI/CD Container Release Gate assistant for ${norm}.`,
-    `Your hosted service URL is ${serviceUrl}. Submit it together with your own public GitHub Actions workflow run URL as {"serviceUrl":"...","workflowUrl":"..."} -- the workflow half is 25% of this question and can't be auto-generated.`
+    `Your hosted service URL is ${serviceUrl}. Submit it together with your own public GitHub Actions workflow PAGE url as {"serviceUrl":"...","workflowUrl":"..."} -- the workflow half is 25% of this question and can't be auto-generated.`
   ].join(' ');
 
   const guide = [
@@ -123,10 +131,19 @@ export async function solve(email) {
     `directly to \`${serviceUrl}/release-gate\` and checks the decisions. No auth, no token, CORS open.`,
     ``,
     `### ⚠️ The other 25%: GitHub Actions evidence (this part is on you)`,
-    `Your \`workflowUrl\` must point to a **public** repo with a workflow named exactly`,
-    `\`TDS GA7 Release Gate\`, containing a step named exactly \`TDS identity: ${norm}\`, that ran`,
-    `successfully on a push to \`main\`. A hosted API cannot create a GitHub repo on your behalf --`,
-    `you need to actually set this up once, then paste the resulting URL below.`,
+    `A hosted API cannot create a GitHub repo on your behalf -- set this up once, then paste the URL below.`,
+    ``,
+    `1. Put the service in a **public** GitHub repository.`,
+    `2. Create a workflow named exactly \`TDS GA7 Release Gate\` that runs on a **push to \`main\`**`,
+    `   and tests your release-gate implementation.`,
+    `3. Add a step named exactly \`TDS identity: ${norm}\`, then run the workflow successfully on a`,
+    `   push to \`main\`.`,
+    ``,
+    `> 🚨 **Submit the workflow PAGE url, not an individual run url.** This is the easiest way to`,
+    `> silently lose the 25%. You want the form`,
+    `> \`https://github.com/OWNER/REPO/actions/workflows/FILE.yml\` — *not* \`…/actions/runs/123456\`.`,
+    `> The backend reads the public workflow file and GitHub's \`main\`/\`push\` status badge; no GitHub`,
+    `> API or token is involved, which is also why the repo has to be public.`,
     ``,
     `### 💡 Decision logic (for understanding the live probes)`,
     `Returns a **violation set**, not a first-match reason -- multiple failures all appear together.`,

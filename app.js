@@ -728,10 +728,13 @@ function renderAnswerPanel(data, langClass) {
                           urlLower.includes('/code-interpreter') || 
                           urlLower.includes('/sentiment') || 
                           urlLower.includes('/latency') ||
-                          urlLower.includes('onrender.com/ga3/') ||
-                          urlLower.includes('onrender.com/ga4/') ||
-                          urlLower.includes('onrender.com/ga5/') ||
-                          urlLower.includes('onrender.com/ga2/');
+                          urlLower.includes('/corroborate') ||
+                          urlLower.includes('/action-firewall') ||
+                          urlLower.includes('/sanitize-output') ||
+                          urlLower.includes('/terraform') ||
+                          urlLower.includes('/release-gate') ||
+                          urlLower.includes('onrender.com/') ||
+                          urlLower.includes('workers.dev');
                           
   const isInteractiveSolver = isUrl && !isCopyPasteApi;
   
