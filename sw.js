@@ -1,7 +1,8 @@
-const CACHE_NAME = 'tds-portal-v13';
+const CACHE_NAME = 'tds-portal-v14';
 
 const CORE_ASSETS = [
   '/',
+  '/index.html',
   '/style.css',
   '/manifest.json',
   '/tds-config.json',
@@ -14,25 +15,25 @@ const CORE_ASSETS = [
   'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js'
 ];
 
-// Install Event - Precache core assets
+// Install Event - Immediately take control
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('[ServiceWorker] Pre-caching core assets');
-      return cache.addAll(CORE_ASSETS);
+      return cache.addAll(CORE_ASSETS).catch(err => console.warn('[ServiceWorker] Pre-cache warning:', err));
     })
   );
 });
 
-// Activate Event - Clean up old caches
+// Activate Event - Clean up all old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cache) => {
           if (cache !== CACHE_NAME) {
-            console.log('[ServiceWorker] Removing old cache', cache);
+            console.log('[ServiceWorker] Removing old cache:', cache);
             return caches.delete(cache);
           }
         })
@@ -41,7 +42,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch Event - Network First for solvers/data, Cache First for static
+// Fetch Event - Strict Network-First Strategy for JS/HTML/CSS (no stale cache)
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
@@ -55,10 +56,12 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Network-first strategy — always fetch from network, fall back to cache on failure
+  // For application code (.js, .html, .css, local API/solvers), force no-cache fetch
+  const isAppCode = url.origin === location.origin || url.pathname.endsWith('.js') || url.pathname.endsWith('.html') || url.pathname.endsWith('.css');
+
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      const fetchPromise = fetch(event.request).then((networkResponse) => {
+    fetch(isAppCode ? new Request(event.request, { cache: 'no-cache' }) : event.request)
+      .then((networkResponse) => {
         if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
           const responseToCache = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
@@ -66,12 +69,10 @@ self.addEventListener('fetch', (event) => {
           });
         }
         return networkResponse;
-      }).catch((err) => {
-        if (cachedResponse) return cachedResponse;
-        throw err;
-      });
-
-      return fetchPromise;
-    })
+      })
+      .catch(() => {
+        // Fall back to cache when offline
+        return caches.match(event.request);
+      })
   );
 });

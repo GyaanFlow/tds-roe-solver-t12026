@@ -514,12 +514,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
-  <script type="module" src="app.js?v=v13"></script>
+  <script type="module" src="app.js?v=v14"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js').then(registration => {
           console.log('[ServiceWorker] Registered with scope:', registration.scope);
+          registration.update();
+          registration.onupdatefound = () => {
+            const installingWorker = registration.installing;
+            if (installingWorker) {
+              installingWorker.onstatechange = () => {
+                if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                  console.log('[ServiceWorker] New version detected! Reloading to apply...');
+                  window.location.reload();
+                }
+              };
+            }
+          };
         }).catch(err => {
           console.error('[ServiceWorker] Registration failed:', err);
         });
