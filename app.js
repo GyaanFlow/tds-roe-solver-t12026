@@ -134,7 +134,8 @@ const TERM_EXAMS = {
     { group: 'Weekly Graded Assignments', value: 'ga3', label: 'GA 3 (System & API Architecture)' },
     { group: 'Weekly Graded Assignments', value: 'ga4', label: 'GA 4 (RAG & Vector Search)' },
     { group: 'Weekly Graded Assignments', value: 'ga5', label: 'GA 5 (Agentic Systems Safety)' },
-    { group: 'Weekly Graded Assignments', value: 'ga6', label: 'GA 6 (Data Forensics & Automation)' }
+    { group: 'Weekly Graded Assignments', value: 'ga6', label: 'GA 6 (Data Forensics & Automation)' },
+    { group: 'Weekly Graded Assignments', value: 'ga7', label: 'GA 7 (Policy Gates & OSINT)' }
   ]
 };
 
