@@ -5,7 +5,7 @@
 // it faithfully, then constructs a query from the SAME conditions the exam uses to define the
 // target set, and verifies locally (using the same query engine) before showing the answer.
 import seedrandom from './seedrandom.js';
-import { normalizeEmail } from './utils.js';
+import { normalizeEmail, requireEmail } from './utils.js';
 import { promoLines } from './promo.js';
 
 export const id = 'q-google-dorks-advanced';
@@ -158,7 +158,7 @@ function buildQuery({ apex, cutoff, keyword, subject }) {
 }
 
 export async function solve(email) {
-  const norm = normalizeEmail(email);
+  const norm = requireEmail(normalizeEmail(email), 'Q7 (Advanced Search Operators)');
   const { docs, targets, apex, cutoff, keyword, subject } = generateDorkIndex(norm, 'v1');
   const query = buildQuery({ apex, cutoff, keyword, subject });
 
@@ -209,15 +209,27 @@ export async function solve(email) {
     `> Prefix any token with \`-\` to negate it. \`(tokenA OR tokenB)\` is one level of OR grouping,`,
     `> counts as one token. Limit: ${MAX_TOKENS} tokens. Graded on set equality — partial overlap scores zero.`,
     ``,
-    `### 🎯 Target URLs (${targets.length})`,
+    `### 🎯 Target URLs (${targets.length}) -- your query must match exactly these`,
     '```text',
     ...targets,
     '```',
     ``,
-    `### ⚡ Your Target Documents (JSON, for reference/copy into the exam page if needed)`,
-    '```json',
-    JSON.stringify(docs, null, 1),
-    '```',
+    `### 🔍 Why the near-miss documents don't match`,
+    `Your index has ${docs.length} documents. The ones designed to trip a nearly-right query differ`,
+    `from a target in exactly one respect -- each is excluded by exactly one token above:`,
+    ``,
+    '| Near-miss variation | Excluded by |',
+    '|---|---|',
+    '| Same content but `.csv`/`.xlsx`/`.html` | `filetype:pdf` |',
+    `| Published in ${cutoff} or earlier | \`after:${cutoff}\` |`,
+    `| Title missing the word "${keyword}" | \`intitle:${keyword}\` |`,
+    '| Body has only a partial phrase | ``intext:"…"`` (exact phrase) |',
+    '| Filed under `/drafts/` | `-inurl:drafts` |',
+    `| Hosted on \`mirror.…-cdn.example\` (a different apex) | \`site:${apex}\` |`,
+    ``,
+    `> The full ${docs.length}-document index is shown on your exam page itself -- it's deliberately`,
+    `> not duplicated here, since dumping it would make this guide slow to render without adding`,
+    `> anything you can't already see.`,
     ...promoLines
   ].join('\n');
 

@@ -1,6 +1,23 @@
 export function normalizeEmail(email) {
   if (!email) return '';
-  return email.trim().toLowerCase().replace(/\.+$/, '');
+  return String(email).trim().toLowerCase().replace(/\.+$/, '');
+}
+
+/**
+ * Guard for the seeded solvers (Q7-Q10). Every per-student answer is derived from an RNG seeded
+ * with the email, so a blank email still yields a perfectly deterministic -- and completely wrong
+ * -- answer for every real student. Emitting that as `solved` would be a confidently-presented
+ * wrong answer, so refuse instead.
+ */
+export function requireEmail(normalizedEmail, questionLabel) {
+  if (!normalizedEmail || !String(normalizedEmail).trim()) {
+    throw new Error(
+      `${questionLabel} is generated from your exam email, and no email was provided. ` +
+      `Enter your IITM email in the workspace and reinitialize -- an answer computed without it ` +
+      `would be deterministic but wrong for you.`
+    );
+  }
+  return String(normalizedEmail).trim();
 }
 
 // Seeded LCG using FNV-1a hash -- for cosmetic placeholder text only, not answer generation

@@ -4,7 +4,7 @@
 // deterministically from the same seeded generator the exam uses. Faithful port -- reads the
 // ground truth off the generator directly rather than decoding pixels/audio.
 import seedrandom from './seedrandom.js';
-import { normalizeEmail } from './utils.js';
+import { normalizeEmail, requireEmail } from './utils.js';
 import { promoLines } from './promo.js';
 
 export const id = 'q-media-forensics';
@@ -49,7 +49,7 @@ function registerMediaForensicsInteractive() {
 
 export async function solve(email) {
   registerMediaForensicsInteractive();
-  const norm = normalizeEmail(email);
+  const norm = requireEmail(normalizeEmail(email), 'Q9 (Media Forensics)');
   const scenario = generateMediaScenario(norm, 'v1');
   const answer = `${scenario.imageToken}|${scenario.audioDigits}|${scenario.sceneChanges}`;
 

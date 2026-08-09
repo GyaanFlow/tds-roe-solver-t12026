@@ -3,7 +3,7 @@
 // The per-student workflow YAML and its findings are generated deterministically by the exam's
 // own seeded generator -- faithful port, reads findings/job-id off the generator directly.
 import seedrandom from './seedrandom.js';
-import { normalizeEmail } from './utils.js';
+import { normalizeEmail, requireEmail } from './utils.js';
 import { promoLines } from './promo.js';
 
 export const id = 'q-actions-workflow-audit';
@@ -131,7 +131,7 @@ function registerActionsAuditInteractive() {
 
 export async function solve(email) {
   registerActionsAuditInteractive();
-  const norm = normalizeEmail(email);
+  const norm = requireEmail(normalizeEmail(email), 'Q10 (GitHub Actions Workflow Audit)');
   const scenario = generateWorkflowScenario(norm, 'v1');
   const answer = `${scenario.findings.join(',')}|${scenario.previewJob}`;
 

@@ -5,7 +5,7 @@
 // uses -- so this reads the correct answer off the same generator the exam grades against,
 // rather than reimplementing a separate rule engine and hoping it agrees.
 import seedrandom from './seedrandom.js';
-import { normalizeEmail } from './utils.js';
+import { normalizeEmail, requireEmail } from './utils.js';
 import { promoLines } from './promo.js';
 
 export const id = 'q-cloudflare-waf-bypass';
@@ -158,9 +158,10 @@ function generateWafScenario(email, version = '') {
   const swappedRules = swapRules(numberedRules, swapA, swapB);
   const flippedIds = () => requests.filter(r => reachesOrigin(numberedRules, r) !== reachesOrigin(swappedRules, r)).map(r => r.id);
 
-  const pivotRequestId = pivotRequest.id; // may have been renumbered by shuffle -- recompute below
-  // Note: pivotRequest object reference is the same object mutated above, so its .id field
-  // reflects the post-shuffle renumbering already (object identity preserved through shuffle).
+  // The shuffle above reorders array slots but preserves object identity, and the renumbering
+  // mutates each object in place -- so `pivotRequest.id` already reflects its post-shuffle id
+  // here. That matters: the convergence loop below must exempt the pivot request by its CURRENT
+  // id, and comparing against a stale pre-shuffle id would silently converge on the wrong set.
   for (let g = 0; g < 60; g++) {
     const flipped = flippedIds().filter(id => id !== pivotRequest.id);
     if (!flipped.length) break;
@@ -189,8 +190,21 @@ function registerWafInteractive() {
 
 export async function solve(email) {
   registerWafInteractive();
-  const norm = normalizeEmail(email);
+  const norm = requireEmail(normalizeEmail(email), 'Q8 (WAF Rule Order)');
   const scenario = generateWafScenario(norm, 'v1');
+
+  // The exam guarantees the swap flips exactly one request, and the generator's convergence loop
+  // enforces it. If that ever stops holding (bundle change), `flipped[0]` would be undefined and
+  // we'd emit a confident-looking "22|undefined|24" -- a wrong answer presented as correct. Fail
+  // loudly instead so the student sees the problem rather than submitting garbage.
+  if (!Array.isArray(scenario.flipped) || scenario.flipped.length !== 1) {
+    throw new Error(
+      `Expected exactly one request to flip when rules ${scenario.swapA} and ${scenario.swapB} are ` +
+      `swapped, but found ${scenario.flipped?.length ?? 0} (${scenario.flipped?.join(', ') || 'none'}). ` +
+      `The exam bundle's generator may have changed -- solve part 2 manually from the rules/requests below.`
+    );
+  }
+
   const answer = `${scenario.baseline}|${scenario.flipped[0]}|${scenario.fixedCount}`;
 
   const rulesRendered = scenario.rules.map(r => `${String(r.n).padStart(2, ' ')}. ${r.action.toUpperCase().padEnd(9)} ${renderExpr(r.expr)}`);

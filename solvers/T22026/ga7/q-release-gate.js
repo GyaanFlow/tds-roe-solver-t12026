@@ -78,9 +78,21 @@ function registerReleaseGateInteractive() {
       if (outEl) outEl.value = '';
       return;
     }
-    const answer = { serviceUrl: serviceUrlFor(email), workflowUrl };
+    if (!/^https:\/\/github\.com\//i.test(workflowUrl)) {
+      setStatus('That should be a https://github.com/… URL pointing at your public workflow. Double-check before submitting.', '#d97706');
+    }
+    let answer;
+    try {
+      answer = { serviceUrl: serviceUrlFor(email), workflowUrl };
+    } catch (err) {
+      setStatus(err.message, '#dc3545');
+      if (outEl) outEl.value = '';
+      return;
+    }
     if (outEl) outEl.value = JSON.stringify(answer, null, 2);
-    setStatus('✅ Submission JSON ready. Copy this into the exam answer box.', '#198754');
+    if (/^https:\/\/github\.com\//i.test(workflowUrl)) {
+      setStatus('✅ Submission JSON ready. Copy this into the exam answer box.', '#198754');
+    }
   };
 
   window._ga7RgCopyAnswer = async function () {
