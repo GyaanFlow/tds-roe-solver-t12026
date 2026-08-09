@@ -104,24 +104,38 @@ function registerQ7Interactive() {
 
     try {
       const url = `${HOST}/ga6/${encodeURIComponent(email)}/scrape-books`;
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      if (data && data.digest) {
-        if (statusEl) {
-          statusEl.style.color = '#198754';
-          statusEl.textContent = `✅ Live SHA-256 digest fetched successfully!`;
-        }
-        if (outputEl) {
-          outputEl.value = data.digest;
-        }
-      } else {
-        throw new Error('Invalid digest format returned');
+      const res = await fetch(url, {
+        headers: { Accept: 'application/json' },
+        credentials: 'omit',
+        cache: 'no-store'
+      });
+      const contentType = (res.headers.get('content-type') || '').toLowerCase();
+      const body = await res.text();
+      if (!res.ok) throw new Error(`Live service returned HTTP ${res.status}`);
+      if (!contentType.includes('json')) {
+        throw new Error('Live service returned HTML instead of JSON (the API route may be unavailable)');
       }
+
+      let data;
+      try {
+        data = JSON.parse(body);
+      } catch (_) {
+        throw new Error('Live service returned malformed JSON');
+      }
+      const digest = typeof data?.digest === 'string' ? data.digest.trim().toLowerCase() : '';
+      if (!/^[a-f0-9]{64}$/.test(digest)) {
+        throw new Error('Live service returned an invalid SHA-256 digest');
+      }
+
+      if (statusEl) {
+        statusEl.style.color = '#198754';
+        statusEl.textContent = 'Live SHA-256 digest fetched successfully.';
+      }
+      if (outputEl) outputEl.value = digest;
     } catch (err) {
       if (statusEl) {
         statusEl.style.color = '#d97706';
-        statusEl.textContent = `⚠️ On-demand fetch note: ${err.message}. Run the Python scraper below for offline calculation.`;
+        statusEl.textContent = `Live digest is unavailable right now. Use the verified Python scraper below for offline calculation. (${err.message})`;
       }
     }
   };
