@@ -8,6 +8,10 @@ import { normalizeEmail } from './utils.js';
 import { promoLines } from './promo.js';
 import { serviceUrlFor, ga7Post } from './api-client.js';
 
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+}
+
 export const id = 'q-cicd-container-release-gate-server';
 export const title = 'Q1: CI/CD Container Release Gate';
 
@@ -47,14 +51,34 @@ function registerReleaseGateInteractive() {
 
     function setStatus(text, color) { if (statusEl) { statusEl.textContent = text; statusEl.style.color = color || '#9fc6ff'; } }
 
+    if (!raw.trim()) { setStatus('Paste a request body first, or click "Load Clean Preview Sample".', '#dc3545'); return; }
     let body;
-    try { body = JSON.parse(raw); } catch { setStatus('Request body is not valid JSON.', '#dc3545'); return; }
+    try {
+      body = JSON.parse(raw);
+    } catch (err) {
+      setStatus(`Request body is not valid JSON: ${err.message}`, '#dc3545');
+      return;
+    }
+    if (!body || typeof body !== 'object' || Array.isArray(body)) {
+      setStatus('Request body must be a JSON object, e.g. {"target":"preview",...}.', '#dc3545');
+      return;
+    }
 
     setStatus('Calling /release-gate… (first call after idle may take ~30-50s, cold start)', '#e9d5ff');
     try {
       const result = await ga7Post(email, 'release-gate', body);
       if (outEl) outEl.value = JSON.stringify(result, null, 2);
-      setStatus(`✅ decision: ${result.decision}${result.violations?.length ? `, violations: ${result.violations.join(', ')}` : ''}`, result.decision === 'promote' ? '#198754' : '#d97706');
+      // The API is documented never to 5xx on bad input, but nothing stops it (or a proxy in
+      // front of it) from ever returning something shaped differently -- don't blindly trust
+      // result.decision exists before building a status message out of it.
+      if (!result || typeof result.decision !== 'string') {
+        setStatus(`⚠️ Unexpected response shape (no "decision" field) -- see raw response below.`, '#d97706');
+        return;
+      }
+      const violationsText = Array.isArray(result.violations) && result.violations.length
+        ? `, violations: ${result.violations.join(', ')}`
+        : '';
+      setStatus(`✅ decision: ${result.decision}${violationsText}`, result.decision === 'promote' ? '#198754' : '#d97706');
     } catch (err) {
       setStatus(`Request failed: ${err.message}`, '#dc3545');
     }
@@ -152,6 +176,7 @@ export async function solve(email) {
     `on:`,
     `  push:`,
     `    branches: [main]`,
+    `  workflow_dispatch: {}`,
     ``,
     `jobs:`,
     `  test-release-gate:`,
@@ -166,6 +191,13 @@ export async function solve(email) {
     `            -H "Content-Type: application/json" \\`,
     `            -d '{"target":"preview","event":"pull_request","ref":"refs/heads/feature","workflow":{"trigger":"pull_request","permissions":{"contents":"read","packages":"write","id-token":"none"},"testsPassed":true,"matrixComplete":true,"failFast":false,"actions":[{"owner":"actions","name":"checkout","ref":"v4"}],"environmentApproval":true},"image":{"multiStage":true,"runsAsRoot":false,"secretMode":"none","criticalVulnerabilities":0,"digestPinned":true}}'`,
     '```',
+    ``,
+    `> ⚠️ **Exact string match matters.** The exam checks for a step named *exactly*`,
+    `> \`TDS identity: ${norm}\` (case-sensitive). This solver uses your email lowercased and`,
+    `> trimmed, which matches how IITM student emails are normally written -- but if your real`,
+    `> exam page shows the identity string with different casing or spacing, copy that exact`,
+    `> string instead. The \`workflow_dispatch\` trigger above is optional and just lets you`,
+    `> manually re-run the workflow from the Actions tab without needing a new commit each time.`,
     ``,
     `#### 📌 Step 4: Commit and Push to \`main\``,
     `1. Commit your new file and push to the **\`main\`** branch.`,
@@ -198,7 +230,7 @@ export async function solve(email) {
     `### ⚡ Interactive Tester & Submission Builder (for ${norm})`,
     ``,
     '<div style="background:linear-gradient(135deg,#0c2d48 0%,#1e293b 100%);border-radius:14px;padding:22px 24px;margin:16px 0;color:#f8fafc;border:1px solid #334155;">',
-    '  <input type="hidden" id="ga7RgEmail" value="' + norm + '" />',
+    '  <input type="hidden" id="ga7RgEmail" value="' + escapeHtml(norm) + '" />',
     '  <div style="font-size:12px;letter-spacing:2px;color:#38bdf8;text-transform:uppercase;margin-bottom:10px;font-weight:700;">Test a /release-gate Request</div>',
     '  <textarea id="ga7RgRequestInput" rows="12" placeholder="Paste a request JSON body, or click Load Sample below" style="width:100%;padding:10px;border-radius:8px;border:1px solid #38bdf8;background:#0f172a;color:#f8fafc;font-family:monospace;font-size:12px;box-sizing:border-box;"></textarea>',
     '  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">',
