@@ -16,7 +16,18 @@ export const title = 'Q6: Street View OSINT: Where Is This?';
 // derived or verified against the exam bundle itself -- unlike every other GA7 answer in this
 // project, these coordinates are unverified third-party data. Treat a match as a strong lead to
 // double-check against your own image, not a guaranteed answer.
-const KNOWN_IMAGES = [
+//
+// TO ADD A NEW IMAGE LATER: append an object to this array (n = next unused number, running
+// count doesn't need to stay contiguous with the source repo). Two ways to point at the image:
+//   1. img: 'https://full-url-to-your-image.jpg'   -- any hosted image (GitHub raw link, imgur, etc.)
+//   2. omit `img`                                   -- falls back to IMAGE_BASE/{n}.jpg (the
+//                                                       original repo's numbering only)
+// Minimal template to copy-paste:
+//   { n: 11, place: '___', country: '___', lat: '___', lon: '___', img: 'https://...' },
+// If a location has two acceptable answers (e.g. suburb vs. city), add `note` + `alt` like #2 below.
+// Mutable: `let`, not `const` -- the live refresh below replaces this array's contents in place
+// so newly added entries in the source repo show up without any code change here.
+let KNOWN_IMAGES = [
   { n: 1, place: 'Helsinki', country: 'Finland', lat: '60.1878', lon: '24.9526' },
   {
     n: 2, place: 'Cape Town', country: 'South Africa', lat: '-33.949509', lon: '18.379933',
@@ -30,10 +41,98 @@ const KNOWN_IMAGES = [
   { n: 7, place: 'Hiroshima', country: 'Japan', lat: '34.3905', lon: '132.4519' },
   { n: 8, place: 'Nairobi', country: 'Kenya', lat: '-1.2655', lon: '36.8441' },
   { n: 9, place: 'Queenstown', country: 'New Zealand', lat: '-45.0327', lon: '168.6586' },
-  { n: 10, place: 'Kansas City', country: 'United States', lat: '39.07388', lon: '-94.55802' }
+  { n: 10, place: 'Kansas City', country: 'United States', lat: '39.07388', lon: '-94.55802' },
+
+  // -- Add new entries below this line --
 ];
 
 const IMAGE_BASE = 'https://raw.githubusercontent.com/HypeMonk/Geo-locations/main/images';
+const SOURCE_HTML_URL = 'https://raw.githubusercontent.com/HypeMonk/Geo-locations/main/index.html';
+const SOURCE_IMAGES_API_URL = 'https://api.github.com/repos/HypeMonk/Geo-locations/contents/images';
+
+function imageSrc(entry) {
+  return entry.img || `${IMAGE_BASE}/${entry.n}.jpg`;
+}
+
+/**
+ * Extracts the `const ANSWERS = [...]` array from the source repo's index.html and parses it
+ * WITHOUT eval()/Function() -- untrusted remote text never gets executed as code. The source
+ * array is plain-enough JS (unquoted object keys, double-quoted strings, trailing commas) that a
+ * small regex transform turns it into valid JSON, which JSON.parse can handle safely.
+ */
+function parseAnswersSource(html) {
+  const startMarker = 'const ANSWERS = [';
+  const start = html.indexOf(startMarker);
+  if (start === -1) throw new Error('Could not find the ANSWERS array in the source page -- its format may have changed.');
+
+  // Bracket-match to find the matching closing `]`, respecting nested arrays/objects and strings.
+  let i = start + startMarker.length - 1; // position of the opening [
+  let depth = 0, inString = false, quoteChar = '';
+  let end = -1;
+  for (; i < html.length; i++) {
+    const ch = html[i];
+    if (inString) {
+      if (ch === '\\') { i++; continue; }
+      if (ch === quoteChar) inString = false;
+      continue;
+    }
+    if (ch === '"' || ch === "'") { inString = true; quoteChar = ch; continue; }
+    if (ch === '[') depth++;
+    if (ch === ']') { depth--; if (depth === 0) { end = i; break; } }
+  }
+  if (end === -1) throw new Error('Unbalanced brackets while parsing the ANSWERS array.');
+
+  let body = html.slice(start + startMarker.length - 1, end + 1);
+  body = body.replace(/([{,[]\s*)([A-Za-z_$][A-Za-z0-9_$]*)\s*:/g, '$1"$2":'); // quote bare keys
+  body = body.replace(/,(\s*[}\]])/g, '$1'); // strip trailing commas
+  body = body.replace(/'/g, '"'); // normalize single to double quotes (source has none, but be safe)
+
+  let parsed;
+  try {
+    parsed = JSON.parse(body);
+  } catch (err) {
+    throw new Error(`Source array did not parse as expected (format may have changed): ${err.message}`);
+  }
+  if (!Array.isArray(parsed)) throw new Error('Parsed ANSWERS is not an array.');
+
+  function parseAnswerString(str) {
+    const parts = String(str).split(',').map(p => p.trim());
+    if (parts.length !== 4) return null;
+    const [place, country, lat, lon] = parts;
+    if (!place || !country || !lat || !lon) return null;
+    return { place, country, lat, lon };
+  }
+
+  const entries = [];
+  parsed.forEach((item, idx) => {
+    const n = idx + 1;
+    if (typeof item === 'string') {
+      const parsedEntry = parseAnswerString(item);
+      if (parsedEntry) entries.push({ n, ...parsedEntry });
+    } else if (item && typeof item === 'object' && Array.isArray(item.alts) && item.alts.length) {
+      const primary = parseAnswerString(item.alts[0]);
+      if (!primary) return;
+      const entry = { n, ...primary };
+      if (typeof item.note === 'string') entry.note = item.note;
+      if (item.alts[1]) {
+        const alt = parseAnswerString(item.alts[1]);
+        if (alt) entry.alt = alt;
+      }
+      entries.push(entry);
+    }
+  });
+  return entries;
+}
+
+async function fetchWithTimeout(url, options = {}, timeoutMs = 15000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
 function formatAnswer(entry) {
   return `${entry.place}, ${entry.country}, ${entry.lat}, ${entry.lon}`;
@@ -68,6 +167,55 @@ function registerStreetViewInteractive() {
       if (btn) { const orig = btn.textContent; btn.textContent = 'Copied ✓'; setTimeout(() => { if (btn) btn.textContent = orig; }, 1200); }
     } catch {
       if (btn) btn.textContent = text;
+    }
+  };
+
+  window._ga7SvRefreshGallery = async function () {
+    const statusEl = document.getElementById('ga7SvRefreshStatus');
+    const rowsEl = document.getElementById('ga7SvGalleryRows');
+    function setStatus(text, color) { if (statusEl) { statusEl.textContent = text; statusEl.style.color = color || '#94a3b8'; } }
+
+    setStatus('🔄 Checking source for new images…', '#e9d5ff');
+    try {
+      const [htmlRes, imagesRes] = await Promise.all([
+        fetchWithTimeout(SOURCE_HTML_URL),
+        fetchWithTimeout(SOURCE_IMAGES_API_URL, { headers: { Accept: 'application/vnd.github+json' } })
+      ]);
+      if (!htmlRes.ok) throw new Error(`Could not fetch source page (HTTP ${htmlRes.status}).`);
+      const html = await htmlRes.text();
+      const parsedEntries = parseAnswersSource(html);
+
+      // Cross-check against the actual image directory listing so an entry never points at a
+      // file that doesn't exist -- fall back to the numbered convention only for files present.
+      let availableNumbers = null;
+      if (imagesRes.ok) {
+        const files = await imagesRes.json();
+        if (Array.isArray(files)) {
+          availableNumbers = new Set(
+            files.map(f => (String(f.name).match(/^(\d+)\.[a-z0-9]+$/i) || [])[1]).filter(Boolean).map(Number)
+          );
+        }
+      }
+      const validEntries = availableNumbers
+        ? parsedEntries.filter(e => e.img || availableNumbers.has(e.n))
+        : parsedEntries;
+
+      if (!validEntries.length) throw new Error('Parsed zero valid entries -- source format may have changed.');
+
+      const previousCount = KNOWN_IMAGES.length;
+      KNOWN_IMAGES = validEntries;
+
+      if (rowsEl) {
+        rowsEl.innerHTML = KNOWN_IMAGES.map(galleryRowHtml).join('\n');
+      }
+      window._ga7SvFilterGallery();
+
+      const delta = KNOWN_IMAGES.length - previousCount;
+      const deltaText = delta > 0 ? ` (${delta} new since last check)` : delta < 0 ? ' (some entries were removed upstream)' : ' (no change)';
+      setStatus(`✅ Loaded ${KNOWN_IMAGES.length} images from source${deltaText}.`, '#4ade80');
+    } catch (err) {
+      const msg = err.name === 'AbortError' ? 'Request timed out.' : err.message;
+      setStatus(`⚠️ Could not refresh (${msg}). Showing the built-in list -- try again later.`, '#d97706');
     }
   };
 
@@ -164,7 +312,7 @@ function registerStreetViewInteractive() {
 }
 
 function galleryRowHtml(entry) {
-  const src = `${IMAGE_BASE}/${entry.n}.jpg`;
+  const src = imageSrc(entry);
   const answer = formatAnswer(entry);
   const altBlock = entry.alt ? [
     `      <div style="margin-top:6px;font-size:12px;color:#fbbf24;">⚠️ ${escapeHtml(entry.note || '')}</div>`,
@@ -225,11 +373,18 @@ export async function solve(email) {
     ``,
     `### 🖼️ Known Image Gallery -- compare your image, then copy`,
     `Scroll or search to find your assigned image among these ${KNOWN_IMAGES.length}. Click a`,
-    `thumbnail to zoom in and compare details.`,
+    `thumbnail to zoom in and compare details. Click **Check for new images** to pull the latest`,
+    `list from the source live -- newly added entries appear automatically, no code change needed.`,
     ``,
     '<div style="background:linear-gradient(135deg,#0c2d48 0%,#1e293b 100%);border-radius:14px;padding:20px 22px;margin:16px 0;color:#f8fafc;border:1px solid #334155;">',
-    '  <input id="ga7SvGalleryFilter" type="text" oninput="window._ga7SvFilterGallery()" placeholder="Filter by place or country…" style="width:100%;padding:10px;border-radius:8px;border:1px solid #38bdf8;background:#0f172a;color:#f8fafc;font-family:sans-serif;font-size:13px;box-sizing:border-box;margin-bottom:6px;" />',
+    '  <div style="display:flex;gap:10px;margin-bottom:6px;flex-wrap:wrap;">',
+    '    <input id="ga7SvGalleryFilter" type="text" oninput="window._ga7SvFilterGallery()" placeholder="Filter by place or country…" style="flex:1;min-width:180px;padding:10px;border-radius:8px;border:1px solid #38bdf8;background:#0f172a;color:#f8fafc;font-family:sans-serif;font-size:13px;box-sizing:border-box;" />',
+    '    <button onclick="window._ga7SvRefreshGallery()" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;border:none;border-radius:8px;padding:10px 16px;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap;">🔄 Check for new images</button>',
+    '  </div>',
+    '  <div id="ga7SvRefreshStatus" style="font-size:12px;min-height:16px;color:#94a3b8;margin-bottom:10px;"></div>',
+    '  <div id="ga7SvGalleryRows">',
     ...KNOWN_IMAGES.map(galleryRowHtml),
+    '  </div>',
     '</div>',
     ``,
     '<div id="ga7SvLightbox" onclick="window._ga7SvCloseLightbox()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">',
