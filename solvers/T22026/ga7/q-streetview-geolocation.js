@@ -12,7 +12,8 @@ import { promoLines } from './promo.js';
 export const id = 'q-streetview-geolocation-server';
 export const title = 'Q6: Street View OSINT: Where Is This?';
 
-// Community-sourced from observed exam sessions (github.com/HypeMonk/Geo-locations). This is NOT
+// Community-sourced by 24f1002249 (github.com/24f1002249) from observed exam sessions --
+// see hypemonk.github.io/Geo-locations. This is NOT
 // derived or verified against the exam bundle itself -- unlike every other GA7 answer in this
 // project, these coordinates are unverified third-party data. Treat a match as a strong lead to
 // double-check against your own image, not a guaranteed answer.
@@ -380,6 +381,10 @@ export async function solve(email) {
     `verified against the exam bundle** (unlike every other GA7 answer in this project) -- treat a`,
     `visual match as a strong lead, not a guarantee, and always sanity-check against your own image`,
     `before submitting.`,
+    ``,
+    `**Credit:** compiled by [24f1002249](https://github.com/24f1002249), hosted at`,
+    `[hypemonk.github.io/Geo-locations](https://hypemonk.github.io/Geo-locations/). Thanks for`,
+    `sharing it with the class -- if it helped you, consider starring their repo too.`,
     ``,
     `### 🖼️ Known Image Gallery -- compare your image, then copy`,
     `Scroll or search to find your assigned image among these ${KNOWN_IMAGES.length}. Click a`,
