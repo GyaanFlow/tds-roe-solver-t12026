@@ -223,7 +223,17 @@ function registerStreetViewInteractive() {
     const lb = document.getElementById('ga7SvLightbox');
     const img = document.getElementById('ga7SvLightboxImg');
     if (img) img.src = src;
-    if (lb) lb.style.display = 'flex';
+    if (lb) {
+      // `position: fixed` positions relative to the nearest transformed/filtered ancestor, not
+      // the viewport, if one exists between here and <body> (common in panel/animation wrappers).
+      // That's exactly why the lightbox could appear scrolled-away instead of centered on screen
+      // for images further down the gallery. Re-parenting straight onto <body> guarantees it's
+      // never trapped inside such an ancestor, regardless of where in the page it was clicked from.
+      if (document.body && lb.parentElement !== document.body) {
+        document.body.appendChild(lb);
+      }
+      lb.style.display = 'flex';
+    }
   };
 
   window._ga7SvCloseLightbox = function () {
