@@ -1078,14 +1078,21 @@ function renderCanvas(index) {
           <div class="canvas-label">System Output | ${escapeHtml(typeLabel)}</div>
           <h2 class="canvas-title" style="margin: 0;">${escapeHtml(data.title)}</h2>
         </div>
-        <button role="switch" 
-                aria-checked="${rawFocusEnabled ? 'true' : 'false'}" 
-                id="focusModeToggle" 
-                aria-label="Toggle Workspace Focus Mode"
-                class="focus-switch-btn">
-          <span class="focus-switch-thumb"></span>
-          <span class="focus-switch-label">Focus Mode</span>
-        </button>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div id="miniVibeWidget" class="mini-vibe-widget${vibeAudio && !vibeAudio.paused ? ' playing' : ''}" title="Toggle Vibe Music">
+            <span class="vibe-eq-anim${vibeAudio && !vibeAudio.paused ? ' playing' : ''}" id="miniVibeEqAnim"><span></span><span></span><span></span><span></span></span>
+            <span id="miniVibeLabel" class="mini-vibe-label">${escapeHtml(vibePlaylist[vibeTrackIndex]?.title || '🎵 Vibe Music')}</span>
+            <button type="button" id="miniVibePlayBtn" class="mini-vibe-btn">${vibeAudio && !vibeAudio.paused ? '⏸' : '▶'}</button>
+          </div>
+          <button role="switch" 
+                  aria-checked="${rawFocusEnabled ? 'true' : 'false'}" 
+                  id="focusModeToggle" 
+                  aria-label="Toggle Workspace Focus Mode"
+                  class="focus-switch-btn">
+            <span class="focus-switch-thumb"></span>
+            <span class="focus-switch-label">Focus Mode</span>
+          </button>
+        </div>
       </div>
       <div class="canvas-subtitle" style="margin-top: 8px;">
         <span class="canvas-chip">${escapeHtml(workspaceData.exam || 'workspace')}</span>
@@ -1610,38 +1617,42 @@ function nextVibeIndex() {
   return vibeTrackIndex + 1;
 }
 
+function updateMiniVibeState() {
+  const isPlaying = vibeAudio && !vibeAudio.paused;
+  const miniBtn = document.getElementById('miniVibePlayBtn');
+  const miniWidget = document.getElementById('miniVibeWidget');
+  const miniEq = document.getElementById('miniVibeEqAnim');
+  const miniLabel = document.getElementById('miniVibeLabel');
+  
+  if (miniBtn) miniBtn.textContent = isPlaying ? '⏸' : '▶';
+  if (miniWidget) miniWidget.classList.toggle('playing', isPlaying);
+  if (miniEq) miniEq.classList.toggle('playing', isPlaying);
+  if (miniLabel) {
+    const currentTrack = vibePlaylist[vibeTrackIndex];
+    miniLabel.textContent = currentTrack?.title || '🎵 Vibe Music';
+  }
+}
+
+let _saazPreloaded = false;
 vibeModeToggle?.addEventListener('click', () => {
   const isExpanded = vibePlayer.classList.toggle('expanded');
   vibeModeToggle.setAttribute('aria-expanded', String(isExpanded));
   vibeModeToggle.setAttribute('aria-pressed', String(isExpanded));
+  if (isExpanded && !_saazPreloaded) {
+    _saazPreloaded = true;
+    searchSaazMusic('lofi');
+  }
 });
 
-vibePlayBtn?.addEventListener('click', async () => {
-  if (!vibeAudio) return;
-  if (!vibePlaylist.length) {
-    if (vibeAddPanel && vibeAddPanel.hidden) { vibeAddPanel.hidden = false; vibeAddToggle?.setAttribute('aria-expanded', 'true'); }
-    if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'No playlist loaded yet — add a track URL below.';
-    return;
-  }
-  // loadVibeTrack is async (a file-kind track needs to await an IndexedDB read before `src` is
-  // set) -- calling it fire-and-forget and immediately checking .paused/.play() right after, as
-  // this used to do, raced ahead of that read and could try to play an element with no src yet.
-  if (!vibeAudio.src) { await loadVibeTrack(vibeTrackIndex, { autoplay: true }); return; }
-  if (vibeAudio.paused) {
-    vibeAudio.play().catch(() => {
-      if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'Playback blocked — click play again.';
-    });
-  } else {
-    vibeAudio.pause();
-  }
-});
 vibeAudio?.addEventListener('play', () => {
   if (vibePlayBtn) vibePlayBtn.textContent = '⏸';
   document.getElementById('vibeEqAnim')?.classList.add('playing');
+  updateMiniVibeState();
 });
 vibeAudio?.addEventListener('pause', () => {
   if (vibePlayBtn) vibePlayBtn.textContent = '▶';
   document.getElementById('vibeEqAnim')?.classList.remove('playing');
+  updateMiniVibeState();
 });
 vibeAudio?.addEventListener('ended', () => {
   if (vibeRepeat) { loadVibeTrack(vibeTrackIndex, { autoplay: true }); return; }
