@@ -1770,10 +1770,11 @@ async function searchSaazMusic(query) {
   vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">Searching Saaz music for "${escapeHtml(q)}"...</div>`;
   
   const enc = encodeURIComponent(q);
+  const targetUrl = `https://saaz-next.vercel.app/api/search/songs?q=${enc}`;
   const endpoints = [
-    `https://jiosaavn-api-beta.vercel.app/search/songs?query=${enc}&limit=30`,
-    `https://saaz-next.vercel.app/api/search/songs?q=${enc}`,
-    `https://api.allorigins.win/get?url=${encodeURIComponent('https://saaz-next.vercel.app/api/search/songs?q=' + enc)}`
+    targetUrl,
+    `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`,
+    `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`
   ];
 
   let songs = [];
