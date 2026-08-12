@@ -2415,6 +2415,34 @@ body {
   gap: 6px;
   padding-top: 4px;
 }
+.vibe-add-tabs { display: flex; gap: 4px; }
+.vibe-add-tab {
+  flex: 1;
+  background: var(--bg-secondary, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  color: var(--text-secondary);
+  border-radius: 6px;
+  padding: 6px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vibe-add-tab.active {
+  background: var(--accent-primary, #f59e0b);
+  color: #1a1a1a;
+  border-color: transparent;
+}
+.vibe-add-tab-panel { display: flex; flex-direction: column; gap: 6px; }
+.vibe-file-picker-btn { width: 100%; }
+.vibe-add-note {
+  font-size: 10px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
 .vibe-add-input {
   width: 100%;
   resize: vertical;
