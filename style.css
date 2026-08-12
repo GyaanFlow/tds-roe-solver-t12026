@@ -2477,6 +2477,94 @@ body {
   color: var(--text-muted);
   line-height: 1.4;
 }
+
+/* Soundwave Bouncing Equalizer */
+.vibe-eq-anim {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+  margin-left: 6px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.vibe-eq-anim.playing {
+  opacity: 1;
+}
+.vibe-eq-anim span {
+  width: 2.5px;
+  background: var(--theme-primary, #f59e0b);
+  border-radius: 1px;
+  height: 20%;
+}
+.vibe-eq-anim.playing span {
+  animation: vibeEqBounce 0.8s ease-in-out infinite alternate;
+}
+.vibe-eq-anim.playing span:nth-child(1) { height: 40%; animation-delay: 0s; }
+.vibe-eq-anim.playing span:nth-child(2) { height: 100%; animation-delay: 0.2s; }
+.vibe-eq-anim.playing span:nth-child(3) { height: 60%; animation-delay: 0.4s; }
+.vibe-eq-anim.playing span:nth-child(4) { height: 80%; animation-delay: 0.1s; }
+
+@keyframes vibeEqBounce {
+  0% { height: 20%; }
+  100% { height: 100%; }
+}
+
+/* Vibe Profile Badge & Presets Grid */
+.vibe-profile-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+.vibe-user-avatar {
+  font-size: 14px;
+}
+.vibe-user-name {
+  font-weight: 600;
+  color: var(--theme-primary, #f59e0b);
+}
+
+.vibe-preset-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 4px;
+}
+.vibe-preset-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px 10px;
+  background: var(--bg-input, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 11px;
+  transition: all 0.2s;
+  text-align: left;
+}
+.vibe-preset-btn:hover {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: var(--theme-primary, #f59e0b);
+  transform: translateY(-1px);
+}
+.vibe-preset-title {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.vibe-preset-sub {
+  font-size: 9px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
 .theme-btn-new {
   font-size: 8px;
   font-weight: 800;

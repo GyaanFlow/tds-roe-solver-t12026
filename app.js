@@ -1623,8 +1623,14 @@ vibePlayBtn?.addEventListener('click', async () => {
     vibeAudio.pause();
   }
 });
-vibeAudio?.addEventListener('play', () => { if (vibePlayBtn) vibePlayBtn.textContent = '⏸'; });
-vibeAudio?.addEventListener('pause', () => { if (vibePlayBtn) vibePlayBtn.textContent = '▶'; });
+vibeAudio?.addEventListener('play', () => {
+  if (vibePlayBtn) vibePlayBtn.textContent = '⏸';
+  document.getElementById('vibeEqAnim')?.classList.add('playing');
+});
+vibeAudio?.addEventListener('pause', () => {
+  if (vibePlayBtn) vibePlayBtn.textContent = '▶';
+  document.getElementById('vibeEqAnim')?.classList.remove('playing');
+});
 vibeAudio?.addEventListener('ended', () => {
   if (vibeRepeat) { loadVibeTrack(vibeTrackIndex, { autoplay: true }); return; }
   loadVibeTrack(nextVibeIndex(), { autoplay: true });
@@ -1704,18 +1710,54 @@ vibeTrackListEl?.addEventListener('click', (event) => {
   }
 });
 
-vibeTabFiles?.addEventListener('click', () => {
-  vibeTabFiles.classList.add('active'); vibeTabFiles.setAttribute('aria-selected', 'true');
-  vibeTabUrl?.classList.remove('active'); vibeTabUrl?.setAttribute('aria-selected', 'false');
-  if (vibeFilesPanel) vibeFilesPanel.hidden = false;
-  if (vibeUrlPanel) vibeUrlPanel.hidden = true;
+const vibeTabPresets = document.getElementById('vibeTabPresets');
+const vibePresetsPanel = document.getElementById('vibePresetsPanel');
+
+function updateVibeTabSelection(tabName) {
+  const tabs = [
+    { btn: vibeTabPresets, panel: vibePresetsPanel, name: 'presets' },
+    { btn: vibeTabFiles, panel: vibeFilesPanel, name: 'files' },
+    { btn: vibeTabUrl, panel: vibeUrlPanel, name: 'url' }
+  ];
+  tabs.forEach(t => {
+    if (!t.btn) return;
+    const isCurrent = t.name === tabName;
+    t.btn.classList.toggle('active', isCurrent);
+    t.btn.setAttribute('aria-selected', String(isCurrent));
+    if (t.panel) t.panel.hidden = !isCurrent;
+  });
+}
+
+vibeTabPresets?.addEventListener('click', () => updateVibeTabSelection('presets'));
+vibeTabFiles?.addEventListener('click', () => updateVibeTabSelection('files'));
+vibeTabUrl?.addEventListener('click', () => updateVibeTabSelection('url'));
+
+// Handle clicking on preset focus channel buttons
+vibePresetsPanel?.addEventListener('click', async (e) => {
+  const btn = e.target.closest('[data-preset-src]');
+  if (!btn) return;
+  const src = btn.dataset.presetSrc;
+  const title = btn.dataset.presetTitle || 'Focus Channel';
+  
+  let existingIndex = vibePlaylist.findIndex(t => t.src === src);
+  if (existingIndex < 0) {
+    vibePlaylist.push({ kind: 'url', title, src });
+    saveVibePlaylist();
+    existingIndex = vibePlaylist.length - 1;
+  }
+  await loadVibeTrack(existingIndex, { autoplay: true });
 });
-vibeTabUrl?.addEventListener('click', () => {
-  vibeTabUrl.classList.add('active'); vibeTabUrl.setAttribute('aria-selected', 'true');
-  vibeTabFiles?.classList.remove('active'); vibeTabFiles?.setAttribute('aria-selected', 'false');
-  if (vibeUrlPanel) vibeUrlPanel.hidden = false;
-  if (vibeFilesPanel) vibeFilesPanel.hidden = true;
-});
+
+function updateVibeProfileBadge(email) {
+  const userNameEl = document.getElementById('vibeUserName');
+  if (!userNameEl) return;
+  const norm = (email || '').trim();
+  if (norm && norm.includes('@')) {
+    userNameEl.textContent = `Focus Session for ${norm.split('@')[0]}`;
+  } else {
+    userNameEl.textContent = 'Focus Session';
+  }
+}
 
 // File picker: reads local files straight from disk (no upload anywhere) and stores each one's
 // bytes in IndexedDB so "add my downloaded playlist" actually persists across reloads, not just
@@ -1908,8 +1950,8 @@ examSelect.addEventListener('change', () => {
 let _lastEmailForNetwork = '';
 emailInput.addEventListener('input', () => {
   persistUiState();
-  // Only rebuild the neural network when the email value actually changed
   const emailVal = emailInput.value.trim();
+  updateVibeProfileBadge(emailVal);
   if (networkCanvas && emailVal !== _lastEmailForNetwork) {
     _lastEmailForNetwork = emailVal;
     networkCanvas.generateNetwork(emailVal || 'anonymous');
