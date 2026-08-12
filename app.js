@@ -1578,6 +1578,18 @@ async function loadVibeTrack(index, { autoplay = false } = {}) {
 
   if (vibeAudio) vibeAudio.src = src;
   if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = track.title || `Track ${vibeTrackIndex + 1}`;
+  
+  const coverContainer = document.getElementById('vibeCoverContainer');
+  const coverArtImg = document.getElementById('vibeCoverArt');
+  if (coverContainer && coverArtImg) {
+    if (track.coverArt) {
+      coverArtImg.src = track.coverArt;
+      coverContainer.hidden = false;
+    } else {
+      coverContainer.hidden = true;
+    }
+  }
+
   if (vibeProgress) { vibeProgress.value = 0; vibeProgress.disabled = false; }
   if (vibeCurrentTimeEl) vibeCurrentTimeEl.textContent = '0:00';
   if (vibeDurationEl) vibeDurationEl.textContent = '0:00';
@@ -1710,11 +1722,17 @@ vibeTrackListEl?.addEventListener('click', (event) => {
   }
 });
 
+const vibeTabSaaz = document.getElementById('vibeTabSaaz');
+const vibeSaazPanel = document.getElementById('vibeSaazPanel');
 const vibeTabPresets = document.getElementById('vibeTabPresets');
 const vibePresetsPanel = document.getElementById('vibePresetsPanel');
+const vibeSaazSearchInput = document.getElementById('vibeSaazSearchInput');
+const vibeSaazSearchBtn = document.getElementById('vibeSaazSearchBtn');
+const vibeSaazResults = document.getElementById('vibeSaazResults');
 
 function updateVibeTabSelection(tabName) {
   const tabs = [
+    { btn: vibeTabSaaz, panel: vibeSaazPanel, name: 'saaz' },
     { btn: vibeTabPresets, panel: vibePresetsPanel, name: 'presets' },
     { btn: vibeTabFiles, panel: vibeFilesPanel, name: 'files' },
     { btn: vibeTabUrl, panel: vibeUrlPanel, name: 'url' }
@@ -1728,9 +1746,87 @@ function updateVibeTabSelection(tabName) {
   });
 }
 
+vibeTabSaaz?.addEventListener('click', () => updateVibeTabSelection('saaz'));
 vibeTabPresets?.addEventListener('click', () => updateVibeTabSelection('presets'));
 vibeTabFiles?.addEventListener('click', () => updateVibeTabSelection('files'));
 vibeTabUrl?.addEventListener('click', () => updateVibeTabSelection('url'));
+
+// Saaz Music API Search Integration
+async function searchSaazMusic(query) {
+  const q = (query || '').trim();
+  if (!q) return;
+  if (!vibeSaazResults) return;
+  vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">Searching Saaz music for "${escapeHtml(q)}"...</div>`;
+  
+  try {
+    const res = await fetch(`https://saaz-next.vercel.app/api/search/songs?q=${encodeURIComponent(q)}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+    const songs = json.data?.results || json.data?.songs || [];
+    if (!songs.length) {
+      vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--warning);padding:8px 0;">No songs found on Saaz for "${escapeHtml(q)}". Try another query!</div>`;
+      return;
+    }
+    
+    vibeSaazResults.innerHTML = songs.slice(0, 15).map((song, i) => {
+      const title = song.name || `Song ${i + 1}`;
+      const artist = song.primaryArtists || song.singers || (Array.isArray(song.artists) ? song.artists.map(a => a.name).join(', ') : '') || 'Unknown Artist';
+      const thumb = song.image?.[1]?.url || song.image?.[0]?.url || 'https://saaz-next.vercel.app/saaz.png';
+      const highResArt = song.image?.[song.image.length - 1]?.url || thumb;
+      const downloadUrls = song.downloadUrl || [];
+      const streamUrl = downloadUrls[downloadUrls.length - 1]?.url || downloadUrls[0]?.url || '';
+      
+      return `
+        <div class="vibe-saaz-item" data-saaz-src="${escapeHtml(streamUrl)}" data-saaz-title="${escapeHtml(title + ' - ' + artist)}" data-saaz-art="${escapeHtml(highResArt)}">
+          <img class="vibe-saaz-thumb" src="${escapeHtml(thumb)}" alt="" loading="lazy" />
+          <div class="vibe-saaz-info">
+            <div class="vibe-saaz-name">${escapeHtml(title)}</div>
+            <div class="vibe-saaz-artist">${escapeHtml(artist)}</div>
+          </div>
+          <span style="font-size:11px;color:var(--theme-primary, #f59e0b);">▶</span>
+        </div>
+      `;
+    }).join('');
+  } catch (err) {
+    vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--danger);padding:8px 0;">Search failed: ${escapeHtml(err.message)}</div>`;
+  }
+}
+
+vibeSaazSearchBtn?.addEventListener('click', () => {
+  searchSaazMusic(vibeSaazSearchInput?.value);
+});
+
+vibeSaazSearchInput?.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') searchSaazMusic(vibeSaazSearchInput.value);
+});
+
+document.querySelector('.vibe-saaz-tags')?.addEventListener('click', (e) => {
+  const tagBtn = e.target.closest('[data-tag-query]');
+  if (!tagBtn) return;
+  const q = tagBtn.dataset.tagQuery;
+  if (vibeSaazSearchInput) vibeSaazSearchInput.value = q;
+  searchSaazMusic(q);
+});
+
+vibeSaazResults?.addEventListener('click', async (e) => {
+  const item = e.target.closest('[data-saaz-src]');
+  if (!item) return;
+  const src = item.dataset.saazSrc;
+  const title = item.dataset.saazTitle;
+  const coverArt = item.dataset.saazArt;
+  if (!src) {
+    if (vibeAddStatus) vibeAddStatus.textContent = '⚠️ Stream URL unavailable for this track.';
+    return;
+  }
+  
+  let existingIndex = vibePlaylist.findIndex(t => t.src === src);
+  if (existingIndex < 0) {
+    vibePlaylist.push({ kind: 'url', title, src, coverArt });
+    saveVibePlaylist();
+    existingIndex = vibePlaylist.length - 1;
+  }
+  await loadVibeTrack(existingIndex, { autoplay: true });
+});
 
 // Handle clicking on preset focus channel buttons
 vibePresetsPanel?.addEventListener('click', async (e) => {
