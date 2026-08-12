@@ -12,16 +12,12 @@ const THEME_HUES = {
   amber: { primary: 38, secondary: 4 },
   cyber: { primary: 160, secondary: 220 },
   orchid: { primary: 330, secondary: 265 },
-  frost: { primary: 190, secondary: 220 },
-  blueprint: { primary: 223, secondary: 260 }
+  frost: { primary: 190, secondary: 220 }
 };
 
-// Classic Amber is the default; Blueprint remains available as an optional New UI.
+// Classic Amber is the default and only UI now -- the "New UI" Blueprint theme was removed.
 const storedTheme = safeStorageGet('workspaceTheme');
-const themeMigrationDone = safeStorageGet('workspaceThemeClassicDefault') === 'true';
-let activeTheme = !themeMigrationDone && storedTheme === 'blueprint'
-  ? 'amber'
-  : (['amber', 'cyber', 'orchid', 'frost', 'blueprint'].includes(storedTheme) ? storedTheme : 'amber');
+let activeTheme = ['amber', 'cyber', 'orchid', 'frost'].includes(storedTheme) ? storedTheme : 'amber';
 
 const emailInput = document.getElementById('emailInput');
 const sessionTokenInput = document.getElementById('sessionTokenInput');
@@ -1406,38 +1402,6 @@ document.getElementById('brandHome')?.addEventListener('click', () => {
   window.location.reload();
 });
 
-// Blueprint theme's landing CTAs — both just guide the user to the existing email field
-// rather than duplicating any solving logic, so they stay correct automatically as the real
-// form's behavior evolves.
-function focusEmailInputForBlueprint() {
-  emailInput.focus();
-  emailInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-document.getElementById('bpStartSolvingBtn')?.addEventListener('click', focusEmailInputForBlueprint);
-document.getElementById('bpInitWorkspaceBtn')?.addEventListener('click', focusEmailInputForBlueprint);
-
-// Blueprint dark/light sub-mode — independent of the other 4 themes, and independent of
-// which of the 5 themes is active: only takes effect while data-theme="blueprint", but the
-// preference itself persists across theme switches so it's remembered once set.
-const BP_MODE_KEY = 'bpDarkMode';
-function applyBlueprintMode() {
-  // Defaults to dark: this project's other 4 themes are all dark, and the flat-white light
-  // variant read as noticeably less polished — dark is the stronger first impression for
-  // anyone who hasn't explicitly chosen light. Only an explicit 'false' opts out.
-  const isDark = safeStorageGet(BP_MODE_KEY) !== 'false';
-  if (document.body && typeof document.body.setAttribute === 'function') {
-    document.body.setAttribute('data-bp-mode', isDark ? 'dark' : 'light');
-  }
-  const label = document.getElementById('bpModeToggleLabel');
-  if (label) label.textContent = isDark ? 'Light' : 'Dark';
-}
-document.getElementById('bpModeToggle')?.addEventListener('click', () => {
-  const isDark = safeStorageGet(BP_MODE_KEY) !== 'false';
-  safeStorageSet(BP_MODE_KEY, String(!isDark));
-  applyBlueprintMode();
-});
-applyBlueprintMode();
-
 // Classic UI theme buttons are visible by default and can still be collapsed.
 document.getElementById('classicUiToggle')?.addEventListener('click', (event) => {
   const toggle = event.currentTarget;
@@ -1446,228 +1410,53 @@ document.getElementById('classicUiToggle')?.addEventListener('click', (event) =>
   toggle.setAttribute('aria-expanded', String(isExpanded));
 });
 
-// Escape hatch back to the original UI, one click from the new Blueprint default — reveals
-// and scrolls to the same Classic UI picker in the sidebar rather than forcing a specific
-// theme, so the user still picks which of the 4 classic looks they actually want.
-document.getElementById('bpSwitchToClassic')?.addEventListener('click', () => {
-  const toggle = document.getElementById('classicUiToggle');
-  const container = document.getElementById('classicUiButtons');
-  if (toggle && container && !container.classList.contains('expanded')) {
-    container.classList.add('expanded');
-    toggle.setAttribute('aria-expanded', 'true');
-  }
-  toggle?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  if (window.innerWidth <= 768) setMobileNavOpen(true);
-  showToast('Classic UI options revealed in the sidebar — pick Amber, Cyber, Orchid, or Frost.', 'success');
+// --- Vibe Mode: mood-refresher music player, collapsed by default like the theme picker. ---
+const vibeModeToggle = document.getElementById('vibeModeToggle');
+const vibePlayer = document.getElementById('vibePlayer');
+const vibeAudio = document.getElementById('vibeAudio');
+const vibePlayBtn = document.getElementById('vibePlayBtn');
+const vibeVolume = document.getElementById('vibeVolume');
+const vibePlayerTrackLabel = document.getElementById('vibePlayerTrackLabel');
+// Populate this with { title, src } objects (playlist link -> direct audio URLs) once available.
+let vibePlaylist = [];
+let vibeTrackIndex = 0;
+
+vibeModeToggle?.addEventListener('click', () => {
+  const isExpanded = vibePlayer.classList.toggle('expanded');
+  vibeModeToggle.setAttribute('aria-expanded', String(isExpanded));
+  vibeModeToggle.setAttribute('aria-pressed', String(isExpanded));
 });
 
-// Scroll-reveal for the Blueprint landing sections — each one fades/rises into place the
-// first time it enters the viewport, then stays revealed (observer unobserves itself so
-// scrolling back up and down doesn't replay it). No-op harmlessly if IntersectionObserver
-// isn't available; the CSS's default (fully visible) state is the safe fallback either way.
-if ('IntersectionObserver' in window) {
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('bp-revealed');
-        revealObserver.unobserve(entry.target);
-      }
+function loadVibeTrack(index) {
+  if (!vibePlaylist.length) return;
+  vibeTrackIndex = ((index % vibePlaylist.length) + vibePlaylist.length) % vibePlaylist.length;
+  const track = vibePlaylist[vibeTrackIndex];
+  if (vibeAudio) vibeAudio.src = track.src;
+  if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = track.title || `Track ${vibeTrackIndex + 1}`;
+}
+
+vibePlayBtn?.addEventListener('click', () => {
+  if (!vibeAudio) return;
+  if (!vibePlaylist.length) {
+    if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'No playlist loaded yet — drop a link to enable playback.';
+    return;
+  }
+  if (!vibeAudio.src) loadVibeTrack(vibeTrackIndex);
+  if (vibeAudio.paused) {
+    vibeAudio.play().catch(() => {
+      if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'Playback blocked — click play again.';
     });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.welcome-blueprint section').forEach((section) => {
-    section.classList.add('bp-reveal');
-    revealObserver.observe(section);
-  });
-}
-
-// Full solver catalog — built live from each exam's actual registry.js rather than a
-// hand-maintained list, so it can never drift out of sync with what solvers actually exist.
-// Loaded lazily on click rather than on page load: importing every registry across both
-// terms is dozens of dynamic imports, and nothing on the landing screen should pay that
-// cost before the user asks for it.
-//
-// Hierarchy: Term -> Category (TERM_EXAMS' own `group` field, e.g. "Weekly Graded
-// Assignments" / "Projects" / "Standard Exams") -> Exam -> Question. This reuses data that
-// already existed for the sidebar's exam dropdown rather than inventing a second taxonomy.
-const CATALOG_TERM_LABELS = { T22026: 'T2 2026 — May–Sep', T12026: 'T1 2026 — Jan–Apr' };
-const CATALOG_TERM_ORDER = ['T22026', 'T12026'];
-let catalogData = null; // { [term]: { [group]: [{ label, value, solvers, error }] } }
-
-function renderCatalogQuestionList(solvers) {
-  if (!solvers.length) return '<li class="bp-catalog-empty">No questions registered yet.</li>';
-  return solvers.map((s) => `<li data-q="${escapeHtml((s.title || s.id || '').toLowerCase())}">${escapeHtml(s.title || s.id || 'Untitled question')}</li>`).join('');
-}
-
-function renderCatalogTerm(term) {
-  const categories = catalogData[term] || {};
-  const categoryOrder = Object.keys(categories);
-  if (categoryOrder.length === 0) {
-    return '<p class="bp-catalog-empty">No exams registered for this term yet.</p>';
+  } else {
+    vibeAudio.pause();
   }
-  return categoryOrder.map((groupName) => {
-    const exams = categories[groupName];
-    const examBlocks = exams.map((exam) => {
-      if (exam.error) {
-        return `
-          <details class="bp-catalog-group" data-exam="${escapeHtml(exam.value)}">
-            <summary>${escapeHtml(exam.label)} <span class="bp-catalog-count">error</span></summary>
-            <p class="bp-catalog-error">Could not load this exam's registry: ${escapeHtml(exam.error)}</p>
-          </details>
-        `;
-      }
-      return `
-        <details class="bp-catalog-group" data-exam="${escapeHtml(exam.value)}">
-          <summary>${escapeHtml(exam.label)} <span class="bp-catalog-count">${exam.solvers.length} question${exam.solvers.length === 1 ? '' : 's'}</span></summary>
-          <ul class="bp-catalog-questions">${renderCatalogQuestionList(exam.solvers)}</ul>
-        </details>
-      `;
-    }).join('');
-    return `
-      <div class="bp-catalog-category">
-        <h3 class="bp-catalog-category-title">${escapeHtml(groupName)}</h3>
-        ${examBlocks}
-      </div>
-    `;
-  }).join('');
-}
-
-function renderCatalogSearchState() {
-  const query = (document.getElementById('bpCatalogSearch')?.value || '').trim().toLowerCase();
-  const containerEl = document.getElementById('bpCatalogContainer');
-  const noResultsEl = document.getElementById('bpCatalogNoResults');
-  let anyVisibleInActiveTerm = false;
-
-  containerEl.querySelectorAll('.bp-catalog-group').forEach((group) => {
-    let groupHasMatch = false;
-    group.querySelectorAll('.bp-catalog-questions li[data-q]').forEach((li) => {
-      const matches = !query || li.dataset.q.includes(query);
-      li.hidden = !matches;
-      if (matches) groupHasMatch = true;
-    });
-    const isErrorGroup = !group.querySelector('.bp-catalog-questions');
-    const shouldShowGroup = isErrorGroup ? !query : groupHasMatch;
-    group.hidden = !shouldShowGroup;
-    if (shouldShowGroup && query) group.open = true;
-    if (shouldShowGroup && group.closest('.bp-catalog-term-panel.active')) anyVisibleInActiveTerm = true;
-  });
-  containerEl.querySelectorAll('.bp-catalog-category').forEach((cat) => {
-    const visibleGroups = [...cat.querySelectorAll('.bp-catalog-group')].filter((g) => !g.hidden);
-    cat.hidden = visibleGroups.length === 0;
-  });
-
-  if (noResultsEl) {
-    noResultsEl.hidden = !query || anyVisibleInActiveTerm;
-    const qSpan = document.getElementById('bpCatalogNoResultsQuery');
-    if (qSpan) qSpan.textContent = query;
-  }
-}
-
-function setCatalogActiveTerm(term) {
-  document.querySelectorAll('.bp-catalog-term-panel').forEach((panel) => {
-    panel.classList.toggle('active', panel.dataset.term === term);
-  });
-  document.querySelectorAll('.bp-catalog-tab').forEach((tab) => {
-    const isActive = tab.dataset.term === term;
-    tab.classList.toggle('active', isActive);
-    tab.setAttribute('aria-selected', String(isActive));
-  });
-  renderCatalogSearchState();
-}
-
-document.getElementById('bpLoadCatalogBtn')?.addEventListener('click', async (event) => {
-  const btn = event.currentTarget;
-  const statusEl = document.getElementById('bpCatalogStatus');
-  const uiEl = document.getElementById('bpCatalogUi');
-  const containerEl = document.getElementById('bpCatalogContainer');
-  const tabsEl = document.getElementById('bpCatalogTermTabs');
-  btn.disabled = true;
-  btn.style.display = 'none';
-  if (statusEl) {
-    statusEl.innerHTML = `
-      <div class="bp-catalog-loading"><span class="bp-spinner"></span> Loading every exam registry…</div>
-      <div class="bp-skeleton-group">
-        <div class="bp-skeleton-row"></div>
-        <div class="bp-skeleton-row"></div>
-        <div class="bp-skeleton-row"></div>
-      </div>
-    `;
-  }
-
-  catalogData = {};
-  let loadedCount = 0;
-  let totalQuestions = 0;
-
-  for (const term of CATALOG_TERM_ORDER) {
-    catalogData[term] = {};
-    const exams = TERM_EXAMS[term] || [];
-    for (const exam of exams) {
-      const groupName = exam.group || 'Other';
-      if (!catalogData[term][groupName]) catalogData[term][groupName] = [];
-      try {
-        const mod = await import(`./solvers/${term}/${exam.value}/registry.js?v=${MODULE_CACHE_BUST}`);
-        const solvers = mod.solvers || [];
-        totalQuestions += solvers.length;
-        loadedCount += 1;
-        catalogData[term][groupName].push({ label: exam.label, value: exam.value, solvers });
-      } catch (err) {
-        // One exam's registry failing to load (e.g. mid-edit locally) shouldn't take down
-        // the rest of the catalog — record it as a visible per-exam error and keep going.
-        catalogData[term][groupName].push({ label: exam.label, value: exam.value, solvers: [], error: err.message });
-      }
-    }
-  }
-
-  // Term tabs, only for terms that actually have any exams registered.
-  const termsWithData = CATALOG_TERM_ORDER.filter((t) => Object.keys(catalogData[t] || {}).length > 0);
-  tabsEl.innerHTML = termsWithData.map((term, i) => `
-    <button type="button" class="bp-catalog-tab${i === 0 ? ' active' : ''}" data-term="${term}" role="tab" aria-selected="${i === 0}">
-      ${escapeHtml(CATALOG_TERM_LABELS[term] || term)}
-    </button>
-  `).join('');
-  containerEl.innerHTML = termsWithData.map((term, i) => `
-    <div class="bp-catalog-term-panel${i === 0 ? ' active' : ''}" data-term="${term}">
-      ${renderCatalogTerm(term)}
-    </div>
-  `).join('');
-
-  tabsEl.querySelectorAll('.bp-catalog-tab').forEach((tab) => {
-    tab.addEventListener('click', () => setCatalogActiveTerm(tab.dataset.term));
-  });
-
-  btn.style.display = 'none';
-  uiEl.hidden = false;
-  if (statusEl) statusEl.textContent = `${totalQuestions} questions loaded across ${loadedCount} exam suites.`;
 });
-
-// Every catalog question is clickable: jumps straight to that exam by setting the term/exam
-// selects to match, then focuses the email field — so browsing the catalog is a real
-// navigation path into the tool, not just a static read-only list.
-document.getElementById('bpCatalogContainer')?.addEventListener('click', (event) => {
-  const li = event.target.closest('.bp-catalog-questions li[data-q]');
-  if (!li) return;
-  const group = li.closest('.bp-catalog-group');
-  const termPanel = li.closest('.bp-catalog-term-panel');
-  const examValue = group?.dataset.exam;
-  const term = termPanel?.dataset.term;
-  if (!examValue || !term) return;
-
-  termSelect.value = term;
-  termSelect.dispatchEvent(new Event('change', { bubbles: true }));
-  populateExamSelect(term);
-  examSelect.value = examValue;
-  examSelect.dispatchEvent(new Event('change', { bubbles: true }));
-
-  focusEmailInputForBlueprint();
-  showToast(`Jumped to ${group.querySelector('summary')?.textContent.split('\n')[0].trim() || examValue} — enter your email to solve.`, 'success');
-});
-
-document.getElementById('bpCatalogSearch')?.addEventListener('input', renderCatalogSearchState);
-document.getElementById('bpCatalogExpandAll')?.addEventListener('click', () => {
-  document.querySelectorAll('.bp-catalog-term-panel.active .bp-catalog-group').forEach((g) => { g.open = true; });
-});
-document.getElementById('bpCatalogCollapseAll')?.addEventListener('click', () => {
-  document.querySelectorAll('.bp-catalog-term-panel.active .bp-catalog-group').forEach((g) => { g.open = false; });
-});
+vibeAudio?.addEventListener('play', () => { if (vibePlayBtn) vibePlayBtn.textContent = '⏸'; });
+vibeAudio?.addEventListener('pause', () => { if (vibePlayBtn) vibePlayBtn.textContent = '▶'; });
+vibeAudio?.addEventListener('ended', () => { loadVibeTrack(vibeTrackIndex + 1); vibeAudio.play().catch(() => {}); });
+document.getElementById('vibeNextBtn')?.addEventListener('click', () => { loadVibeTrack(vibeTrackIndex + 1); if (vibeAudio && !vibeAudio.paused) vibeAudio.play().catch(() => {}); });
+document.getElementById('vibePrevBtn')?.addEventListener('click', () => { loadVibeTrack(vibeTrackIndex - 1); if (vibeAudio && !vibeAudio.paused) vibeAudio.play().catch(() => {}); });
+vibeVolume?.addEventListener('input', () => { if (vibeAudio) vibeAudio.volume = Number(vibeVolume.value); });
+if (vibeAudio) vibeAudio.volume = Number(vibeVolume?.value ?? 0.6);
 
 dashboardToggle?.addEventListener('click', () => {
   renderCanvas(-1);
@@ -2005,14 +1794,12 @@ const THEME_COLORS = {
   amber: { primary: '#f59e0b', secondary: '#ef4444' },
   cyber: { primary: '#10b981', secondary: '#3b82f6' },
   orchid: { primary: '#ec4899', secondary: '#8b5cf6' },
-  frost: { primary: '#06b6d4', secondary: '#3b82f6' },
-  blueprint: { primary: '#0047ff', secondary: '#7c5cff' }
+  frost: { primary: '#06b6d4', secondary: '#3b82f6' }
 };
 
 function switchTheme(theme) {
   activeTheme = theme;
   safeStorageSet('workspaceTheme', theme);
-  safeStorageSet('workspaceThemeClassicDefault', 'true');
   if (document.body && typeof document.body.setAttribute === 'function') {
     document.body.setAttribute('data-theme', theme);
   }
