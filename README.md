@@ -96,6 +96,8 @@ The registry is split into Term 1 2026 (`T12026`) and Term 2 2026 (`T22026`), co
 | **GA5** | `T22026` | Agentic Systems & Guardrails | 11 solvers covering MCP servers, A2A invoice protocols, budget guards, skill scanning, redteam/guardrail APIs, incident-response agents, mailroom triage, proration, an LXD sandbox guide, and a maze solver. Q9/Q10/Q11 also ship personal backup-API endpoints, shown in a dedicated styled box above the answer. |
 | **GA6** | `T22026` | Data Forensics & Automation | 10 solvers: seeded prompt-robustness audit, shadow-DOM incident audit, DuckDB ledger reconciliation, politeness/robots.txt audit, and Playwright table-sum are real client-side `solved` computations; rotated/mirrored image-grid forensics and hidden-modem audio decode are genuine **upload-and-solve** CV/DSP pipelines running entirely in-browser on the student's own downloaded exam file; DuckDB regression is an interactive SQL-query generator; Scrape Books to Scrape and GitHub Action + Playwright are `guide`-type with an optional on-demand live-fetch button and precomputed expected values respectively. |
 | **P1** | `T22026` | Project 1 | 4 questions: a requirements-interview guide, a seeded model-intelligence-differentiation solver (real client-side compute), and two Colab AI-agent guides (GCS bucket setup + dataset upload) offering three methods each — a shared service-account key pool, the student's own GCP account, or a local Cline/VS Code agent. |
+| **GA7** | `T22026` | Policy Gates & OSINT | 10 solvers: 5 wire in a hosted rule-engine API (release gates, LLM action firewall, Terraform policy, output sanitizer, OSINT corroboration) with live interactive testers; 4 are fully solved by faithfully reimplementing the exam's own seeded generators (Google-dork query synthesis, WAF rule-order simulation, media forensics, GitHub Actions workflow audit) and verified against the real exam bundle's own validators; Street View is a guide with a community-sourced, self-refreshing known-image gallery. |
+| **ROE** | `T22026` | Re-Exam | 12 solvers: interactive per-student artifact parsers with standalone offline-script fallbacks (incident-atlas routing, Unicode ledger forensics, HTTP cache simulation — all diffed against the real exam bundle), byte-verified hash/HMAC transcriptions, a real one-line `solved` answer, and guide-type audio/essay questions with live pre-flight checkers. |
 | **ROE** | `T12026` | Re-exam Workflows | Procedural maze pathfinding, regex golf parsing, and programmatic arithmetic validation. |
 | **GA7** | `T12026` | Data Visualization | Midpoint-preserving diverging palette sampler, chartjunk analyzers, and inverse-engineered prompt structures. |
 | **GA8** | `T12026` | Cloud & MLOps | Docker verification hashes, GCP Cloud Run environments, http trigger cloud functions, and an embedded console hook script. |
@@ -129,7 +131,13 @@ tds-roe-solver/
 │   │   └── 📂 p2/
 │   │       ├── 📄 compact_facts.json # 12MB compressed Discourse dataset
 │   │       └── 📄 q-qr-forensics.js   # QR Solana RPC transaction repair solver
-│   └── 📂 T22026/                # Term 2 2026 Exam Registry (GA0–GA6 + P1 Suites)
+│   └── 📂 T22026/                # Term 2 2026 Exam Registry (GA0–GA7 + ROE + P1)
+│       ├── 📂 ga7/
+│       │   ├── 📄 api-client.js  # Shared hosted-API client (timeout, error handling)
+│       │   └── 📄 promo.js       # Soft one-line credit block, own aesthetic per-exam
+│       └── 📂 roe/
+│           ├── 📂 offline-scripts/ # Standalone Node.js CLI fallbacks for Q1–Q5
+│           └── 📄 promo.js         # ROE's own promo block variant
 ├── 📄 AGENT_CONTEXT.md           # Deep context trace for subsequent AI engineers
 ├── 📄 app.js                     # Central UI state machine & event dispatcher
 ├── 📄 check.mjs                  # Offline smoke testing validation script
@@ -140,6 +148,13 @@ tds-roe-solver/
 ```
 
 ---
+
+## ✨ Recent Enhancements (2026-08)
+
+*   **GA7 (T22026) suite added**: 10 questions — 5 wired into a hosted rule-engine API with interactive testers, 4 fully solved by reimplementing the exam's own seeded generators and verified against the real bundle's own validators, and a Street View guide with a self-refreshing, community-sourced known-image gallery.
+*   **ROE (T22026) rebuilt from scratch**: 12 questions, byte-verified against the live exam bundle, with standalone offline Node.js CLI fallbacks for the three heaviest solvers and a hardened, security-audited set of interactive tools (no `innerHTML` injection surface, no silent-wrong-answer edge cases).
+*   **Vibe Mode**: an opt-in sidebar music player (replaces the old "Blueprint / New UI" theme) — add your own local audio files (stored in IndexedDB, never uploaded) or paste direct URLs, with seek/shuffle/repeat/queue, all following the active Classic UI theme color. Never autoplays, even across reloads.
+*   **Classic UI only**: the "Blueprint / New UI" theme (editorial landing page, dark/light sub-mode) was removed wholesale, along with ~940 lines of its self-contained CSS.
 
 ## ✨ Recent Enhancements (2026-07-28)
 
