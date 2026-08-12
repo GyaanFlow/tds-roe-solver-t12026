@@ -124,13 +124,23 @@
               <span class="theme-btn-label">Frost</span>
             </button>
           </div>
-          <div class="theme-group-label" style="margin-top: 10px;">New UI</div>
-          <div class="theme-buttons-container theme-buttons-container-single">
-            <button class="theme-btn" data-theme-val="blueprint" title="Blueprint (new UI)" type="button">
-              <span class="theme-dot" style="background: #0047ff;"></span>
-              <span class="theme-btn-label">Blueprint</span>
-              <span class="theme-btn-new">NEW</span>
-            </button>
+        </div>
+
+        <!-- Vibe Music Mode -->
+        <div class="vibe-mode-section">
+          <button type="button" class="theme-group-label theme-group-toggle" id="vibeModeToggle" aria-expanded="false" aria-pressed="false">
+            🎵 Vibe Mode <span class="theme-group-toggle-arrow">&gt;</span>
+          </button>
+          <div class="vibe-player theme-buttons-container-collapsed" id="vibePlayer">
+            <div class="vibe-player-track" id="vibePlayerTrackLabel">No playlist loaded yet</div>
+            <audio id="vibeAudio" preload="none"></audio>
+            <div class="vibe-player-controls">
+              <button type="button" class="vibe-btn" id="vibePlayBtn" title="Play/Pause" aria-label="Play or pause">▶</button>
+              <button type="button" class="vibe-btn" id="vibePrevBtn" title="Previous track" aria-label="Previous track">⏮</button>
+              <button type="button" class="vibe-btn" id="vibeNextBtn" title="Next track" aria-label="Next track">⏭</button>
+              <input type="range" id="vibeVolume" class="vibe-volume" min="0" max="1" step="0.05" value="0.6" title="Volume" aria-label="Volume">
+            </div>
+            <div class="vibe-player-hint">Drop your playlist link and it'll play here — mood-refresher tunes while you solve.</div>
           </div>
         </div>
 
@@ -213,17 +223,6 @@
         </div>
         
         <div class="header-right-group">
-          <!-- Blueprint-only controls: only relevant/visible while data-theme="blueprint" -->
-          <div class="navbar-bp-controls" id="navbarBpControls">
-            <button type="button" class="navbar-credit-btn" id="bpSwitchToClassic" title="Switch to the original Classic UI">
-              <span>↩ Classic UI</span>
-            </button>
-            <button type="button" class="navbar-credit-btn" id="bpModeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
-              <svg class="bp-icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
-              <svg class="bp-icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-              <span id="bpModeToggleLabel">Dark</span>
-            </button>
-          </div>
           <!-- Always visible credits -->
           <div class="navbar-credits" id="navbarCredits">
             <a href="https://www.linkedin.com/in/gaurav-tomar-630b2a316" target="_blank" rel="noopener noreferrer" class="navbar-credit-btn" title="🤝 Let's connect on LinkedIn!">
@@ -286,108 +285,6 @@
               </div>
             </div>
 
-          </div>
-
-          <!-- ═══ "Blueprint" theme: editorial landing layout, shown only when data-theme="blueprint" ═══ -->
-          <div class="welcome-blueprint">
-            <section class="bp-hero">
-              <p class="bp-eyebrow">Client-side exam engine — IIT Madras · TDS</p>
-              <h1 class="bp-hero-title">
-                Turn TDS exam prep into
-                <span class="bp-accent">proven, reproducible answers.</span>
-              </h1>
-              <p class="bp-hero-sub">
-                A dynamic, client-side exam engine for the IIT Madras TDS diploma — deterministic
-                seeded answers, real client-side computation, and zero servers in the loop.
-                No guessing. No round-trips.
-              </p>
-              <div class="bp-hero-ctas">
-                <button type="button" class="bp-btn bp-btn-primary" id="bpStartSolvingBtn">Start Solving →</button>
-                <a class="bp-btn bp-btn-ghost" href="https://github.com/GyaanFlow/tds-roe-solver-t12026" target="_blank" rel="noopener noreferrer">Read the Source →</a>
-              </div>
-              <div class="bp-chip-row">
-                <span class="bp-chip">JavaScript (ESM)</span>
-                <span class="bp-chip">seedrandom</span>
-                <span class="bp-chip">DuckDB-WASM</span>
-                <span class="bp-chip">Canvas API</span>
-                <span class="bp-chip">Web Audio API</span>
-                <span class="bp-chip">Tesseract.js</span>
-              </div>
-              <p class="bp-stat-line">100% client-side execution</p>
-              <p class="bp-creator-line">Built by <a href="https://github.com/GyaanFlow" target="_blank" rel="noopener noreferrer">GyaanFlow</a> <span class="creator-nickname">— GT Indian</span></p>
-            </section>
-
-            <section class="bp-stats">
-              <p class="bp-eyebrow">What this is</p>
-              <p class="bp-stats-copy">
-                TDS Portal is a deterministic, seeded solver engine built on the conviction that
-                exam prep should be verifiable, not guessed. Every answer is reproducible from
-                your own email — the same input always yields the same output.
-              </p>
-              <div class="bp-stats-grid">
-                <div class="bp-stat"><span class="bp-stat-num">154+</span><span class="bp-stat-label">Solvers implemented</span></div>
-                <div class="bp-stat"><span class="bp-stat-num">12</span><span class="bp-stat-label">Exam suites covered</span></div>
-                <div class="bp-stat"><span class="bp-stat-num">2</span><span class="bp-stat-label">Terms supported</span></div>
-                <div class="bp-stat"><span class="bp-stat-num">0</span><span class="bp-stat-label">Servers required to solve</span></div>
-              </div>
-            </section>
-
-            <section class="bp-capabilities">
-              <p class="bp-eyebrow">What it does</p>
-              <h2 class="bp-h2">Core Capabilities</h2>
-              <ul class="bp-cap-list">
-                <li class="bp-cap-card">
-                  <span class="bp-cap-num">01</span>
-                  <h3>Deterministic</h3>
-                  <p>Standardized inputs & seeded RNG guarantee identical answers, every time.</p>
-                </li>
-                <li class="bp-cap-card">
-                  <span class="bp-cap-num">02</span>
-                  <h3>Local Run</h3>
-                  <p>Pure client-side execution running directly in your browser — no round-trip.</p>
-                </li>
-                <li class="bp-cap-card">
-                  <span class="bp-cap-num">03</span>
-                  <h3>Study Sandbox</h3>
-                  <p>Comprehensive offline guides for FastAPI, ngrok, DuckDB, and full pipelines.</p>
-                </li>
-              </ul>
-            </section>
-
-            <section class="bp-catalog">
-              <p class="bp-eyebrow">Full solver catalog</p>
-              <h2 class="bp-h2">Every question, every exam.</h2>
-              <p class="bp-catalog-sub">
-                Loaded live from this build's own exam registries, term → category → exam →
-                question — not a hardcoded list, so it never drifts out of sync with what's
-                actually implemented.
-              </p>
-              <button type="button" class="bp-btn bp-btn-ghost" id="bpLoadCatalogBtn">Load Full Catalog →</button>
-              <div id="bpCatalogStatus" class="bp-catalog-status"></div>
-
-              <div id="bpCatalogUi" class="bp-catalog-ui" hidden>
-                <div class="bp-catalog-toolbar">
-                  <div class="bp-catalog-tabs" id="bpCatalogTermTabs" role="tablist"></div>
-                  <div class="bp-catalog-search-wrap">
-                    <input type="text" id="bpCatalogSearch" class="bp-catalog-search" placeholder="Search questions… (e.g. DuckDB, GA6, regex)" autocomplete="off">
-                    <button type="button" id="bpCatalogExpandAll" class="bp-catalog-mini-btn">Expand all</button>
-                    <button type="button" id="bpCatalogCollapseAll" class="bp-catalog-mini-btn">Collapse all</button>
-                  </div>
-                </div>
-                <div id="bpCatalogNoResults" class="bp-catalog-no-results" hidden>No questions match "<span id="bpCatalogNoResultsQuery"></span>".</div>
-                <div id="bpCatalogContainer" class="bp-catalog-container"></div>
-              </div>
-            </section>
-
-            <section class="bp-cta">
-              <p class="bp-eyebrow">Get started</p>
-              <h2 class="bp-h2">Ready to start solving?</h2>
-              <p class="bp-cta-sub">
-                Pick your term and exam in the sidebar, enter your IITM email, and the workspace
-                compiles instantly — fully local, fully deterministic.
-              </p>
-              <button type="button" class="bp-btn bp-btn-primary" id="bpInitWorkspaceBtn">Initialize Workspace →</button>
-            </section>
           </div>
 
           <div class="welcome-footer-credits">
@@ -506,6 +403,7 @@
               </label>
             </div>
         </div>
+      </div>
       </div>
     </main>
 
