@@ -2337,6 +2337,113 @@ body {
 .vibe-btn:hover { background: var(--accent-primary, #f59e0b); color: #1a1a1a; }
 .vibe-btn:active { transform: scale(0.94); }
 .vibe-volume { flex: 1; accent-color: var(--accent-primary, #f59e0b); }
+.vibe-btn-play { background: var(--accent-primary, #f59e0b); color: #1a1a1a; font-weight: 700; }
+.vibe-btn.active { background: var(--accent-primary, #f59e0b); color: #1a1a1a; }
+.vibe-vol-icon { font-size: 11px; opacity: 0.7; }
+
+.vibe-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.vibe-time {
+  font-size: 9.5px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  min-width: 26px;
+}
+.vibe-progress {
+  flex: 1;
+  accent-color: var(--accent-primary, #f59e0b);
+  cursor: pointer;
+}
+.vibe-progress:disabled { cursor: not-allowed; opacity: 0.4; }
+
+.vibe-track-list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  max-height: 130px;
+  overflow-y: auto;
+  border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+}
+.vibe-track-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 5px 4px;
+  font-size: 11px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+.vibe-track-item:hover { background: var(--bg-secondary, rgba(255, 255, 255, 0.05)); }
+.vibe-track-item.active { color: var(--accent-primary, #f59e0b); font-weight: 600; }
+.vibe-track-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+.vibe-track-remove {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  line-height: 1;
+}
+.vibe-track-remove:hover { color: var(--danger, #dc3545); background: rgba(220, 53, 69, 0.12); }
+
+.vibe-add-toggle {
+  background: none;
+  border: none;
+  color: var(--accent-primary, #f59e0b);
+  font-size: 10.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 0;
+  text-align: left;
+}
+.vibe-add-toggle:hover { text-decoration: underline; }
+.vibe-add-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 4px;
+}
+.vibe-add-input {
+  width: 100%;
+  resize: vertical;
+  font-size: 10.5px;
+  font-family: monospace;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  background: var(--bg-secondary, rgba(255, 255, 255, 0.04));
+  color: var(--text-primary);
+  box-sizing: border-box;
+}
+.vibe-add-actions { display: flex; gap: 6px; }
+.vibe-mini-btn {
+  background: var(--bg-secondary, rgba(255, 255, 255, 0.06));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  color: var(--text-primary);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 10.5px;
+  cursor: pointer;
+}
+.vibe-mini-btn-primary { background: var(--accent-primary, #f59e0b); color: #1a1a1a; border-color: transparent; font-weight: 600; }
+.vibe-mini-btn:hover { filter: brightness(1.1); }
+.vibe-add-status {
+  font-size: 10px;
+  min-height: 12px;
+  color: var(--text-muted);
+}
 .vibe-player-hint {
   font-size: 10.5px;
   color: var(--text-muted);

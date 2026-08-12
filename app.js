@@ -1410,16 +1410,107 @@ document.getElementById('classicUiToggle')?.addEventListener('click', (event) =>
   toggle.setAttribute('aria-expanded', String(isExpanded));
 });
 
-// --- Vibe Mode: mood-refresher music player, collapsed by default like the theme picker. ---
+// --- Vibe Mode: mood-refresher music player. Fully opt-in by design:
+//   - The panel is collapsed until the user clicks "🎵 Vibe Mode".
+//   - Nothing is ever autoplayed — playback starts only from an explicit play click, even
+//     across reloads (we restore the playlist/volume/shuffle/repeat prefs, never audio.play()).
+//   - Playlist lives in localStorage so it survives reloads without needing a server.
+const VIBE_PLAYLIST_KEY = 'vibePlaylistV1';
+const VIBE_VOLUME_KEY = 'vibeVolume';
+const VIBE_SHUFFLE_KEY = 'vibeShuffle';
+const VIBE_REPEAT_KEY = 'vibeRepeat';
+const AUDIO_EXT_RE = /\.(mp3|m4a|wav|ogg|opus|flac|aac|webm)(\?.*)?$/i;
+
 const vibeModeToggle = document.getElementById('vibeModeToggle');
 const vibePlayer = document.getElementById('vibePlayer');
 const vibeAudio = document.getElementById('vibeAudio');
 const vibePlayBtn = document.getElementById('vibePlayBtn');
 const vibeVolume = document.getElementById('vibeVolume');
 const vibePlayerTrackLabel = document.getElementById('vibePlayerTrackLabel');
-// Populate this with { title, src } objects (playlist link -> direct audio URLs) once available.
+const vibeProgress = document.getElementById('vibeProgress');
+const vibeCurrentTimeEl = document.getElementById('vibeCurrentTime');
+const vibeDurationEl = document.getElementById('vibeDuration');
+const vibeShuffleBtn = document.getElementById('vibeShuffleBtn');
+const vibeRepeatBtn = document.getElementById('vibeRepeatBtn');
+const vibeTrackListEl = document.getElementById('vibeTrackList');
+const vibeAddToggle = document.getElementById('vibeAddToggle');
+const vibeAddPanel = document.getElementById('vibeAddPanel');
+const vibeAddInput = document.getElementById('vibeAddInput');
+const vibeAddBtn = document.getElementById('vibeAddBtn');
+const vibeClearBtn = document.getElementById('vibeClearBtn');
+const vibeAddStatus = document.getElementById('vibeAddStatus');
+
 let vibePlaylist = [];
 let vibeTrackIndex = 0;
+let vibeShuffle = false;
+let vibeRepeat = false; // repeat-one; playlist itself always loops via next/prev wraparound
+let vibeIsSeeking = false;
+
+function formatVibeTime(seconds) {
+  if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60).toString().padStart(2, '0');
+  return `${m}:${s}`;
+}
+
+function deriveTrackTitle(url) {
+  try {
+    const u = new URL(url);
+    const last = decodeURIComponent(u.pathname.split('/').filter(Boolean).pop() || u.hostname);
+    return last.replace(/\.(mp3|m4a|wav|ogg|opus|flac|aac|webm)$/i, '').replace(/[-_]+/g, ' ').trim() || u.hostname;
+  } catch {
+    return url.slice(0, 40);
+  }
+}
+
+function saveVibePlaylist() { safeStorageSet(VIBE_PLAYLIST_KEY, JSON.stringify(vibePlaylist)); }
+function loadVibePlaylistFromStorage() {
+  try {
+    const raw = safeStorageGet(VIBE_PLAYLIST_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed.filter(t => t && typeof t.src === 'string') : [];
+  } catch {
+    return [];
+  }
+}
+
+function renderVibeTrackList() {
+  if (!vibeTrackListEl) return;
+  if (!vibePlaylist.length) { vibeTrackListEl.hidden = true; vibeTrackListEl.innerHTML = ''; return; }
+  vibeTrackListEl.hidden = false;
+  vibeTrackListEl.innerHTML = vibePlaylist.map((t, i) => `
+    <li class="vibe-track-item${i === vibeTrackIndex ? ' active' : ''}" data-idx="${i}">
+      <span class="vibe-track-name">${escapeHtml(t.title || `Track ${i + 1}`)}</span>
+      <button type="button" class="vibe-track-remove" data-remove="${i}" title="Remove" aria-label="Remove track">✕</button>
+    </li>
+  `).join('');
+}
+
+function loadVibeTrack(index, { autoplay = false } = {}) {
+  if (!vibePlaylist.length) return;
+  vibeTrackIndex = ((index % vibePlaylist.length) + vibePlaylist.length) % vibePlaylist.length;
+  const track = vibePlaylist[vibeTrackIndex];
+  if (vibeAudio) vibeAudio.src = track.src;
+  if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = track.title || `Track ${vibeTrackIndex + 1}`;
+  if (vibeProgress) { vibeProgress.value = 0; vibeProgress.disabled = false; }
+  if (vibeCurrentTimeEl) vibeCurrentTimeEl.textContent = '0:00';
+  if (vibeDurationEl) vibeDurationEl.textContent = '0:00';
+  renderVibeTrackList();
+  if (autoplay && vibeAudio) {
+    vibeAudio.play().catch(() => {
+      if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'Playback blocked — click play again.';
+    });
+  }
+}
+
+function nextVibeIndex() {
+  if (vibeShuffle && vibePlaylist.length > 1) {
+    let next = vibeTrackIndex;
+    while (next === vibeTrackIndex) next = Math.floor(Math.random() * vibePlaylist.length);
+    return next;
+  }
+  return vibeTrackIndex + 1;
+}
 
 vibeModeToggle?.addEventListener('click', () => {
   const isExpanded = vibePlayer.classList.toggle('expanded');
@@ -1427,18 +1518,11 @@ vibeModeToggle?.addEventListener('click', () => {
   vibeModeToggle.setAttribute('aria-pressed', String(isExpanded));
 });
 
-function loadVibeTrack(index) {
-  if (!vibePlaylist.length) return;
-  vibeTrackIndex = ((index % vibePlaylist.length) + vibePlaylist.length) % vibePlaylist.length;
-  const track = vibePlaylist[vibeTrackIndex];
-  if (vibeAudio) vibeAudio.src = track.src;
-  if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = track.title || `Track ${vibeTrackIndex + 1}`;
-}
-
 vibePlayBtn?.addEventListener('click', () => {
   if (!vibeAudio) return;
   if (!vibePlaylist.length) {
-    if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'No playlist loaded yet — drop a link to enable playback.';
+    if (vibeAddPanel && vibeAddPanel.hidden) { vibeAddPanel.hidden = false; vibeAddToggle?.setAttribute('aria-expanded', 'true'); }
+    if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'No playlist loaded yet — add a track URL below.';
     return;
   }
   if (!vibeAudio.src) loadVibeTrack(vibeTrackIndex);
@@ -1452,11 +1536,145 @@ vibePlayBtn?.addEventListener('click', () => {
 });
 vibeAudio?.addEventListener('play', () => { if (vibePlayBtn) vibePlayBtn.textContent = '⏸'; });
 vibeAudio?.addEventListener('pause', () => { if (vibePlayBtn) vibePlayBtn.textContent = '▶'; });
-vibeAudio?.addEventListener('ended', () => { loadVibeTrack(vibeTrackIndex + 1); vibeAudio.play().catch(() => {}); });
-document.getElementById('vibeNextBtn')?.addEventListener('click', () => { loadVibeTrack(vibeTrackIndex + 1); if (vibeAudio && !vibeAudio.paused) vibeAudio.play().catch(() => {}); });
-document.getElementById('vibePrevBtn')?.addEventListener('click', () => { loadVibeTrack(vibeTrackIndex - 1); if (vibeAudio && !vibeAudio.paused) vibeAudio.play().catch(() => {}); });
-vibeVolume?.addEventListener('input', () => { if (vibeAudio) vibeAudio.volume = Number(vibeVolume.value); });
+vibeAudio?.addEventListener('ended', () => {
+  if (vibeRepeat) { loadVibeTrack(vibeTrackIndex, { autoplay: true }); return; }
+  loadVibeTrack(nextVibeIndex(), { autoplay: true });
+});
+// A broken/unreachable URL shouldn't stall the whole playlist — skip to the next track and
+// say why, rather than leaving the user staring at a player that silently does nothing.
+vibeAudio?.addEventListener('error', () => {
+  if (!vibePlaylist.length) return;
+  if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = `⚠️ Couldn't load "${vibePlaylist[vibeTrackIndex]?.title || 'this track'}" — skipping.`;
+  if (vibePlaylist.length > 1) {
+    setTimeout(() => loadVibeTrack(nextVibeIndex(), { autoplay: true }), 800);
+  }
+});
+vibeAudio?.addEventListener('loadedmetadata', () => {
+  if (vibeDurationEl) vibeDurationEl.textContent = formatVibeTime(vibeAudio.duration);
+  if (vibeProgress) vibeProgress.max = String(Math.floor(vibeAudio.duration) || 100);
+});
+vibeAudio?.addEventListener('timeupdate', () => {
+  if (vibeIsSeeking) return;
+  if (vibeCurrentTimeEl) vibeCurrentTimeEl.textContent = formatVibeTime(vibeAudio.currentTime);
+  if (vibeProgress) vibeProgress.value = String(vibeAudio.currentTime);
+});
+vibeProgress?.addEventListener('input', () => { vibeIsSeeking = true; if (vibeCurrentTimeEl) vibeCurrentTimeEl.textContent = formatVibeTime(Number(vibeProgress.value)); });
+vibeProgress?.addEventListener('change', () => { if (vibeAudio) vibeAudio.currentTime = Number(vibeProgress.value); vibeIsSeeking = false; });
+
+document.getElementById('vibeNextBtn')?.addEventListener('click', () => { const wasPlaying = vibeAudio && !vibeAudio.paused; loadVibeTrack(nextVibeIndex(), { autoplay: wasPlaying }); });
+document.getElementById('vibePrevBtn')?.addEventListener('click', () => { const wasPlaying = vibeAudio && !vibeAudio.paused; loadVibeTrack(vibeTrackIndex - 1, { autoplay: wasPlaying }); });
+
+vibeShuffleBtn?.addEventListener('click', () => {
+  vibeShuffle = !vibeShuffle;
+  safeStorageSet(VIBE_SHUFFLE_KEY, String(vibeShuffle));
+  vibeShuffleBtn.classList.toggle('active', vibeShuffle);
+  vibeShuffleBtn.setAttribute('aria-pressed', String(vibeShuffle));
+});
+vibeRepeatBtn?.addEventListener('click', () => {
+  vibeRepeat = !vibeRepeat;
+  safeStorageSet(VIBE_REPEAT_KEY, String(vibeRepeat));
+  vibeRepeatBtn.classList.toggle('active', vibeRepeat);
+  vibeRepeatBtn.setAttribute('aria-pressed', String(vibeRepeat));
+});
+
+vibeVolume?.addEventListener('input', () => {
+  if (vibeAudio) vibeAudio.volume = Number(vibeVolume.value);
+  safeStorageSet(VIBE_VOLUME_KEY, vibeVolume.value);
+});
+
+vibeTrackListEl?.addEventListener('click', (event) => {
+  const removeIdx = event.target.closest('[data-remove]')?.dataset.remove;
+  if (removeIdx !== undefined) {
+    const idx = Number(removeIdx);
+    const wasCurrent = idx === vibeTrackIndex;
+    vibePlaylist.splice(idx, 1);
+    saveVibePlaylist();
+    if (!vibePlaylist.length) {
+      vibeAudio?.pause();
+      if (vibeAudio) vibeAudio.removeAttribute('src');
+      if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'No playlist loaded yet';
+      if (vibeProgress) { vibeProgress.value = 0; vibeProgress.disabled = true; }
+      renderVibeTrackList();
+      return;
+    }
+    if (wasCurrent) loadVibeTrack(Math.min(idx, vibePlaylist.length - 1), { autoplay: false });
+    else { if (idx < vibeTrackIndex) vibeTrackIndex -= 1; renderVibeTrackList(); }
+    return;
+  }
+  const item = event.target.closest('.vibe-track-item');
+  if (item) {
+    const wasPlaying = vibeAudio && !vibeAudio.paused;
+    loadVibeTrack(Number(item.dataset.idx), { autoplay: wasPlaying || true });
+  }
+});
+
+vibeAddToggle?.addEventListener('click', () => {
+  const isHidden = vibeAddPanel.hidden;
+  vibeAddPanel.hidden = !isHidden;
+  vibeAddToggle.setAttribute('aria-expanded', String(isHidden));
+});
+
+function setVibeAddStatus(text, color) {
+  if (!vibeAddStatus) return;
+  vibeAddStatus.textContent = text;
+  vibeAddStatus.style.color = color || '';
+}
+
+vibeAddBtn?.addEventListener('click', () => {
+  const raw = vibeAddInput?.value || '';
+  const candidates = raw.split(/[\n,]+/).map(s => s.trim()).filter(Boolean);
+  if (!candidates.length) { setVibeAddStatus('Paste at least one audio URL first.', 'var(--danger, #dc3545)'); return; }
+
+  let added = 0, rejected = 0;
+  for (const url of candidates) {
+    let parsed;
+    try { parsed = new URL(url); } catch { rejected++; continue; }
+    if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') { rejected++; continue; }
+    vibePlaylist.push({ title: deriveTrackTitle(url), src: url });
+    added++;
+  }
+  if (added > 0) {
+    saveVibePlaylist();
+    renderVibeTrackList();
+    if (vibeAddInput) vibeAddInput.value = '';
+    if (vibePlaylist.length === added) loadVibeTrack(0); // first tracks ever added -> cue but don't play
+  }
+  setVibeAddStatus(
+    rejected > 0 ? `Added ${added} track(s), skipped ${rejected} invalid URL(s).` : `✅ Added ${added} track(s).`,
+    rejected > 0 && added === 0 ? 'var(--danger, #dc3545)' : ''
+  );
+});
+
+vibeClearBtn?.addEventListener('click', () => {
+  vibePlaylist = [];
+  vibeTrackIndex = 0;
+  saveVibePlaylist();
+  vibeAudio?.pause();
+  if (vibeAudio) vibeAudio.removeAttribute('src');
+  if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'No playlist loaded yet';
+  if (vibeProgress) { vibeProgress.value = 0; vibeProgress.disabled = true; }
+  renderVibeTrackList();
+  setVibeAddStatus('Playlist cleared.');
+});
+
+// --- Restore persisted state. Deliberately never calls audio.play() here — only cues the
+// first track (src set, paused) so a returning user's playlist/volume/shuffle/repeat prefs are
+// back exactly as they left them, without ever making noise on their own. ---
+vibePlaylist = loadVibePlaylistFromStorage();
+vibeShuffle = safeStorageGet(VIBE_SHUFFLE_KEY) === 'true';
+vibeRepeat = safeStorageGet(VIBE_REPEAT_KEY) === 'true';
+if (vibeShuffleBtn) { vibeShuffleBtn.classList.toggle('active', vibeShuffle); vibeShuffleBtn.setAttribute('aria-pressed', String(vibeShuffle)); }
+if (vibeRepeatBtn) { vibeRepeatBtn.classList.toggle('active', vibeRepeat); vibeRepeatBtn.setAttribute('aria-pressed', String(vibeRepeat)); }
+const storedVibeVolume = safeStorageGet(VIBE_VOLUME_KEY);
+if (vibeVolume && storedVibeVolume !== null && storedVibeVolume !== undefined && storedVibeVolume !== '') vibeVolume.value = storedVibeVolume;
 if (vibeAudio) vibeAudio.volume = Number(vibeVolume?.value ?? 0.6);
+if (vibePlaylist.length) {
+  renderVibeTrackList();
+  const track = vibePlaylist[0];
+  if (vibeAudio) vibeAudio.src = track.src;
+  if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = track.title || 'Track 1';
+  if (vibeProgress) vibeProgress.disabled = false;
+}
 
 dashboardToggle?.addEventListener('click', () => {
   renderCanvas(-1);

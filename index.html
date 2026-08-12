@@ -132,15 +132,39 @@
             🎵 Vibe Mode <span class="theme-group-toggle-arrow">&gt;</span>
           </button>
           <div class="vibe-player theme-buttons-container-collapsed" id="vibePlayer">
-            <div class="vibe-player-track" id="vibePlayerTrackLabel">No playlist loaded yet</div>
             <audio id="vibeAudio" preload="none"></audio>
+
+            <div class="vibe-player-track" id="vibePlayerTrackLabel">No playlist loaded yet</div>
+
+            <div class="vibe-progress-row">
+              <span class="vibe-time" id="vibeCurrentTime">0:00</span>
+              <input type="range" id="vibeProgress" class="vibe-progress" min="0" max="100" step="0.1" value="0" title="Seek" aria-label="Seek" disabled>
+              <span class="vibe-time" id="vibeDuration">0:00</span>
+            </div>
+
             <div class="vibe-player-controls">
-              <button type="button" class="vibe-btn" id="vibePlayBtn" title="Play/Pause" aria-label="Play or pause">▶</button>
               <button type="button" class="vibe-btn" id="vibePrevBtn" title="Previous track" aria-label="Previous track">⏮</button>
+              <button type="button" class="vibe-btn vibe-btn-play" id="vibePlayBtn" title="Play/Pause" aria-label="Play or pause">▶</button>
               <button type="button" class="vibe-btn" id="vibeNextBtn" title="Next track" aria-label="Next track">⏭</button>
+              <button type="button" class="vibe-btn" id="vibeShuffleBtn" title="Shuffle" aria-label="Toggle shuffle" aria-pressed="false">🔀</button>
+              <button type="button" class="vibe-btn" id="vibeRepeatBtn" title="Repeat" aria-label="Toggle repeat" aria-pressed="false">🔁</button>
+              <span class="vibe-vol-icon">🔊</span>
               <input type="range" id="vibeVolume" class="vibe-volume" min="0" max="1" step="0.05" value="0.6" title="Volume" aria-label="Volume">
             </div>
-            <div class="vibe-player-hint">Drop your playlist link and it'll play here — mood-refresher tunes while you solve.</div>
+
+            <ol class="vibe-track-list" id="vibeTrackList" hidden></ol>
+
+            <button type="button" class="vibe-add-toggle" id="vibeAddToggle" aria-expanded="false">+ Add tracks</button>
+            <div class="vibe-add-panel" id="vibeAddPanel" hidden>
+              <textarea id="vibeAddInput" class="vibe-add-input" rows="3" placeholder="Paste one direct audio URL per line (.mp3/.m4a/.wav/.ogg) — e.g. from a GitHub raw link, Dropbox, or any public file host."></textarea>
+              <div class="vibe-add-actions">
+                <button type="button" class="vibe-mini-btn vibe-mini-btn-primary" id="vibeAddBtn">Add to playlist</button>
+                <button type="button" class="vibe-mini-btn" id="vibeClearBtn">Clear playlist</button>
+              </div>
+              <div class="vibe-add-status" id="vibeAddStatus"></div>
+            </div>
+
+            <div class="vibe-player-hint">100% local: nothing is uploaded, tracks play straight from the URLs you add. Playback only ever starts when you press play — never automatically.</div>
           </div>
         </div>
 
