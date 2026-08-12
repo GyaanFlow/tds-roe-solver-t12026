@@ -1762,45 +1762,63 @@ vibeTabPresets?.addEventListener('click', () => updateVibeTabSelection('presets'
 vibeTabFiles?.addEventListener('click', () => updateVibeTabSelection('files'));
 vibeTabUrl?.addEventListener('click', () => updateVibeTabSelection('url'));
 
-// Saaz Music API Search Integration
+// Saaz Music API Search Integration (with CORS Proxy Fallback)
 async function searchSaazMusic(query) {
   const q = (query || '').trim();
   if (!q) return;
   if (!vibeSaazResults) return;
   vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">Searching Saaz music for "${escapeHtml(q)}"...</div>`;
   
-  try {
-    const res = await fetch(`https://saaz-next.vercel.app/api/search/songs?q=${encodeURIComponent(q)}`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const json = await res.json();
-    const songs = json.data?.results || json.data?.songs || [];
-    if (!songs.length) {
-      vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--warning);padding:8px 0;">No songs found on Saaz for "${escapeHtml(q)}". Try another query!</div>`;
-      return;
+  const enc = encodeURIComponent(q);
+  const targetUrl = `https://saaz-next.vercel.app/api/search/songs?q=${enc}`;
+  const endpoints = [
+    targetUrl,
+    `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`
+  ];
+
+  let songs = [];
+  let lastError = null;
+
+  for (const ep of endpoints) {
+    try {
+      const res = await fetch(ep);
+      if (!res.ok) continue;
+      const text = await res.text();
+      let json = JSON.parse(text);
+      if (json && json.contents) {
+        try { json = JSON.parse(json.contents); } catch {}
+      }
+      songs = json.data?.results || json.data?.songs || [];
+      if (songs.length) break;
+    } catch (err) {
+      lastError = err;
     }
-    
-    vibeSaazResults.innerHTML = songs.slice(0, 15).map((song, i) => {
-      const title = song.name || `Song ${i + 1}`;
-      const artist = song.primaryArtists || song.singers || (Array.isArray(song.artists) ? song.artists.map(a => a.name).join(', ') : '') || 'Unknown Artist';
-      const thumb = song.image?.[1]?.url || song.image?.[0]?.url || 'https://saaz-next.vercel.app/saaz.png';
-      const highResArt = song.image?.[song.image.length - 1]?.url || thumb;
-      const downloadUrls = song.downloadUrl || [];
-      const streamUrl = downloadUrls[downloadUrls.length - 1]?.url || downloadUrls[0]?.url || '';
-      
-      return `
-        <div class="vibe-saaz-item" data-saaz-src="${escapeHtml(streamUrl)}" data-saaz-title="${escapeHtml(title + ' - ' + artist)}" data-saaz-art="${escapeHtml(highResArt)}">
-          <img class="vibe-saaz-thumb" src="${escapeHtml(thumb)}" alt="" loading="lazy" />
-          <div class="vibe-saaz-info">
-            <div class="vibe-saaz-name">${escapeHtml(title)}</div>
-            <div class="vibe-saaz-artist">${escapeHtml(artist)}</div>
-          </div>
-          <span style="font-size:11px;color:var(--theme-primary, #f59e0b);">▶</span>
-        </div>
-      `;
-    }).join('');
-  } catch (err) {
-    vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--danger);padding:8px 0;">Search failed: ${escapeHtml(err.message)}</div>`;
   }
+
+  if (!songs.length) {
+    vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--warning);padding:8px 0;">No songs found for "${escapeHtml(q)}". Try another query or check internet connection!</div>`;
+    return;
+  }
+  
+  vibeSaazResults.innerHTML = songs.slice(0, 15).map((song, i) => {
+    const title = song.name || `Song ${i + 1}`;
+    const artist = song.primaryArtists || song.singers || (Array.isArray(song.artists) ? song.artists.map(a => a.name).join(', ') : '') || 'Unknown Artist';
+    const thumb = song.image?.[1]?.url || song.image?.[0]?.url || 'https://saaz-next.vercel.app/saaz.png';
+    const highResArt = song.image?.[song.image.length - 1]?.url || thumb;
+    const downloadUrls = song.downloadUrl || [];
+    const streamUrl = downloadUrls[downloadUrls.length - 1]?.url || downloadUrls[0]?.url || '';
+    
+    return `
+      <div class="vibe-saaz-item" data-saaz-src="${escapeHtml(streamUrl)}" data-saaz-title="${escapeHtml(title + ' - ' + artist)}" data-saaz-art="${escapeHtml(highResArt)}">
+        <img class="vibe-saaz-thumb" src="${escapeHtml(thumb)}" alt="" loading="lazy" />
+        <div class="vibe-saaz-info">
+          <div class="vibe-saaz-name">${escapeHtml(title)}</div>
+          <div class="vibe-saaz-artist">${escapeHtml(artist)}</div>
+        </div>
+        <span style="font-size:11px;color:var(--theme-primary, #f59e0b);">▶</span>
+      </div>
+    `;
+  }).join('');
 }
 
 vibeSaazSearchBtn?.addEventListener('click', () => {
