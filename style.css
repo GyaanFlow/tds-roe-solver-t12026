@@ -2334,11 +2334,11 @@ body {
   justify-content: center;
   transition: background 0.15s ease, transform 0.1s ease;
 }
-.vibe-btn:hover { background: var(--accent-primary, #f59e0b); color: #1a1a1a; }
+.vibe-btn:hover { background: var(--theme-primary); color: #1a1a1a; }
 .vibe-btn:active { transform: scale(0.94); }
-.vibe-volume { flex: 1; accent-color: var(--accent-primary, #f59e0b); }
-.vibe-btn-play { background: var(--accent-primary, #f59e0b); color: #1a1a1a; font-weight: 700; }
-.vibe-btn.active { background: var(--accent-primary, #f59e0b); color: #1a1a1a; }
+.vibe-volume { flex: 1; accent-color: var(--theme-primary); }
+.vibe-btn-play { background: var(--theme-primary); color: #1a1a1a; font-weight: 700; }
+.vibe-btn.active { background: var(--theme-primary); color: #1a1a1a; }
 .vibe-vol-icon { font-size: 11px; opacity: 0.7; }
 
 .vibe-progress-row {
@@ -2354,7 +2354,7 @@ body {
 }
 .vibe-progress {
   flex: 1;
-  accent-color: var(--accent-primary, #f59e0b);
+  accent-color: var(--theme-primary);
   cursor: pointer;
 }
 .vibe-progress:disabled { cursor: not-allowed; opacity: 0.4; }
@@ -2379,7 +2379,7 @@ body {
   color: var(--text-secondary);
 }
 .vibe-track-item:hover { background: var(--bg-secondary, rgba(255, 255, 255, 0.05)); }
-.vibe-track-item.active { color: var(--accent-primary, #f59e0b); font-weight: 600; }
+.vibe-track-item.active { color: var(--theme-primary); font-weight: 600; }
 .vibe-track-name {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2401,7 +2401,7 @@ body {
 .vibe-add-toggle {
   background: none;
   border: none;
-  color: var(--accent-primary, #f59e0b);
+  color: var(--theme-primary);
   font-size: 10.5px;
   font-weight: 600;
   cursor: pointer;
@@ -2431,7 +2431,7 @@ body {
   text-overflow: ellipsis;
 }
 .vibe-add-tab.active {
-  background: var(--accent-primary, #f59e0b);
+  background: var(--theme-primary);
   color: #1a1a1a;
   border-color: transparent;
 }
@@ -2465,7 +2465,7 @@ body {
   font-size: 10.5px;
   cursor: pointer;
 }
-.vibe-mini-btn-primary { background: var(--accent-primary, #f59e0b); color: #1a1a1a; border-color: transparent; font-weight: 600; }
+.vibe-mini-btn-primary { background: var(--theme-primary); color: #1a1a1a; border-color: transparent; font-weight: 600; }
 .vibe-mini-btn:hover { filter: brightness(1.1); }
 .vibe-add-status {
   font-size: 10px;
