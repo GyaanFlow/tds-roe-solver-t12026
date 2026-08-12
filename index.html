@@ -143,6 +143,10 @@
               <span class="vibe-user-name" id="vibeUserName">Focus Vibe Session</span>
             </div>
 
+            <div class="vibe-cover-container" id="vibeCoverContainer" hidden>
+              <img id="vibeCoverArt" class="vibe-cover-art" src="" alt="Album Cover Art" />
+            </div>
+
             <div class="vibe-player-track" id="vibePlayerTrackLabel">No playlist loaded yet</div>
 
             <div class="vibe-progress-row">
@@ -163,15 +167,33 @@
 
             <ol class="vibe-track-list" id="vibeTrackList" hidden></ol>
 
-            <button type="button" class="vibe-add-toggle" id="vibeAddToggle" aria-expanded="false">+ Add tracks / Focus Channels</button>
+            <button type="button" class="vibe-add-toggle" id="vibeAddToggle" aria-expanded="false">+ Add tracks / Saaz Music Search</button>
             <div class="vibe-add-panel" id="vibeAddPanel" hidden>
               <div class="vibe-add-tabs" role="tablist">
-                <button type="button" class="vibe-add-tab active" id="vibeTabPresets" data-tab="presets" role="tab" aria-selected="true">🎧 Focus Presets</button>
+                <button type="button" class="vibe-add-tab active" id="vibeTabSaaz" data-tab="saaz" role="tab" aria-selected="true">🎵 Saaz Music</button>
+                <button type="button" class="vibe-add-tab" id="vibeTabPresets" data-tab="presets" role="tab" aria-selected="false">🎧 Focus Presets</button>
                 <button type="button" class="vibe-add-tab" id="vibeTabFiles" data-tab="files" role="tab" aria-selected="false">📂 Local Files</button>
                 <button type="button" class="vibe-add-tab" id="vibeTabUrl" data-tab="url" role="tab" aria-selected="false">🔗 Custom URL</button>
               </div>
 
-              <div class="vibe-add-tab-panel" id="vibePresetsPanel" role="tabpanel">
+              <!-- Saaz Music Search Panel -->
+              <div class="vibe-add-tab-panel" id="vibeSaazPanel" role="tabpanel">
+                <div class="vibe-saaz-search-row">
+                  <input type="text" id="vibeSaazSearchInput" class="vibe-add-input" placeholder="Search millions of songs on Saaz…" style="margin-bottom: 0;">
+                  <button type="button" class="vibe-mini-btn vibe-mini-btn-primary" id="vibeSaazSearchBtn">Search</button>
+                </div>
+                <div class="vibe-saaz-tags">
+                  <button type="button" class="vibe-tag" data-tag-query="lofi">🔥 Lofi</button>
+                  <button type="button" class="vibe-tag" data-tag-query="synthwave">⚡ Synthwave</button>
+                  <button type="button" class="vibe-tag" data-tag-query="chillhop">☕ Chillhop</button>
+                  <button type="button" class="vibe-tag" data-tag-query="arijit singh">🎧 Arijit</button>
+                  <button type="button" class="vibe-tag" data-tag-query="seedhe maut">🚀 Seedhe Maut</button>
+                </div>
+                <div class="vibe-saaz-results" id="vibeSaazResults"></div>
+              </div>
+
+              <!-- Focus Presets Panel -->
+              <div class="vibe-add-tab-panel" id="vibePresetsPanel" role="tabpanel" hidden>
                 <div class="vibe-preset-grid">
                   <button type="button" class="vibe-preset-btn" data-preset-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" data-preset-title="Lo-Fi Chill Beats">
                     <span class="vibe-preset-title">🎧 Lo-Fi Chill Beats</span>
@@ -481,7 +503,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
-  <script type="module" src="app.js?v=v16"></script>
+  <script type="module" src="app.js?v=v17"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {

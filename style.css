@@ -2565,6 +2565,99 @@ body {
   color: var(--text-muted);
   margin-top: 2px;
 }
+
+/* Cover Art Container */
+.vibe-cover-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.vibe-cover-art {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Saaz Music Search Styles */
+.vibe-saaz-search-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.vibe-saaz-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.vibe-tag {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--text-secondary);
+  font-size: 10px;
+  padding: 3px 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.vibe-tag:hover {
+  background: var(--theme-primary, #f59e0b);
+  color: #1a1a1a;
+  border-color: transparent;
+}
+.vibe-saaz-results {
+  max-height: 180px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+}
+.vibe-saaz-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.vibe-saaz-item:hover {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+.vibe-saaz-thumb {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.vibe-saaz-info {
+  flex: 1;
+  min-width: 0;
+}
+.vibe-saaz-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vibe-saaz-artist {
+  font-size: 9.5px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .theme-btn-new {
   font-size: 8px;
   font-weight: 800;
