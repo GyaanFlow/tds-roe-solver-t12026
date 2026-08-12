@@ -1419,6 +1419,8 @@ const VIBE_PLAYLIST_KEY = 'vibePlaylistV1';
 const VIBE_VOLUME_KEY = 'vibeVolume';
 const VIBE_SHUFFLE_KEY = 'vibeShuffle';
 const VIBE_REPEAT_KEY = 'vibeRepeat';
+const VIBE_DB_NAME = 'vibeFilesDB';
+const VIBE_DB_STORE = 'files';
 const AUDIO_EXT_RE = /\.(mp3|m4a|wav|ogg|opus|flac|aac|webm)(\?.*)?$/i;
 
 const vibeModeToggle = document.getElementById('vibeModeToggle');
@@ -1439,12 +1441,64 @@ const vibeAddInput = document.getElementById('vibeAddInput');
 const vibeAddBtn = document.getElementById('vibeAddBtn');
 const vibeClearBtn = document.getElementById('vibeClearBtn');
 const vibeAddStatus = document.getElementById('vibeAddStatus');
+const vibeTabFiles = document.getElementById('vibeTabFiles');
+const vibeTabUrl = document.getElementById('vibeTabUrl');
+const vibeFilesPanel = document.getElementById('vibeFilesPanel');
+const vibeUrlPanel = document.getElementById('vibeUrlPanel');
+const vibeFilePickerBtn = document.getElementById('vibeFilePickerBtn');
+const vibeFileInput = document.getElementById('vibeFileInput');
 
 let vibePlaylist = [];
 let vibeTrackIndex = 0;
 let vibeShuffle = false;
 let vibeRepeat = false; // repeat-one; playlist itself always loops via next/prev wraparound
 let vibeIsSeeking = false;
+let vibeCurrentBlobUrl = null; // revoked whenever a new local track's blob URL replaces it
+let vibeLoadToken = 0; // increments on every loadVibeTrack call to discard stale async results
+
+// --- IndexedDB: stores the actual audio file bytes for locally-added tracks (blob URLs alone
+// don't survive a reload, so this is what makes "add my downloaded playlist" persist). Falls
+// back to a rejected promise everywhere if IndexedDB is unavailable (very old/locked-down
+// browsers) so callers can show a real error instead of throwing. ---
+let vibeDbPromise = null;
+function openVibeDb() {
+  if (vibeDbPromise) return vibeDbPromise;
+  vibeDbPromise = new Promise((resolve, reject) => {
+    if (!window.indexedDB) { reject(new Error('This browser does not support local file storage.')); return; }
+    const req = indexedDB.open(VIBE_DB_NAME, 1);
+    req.onupgradeneeded = () => { req.result.createObjectStore(VIBE_DB_STORE, { keyPath: 'id', autoIncrement: true }); };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error || new Error('Could not open local storage for audio files.'));
+  });
+  return vibeDbPromise;
+}
+async function vibeDbPut(blob) {
+  const db = await openVibeDb();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(VIBE_DB_STORE, 'readwrite');
+    const req = tx.objectStore(VIBE_DB_STORE).add({ blob });
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+async function vibeDbGet(id) {
+  const db = await openVibeDb();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(VIBE_DB_STORE, 'readonly');
+    const req = tx.objectStore(VIBE_DB_STORE).get(id);
+    req.onsuccess = () => resolve(req.result ? req.result.blob : null);
+    req.onerror = () => reject(req.error);
+  });
+}
+async function vibeDbDelete(id) {
+  const db = await openVibeDb();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(VIBE_DB_STORE, 'readwrite');
+    const req = tx.objectStore(VIBE_DB_STORE).delete(id);
+    req.onsuccess = () => resolve();
+    req.onerror = () => reject(req.error);
+  });
+}
 
 function formatVibeTime(seconds) {
   if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
@@ -1468,7 +1522,11 @@ function loadVibePlaylistFromStorage() {
   try {
     const raw = safeStorageGet(VIBE_PLAYLIST_KEY);
     const parsed = raw ? JSON.parse(raw) : [];
-    return Array.isArray(parsed) ? parsed.filter(t => t && typeof t.src === 'string') : [];
+    if (!Array.isArray(parsed)) return [];
+    // A url-kind track needs `src`; a file-kind track needs `dbId` (the actual bytes live in
+    // IndexedDB, not localStorage, since localStorage can't hold binary data at any real size).
+    // Older entries saved before `kind` existed are treated as url-kind for backward compat.
+    return parsed.filter(t => t && ((t.kind === 'file' && typeof t.dbId === 'number') || (t.kind !== 'file' && typeof t.src === 'string')));
   } catch {
     return [];
   }
@@ -1486,11 +1544,34 @@ function renderVibeTrackList() {
   `).join('');
 }
 
-function loadVibeTrack(index, { autoplay = false } = {}) {
+// Async because a file-kind track has to fetch its bytes out of IndexedDB and turn them into a
+// blob URL before there's anything for <audio> to point at. url-kind tracks resolve instantly.
+async function loadVibeTrack(index, { autoplay = false } = {}) {
   if (!vibePlaylist.length) return;
   vibeTrackIndex = ((index % vibePlaylist.length) + vibePlaylist.length) % vibePlaylist.length;
   const track = vibePlaylist[vibeTrackIndex];
-  if (vibeAudio) vibeAudio.src = track.src;
+  const loadToken = ++vibeLoadToken; // guards against a slow IndexedDB read landing after a newer skip/remove
+
+  if (vibeCurrentBlobUrl) { URL.revokeObjectURL(vibeCurrentBlobUrl); vibeCurrentBlobUrl = null; }
+
+  let src = null;
+  if (track.kind === 'file') {
+    try {
+      const blob = await vibeDbGet(track.dbId);
+      if (loadToken !== vibeLoadToken) return; // superseded while we were awaiting
+      if (!blob) throw new Error('File not found in local storage (it may have been cleared by the browser).');
+      src = URL.createObjectURL(blob);
+      vibeCurrentBlobUrl = src;
+    } catch (err) {
+      if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = `⚠️ Couldn't load "${track.title || 'this track'}" (${err.message}) — skipping.`;
+      if (vibePlaylist.length > 1) setTimeout(() => loadVibeTrack(nextVibeIndex(), { autoplay }), 800);
+      return;
+    }
+  } else {
+    src = track.src;
+  }
+
+  if (vibeAudio) vibeAudio.src = src;
   if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = track.title || `Track ${vibeTrackIndex + 1}`;
   if (vibeProgress) { vibeProgress.value = 0; vibeProgress.disabled = false; }
   if (vibeCurrentTimeEl) vibeCurrentTimeEl.textContent = '0:00';
@@ -1587,9 +1668,13 @@ vibeTrackListEl?.addEventListener('click', (event) => {
   if (removeIdx !== undefined) {
     const idx = Number(removeIdx);
     const wasCurrent = idx === vibeTrackIndex;
-    vibePlaylist.splice(idx, 1);
+    const [removed] = vibePlaylist.splice(idx, 1);
     saveVibePlaylist();
+    // Local files also need their bytes deleted from IndexedDB, or removed tracks would just
+    // keep silently accumulating storage forever.
+    if (removed?.kind === 'file' && typeof removed.dbId === 'number') vibeDbDelete(removed.dbId).catch(() => {});
     if (!vibePlaylist.length) {
+      if (vibeCurrentBlobUrl) { URL.revokeObjectURL(vibeCurrentBlobUrl); vibeCurrentBlobUrl = null; }
       vibeAudio?.pause();
       if (vibeAudio) vibeAudio.removeAttribute('src');
       if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'No playlist loaded yet';
@@ -1605,6 +1690,54 @@ vibeTrackListEl?.addEventListener('click', (event) => {
   if (item) {
     const wasPlaying = vibeAudio && !vibeAudio.paused;
     loadVibeTrack(Number(item.dataset.idx), { autoplay: wasPlaying || true });
+  }
+});
+
+vibeTabFiles?.addEventListener('click', () => {
+  vibeTabFiles.classList.add('active'); vibeTabFiles.setAttribute('aria-selected', 'true');
+  vibeTabUrl?.classList.remove('active'); vibeTabUrl?.setAttribute('aria-selected', 'false');
+  if (vibeFilesPanel) vibeFilesPanel.hidden = false;
+  if (vibeUrlPanel) vibeUrlPanel.hidden = true;
+});
+vibeTabUrl?.addEventListener('click', () => {
+  vibeTabUrl.classList.add('active'); vibeTabUrl.setAttribute('aria-selected', 'true');
+  vibeTabFiles?.classList.remove('active'); vibeTabFiles?.setAttribute('aria-selected', 'false');
+  if (vibeUrlPanel) vibeUrlPanel.hidden = false;
+  if (vibeFilesPanel) vibeFilesPanel.hidden = true;
+});
+
+// File picker: reads local files straight from disk (no upload anywhere) and stores each one's
+// bytes in IndexedDB so "add my downloaded playlist" actually persists across reloads, not just
+// for the current tab session the way a bare blob URL would.
+vibeFilePickerBtn?.addEventListener('click', () => vibeFileInput?.click());
+vibeFileInput?.addEventListener('change', async () => {
+  const files = Array.from(vibeFileInput.files || []);
+  if (!files.length) return;
+  const nonAudio = files.filter(f => f.type && !f.type.startsWith('audio/') && !AUDIO_EXT_RE.test(f.name));
+  const usable = files.filter(f => !nonAudio.includes(f));
+
+  let added = 0;
+  setVibeAddStatus(`Storing ${usable.length} file(s)…`);
+  try {
+    for (const file of usable) {
+      const dbId = await vibeDbPut(file);
+      vibePlaylist.push({
+        title: file.name.replace(/\.(mp3|m4a|wav|ogg|opus|flac|aac|webm)$/i, '').replace(/[-_]+/g, ' ').trim() || file.name,
+        kind: 'file',
+        dbId
+      });
+      added++;
+    }
+    saveVibePlaylist();
+    renderVibeTrackList();
+    if (vibePlaylist.length === added) loadVibeTrack(0); // first tracks ever added -> cue but don't play
+    setVibeAddStatus(
+      nonAudio.length > 0 ? `Added ${added} file(s), skipped ${nonAudio.length} non-audio file(s).` : `✅ Added ${added} file(s) from your computer.`
+    );
+  } catch (err) {
+    setVibeAddStatus(`⚠️ Could not store files locally: ${err.message}`, 'var(--danger, #dc3545)');
+  } finally {
+    vibeFileInput.value = ''; // allow re-selecting the same file(s) later
   }
 });
 
@@ -1630,7 +1763,7 @@ vibeAddBtn?.addEventListener('click', () => {
     let parsed;
     try { parsed = new URL(url); } catch { rejected++; continue; }
     if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') { rejected++; continue; }
-    vibePlaylist.push({ title: deriveTrackTitle(url), src: url });
+    vibePlaylist.push({ title: deriveTrackTitle(url), kind: 'url', src: url });
     added++;
   }
   if (added > 0) {
@@ -1646,9 +1779,12 @@ vibeAddBtn?.addEventListener('click', () => {
 });
 
 vibeClearBtn?.addEventListener('click', () => {
+  const fileTracks = vibePlaylist.filter(t => t.kind === 'file' && typeof t.dbId === 'number');
   vibePlaylist = [];
   vibeTrackIndex = 0;
   saveVibePlaylist();
+  Promise.all(fileTracks.map(t => vibeDbDelete(t.dbId).catch(() => {}))); // free the stored bytes
+  if (vibeCurrentBlobUrl) { URL.revokeObjectURL(vibeCurrentBlobUrl); vibeCurrentBlobUrl = null; }
   vibeAudio?.pause();
   if (vibeAudio) vibeAudio.removeAttribute('src');
   if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'No playlist loaded yet';
@@ -1670,10 +1806,10 @@ if (vibeVolume && storedVibeVolume !== null && storedVibeVolume !== undefined &&
 if (vibeAudio) vibeAudio.volume = Number(vibeVolume?.value ?? 0.6);
 if (vibePlaylist.length) {
   renderVibeTrackList();
-  const track = vibePlaylist[0];
-  if (vibeAudio) vibeAudio.src = track.src;
-  if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = track.title || 'Track 1';
-  if (vibeProgress) vibeProgress.disabled = false;
+  // Cues (src set, paused) via the normal async loader -- necessary rather than reading
+  // track.src directly, since a file-kind track's playable URL only exists after its bytes
+  // are pulled back out of IndexedDB. Never passes autoplay: true.
+  loadVibeTrack(0);
 }
 
 dashboardToggle?.addEventListener('click', () => {

@@ -156,15 +156,29 @@
 
             <button type="button" class="vibe-add-toggle" id="vibeAddToggle" aria-expanded="false">+ Add tracks</button>
             <div class="vibe-add-panel" id="vibeAddPanel" hidden>
-              <textarea id="vibeAddInput" class="vibe-add-input" rows="3" placeholder="Paste one direct audio URL per line (.mp3/.m4a/.wav/.ogg) — e.g. from a GitHub raw link, Dropbox, or any public file host."></textarea>
-              <div class="vibe-add-actions">
+              <div class="vibe-add-tabs" role="tablist">
+                <button type="button" class="vibe-add-tab active" id="vibeTabFiles" data-tab="files" role="tab" aria-selected="true">📂 My downloaded songs</button>
+                <button type="button" class="vibe-add-tab" id="vibeTabUrl" data-tab="url" role="tab" aria-selected="false">🔗 Paste a URL</button>
+              </div>
+
+              <div class="vibe-add-tab-panel" id="vibeFilesPanel" role="tabpanel">
+                <button type="button" class="vibe-mini-btn vibe-mini-btn-primary vibe-file-picker-btn" id="vibeFilePickerBtn">📂 Choose audio files from your computer</button>
+                <input type="file" id="vibeFileInput" accept="audio/*" multiple hidden>
+                <p class="vibe-add-note">Pick any .mp3/.m4a/.wav/.ogg files from your Downloads folder. They're stored only in this browser (never uploaded anywhere) and stay in your playlist across reloads.</p>
+              </div>
+
+              <div class="vibe-add-tab-panel" id="vibeUrlPanel" role="tabpanel" hidden>
+                <textarea id="vibeAddInput" class="vibe-add-input" rows="3" placeholder="Paste one direct audio URL per line (.mp3/.m4a/.wav/.ogg) — e.g. from a GitHub raw link, Dropbox, or any public file host."></textarea>
                 <button type="button" class="vibe-mini-btn vibe-mini-btn-primary" id="vibeAddBtn">Add to playlist</button>
+              </div>
+
+              <div class="vibe-add-actions">
                 <button type="button" class="vibe-mini-btn" id="vibeClearBtn">Clear playlist</button>
               </div>
               <div class="vibe-add-status" id="vibeAddStatus"></div>
             </div>
 
-            <div class="vibe-player-hint">100% local: nothing is uploaded, tracks play straight from the URLs you add. Playback only ever starts when you press play — never automatically.</div>
+            <div class="vibe-player-hint">100% local: nothing is ever uploaded anywhere — files you choose are stored only in this browser, and URL tracks stream straight from the link you add. Playback only ever starts when you press play — never automatically.</div>
           </div>
         </div>
 
