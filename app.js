@@ -1552,14 +1552,16 @@ async function loadVibeTrack(index, { autoplay = false } = {}) {
   const track = vibePlaylist[vibeTrackIndex];
   const loadToken = ++vibeLoadToken; // guards against a slow IndexedDB read landing after a newer skip/remove
 
-  if (vibeCurrentBlobUrl) { URL.revokeObjectURL(vibeCurrentBlobUrl); vibeCurrentBlobUrl = null; }
-
   let src = null;
   if (track.kind === 'file') {
     try {
       const blob = await vibeDbGet(track.dbId);
       if (loadToken !== vibeLoadToken) return; // superseded while we were awaiting
       if (!blob) throw new Error('File not found in local storage (it may have been cleared by the browser).');
+      // Only revoke the previous blob URL once the replacement is confirmed ready -- revoking it
+      // up front (before knowing whether this fetch would even succeed) could cut off whatever
+      // was still using it if this fetch failed partway through.
+      if (vibeCurrentBlobUrl) { URL.revokeObjectURL(vibeCurrentBlobUrl); vibeCurrentBlobUrl = null; }
       src = URL.createObjectURL(blob);
       vibeCurrentBlobUrl = src;
     } catch (err) {
@@ -1568,6 +1570,9 @@ async function loadVibeTrack(index, { autoplay = false } = {}) {
       return;
     }
   } else {
+    // Switching to a remote-URL track still needs to release any local file's blob URL that was
+    // playing before it -- otherwise it leaks (never gets revoked at all on this path).
+    if (vibeCurrentBlobUrl) { URL.revokeObjectURL(vibeCurrentBlobUrl); vibeCurrentBlobUrl = null; }
     src = track.src;
   }
 
@@ -1599,14 +1604,17 @@ vibeModeToggle?.addEventListener('click', () => {
   vibeModeToggle.setAttribute('aria-pressed', String(isExpanded));
 });
 
-vibePlayBtn?.addEventListener('click', () => {
+vibePlayBtn?.addEventListener('click', async () => {
   if (!vibeAudio) return;
   if (!vibePlaylist.length) {
     if (vibeAddPanel && vibeAddPanel.hidden) { vibeAddPanel.hidden = false; vibeAddToggle?.setAttribute('aria-expanded', 'true'); }
     if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'No playlist loaded yet — add a track URL below.';
     return;
   }
-  if (!vibeAudio.src) loadVibeTrack(vibeTrackIndex);
+  // loadVibeTrack is async (a file-kind track needs to await an IndexedDB read before `src` is
+  // set) -- calling it fire-and-forget and immediately checking .paused/.play() right after, as
+  // this used to do, raced ahead of that read and could try to play an element with no src yet.
+  if (!vibeAudio.src) { await loadVibeTrack(vibeTrackIndex, { autoplay: true }); return; }
   if (vibeAudio.paused) {
     vibeAudio.play().catch(() => {
       if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'Playback blocked — click play again.';
@@ -1632,7 +1640,10 @@ vibeAudio?.addEventListener('error', () => {
 });
 vibeAudio?.addEventListener('loadedmetadata', () => {
   if (vibeDurationEl) vibeDurationEl.textContent = formatVibeTime(vibeAudio.duration);
-  if (vibeProgress) vibeProgress.max = String(Math.floor(vibeAudio.duration) || 100);
+  // Some media reports an Infinity/NaN duration until more is buffered (or never, for certain
+  // streamed formats) -- Math.floor(Infinity) is still Infinity, and "Infinity" is not a valid
+  // <input type="range"> max, which silently breaks the seek bar. Guard with isFinite.
+  if (vibeProgress) vibeProgress.max = String(Number.isFinite(vibeAudio.duration) ? Math.floor(vibeAudio.duration) : 100);
 });
 vibeAudio?.addEventListener('timeupdate', () => {
   if (vibeIsSeeking) return;
@@ -1755,7 +1766,9 @@ function setVibeAddStatus(text, color) {
 
 vibeAddBtn?.addEventListener('click', () => {
   const raw = vibeAddInput?.value || '';
-  const candidates = raw.split(/[\n,]+/).map(s => s.trim()).filter(Boolean);
+  // Newline-only, not comma: the UI says "one URL per line", and splitting on commas too would
+  // corrupt any URL that legitimately contains one in its query string or path.
+  const candidates = raw.split(/\n+/).map(s => s.trim()).filter(Boolean);
   if (!candidates.length) { setVibeAddStatus('Paste at least one audio URL first.', 'var(--danger, #dc3545)'); return; }
 
   let added = 0, rejected = 0;
