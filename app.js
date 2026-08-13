@@ -1417,7 +1417,7 @@ document.getElementById('classicUiToggle')?.addEventListener('click', (event) =>
   toggle.setAttribute('aria-expanded', String(isExpanded));
 });
 
-// --- Vibe Mode: mood-refresher music player. Fully opt-in by design:
+// --- Vibe Mode: mood-refresher music player, powered entirely by Saaz Music. Fully opt-in by design:
 //   - The panel is collapsed until the user clicks "🎵 Vibe Mode".
 //   - Nothing is ever autoplayed — playback starts only from an explicit play click, even
 //     across reloads (we restore the playlist/volume/shuffle/repeat prefs, never audio.play()).
@@ -1426,9 +1426,6 @@ const VIBE_PLAYLIST_KEY = 'vibePlaylistV1';
 const VIBE_VOLUME_KEY = 'vibeVolume';
 const VIBE_SHUFFLE_KEY = 'vibeShuffle';
 const VIBE_REPEAT_KEY = 'vibeRepeat';
-const VIBE_DB_NAME = 'vibeFilesDB';
-const VIBE_DB_STORE = 'files';
-const AUDIO_EXT_RE = /\.(mp3|m4a|wav|ogg|opus|flac|aac|webm)(\?.*)?$/i;
 
 const vibeModeToggle = document.getElementById('vibeModeToggle');
 const vibePlayer = document.getElementById('vibePlayer');
@@ -1444,68 +1441,14 @@ const vibeRepeatBtn = document.getElementById('vibeRepeatBtn');
 const vibeTrackListEl = document.getElementById('vibeTrackList');
 const vibeAddToggle = document.getElementById('vibeAddToggle');
 const vibeAddPanel = document.getElementById('vibeAddPanel');
-const vibeAddInput = document.getElementById('vibeAddInput');
-const vibeAddBtn = document.getElementById('vibeAddBtn');
 const vibeClearBtn = document.getElementById('vibeClearBtn');
 const vibeAddStatus = document.getElementById('vibeAddStatus');
-const vibeTabFiles = document.getElementById('vibeTabFiles');
-const vibeTabUrl = document.getElementById('vibeTabUrl');
-const vibeFilesPanel = document.getElementById('vibeFilesPanel');
-const vibeUrlPanel = document.getElementById('vibeUrlPanel');
-const vibeFilePickerBtn = document.getElementById('vibeFilePickerBtn');
-const vibeFileInput = document.getElementById('vibeFileInput');
 
 let vibePlaylist = [];
 let vibeTrackIndex = 0;
 let vibeShuffle = false;
 let vibeRepeat = false; // repeat-one; playlist itself always loops via next/prev wraparound
 let vibeIsSeeking = false;
-let vibeCurrentBlobUrl = null; // revoked whenever a new local track's blob URL replaces it
-let vibeLoadToken = 0; // increments on every loadVibeTrack call to discard stale async results
-
-// --- IndexedDB: stores the actual audio file bytes for locally-added tracks (blob URLs alone
-// don't survive a reload, so this is what makes "add my downloaded playlist" persist). Falls
-// back to a rejected promise everywhere if IndexedDB is unavailable (very old/locked-down
-// browsers) so callers can show a real error instead of throwing. ---
-let vibeDbPromise = null;
-function openVibeDb() {
-  if (vibeDbPromise) return vibeDbPromise;
-  vibeDbPromise = new Promise((resolve, reject) => {
-    if (!window.indexedDB) { reject(new Error('This browser does not support local file storage.')); return; }
-    const req = indexedDB.open(VIBE_DB_NAME, 1);
-    req.onupgradeneeded = () => { req.result.createObjectStore(VIBE_DB_STORE, { keyPath: 'id', autoIncrement: true }); };
-    req.onsuccess = () => resolve(req.result);
-    req.onerror = () => reject(req.error || new Error('Could not open local storage for audio files.'));
-  });
-  return vibeDbPromise;
-}
-async function vibeDbPut(blob) {
-  const db = await openVibeDb();
-  return new Promise((resolve, reject) => {
-    const tx = db.transaction(VIBE_DB_STORE, 'readwrite');
-    const req = tx.objectStore(VIBE_DB_STORE).add({ blob });
-    req.onsuccess = () => resolve(req.result);
-    req.onerror = () => reject(req.error);
-  });
-}
-async function vibeDbGet(id) {
-  const db = await openVibeDb();
-  return new Promise((resolve, reject) => {
-    const tx = db.transaction(VIBE_DB_STORE, 'readonly');
-    const req = tx.objectStore(VIBE_DB_STORE).get(id);
-    req.onsuccess = () => resolve(req.result ? req.result.blob : null);
-    req.onerror = () => reject(req.error);
-  });
-}
-async function vibeDbDelete(id) {
-  const db = await openVibeDb();
-  return new Promise((resolve, reject) => {
-    const tx = db.transaction(VIBE_DB_STORE, 'readwrite');
-    const req = tx.objectStore(VIBE_DB_STORE).delete(id);
-    req.onsuccess = () => resolve();
-    req.onerror = () => reject(req.error);
-  });
-}
 
 function formatVibeTime(seconds) {
   if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
@@ -1514,26 +1457,15 @@ function formatVibeTime(seconds) {
   return `${m}:${s}`;
 }
 
-function deriveTrackTitle(url) {
-  try {
-    const u = new URL(url);
-    const last = decodeURIComponent(u.pathname.split('/').filter(Boolean).pop() || u.hostname);
-    return last.replace(/\.(mp3|m4a|wav|ogg|opus|flac|aac|webm)$/i, '').replace(/[-_]+/g, ' ').trim() || u.hostname;
-  } catch {
-    return url.slice(0, 40);
-  }
-}
-
 function saveVibePlaylist() { safeStorageSet(VIBE_PLAYLIST_KEY, JSON.stringify(vibePlaylist)); }
 function loadVibePlaylistFromStorage() {
   try {
     const raw = safeStorageGet(VIBE_PLAYLIST_KEY);
     const parsed = raw ? JSON.parse(raw) : [];
     if (!Array.isArray(parsed)) return [];
-    // A url-kind track needs `src`; a file-kind track needs `dbId` (the actual bytes live in
-    // IndexedDB, not localStorage, since localStorage can't hold binary data at any real size).
-    // Older entries saved before `kind` existed are treated as url-kind for backward compat.
-    return parsed.filter(t => t && ((t.kind === 'file' && typeof t.dbId === 'number') || (t.kind !== 'file' && typeof t.src === 'string')));
+    // Every track is a Saaz stream URL. Older entries from the retired local-file feature
+    // (kind: 'file') have no working src anymore, so they're dropped on load.
+    return parsed.filter(t => t && t.kind !== 'file' && typeof t.src === 'string');
   } catch {
     return [];
   }
@@ -1551,39 +1483,12 @@ function renderVibeTrackList() {
   `).join('');
 }
 
-// Async because a file-kind track has to fetch its bytes out of IndexedDB and turn them into a
-// blob URL before there's anything for <audio> to point at. url-kind tracks resolve instantly.
-async function loadVibeTrack(index, { autoplay = false } = {}) {
+function loadVibeTrack(index, { autoplay = false } = {}) {
   if (!vibePlaylist.length) return;
   vibeTrackIndex = ((index % vibePlaylist.length) + vibePlaylist.length) % vibePlaylist.length;
   const track = vibePlaylist[vibeTrackIndex];
-  const loadToken = ++vibeLoadToken; // guards against a slow IndexedDB read landing after a newer skip/remove
 
-  let src = null;
-  if (track.kind === 'file') {
-    try {
-      const blob = await vibeDbGet(track.dbId);
-      if (loadToken !== vibeLoadToken) return; // superseded while we were awaiting
-      if (!blob) throw new Error('File not found in local storage (it may have been cleared by the browser).');
-      // Only revoke the previous blob URL once the replacement is confirmed ready -- revoking it
-      // up front (before knowing whether this fetch would even succeed) could cut off whatever
-      // was still using it if this fetch failed partway through.
-      if (vibeCurrentBlobUrl) { URL.revokeObjectURL(vibeCurrentBlobUrl); vibeCurrentBlobUrl = null; }
-      src = URL.createObjectURL(blob);
-      vibeCurrentBlobUrl = src;
-    } catch (err) {
-      if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = `⚠️ Couldn't load "${track.title || 'this track'}" (${err.message}) — skipping.`;
-      if (vibePlaylist.length > 1) setTimeout(() => loadVibeTrack(nextVibeIndex(), { autoplay }), 800);
-      return;
-    }
-  } else {
-    // Switching to a remote-URL track still needs to release any local file's blob URL that was
-    // playing before it -- otherwise it leaks (never gets revoked at all on this path).
-    if (vibeCurrentBlobUrl) { URL.revokeObjectURL(vibeCurrentBlobUrl); vibeCurrentBlobUrl = null; }
-    src = track.src;
-  }
-
-  if (vibeAudio) vibeAudio.src = src;
+  if (vibeAudio) vibeAudio.src = track.src;
   if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = track.title || `Track ${vibeTrackIndex + 1}`;
   
   const coverContainer = document.getElementById('vibeCoverContainer');
@@ -1633,15 +1538,10 @@ function updateMiniVibeState() {
   }
 }
 
-let _saazPreloaded = false;
 vibeModeToggle?.addEventListener('click', () => {
   const isExpanded = vibePlayer.classList.toggle('expanded');
   vibeModeToggle.setAttribute('aria-expanded', String(isExpanded));
   vibeModeToggle.setAttribute('aria-pressed', String(isExpanded));
-  if (isExpanded && !_saazPreloaded) {
-    _saazPreloaded = true;
-    searchSaazMusic('lofi');
-  }
 });
 
 vibeAudio?.addEventListener('play', () => {
@@ -1685,6 +1585,30 @@ vibeProgress?.addEventListener('change', () => { if (vibeAudio) vibeAudio.curren
 document.getElementById('vibeNextBtn')?.addEventListener('click', () => { const wasPlaying = vibeAudio && !vibeAudio.paused; loadVibeTrack(nextVibeIndex(), { autoplay: wasPlaying }); });
 document.getElementById('vibePrevBtn')?.addEventListener('click', () => { const wasPlaying = vibeAudio && !vibeAudio.paused; loadVibeTrack(vibeTrackIndex - 1, { autoplay: wasPlaying }); });
 
+// Play/pause toggle - delegated on document because #miniVibePlayBtn lives inside canvas.innerHTML
+// and gets torn down/rebuilt on every question switch, so a direct listener on it would go stale.
+async function toggleVibePlayback() {
+  if (!vibeAudio) return;
+  if (!vibePlaylist.length) {
+    if (vibeAddPanel && vibeAddPanel.hidden) { vibeAddPanel.hidden = false; vibeAddToggle?.setAttribute('aria-expanded', 'true'); }
+    if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'No playlist loaded yet — search Saaz or add a track below.';
+    return;
+  }
+  if (!vibeAudio.src) { await loadVibeTrack(vibeTrackIndex, { autoplay: true }); return; }
+  if (vibeAudio.paused) {
+    vibeAudio.play().catch(() => {
+      if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'Playback blocked — click play again.';
+    });
+  } else {
+    vibeAudio.pause();
+  }
+}
+document.addEventListener('click', (e) => {
+  if (e.target.closest('#vibePlayBtn') || e.target.closest('#miniVibePlayBtn') || e.target.closest('#miniVibeWidget')) {
+    toggleVibePlayback();
+  }
+});
+
 vibeShuffleBtn?.addEventListener('click', () => {
   vibeShuffle = !vibeShuffle;
   safeStorageSet(VIBE_SHUFFLE_KEY, String(vibeShuffle));
@@ -1708,13 +1632,9 @@ vibeTrackListEl?.addEventListener('click', (event) => {
   if (removeIdx !== undefined) {
     const idx = Number(removeIdx);
     const wasCurrent = idx === vibeTrackIndex;
-    const [removed] = vibePlaylist.splice(idx, 1);
+    vibePlaylist.splice(idx, 1);
     saveVibePlaylist();
-    // Local files also need their bytes deleted from IndexedDB, or removed tracks would just
-    // keep silently accumulating storage forever.
-    if (removed?.kind === 'file' && typeof removed.dbId === 'number') vibeDbDelete(removed.dbId).catch(() => {});
     if (!vibePlaylist.length) {
-      if (vibeCurrentBlobUrl) { URL.revokeObjectURL(vibeCurrentBlobUrl); vibeCurrentBlobUrl = null; }
       vibeAudio?.pause();
       if (vibeAudio) vibeAudio.removeAttribute('src');
       if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'No playlist loaded yet';
@@ -1733,56 +1653,54 @@ vibeTrackListEl?.addEventListener('click', (event) => {
   }
 });
 
-const vibeTabSaaz = document.getElementById('vibeTabSaaz');
-const vibeSaazPanel = document.getElementById('vibeSaazPanel');
-const vibeTabPresets = document.getElementById('vibeTabPresets');
-const vibePresetsPanel = document.getElementById('vibePresetsPanel');
 const vibeSaazSearchInput = document.getElementById('vibeSaazSearchInput');
 const vibeSaazSearchBtn = document.getElementById('vibeSaazSearchBtn');
 const vibeSaazResults = document.getElementById('vibeSaazResults');
 
-function updateVibeTabSelection(tabName) {
-  const tabs = [
-    { btn: vibeTabSaaz, panel: vibeSaazPanel, name: 'saaz' },
-    { btn: vibeTabPresets, panel: vibePresetsPanel, name: 'presets' },
-    { btn: vibeTabFiles, panel: vibeFilesPanel, name: 'files' },
-    { btn: vibeTabUrl, panel: vibeUrlPanel, name: 'url' }
-  ];
-  tabs.forEach(t => {
-    if (!t.btn) return;
-    const isCurrent = t.name === tabName;
-    t.btn.classList.toggle('active', isCurrent);
-    t.btn.setAttribute('aria-selected', String(isCurrent));
-    if (t.panel) t.panel.hidden = !isCurrent;
-  });
+// Saaz Music API Search Integration (Multi-Mirror & CORS Fallback)
+const SAAZ_PROXY_ORDER_KEY = 'vibeSaazProxyOrder';
+const SAAZ_FETCH_TIMEOUT_MS = 6000;
+
+function fetchWithTimeout(url, ms) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), ms);
+  return fetch(url, { signal: controller.signal }).finally(() => clearTimeout(timer));
 }
 
-vibeTabSaaz?.addEventListener('click', () => updateVibeTabSelection('saaz'));
-vibeTabPresets?.addEventListener('click', () => updateVibeTabSelection('presets'));
-vibeTabFiles?.addEventListener('click', () => updateVibeTabSelection('files'));
-vibeTabUrl?.addEventListener('click', () => updateVibeTabSelection('url'));
-
-// Saaz Music API Search Integration (Multi-Mirror & CORS Fallback)
-async function searchSaazMusic(query) {
+let _vibeSaazSearchToken = 0;
+async function searchSaazMusic(query, { isRetry = false, _token } = {}) {
   const q = (query || '').trim();
   if (!q) return;
   if (!vibeSaazResults) return;
-  vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">Searching Saaz music for "${escapeHtml(q)}"...</div>`;
-  
+  const token = _token ?? ++_vibeSaazSearchToken;
+  vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🔎 Searching Saaz music for "${escapeHtml(q)}"...</div>`;
+
   const enc = encodeURIComponent(q);
   const targetUrl = `https://saaz-next.vercel.app/api/search/songs?q=${enc}`;
-  const endpoints = [
-    targetUrl,
-    `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`,
-    `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`
-  ];
+  const buildEndpoints = () => ({
+    direct: targetUrl,
+    allorigins: `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`,
+    corsproxy: `https://corsproxy.io/?url=${encodeURIComponent(targetUrl)}`,
+    isomorphic: `https://cors-anywhere.herokuapp.com/${targetUrl}`,
+    thingproxy: `https://thingproxy.freeboard.io/fetch/${targetUrl}`,
+  });
+  const endpoints = buildEndpoints();
+
+  // Try last-known-working mirror first, then the rest, so a working proxy
+  // doesn't get starved behind ones that are currently down/rate-limited.
+  let order = Object.keys(endpoints);
+  const lastGood = localStorage.getItem(SAAZ_PROXY_ORDER_KEY);
+  if (lastGood && order.includes(lastGood)) {
+    order = [lastGood, ...order.filter(k => k !== lastGood)];
+  }
 
   let songs = [];
   let lastError = null;
+  let workingKey = null;
 
-  for (const ep of endpoints) {
+  for (const key of order) {
     try {
-      const res = await fetch(ep);
+      const res = await fetchWithTimeout(endpoints[key], SAAZ_FETCH_TIMEOUT_MS);
       if (!res.ok) continue;
       const text = await res.text();
       let json = JSON.parse(text);
@@ -1790,25 +1708,52 @@ async function searchSaazMusic(query) {
         try { json = JSON.parse(json.contents); } catch {}
       }
       songs = json.data?.results || json.data?.songs || (Array.isArray(json.data) ? json.data : []);
-      if (Array.isArray(songs) && songs.length) break;
+      if (Array.isArray(songs) && songs.length) {
+        workingKey = key;
+        break;
+      }
     } catch (err) {
       lastError = err;
     }
   }
 
+  if (workingKey) {
+    localStorage.setItem(SAAZ_PROXY_ORDER_KEY, workingKey);
+  }
+
+  // A newer keystroke started a fresher search while this one was in flight - drop this result.
+  if (token !== _vibeSaazSearchToken) return;
+
   if (!songs || !songs.length) {
-    vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--warning);padding:8px 0;">No songs found for "${escapeHtml(q)}". Try another query or check internet connection!</div>`;
+    // One automatic retry after a short delay - transient proxy hiccups are common.
+    if (!isRetry) {
+      await new Promise(r => setTimeout(r, 1200));
+      if (token !== _vibeSaazSearchToken) return;
+      return searchSaazMusic(query, { isRetry: true, _token: token });
+    }
+    vibeSaazResults.innerHTML = `
+      <div style="font-size:11px;color:var(--warning);padding:8px 0;">
+        ⚠️ Couldn't reach Saaz music right now (all mirrors failed${lastError ? ` — ${escapeHtml(lastError.message || String(lastError))}` : ''}).
+        This depends on a free public music API that occasionally goes down or rate-limits. Try again in a moment.
+      </div>
+      <button type="button" id="vibeSaazRetryBtn" class="vibe-mini-btn" style="margin-top:6px;">🔄 Retry search</button>
+    `;
+    document.getElementById('vibeSaazRetryBtn')?.addEventListener('click', () => searchSaazMusic(query));
     return;
   }
-  
-  vibeSaazResults.innerHTML = songs.slice(0, 15).map((song, i) => {
+
+  renderSaazSongList(songs);
+}
+
+function renderSaazSongList(songs, { limit = 15 } = {}) {
+  vibeSaazResults.innerHTML = songs.slice(0, limit).map((song, i) => {
     const title = song.name || song.title || `Song ${i + 1}`;
     const artist = song.primaryArtists || song.singers || (Array.isArray(song.artists) ? song.artists.map(a => a.name).join(', ') : '') || 'Unknown Artist';
     const thumb = song.image?.[1]?.link || song.image?.[1]?.url || song.image?.[0]?.link || song.image?.[0]?.url || 'https://saaz-next.vercel.app/saaz.png';
     const highResArt = song.image?.[song.image.length - 1]?.link || song.image?.[song.image.length - 1]?.url || thumb;
     const downloadUrls = song.downloadUrl || [];
     const streamUrl = downloadUrls[downloadUrls.length - 1]?.link || downloadUrls[downloadUrls.length - 1]?.url || downloadUrls[0]?.link || downloadUrls[0]?.url || '';
-    
+
     return `
       <div class="vibe-saaz-item" data-saaz-src="${escapeHtml(streamUrl)}" data-saaz-title="${escapeHtml(title + ' - ' + artist)}" data-saaz-art="${escapeHtml(highResArt)}">
         <img class="vibe-saaz-thumb" src="${escapeHtml(thumb)}" alt="" loading="lazy" />
@@ -1822,6 +1767,70 @@ async function searchSaazMusic(query) {
   }).join('');
 }
 
+// Live "Top 50" chart - fetched dynamically from Saaz's own India Superhits Top 50
+// editorial playlist, same proxy-fallback path as search. Never auto-loads; only on click.
+const SAAZ_TOP_PLAYLIST_ID = '1134548194'; // "India Superhits Top 50"
+async function loadSaazTopChart({ isRetry = false } = {}) {
+  if (!vibeSaazResults) return;
+  vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🔥 Loading Saaz Top 50...</div>`;
+
+  const targetUrl = `https://saaz-next.vercel.app/api/playlist/${SAAZ_TOP_PLAYLIST_ID}`;
+  const endpoints = {
+    direct: targetUrl,
+    allorigins: `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`,
+    corsproxy: `https://corsproxy.io/?url=${encodeURIComponent(targetUrl)}`,
+    isomorphic: `https://cors-anywhere.herokuapp.com/${targetUrl}`,
+    thingproxy: `https://thingproxy.freeboard.io/fetch/${targetUrl}`,
+  };
+  let order = Object.keys(endpoints);
+  const lastGood = localStorage.getItem(SAAZ_PROXY_ORDER_KEY);
+  if (lastGood && order.includes(lastGood)) {
+    order = [lastGood, ...order.filter(k => k !== lastGood)];
+  }
+
+  let songs = [];
+  let lastError = null;
+  let workingKey = null;
+
+  for (const key of order) {
+    try {
+      const res = await fetchWithTimeout(endpoints[key], SAAZ_FETCH_TIMEOUT_MS);
+      if (!res.ok) continue;
+      const text = await res.text();
+      let json = JSON.parse(text);
+      if (json && json.contents) {
+        try { json = JSON.parse(json.contents); } catch {}
+      }
+      songs = json.data?.songs || [];
+      if (Array.isArray(songs) && songs.length) {
+        workingKey = key;
+        break;
+      }
+    } catch (err) {
+      lastError = err;
+    }
+  }
+
+  if (workingKey) localStorage.setItem(SAAZ_PROXY_ORDER_KEY, workingKey);
+
+  if (!songs || !songs.length) {
+    if (!isRetry) {
+      await new Promise(r => setTimeout(r, 1200));
+      return loadSaazTopChart({ isRetry: true });
+    }
+    vibeSaazResults.innerHTML = `
+      <div style="font-size:11px;color:var(--warning);padding:8px 0;">
+        ⚠️ Couldn't load the Top 50 chart right now (all mirrors failed${lastError ? ` — ${escapeHtml(lastError.message || String(lastError))}` : ''}).
+      </div>
+      <button type="button" id="vibeSaazTopRetryBtn" class="vibe-mini-btn" style="margin-top:6px;">🔄 Retry</button>
+    `;
+    document.getElementById('vibeSaazTopRetryBtn')?.addEventListener('click', () => loadSaazTopChart());
+    return;
+  }
+
+  renderSaazSongList(songs, { limit: 50 });
+}
+
 vibeSaazSearchBtn?.addEventListener('click', () => {
   searchSaazMusic(vibeSaazSearchInput?.value);
 });
@@ -1830,13 +1839,17 @@ vibeSaazSearchInput?.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') searchSaazMusic(vibeSaazSearchInput.value);
 });
 
-document.querySelector('.vibe-saaz-tags')?.addEventListener('click', (e) => {
-  const tagBtn = e.target.closest('[data-tag-query]');
-  if (!tagBtn) return;
-  const q = tagBtn.dataset.tagQuery;
-  if (vibeSaazSearchInput) vibeSaazSearchInput.value = q;
-  searchSaazMusic(q);
+// Live search-as-you-type, debounced, matching Saaz's own site behavior -
+// no need to press Enter or click Search for common queries.
+let _vibeSaazSearchTimer = null;
+vibeSaazSearchInput?.addEventListener('input', () => {
+  clearTimeout(_vibeSaazSearchTimer);
+  const q = vibeSaazSearchInput.value.trim();
+  if (q.length < 2) return;
+  _vibeSaazSearchTimer = setTimeout(() => searchSaazMusic(q), 450);
 });
+
+document.getElementById('vibeSaazTopBtn')?.addEventListener('click', () => loadSaazTopChart());
 
 vibeSaazResults?.addEventListener('click', async (e) => {
   const item = e.target.closest('[data-saaz-src]');
@@ -1858,22 +1871,6 @@ vibeSaazResults?.addEventListener('click', async (e) => {
   await loadVibeTrack(existingIndex, { autoplay: true });
 });
 
-// Handle clicking on preset focus channel buttons
-vibePresetsPanel?.addEventListener('click', async (e) => {
-  const btn = e.target.closest('[data-preset-src]');
-  if (!btn) return;
-  const src = btn.dataset.presetSrc;
-  const title = btn.dataset.presetTitle || 'Focus Channel';
-  
-  let existingIndex = vibePlaylist.findIndex(t => t.src === src);
-  if (existingIndex < 0) {
-    vibePlaylist.push({ kind: 'url', title, src });
-    saveVibePlaylist();
-    existingIndex = vibePlaylist.length - 1;
-  }
-  await loadVibeTrack(existingIndex, { autoplay: true });
-});
-
 function updateVibeProfileBadge(email) {
   const userNameEl = document.getElementById('vibeUserName');
   if (!userNameEl) return;
@@ -1884,41 +1881,6 @@ function updateVibeProfileBadge(email) {
     userNameEl.textContent = 'Focus Session';
   }
 }
-
-// File picker: reads local files straight from disk (no upload anywhere) and stores each one's
-// bytes in IndexedDB so "add my downloaded playlist" actually persists across reloads, not just
-// for the current tab session the way a bare blob URL would.
-vibeFilePickerBtn?.addEventListener('click', () => vibeFileInput?.click());
-vibeFileInput?.addEventListener('change', async () => {
-  const files = Array.from(vibeFileInput.files || []);
-  if (!files.length) return;
-  const nonAudio = files.filter(f => f.type && !f.type.startsWith('audio/') && !AUDIO_EXT_RE.test(f.name));
-  const usable = files.filter(f => !nonAudio.includes(f));
-
-  let added = 0;
-  setVibeAddStatus(`Storing ${usable.length} file(s)…`);
-  try {
-    for (const file of usable) {
-      const dbId = await vibeDbPut(file);
-      vibePlaylist.push({
-        title: file.name.replace(/\.(mp3|m4a|wav|ogg|opus|flac|aac|webm)$/i, '').replace(/[-_]+/g, ' ').trim() || file.name,
-        kind: 'file',
-        dbId
-      });
-      added++;
-    }
-    saveVibePlaylist();
-    renderVibeTrackList();
-    if (vibePlaylist.length === added) loadVibeTrack(0); // first tracks ever added -> cue but don't play
-    setVibeAddStatus(
-      nonAudio.length > 0 ? `Added ${added} file(s), skipped ${nonAudio.length} non-audio file(s).` : `✅ Added ${added} file(s) from your computer.`
-    );
-  } catch (err) {
-    setVibeAddStatus(`⚠️ Could not store files locally: ${err.message}`, 'var(--danger, #dc3545)');
-  } finally {
-    vibeFileInput.value = ''; // allow re-selecting the same file(s) later
-  }
-});
 
 vibeAddToggle?.addEventListener('click', () => {
   const isHidden = vibeAddPanel.hidden;
@@ -1932,40 +1894,10 @@ function setVibeAddStatus(text, color) {
   vibeAddStatus.style.color = color || '';
 }
 
-vibeAddBtn?.addEventListener('click', () => {
-  const raw = vibeAddInput?.value || '';
-  // Newline-only, not comma: the UI says "one URL per line", and splitting on commas too would
-  // corrupt any URL that legitimately contains one in its query string or path.
-  const candidates = raw.split(/\n+/).map(s => s.trim()).filter(Boolean);
-  if (!candidates.length) { setVibeAddStatus('Paste at least one audio URL first.', 'var(--danger, #dc3545)'); return; }
-
-  let added = 0, rejected = 0;
-  for (const url of candidates) {
-    let parsed;
-    try { parsed = new URL(url); } catch { rejected++; continue; }
-    if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') { rejected++; continue; }
-    vibePlaylist.push({ title: deriveTrackTitle(url), kind: 'url', src: url });
-    added++;
-  }
-  if (added > 0) {
-    saveVibePlaylist();
-    renderVibeTrackList();
-    if (vibeAddInput) vibeAddInput.value = '';
-    if (vibePlaylist.length === added) loadVibeTrack(0); // first tracks ever added -> cue but don't play
-  }
-  setVibeAddStatus(
-    rejected > 0 ? `Added ${added} track(s), skipped ${rejected} invalid URL(s).` : `✅ Added ${added} track(s).`,
-    rejected > 0 && added === 0 ? 'var(--danger, #dc3545)' : ''
-  );
-});
-
 vibeClearBtn?.addEventListener('click', () => {
-  const fileTracks = vibePlaylist.filter(t => t.kind === 'file' && typeof t.dbId === 'number');
   vibePlaylist = [];
   vibeTrackIndex = 0;
   saveVibePlaylist();
-  Promise.all(fileTracks.map(t => vibeDbDelete(t.dbId).catch(() => {}))); // free the stored bytes
-  if (vibeCurrentBlobUrl) { URL.revokeObjectURL(vibeCurrentBlobUrl); vibeCurrentBlobUrl = null; }
   vibeAudio?.pause();
   if (vibeAudio) vibeAudio.removeAttribute('src');
   if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'No playlist loaded yet';

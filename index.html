@@ -167,62 +167,15 @@
 
             <ol class="vibe-track-list" id="vibeTrackList" hidden></ol>
 
-            <button type="button" class="vibe-add-toggle" id="vibeAddToggle" aria-expanded="false">+ Add tracks / Saaz Music Search</button>
+            <button type="button" class="vibe-add-toggle" id="vibeAddToggle" aria-expanded="false">+ Search Saaz Music</button>
             <div class="vibe-add-panel" id="vibeAddPanel" hidden>
-              <div class="vibe-add-tabs" role="tablist">
-                <button type="button" class="vibe-add-tab active" id="vibeTabSaaz" data-tab="saaz" role="tab" aria-selected="true">🎵 Saaz Music</button>
-                <button type="button" class="vibe-add-tab" id="vibeTabPresets" data-tab="presets" role="tab" aria-selected="false">🎧 Focus Presets</button>
-                <button type="button" class="vibe-add-tab" id="vibeTabFiles" data-tab="files" role="tab" aria-selected="false">📂 Local Files</button>
-                <button type="button" class="vibe-add-tab" id="vibeTabUrl" data-tab="url" role="tab" aria-selected="false">🔗 Custom URL</button>
+              <div class="vibe-saaz-search-row">
+                <input type="text" id="vibeSaazSearchInput" class="vibe-add-input" placeholder="Search millions of songs on Saaz…" style="margin-bottom: 0;">
+                <button type="button" class="vibe-mini-btn vibe-mini-btn-primary" id="vibeSaazSearchBtn">Search</button>
               </div>
-
-              <!-- Saaz Music Search Panel -->
-              <div class="vibe-add-tab-panel" id="vibeSaazPanel" role="tabpanel">
-                <div class="vibe-saaz-search-row">
-                  <input type="text" id="vibeSaazSearchInput" class="vibe-add-input" placeholder="Search millions of songs on Saaz…" style="margin-bottom: 0;">
-                  <button type="button" class="vibe-mini-btn vibe-mini-btn-primary" id="vibeSaazSearchBtn">Search</button>
-                </div>
-                <div class="vibe-saaz-tags">
-                  <button type="button" class="vibe-tag" data-tag-query="lofi">🔥 Lofi</button>
-                  <button type="button" class="vibe-tag" data-tag-query="synthwave">⚡ Synthwave</button>
-                  <button type="button" class="vibe-tag" data-tag-query="chillhop">☕ Chillhop</button>
-                  <button type="button" class="vibe-tag" data-tag-query="arijit singh">🎧 Arijit</button>
-                  <button type="button" class="vibe-tag" data-tag-query="seedhe maut">🚀 Seedhe Maut</button>
-                </div>
-                <div class="vibe-saaz-results" id="vibeSaazResults"></div>
-              </div>
-
-              <!-- Focus Presets Panel -->
-              <div class="vibe-add-tab-panel" id="vibePresetsPanel" role="tabpanel" hidden>
-                <div class="vibe-preset-grid">
-                  <button type="button" class="vibe-preset-btn" data-preset-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" data-preset-title="Lo-Fi Chill Beats">
-                    <span class="vibe-preset-title">🎧 Lo-Fi Chill Beats</span>
-                    <span class="vibe-preset-sub">Deep Focus & Study</span>
-                  </button>
-                  <button type="button" class="vibe-preset-btn" data-preset-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" data-preset-title="Cyberpunk Coding Flow">
-                    <span class="vibe-preset-title">⚡ Cyberpunk Coding</span>
-                    <span class="vibe-preset-sub">Fast Problem Solving</span>
-                  </button>
-                  <button type="button" class="vibe-preset-btn" data-preset-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" data-preset-title="Synthwave Drive">
-                    <span class="vibe-preset-title">🌆 Synthwave Drive</span>
-                    <span class="vibe-preset-sub">Late Night Sessions</span>
-                  </button>
-                  <button type="button" class="vibe-preset-btn" data-preset-src="https://raw.githubusercontent.com/rafaelreis-hotmart/Audio-Sample-files/master/sample.mp3" data-preset-title="Deep Ambient Focus">
-                    <span class="vibe-preset-title">🌊 Ambient Space</span>
-                    <span class="vibe-preset-sub">Zero-Distraction Flow</span>
-                  </button>
-                </div>
-              </div>
-
-              <div class="vibe-add-tab-panel" id="vibeFilesPanel" role="tabpanel" hidden>
-                <button type="button" class="vibe-mini-btn vibe-mini-btn-primary vibe-file-picker-btn" id="vibeFilePickerBtn">📂 Choose audio files from your computer</button>
-                <input type="file" id="vibeFileInput" accept="audio/*" multiple hidden>
-                <p class="vibe-add-note">Pick any .mp3/.m4a/.wav/.ogg files from your Downloads folder. Stored 100% locally in this browser.</p>
-              </div>
-
-              <div class="vibe-add-tab-panel" id="vibeUrlPanel" role="tabpanel" hidden>
-                <textarea id="vibeAddInput" class="vibe-add-input" rows="3" placeholder="Paste direct audio URLs (.mp3/.m4a/.wav/.ogg) — e.g. GitHub raw link, Dropbox, etc."></textarea>
-                <button type="button" class="vibe-mini-btn vibe-mini-btn-primary" id="vibeAddBtn">Add to playlist</button>
+              <button type="button" class="vibe-mini-btn vibe-saaz-top-btn" id="vibeSaazTopBtn">🔥 Load Saaz Top 50</button>
+              <div class="vibe-saaz-results" id="vibeSaazResults">
+                <div class="vibe-saaz-empty">🎵 Search any song, artist, or mood, or load the live Top 50 above — results stream in here.</div>
               </div>
 
               <div class="vibe-add-actions">
@@ -231,7 +184,7 @@
               <div class="vibe-add-status" id="vibeAddStatus"></div>
             </div>
 
-            <div class="vibe-player-hint">100% local: stream focus channels or your local files. Playback starts only when you click play.</div>
+            <div class="vibe-player-hint">Powered by Saaz Music. Playback starts only when you click play.</div>
           </div>
         </div>
 
