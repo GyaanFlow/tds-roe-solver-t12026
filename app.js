@@ -1506,6 +1506,7 @@ function loadVibeTrack(index, { autoplay = false } = {}) {
   if (vibeCurrentTimeEl) vibeCurrentTimeEl.textContent = '0:00';
   if (vibeDurationEl) vibeDurationEl.textContent = '0:00';
   renderVibeTrackList();
+  updateSaazResultsHighlight();
   if (autoplay && vibeAudio) {
     vibeAudio.play().catch(() => {
       if (vibePlayerTrackLabel) vibePlayerTrackLabel.textContent = 'Playback blocked — click play again.';
@@ -1538,6 +1539,20 @@ function updateMiniVibeState() {
   }
 }
 
+// Highlights whichever Saaz result matches the currently-loaded track, and swaps its ▶ for a
+// ⏸/pulse indicator while playing, so the results list gives feedback on what's already queued/playing.
+function updateSaazResultsHighlight() {
+  if (!vibeSaazResults) return;
+  const currentSrc = vibePlaylist[vibeTrackIndex]?.src;
+  const isPlaying = vibeAudio && !vibeAudio.paused;
+  vibeSaazResults.querySelectorAll('.vibe-saaz-item').forEach(item => {
+    const isCurrent = !!currentSrc && item.dataset.saazSrc === currentSrc;
+    item.classList.toggle('active', isCurrent);
+    const icon = item.querySelector('.vibe-saaz-play-icon');
+    if (icon) icon.textContent = isCurrent && isPlaying ? '⏸' : '▶';
+  });
+}
+
 vibeModeToggle?.addEventListener('click', () => {
   const isExpanded = vibePlayer.classList.toggle('expanded');
   vibeModeToggle.setAttribute('aria-expanded', String(isExpanded));
@@ -1548,11 +1563,13 @@ vibeAudio?.addEventListener('play', () => {
   if (vibePlayBtn) vibePlayBtn.textContent = '⏸';
   document.getElementById('vibeEqAnim')?.classList.add('playing');
   updateMiniVibeState();
+  updateSaazResultsHighlight();
 });
 vibeAudio?.addEventListener('pause', () => {
   if (vibePlayBtn) vibePlayBtn.textContent = '▶';
   document.getElementById('vibeEqAnim')?.classList.remove('playing');
   updateMiniVibeState();
+  updateSaazResultsHighlight();
 });
 vibeAudio?.addEventListener('ended', () => {
   if (vibeRepeat) { loadVibeTrack(vibeTrackIndex, { autoplay: true }); return; }
@@ -1667,12 +1684,15 @@ function fetchWithTimeout(url, ms) {
   return fetch(url, { signal: controller.signal }).finally(() => clearTimeout(timer));
 }
 
-let _vibeSaazSearchToken = 0;
+// Shared by both search and the Top 50 chart, since they render into the same results panel -
+// a slow response from one must not be allowed to clobber a newer result from the other.
+let _vibeSaazResultsToken = 0;
+
 async function searchSaazMusic(query, { isRetry = false, _token } = {}) {
   const q = (query || '').trim();
   if (!q) return;
   if (!vibeSaazResults) return;
-  const token = _token ?? ++_vibeSaazSearchToken;
+  const token = _token ?? ++_vibeSaazResultsToken;
   vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🔎 Searching Saaz music for "${escapeHtml(q)}"...</div>`;
 
   const enc = encodeURIComponent(q);
@@ -1722,13 +1742,13 @@ async function searchSaazMusic(query, { isRetry = false, _token } = {}) {
   }
 
   // A newer keystroke started a fresher search while this one was in flight - drop this result.
-  if (token !== _vibeSaazSearchToken) return;
+  if (token !== _vibeSaazResultsToken) return;
 
   if (!songs || !songs.length) {
     // One automatic retry after a short delay - transient proxy hiccups are common.
     if (!isRetry) {
       await new Promise(r => setTimeout(r, 1200));
-      if (token !== _vibeSaazSearchToken) return;
+      if (token !== _vibeSaazResultsToken) return;
       return searchSaazMusic(query, { isRetry: true, _token: token });
     }
     vibeSaazResults.innerHTML = `
@@ -1761,17 +1781,19 @@ function renderSaazSongList(songs, { limit = 15 } = {}) {
           <div class="vibe-saaz-name">${escapeHtml(title)}</div>
           <div class="vibe-saaz-artist">${escapeHtml(artist)}</div>
         </div>
-        <span style="font-size:11px;color:var(--theme-primary, #f59e0b);">▶</span>
+        <span class="vibe-saaz-play-icon">▶</span>
       </div>
     `;
   }).join('');
+  updateSaazResultsHighlight();
 }
 
 // Live "Top 50" chart - fetched dynamically from Saaz's own India Superhits Top 50
 // editorial playlist, same proxy-fallback path as search. Never auto-loads; only on click.
 const SAAZ_TOP_PLAYLIST_ID = '1134548194'; // "India Superhits Top 50"
-async function loadSaazTopChart({ isRetry = false } = {}) {
+async function loadSaazTopChart({ isRetry = false, _token } = {}) {
   if (!vibeSaazResults) return;
+  const token = _token ?? ++_vibeSaazResultsToken;
   vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🔥 Loading Saaz Top 50...</div>`;
 
   const targetUrl = `https://saaz-next.vercel.app/api/playlist/${SAAZ_TOP_PLAYLIST_ID}`;
@@ -1813,10 +1835,14 @@ async function loadSaazTopChart({ isRetry = false } = {}) {
 
   if (workingKey) localStorage.setItem(SAAZ_PROXY_ORDER_KEY, workingKey);
 
+  // A newer search or another Top 50 click started while this one was in flight - drop this result.
+  if (token !== _vibeSaazResultsToken) return;
+
   if (!songs || !songs.length) {
     if (!isRetry) {
       await new Promise(r => setTimeout(r, 1200));
-      return loadSaazTopChart({ isRetry: true });
+      if (token !== _vibeSaazResultsToken) return;
+      return loadSaazTopChart({ isRetry: true, _token: token });
     }
     vibeSaazResults.innerHTML = `
       <div style="font-size:11px;color:var(--warning);padding:8px 0;">

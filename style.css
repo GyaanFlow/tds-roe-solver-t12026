@@ -2298,6 +2298,36 @@ body {
 
 /* Vibe Mode — mood-refresher music player, collapsed by default like the Classic UI picker. */
 .vibe-mode-section { margin-top: 14px; }
+.vibe-mode-toggle {
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 12px !important;
+  border-radius: 10px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--theme-primary) 18%, transparent), color-mix(in srgb, var(--theme-secondary, var(--theme-primary)) 10%, transparent)) !important;
+  border: 1px solid color-mix(in srgb, var(--theme-primary) 35%, transparent) !important;
+  color: var(--text-primary) !important;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-transform: none;
+  box-shadow: 0 0 0 1px transparent, 0 4px 14px color-mix(in srgb, var(--theme-primary) 10%, transparent);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.vibe-mode-toggle:hover {
+  transform: translateY(-1px);
+  border-color: var(--theme-primary) !important;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--theme-primary) 40%, transparent), 0 6px 18px color-mix(in srgb, var(--theme-primary) 20%, transparent);
+  color: var(--text-primary) !important;
+}
+.vibe-mode-toggle .theme-group-toggle-arrow {
+  font-size: 12px;
+  color: var(--theme-primary);
+  margin-left: auto;
+}
+.vibe-mode-toggle[aria-expanded="true"] {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--theme-primary) 26%, transparent), color-mix(in srgb, var(--theme-secondary, var(--theme-primary)) 14%, transparent)) !important;
+  border-color: var(--theme-primary) !important;
+}
 .vibe-player {
   display: flex;
   flex-direction: column;
@@ -2306,6 +2336,32 @@ body {
   border-radius: 10px;
   background: var(--bg-tertiary, rgba(255, 255, 255, 0.04));
   border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+}
+/* .vibe-player's own `display: flex` above would otherwise silently win over the generic
+   `.theme-buttons-container-collapsed` grid-rows collapse trick (same specificity, later in the
+   cascade), leaving the panel visually "collapsed" but still taking its full expanded height.
+   This compound selector has higher specificity so it always wins, and collapses via max-height
+   instead, which plays fine with flex. */
+.vibe-player.theme-buttons-container-collapsed {
+  display: flex;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  transition: max-height 0.25s ease, opacity 0.2s ease, margin-top 0.25s ease, padding 0.25s ease, border-width 0.2s ease;
+}
+.vibe-player.theme-buttons-container-collapsed:not(.expanded) { pointer-events: none; }
+.vibe-player.theme-buttons-container-collapsed.expanded {
+  max-height: 2000px; /* generous cap: search results + full track list can get tall */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-width: 1px;
+  overflow: visible;
+  opacity: 1;
+  margin-top: 8px;
 }
 .vibe-player-track {
   font-size: 11.5px;
@@ -2548,11 +2604,21 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, border-color 0.2s;
 }
 .vibe-saaz-item:hover {
-  background: rgba(245, 158, 11, 0.12);
-  border-color: rgba(245, 158, 11, 0.3);
+  background: color-mix(in srgb, var(--theme-primary) 12%, transparent);
+  border-color: color-mix(in srgb, var(--theme-primary) 30%, transparent);
+}
+.vibe-saaz-item.active {
+  background: color-mix(in srgb, var(--theme-primary) 18%, transparent);
+  border-color: var(--theme-primary);
+}
+.vibe-saaz-item.active .vibe-saaz-name { color: var(--theme-primary); }
+.vibe-saaz-play-icon {
+  font-size: 11px;
+  color: var(--theme-primary);
+  flex-shrink: 0;
 }
 .vibe-saaz-thumb {
   width: 32px;
