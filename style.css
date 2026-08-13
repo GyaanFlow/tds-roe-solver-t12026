@@ -2495,7 +2495,32 @@ body {
 }
 .vibe-mini-btn-primary { background: var(--theme-primary); color: #1a1a1a; border-color: transparent; font-weight: 600; }
 .vibe-mini-btn:hover { filter: brightness(1.1); }
-.vibe-saaz-top-btn { width: 100%; margin: 6px 0; text-align: center; }
+.vibe-saaz-moods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 6px 0;
+}
+.vibe-mood-chip {
+  background: var(--bg-secondary, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  color: var(--text-secondary);
+  border-radius: 12px;
+  padding: 4px 9px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.vibe-mood-chip:hover {
+  border-color: var(--theme-primary);
+  color: var(--text-primary);
+}
+.vibe-mood-chip.active {
+  background: var(--theme-primary);
+  border-color: transparent;
+  color: #1a1a1a;
+}
 .vibe-add-status {
   font-size: 10px;
   min-height: 12px;
@@ -2645,6 +2670,12 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: fit-content;
+  max-width: 100%;
+}
+.vibe-saaz-artist:hover {
+  color: var(--theme-primary);
+  text-decoration: underline;
 }
 
 /* Floating Mini-Player Widget in Workspace Header */

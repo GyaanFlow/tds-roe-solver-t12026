@@ -1788,15 +1788,14 @@ function renderSaazSongList(songs, { limit = 15 } = {}) {
   updateSaazResultsHighlight();
 }
 
-// Live "Top 50" chart - fetched dynamically from Saaz's own India Superhits Top 50
-// editorial playlist, same proxy-fallback path as search. Never auto-loads; only on click.
-const SAAZ_TOP_PLAYLIST_ID = '1134548194'; // "India Superhits Top 50"
-async function loadSaazTopChart({ isRetry = false, _token } = {}) {
+// Mood/genre playlist chips - fetched dynamically from Saaz's own editorial playlists (same
+// proxy-fallback path as search). Never auto-loads; only on click.
+async function loadSaazPlaylist(playlistId, label, { isRetry = false, _token } = {}) {
   if (!vibeSaazResults) return;
   const token = _token ?? ++_vibeSaazResultsToken;
-  vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🔥 Loading Saaz Top 50...</div>`;
+  vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🎧 Loading ${escapeHtml(label)}...</div>`;
 
-  const targetUrl = `https://saaz-next.vercel.app/api/playlist/${SAAZ_TOP_PLAYLIST_ID}`;
+  const targetUrl = `https://saaz-next.vercel.app/api/playlist/${playlistId}`;
   const endpoints = {
     direct: targetUrl,
     allorigins: `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`,
@@ -1842,42 +1841,68 @@ async function loadSaazTopChart({ isRetry = false, _token } = {}) {
     if (!isRetry) {
       await new Promise(r => setTimeout(r, 1200));
       if (token !== _vibeSaazResultsToken) return;
-      return loadSaazTopChart({ isRetry: true, _token: token });
+      return loadSaazPlaylist(playlistId, label, { isRetry: true, _token: token });
     }
     vibeSaazResults.innerHTML = `
       <div style="font-size:11px;color:var(--warning);padding:8px 0;">
-        ⚠️ Couldn't load the Top 50 chart right now (all mirrors failed${lastError ? ` — ${escapeHtml(lastError.message || String(lastError))}` : ''}).
+        ⚠️ Couldn't load ${escapeHtml(label)} right now (all mirrors failed${lastError ? ` — ${escapeHtml(lastError.message || String(lastError))}` : ''}).
       </div>
-      <button type="button" id="vibeSaazTopRetryBtn" class="vibe-mini-btn" style="margin-top:6px;">🔄 Retry</button>
+      <button type="button" id="vibeSaazPlaylistRetryBtn" class="vibe-mini-btn" style="margin-top:6px;">🔄 Retry</button>
     `;
-    document.getElementById('vibeSaazTopRetryBtn')?.addEventListener('click', () => loadSaazTopChart());
+    document.getElementById('vibeSaazPlaylistRetryBtn')?.addEventListener('click', () => loadSaazPlaylist(playlistId, label));
     return;
   }
 
   renderSaazSongList(songs, { limit: 50 });
 }
 
+function clearActiveMoodChip() {
+  _vibeActiveMoodChip?.classList.remove('active');
+  _vibeActiveMoodChip = null;
+}
+
 vibeSaazSearchBtn?.addEventListener('click', () => {
+  clearActiveMoodChip();
   searchSaazMusic(vibeSaazSearchInput?.value);
 });
 
 vibeSaazSearchInput?.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') searchSaazMusic(vibeSaazSearchInput.value);
+  if (e.key === 'Enter') { clearActiveMoodChip(); searchSaazMusic(vibeSaazSearchInput.value); }
 });
 
 // Live search-as-you-type, debounced, matching Saaz's own site behavior -
 // no need to press Enter or click Search for common queries.
 let _vibeSaazSearchTimer = null;
 vibeSaazSearchInput?.addEventListener('input', () => {
+  clearActiveMoodChip();
   clearTimeout(_vibeSaazSearchTimer);
   const q = vibeSaazSearchInput.value.trim();
   if (q.length < 2) return;
   _vibeSaazSearchTimer = setTimeout(() => searchSaazMusic(q), 450);
 });
 
-document.getElementById('vibeSaazTopBtn')?.addEventListener('click', () => loadSaazTopChart());
+let _vibeActiveMoodChip = null;
+document.getElementById('vibeSaazMoods')?.addEventListener('click', (e) => {
+  const chip = e.target.closest('.vibe-mood-chip');
+  if (!chip) return;
+  _vibeActiveMoodChip?.classList.remove('active');
+  chip.classList.add('active');
+  _vibeActiveMoodChip = chip;
+  loadSaazPlaylist(chip.dataset.moodId, chip.dataset.moodLabel);
+});
 
 vibeSaazResults?.addEventListener('click', async (e) => {
+  // Artist name click re-searches for that artist, rather than queuing the track underneath it.
+  const artistEl = e.target.closest('.vibe-saaz-artist');
+  if (artistEl) {
+    e.stopPropagation();
+    const artistQuery = artistEl.textContent.split(',')[0].trim(); // first artist if several are listed
+    if (!artistQuery || artistQuery === 'Unknown Artist') return;
+    if (vibeSaazSearchInput) vibeSaazSearchInput.value = artistQuery;
+    clearActiveMoodChip();
+    searchSaazMusic(artistQuery);
+    return;
+  }
   const item = e.target.closest('[data-saaz-src]');
   if (!item) return;
   const src = item.dataset.saazSrc;
