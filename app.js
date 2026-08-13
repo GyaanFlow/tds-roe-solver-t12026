@@ -1706,8 +1706,18 @@ const vibeSaazSearchBtn = document.getElementById('vibeSaazSearchBtn');
 const vibeSaazResults = document.getElementById('vibeSaazResults');
 
 // Saaz Music API Search Integration (Multi-Mirror & CORS Fallback)
+// saaz-next.vercel.app sends no Access-Control-Allow-Origin header at all, so every direct
+// browser fetch to it always fails - every request here MUST go through a public CORS proxy.
+// This list is periodically re-verified by hand (curl -D-, checking status + actual CORS
+// headers + valid JSON body, not just "connects") since free proxies rotate between working
+// and dead unpredictably. proxy.cors.sh confirmed reliable + sends real CORS headers as of
+// this check; corsproxy.io/allorigins kept as opportunistic secondary shots since they do
+// come back online sometimes; permanently-dead entries (thingproxy, cors-anywhere.herokuapp.com
+// - the latter requires manually visiting a page to "unlock" temporary access, so it can't
+// work headlessly) were removed rather than left as guaranteed-failing dead weight.
 const SAAZ_PROXY_ORDER_KEY = 'vibeSaazProxyOrder';
 const SAAZ_FETCH_TIMEOUT_MS = 6000;
+const SAAZ_MAX_ATTEMPTS = 3; // initial try + 2 retries, since public proxies are flaky by nature
 
 function fetchWithTimeout(url, ms) {
   const controller = new AbortController();
@@ -1715,40 +1725,33 @@ function fetchWithTimeout(url, ms) {
   return fetch(url, { signal: controller.signal }).finally(() => clearTimeout(timer));
 }
 
-// Shared by both search and the Top 50 chart, since they render into the same results panel -
+function buildSaazProxyEndpoints(targetUrl) {
+  const enc = encodeURIComponent(targetUrl);
+  return {
+    direct: targetUrl,
+    corsSh: `https://proxy.cors.sh/${targetUrl}`,
+    corsproxy: `https://corsproxy.io/?url=${enc}`,
+    allorigins: `https://api.allorigins.win/raw?url=${enc}`,
+  };
+}
+
+// Shared by search and the mood playlists, since they render into the same results panel -
 // a slow response from one must not be allowed to clobber a newer result from the other.
 let _vibeSaazResultsToken = 0;
 
-async function searchSaazMusic(query, { isRetry = false, _token } = {}) {
-  const q = (query || '').trim();
-  if (!q) return;
-  if (!vibeSaazResults) return;
-  const token = _token ?? ++_vibeSaazResultsToken;
-  vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🔎 Searching Saaz music for "${escapeHtml(q)}"...</div>`;
-
-  const enc = encodeURIComponent(q);
-  const targetUrl = `https://saaz-next.vercel.app/api/search/songs?q=${enc}`;
-  const buildEndpoints = () => ({
-    direct: targetUrl,
-    allorigins: `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`,
-    corsproxy: `https://corsproxy.io/?url=${encodeURIComponent(targetUrl)}`,
-    isomorphic: `https://cors-anywhere.herokuapp.com/${targetUrl}`,
-    thingproxy: `https://thingproxy.freeboard.io/fetch/${targetUrl}`,
-  });
-  const endpoints = buildEndpoints();
-
-  // Try last-known-working mirror first, then the rest, so a working proxy
-  // doesn't get starved behind ones that are currently down/rate-limited.
+// Tries every proxy mirror (last-known-working one first) for one attempt, returns the parsed
+// `data.songs`/`data.results` array or throws. Retrying across multiple full passes (not just
+// once through the mirror list) is what actually makes this "always work" in practice - a proxy
+// that's rate-limited on attempt 1 has often recovered by attempt 2 or 3.
+async function fetchSaazSongs(targetUrl) {
+  const endpoints = buildSaazProxyEndpoints(targetUrl);
   let order = Object.keys(endpoints);
   const lastGood = localStorage.getItem(SAAZ_PROXY_ORDER_KEY);
   if (lastGood && order.includes(lastGood)) {
     order = [lastGood, ...order.filter(k => k !== lastGood)];
   }
 
-  let songs = [];
   let lastError = null;
-  let workingKey = null;
-
   for (const key of order) {
     try {
       const res = await fetchWithTimeout(endpoints[key], SAAZ_FETCH_TIMEOUT_MS);
@@ -1758,29 +1761,44 @@ async function searchSaazMusic(query, { isRetry = false, _token } = {}) {
       if (json && json.contents) {
         try { json = JSON.parse(json.contents); } catch {}
       }
-      songs = json.data?.results || json.data?.songs || (Array.isArray(json.data) ? json.data : []);
+      const songs = json.data?.results || json.data?.songs || (Array.isArray(json.data) ? json.data : []);
       if (Array.isArray(songs) && songs.length) {
-        workingKey = key;
-        break;
+        localStorage.setItem(SAAZ_PROXY_ORDER_KEY, key);
+        return songs;
       }
     } catch (err) {
       lastError = err;
     }
   }
+  throw lastError || new Error('No mirror returned results.');
+}
 
-  if (workingKey) {
-    localStorage.setItem(SAAZ_PROXY_ORDER_KEY, workingKey);
+async function searchSaazMusic(query, { attempt = 1, _token } = {}) {
+  const q = (query || '').trim();
+  if (!q) return;
+  if (!vibeSaazResults) return;
+  const token = _token ?? ++_vibeSaazResultsToken;
+  vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🔎 Searching Saaz music for "${escapeHtml(q)}"...</div>`;
+
+  const targetUrl = `https://saaz-next.vercel.app/api/search/songs?q=${encodeURIComponent(q)}`;
+  let songs = null, lastError = null;
+  try {
+    songs = await fetchSaazSongs(targetUrl);
+  } catch (err) {
+    lastError = err;
   }
 
   // A newer keystroke started a fresher search while this one was in flight - drop this result.
   if (token !== _vibeSaazResultsToken) return;
 
   if (!songs || !songs.length) {
-    // One automatic retry after a short delay - transient proxy hiccups are common.
-    if (!isRetry) {
-      await new Promise(r => setTimeout(r, 1200));
+    // Multiple full passes through the mirror list, not just one - a proxy that's rate-limited
+    // on attempt 1 has often recovered by attempt 2 or 3.
+    if (attempt < SAAZ_MAX_ATTEMPTS) {
+      vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🔎 Still searching (attempt ${attempt + 1}/${SAAZ_MAX_ATTEMPTS})...</div>`;
+      await new Promise(r => setTimeout(r, 900));
       if (token !== _vibeSaazResultsToken) return;
-      return searchSaazMusic(query, { isRetry: true, _token: token });
+      return searchSaazMusic(query, { attempt: attempt + 1, _token: token });
     }
     vibeSaazResults.innerHTML = `
       <div style="font-size:11px;color:var(--warning);padding:8px 0;">
@@ -1821,58 +1839,28 @@ function renderSaazSongList(songs, { limit = 15 } = {}) {
 
 // Mood/genre playlist chips - fetched dynamically from Saaz's own editorial playlists (same
 // proxy-fallback path as search). Never auto-loads; only on click.
-async function loadSaazPlaylist(playlistId, label, { isRetry = false, _token } = {}) {
+async function loadSaazPlaylist(playlistId, label, { attempt = 1, _token } = {}) {
   if (!vibeSaazResults) return;
   const token = _token ?? ++_vibeSaazResultsToken;
   vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🎧 Loading ${escapeHtml(label)}...</div>`;
 
   const targetUrl = `https://saaz-next.vercel.app/api/playlist/${playlistId}`;
-  const endpoints = {
-    direct: targetUrl,
-    allorigins: `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`,
-    corsproxy: `https://corsproxy.io/?url=${encodeURIComponent(targetUrl)}`,
-    isomorphic: `https://cors-anywhere.herokuapp.com/${targetUrl}`,
-    thingproxy: `https://thingproxy.freeboard.io/fetch/${targetUrl}`,
-  };
-  let order = Object.keys(endpoints);
-  const lastGood = localStorage.getItem(SAAZ_PROXY_ORDER_KEY);
-  if (lastGood && order.includes(lastGood)) {
-    order = [lastGood, ...order.filter(k => k !== lastGood)];
+  let songs = null, lastError = null;
+  try {
+    songs = await fetchSaazSongs(targetUrl);
+  } catch (err) {
+    lastError = err;
   }
 
-  let songs = [];
-  let lastError = null;
-  let workingKey = null;
-
-  for (const key of order) {
-    try {
-      const res = await fetchWithTimeout(endpoints[key], SAAZ_FETCH_TIMEOUT_MS);
-      if (!res.ok) continue;
-      const text = await res.text();
-      let json = JSON.parse(text);
-      if (json && json.contents) {
-        try { json = JSON.parse(json.contents); } catch {}
-      }
-      songs = json.data?.songs || [];
-      if (Array.isArray(songs) && songs.length) {
-        workingKey = key;
-        break;
-      }
-    } catch (err) {
-      lastError = err;
-    }
-  }
-
-  if (workingKey) localStorage.setItem(SAAZ_PROXY_ORDER_KEY, workingKey);
-
-  // A newer search or another Top 50 click started while this one was in flight - drop this result.
+  // A newer search or another mood chip click started while this one was in flight - drop this result.
   if (token !== _vibeSaazResultsToken) return;
 
   if (!songs || !songs.length) {
-    if (!isRetry) {
-      await new Promise(r => setTimeout(r, 1200));
+    if (attempt < SAAZ_MAX_ATTEMPTS) {
+      vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🎧 Still loading ${escapeHtml(label)} (attempt ${attempt + 1}/${SAAZ_MAX_ATTEMPTS})...</div>`;
+      await new Promise(r => setTimeout(r, 900));
       if (token !== _vibeSaazResultsToken) return;
-      return loadSaazPlaylist(playlistId, label, { isRetry: true, _token: token });
+      return loadSaazPlaylist(playlistId, label, { attempt: attempt + 1, _token: token });
     }
     vibeSaazResults.innerHTML = `
       <div style="font-size:11px;color:var(--warning);padding:8px 0;">
