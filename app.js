@@ -1639,9 +1639,40 @@ vibeRepeatBtn?.addEventListener('click', () => {
   vibeRepeatBtn.setAttribute('aria-pressed', String(vibeRepeat));
 });
 
+const vibeMuteBtn = document.getElementById('vibeMuteBtn');
+let vibeVolumeBeforeMute = null; // null = not muted
+
+function updateVibeMuteIcon() {
+  if (!vibeMuteBtn) return;
+  const vol = Number(vibeVolume?.value ?? 0);
+  const isMuted = vibeVolumeBeforeMute !== null || vol === 0;
+  vibeMuteBtn.textContent = isMuted ? '🔇' : vol < 0.5 ? '🔉' : '🔊';
+  vibeMuteBtn.setAttribute('aria-pressed', String(isMuted));
+  vibeMuteBtn.title = isMuted ? 'Unmute' : 'Mute';
+}
+
 vibeVolume?.addEventListener('input', () => {
   if (vibeAudio) vibeAudio.volume = Number(vibeVolume.value);
   safeStorageSet(VIBE_VOLUME_KEY, vibeVolume.value);
+  // Manually moving the slider off zero implicitly un-mutes.
+  if (Number(vibeVolume.value) > 0) vibeVolumeBeforeMute = null;
+  updateVibeMuteIcon();
+});
+
+vibeMuteBtn?.addEventListener('click', () => {
+  if (!vibeVolume) return;
+  if (vibeVolumeBeforeMute !== null) {
+    // Unmute: restore whatever volume was set before muting.
+    vibeVolume.value = String(vibeVolumeBeforeMute);
+    vibeVolumeBeforeMute = null;
+  } else {
+    // Mute: remember current volume, drop to 0.
+    vibeVolumeBeforeMute = Number(vibeVolume.value) || 0.6;
+    vibeVolume.value = '0';
+  }
+  if (vibeAudio) vibeAudio.volume = Number(vibeVolume.value);
+  safeStorageSet(VIBE_VOLUME_KEY, vibeVolume.value);
+  updateVibeMuteIcon();
 });
 
 vibeTrackListEl?.addEventListener('click', (event) => {
@@ -1968,6 +1999,7 @@ if (vibeRepeatBtn) { vibeRepeatBtn.classList.toggle('active', vibeRepeat); vibeR
 const storedVibeVolume = safeStorageGet(VIBE_VOLUME_KEY);
 if (vibeVolume && storedVibeVolume !== null && storedVibeVolume !== undefined && storedVibeVolume !== '') vibeVolume.value = storedVibeVolume;
 if (vibeAudio) vibeAudio.volume = Number(vibeVolume?.value ?? 0.6);
+updateVibeMuteIcon();
 if (vibePlaylist.length) {
   renderVibeTrackList();
   // Cues (src set, paused) via the normal async loader -- necessary rather than reading
