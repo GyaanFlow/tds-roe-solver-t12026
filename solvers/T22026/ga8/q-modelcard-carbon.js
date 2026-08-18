@@ -8,56 +8,64 @@ import seedrandom from './seedrandom.js';
 export const id = 'q-modelcard-carbon-server';
 export const title = 'Q10: Green AI & Model Card Carbon Frontmatter';
 
-const GPU_TDP = {
-  'NVIDIA A100': 400,
-  'NVIDIA H100': 700,
-  'NVIDIA V100': 300,
-  'NVIDIA RTX 4090': 450,
-  'NVIDIA T4': 70
+const J = {
+  "NVIDIA A100": 400,
+  "NVIDIA V100": 300,
+  "NVIDIA T4": 70,
+  "NVIDIA H100": 700,
+  "NVIDIA L40S": 350,
+  "NVIDIA RTX 4090": 450
 };
-
-const GRID_INTENSITY = {
-  'us-central1': 350,
-  'us-east1': 380,
-  'europe-west1': 120,
-  'europe-west4': 390,
-  'asia-south1': 650
+const Y = {
+  "us-central1": 350,
+  "europe-west4": 200,
+  "asia-south1": 650,
+  "us-east1": 420,
+  "europe-north1": 120,
+  "ap-southeast1": 480
 };
+const Ge = Object.keys(J);
+const We = Object.keys(Y);
+const Be = ["pre-training", "fine-tuning"];
 
-function computeFallbackCarbon(email) {
+function computeFallbackCarbon(email, version = '') {
   const norm = normalizeEmail(email);
-  const seed = `${norm}#q-modelcard-carbon-server`;
+  const seed = `${norm}#q-modelcard-carbon-server#${version}`;
   const rng = seedrandom(seed);
 
-  const gpuTypes = Object.keys(GPU_TDP);
-  const regions = Object.keys(GRID_INTENSITY);
+  const gpu_type = Ge[Math.floor(rng() * Ge.length)];
+  const gpu_hours = Number((12.5 + rng() * 467.5).toFixed(1));
+  const num_gpus = 1 + Math.floor(rng() * 8);
+  const region = We[Math.floor(rng() * We.length)];
+  const pue = Number((1.1 + rng() * 0.5).toFixed(2));
+  const training_type = Be[Math.floor(rng() * Be.length)];
 
-  const gpuType = gpuTypes[Math.floor(rng() * gpuTypes.length)];
-  const region = regions[Math.floor(rng() * regions.length)];
-  const numGpus = [1, 2, 4, 8][Math.floor(rng() * 4)];
-  const gpuHours = +(50 + rng() * 150).toFixed(1);
-  const pue = +(1.1 + rng() * 0.4).toFixed(2);
+  const tdp = J[gpu_type] || 400;
+  const grid = Y[region] || 350;
 
-  const tdp = GPU_TDP[gpuType] || 400;
-  const grid = GRID_INTENSITY[region] || 400;
-
-  const energyKwh = (tdp * numGpus * gpuHours * pue) / 1000;
-  const co2Kg = +((energyKwh * grid) / 1000).toFixed(3);
+  const energy_kWh = (tdp * num_gpus * gpu_hours * pue) / 1000;
+  const co2_kg = Number(((energy_kWh * grid) / 1000).toFixed(3));
 
   const yaml = [
     '---',
     'co2_eq_emissions:',
-    `  emissions: ${co2Kg}`,
+    `  emissions: ${co2_kg}`,
     '  source: codecarbon',
-    '  training_type: fine-tuning',
+    `  training_type: ${training_type}`,
     `  geographical_location: ${region}`,
-    `  hardware_used: ${gpuType}`,
+    `  hardware_used: ${gpu_type}`,
     '---'
   ].join('\n');
 
   return {
-    energy_kWh: +energyKwh.toFixed(4),
-    co2_kg: co2Kg,
+    gpu_type,
+    gpu_hours,
+    num_gpus,
+    region,
+    pue,
+    training_type,
+    energy_kWh: Number(energy_kWh.toFixed(4)),
+    co2_kg,
     yaml_frontmatter: yaml
   };
 }

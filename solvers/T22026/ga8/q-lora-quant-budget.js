@@ -13,58 +13,48 @@ function computeLoraBudget(email) {
   const seed = `${norm}#q-lora-quant-budget-server`;
   const rng = seedrandom(seed);
 
-  const hiddenSize = 2048;
-  const intermediateSize = 8192;
-  const numLayers = 26;
+  const Ce = [2048, 3072, 4096];
+  const Me = [
+    ['q_proj', 'v_proj'],
+    ['q_proj', 'k_proj', 'v_proj', 'o_proj'],
+    ['q_proj', 'v_proj', 'gate_proj', 'up_proj'],
+    ['q_proj', 'k_proj', 'v_proj', 'o_proj', 'gate_proj', 'up_proj', 'down_proj']
+  ];
+  const Re = [4, 8, 16, 32];
 
-  let totalTrainable = 0;
+  const hidden_size = Ce[Math.floor(rng() * Ce.length)];
+  const num_hidden_layers = 24 + Math.floor(rng() * 9);
+  const intermediate_size = 4 * hidden_size;
+
+  let total_trainable_params = 0;
   const layers = [];
 
-  const possibleModules = ['q_proj', 'k_proj', 'v_proj', 'o_proj', 'gate_proj', 'up_proj', 'down_proj'];
-  const possibleRanks = [4, 8, 16, 32];
+  for (let n = 0; n < num_hidden_layers; n++) {
+    if (rng() < 0.25) {
+      layers.push({ layer_idx: n, freeze: true, target_modules: [], lora_rank: 0, lora_alpha: 0 });
+    } else {
+      const target_modules = Me[Math.floor(rng() * Me.length)];
+      const lora_rank = Re[Math.floor(rng() * Re.length)];
+      const lora_alpha = lora_rank * 2;
+      layers.push({ layer_idx: n, freeze: false, target_modules, lora_rank, lora_alpha });
 
-  for (let i = 0; i < numLayers; i++) {
-    const isFrozen = rng() < 0.15;
-    if (isFrozen) {
-      layers.push({ layer_idx: i, freeze: true, target_modules: [], lora_rank: 0, lora_alpha: 0 });
-      continue;
-    }
-
-    const rankIdx = Math.floor(rng() * possibleRanks.length);
-    const r = possibleRanks[rankIdx];
-    const alpha = r * 2;
-
-    const moduleCount = 2 + Math.floor(rng() * 4); // 2 to 5 modules
-    const selectedModules = [];
-    const shuffled = [...possibleModules].sort(() => rng() - 0.5);
-    for (let m = 0; m < moduleCount; m++) {
-      selectedModules.push(shuffled[m]);
-    }
-
-    let layerParams = 0;
-    for (const mod of selectedModules) {
-      if (['q_proj', 'k_proj', 'v_proj', 'o_proj'].includes(mod)) {
-        layerParams += 2 * r * hiddenSize;
-      } else {
-        layerParams += r * (hiddenSize + intermediateSize);
+      let layer_params = 0;
+      for (const mod of target_modules) {
+        if (['q_proj', 'k_proj', 'v_proj', 'o_proj'].includes(mod)) {
+          layer_params += 2 * lora_rank * hidden_size;
+        } else if (['gate_proj', 'up_proj', 'down_proj'].includes(mod)) {
+          layer_params += lora_rank * (hidden_size + intermediate_size);
+        }
       }
+      total_trainable_params += layer_params;
     }
-
-    totalTrainable += layerParams;
-    layers.push({
-      layer_idx: i,
-      freeze: false,
-      target_modules: selectedModules,
-      lora_rank: r,
-      lora_alpha: alpha
-    });
   }
 
-  const adapterSizeBytes = totalTrainable * 4;
+  const adapter_file_size_bytes = total_trainable_params * 4;
 
   return {
-    trainable_params: totalTrainable,
-    adapter_file_size_bytes: adapterSizeBytes
+    trainable_params: total_trainable_params,
+    adapter_file_size_bytes
   };
 }
 
