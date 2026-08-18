@@ -65,11 +65,22 @@ export async function solve(email) {
     ...promoLines
   ].join('\n');
 
+  const displaySummary = [
+    `### 📊 MLflow Simulation Results:`,
+    `- **Final Step Loss**: \`${finalResult.final_loss}\``,
+    `- **Mean Loss (Last 10 Steps)**: \`${finalResult.mean_last_10_loss}\``,
+    `- **Run ID**: \`${finalResult.run_id}\``,
+    ``,
+    '```json',
+    answer,
+    '```'
+  ].join('\n');
+
   return {
     answer,
     type: 'solved',
     variant: `MLflow Training Run Fingerprint for ${norm}`,
-    answerDisplay: answer,
+    answerDisplay: displaySummary,
     guide,
     debug: { ...finalResult, isLive: !!liveResult }
   };

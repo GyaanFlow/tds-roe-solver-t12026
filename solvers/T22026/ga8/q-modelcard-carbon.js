@@ -99,11 +99,25 @@ export async function solve(email) {
     ...promoLines
   ].join('\n');
 
+  const displaySummary = [
+    `### 🌱 Green AI Carbon Accounting:`,
+    `- **Hardware**: \`${finalResult.gpu_type} (${finalResult.num_gpus} GPUs)\``,
+    `- **Training Type**: \`${finalResult.training_type}\``,
+    `- **Region**: \`${finalResult.region}\``,
+    `- **GPU Hours**: \`${finalResult.gpu_hours}h\` (PUE: \`${finalResult.pue || 1.2}\`)`,
+    `- **Energy Consumed**: \`${finalResult.energy_kWh} kWh\``,
+    `- **CO₂ Emissions**: \`${finalResult.co2_kg} kg\``,
+    ``,
+    '```yaml',
+    answer,
+    '```'
+  ].join('\n');
+
   return {
     answer,
     type: 'solved',
     variant: `Green AI Model Card Frontmatter (${finalResult.co2_kg} kg CO2)`,
-    answerDisplay: answer,
+    answerDisplay: displaySummary,
     guide,
     debug: { ...finalResult, isLive: !!liveResult }
   };
