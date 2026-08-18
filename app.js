@@ -845,7 +845,7 @@ function buildGa8BonusNode(email, term = 'T12026', durationText = '0.0ms') {
 
     // Fetch dynamic live answers for Q8, Q9, Q10 from API
     let q8Answer = JSON.stringify({ trainable_params: 9355264, adapter_file_size_bytes: 37421056 });
-    let q9Answer = JSON.stringify({ final_loss: 0.72047, run_id: "b97d4010419da4064a01a94fc27338c6", mean_last_10_loss: 0.64164 });
+    let q9Answer = JSON.stringify({ final_loss: 0.87577, run_id: "1ca67c6f49f3293ab60cd6c52f954f5c", mean_last_10_loss: 0.91466 });
     let q10Answer = "https://huggingface.co/GyaanFlow/tds-modelcard-carbon";
 
     try {
