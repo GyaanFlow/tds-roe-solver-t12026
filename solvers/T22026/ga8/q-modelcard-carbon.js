@@ -28,7 +28,7 @@ const Ge = Object.keys(J);
 const We = Object.keys(Y);
 const Be = ["pre-training", "fine-tuning"];
 
-function computeFallbackCarbon(email, version = '') {
+function computeFallbackCarbon(email, version = 'v1') {
   const norm = normalizeEmail(email);
   const seed = `${norm}#q-modelcard-carbon-server#${version}`;
   const rng = seedrandom(seed);
