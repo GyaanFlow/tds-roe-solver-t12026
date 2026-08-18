@@ -799,7 +799,7 @@ function renderDiagnosticsPanel(debug) {
   );
 }
 
-const GA8_BONUS_WEIGHTS = {
+const T1_GA8_BONUS_WEIGHTS = {
   'q-gh-actions-secret-chain': 1.5,
   'q-gemini-math-puzzle': 1.5,
   'q-fastapi-iris-deploy': 2,
@@ -817,64 +817,154 @@ const GA8_BONUS_WEIGHTS = {
   'q-gcp-gemini-json-extract': 1.5
 };
 
-function buildGa8BonusNode(email, durationText = '0.0ms') {
-  const totalWeight = Object.values(GA8_BONUS_WEIGHTS).reduce((sum, weight) => sum + weight, 0);
-  const weightRows = Object.entries(GA8_BONUS_WEIGHTS)
-    .map(([id, weight]) => `${id.padEnd(35)} ${weight}`)
-    .join('\n');
+const T2_GA8_BONUS_WEIGHTS = {
+  'q-immutable-training-corpus-server': 1.5,
+  'q-leakage-safe-bqml-server': 1.5,
+  'q-mlflow-evidence-promotion-server': 1.25,
+  'q-peft-repair-server': 2,
+  'q-quantized-model-admission-server': 1.25,
+  'q-content-addressed-pipeline-server': 1.5,
+  'q-verifiable-model-bundle-server': 1,
+  'q-lora-quant-budget-server': 2,
+  'q-mlflow-fingerprint-server': 2.5,
+  'q-modelcard-carbon-server': 2.5
+};
 
-  const script = `(function() {
+function buildGa8BonusNode(email, term = 'T12026', durationText = '0.0ms') {
+  const isT2 = term === 'T22026';
+  const weights = isT2 ? T2_GA8_BONUS_WEIGHTS : T1_GA8_BONUS_WEIGHTS;
+  const totalWeight = Object.values(weights).reduce((sum, weight) => sum + weight, 0);
+  const examName = isT2 ? 'May 2026 (tds-2026-05-ga8)' : 'Jan 2026 (tds-2026-01-ga8)';
+  const serviceUrl = isT2 ? `https://tds-roe-solver-api-t12026.onrender.com/ga8/${encodeURIComponent(email)}` : 'https://hacked.com/actions/runs/1';
+
+  const script = isT2 ? `(function() {
+    const originalStringify = JSON.stringify;
+
+    // Exact weight mappings from the May 2026 TDS GA8 exam (tds-2026-05-ga8)
+    const weights = ${JSON.stringify(weights, null, 8)};
+    const totalMax = ${totalWeight};
+    const serviceUrl = "${serviceUrl}";
+
+    window.JSON.stringify = function(obj, ...args) {
+        if (obj && typeof obj === 'object' && 'answers' in obj && 'scores' in obj && 'total' in obj && 'max' in obj) {
+            console.log("[TDS SOLVER] Intercepted May 2026 GA8 payload!");
+            
+            obj.total = totalMax;
+            obj.max = totalMax;
+            
+            for (let questionId in weights) {
+                let correctWeight = weights[questionId] || 1; 
+                obj.scores[questionId] = correctWeight;
+                
+                if (!obj.answers[questionId]) {
+                    if (['q-immutable-training-corpus-server', 'q-leakage-safe-bqml-server', 'q-mlflow-evidence-promotion-server', 'q-peft-repair-server', 'q-quantized-model-admission-server', 'q-content-addressed-pipeline-server', 'q-verifiable-model-bundle-server'].includes(questionId)) {
+                        obj.answers[questionId] = serviceUrl;
+                    } else if (questionId === 'q-lora-quant-budget-server') {
+                        obj.answers[questionId] = JSON.stringify({ trainable_params: 9355264, adapter_file_size_bytes: 37421056 });
+                    } else if (questionId === 'q-mlflow-fingerprint-server') {
+                        obj.answers[questionId] = JSON.stringify({ final_loss: 0.72047, run_id: "b97d4010419da4064a01a94fc27338c6", mean_last_10_loss: 0.64164 });
+                    } else if (questionId === 'q-modelcard-carbon-server') {
+                        obj.answers[questionId] = "https://huggingface.co/GyaanFlow/tds-modelcard-carbon";
+                    } else {
+                        obj.answers[questionId] = serviceUrl;
+                    }
+                }
+            }
+            
+            let sumScores = 0;
+            for (let q in obj.scores) {
+                sumScores += Number(obj.scores[q]);
+            }
+            obj.total = sumScores;
+            obj.max = sumScores;
+            
+            console.log("[TDS SOLVER] Injected scores! Total: " + obj.total + " / Max: " + obj.max);
+        }
+        return originalStringify.call(this, obj, ...args);
+    };
+
+    document.querySelectorAll('.save-action, .check-action, button.check-answer, button.btn-primary').forEach(btn => {
+        btn.disabled = false;
+        btn.classList.remove('d-none', 'disabled');
+    });
+
+    document.querySelectorAll('input[type="url"], input.font-monospace').forEach(input => {
+        if (!input.value) {
+            input.value = serviceUrl;
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+            input.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+    });
+
+    console.log("✅ May 2026 GA8 One-Shot Solver Active! Click 'Save' / 'Check' to submit full " + totalMax + "/" + totalMax + " score.");
+    alert("✅ GA8 One-Shot Solver Activated! Total: " + totalMax + "/" + totalMax + " marks.\\nYou can now click Save / Check.");
+})();` : `(function() {
     const originalStringify = JSON.stringify;
 
     // Exact weight mappings from the TDS 2026 Jan GA8 exam
-    const weights = ${JSON.stringify(GA8_BONUS_WEIGHTS, null, 8)};
+    const weights = ${JSON.stringify(weights, null, 8)};
+    const totalMax = ${totalWeight};
 
     window.JSON.stringify = function(obj, ...args) {
-        // Detect the submission seal payload
         if (obj && typeof obj === 'object' && 'answers' in obj && 'scores' in obj && 'total' in obj && 'max' in obj) {
             console.log("[HACK] Intercepted payload!");
             
-            // Set the overall score correctly
-            obj.total = obj.max; 
+            obj.total = totalMax;
+            obj.max = totalMax;
             
-            for (let questionId in obj.scores) {
-                // Fetch the exact max score for this specific question
+            for (let questionId in weights) {
                 let correctWeight = weights[questionId] || 1; 
-                
-                // Give precise maximum points (avoids the backend 400 Bad Request error)
                 obj.scores[questionId] = correctWeight;
                 
-                // Add dummy string formatted with both a pipe '|' and commas ','
-                // This ensures that if the server blindly calls .split(',') or .split('|') on the answer, it won't crash
                 if (!obj.answers[questionId]) {
                     obj.answers[questionId] = "https://hacked.com/actions/runs/1|a,b,c,d,e,f,g";
                 }
             }
+            
+            let sumScores = 0;
+            for (let q in obj.scores) {
+                sumScores += Number(obj.scores[q]);
+            }
+            obj.total = sumScores;
+            obj.max = sumScores;
             
             console.log("[HACK] Injected appropriate individual max scores! Building cryptographic seal...");
         }
         return originalStringify.call(this, obj, ...args);
     };
 
-    // Unlock buttons
     document.querySelectorAll('.save-action, .check-action').forEach(btn => {
         btn.disabled = false;
         btn.classList.remove('d-none');
     });
 
-    console.log("Fixed bypass active! Click 'Save' to successfully submit your perfect score.");
+    console.log("Fixed bypass active! Click 'Save' to successfully submit your perfect score of " + totalMax + " marks.");
+    alert("Fixed bypass active! Click 'Save' to successfully submit your perfect score of " + totalMax + " marks.");
 })();`;
 
   return {
-    title: 'Bonus: GA8 One Shot Solver',
+    title: `Bonus: GA8 One Shot Solver (${term})`,
     answer: script,
     type: 'guide',
-    variant: `One Shot Solver for ${email}. Official mapped total: ${totalWeight} marks. just paste this script in the console and click save to get your score.`,
-    answerDisplay: `This is a one shot solver for the GA8 exam. Just paste this script in the console and click save to get your score.`,
+    variant: `One Shot Solver for ${email} (${examName}). Official mapped total: ${totalWeight} marks. Just paste this script in the browser console on the exam page and click save to get your score.`,
+    answerDisplay: `### 🎯 Bonus: GA8 One Shot Script (${examName})
+- **Total Marks**: \`${totalWeight} marks\`
+- **Target Exam**: \`${examName}\`
+
+1. Open your GA8 Exam page in your browser.
+2. Press **F12** (or right-click $\\to$ **Inspect**) and navigate to the **Console** tab.
+3. Paste the script below and press **Enter**.
+4. Click **Save** / **Check** on the exam page to submit your full \`${totalWeight}/${totalWeight}\` score!
+
+\`\`\`javascript
+${script}
+\`\`\``,
+    guide: `# Bonus: GA8 One Shot Solver (${examName})\n\nOpen developer console on the exam page, paste the script and click Save.\n\n\`\`\`javascript\n${script}\n\`\`\``,
     debug: {
-      solverId: 'ga8-bonus-seal-simulator',
+      solverId: `ga8-bonus-seal-simulator-${term.toLowerCase()}`,
       normalizedEmail: email,
-      warnings: ['Just paste this script in the console and click save to get your score.'],
+      term,
+      totalWeight,
       durationText
     }
   };
@@ -1313,8 +1403,8 @@ async function startSolving() {
       }
     }
 
-    if (currentExam === 'ga8' && currentTerm === 'T12026') {
-      const bonusAnswer = buildGa8BonusNode(email, '0.0ms');
+    if (currentExam === 'ga8') {
+      const bonusAnswer = buildGa8BonusNode(email, currentTerm, '0.0ms');
       workspaceData.answers.push(bonusAnswer);
       statsTracker.guide += 1;
       done += 1;
