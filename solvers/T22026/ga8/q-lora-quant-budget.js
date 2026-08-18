@@ -94,11 +94,21 @@ export async function solve(email) {
     ...promoLines
   ].join('\n');
 
+  const displaySummary = [
+    `### ✅ Calculated LoRA Parameters:`,
+    `- **Trainable Parameters**: \`${finalResult.trainable_params.toLocaleString()}\``,
+    `- **Safetensors File Size**: \`${finalResult.adapter_file_size_bytes.toLocaleString()} bytes\` (~${(finalResult.adapter_file_size_bytes / (1024 * 1024)).toFixed(2)} MB)`,
+    ``,
+    '```json',
+    answer,
+    '```'
+  ].join('\n');
+
   return {
     answer,
     type: 'solved',
     variant: `LoRA Budget Calculator (${finalResult.trainable_params.toLocaleString()} params)`,
-    answerDisplay: answer,
+    answerDisplay: displaySummary,
     guide,
     debug: { ...finalResult, isLive: !!liveResult }
   };

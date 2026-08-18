@@ -48,8 +48,19 @@ function registerInteractive() {
 
   window._ga8Q2CopyUrl = async function () {
     const el = document.getElementById('ga8Q2SubmitUrl');
+    const btn = document.getElementById('ga8Q2CopyBtn');
     if (!el || !el.value) return;
-    try { await navigator.clipboard.writeText(el.value); } catch { el.focus(); el.select(); }
+    try {
+      await navigator.clipboard.writeText(el.value);
+      if (btn) {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = orig; }, 1800);
+      }
+    } catch {
+      el.focus();
+      el.select();
+    }
   };
 }
 
@@ -82,7 +93,7 @@ export async function solve(email) {
     `<div style="display:flex;flex-direction:column;gap:8px;padding:12px;background:rgba(255,255,255,0.04);border-radius:8px;border:1px solid rgba(255,255,255,0.1);">`,
     `  <div style="display:flex;gap:8px;align-items:center;">`,
     `    <input id="ga8Q2SubmitUrl" type="text" value="${serviceUrl}" readonly style="flex:1;padding:6px;border-radius:4px;background:#1e1e1e;border:1px solid #444;color:#fff;font-family:monospace;font-size:12px;" />`,
-    `    <button type="button" onclick="window._ga8Q2CopyUrl()" class="btn-sm" style="padding:6px 12px;background:var(--theme-primary,#f59e0b);color:#111;border:none;border-radius:4px;font-weight:600;cursor:pointer;">Copy URL</button>`,
+    `    <button id="ga8Q2CopyBtn" type="button" onclick="window._ga8Q2CopyUrl()" class="btn-sm" style="padding:6px 12px;background:var(--theme-primary,#f59e0b);color:#111;border:none;border-radius:4px;font-weight:600;cursor:pointer;">Copy URL</button>`,
     `    <button type="button" onclick="window._ga8Q2UseSample()" class="btn-sm" style="padding:6px 12px;background:rgba(255,255,255,0.1);color:#fff;border:1px solid #555;border-radius:4px;cursor:pointer;">Load Sample</button>`,
     `  </div>`,
     `  <input id="ga8Q2Email" type="hidden" value="${norm}" />`,

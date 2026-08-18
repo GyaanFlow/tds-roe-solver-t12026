@@ -1313,7 +1313,7 @@ async function startSolving() {
       }
     }
 
-    if (currentExam === 'ga8') {
+    if (currentExam === 'ga8' && currentTerm === 'T12026') {
       const bonusAnswer = buildGa8BonusNode(email, '0.0ms');
       workspaceData.answers.push(bonusAnswer);
       statsTracker.guide += 1;
