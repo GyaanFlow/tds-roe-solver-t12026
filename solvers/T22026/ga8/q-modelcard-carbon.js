@@ -104,17 +104,7 @@ function registerInteractive(readmeContent, yamlContent) {
 
 export async function solve(email) {
   const norm = normalizeEmail(email);
-  let liveResult = null;
-
-  try {
-    const remote = await ga8Get(norm, 'solve/q10');
-    if (remote && remote.yaml_frontmatter) {
-      liveResult = remote;
-    }
-  } catch {}
-
-  const fallback = computeFallbackCarbon(norm);
-  const finalResult = liveResult || fallback;
+  const finalResult = computeFallbackCarbon(norm, 'v1');
   const answer = finalResult.yaml_frontmatter;
 
   const fullReadmeContent = `${answer}\n\n# Model Card - Green AI Carbon Accounting\n\nThis repository documents the carbon footprint and energy accounting for the assigned model training run in TDS GA8.\n\n### Training Specifications\n- **Hardware**: ${finalResult.gpu_type} (${finalResult.num_gpus} GPUs)\n- **Training Mode**: ${finalResult.training_type}\n- **Region**: ${finalResult.region}\n- **GPU Hours**: ${finalResult.gpu_hours}h (PUE: ${finalResult.pue || 1.2})\n- **Total Energy**: ${finalResult.energy_kWh} kWh\n- **CO₂ Emissions**: ${finalResult.co2_kg} kg CO₂eq\n`;
@@ -181,6 +171,6 @@ export async function solve(email) {
     variant: `Green AI Model Card (${finalResult.co2_kg} kg CO2) - Submit HF Repo URL`,
     answerDisplay: displaySummary,
     guide,
-    debug: { ...finalResult, isLive: !!liveResult }
+    debug: { ...finalResult }
   };
 }
