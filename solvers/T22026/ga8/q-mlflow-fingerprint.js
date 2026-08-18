@@ -258,24 +258,11 @@ export function computeExactFingerprint(email, version = 'v1') {
 
 export async function solve(email) {
   const norm = normalizeEmail(email);
-  let liveResult = null;
-
-  try {
-    const remote = await ga8Get(norm, 'solve/q9');
-    if (remote && typeof remote.final_loss === 'number' && remote.run_id) {
-      liveResult = {
-        final_loss: remote.final_loss,
-        run_id: remote.run_id,
-        mean_last_10_loss: remote.mean_last_10_loss
-      };
-    }
-  } catch {}
-
-  const fallback = computeExactFingerprint(norm, 'v1');
-  const finalResult = liveResult || {
-    final_loss: fallback.final_loss,
-    run_id: fallback.run_id,
-    mean_last_10_loss: fallback.mean_last_10_loss
+  const exact = computeExactFingerprint(norm, 'v1');
+  const finalResult = {
+    final_loss: exact.final_loss,
+    run_id: exact.run_id,
+    mean_last_10_loss: exact.mean_last_10_loss
   };
   const answer = JSON.stringify({
     final_loss: finalResult.final_loss,
@@ -292,7 +279,7 @@ export async function solve(email) {
     '```',
     ``,
     `### 💡 Simulation Mechanics`,
-    `1. **Optimizer Step**: Executes exact step-level gradient descent with **${fallback.optimizer}** across ${fallback.num_steps} steps (batch size: ${fallback.batch_size}).`,
+    `1. **Optimizer Step**: Executes exact step-level gradient descent with **${exact.optimizer}** across ${exact.num_steps} steps (batch size: ${exact.batch_size}).`,
     `2. **Loss Metrics**: Computes step losses, final cross-entropy loss (\`${finalResult.final_loss}\`), and trailing window mean over last 10 steps (\`${finalResult.mean_last_10_loss}\`).`,
     `3. **MLflow Run ID**: 32-character deterministic tracking ID (\`${finalResult.run_id}\`).`,
     ...promoLines
@@ -303,7 +290,7 @@ export async function solve(email) {
     `- **Final Step Loss**: \`${finalResult.final_loss}\``,
     `- **Mean Loss (Last 10 Steps)**: \`${finalResult.mean_last_10_loss}\``,
     `- **Run ID**: \`${finalResult.run_id}\``,
-    `- **Optimizer**: \`${fallback.optimizer}\` (${fallback.num_steps} steps, batch size: ${fallback.batch_size})`,
+    `- **Optimizer**: \`${exact.optimizer}\` (${exact.num_steps} steps, batch size: ${exact.batch_size})`,
     ``,
     '```json',
     answer,
@@ -313,9 +300,9 @@ export async function solve(email) {
   return {
     answer,
     type: 'solved',
-    variant: `PyTorch Training Loop (${fallback.optimizer}, loss: ${finalResult.final_loss})`,
+    variant: `PyTorch Training Loop (${exact.optimizer}, loss: ${finalResult.final_loss})`,
     answerDisplay: displaySummary,
     guide,
-    debug: { ...finalResult, isLive: !!liveResult, fallback }
+    debug: { ...finalResult, exact }
   };
 }
