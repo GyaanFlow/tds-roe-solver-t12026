@@ -70,6 +70,38 @@ function computeFallbackCarbon(email, version = '') {
   };
 }
 
+function registerInteractive(readmeContent, yamlContent) {
+  if (typeof window === 'undefined') return;
+
+  window._ga8Q10CopyReadme = async function () {
+    const btn = document.getElementById('ga8Q10CopyReadmeBtn');
+    try {
+      await navigator.clipboard.writeText(readmeContent);
+      if (btn) {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied README.md!';
+        setTimeout(() => { btn.textContent = orig; }, 1800);
+      }
+    } catch {
+      console.warn('Clipboard write failed');
+    }
+  };
+
+  window._ga8Q10CopyYaml = async function () {
+    const btn = document.getElementById('ga8Q10CopyYamlBtn');
+    try {
+      await navigator.clipboard.writeText(yamlContent);
+      if (btn) {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied YAML!';
+        setTimeout(() => { btn.textContent = orig; }, 1800);
+      }
+    } catch {
+      console.warn('Clipboard write failed');
+    }
+  };
+}
+
 export async function solve(email) {
   const norm = normalizeEmail(email);
   let liveResult = null;
@@ -87,21 +119,23 @@ export async function solve(email) {
 
   const fullReadmeContent = `${answer}\n\n# Model Card - Green AI Carbon Accounting\n\nThis repository documents the carbon footprint and energy accounting for the assigned model training run in TDS GA8.\n\n### Training Specifications\n- **Hardware**: ${finalResult.gpu_type} (${finalResult.num_gpus} GPUs)\n- **Training Mode**: ${finalResult.training_type}\n- **Region**: ${finalResult.region}\n- **GPU Hours**: ${finalResult.gpu_hours}h (PUE: ${finalResult.pue || 1.2})\n- **Total Energy**: ${finalResult.energy_kWh} kWh\n- **CO₂ Emissions**: ${finalResult.co2_kg} kg CO₂eq\n`;
 
+  registerInteractive(fullReadmeContent, answer);
+
   const guide = [
     `## Q10 -- Green AI & Hugging Face Model Card Carbon Audit (for ${norm})`,
     ``,
-    `### 📋 Step-by-Step: How to create your Hugging Face Repository`,
-    `The exam expects you to submit your **public Hugging Face repository URL** (e.g. \`https://huggingface.co/<username>/tds-carbon-card\`). Follow these 5 quick steps:`,
+    `### 📋 Quick 4-Step Walkthrough to Submit Q10`,
+    `The exam requires a **public Hugging Face repository URL** (e.g. \`https://huggingface.co/<username>/tds-carbon-card\`). Follow these 4 easy steps:`,
     ``,
     `1. **Create a Free Model Repo**:`,
-    `   - Go to [https://huggingface.co/new](https://huggingface.co/new) (sign in or create a free account).`,
+    `   - Click [https://huggingface.co/new](https://huggingface.co/new) *(or click the button in the interactive panel below)*.`,
     `   - Select **Model** as repository type.`,
     `   - Name it \`tds-carbon-card\` (or any name).`,
     `   - Set visibility to **Public** and click **Create model repository**.`,
     ``,
     `2. **Create / Edit \`README.md\`**:`,
-    `   - Click on the **README.md** tab (or **Add file** $\\to$ **Create a new file**, name it \`README.md\`).`,
-    `   - Paste the **Exact YAML Frontmatter & Content** below into the file:`,
+    `   - Click **Add file** $\\to$ **Create a new file** (name it \`README.md\`).`,
+    `   - Paste the **Exact README Content with YAML Frontmatter** below:`,
     ``,
     '```markdown',
     fullReadmeContent,
@@ -111,8 +145,7 @@ export async function solve(email) {
     `   - Scroll to the bottom and click **Commit changes to main**.`,
     ``,
     `4. **Submit in the Exam**:`,
-    `   - Copy your repository URL from your browser address bar:`,
-    `     \`https://huggingface.co/<your-username>/tds-carbon-card\``,
+    `   - Copy your repository URL (e.g. \`https://huggingface.co/<your-username>/tds-carbon-card\`).`,
     `   - Paste it into Question 10 on the exam portal and click **Check**!`,
     ``,
     `### 💡 Mathematical Formulations`,
@@ -128,24 +161,24 @@ export async function solve(email) {
     `- **Region**: \`${finalResult.region}\``,
     `- **GPU Hours**: \`${finalResult.gpu_hours}h\` (PUE: \`${finalResult.pue || 1.2}\`)`,
     `- **Energy Consumed**: \`${finalResult.energy_kWh} kWh\``,
-    `- **CO₂ Emissions**: \`${finalResult.co2_kg} kg\``,
+    `- **CO₂ Emissions**: \`${finalResult.co2_kg} kg CO₂eq\``,
     ``,
-    `### 🎯 Your YAML Frontmatter (Paste at the top of README.md):`,
-    '```yaml',
-    answer,
-    '```',
+    `<div style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;">`,
+    `  <button id="ga8Q10CopyReadmeBtn" type="button" onclick="window._ga8Q10CopyReadme()" class="btn-sm" style="padding:8px 16px;background:var(--theme-primary,#f59e0b);color:#111;border:none;border-radius:4px;font-weight:700;cursor:pointer;">📋 Copy Complete README.md</button>`,
+    `  <button id="ga8Q10CopyYamlBtn" type="button" onclick="window._ga8Q10CopyYaml()" class="btn-sm" style="padding:8px 16px;background:rgba(255,255,255,0.1);color:#fff;border:1px solid #666;border-radius:4px;cursor:pointer;">📄 Copy YAML Only</button>`,
+    `  <a href="https://huggingface.co/new" target="_blank" rel="noopener" style="padding:8px 16px;background:#2563eb;color:#fff;border-radius:4px;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:6px;">🌐 Open HuggingFace.co/new ↗</a>`,
+    `</div>`,
     ``,
-    `### 🚀 Next Steps to Submit:`,
-    `1. Go to [https://huggingface.co/new](https://huggingface.co/new) and create a **Public Model Repository** (e.g. \`tds-carbon-card\`).`,
-    `2. Create \`README.md\` and paste the YAML block above at the very top.`,
-    `3. Commit to \`main\`.`,
-    `4. Submit your repo URL (\`https://huggingface.co/<your-username>/tds-carbon-card\`) in the exam answer box.`
+    `### 📄 Complete \`README.md\` (Ready to Paste):`,
+    '```markdown',
+    fullReadmeContent,
+    '```'
   ].join('\n');
 
   return {
     answer: fullReadmeContent,
     type: 'solved',
-    variant: `Green AI Model Card Frontmatter (${finalResult.co2_kg} kg CO2)`,
+    variant: `Green AI Model Card (${finalResult.co2_kg} kg CO2) - Submit HF Repo URL`,
     answerDisplay: displaySummary,
     guide,
     debug: { ...finalResult, isLive: !!liveResult }

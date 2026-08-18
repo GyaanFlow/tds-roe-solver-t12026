@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tds-portal-v24';
+const CACHE_NAME = 'tds-portal-v25';
 
 const CORE_ASSETS = [
   '/',
