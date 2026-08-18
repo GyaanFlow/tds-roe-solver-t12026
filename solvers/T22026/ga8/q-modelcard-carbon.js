@@ -85,22 +85,44 @@ export async function solve(email) {
   const finalResult = liveResult || fallback;
   const answer = finalResult.yaml_frontmatter;
 
+  const fullReadmeContent = `${answer}\n\n# Model Card - Green AI Carbon Accounting\n\nThis repository documents the carbon footprint and energy accounting for the assigned model training run in TDS GA8.\n\n### Training Specifications\n- **Hardware**: ${finalResult.gpu_type} (${finalResult.num_gpus} GPUs)\n- **Training Mode**: ${finalResult.training_type}\n- **Region**: ${finalResult.region}\n- **GPU Hours**: ${finalResult.gpu_hours}h (PUE: ${finalResult.pue || 1.2})\n- **Total Energy**: ${finalResult.energy_kWh} kWh\n- **CO₂ Emissions**: ${finalResult.co2_kg} kg CO₂eq\n`;
+
   const guide = [
-    `## Q10 -- Green AI & Model Card Carbon Frontmatter (for ${norm})`,
+    `## Q10 -- Green AI & Hugging Face Model Card Carbon Audit (for ${norm})`,
     ``,
-    `### 🎯 Answer (YAML Frontmatter)`,
-    '```yaml',
-    answer,
+    `### 📋 Step-by-Step: How to create your Hugging Face Repository`,
+    `The exam expects you to submit your **public Hugging Face repository URL** (e.g. \`https://huggingface.co/<username>/tds-carbon-card\`). Follow these 5 quick steps:`,
+    ``,
+    `1. **Create a Free Model Repo**:`,
+    `   - Go to [https://huggingface.co/new](https://huggingface.co/new) (sign in or create a free account).`,
+    `   - Select **Model** as repository type.`,
+    `   - Name it \`tds-carbon-card\` (or any name).`,
+    `   - Set visibility to **Public** and click **Create model repository**.`,
+    ``,
+    `2. **Create / Edit \`README.md\`**:`,
+    `   - Click on the **README.md** tab (or **Add file** $\\to$ **Create a new file**, name it \`README.md\`).`,
+    `   - Paste the **Exact YAML Frontmatter & Content** below into the file:`,
+    ``,
+    '```markdown',
+    fullReadmeContent,
     '```',
     ``,
-    `### 💡 Green AI Carbon Formulas`,
+    `3. **Commit Changes**:`,
+    `   - Scroll to the bottom and click **Commit changes to main**.`,
+    ``,
+    `4. **Submit in the Exam**:`,
+    `   - Copy your repository URL from your browser address bar:`,
+    `     \`https://huggingface.co/<your-username>/tds-carbon-card\``,
+    `   - Paste it into Question 10 on the exam portal and click **Check**!`,
+    ``,
+    `### 💡 Mathematical Formulations`,
     `$$\\text{energy\\_kWh} = \\frac{\\text{TDP (W)} \\times \\text{num\\_gpus} \\times \\text{gpu\\_hours} \\times \\text{PUE}}{1000}$$`,
     `$$\\text{co2\\_kg} = \\text{round}\\left(\\frac{\\text{energy\\_kWh} \\times \\text{grid\\_intensity}}{1000}, 3\\right)$$`,
     ...promoLines
   ].join('\n');
 
   const displaySummary = [
-    `### 🌱 Green AI Carbon Accounting:`,
+    `### 🌱 Green AI Carbon Accounting for ${norm}:`,
     `- **Hardware**: \`${finalResult.gpu_type} (${finalResult.num_gpus} GPUs)\``,
     `- **Training Type**: \`${finalResult.training_type}\``,
     `- **Region**: \`${finalResult.region}\``,
@@ -108,13 +130,20 @@ export async function solve(email) {
     `- **Energy Consumed**: \`${finalResult.energy_kWh} kWh\``,
     `- **CO₂ Emissions**: \`${finalResult.co2_kg} kg\``,
     ``,
+    `### 🎯 Your YAML Frontmatter (Paste at the top of README.md):`,
     '```yaml',
     answer,
-    '```'
+    '```',
+    ``,
+    `### 🚀 Next Steps to Submit:`,
+    `1. Go to [https://huggingface.co/new](https://huggingface.co/new) and create a **Public Model Repository** (e.g. \`tds-carbon-card\`).`,
+    `2. Create \`README.md\` and paste the YAML block above at the very top.`,
+    `3. Commit to \`main\`.`,
+    `4. Submit your repo URL (\`https://huggingface.co/<your-username>/tds-carbon-card\`) in the exam answer box.`
   ].join('\n');
 
   return {
-    answer,
+    answer: fullReadmeContent,
     type: 'solved',
     variant: `Green AI Model Card Frontmatter (${finalResult.co2_kg} kg CO2)`,
     answerDisplay: displaySummary,
