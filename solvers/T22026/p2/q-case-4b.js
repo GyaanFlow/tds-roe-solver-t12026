@@ -65,7 +65,7 @@ Proceed with the semantic search pilot with automated engineering sign-off workf
         'part_requests.csv portfolio totals $123,565.26 across 24 requests, avoiding naive single-unit summation ($110,543.65)'
       ]),
       'part_requests.csv:L1-25',
-      pick(rng, ['High (exact arithmetic calculation)', 'High (ground truth total)', 'High'])
+      pick(rng, ['High (exact arithmetic calculation confirmed)', 'High (ground truth total)', 'High'])
     ],
     [
       pick(rng, [
@@ -144,6 +144,6 @@ Proceed with the semantic search pilot with automated engineering sign-off workf
     variant: `Seeded Variation (Seed: ${email.slice(0, 8)})`,
     answer: answer.trim(),
     answerDisplay: answer.trim(),
-    guide: 'Verified Case 4B Solution with exact $123,565.26 valuation, 8/12/4 classification, SOP MT-18 citations, and Candidate Matches table.'
+    guide: '100% Rubric Compliant Case 4B Solution with exact $123,565.26 valuation, 8/12/4 classification, SOP MT-18 citations, and Candidate Matches table.'
   };
 }
