@@ -735,12 +735,18 @@ function renderAnswerPanel(data, langClass) {
     ? `<pre class="raw-output"><code class="${langClass}" style="background:transparent; border:none; box-shadow:none;">${escapedAnswer}</code></pre>`
     : `<pre class="raw-output ${wrapClass}">${escapedAnswer}</pre>`;
 
+  const charCount = typeof data.answer === 'string' ? data.answer.length : 0;
   const actions = `
-    <div class="panel-actions">
-      <button class="btn-ghost panel-btn" id="copyAnswerBtn">Copy Answer</button>
-      <button class="btn-ghost panel-btn" id="downloadAnswerBtn">Download .txt</button>
-      <button class="btn-ghost panel-btn" id="copyVariantBtn">Copy Variant</button>
-      <button class="btn-ghost panel-btn" id="toggleWrapBtn">${rawWrapEnabled ? 'No Wrap' : 'Wrap Lines'}</button>
+    <div class="panel-actions" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn-ghost panel-btn" id="copyAnswerBtn">Copy Answer</button>
+        <button class="btn-ghost panel-btn" id="downloadAnswerBtn">Download .txt</button>
+        <button class="btn-ghost panel-btn" id="copyVariantBtn">Copy Variant</button>
+        <button class="btn-ghost panel-btn" id="toggleWrapBtn">${rawWrapEnabled ? 'No Wrap' : 'Wrap Lines'}</button>
+      </div>
+      <div class="char-count-badge" style="font-size:11px; color:var(--text-secondary); font-family:var(--font-mono); background:var(--bg-input); padding:4px 10px; border-radius:4px; border:1px solid var(--border);">
+        📝 <strong>${charCount.toLocaleString()}</strong> characters
+      </div>
     </div>
   `;
 
