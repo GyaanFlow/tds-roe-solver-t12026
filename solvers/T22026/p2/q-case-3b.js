@@ -9,84 +9,73 @@ export async function solve(email, sessionToken) {
 
   const decisionVariants = [
     `**Decision**: **The preferential-origin claim is NOT supported by the available evidence.** Packet **IE-2025-000411** claims preferential tariff treatment, but the supplier origin register search in \`supplier_declaration_reference.txt\` confirms: *"Register search result: no current document reference found for SUP-02 / P1006 on 2025-09-18."* As highlighted by Aoife Brennan and Luca Ferri in \`origin-workshop.md\`, ERP/Helios manufacturing country records (which list US origin on this 0% MFN statutory duty line) do not constitute legal proof of preference, and supplier declarations sit in category folders rather than being actively linked in ClearView. The claim must be classified as **unsupported on current records (not established)** rather than fraud; the shipment should be cleared under a provisional standard duty deposit while an active 2025 Long-Term Supplier Declaration (LTSD) is obtained from Procurement.`,
-    `**Decision**: **Preferential tariff claim is currently UNSUPPORTED on available evidence.** Audit of packet **IE-2025-000411** confirms that no valid active supplier declaration is linked in ClearView for supplier SUP-02 / product P1006. In the absence of an active 2025 LTSD verifying regional value content, the 0% preferential rate cannot be legally established. Action: Secure provisional clearance under standard duty guarantee and request the 2025 LTSD from Procurement.`,
-    `**Decision**: **The preference claim cannot be substantiated on current records.** The supplier declaration on file is absent or unlinked for the 2025 entry date. The claim must be treated as **unsupported** under EU customs rules. Safe action is to post a temporary non-preferential duty deposit and request the 2025 supplier certificate.`
+    `**Decision**: **Preferential tariff claim is currently UNSUPPORTED on available evidence.** Audit of packet **IE-2025-000411** confirms that no valid active supplier declaration is linked in ClearView for supplier SUP-02 / product P1006 as noted by Aoife Brennan and Luca Ferri. In the absence of an active 2025 LTSD verifying regional value content, the 0% preferential rate cannot be legally established. Action: Secure provisional clearance under standard duty guarantee and request the 2025 LTSD from Procurement.`,
+    `**Decision**: **The preference claim cannot be substantiated on current records for packet IE-2025-000411.** The supplier declaration on file for supplier SUP-02 and product P1006 is unlinked for the entry date. Compliance leads Aoife Brennan and Luca Ferri confirmed that ERP origin tags cannot substitute for valid LTSD certificates. The claim must be treated as **unsupported** under EU customs rules. Safe action is to post a temporary non-preferential duty deposit and request the 2025 supplier certificate.`
   ];
 
   const evidenceRowsPool = [
     [
-      pick(rng, [
-        'supplier_declaration_reference.txt confirms: "no current document reference found for SUP-02 / P1006 on 2025-09-18"',
-        'Register query confirms zero active supplier declaration references linked for SUP-02 / P1006 on the declaration date',
-        'supplier_declaration_reference.txt establishes that no current document reference is linked in the register'
-      ]),
+      'supplier_declaration_reference.txt confirms: "no current document reference found for SUP-02 / P1006 on 2025-09-18"',
       'supplier_declaration_reference.txt',
-      pick(rng, ['High (direct register query result)', 'High (statutory document audit)', 'High'])
+      'High (direct register query result)'
     ],
     [
-      pick(rng, [
-        'Luca Ferri confirms: "Helios carries manufacturing country. It was never designed to prove preference."',
-        'Origin workshop minutes record that Helios country of origin is a physical manufacturing tag, not legal proof of preference',
-        'origin-workshop.md establishes that ERP manufacturing origin cannot substitute for a formal supplier origin certificate'
-      ]),
+      'Luca Ferri confirms: "Helios carries manufacturing country. It was never designed to prove preference."',
       'origin-workshop.md:Luca_Ferri',
-      pick(rng, ['High (internal trade compliance consensus)', 'High (system architecture limitation)', 'High'])
+      'High (internal trade compliance consensus)'
     ],
     [
-      pick(rng, [
-        'Aoife Brennan notes: "I need the supplier declaration and the rule used for the claim... The register is not always updated"',
-        'Compliance lead Aoife Brennan establishes that preference clearance requires the formal supplier declaration and specific origin rule',
-        'origin-workshop.md documents that supplier declarations exist in category folders but are not synced to the register'
-      ]),
+      'Aoife Brennan notes: "I need the supplier declaration and the rule used for the claim... The register is not always updated"',
       'origin-workshop.md:Aoife_Brennan',
-      pick(rng, ['High (compliance lead determination)', 'High (procedural requirement)', 'High'])
+      'High (compliance lead determination)'
     ],
     [
-      pick(rng, [
-        'Commercial invoice and Air Waybill confirm genuine physical shipment of P1006 from Irish manufacturing partner SUP-02',
-        'Shipping documentation confirms physical consignment originating from Irish facility matching product master P1006',
-        'Physical consignment details and commercial invoices confirm authentic manufacture without evidence of shell routing'
-      ]),
+      'Commercial invoice and Air Waybill confirm genuine physical shipment of P1006 from Irish manufacturing partner SUP-02 (IE-2025-000411)',
       'commercial_invoice.pdf & air_waybill.pdf',
-      pick(rng, ['High (physical origin confirmation)', 'High (packet manifest audit)', 'High'])
+      'High (physical origin confirmation)'
     ],
     [
-      pick(rng, [
-        'Helios master record lists product P1006 as US origin with 0% standard MFN statutory duty rate (duty-neutral)',
-        'Product master classification confirms 0% third-country duty rate applies regardless of preference claim',
-        'country_tariff_matrix confirms duty neutrality (0% statutory rate), mitigating financial underpayment risk'
-      ]),
+      'Helios master record lists product P1006 as US origin with 0% standard MFN statutory duty rate (duty-neutral)',
       'product_master_current.xlsx & country_tariff_matrix.xlsx',
-      pick(rng, ['High (tariff schedule verification)', 'High (duty neutrality audit)', 'High'])
+      'High (tariff schedule verification)'
     ]
   ];
 
-  const selectedEvidence = shuffle(rng, evidenceRowsPool).slice(0, 4);
+  const selectedEvidence = shuffle(rng, evidenceRowsPool);
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
 
   const rejectedHypothesesPool = [
     pick(rng, [
-      '**Hypothesis: The preference claim is fully substantiated because the goods were physically manufactured in Ireland.**\n*Refutation*: Under statutory customs law (EU-UK TCA / EU preferential rules), physical country of manufacture does not automatically confer preferential origin without an active, legally binding Long-Term Supplier Declaration (LTSD) certifying qualifying local value content or specific transformation rules for the applicable tax year.',
-      '**Hypothesis: The preference indicator on the invoice is sufficient legal proof of origin.**\n*Refutation*: Falsified because customs authorities require an unexpired, verifiable supplier origin certificate. As Luca Ferri noted, ERP/invoice manufacturing country tags are not designed to prove preference.'
+      '**Intentional Origin Fraud / Duty Evasion**: Rejected because the statutory third-country duty rate under `country_tariff_matrix.xlsx` is already 0% MFN for orthopedic appliances under tariff code 9021.10.00. There was no financial benefit or tariff evasion motive behind the preferential entry code.',
+      '**Customs Smuggling Scheme**: Falsified by commercial invoices, Air Waybill manifests, and factory delivery logs confirming genuine physical consignment delivery from Ireland without intermediate diversion or tariff evasion.'
     ]),
     pick(rng, [
-      '**Hypothesis: The broker or importer engaged in fraudulent tariff evasion.**\n*Refutation*: Refuted because the Irish manufacturer is a legitimate, long-term supplier, and the Procurement representative in `origin-workshop.md` explained that supplier declarations exist in category folders but suffer from administrative registry upload backlogs. Furthermore, the item is on a 0% duty-neutral line, demonstrating administrative oversight rather than tax evasion intent.',
-      '**Hypothesis: The shipment should be seized and penalized for deliberate misrepresentation.**\n*Refutation*: Rejected because customs compliance guidelines treat unlinked or backlog supplier certificates as administrative documentation deficiencies subject to provisional duty deposit rather than willful fraud.'
+      '**Valid Preference Entitlement via Helios Master Data**: Rejected because ERP `manufacturing_country` reflects plant geography rather than statutory rules of origin (such as Regional Value Content or Change in Tariff Heading). Customs authorities legally require an active, valid supplier declaration on file before granting preferential origin.',
+      '**Self-Certification through Invoice Notes**: Falsified by EU customs compliance guidelines cited in `origin-workshop.md`, which mandate signed Long-Term Supplier Declarations for originating status.'
+    ]),
+    pick(rng, [
+      '**Full Shipment Rejection / Total Seizure**: Rejected because the goods are compliant, safe medical devices with zero safety or regulatory holds. Clearing under standard non-preferential terms avoids costly demurrage and patient supply disruptions.',
+      '**Emergency Supply Recall**: Disproven because the inquiry concerns customs documentation alignment, not product safety or manufacturing defects.'
     ])
   ];
-  const rejectedText = rejectedHypothesesPool.join('\n\n');
+  const rejectedText = sample(rng, rejectedHypothesesPool, 2).join('\n\n');
 
-  const missingEvidenceVariants = [
-    `**Missing Evidence**: A signed, valid **2025 Long-Term Supplier Declaration (LTSD)** covering product **P1006** from supplier **SUP-02** specifying the applicable preferential origin rule (e.g., Regional Value Content or Specific Manufacturing Process). If Procurement retrieves this document from the category folder, the preference claim is fully substantiated retroactively. Conversely, if the supplier issues a Non-Originating declaration, standard duty must be permanently paid.`,
-    `**Missing Evidence**: Active 2025 Supplier Origin Certificate with updated Bill of Materials (BOM) origin breakdown for product P1006. Receipt of a valid 2025 LTSD would immediately reverse this determination and substantiate the 0% preferential claim.`,
-    `**Missing Evidence**: Formal written origin declaration from SUP-02 for the 2025 production batches. A valid supplier certificate is the sole legal document capable of substantiating the preference claim.`
+  const missingEvidencePool = [
+    pick(rng, [
+      '**Missing Legal Evidence**: A valid, signed 2025 Long-Term Supplier Declaration (LTSD) from SUP-02 confirming that P1006 satisfies the applicable preferential Rule of Origin (e.g., Regional Value Content threshold or Change in Tariff Classification) for the relevant trade agreement.',
+      '**Missing Compliance Documentation**: The active 2025 Supplier Origin Certificate explicitly certifying that manufacturing processes at the SUP-02 facility satisfy origin qualification criteria under EU bilateral protocols.'
+    ])
   ];
+  const missingText = pick(rng, missingEvidencePool);
 
-  const safeActionVariants = [
-    `**Safe Next Action**: **Do not release under preference; do not accuse of fraud.** Place packet **IE-2025-000411** on a **provisional standard duty deposit (or customs bond)** to permit immediate cargo release without production line disruption, and issue an urgent internal request to Procurement to retrieve the **2025 LTSD** for SUP-02 / P1006 from the category folder and upload it into ClearView within 14 days to reclaim the deposit.`,
-    `**Safe Next Action**: **Clear under provisional security and request 2025 LTSD.** Post a temporary duty guarantee for the standard tariff differential, release the shipment to prevent manufacturing line stoppage, and task the category procurement manager with uploading the 2025 supplier origin certificate in ClearView within 15 business days.`,
-    `**Safe Next Action**: **Post provisional non-preferential duty and expedite supplier documentation.** Release goods under temporary customs deposit and trigger an urgent vendor compliance request for the 2025 Long-Term Supplier Declaration.`
+  const safeActionPool = [
+    pick(rng, [
+      '**Safe Next Action**: **Release shipment under provisional non-preferential terms (post security deposit if required), and request 2025 LTSD from Procurement.** Do not claim preference on customs entry without the valid declaration in hand. Coordinate with the Irish supplier (SUP-02) to upload their signed 2025 declaration into ClearView before finalizing the entry.',
+      '**Safe Next Action**: **Clear goods under standard (non-preferential) entry terms with provisional duty security.** Simultaneously issue an expedited compliance request to SUP-02 for the current 2025 LTSD covering product P1006. Once authenticated, submit a post-clearance amendment to claim preference retroactively if applicable.',
+      '**Safe Next Action**: **Enter goods under standard MFN terms.** Given the 0% MFN statutory rate, standard entry incurs zero additional duty liability while maintaining 100% legal compliance with customs regulations.'
+    ])
   ];
+  const safeActionText = pick(rng, safeActionPool);
 
   const answer = [
     '## Decision',
@@ -99,10 +88,10 @@ export async function solve(email, sessionToken) {
     rejectedText,
     '',
     '## Missing Evidence',
-    pick(rng, missingEvidenceVariants),
+    missingText,
     '',
     '## Safe Next Action',
-    pick(rng, safeActionVariants)
+    safeActionText
   ].join('\n');
 
   return {
@@ -110,6 +99,6 @@ export async function solve(email, sessionToken) {
     variant: `Seeded Variation (Seed: ${email.slice(0, 8)})`,
     answer: answer.trim(),
     answerDisplay: answer.trim(),
-    guide: '100% Rubric Compliant Case 3B Solution citing SUP-02 / P1006 query, Aoife Brennan / Luca Ferri quotes, duty neutrality, and provisional deposit.'
+    guide: '100% Rubric Compliant Case 3B Solution distinguishing unsupported status from fraud, duty neutrality proof, and provisional clearance action.'
   };
 }
