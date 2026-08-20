@@ -1738,6 +1738,7 @@ async function startSolving() {
             : sessionToken);
         const result = await Promise.resolve(solver.solve(email, inputToken));
         workspaceData.answers.push({
+          id: solver.id,
           title: solver.title,
           answer: result.answer,
           type: result.type || 'solved',
@@ -1746,10 +1747,12 @@ async function startSolving() {
           guide: result.guide,
           debug: result.debug,
           backupEndpoints: result.backupEndpoints,
-          usesHostedApi: result.usesHostedApi
+          usesHostedApi: result.usesHostedApi,
+          rubricCoachHtml: result.rubricCoachHtml
         });
       } catch (error) {
         workspaceData.answers.push({
+          id: solver.id,
           title: solver.title,
           answer: `ERROR: ${error.message}`,
           type: 'error',
