@@ -452,9 +452,23 @@ function getHealthLabel(level) {
 }
 
 function detectLanguage(answer) {
+  if (typeof answer !== 'string') return '';
   const trimmed = answer.trim();
-  if (trimmed.startsWith('{') || trimmed.startsWith('[')) return 'language-json';
-  if (answer.includes('def ') || answer.includes('import ') || answer.includes('print(')) return 'language-python';
+  if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
+    try {
+      JSON.parse(trimmed);
+      return 'language-json';
+    } catch {
+      // Not valid JSON, continue
+    }
+  }
+  // Detect genuine Python scripts (import / from / def / class at line start, or standard print statements)
+  if (/^(?:import\s+[a-zA-Z0-9_]+|from\s+[a-zA-Z0-9_]+\s+import|def\s+[a-zA-Z0-9_]+\s*\(|class\s+[a-zA-Z0-9_]+)/m.test(answer) || /print\s*\(/.test(answer)) {
+    // Avoid false positives on Markdown notes / reports starting with markdown headings
+    if (!trimmed.startsWith('#')) {
+      return 'language-python';
+    }
+  }
   return '';
 }
 
