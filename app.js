@@ -1309,6 +1309,23 @@ function bindCanvasActions(data) {
       persistUiState();
     });
   });
+
+  const evaluateDraftBtn = document.getElementById('evaluateDraftBtn');
+  if (evaluateDraftBtn) {
+    evaluateDraftBtn.addEventListener('click', () => {
+      if (typeof window.evaluateCurrentP2Draft === 'function') {
+        window.evaluateCurrentP2Draft(data.id || data.title);
+      }
+    });
+  }
+
+  const p2DraftInput = document.getElementById('p2DraftInput');
+  const p2LiveCharCount = document.getElementById('p2LiveCharCount');
+  if (p2DraftInput && p2LiveCharCount) {
+    p2DraftInput.addEventListener('input', () => {
+      p2LiveCharCount.textContent = `${p2DraftInput.value.length.toLocaleString()} chars`;
+    });
+  }
 }
 
 function renderDashboard() {
