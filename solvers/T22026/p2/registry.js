@@ -16,7 +16,7 @@ export const solvers = [
   case2a, // Q3: Case Study 2A — Solar Inverter Smell Test
   case2b, // Q4: Case Study 2B — Solar 31.6% Impact Claim
   case3a, // Q5: Case Study 3A — Swiss Mismatch Control
-  case3b, // Q6: Case Study 3B — Is the Irish Preference Claim Supported?
-  case4a, // Q7: Case Study 4A — QC Queue Smell Test
+  case4a, // Q6: Case Study 4A — QC Queue Smell Test
+  case3b, // Q7: Case Study 3B — Is the Irish Preference Claim Supported?
   case4b  // Q8: Case Study 4B — Spare-Parts Search
 ].map(wrapSolverModule);
