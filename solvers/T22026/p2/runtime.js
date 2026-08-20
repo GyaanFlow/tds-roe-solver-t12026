@@ -1,5 +1,7 @@
 import { normalizeEmail } from './utils.js';
 import { lockConfig } from './lock-config.js';
+import { buildRubricCoachHtml, registerRubricCoach } from './rubric-coach.js';
+import { validateCaseAnswer } from './case-specs.js';
 
 const SOLVER_TIMEOUT_MS = 30000;
 
@@ -67,15 +69,26 @@ export function wrapSolverModule(mod) {
         warnings: []
       };
 
+      // Register frontend rubric coach handlers
+      registerRubricCoach();
+
       try {
         let result;
-        const timeoutPromise = new Promise((_, reject) =>
-          setTimeout(() => reject(new Error(`Solver timed out after ${SOLVER_TIMEOUT_MS}ms`)), SOLVER_TIMEOUT_MS)
-        );
+        let timeoutId;
+        const timeoutPromise = new Promise((_, reject) => {
+          timeoutId = setTimeout(
+            () => reject(new Error(`Solver timed out after ${SOLVER_TIMEOUT_MS}ms`)),
+            SOLVER_TIMEOUT_MS
+          );
+        });
         const solvePromise = (async () => {
           return await solveImpl(normalizedEmail, sessionToken);
         })();
-        result = await Promise.race([solvePromise, timeoutPromise]);
+        try {
+          result = await Promise.race([solvePromise, timeoutPromise]);
+        } finally {
+          clearTimeout(timeoutId);
+        }
 
         const durationMs = performance.now() - startedAt;
         diagnostics.durationMs = durationMs;
@@ -99,11 +112,21 @@ export function wrapSolverModule(mod) {
             variant: 'Locked',
             answerDisplay: [
               `### ${title}`,
-              '⚠️ **Access Restricted**: This solver is locked.',
-              'You do not have permission to access solutions or guides for this exam.',
+              '⚠️ **Access Restricted**: This solver is locked for this email ID.',
+              '',
+              'You can use the **Interactive Rubric Coach & Draft Evaluator** below to test and score your own draft against the official exam rubric before submission.',
+              '',
+              buildRubricCoachHtml(id, title)
             ].join('\n'),
-            guide: 'Access restricted. Complete the tasks manually.'
+            guide: 'Access restricted. Write your own case study analysis and evaluate it with the Rubric Coach below.'
           };
+        } else if (result.type === 'solved') {
+          // Append the live draft evaluator below the solved answer display
+          finalResult.answerDisplay = [
+            result.answerDisplay || result.answer,
+            '\n\n---\n',
+            buildRubricCoachHtml(id, title)
+          ].join('\n');
         }
 
         return {
@@ -127,7 +150,7 @@ export function wrapSolverModule(mod) {
           type: 'error',
           answer: '',
           variant: 'Error',
-          answerDisplay: `### ${title}\n\n**Error**: ${error.message}`,
+          answerDisplay: `### ${title}\n\n**Error**: ${error.message}\n\n${buildRubricCoachHtml(id, title)}`,
           guide: `The solver encountered an error:\n\n> ${error.message}\n\nTry again or check the console for details.`,
           debug: {
             ...diagnostics,
