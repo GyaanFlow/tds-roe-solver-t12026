@@ -1,7 +1,6 @@
 import { normalizeEmail } from './utils.js';
 import { lockConfig } from './lock-config.js';
 import { buildRubricCoachHtml, registerRubricCoach } from './rubric-coach.js';
-import { validateCaseAnswer } from './case-specs.js';
 
 const SOLVER_TIMEOUT_MS = 30000;
 
@@ -114,19 +113,17 @@ export function wrapSolverModule(mod) {
               `### ${title}`,
               '⚠️ **Access Restricted**: This solver is locked for this email ID.',
               '',
-              'You can use the **Interactive Rubric Coach & Draft Evaluator** below to test and score your own draft against the official exam rubric before submission.',
-              '',
-              buildRubricCoachHtml(id, title)
+              'You can use the **Interactive Rubric Coach & Draft Evaluator** below to test and score your own draft against the official exam rubric before submission.'
             ].join('\n'),
-            guide: 'Access restricted. Write your own case study analysis and evaluate it with the Rubric Coach below.'
+            guide: 'Access restricted. Write your own case study analysis and evaluate it with the Rubric Coach below.',
+            rubricCoachHtml: buildRubricCoachHtml(id, title)
           };
         } else if (result.type === 'solved') {
-          // Append the live draft evaluator below the solved answer display
-          finalResult.answerDisplay = [
-            result.answerDisplay || result.answer,
-            '\n\n---\n',
-            buildRubricCoachHtml(id, title)
-          ].join('\n');
+          finalResult = {
+            ...result,
+            answerDisplay: result.answerDisplay || result.answer,
+            rubricCoachHtml: buildRubricCoachHtml(id, title)
+          };
         }
 
         return {
@@ -150,8 +147,9 @@ export function wrapSolverModule(mod) {
           type: 'error',
           answer: '',
           variant: 'Error',
-          answerDisplay: `### ${title}\n\n**Error**: ${error.message}\n\n${buildRubricCoachHtml(id, title)}`,
+          answerDisplay: `### ${title}\n\n**Error**: ${error.message}`,
           guide: `The solver encountered an error:\n\n> ${error.message}\n\nTry again or check the console for details.`,
+          rubricCoachHtml: buildRubricCoachHtml(id, title),
           debug: {
             ...diagnostics,
             error: error.message,

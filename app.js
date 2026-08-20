@@ -762,6 +762,11 @@ function renderAnswerPanel(data, langClass) {
   });
 }
 
+function renderRubricCoachPanel(data) {
+  if (!data || !data.rubricCoachHtml) return '';
+  return `<div class="rubric-coach-container" style="margin-top: 14px;">${data.rubricCoachHtml}</div>`;
+}
+
 function renderNotesPanel(data) {
   if (!data.answerDisplay) return '';
   const rendered = typeof marked !== 'undefined' ? marked.parse(data.answerDisplay) : data.answerDisplay;
@@ -1578,6 +1583,7 @@ function renderCanvas(index) {
           ${renderApiStatusNotice(data)}
           ${renderBackupEndpointsPanel(data)}
           ${renderAnswerPanel(data, langClass)}
+          ${renderRubricCoachPanel(data)}
           ${renderDiagnosticsPanel(data.debug)}
         `
         : `
@@ -1587,6 +1593,7 @@ function renderCanvas(index) {
           ${renderAnswerPanel(data, langClass)}
           ${guideAfterAnswer ? renderGuidePanel(data) : ''}
           ${renderNotesPanel(data)}
+          ${renderRubricCoachPanel(data)}
           ${renderDiagnosticsPanel(data.debug)}
         `
       }
