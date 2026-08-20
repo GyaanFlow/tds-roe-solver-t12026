@@ -577,7 +577,6 @@ function checkP1OfficialOrder(solvers) {
     'P1 solver order/IDs no longer match the official May 2026 P1 bundle.'
   );
 }
-
 async function checkP1SolversExecute(solvers) {
   const sampleEmails = [
     '21f1000000@ds.study.iitm.ac.in',
@@ -627,6 +626,52 @@ async function checkP1SolversExecute(solvers) {
     seenPrompts.add(prompt);
   }
   assert(seenPrompts.size > 1, 'P1 Q2 returns the identical prompt for every email — must vary per user.');
+}
+
+async function checkT2P2SolversExecute(solvers) {
+  assert(solvers.length === 8, `T2 P2 should have exactly 8 solvers, got ${solvers.length}.`);
+
+  const whitelistedEmails = [
+    '23f1000805@ds.study.iitm.ac.in',
+    '23f3001077@ds.study.iitm.ac.in'
+  ];
+  const lockedEmails = [
+    'random_student@ds.study.iitm.ac.in',
+    'other_user@gmail.com'
+  ];
+  const sessionToken = 'quiz_sign_mock_token_1234';
+
+  // 1. Whitelisted emails get full solved diagnostic notes
+  for (const email of whitelistedEmails) {
+    for (const solver of solvers) {
+      const result = await solver.solve(email, sessionToken);
+      assert(result && typeof result === 'object', `T2 P2 ${solver.id} returned non-object.`);
+      assert(typeof result.answer === 'string', `T2 P2 ${solver.id} answer must be string.`);
+      assert(result.answer.length >= 150, `T2 P2 ${solver.id} answer too short: ${result.answer.length}`);
+      assert(result.answer.length <= 6000, `T2 P2 ${solver.id} answer exceeds max length: ${result.answer.length}`);
+      assert(result.type === 'solved', `T2 P2 ${solver.id} should be solved for whitelisted email, got ${result.type}`);
+
+      // Determinism
+      const result2 = await solver.solve(email, sessionToken);
+      assert(result.answer === result2.answer, `T2 P2 ${solver.id} non-deterministic for same email.`);
+    }
+  }
+
+  // 2. Non-whitelisted emails get locked access restriction
+  for (const email of lockedEmails) {
+    for (const solver of solvers) {
+      const result = await solver.solve(email, sessionToken);
+      assert(result.debug && result.debug.locked === true, `T2 P2 ${solver.id} should be locked for ${email}`);
+      assert(result.variant === 'Locked', `T2 P2 ${solver.id} should show Locked variant`);
+    }
+  }
+
+  // 3. Uniqueness across different whitelisted emails
+  for (const solver of solvers) {
+    const res1 = await solver.solve(whitelistedEmails[0], sessionToken);
+    const res2 = await solver.solve(whitelistedEmails[1], sessionToken);
+    assert(res1.answer !== res2.answer, `T2 P2 ${solver.id} produced duplicate identical answer across different emails.`);
+  }
 }
 
 function checkT2Ga8OfficialOrder(solvers) {
@@ -695,6 +740,7 @@ async function main() {
   const ga6Registry = await importFresh('solvers/T22026/ga6/registry.js');
   const p1Registry = await importFresh('solvers/T22026/p1/registry.js');
   const t2Ga8Registry = await importFresh('solvers/T22026/ga8/registry.js');
+  const t2P2Registry = await importFresh('solvers/T22026/p2/registry.js');
 
   assert(Array.isArray(ga7Registry.solvers) && ga7Registry.solvers.length > 0, 'GA7 registry did not load solvers.');
   assert(Array.isArray(roeRegistry.solvers) && roeRegistry.solvers.length > 0, 'ROE registry did not load solvers.');
@@ -709,6 +755,7 @@ async function main() {
   assert(Array.isArray(ga6Registry.solvers) && ga6Registry.solvers.length === 10, `GA6 registry should have exactly 10 solvers, got ${ga6Registry.solvers.length}.`);
   assert(Array.isArray(p1Registry.solvers) && p1Registry.solvers.length === 5, `P1 registry should have exactly 5 solvers, got ${p1Registry.solvers.length}.`);
   assert(Array.isArray(t2Ga8Registry.solvers) && t2Ga8Registry.solvers.length === 10, `T2 GA8 registry should have exactly 10 solvers, got ${t2Ga8Registry.solvers.length}.`);
+  assert(Array.isArray(t2P2Registry.solvers), 'T2 P2 registry should export solvers array.');
   await checkGa8OfficialParity(ga8Registry.solvers);
   checkGa0OfficialOrder(ga0Registry.solvers);
   await checkGa0SolversExecute(ga0Registry.solvers);
@@ -726,10 +773,11 @@ async function main() {
   await checkP1SolversExecute(p1Registry.solvers);
   checkT2Ga8OfficialOrder(t2Ga8Registry.solvers);
   await checkT2Ga8SolversExecute(t2Ga8Registry.solvers);
+  await checkT2P2SolversExecute(t2P2Registry.solvers);
 
   await checkServerRoutes();
 
-  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}, GA5 solvers=${ga5Registry.solvers.length}, GA6 solvers=${ga6Registry.solvers.length}, P1 solvers=${p1Registry.solvers.length}, T2 GA8 solvers=${t2Ga8Registry.solvers.length}`);
+  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}, GA5 solvers=${ga5Registry.solvers.length}, GA6 solvers=${ga6Registry.solvers.length}, P1 solvers=${p1Registry.solvers.length}, T2 GA8 solvers=${t2Ga8Registry.solvers.length}, T2 P2 solvers=${t2P2Registry.solvers.length}`);
 }
 
 main().catch((error) => {
