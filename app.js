@@ -1320,10 +1320,64 @@ function bindCanvasActions(data) {
   }
 
   const p2DraftInput = document.getElementById('p2DraftInput');
-  const p2LiveCharCount = document.getElementById('p2LiveCharCount');
-  if (p2DraftInput && p2LiveCharCount) {
-    p2DraftInput.addEventListener('input', () => {
-      p2LiveCharCount.textContent = `${p2DraftInput.value.length.toLocaleString()} chars`;
+  const p2LiveCharPill = document.getElementById('p2LiveCharPill');
+  const p2LiveWordPill = document.getElementById('p2LiveWordPill');
+  const p2PasteBtn = document.getElementById('p2PasteBtn');
+  const p2ClearBtn = document.getElementById('p2ClearBtn');
+  const p2SkeletonBtn = document.getElementById('p2SkeletonBtn');
+
+  function updateLiveCounters() {
+    if (!p2DraftInput) return;
+    const len = p2DraftInput.value.length;
+    const words = p2DraftInput.value.trim() ? p2DraftInput.value.trim().split(/\s+/).length : 0;
+    if (p2LiveCharPill) {
+      p2LiveCharPill.innerHTML = `<strong>${len.toLocaleString()}</strong> chars`;
+      const isShort = len < 150;
+      const isLong = len > 6000;
+      p2LiveCharPill.className = `p2-counter-pill ${len === 0 ? '' : (!isShort && !isLong) ? 'valid' : 'invalid'}`;
+    }
+    if (p2LiveWordPill) {
+      p2LiveWordPill.textContent = `${words.toLocaleString()} words`;
+    }
+  }
+
+  if (p2DraftInput) {
+    p2DraftInput.addEventListener('input', updateLiveCounters);
+  }
+
+  if (p2PasteBtn && p2DraftInput) {
+    p2PasteBtn.addEventListener('click', async () => {
+      try {
+        const text = await navigator.clipboard.readText();
+        if (text) {
+          p2DraftInput.value = text;
+          updateLiveCounters();
+          showToast('Draft pasted from clipboard', 'info');
+        }
+      } catch {
+        showToast('Please paste manually with Ctrl+V', 'warning');
+      }
+    });
+  }
+
+  if (p2ClearBtn && p2DraftInput) {
+    p2ClearBtn.addEventListener('click', () => {
+      p2DraftInput.value = '';
+      updateLiveCounters();
+      const resultsContainer = document.getElementById('p2EvaluationResults');
+      if (resultsContainer) resultsContainer.style.display = 'none';
+      showToast('Draft cleared', 'info');
+    });
+  }
+
+  if (p2SkeletonBtn && p2DraftInput) {
+    p2SkeletonBtn.addEventListener('click', () => {
+      const raw = p2SkeletonBtn.dataset.skeleton;
+      if (raw) {
+        p2DraftInput.value = decodeURIComponent(raw);
+        updateLiveCounters();
+        showToast('Template skeleton inserted', 'info');
+      }
     });
   }
 }
