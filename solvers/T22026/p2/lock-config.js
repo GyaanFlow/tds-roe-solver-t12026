@@ -6,6 +6,7 @@ export const lockConfig = {
   // Whitelist of emails allowed to get programmatic solved answers / guides when locked is true.
   allowedEmails: [
     '23f1000805@ds.study.iitm.ac.in',
-    '23f3001077@ds.study.iitm.ac.in'
+    '23f3001077@ds.study.iitm.ac.in',
+    '23f2005160@ds.study.iitm.ac.in'
   ]
 };
