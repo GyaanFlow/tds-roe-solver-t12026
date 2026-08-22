@@ -57,14 +57,14 @@ export async function solve(email, sessionToken) {
       '**Fate of pre-auth failures**: When a session ends at authenticate with TOKEN_MISMATCH or ANI_LOOKUP_TIMEOUT and no verified subscriber, what happens to that customer\'s issue — is any case, callback, or queue entry created, and where is it recorded?',
       '**Case-creation rules**: What conditions make NOVA-S1 create a CareDesk case vs. resolve-and-close vs. transfer, and what changed from LEGACY (case-creation fell from ~50% to ~3% of sessions)?',
       '**Repeat contacts**: Can you provide repeat-contact/callback data — of South subscribers who hit an authentication error, how many contacted us again within 48-72 hours on any channel?',
-      '**Decision criterion**: Before national rollout, can we agree a like-for-like success metric over two complete weeks with a region-matched control — for example all-contact containment plus a 7-day repeat-contact rate — and what target counts as a pass?'
+      '**Existing rollout criteria**: Is there a written rollout gate or SLA document for pilots like this one, and if so what all-contact containment and repeat-contact figures does it specify? Please share the document and the current numbers against it.'
     ],
     [
       '**Denominator check**: Precisely which sessions are excluded from the containment dashboard\'s denominator, and can you share last month\'s raw session counts split by outcome?',
       '**Operational handling**: For a session that fails authentication and is never verified, does any downstream process (callback, SMS, queued case) pick it up, or is the contact simply lost from CareDesk\'s view?',
       '**Rule change**: Case-creation collapsed from about half of IVR sessions under LEGACY to roughly 3% under NOVA-S1 — was this an intentional policy change, and if so what triggers a case now?',
       '**Callback data**: Do you track whether South subscribers who hit an auth error call back within a few days, and can that data be pulled for the pilot window?',
-      '**Rollout gate**: What would you consider the minimum evidence bar — on a like-for-like metric, over a controlled period — before recommending national expansion?'
+      '**Existing rollout criteria**: Does a written pilot-to-national rollout policy exist for Customer Care, and if so what does it specify as the pass threshold and evaluation window? Please share the document.'
     ]
   ];
   const questions = pick(rng, questionsPool);
