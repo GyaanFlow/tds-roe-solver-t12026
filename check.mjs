@@ -634,7 +634,8 @@ async function checkT2P2SolversExecute(solvers) {
   const whitelistedEmails = [
     '23f1000805@ds.study.iitm.ac.in',
     '23f3001077@ds.study.iitm.ac.in',
-    '23f2005160@ds.study.iitm.ac.in'
+    '23f2005160@ds.study.iitm.ac.in',
+    '24f2004141@ds.study.iitm.ac.in'
   ];
   const lockedEmails = [
     'random_student@ds.study.iitm.ac.in',
@@ -672,9 +673,11 @@ async function checkT2P2SolversExecute(solvers) {
     const res1 = await solver.solve(whitelistedEmails[0], sessionToken);
     const res2 = await solver.solve(whitelistedEmails[1], sessionToken);
     const res3 = await solver.solve(whitelistedEmails[2], sessionToken);
+    const res4 = await solver.solve(whitelistedEmails[3], sessionToken);
     assert(res1.answer !== res2.answer, `T2 P2 ${solver.id} produced duplicate identical answer across email 1 and 2.`);
     assert(res1.answer !== res3.answer, `T2 P2 ${solver.id} produced duplicate identical answer across email 1 and 3.`);
     assert(res2.answer !== res3.answer, `T2 P2 ${solver.id} produced duplicate identical answer across email 2 and 3.`);
+    assert(res1.answer !== res4.answer, `T2 P2 ${solver.id} produced duplicate identical answer across email 1 and 4.`);
   }
 }
 
