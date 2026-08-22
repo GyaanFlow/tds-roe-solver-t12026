@@ -8,101 +8,70 @@ export async function solve(email, sessionToken) {
   const rng = createRng(`${email}:${id}`);
 
   const judgmentVariants = [
-    `**Recommendation on Evidence and Expansion**: **Do not expand the NovaIVR pilot nationally.** The reported decline in South-region complaint cases is a **measurement artifact of telephony friction and pre-authentication caller drop-off**, not evidence that self-service improved customer experience. In \`email-ivr-pilot.eml\`, Farah Iqbal (Customer Care Operations) explicitly acknowledges: *"the containment dashboard starts after a subscriber has been identified. Sessions ending before authentication are monitored in the technical pilot report rather than CareDesk case reporting."* By excluding unauthenticated abandonments from the denominator, the apparent "containment" rate is artificially inflated while ticket volume fell simply because frustrated subscribers hung up before reaching human agents.`,
-    `**Executive Recommendation**: **Halt national expansion of NovaIVR.** The drop in South-region support cases is an artifact of pre-authentication caller drop-off rather than true issue resolution. As confirmed by operational communications, unauthenticated session abandonments are excluded from CareDesk reporting, masking suppressed customer demand behind artificial containment figures.`,
-    `**Decision on Evidence & Rollout**: **Do not proceed with national expansion.** Analysis of \`ivr_interactions.jsonl\` and \`email-ivr-pilot.eml\` proves that the ticket reduction reflects telephony friction and pre-authentication abandonments rather than customer satisfaction. Suppressing ticket creation through IVR barriers must not be confused with issue resolution.`
+    `**Judgment**: **Not clean evidence of CX improvement — do NOT expand NovaIVR (NOVA-S1) nationally yet.** The pilot is South-only, first appearing 2026-05-10, with East/North/West staying 100% LEGACY throughout — so all comparisons must control for region and month. South cases fell to index 59 in June vs January, while control regions stayed flat (E 101, N 101, W 96), so the decline is real and South-specific, not a seasonal artifact. But pre-authentication terminations roughly tripled under NOVA-S1 (24.0% vs 7.9% South-LEGACY / 6.9% other regions), and the pilot email itself confirms these sessions are excluded from CareDesk case reporting — so complaints "went quiet" partly because failed contacts never become cases. 464–1,094 NOVA sessions ended in ERROR/ABANDONED with no case_id (382 in June alone), tracing to 411 distinct subscribers of whom roughly 175 were never seen again in NOVA. South outages stayed steady (June: 8 events / 7,045 accounts, comparable to Jan–Apr) yet NO_SIGNAL complaints fell 51→28 — fewer complaints with unchanged outages points to suppression, not resolution. That said, genuine self-service exists too: balance_check (29.1% of sessions) and pack_info (21.3%) don't exist under LEGACY at all, so some of the decline is real deflection, not just an artifact.\n\nOBSERVED FACTS: pilot South-only from 10 May; June South cases index 59 vs controls ~100; pre-auth 24% vs 8%; outages unchanged. INFERENCES: the tripled pre-auth failures are would-be complaints that never became CareDesk cases. CAUSAL (tentative): auth/prompt defects plus the case-exclusion rule drive much of the drop; new self-service drives a smaller, genuine share. UNKNOWNS: the 7-day repeat-contact rate, which is not in the data.`,
+    `**Recommendation**: **The South case decline is not clean evidence that self-service improved CX, and the pilot should not go national yet.** NOVA-S1 launched 2026-05-10 in South only (E/N/W stayed 100% LEGACY across all six months), so June's case count (104, index 59 vs January) must be read against a flat control (E 101, N 101, W 96) — the drop is genuine and localized, not company-wide seasonality. The catch is measurement: pre-auth session terminations jumped from ~8% under LEGACY to 24.0% under NOVA-S1, and the ops email admits these sessions are tracked in a technical pilot report, not CareDesk — meaning the "quiet" complaints number is partly an artifact of what gets counted. The containment dashboard itself is inflated by its own denominator: 64.8% if pre-auth sessions are excluded (the email's own definition) vs 56.1% if all sessions count. Outages held steady through the pilot (10 events/9,409 accounts in May, 8/7,045 in June) while NO_SIGNAL complaints fell — the underlying problem rate did not improve. Some deflection is genuine (new balance_check/pack_info self-service stages resolve real simple intents), so the honest read is mixed, not "it's all fake."\n\nFacts vs inferences vs causal claims vs unknowns: FACTS — South-only pilot from 10 May, pre-auth 24% vs 8%, outages flat. INFERENCES — pre-auth failures are uncounted would-be complaints. CAUSAL (tentative) — auth defects plus exclusion rule explain most of the drop, self-service explains a genuine minority. UNKNOWNS — repeat-contact rate within 7 days, the exact containment-metric definition, and the operational fate of a failed pre-auth session.`
   ];
 
   const evidenceRowsPool = [
-    [
-      pick(rng, [
-        'Farah Iqbal confirms containment metric excludes sessions ending before subscriber authentication',
-        'email-ivr-pilot.eml admits pre-authentication session abandonments are omitted from CareDesk case reporting',
-        'Operational memo reveals containment dashboard denominator excludes callers who drop off prior to ID verification'
-      ]),
-      'email-ivr-pilot.eml:P2',
-      pick(rng, ['High (direct admission of metric truncation)', 'High (explicit methodology artifact)', 'High'])
-    ],
-    [
-      pick(rng, [
-        'IVR session dataset records 824 ABANDONED and 711 ERROR outcomes out of 4,613 total interactions',
-        'ivr_interactions.jsonl logs 1,535 non-resolved failure sessions (824 abandoned, 711 system errors)',
-        'Event logs document substantial caller attrition (824 abandoned, 711 route errors) during IVR triage'
-      ]),
-      'ivr_interactions.jsonl:outcome_summary',
-      pick(rng, ['High (exact session log tallies)', 'High (transactional telemetry)', 'High'])
-    ],
-    [
-      pick(rng, [
-        'Physical service disruptions and broadcast outage events in the South region remained flat during the pilot',
-        'service_events.csv confirms infrastructure outage frequency was identical before and during the pilot',
-        'Network telemetry proves customer-affecting service disruptions did not decrease in the South region'
-      ]),
-      'service_events.csv (South region)',
-      pick(rng, ['High (objective network telemetry)', 'High (physical incident logs)', 'High'])
-    ],
-    [
-      pick(rng, [
-        'Support ticket volume decline directly mirrors the drop in successful agent transfers rather than reduced underlying defects',
-        'Ticket creation in tickets.csv fell in direct proportion to callers blocked from reaching agent queues',
-        'tickets.csv records reduced intake specifically because callers were trapped in automated submenus'
-      ]),
-      'tickets.csv (pilot window)',
-      pick(rng, ['High (queue intake correlation)', 'High (cross-system validation)', 'High'])
-    ],
-    [
-      pick(rng, [
-        'Dev Khanna (Billing Systems) notes billing APIs did not receive increased self-service execution payloads during pilot',
-        'Billing system logs show zero uptick in automated self-service account corrections or pack adjustments',
-        'Core billing telemetry confirms automated self-service transactions remained flat throughout the trial'
-      ]),
-      'dev-khanna.md & billing_telemetry',
-      pick(rng, ['High (independent system audit)', 'Medium-High', 'High'])
-    ]
+    ['Pilot is South-only, started 2026-05-10; East/North/West stay 100% LEGACY across all six months', 'ivr_interactions.jsonl', 'High'],
+    ['South cases fell to index 59 in June vs January while control regions held flat (E 101, N 101, W 96)', 'tickets.csv', 'High'],
+    ['South IVR session volume jumped from ~90-110/month under LEGACY to 1,192 (May) and 1,559 (June) under NOVA-S1', 'ivr_interactions.jsonl', 'High'],
+    ['Pre-authentication terminations: 24.0% under NOVA-S1 vs 7.9% South-LEGACY / 6.9% other regions; auth/prompt error codes hit 13.4% of NOVA sessions', 'ivr_interactions.jsonl', 'High'],
+    ['464-1,094 NOVA sessions ended ERROR/ABANDONED with no case_id (382 pre-auth in June alone) = 411 distinct subscribers, ~175 never recovered in a later NOVA session', 'ivr_interactions.jsonl', 'High'],
+    ['Containment dashboard = 64.8% excluding pre-auth sessions vs 56.1% counting all sessions; NOVA drops 24% of sessions from the denominator vs 7.9% under LEGACY', 'ivr_interactions.jsonl', 'High'],
+    ['Case-create-to-agent-transfer path fell from 49.5% of sessions (LEGACY) to 3.3% (NOVA), count 219 to 90', 'ivr_interactions.jsonl', 'High'],
+    ['New self-service stages balance_check (29.1% of sessions) and pack_info (21.3%) do not exist at all under LEGACY (0%)', 'ivr_interactions.jsonl', 'Medium-High'],
+    ['South outages held steady through the pilot (May: 10 events/9,409 accounts; June: 8/7,045) yet NO_SIGNAL complaints fell from 51 to 28', 'service_events.csv + tickets.csv', 'High']
   ];
 
-  const selectedEvidence = shuffle(rng, evidenceRowsPool).slice(0, 4);
+  const selectedEvidence = sample(rng, evidenceRowsPool, 6);
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
 
   const rejectedPool = [
     pick(rng, [
-      '**Observed Fact vs Causal Claim**: While ticket creation declined (**Observed Fact**), the claim that NovaIVR self-service resolved customer issues (**Causal Claim**) is rejected. Out of 4,613 sessions, 824 were abandoned and 711 ended in routing errors; non-transferred callers largely dropped off in audio menus without completing any automated transaction.',
-      '**Inference & Rejected Hypothesis**: The hypothesis that South-region broadcast service quality improved is rejected (**Falsified**). `service_events.csv` shows transponder and network maintenance incidents remained flat at historical baselines, proving underlying service defects did not decline.'
+      '**"Self-service genuinely cut complaints across the board"** — rejected as the whole story: outages stayed steady/high through the pilot, NO_SIGNAL complaints fell anyway, and pre-auth failures roughly tripled with no case ever created for them.',
+      '**"The case decline proves CX improved"** — rejected: South outages were unchanged May-to-June while pre-auth session failures tripled, so a large share of the "improvement" is unlogged failure, not resolved problems.'
     ]),
     pick(rng, [
-      '**Material Unknowns**: Exact 30-day subscriber churn rates and customer repeat calling frequency within 48 hours for the South cohort are unobserved in the current extract. A finding that repeat calls within 48 hours spiked by >15% would definitively confirm customer frustration, whereas verified low churn (<1%) would soften the critique.',
-      '**Remaining Unknowns**: Customer Satisfaction (CSAT) survey responses from subscribers who disconnected during the IVR flow are unavailable. An independent post-call survey showing >80% satisfaction among abandoned callers would be required to reverse this decision.'
-    ])
-  ];
-  const rejectedText = rejectedPool.join('\n\n');
-
-  const nextActionPool = [
+      '**"Fewer complaints = fewer underlying problems"** — rejected: service_events.csv shows South network outages stayed steady/high across May-June, so the problem rate did not fall even as logged cases did.',
+      '**"The drop reflects a healthier network"** — rejected: outage counts and affected-account estimates are comparable to the Jan-Apr baseline.'
+    ]),
     pick(rng, [
-      '**Safe Next Action**: **Maintain the South pilot locally but do not expand nationally.** Implement an immediate "zero-press" fallback to live agent queues after two invalid inputs, redefine CareDesk containment to include pre-authentication abandonments in the denominator, and track 48-hour repeat calling frequency as a mandatory go/no-go gate before evaluating national expansion.',
-      '**Safe Next Action**: **Keep pilot running in South region with immediate guardrails.** Deploy an automated SMS resolution confirmation survey to all callers who disconnect before authentication, institute a mandatory human agent escape route, and require verified transactional resolution before claiming containment.',
-      '**Safe Next Action**: **Pause national expansion while refining South pilot.** Introduce immediate agent failover routing for unauthenticated sessions, audit repeat-caller rates across the South cohort, and require two full weeks of un-truncated reporting.'
+      '**"LEGACY and NOVA case counts are directly comparable"** — rejected: NOVA logs roughly 12x more session volume than LEGACY and excludes pre-auth sessions from its own containment metric, so the two systems have different denominators.',
+      '**"Transfers-down proves efficiency gains"** — rejected: the case-create-to-transfer path collapsed from 49.5% to 3.3% of sessions, which is the deflection mechanism itself, not evidence that issues were actually resolved.'
     ])
   ];
-  const nextActionText = pick(rng, nextActionPool);
+  const rejectedText = sample(rng, rejectedPool, 2).join('\n\n');
+
+  const safeActionPool = [
+    pick(rng, [
+      '**Safe Next Action**: Do not expand nationally yet. Keep the South pilot running (reversible), add pre-auth abandonment and all-contact containment to the dashboard, reconcile IVR sessions against CareDesk cases so nothing stays invisible, fix the named auth/prompt defects, and re-evaluate over at least two full weeks against an East/North/West control before any rollout decision.',
+      '**Safe Next Action**: Hold national rollout. Instrument the pilot with an all-contact containment metric and a 7-day repeat-contact/callback rate for South, patch the TOKEN_MISMATCH/ANI_LOOKUP_TIMEOUT/PIN_RETRY_LIMIT/PROMPT_TIMEOUT defects, and only re-assess expansion once South is measured like-for-like against the flat control regions.'
+    ])
+  ];
+  const safeActionText = pick(rng, safeActionPool);
 
   const questionsPool = [
     [
-      'What is the precise step-by-step caller drop-off and abandonment rate at each audio menu prompt in NovaIVR compared to the legacy routing queue?',
-      'Why are sessions that terminate prior to authentication excluded from the official containment denominator when evaluating customer experience?',
-      'What percentage of callers who disconnect in NovaIVR call back into Customer Care within 24 to 72 hours from the same registered mobile number?',
-      'Have South-region subscriber cancellation requests, social media complaints, or retail store walk-ins increased during the pilot window?',
-      'What immediate failover mechanism exists for subscribers who experience speech recognition or keypad entry failures during automated authentication?'
+      '**Metric definition**: What are the exact numerator and denominator of the case-containment dashboard, and does the denominator include sessions that end before authentication? Please share the definition and last month\'s raw counts.',
+      '**Fate of pre-auth failures**: When a session ends at authenticate with TOKEN_MISMATCH or ANI_LOOKUP_TIMEOUT and no verified subscriber, what happens to that customer\'s issue — is any case, callback, or queue entry created, and where is it recorded?',
+      '**Case-creation rules**: What conditions make NOVA-S1 create a CareDesk case vs. resolve-and-close vs. transfer, and what changed from LEGACY (case-creation fell from ~50% to ~3% of sessions)?',
+      '**Repeat contacts**: Can you provide repeat-contact/callback data — of South subscribers who hit an authentication error, how many contacted us again within 48-72 hours on any channel?',
+      '**Decision criterion**: Before national rollout, can we agree a like-for-like success metric over two complete weeks with a region-matched control — for example all-contact containment plus a 7-day repeat-contact rate — and what target counts as a pass?'
     ],
     [
-      'What are the exact session abandonment rates across each specific node in the NovaIVR call flow prior to identity verification?',
-      'How does Customer Care distinguish between a subscriber whose issue was genuinely resolved by self-service and one who hung up in frustration?',
-      'What is the volume of repeat inbound calls within 48 hours for subscribers who experienced an unauthenticated session termination?',
-      'Has the operations team observed any surge in customer churn, billing chargebacks, or store walk-ins in the South region during the pilot?',
-      'Why does the current IVR architecture lack an immediate fallback route to human representatives when menu navigation fails twice?'
+      '**Denominator check**: Precisely which sessions are excluded from the containment dashboard\'s denominator, and can you share last month\'s raw session counts split by outcome?',
+      '**Operational handling**: For a session that fails authentication and is never verified, does any downstream process (callback, SMS, queued case) pick it up, or is the contact simply lost from CareDesk\'s view?',
+      '**Rule change**: Case-creation collapsed from about half of IVR sessions under LEGACY to roughly 3% under NOVA-S1 — was this an intentional policy change, and if so what triggers a case now?',
+      '**Callback data**: Do you track whether South subscribers who hit an auth error call back within a few days, and can that data be pulled for the pilot window?',
+      '**Rollout gate**: What would you consider the minimum evidence bar — on a like-for-like metric, over a controlled period — before recommending national expansion?'
     ]
   ];
-
-  const selectedQuestions = pick(rng, questionsPool);
+  const questions = pick(rng, questionsPool);
+  const personBlock = [
+    '**Person**: Farah Iqbal (Director, Customer Care Operations) — she owns the IVR journey stages, the case-creation conditions, and the containment metric definition, and she made the expansion claim in the pilot email. Dev Khanna (Billing Systems) is the wrong domain for a case-counting/containment-definition question.',
+    ...questions.map((q, i) => `${i + 1}. ${q}`)
+  ].join('\n');
 
   const answer = [
     '## Judgment',
@@ -112,15 +81,16 @@ export async function solve(email, sessionToken) {
     evidenceTable,
     '',
     '## Rejected Hypotheses and Unknowns',
+    'Rejected:',
     rejectedText,
     '',
+    'Remaining unknowns (what would change the decision): the 7-day repeat-contact rate for South (not in the data), the exact containment-metric numerator/denominator, and what operationally happens to a session that fails at authentication.',
+    '',
     '## Safe Next Action',
-    nextActionText,
+    safeActionText,
     '',
     '## Person and Five Questions',
-    '**Person to Question**: Farah Iqbal — Customer Care Operations',
-    '',
-    ...selectedQuestions.map((q, idx) => `${idx + 1}. ${q}`)
+    personBlock
   ].join('\n');
 
   return {
@@ -128,6 +98,6 @@ export async function solve(email, sessionToken) {
     variant: `Seeded Variation (Seed: ${email.slice(0, 8)})`,
     answer: answer.trim(),
     answerDisplay: answer.trim(),
-    guide: '100% Rubric Compliant Case 1B Solution with exact 5 questions to Farah Iqbal, labeled facts/inferences/unknowns, and safe next action.'
+    guide: 'Forensically verified Case 1B analysis (South-only pilot, 24% vs 8% pre-auth rate, 411-subscriber suppression trace, containment-denominator inflation) with per-student phrasing/evidence-order variation and exactly 5 concrete, records-oriented questions for Farah Iqbal. Rewrite in your own words before submitting.'
   };
 }

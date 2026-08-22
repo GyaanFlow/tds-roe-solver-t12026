@@ -1,6 +1,24 @@
 export function normalizeEmail(email) {
   if (!email) return '';
-  return email.trim().toLowerCase().replace(/\.+$/, '');
+  return String(email).trim().toLowerCase().replace(/\.+$/, '');
+}
+
+/**
+ * Guard for the seeded case-study generators. Every per-student note is derived from an RNG seeded
+ * with the email, so a blank/missing email still yields a perfectly deterministic answer -- but the
+ * SAME one for every student who submits without an email, which is both wrong-for-you and a
+ * plagiarism collision. Refuse instead of emitting a confident `solved` note.
+ * Mirrors the requireEmail() guard added to solvers/T22026/ga7/utils.js for the same bug class.
+ */
+export function requireEmail(normalizedEmail) {
+  if (!normalizedEmail || !String(normalizedEmail).trim()) {
+    throw new Error(
+      'This case-study note is seeded from your exam email, and no email was provided. ' +
+      'Enter your IITM email in the workspace and reinitialize -- a note generated without it ' +
+      'would be identical for every student who did the same.'
+    );
+  }
+  return String(normalizedEmail).trim();
 }
 
 // Seeded LCG using FNV-1a hash
