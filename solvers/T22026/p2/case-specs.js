@@ -91,6 +91,7 @@ export const CASE_SPECS = {
       'Safe Next Action'
     ],
     dataFiles: ['declaration.pdf', 'commercial_invoice.pdf', 'air_waybill.pdf', 'review_note.txt', 'product_master_current.xlsx', 'country_tariff_matrix.xlsx', 'canonical-schema-v0.3.md'],
+    minEvidenceRows: 3,
     keyEntities: ['90211000', '90211090', '902110', 'HS6']
   },
   'q-case-consumer-qc-queue-server': {

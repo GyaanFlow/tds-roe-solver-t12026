@@ -50,16 +50,27 @@ export function sample(rng, arr, count) {
  * count as the SAME source for diversity purposes — otherwise a sample can look varied while
  * every row actually cites one file.
  */
+// Recognized data-file extensions across the P2 case files (csv/jsonl/eml/pdf/md/xlsx/txt).
+const FILE_TOKEN_RE = /[a-z0-9_.-]+\.(?:csv|jsonl|eml|pdf|md|xlsx|txt)\b/gi;
+
+/**
+ * Reduce a Source cell down to JUST the underlying file name(s), ignoring everything else in the
+ * cell (sheet/tab names, column names, row counts, quoted text).
+ *
+ * This has to extract file tokens specifically rather than hashing the whole string: once evidence
+ * rows started citing "file.csv, column X, N rows" for traceability, two rows naming the SAME file
+ * but different columns produced different whole-string keys, silently defeating the diversity
+ * sampling this function exists for (a real regression caught by the citation-density check in
+ * check.mjs — some seeds ended up with 6 rows that all cited one file despite looking varied).
+ */
 export function sourceKey(source) {
-  return String(source || '')
-    .replace(/\([^)]*\)/g, ' ')   // drop sheet/section parentheticals
-    .replace(/[;,]/g, ' ')
-    .split(/\s*\+\s*|\s+/)
-    .filter(Boolean)
-    .sort()
-    .join(' ')
-    .toLowerCase()
-    .trim();
+  const text = String(source || '');
+  const files = text.match(FILE_TOKEN_RE);
+  if (files && files.length > 0) {
+    return [...new Set(files.map(f => f.toLowerCase()))].sort().join(' ');
+  }
+  // Fallback for a Source cell with no recognizable filename (rare/free-text case).
+  return text.toLowerCase().trim();
 }
 
 export function sampleDiverse(rng, arr, count, keyFn) {

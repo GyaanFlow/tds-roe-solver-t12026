@@ -34,14 +34,14 @@ export async function solve(email, sessionToken) {
   const candidateTable = formatTable(['Part', 'Match', 'Actionable now / Needs check / Not transferable'], candidateRows);
 
   const evidenceRowsPool = [
-    ['24 open buys total $166,495.60 (qty x unit quote); 8 actionable $20,536.31 / 12 needs check $64,234.05 / 4 not transferable $81,725.24', 'part_requests.csv (recomputed)', 'High'],
-    ['external_quote_usd is a unit price, not a line total (quote/catalog ratio 1.06-1.23 on the 13 part-numbered rows); summing the column instead of multiplying by qty undercounts by $13,937.57', 'part_requests.csv x spare_parts.csv', 'High'],
-    ['All 4 not-transferable requests are the same 2.2kW servo drive MTR-4401; its only cross-site stock (RI-0001, ME-0003) is reserved-for-critical, and HA-0002 is empty', 'spare_parts.csv + part_restrictions.csv + maintenance_email.txt', 'High'],
-    ['11 of 24 requests (about $98,371 at qty x quote) have a blank manufacturer_part_no, the policy\'s first identity check', 'part_requests.csv', 'High'],
-    ['HA-0022 belt shows on-hand 3 but available -1; ME-0006 pump seal shows on-hand 1 but available -1 — availability can lag a local reservation per the maintenance email', 'spare_parts.csv + maintenance_email.txt', 'High'],
-    ['All VLV-3722 stock on file is revision B; two requests (PR-260705, PR-260720) ask for revision A', 'spare_parts.csv + part_requests.csv', 'High'],
-    ['Only 2 free revision-B valve units exist (Northport + Meridian) against 4 units of revision-B demand across three requests — free stock is allocated once, not multiply-cited', 'spare_parts.csv + part_restrictions.csv', 'High'],
-    ['The global stock view (MaintStar-global) is dated 2026-06-26 and refreshes only monthly, roughly 4 weeks older than the 2026-07-24 request export; local CMMS screens are live', 'source_freshness.csv', 'High']
+    ['24 open buys total $166,495.60 (qty x unit quote); 8 actionable $20,536.31 / 12 needs check $64,234.05 / 4 not transferable $81,725.24', 'part_requests.csv, all 24 rows, qty x external_quote_usd recomputed', 'High'],
+    ['external_quote_usd is a unit price, not a line total (quote/catalog ratio 1.06-1.23 on the 13 part-numbered rows); summing the column instead of multiplying by qty undercounts by $13,937.57', 'part_requests.csv, external_quote_usd + qty columns (13 part-numbered rows) x spare_parts.csv, unit_cost_usd column', 'High'],
+    ['All 4 not-transferable requests are the same 2.2kW servo drive MTR-4401; its only cross-site stock (RI-0001, ME-0003) is reserved-for-critical, and HA-0002 is empty', 'spare_parts.csv, MTR-4401 rows (RI-0001, ME-0003, HA-0002) + part_restrictions.csv, reserved_for_critical_asset column + maintenance_email.txt, servo-drive paragraph', 'High'],
+    ['11 of 24 requests (about $98,371 at qty x quote) have a blank manufacturer_part_no, the policy\'s first identity check', 'part_requests.csv, manufacturer_part_no column (11 of 24 rows blank)', 'High'],
+    ['HA-0022 belt shows on-hand 3 but available -1; ME-0006 pump seal shows on-hand 1 but available -1 — availability can lag a local reservation per the maintenance email', 'spare_parts.csv, HA-0022 + ME-0006 rows (on_hand_qty, available_qty_global columns) + maintenance_email.txt, availability-lag line', 'High'],
+    ['All VLV-3722 stock on file is revision B; two requests (PR-260705, PR-260720) ask for revision A', 'spare_parts.csv, VLV-3722 rows (revision column) + part_requests.csv, PR-260705/720 (revision_required column)', 'High'],
+    ['Only 2 free revision-B valve units exist (Northport + Meridian) against 4 units of revision-B demand across three requests — free stock is allocated once, not multiply-cited', 'spare_parts.csv, VLV-3722 rev-B rows (available_qty_global) + part_restrictions.csv, qualification/reservation columns', 'High'],
+    ['The global stock view (MaintStar-global) is dated 2026-06-26 and refreshes only monthly, roughly 4 weeks older than the 2026-07-24 request export; local CMMS screens are live', 'source_freshness.csv, MaintStar-global row', 'High']
   ];
   const selectedEvidence = sampleDiverse(rng, evidenceRowsPool, 6, row => sourceKey(row[1]));
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
