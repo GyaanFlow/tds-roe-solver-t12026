@@ -27,16 +27,16 @@ export async function solve(email, sessionToken) {
 
   const rejectedPool = [
     '"90211000 is a keying error for 90211090" — rejected: it is the jurisdiction-correct Swiss code, not a dropped or transposed digit.',
-    '"Helios is the source of truth, so the declaration must match it" — rejected: Helios is commercial master data, migration-mapped and explicitly not a customs ruling.',
+    '"Helios is the source of truth, so the declaration must match it" — rejected: product_master_current.xlsx\'s own Read Me labels the Helios field "migration-mapped" and "Commercial master-data status, not customs-ruling status" — the record that would have to say otherwise for this hypothesis to hold, and it does not.',
     '"A mismatch flag automatically means a declaration error" — rejected: with code-system and version unmodeled, a differing string is not evidence of misclassification.'
   ];
-  const rejectedText = sample(rng, rejectedPool, 2).join('\n');
+  const rejectedText = sample(rng, rejectedPool, 2).join('\n\n');
 
   const missingEvidencePool = [
-    'The code-system identifier and nomenclature version behind each code.',
-    'The effective-dated Swiss Tares entry or a binding ruling for P1001 — the reference file itself says "confirm Tares/ruling for legal use."',
-    'An authoritative duty table to independently confirm the 0% rate, since the tariff matrix carries no duty column.',
-    'The true line quantity/unit-value basis for P1001 — the invoice shows Qty 10 but a 1-unit line value, and the air waybill shows 4 pieces.'
+    'The code-system identifier and nomenclature version behind each code — without it, the tooling cannot tell a real misclassification from a cross-nomenclature difference on any future packet.',
+    'The effective-dated Swiss Tares entry or binding ruling for P1001 ("confirm Tares/ruling for legal use"). If Tares shows a code other than 90211000 as current, the decision flips to escalate.',
+    'An authoritative duty table to confirm the 0% rate independently, since the tariff matrix has no duty column. If duty is not actually 0%, the materiality changes even if the classification verdict does not.',
+    'The true line quantity/unit-value basis for P1001 — Qty 10 but a 1-unit line value, and 4 pieces on the AWB. If the real value is ~CHF 1.27M, that becomes the material issue here, separate from the code flag.'
   ];
   const missingEvidenceText = sample(rng, missingEvidencePool, 2).map(s => `- ${s}`).join('\n');
 
