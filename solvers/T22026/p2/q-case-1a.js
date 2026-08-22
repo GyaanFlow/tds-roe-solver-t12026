@@ -79,7 +79,7 @@ export async function solve(email, sessionToken) {
     pick(rng, [
       '**Material Unknowns**: The revenue-recognition basis is not in the extract — if the trend pack keys on `posted_at` rather than `effective_event_date`, the 31-May spike is a benign presentation artifact rather than an accounting issue; confirming this is the single most decision-relevant unknown.',
       '**Material Unknowns**: There is no `region` field in the data — "West = DLR-104/DLR-219" is inferred from the email plus the two dealer codes present in the import log, not confirmed by a dealer master. If a dealer master contradicts this mapping, the framing of the escalation would need revisiting.',
-      '**Material Unknowns**: The contract permitting monthly (rather than per-transaction) batch submission is only asserted in Kavya Iyer\'s email, not independently documented. A signed dealer agreement confirming this term would close the loop.'
+      '**Material Unknowns**: The contract permitting monthly (rather than per-transaction) batch submission is only asserted in Kavya Iyer\'s email, not independently documented. If the signed dealer agreement for DLR-104/DLR-219 does not actually contain a monthly-batch clause, the "contractually permitted" part of the judgment would need to be dropped, even though the reconciliation evidence itself would be unaffected.'
     ])
   ];
   const unknownsText = pick(rng, unknownsPool);

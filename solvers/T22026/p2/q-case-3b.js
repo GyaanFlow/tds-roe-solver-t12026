@@ -31,7 +31,7 @@ export async function solve(email, sessionToken) {
     '"SUP-02\'s Irish declaration covers this entry" — rejected: it expired 2025-07-31 (a 2024 document), before the 2025-09-18 entry date.',
     '"The shipping route to Ireland or the 0% duty rate settles origin" — rejected: logistics and duty rate do not establish preferential origin, which is a strictly documentary question.'
   ];
-  const rejectedText = sample(rng, rejectedPool, 3).join('\n');
+  const rejectedText = sample(rng, rejectedPool, 3).join('\n\n');
 
   const missingEvidencePool = [
     'A current, valid supplier declaration or origin proof for P1006 covering the 2025-09-18 entry, establishing originating status under a specific preference programme.',
@@ -42,8 +42,8 @@ export async function solve(email, sessionToken) {
   const missingEvidenceText = sample(rng, missingEvidencePool, 3).map(s => `- ${s}`).join('\n');
 
   const safeActionVariants = [
-    'Hold the preference claim and treat the line as non-preferential (MFN) for now — duty-neutral here since duty is already 0%, so little revenue is at stake, but the flag must still be resolved for correctness and audit. Request from Procurement Shared Services the current supplier declaration for the actual sourcing supplier of P1006 on this entry, plus the rule invoked. Withdraw or correct the preference indicator if no valid originating-status proof exists for the entry date. Escalate to a formal error/fraud referral only if that verification is requested and fails.',
-    'Do not clear the line as preferential. Default to non-preferential treatment (0% duty either way, so this is revenue-neutral) while requesting the current supplier declaration and the specific preference rule invoked from the category owner. If no valid document surfaces for the 2025-09-18 entry, correct the preference indicator; only escalate as an error/fraud referral if a targeted request for proof is made and comes back empty.'
+    '**Hold pending the supplier declaration** — treat the line as non-preferential (MFN) for now (duty-neutral, since duty is already 0%, so little revenue is at stake) rather than clearing or rejecting the claim outright; this is fully reversible once proof arrives. Request from Procurement Shared Services the current supplier declaration for the actual sourcing supplier of P1006 on this entry, plus the rule invoked. Withdraw or correct the preference indicator if no valid originating-status proof exists for the entry date. Escalate to a formal error/fraud referral only if that verification is requested and fails.',
+    '**Hold pending proof, do not clear as preferential.** Default to non-preferential treatment (0% duty either way, so this is revenue-neutral and reversible) while requesting the current supplier declaration and the specific preference rule invoked from the category owner. If no valid document surfaces for the 2025-09-18 entry, correct the preference indicator; only escalate as an error/fraud referral if a targeted request for proof is made and comes back empty.'
   ];
   const safeActionText = pick(rng, safeActionVariants);
 
