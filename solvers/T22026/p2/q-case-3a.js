@@ -1,5 +1,5 @@
 // Case Study 3A — Swiss Mismatch Control (Asterion Ortho, EMEA Customs)
-import { createRng, pick, sample, formatTable } from './variations-engine.js';
+import { createRng, pick, sample, sampleDiverse, sourceKey, formatTable } from './variations-engine.js';
 
 export const id = 'q-case-customs-mismatch-server';
 export const title = 'Case Study 3A — Swiss Mismatch Control';
@@ -16,13 +16,13 @@ export async function solve(email, sessionToken) {
     ['Declared 90211000 is the Swiss-approved code for P1001, current on the 2025-11-04 entry date', 'country_tariff_matrix.xlsx (Swiss Matrix)', 'High'],
     ['Flag value 90211090 is P1001\'s Helios commercial code, labeled "migration-mapped" and "not customs-ruling status"', 'product_master_current.xlsx (Read Me)', 'High'],
     ['Swiss local code and EU CN8 are different nomenclatures; the reference file states cross-jurisdiction string matching "is not expected"', 'country_tariff_matrix.xlsx (Read Me)', 'High'],
-    ['All code variants share HS6 902110; they differ only in the national 7th-8th digits', 'both reference files', 'High'],
+    ['All code variants share HS6 902110; they differ only in the national 7th-8th digits', 'product_master_current.xlsx + country_tariff_matrix.xlsx', 'High'],
     ['The EU code for P1001 itself changed from 90211010 to 90211090 at 2025-07-01, showing codes are version- and date-dependent', 'country_tariff_matrix.xlsx (EU Matrix)', 'High'],
     ['The canonical schema lists code-system identifier, nomenclature version, and effective dates as "Not yet modeled"', 'canonical-schema-v0.3.md', 'High'],
     ['Duty is 0.0% / CHF 0.00 with no preference claimed, and US origin is consistent across declaration, invoice, and master — no revenue at stake', 'declaration.pdf; commercial_invoice.pdf', 'Medium'],
     ['Commercial invoice shows Quantity 10 but Line value = Unit value = CHF 126,900 (Line != Qty x Unit); air waybill separately shows only 4 pieces — a valuation/consistency anomaly independent of the code flag', 'commercial_invoice.pdf; air_waybill.pdf', 'High']
   ];
-  const selectedEvidence = sample(rng, evidenceRowsPool, 4);
+  const selectedEvidence = sampleDiverse(rng, evidenceRowsPool, 4, row => sourceKey(row[1]));
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
 
   const rejectedPool = [

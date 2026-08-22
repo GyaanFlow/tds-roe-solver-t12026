@@ -1,123 +1,98 @@
 // Rubric Coach & Interactive Draft Checker for Project 2 Case Studies
-import { CASE_SPECS, validateCaseAnswer } from './case-specs.js';
+import { CASE_SPECS, validateCaseAnswer, analyzeDraft } from './case-specs.js';
 
+/**
+ * Student-facing draft review.
+ *
+ * Derives everything from analyzeDraft() in case-specs.js so this can no longer diverge from the
+ * hard gate the way the old duplicate scoring formula did (the two used to disagree on the same
+ * draft: one scored 100 - errors*25, the other passed/(passed+failed)).
+ *
+ * IMPORTANT — what the numbers mean. Each case is 12.5 marks: `Check` awards 2.5 for a valid
+ * submission FORMAT, and the remaining 10 are graded offline on reasoning quality. So:
+ *   - `formatMarks`  is a real, earned figure (the character gate is deterministic).
+ *   - `qualityPct`   is an ESTIMATE over checkable proxies, NOT a predicted mark. A draft can
+ *                    score 100% here and still be marked down for weak reasoning, and this is
+ *                    stated plainly in the UI rather than implied away by a green "100/100".
+ */
 export function reviewSubmission(caseId, draftText) {
   const spec = CASE_SPECS[caseId];
   const text = String(draftText || '').trim();
-  const checksPassed = [];
-  const failedChecks = [];
-  const suggestions = [];
 
   if (!spec) {
     return {
       score: text.length > 0 ? 100 : 0,
+      qualityPct: text.length > 0 ? 100 : 0,
+      formatMarks: 0,
+      estimatedBand: 'unknown case',
+      gateValid: true,
       checksPassed: ['Custom specification verified'],
       failedChecks: [],
       suggestions: [],
       metrics: { structure: '100%', bounds: 'Optimal', evidence: 'Present', density: 'High' },
-      disclaimer: 'Note: This draft review provides heuristic feedback based on the official rubric checklist.'
+      disclaimer: 'Heuristic feedback only — the offline marks are graded on reasoning, not structure.'
     };
   }
 
-  // 1. Length Check
-  let boundsStatus = 'Optimal';
-  if (text.length >= spec.minChars && text.length <= spec.maxChars) {
-    checksPassed.push(`Length (${text.length.toLocaleString()} chars) within official gate [${spec.minChars}–${spec.maxChars}]`);
-    boundsStatus = 'Optimal';
-  } else if (text.length < spec.minChars) {
-    failedChecks.push(`Length (${text.length.toLocaleString()} chars) is below minimum of ${spec.minChars} chars`);
-    suggestions.push(`Expand your analysis by at least ${(spec.minChars - text.length).toLocaleString()} characters to meet the minimum length.`);
-    boundsStatus = 'Too Short';
-  } else {
-    failedChecks.push(`Length (${text.length.toLocaleString()} chars) exceeds maximum of ${spec.maxChars} chars`);
-    suggestions.push(`Trim your analysis by ${(text.length - spec.maxChars).toLocaleString()} characters to stay within the character cap.`);
-    boundsStatus = 'Too Long';
+  const analysis = analyzeDraft(caseId, text);
+  const { gate, signals, qualityPct, formatMarks, estimatedBand, citedFiles, evidenceRowCount } = analysis;
+
+  const checksPassed = [];
+  const failedChecks = [];
+  const suggestions = [];
+
+  // Hard gate first — these are objective and cost real marks.
+  if (gate.errors.length === 0) {
+    checksPassed.push(`Submission format valid (${text.length.toLocaleString()} chars, gate ${spec.minChars}–${spec.maxChars})`);
+  }
+  for (const err of gate.errors) {
+    failedChecks.push(err);
+  }
+  for (const warn of gate.warnings) {
+    suggestions.push(warn);
   }
 
-  // 2. Heading Skeletons
-  let headingsFound = 0;
-  for (const h of spec.headings) {
-    const regex = new RegExp(`##\\s+${h.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}`, 'i');
-    if (regex.test(text)) {
-      headingsFound++;
-      checksPassed.push(`Required section: '## ${h}' present`);
+  // Quality signals.
+  for (const s of signals) {
+    if (s.passed) {
+      checksPassed.push(s.label);
+      if (s.hint) suggestions.push(s.hint);
     } else {
-      failedChecks.push(`Missing required heading: '## ${h}'`);
-      suggestions.push(`Add the section '## ${h}' to match the official exam skeleton.`);
+      failedChecks.push(s.label);
+      if (s.hint) suggestions.push(s.hint);
     }
   }
+
+  // Heading coverage, reported for the metric strip.
+  const headingsFound = spec.headings.filter(h =>
+    new RegExp(`##\\s+${h.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}`, 'i').test(text)
+  ).length;
   const structurePct = spec.headings.length > 0 ? Math.round((headingsFound / spec.headings.length) * 100) : 100;
 
-  // 3. Evidence Table
-  let evidenceStatus = 'Missing';
-  if (spec.headings.includes('Evidence Table')) {
-    if (text.includes('| Claim') || text.includes('|Claim') || text.includes('|---')) {
-      checksPassed.push('Structured Markdown Evidence Table (| Claim | Source | Confidence |) present');
-      evidenceStatus = 'Verified';
-    } else {
-      failedChecks.push('Missing structured Markdown Evidence Table');
-      suggestions.push('Include an Evidence Table with columns: | Claim | Source | Confidence |');
-      evidenceStatus = 'Missing';
-    }
-  } else {
-    evidenceStatus = 'N/A';
-  }
-
-  // 4. Key Entities / Numerical landmarks
-  let entitiesFound = 0;
-  let densityStatus = 'Normal';
-  if (spec.keyEntities) {
-    for (const ent of spec.keyEntities) {
-      if (new RegExp(ent.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&'), 'i').test(text)) {
-        entitiesFound++;
-      }
-    }
-    if (entitiesFound >= Math.ceil(spec.keyEntities.length / 2)) {
-      checksPassed.push(`Key factual entities cited (${entitiesFound}/${spec.keyEntities.length} identified)`);
-      densityStatus = 'High';
-    } else {
-      failedChecks.push(`Low entity citation density (${entitiesFound}/${spec.keyEntities.length} identified)`);
-      suggestions.push(`Cite specific verified data entities (e.g., ${spec.keyEntities.slice(0, 3).join(', ')}).`);
-      densityStatus = 'Low';
-    }
-  }
-
-  // 5. Case-specific rules
-  if (caseId === 'q-case-solar-smell-test-server') {
-    const findingItems = (text.match(/^\s*\d+\.\s+/gm) || []).length;
-    if (findingItems > 2) {
-      failedChecks.push('two-findings');
-      suggestions.push('Keep Prioritized Findings capped at at most 2 items.');
-    } else if (findingItems > 0) {
-      checksPassed.push('Prioritized Findings item cap respected (≤ 2)');
-    }
-  }
-
-  if (caseId === 'q-case-consumer-spares-search-server') {
-    if (/Actionable\s+now/i.test(text) && /Needs\s+check/i.test(text) && /Not\s+transferable/i.test(text)) {
-      checksPassed.push('Standard Candidate Matches category labels used');
-    } else {
-      failedChecks.push('value-fractions');
-      suggestions.push('Use standard status labels in Candidate Matches: Actionable now / Needs check / Not transferable');
-    }
-  }
-
-  // Compute final score
-  const totalChecks = checksPassed.length + failedChecks.length;
-  const score = totalChecks > 0 ? Math.round((checksPassed.length / totalChecks) * 100) : 0;
+  const boundsStatus = text.length < spec.minChars ? 'Too Short'
+    : text.length > spec.maxChars ? 'Too Long'
+      : 'Optimal';
 
   return {
-    score,
+    // `score` is retained for backwards compatibility with existing callers, but it is now the
+    // quality estimate rather than a structural pass-rate.
+    score: qualityPct,
+    qualityPct,
+    formatMarks,
+    estimatedBand,
+    gateValid: gate.valid,
+    gateErrors: gate.errors,
+    signals,
     checksPassed,
     failedChecks,
     suggestions,
     metrics: {
       structure: `${structurePct}% (${headingsFound}/${spec.headings.length})`,
       bounds: boundsStatus,
-      evidence: evidenceStatus,
-      density: densityStatus
+      evidence: evidenceRowCount > 0 ? `${evidenceRowCount} row(s)` : 'Missing',
+      density: `${citedFiles.length}/${(spec.dataFiles || []).length} files cited`
     },
-    disclaimer: 'Note: This draft review provides heuristic feedback based on the official rubric checklist.'
+    disclaimer: 'This checks structure and traceability only. The 10 offline marks are graded by a human on reasoning quality, so a high score here does not guarantee a high grade — and never submit generated text as your own.'
   };
 }
 
@@ -191,19 +166,33 @@ export function registerRubricCoach() {
     const draft = textarea.value;
     const review = reviewSubmission(caseId, draft);
 
-    const scoreColor = review.score >= 85 ? '#2ecc71' : review.score >= 60 ? '#f1c40f' : '#e74c3c';
-    const scoreGrade = review.score >= 85 ? 'Rubric Ready (Optimal)' : review.score >= 60 ? 'Needs Calibration' : 'Action Required';
+    const pct = review.qualityPct;
+    const scoreColor = pct >= 85 ? '#2ecc71' : pct >= 60 ? '#f1c40f' : '#e74c3c';
+    const scoreRgb = pct >= 85 ? '46, 204, 113' : pct >= 60 ? '241, 196, 15' : '231, 76, 60';
+    const gateColor = review.gateValid ? '#2ecc71' : '#e74c3c';
 
     resultsContainer.style.display = 'block';
     resultsContainer.innerHTML = `
       <div class="p2-score-banner">
         <div class="p2-score-dial">
-          <span class="p2-score-val" style="color: ${scoreColor};">${review.score}</span>
-          <span class="p2-score-max">/ 100</span>
+          <span class="p2-score-val" style="color: ${scoreColor};">${pct}</span>
+          <span class="p2-score-max">% of checkable signals</span>
         </div>
-        <div class="p2-score-grade" style="color: ${scoreColor}; background: rgba(${review.score >= 85 ? '46, 204, 113' : review.score >= 60 ? '241, 196, 15' : '231, 76, 60'}, 0.12); border: 1px solid ${scoreColor};">
-          ${scoreGrade}
+        <div class="p2-score-grade" style="color: ${scoreColor}; background: rgba(${scoreRgb}, 0.12); border: 1px solid ${scoreColor};">
+          ${review.estimatedBand}
         </div>
+      </div>
+
+      <div class="p2-advice-box" style="border-left: 3px solid ${gateColor};">
+        <div class="p2-advice-title" style="color: ${gateColor};">Where your 12.5 marks come from</div>
+        <ul style="margin: 6px 0 0 16px; padding: 0; line-height: 1.6; color: var(--text-secondary);">
+          <li><strong>2.5 marks — submission format.</strong> Awarded by <kbd>Check</kbd> for a valid
+              length only. Status: <strong style="color:${gateColor};">${review.gateValid ? `on track (${review.formatMarks} / 2.5)` : 'AT RISK — fix the errors below'}</strong>.</li>
+          <li><strong>10 marks — graded offline by a human</strong> on the quality, traceability and
+              calibration of your judgment. <em>Nothing here can measure that.</em> The
+              ${pct}% above is only how many checkable signals your draft shows — treat it as a
+              pre-flight checklist, not a predicted grade.</li>
+        </ul>
       </div>
 
       <div class="p2-metric-grid">
@@ -258,6 +247,10 @@ export function registerRubricCoach() {
           </ul>
         </div>
       ` : ''}
+
+      <p style="margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--border-color, rgba(255,255,255,0.15)); font-size: 0.82rem; line-height: 1.5; color: var(--text-secondary); opacity: 0.9;">
+        ${review.disclaimer}
+      </p>
     `;
 
     resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

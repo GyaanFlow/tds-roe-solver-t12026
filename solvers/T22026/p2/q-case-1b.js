@@ -1,5 +1,5 @@
 // Case Study 1B — DTH Complaints Went Quiet (SkyWave Direct)
-import { createRng, pick, shuffle, sample, formatTable } from './variations-engine.js';
+import { createRng, pick, shuffle, sample, sampleDiverse, sourceKey, formatTable } from './variations-engine.js';
 
 export const id = 'q-case-dth-complaints-quiet-server';
 export const title = 'Case Study 1B — DTH Complaints Went Quiet';
@@ -24,7 +24,7 @@ export async function solve(email, sessionToken) {
     ['South outages held steady through the pilot (May: 10 events/9,409 accounts; June: 8/7,045) yet NO_SIGNAL complaints fell from 51 to 28', 'service_events.csv + tickets.csv', 'High']
   ];
 
-  const selectedEvidence = sample(rng, evidenceRowsPool, 6);
+  const selectedEvidence = sampleDiverse(rng, evidenceRowsPool, 6, row => sourceKey(row[1]));
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
 
   const rejectedPool = [

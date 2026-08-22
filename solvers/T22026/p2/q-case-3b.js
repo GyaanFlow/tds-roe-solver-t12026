@@ -1,5 +1,5 @@
 // Case Study 3B — Is the Irish Preference Claim Supported? (Asterion Ortho, EMEA Customs)
-import { createRng, pick, sample, formatTable } from './variations-engine.js';
+import { createRng, pick, sample, sampleDiverse, sourceKey, formatTable } from './variations-engine.js';
 
 export const id = 'q-case-customs-preference-server';
 export const title = 'Case Study 3B — Is the Irish Preference Claim Supported?';
@@ -22,7 +22,7 @@ export async function solve(email, sessionToken) {
     ['Declared tariff code 90211090 is the correct EU CN8 code for P1006 — the code itself is not the issue in this case', 'country_tariff_matrix.xlsx (EU Matrix)', 'High'],
     ['Invoice shows Quantity 10 but Line value = Unit value = EUR 193,400 (Line != Qty x Unit); the air waybill separately shows only 4 pieces — a valuation/consistency anomaly independent of the preference question', 'commercial_invoice.pdf; air_waybill.pdf', 'Medium']
   ];
-  const selectedEvidence = sample(rng, evidenceRowsPool, 6);
+  const selectedEvidence = sampleDiverse(rng, evidenceRowsPool, 6, row => sourceKey(row[1]));
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
 
   const rejectedPool = [

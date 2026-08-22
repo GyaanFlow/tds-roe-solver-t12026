@@ -1,5 +1,5 @@
 // Case Study 4A — QC Queue Smell Test (Aurelia Consumer Products)
-import { createRng, pick, sample, formatTable } from './variations-engine.js';
+import { createRng, pick, sample, sampleDiverse, sourceKey, formatTable } from './variations-engine.js';
 
 export const id = 'q-case-consumer-qc-queue-server';
 export const title = 'Case Study 4A — QC Queue Smell Test';
@@ -22,7 +22,7 @@ export async function solve(email, sessionToken) {
     ['17 RELEASED rows show COA MISSING and 13 show INDEX_PENDING — plausibly CertVault\'s nightly-index lag rather than a genuine control gap', 'batch_release.csv + source_freshness.csv', 'Medium'],
     ['LabTrack is described as a "48 h analytics extract, not live" while QCore snapshots daily at 02:10 — mismatched refresh cadences contaminate any delta between the two', 'source_freshness.csv', 'High']
   ];
-  const selectedEvidence = sample(rng, evidenceRowsPool, 6);
+  const selectedEvidence = sampleDiverse(rng, evidenceRowsPool, 6, row => sourceKey(row[1]));
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
 
   const rejectedPool = [
