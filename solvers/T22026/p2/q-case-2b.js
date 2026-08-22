@@ -1,5 +1,5 @@
-// Case Study 2B — Solar 31.6% Impact Claim (ARPL Solar)
-import { createRng, pick, shuffle, sample, formatTable } from './variations-engine.js';
+// Case Study 2B — Solar 31.6% Impact Claim (ARPL Solar Wind-Stow Pilot)
+import { createRng, pick, sample, formatTable } from './variations-engine.js';
 
 export const id = 'q-case-solar-impact-claim-server';
 export const title = 'Case Study 2B — Solar 31.6% Impact Claim';
@@ -8,58 +8,41 @@ export async function solve(email, sessionToken) {
   const rng = createRng(`${email}:${id}`);
 
   const judgmentVariants = [
-    `**Judgment**: **The 31.6% DSM penalty reduction claim is substantively overstated due to cross-day confounding; the evidence supports a narrower, genuine ~17.5% within-day counterfactual saving.** We recomputed both metrics from \`dispatch_blocks.csv\`. The 31.6% figure reproduces arithmetically only when naively comparing May 29 (AI-assisted: Rs 453,086 penalty on 4,231.1 MWh generation) against May 28 (Conventional: Rs 662,444 penalty on 4,196.5 MWh generation). This cross-day comparison conflates algorithm performance with natural solar irradiance and cloud variations. Recomputing May 29 block-by-block under the unadjusted \`base_schedule_mw\` versus the pilot \`submitted_schedule_mw\` while holding actual SCADA generation strictly constant demonstrates a true causal penalty reduction of **~17.5%**, concentrated entirely in the 12 revised wind-stow dispatch blocks.`,
-    `**Executive Judgment**: **The 31.6% headline claim overstates the pilot's true impact; the defensible causal saving is approximately 17.5%.** Recomputing dispatch records from \`dispatch_blocks.csv\` shows that the 31.6% result is a cross-day comparison comparing May 29 (Rs 453,086 penalty on 4,231.1 MWh) against May 28 (Rs 662,444 penalty on 4,196.5 MWh) confounded by baseline solar resource variations. Re-evaluating May 29 under identical actual generation shows that the wind-stow algorithm reduced penalties by ~17.5% across the 12 revised dispatch blocks.`,
-    `**Conclusion**: **The 31.6% reduction claim conflates environmental variation with pilot intervention.** Cross-day comparison of May 28 (Rs 662,444 penalty, 4,196.5 MWh) and May 29 (Rs 453,086 penalty, 4,231.1 MWh) yields 31.6% naively, but true same-day counterfactual modeling across the 96 dispatch blocks of May 29 isolates a genuine and repeatable **~17.5%** DSM penalty saving on the 12 modified high-wind blocks.`
+    `The note's numbers are real, but "31.6%" overstates the pilot's effect. Recomputing from \`dispatch_blocks.csv\` reproduces both headline figures exactly: DSM penalty 662,444 (28 May) -> 453,086 (29 May) = 31.6% lower, and the "generation gap" 379.0 -> 282.8 MWh = 25.4% lower (that gap is the sum of absolute block deviations; net schedule-minus-generation is 310.7 -> 224.1). But 31.6% is a **cross-day** comparison, and 28 May is the single highest-penalty day in the 8-day file. The data holds a cleaner same-day counterfactual: \`base_schedule_mw\` is the pre-pilot QCA schedule, identical to the submitted schedule except on the 12 \`pilot_revision\` blocks (all on 29 May, each lowered ~18.9 MW on average). Holding actual generation fixed and recomputing 29 May on the base schedule (no pilot) gives Rs 549,664 vs Rs 453,086 with the pilot = -Rs 96,476, approximately -17.5%, and the entire difference sits on those 12 blocks. So the effect I can defend is about 17.5% on one weather-matched day — roughly half the advertised 31.6% — not a general "pilot cuts DSM penalty by 31.6%" claim, and not yet net of any forgone energy value.`,
+    `The 31.6% DSM-penalty reduction is arithmetically correct — it reproduces to the rupee from \`dispatch_blocks.csv\` (662,444 to 453,086) — but it compares two *different* days, and 28 May happens to be the worst-penalty day in the entire 8-day file. A same-day, same-weather counterfactual already exists in the block data: \`base_schedule_mw\` is the pre-pilot schedule, and the pilot only revised 12 of 96 blocks, all on 29 May. Recomputing 29 May's penalty on that unrevised base schedule (holding actual generation fixed) gives Rs 549,664, versus Rs 453,086 with the pilot's revised schedule — a within-day effect of roughly -17.5%, concentrated entirely in those 12 blocks. 28 and 29 May are weather- and firmware-matched (wind 4.8/4.8 m/s, gust max 13.1/13.4, firmware 4.7 both days), which is what makes this counterfactual clean, unlike the cross-day comparison the note relies on. The strongest conclusion I can defend is: the mechanism is real and roughly halves the deviation penalty within a matched day, but it remains a single pilot day (12 of 96 blocks), penalty-only, with forecast-skill versus hindsight unproven.`
   ];
 
   const evidenceRowsPool = [
-    [
-      'AI_Pilot_Impact_Note.md calculates 31.6% via cross-day comparison: May 28 (Rs 662,444) vs May 29 (Rs 453,086)',
-      'AI_Pilot_Impact_Note.md & DSM_Commercial_Extract.pdf',
-      'High (exact arithmetic reproduction confirmed)'
-    ],
-    [
-      'Same-day counterfactual on May 29 (holding actual generation fixed at 4,231.1 MWh) yields exactly ~17.5% penalty savings',
-      'dispatch_blocks.csv:May_29_blocks',
-      'High (deterministic counterfactual calculation)'
-    ],
-    [
-      'Intervention occurred in exactly 12 out of 96 dispatch blocks (15-min intervals) where tracker_stow_state was revised',
-      'dispatch_blocks.csv:tracker_stow_state',
-      'High (direct block-level audit)'
-    ],
-    [
-      'Actual plant generation was 4,231.1 MWh on May 29 vs 4,196.5 MWh on May 28 due to higher baseline irradiance',
-      'dispatch_blocks.csv & AI_Pilot_Impact_Note.md',
-      'High (meteorological telemetry check)'
-    ]
+    ['Penalty 662,444 to 453,086 (-31.6%) and gap 379.0 to 282.8 MWh (-25.4%) reproduce exactly from block data — but 31.6% is a cross-day figure', 'dispatch_blocks.csv + AI_Pilot_Impact_Note.md', 'High'],
+    ['Same-day counterfactual: base_schedule_mw vs submitted_schedule_mw with actual generation fixed = Rs 549,664 -> Rs 453,086, approximately -17.5%, all on the 12 revised blocks', 'dispatch_blocks.csv', 'High'],
+    ['Only 12 of 96 blocks (all 29 May, each lowered ~18.9 MW) carry schedule_source=pilot_revision; base equals submitted everywhere else', 'dispatch_blocks.csv', 'High'],
+    ['28 May is the highest-penalty day in the file; conventional 4 Jun (Rs 403,391) settled below the AI day (Rs 453,086) — but 4 Jun ran firmware 4.8 vs 4.7 on the May days, a confound', 'dispatch_blocks.csv', 'High'],
+    ['Penalty is a banded step-function (>15% deviation = Rs 2.0/kWh); roughly 10 STOW blocks carry 96-98% of a day\'s penalty rupees on both 28 and 29 May', 'DSM_Commercial_Extract.pdf + dispatch_blocks.csv', 'High'],
+    ['28 and 29 May are weather- and firmware-matched (wind mean 4.8/4.8 m/s, gust max 13.1/13.4, firmware 4.7 both days, 10/10 stow blocks)', 'dispatch_blocks.csv', 'Medium-High'],
+    ['Energy priced at Rs 2.72/kWh in the commercial extract; lowering the submitted schedule cuts penalty but may forgo scheduled-energy value — net commercial value is not computed by the note', 'DSM_Commercial_Extract.pdf', 'Medium']
   ];
-
-  const selectedEvidence = shuffle(rng, evidenceRowsPool);
+  const selectedEvidence = sample(rng, evidenceRowsPool, 6);
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
 
   const rejectedPool = [
-    pick(rng, [
-      '**Hypothesis: The full 31.6% penalty reduction is causally attributable to the AI wind-stow model.**\n*Refutation*: Refuted by counterfactual decomposition. Approximately 14.1% of the apparent 31.6% saving was caused by favorable baseline irradiance and higher total generation on May 29 (4,231.1 MWh) compared to May 28 (4,196.5 MWh, Rs 662,444 penalty). Holding actual generation constant isolates the true algorithmic contribution to ~17.5% across the 12 revised blocks.',
-      '**Hypothesis: The algorithm modified dispatch schedules across the entire 24-hour cycle.**\n*Refutation*: Refuted by block-by-block difference checks in `dispatch_blocks.csv`. Schedule modifications were strictly limited to the 12 high-wind blocks where wind-stow protocols were active; all other 84 blocks had zero schedule deviation.'
-    ])
+    '"The 31.6% figure is fabricated or wrong" — rejected: it reproduces to the rupee directly from dispatch_blocks.csv.',
+    '"The AI method caused a full 31.6% reduction" — overstated: 31.6% compares 29 May against the single worst conventional day; the same-day counterfactual (base vs submitted, actual generation fixed) is approximately -17.5%.',
+    '"No counterfactual is possible here — the effect is fully unidentified" — rejected: base_schedule_mw is the same-day, weather-matched, no-pilot schedule, so the within-day effect (~17.5%) is directly identifiable from the block data.',
+    '"A lower DSM penalty automatically means a better commercial outcome" — unproven: penalty is only one part of settlement; energy is valued separately at Rs 2.72/kWh and net commercial value (energy value minus penalty) is not computed by the note.'
   ];
-  const rejectedText = rejectedPool.join('\n\n');
+  const rejectedText = sample(rng, rejectedPool, 3).join('\n');
 
-  const measurementPool = [
-    pick(rng, [
-      '**Next Measurement Plan**: Implement a randomized block crossover trial over a 30-day period (alternating days between the AI-adjusted schedule and baseline model) stratified by wind-speed forecasts, measuring DSM penalties per MWh generated to eliminate weather confounding.',
-      '**Next Measurement Plan**: Conduct a 4-week paired A/B trial alternating pilot and conventional schedules on matched meteorological forecast days, measuring net DSM penalty per MWh generated across equivalent wind velocity brackets.'
-    ])
+  const causalLimitText = 'Still causally unidentified: the effect\'s generality across typical high-wind stow days (only one pilot day, 12 of 96 blocks), whether the schedule revision was genuine ex-ante forecast skill versus hindsight, and its net-value impact once forgone energy value is netted against the penalty saving. The 4-June counter-example is itself firmware-confounded (4.8 vs 4.7), so the within-day estimate is the more defensible number.';
+
+  const nextMeasurementPool = [
+    'The same-day counterfactual (base vs submitted, actual fixed) is already computable and gives ~17.5% on 29 May — the missing piece is repetition. Run the AI schedule with its base-schedule shadow across several high-wind stow days, hold firmware version constant so the comparator is not confounded, pre-register which days count, and report the distribution of within-day effects in net commercial value (energy value minus DSM penalty), not penalty alone. Also confirm the schedule revision was made before generation was known, to demonstrate forecast skill rather than hindsight.',
+    'Extend the within-day counterfactual (already ~17.5% on 29 May) to every future high-wind stow day rather than reporting a single-day ratio; control for firmware version (the 4.7-to-4.8 change currently coincides with the May-to-June boundary); and report net commercial value, since the pilot lowers the submitted schedule specifically to shrink the deviation penalty, which may forgo scheduled-energy revenue.'
   ];
-  const measurementText = pick(rng, measurementPool);
+  const nextMeasurementText = pick(rng, nextMeasurementPool);
 
   const recommendationPool = [
-    pick(rng, [
-      '**Commercial Recommendation**: Proceed with the wind-stow optimization pilot given the genuine ~17.5% counterfactual saving, but adjust the vendor contract baseline and fee structure to reflect the ~17.5% verified benefit rather than the 31.6% unadjusted figure.',
-      '**Commercial Recommendation**: Continue deployment based on the validated ~17.5% saving in high-wind intervals, but restate internal ROI models and vendor performance benchmarks from 31.6% to ~17.5%.'
-    ])
+    'Keep the pilot running as a low-cost evaluation — the mechanism (revise the submitted schedule down ahead of stow so deviation shrinks) is plausible, the comparison days are weather-matched, and a clean same-day counterfactual already exists in the block data. But report the ~17.5% within-day figure, not "31.6%", and do not expand yet: it still rests on one pilot day, penalty-only. Decide on scale only after the within-day effect is replicated across several high-wind days on a firmware-controlled, net-value basis.',
+    'Continue the pilot at current scope, correct the headline metric from 31.6% (cross-day) to the ~17.5% within-day figure, and hold any wider rollout decision until the same-day counterfactual has been repeated across multiple high-wind stow days with firmware held constant and net commercial value reported instead of penalty alone.'
   ];
   const recommendationText = pick(rng, recommendationPool);
 
@@ -73,8 +56,10 @@ export async function solve(email, sessionToken) {
     '## Rejected Hypotheses and Causal Limits',
     rejectedText,
     '',
+    causalLimitText,
+    '',
     '## Next Measurement',
-    measurementText,
+    nextMeasurementText,
     '',
     '## Recommendation',
     recommendationText
@@ -85,6 +70,6 @@ export async function solve(email, sessionToken) {
     variant: `Seeded Variation (Seed: ${email.slice(0, 8)})`,
     answer: answer.trim(),
     answerDisplay: answer.trim(),
-    guide: '100% Rubric Compliant Case 2B Solution with counterfactual decomposition, cross-day confounding refutation, and A/B measurement plan.'
+    guide: 'Forensically verified Case 2B analysis: reproduces the 31.6% figure exactly, then computes the same-day base_schedule_mw counterfactual (~17.5%, -Rs 96,476, on the 12 pilot_revision blocks) that the impact note itself omitted. Per-student phrasing/evidence-order variation. Rewrite in your own words before submitting.'
   };
 }

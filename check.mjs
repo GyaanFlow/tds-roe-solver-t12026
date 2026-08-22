@@ -103,6 +103,15 @@ function importFresh(relativePath) {
   return import(`${url}?check=${Date.now()}-${Math.random().toString(16).slice(2)}`);
 }
 
+/**
+ * Import the CANONICAL (module-cached) instance of a module — no cache-busting query.
+ * Needed when a test must mutate shared module state that already-loaded solvers observe:
+ * importFresh() would hand back a separate instance whose mutations nothing else can see.
+ */
+function importShared(relativePath) {
+  return import(pathToFileURL(path.join(rootDir, relativePath)).href);
+}
+
 async function checkServerRoutes() {
   const serverModule = await importFresh('server.js');
   const createAppServer = serverModule.default?.createAppServer || serverModule.createAppServer;
@@ -678,6 +687,72 @@ async function checkT2P2SolversExecute(solvers) {
     assert(res1.answer !== res3.answer, `T2 P2 ${solver.id} produced duplicate identical answer across email 1 and 3.`);
     assert(res2.answer !== res3.answer, `T2 P2 ${solver.id} produced duplicate identical answer across email 2 and 3.`);
     assert(res1.answer !== res4.answer, `T2 P2 ${solver.id} produced duplicate identical answer across email 1 and 4.`);
+  }
+
+  // 4. Rubric contract: runtime must validate every generated note and expose the report.
+  for (const solver of solvers) {
+    const result = await solver.solve(whitelistedEmails[0], sessionToken);
+    assert(result.debug && result.debug.rubric, `T2 P2 ${solver.id} did not expose debug.rubric — runtime rubric enforcement is missing.`);
+    assert(result.debug.rubric.valid === true, `T2 P2 ${solver.id} generated a note that fails its own rubric contract: ${(result.debug.rubric.errors || []).join('; ')}`);
+    assert(result.variant !== 'Rubric Contract Failed', `T2 P2 ${solver.id} withheld its note for failing the rubric contract.`);
+  }
+
+  // 5. Blank/missing email must be refused, never answered with a seeded-but-identical note.
+  //    (Same bug class as the GA7 requireEmail fix: the RNG seed IS the email.)
+  {
+    const { lockConfig } = await importShared('solvers/T22026/p2/lock-config.js');
+    const originalLocked = lockConfig.locked;
+    lockConfig.locked = false; // exercise the guard rather than the lock short-circuit
+    try {
+      for (const solver of solvers) {
+        for (const blank of ['', '   ', null, undefined]) {
+          const result = await solver.solve(blank, sessionToken);
+          assert(result.type === 'error', `T2 P2 ${solver.id} returned type=${result.type} for a blank email — must refuse.`);
+          assert(!result.answer, `T2 P2 ${solver.id} emitted an answer for a blank email.`);
+        }
+      }
+    } finally {
+      lockConfig.locked = originalLocked;
+    }
+  }
+
+  // 6. Scaled uniqueness + citation-density contract across many synthetic students.
+  //    Guards two real regressions: (a) a case whose variation pool is too small collides across
+  //    students (Case 2A once produced ONE note for every student), and (b) case-specs keyEntities
+  //    drifting out of sync with generator text, silently tanking citation density on most seeds.
+  {
+    const { lockConfig } = await importShared('solvers/T22026/p2/lock-config.js');
+    const { CASE_SPECS } = await importFresh('solvers/T22026/p2/case-specs.js');
+    const originalLocked = lockConfig.locked;
+    lockConfig.locked = false;
+    try {
+      const SAMPLE = 120;
+      const emails = Array.from({ length: SAMPLE }, (_, i) => `23f${String(1000000 + i * 8191).slice(0, 7)}@ds.study.iitm.ac.in`);
+      for (const solver of solvers) {
+        const spec = CASE_SPECS[solver.id];
+        const seen = new Set();
+        let minEntityHits = Infinity;
+        for (const email of emails) {
+          const { answer } = await solver.solve(email, sessionToken);
+          seen.add(answer);
+          assert(!/undefined|NaN|\[object Object\]/.test(answer), `T2 P2 ${solver.id} produced corrupted output for ${email}.`);
+          if (spec && spec.keyEntities) {
+            const hits = spec.keyEntities.filter(ent =>
+              new RegExp(ent.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&'), 'i').test(answer)
+            ).length;
+            minEntityHits = Math.min(minEntityHits, hits);
+          }
+        }
+        const uniqueRatio = seen.size / SAMPLE;
+        assert(uniqueRatio >= 0.9, `T2 P2 ${solver.id} only produced ${seen.size}/${SAMPLE} unique notes (${Math.round(uniqueRatio * 100)}%) — variation pool is too small, students will collide.`);
+        if (spec && spec.keyEntities) {
+          const required = Math.ceil(spec.keyEntities.length / 2);
+          assert(minEntityHits >= required, `T2 P2 ${solver.id} worst-case citation density is ${minEntityHits}/${spec.keyEntities.length}, below the ${required} the rubric coach requires — case-specs keyEntities are out of sync with the generator text.`);
+        }
+      }
+    } finally {
+      lockConfig.locked = originalLocked;
+    }
   }
 }
 

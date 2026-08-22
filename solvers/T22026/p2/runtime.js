@@ -1,6 +1,7 @@
-import { normalizeEmail } from './utils.js';
+import { normalizeEmail, requireEmail } from './utils.js';
 import { lockConfig } from './lock-config.js';
 import { buildRubricCoachHtml, registerRubricCoach } from './rubric-coach.js';
+import { validateCaseAnswer } from './case-specs.js';
 
 const SOLVER_TIMEOUT_MS = 30000;
 
@@ -72,6 +73,30 @@ export function wrapSolverModule(mod) {
       registerRubricCoach();
 
       try {
+        // Lock short-circuit: return WITHOUT invoking the solver at all, so a non-whitelisted
+        // email never causes a case-study note to be generated in the first place. (This used to
+        // run the solver and then discard its answer in favour of the locked guide — wasted work,
+        // and it contradicted this behaviour as documented.)
+        if (isLocked) {
+          const lockedDurationMs = performance.now() - startedAt;
+          diagnostics.durationMs = lockedDurationMs;
+          diagnostics.durationText = formatDuration(lockedDurationMs);
+          return {
+            type: 'guide',
+            answer: 'This solver is locked. Access is restricted.',
+            variant: 'Locked',
+            answerDisplay: [
+              `### ${title}`,
+              '⚠️ **Access Restricted**: This solver is locked for this email ID.',
+              '',
+              'You can use the **Interactive Rubric Coach & Draft Evaluator** below to test and score your own draft against the official exam rubric before submission.'
+            ].join('\n'),
+            guide: 'Access restricted. Write your own case study analysis and evaluate it with the Rubric Coach below.',
+            rubricCoachHtml: buildRubricCoachHtml(id, title),
+            debug: { ...diagnostics, locked: true }
+          };
+        }
+
         let result;
         let timeoutId;
         const timeoutPromise = new Promise((_, reject) => {
@@ -81,6 +106,9 @@ export function wrapSolverModule(mod) {
           );
         });
         const solvePromise = (async () => {
+          // Refuse to generate a seeded note without an email: the RNG seed IS the email, so a
+          // blank one produces the same note for every student who submits without one.
+          requireEmail(normalizedEmail);
           return await solveImpl(normalizedEmail, sessionToken);
         })();
         try {
@@ -104,26 +132,44 @@ export function wrapSolverModule(mod) {
         }
 
         let finalResult = result;
-        if (isLocked) {
-          finalResult = {
-            type: 'guide',
-            answer: 'This solver is locked. Access is restricted.',
-            variant: 'Locked',
-            answerDisplay: [
-              `### ${title}`,
-              '⚠️ **Access Restricted**: This solver is locked for this email ID.',
-              '',
-              'You can use the **Interactive Rubric Coach & Draft Evaluator** below to test and score your own draft against the official exam rubric before submission.'
-            ].join('\n'),
-            guide: 'Access restricted. Write your own case study analysis and evaluate it with the Rubric Coach below.',
-            rubricCoachHtml: buildRubricCoachHtml(id, title)
-          };
-        } else if (result.type === 'solved') {
-          finalResult = {
-            ...result,
-            answerDisplay: result.answerDisplay || result.answer,
-            rubricCoachHtml: buildRubricCoachHtml(id, title)
-          };
+        if (result.type === 'solved') {
+          // Rubric contract enforcement: a generated note must satisfy the official character gate,
+          // the exact heading skeleton, and the evidence-table/case-specific rules before it is
+          // presented as a submittable answer. Shipping a note that silently misses a required
+          // heading is worse than failing loudly, since the student cannot see the gap themselves.
+          const rubric = validateCaseAnswer(id, result.answer);
+          diagnostics.rubric = rubric;
+
+          if (!rubric.valid) {
+            diagnostics.warnings.push(`rubric contract failed: ${rubric.errors.join('; ')}`);
+            finalResult = {
+              type: 'error',
+              answer: '',
+              variant: 'Rubric Contract Failed',
+              answerDisplay: [
+                `### ${title}`,
+                '',
+                '**Generated note failed the rubric contract and was withheld.**',
+                '',
+                'This is a solver bug, not a problem with your submission. Failing checks:',
+                '',
+                ...rubric.errors.map(e => `- ${e}`),
+                '',
+                'Use the Rubric Intelligence Terminal below to draft and score your own note.'
+              ].join('\n'),
+              guide: 'The generated note did not satisfy the official rubric contract, so it was withheld rather than shown as submittable.',
+              rubricCoachHtml: buildRubricCoachHtml(id, title)
+            };
+          } else {
+            if (rubric.warnings.length > 0) {
+              diagnostics.warnings.push(...rubric.warnings.map(w => `rubric: ${w}`));
+            }
+            finalResult = {
+              ...result,
+              answerDisplay: result.answerDisplay || result.answer,
+              rubricCoachHtml: buildRubricCoachHtml(id, title)
+            };
+          }
         }
 
         return {

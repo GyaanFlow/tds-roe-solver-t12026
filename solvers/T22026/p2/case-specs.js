@@ -12,8 +12,8 @@ export const CASE_SPECS = {
       'Unknowns and Decision-Changing Evidence',
       'Safe Next Action'
     ],
-    requiredKeywords: ['reconciled', 'dealer', '0.00', 'may', 'batch'],
-    keyEntities: ['DF-00020', 'DF-00040', 'Kavya', 'Silver Dish', 'Metro Signal']
+    requiredKeywords: ['reconciled', 'dealer', 'dlr', 'may', 'batch'],
+    keyEntities: ['DLR-104', 'DLR-219', '17', '210', '12.2']
   },
   'q-case-dth-complaints-quiet-server': {
     id: 'q-case-dth-complaints-quiet-server',
@@ -27,8 +27,8 @@ export const CASE_SPECS = {
       'Safe Next Action',
       'Person and Five Questions'
     ],
-    requiredKeywords: ['farah', 'containment', 'authentication', 'abandoned', 'questions'],
-    keyEntities: ['Farah Iqbal', 'CareDesk', 'NovaIVR', '824', '711', '1,535']
+    requiredKeywords: ['farah', 'containment', 'authentication', 'nova', 'questions'],
+    keyEntities: ['Farah Iqbal', 'CareDesk', 'NOVA-S1', '24.0%', 'South']
   },
   'q-case-solar-smell-test-server': {
     id: 'q-case-solar-smell-test-server',
@@ -41,8 +41,8 @@ export const CASE_SPECS = {
       'Rejected Hypothesis',
       'Conclusion'
     ],
-    requiredKeywords: ['inverter', 'impact', 'cleared', 'check'],
-    keyEntities: ['INV-17', 'INV-03', 'INV-22', 'INV-09', '0 MW', 'SCADA']
+    requiredKeywords: ['inverter', 'impact_mw', 'cleared', 'check'],
+    keyEntities: ['impact_mw', 'cleared', 'severity', 'inverter_events']
   },
   'q-case-solar-impact-claim-server': {
     id: 'q-case-solar-impact-claim-server',
@@ -56,8 +56,8 @@ export const CASE_SPECS = {
       'Next Measurement',
       'Recommendation'
     ],
-    requiredKeywords: ['31.6%', 'counterfactual', '17.5%', 'dsm', 'stow'],
-    keyEntities: ['662,444', '453,086', '4,196.5', '4,231.1', '12']
+    requiredKeywords: ['31.6%', 'base_schedule_mw', '17.5%', 'dispatch_blocks', 'stow'],
+    keyEntities: ['31.6%', '17.5%', 'base_schedule_mw', 'dispatch_blocks', '662,444']
   },
   'q-case-customs-mismatch-server': {
     id: 'q-case-customs-mismatch-server',
@@ -71,8 +71,8 @@ export const CASE_SPECS = {
       'Missing Evidence',
       'Safe Next Action'
     ],
-    requiredKeywords: ['90211000', '90211090', 'swiss', 'helios', 'schema'],
-    keyEntities: ['9021.10', 'CH-2025-000522', 'canonical-schema', '0%']
+    requiredKeywords: ['90211000', '90211090', '902110', 'hs6', 'schema'],
+    keyEntities: ['90211000', '90211090', '902110', 'HS6']
   },
   'q-case-consumer-qc-queue-server': {
     id: 'q-case-consumer-qc-queue-server',
@@ -85,8 +85,8 @@ export const CASE_SPECS = {
       'Rejected Hypotheses',
       'What Would Change the Decision'
     ],
-    requiredKeywords: ['02:10', 'qcore', 'labtrack', 'snapshot', 'ql-204'],
-    keyEntities: ['262', '48h', '24h', 'SOP', 'deviation']
+    requiredKeywords: ['02:10', 'qcore', 'snapshot', '70.6'],
+    keyEntities: ['02:10:00', '70.6', 'QCore', 'qcore_release_ts']
   },
   'q-case-customs-preference-server': {
     id: 'q-case-customs-preference-server',
@@ -100,8 +100,8 @@ export const CASE_SPECS = {
       'Missing Evidence',
       'Safe Next Action'
     ],
-    requiredKeywords: ['preference', 'supplier', 'declaration', 'ltsd', 'provisional'],
-    keyEntities: ['SUP-02', 'P1006', 'IE-2025-000411', 'Aoife Brennan', 'Luca Ferri']
+    requiredKeywords: ['preference', 'supplier', 'declaration', 'expired', 'sup-02'],
+    keyEntities: ['SUP-02', 'P1006', '2025-07-31', '2025-09-18']
   },
   'q-case-consumer-spares-search-server': {
     id: 'q-case-consumer-spares-search-server',
@@ -115,8 +115,8 @@ export const CASE_SPECS = {
       'Rejected Hypotheses',
       'What Would Change the Decision'
     ],
-    requiredKeywords: ['actionable', 'needs check', 'not transferable', 'spares', 'critical'],
-    keyEntities: ['123,565', '8', '12', '4', 'Leon Dube', 'MT-18']
+    requiredKeywords: ['actionable', 'needs check', 'not transferable', 'servo', 'reserved'],
+    keyEntities: ['MTR-4401', '166,49', '20,536', 'servo', 'reserved']
   }
 };
 
