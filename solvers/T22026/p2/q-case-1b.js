@@ -13,18 +13,18 @@ export async function solve(email, sessionToken) {
   ];
 
   const evidenceRowsPool = [
-    ['Pilot is South-only, started 2026-05-10; East/North/West stay 100% LEGACY across all six months', 'ivr_interactions.jsonl', 'High'],
-    ['South cases fell to index 59 in June vs January while control regions held flat (E 101, N 101, W 96)', 'tickets.csv', 'High'],
-    ['South IVR session volume jumped from ~90-110/month under LEGACY to 1,192 (May) and 1,559 (June) under NOVA-S1', 'ivr_interactions.jsonl', 'High'],
-    ['Pre-authentication terminations: 24.0% under NOVA-S1 vs 7.9% South-LEGACY / 6.9% other regions; auth/prompt error codes hit 13.4% of NOVA sessions', 'ivr_interactions.jsonl', 'High'],
-    ['464-1,094 NOVA sessions ended ERROR/ABANDONED with no case_id (382 pre-auth in June alone) = 411 distinct subscribers, ~175 never recovered in a later NOVA session', 'ivr_interactions.jsonl', 'High'],
-    ['Containment dashboard = 64.8% excluding pre-auth sessions vs 56.1% counting all sessions; NOVA drops 24% of sessions from the denominator vs 7.9% under LEGACY', 'ivr_interactions.jsonl', 'High'],
-    ['Case-create-to-agent-transfer path fell from 49.5% of sessions (LEGACY) to 3.3% (NOVA), count 219 to 90', 'ivr_interactions.jsonl', 'High'],
-    ['New self-service stages balance_check (29.1% of sessions) and pack_info (21.3%) do not exist at all under LEGACY (0%)', 'ivr_interactions.jsonl', 'Medium-High'],
-    ['South outages held steady through the pilot (May: 10 events/9,409 accounts; June: 8/7,045) yet NO_SIGNAL complaints fell from 51 to 28', 'service_events.csv + tickets.csv', 'High']
+    ['Pilot is South-only, started 2026-05-10; East/North/West stay 100% LEGACY across all six months', 'ivr_interactions.jsonl, pilot_version x region (4,613 sessions)', 'High'],
+    ['South cases fell to index 59 in June vs January while control regions held flat (E 101, N 101, W 96)', 'tickets.csv, case_id by region x month (3,541 rows)', 'High'],
+    ['South IVR session volume jumped from ~90-110/month under LEGACY to 1,192 (May) and 1,559 (June) under NOVA-S1', 'ivr_interactions.jsonl, session_id by region x month', 'High'],
+    ['Pre-authentication terminations: 24.0% under NOVA-S1 vs 7.9% South-LEGACY / 6.9% other regions; auth/prompt error codes hit 13.4% of NOVA sessions', 'ivr_interactions.jsonl, terminal_stage + error_code columns', 'High'],
+    ['464-1,094 NOVA sessions ended ERROR/ABANDONED with no case_id (382 pre-auth in June alone) = 411 distinct subscribers, ~175 never recovered in a later NOVA session', 'ivr_interactions.jsonl, outcome + case_id + subscriber_id columns', 'High'],
+    ['Containment dashboard = 64.8% excluding pre-auth sessions vs 56.1% counting all sessions; NOVA drops 24% of sessions from the denominator vs 7.9% under LEGACY', 'ivr_interactions.jsonl, terminal_stage recomputed both ways', 'High'],
+    ['Case-create-to-agent-transfer path fell from 49.5% of sessions (LEGACY) to 3.3% (NOVA), count 219 to 90', 'ivr_interactions.jsonl, case_id + outcome=transfer (219 of 442 LEGACY vs 90 of 2,730 NOVA)', 'High'],
+    ['New self-service stages balance_check (29.1% of sessions) and pack_info (21.3%) do not exist at all under LEGACY (0%)', 'ivr_interactions.jsonl, terminal_stage value counts', 'Medium-High'],
+    ['South outages held steady through the pilot (May: 10 events/9,409 accounts; June: 8/7,045) yet NO_SIGNAL complaints fell from 51 to 28', 'service_events.csv, region=South (124 events) vs tickets.csv, issue_type=NO_SIGNAL', 'High']
   ];
 
-  const selectedEvidence = sampleDiverse(rng, evidenceRowsPool, 6, row => sourceKey(row[1]));
+  const selectedEvidence = sampleDiverse(rng, evidenceRowsPool, 5, row => sourceKey(row[1]));
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
 
   const rejectedPool = [
@@ -84,7 +84,10 @@ export async function solve(email, sessionToken) {
     'Rejected:',
     rejectedText,
     '',
-    'Remaining unknowns (what would change the decision): the 7-day repeat-contact rate for South (not in the data), the exact containment-metric numerator/denominator, and what operationally happens to a session that fails at authentication.',
+    'Remaining unknowns, each with what would resolve it:',
+    '- The 7-day repeat-contact rate for South is not in the data. High = confirmed suppression; low = self-service resolution more credible.',
+    '- The containment-metric denominator is only described in the email, not formally specified. If pre-auth exclusion is by design, the dashboard needs relabeling, not redefining; if it is an oversight, the metric itself needs fixing.',
+    '- What happens to a failed-authentication session operationally is unknown. A callback elsewhere weakens the suppression finding; nothing happening means the 175-subscriber floor understates real impact.',
     '',
     '## Safe Next Action',
     safeActionText,

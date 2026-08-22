@@ -16,42 +16,42 @@ export async function solve(email, sessionToken) {
   const evidenceRowsPool = [
     [
       '31-May cluster = 17 annual (term_days=365) renewals, all DLR-104/DLR-219, one 21:00 posting batch',
-      'recharges.csv',
+      'recharges.csv, term_days=365 AND posted_at date=2026-05-31 (17 of 24,542 rows)',
       'High'
     ],
     [
       'No aggregate spike: 31 May = 210 rows posted total, only the 6th-busiest posting day; every busier day is itself a month boundary',
-      'recharges.csv',
+      'recharges.csv, posted_at grouped by date (210 rows on 2026-05-31, ranked against the other 5 month-boundary dates)',
       'High'
     ],
     [
       'Annual rows reconcile to the import log to the cent: May DLR-104 8 rows=$723.42, DLR-219 9 rows=$782.87; 90 annual rows = 90 import-log rows across all 12 dealer-months',
-      'recharges.csv + dealer_import_log.csv (DF-00020/DF-00040)',
+      'recharges.csv (term_days=365, 90 rows) vs dealer_import_log.csv files DF-00020/DF-00040 (41 rows, reconciliation_difference_usd column)',
       'High'
     ],
     [
       'recharge_id and source_event_id are 100% unique across 24,542 rows; 0 duplicates on (subscriber, effective_date, amount, plan); import-log duplicate_source_event_ids = 0 on all 41 files',
-      'recharges.csv + dealer_import_log.csv',
+      'recharges.csv, recharge_id + source_event_id columns (24,542 rows) vs dealer_import_log.csv, duplicate_source_event_ids column (41 rows)',
       'High'
     ],
     [
       'All 90 annual rows: effective-month = posted-month (0 leakage); posted_at never earlier than effective_event_date (min lag = 0); effective dates spread 1–28 May',
-      'recharges.csv',
+      'recharges.csv, effective_event_date vs posted_at columns (90 term_days=365 rows)',
       'High'
     ],
     [
       'Annual amounts run ~12.2x the same plan tier\'s monthly price for every plan (LITE, FAMILY, SPORTS, PREMIUM) — no inflation',
-      'recharges.csv',
+      'recharges.csv, amount_usd grouped by plan_id x term_days (365 vs 30 rows, 4 plan tiers)',
       'High'
     ],
     [
       'Month-end batching is unique to DLR-104/DLR-219; every other dealer posts annuals same-day (mean lag = 0)',
-      'recharges.csv',
+      'recharges.csv, dealer_id x (posted_at - effective_event_date) lag, term_days=365 rows across all dealers',
       'High'
     ],
     [
       'The 140 rows at amount_usd <= 0 are exactly the COUPON_ENTITLEMENT events (min = max = $0), not revenue',
-      'recharges.csv',
+      'recharges.csv, amount_usd <= 0 filter cross-checked against event_type column (140 of 24,542 rows)',
       'High'
     ]
   ];
@@ -76,13 +76,12 @@ export async function solve(email, sessionToken) {
   const rejectedText = sample(rng, rejectedHypothesesPool, 2).join('\n\n');
 
   const unknownsPool = [
-    pick(rng, [
-      '**Material Unknowns**: The revenue-recognition basis is not in the extract — if the trend pack keys on `posted_at` rather than `effective_event_date`, the 31-May spike is a benign presentation artifact rather than an accounting issue; confirming this is the single most decision-relevant unknown.',
-      '**Material Unknowns**: There is no `region` field in the data — "West = DLR-104/DLR-219" is inferred from the email plus the two dealer codes present in the import log, not confirmed by a dealer master. If a dealer master contradicts this mapping, the framing of the escalation would need revisiting.',
-      '**Material Unknowns**: The contract permitting monthly (rather than per-transaction) batch submission is only asserted in Kavya Iyer\'s email, not independently documented. If the signed dealer agreement for DLR-104/DLR-219 does not actually contain a monthly-batch clause, the "contractually permitted" part of the judgment would need to be dropped, even though the reconciliation evidence itself would be unaffected.'
-    ])
+    'The revenue-recognition basis is not in the extract — if the trend pack keys on `posted_at` rather than `effective_event_date`, the 31-May spike is a benign presentation artifact, not an accounting issue; confirming this is the single most decision-relevant unknown.',
+    'There is no `region` field in the data — "West = DLR-104/DLR-219" is inferred from the email plus the two dealer codes in the import log, not confirmed by a dealer master. If a dealer master contradicts this mapping, the framing of the escalation would need revisiting.',
+    'The contract permitting monthly (rather than per-transaction) batch submission is only asserted in Kavya Iyer\'s email, not independently documented. If the signed dealer agreement for DLR-104/DLR-219 does not contain a monthly-batch clause, the "contractually permitted" part of the judgment would need to be dropped, even though the reconciliation evidence itself would be unaffected.',
+    'Entitlement activation on subscriber accounts is only visible as a passed check in the import log, not independently verified. If a sample of the 90 annual accounts shows entitlements were NOT actually activated, that would point to a real provisioning defect separate from the revenue question.'
   ];
-  const unknownsText = pick(rng, unknownsPool);
+  const unknownsText = ['**Material Unknowns**:', ...sample(rng, unknownsPool, 2).map(s => `- ${s}`)].join('\n');
 
   const nextActionPool = [
     pick(rng, [

@@ -13,14 +13,14 @@ export async function solve(email, sessionToken) {
   ];
 
   const evidenceRowsPool = [
-    ['Preference = Yes claimed for P1006, but no supplier support is linked in ClearView', 'declaration.pdf; review_note.txt', 'High'],
-    ['Line is declared US origin at 0.0% duty — preference is both duty-neutral and questionable on a US-origin good', 'declaration.pdf', 'Medium'],
-    ['SUP-02/P1006 (Ireland) is Expired: valid_to 2025-07-31, document SD-SUP-02-P1006-2024; the entry is dated 2025-09-18, after expiry', 'supplier_origin_register.csv; supplier_declaration_reference.txt', 'High'],
-    ['ERP/Helios origin is US; the origin workshop states Helios "was never designed to prove preference"', 'origin-workshop.md; product_master_current.xlsx', 'High'],
-    ['The register lookup itself states absence "does not prove that no document exists outside the register"; the register is admittedly "not always updated"', 'supplier_declaration_reference.txt; origin-workshop.md', 'High'],
-    ['P1006 has five origins on file (US, IE, DE, BE, FR); suppliers SUP-03/05/06 hold current EU-origin declarations, but none is linked to this shipment', 'supplier_origin_register.csv', 'High'],
-    ['Declared tariff code 90211090 is the correct EU CN8 code for P1006 — the code itself is not the issue in this case', 'country_tariff_matrix.xlsx (EU Matrix)', 'High'],
-    ['Invoice shows Quantity 10 but Line value = Unit value = EUR 193,400 (Line != Qty x Unit); the air waybill separately shows only 4 pieces — a valuation/consistency anomaly independent of the preference question', 'commercial_invoice.pdf; air_waybill.pdf', 'Medium']
+    ['Preference = Yes claimed for P1006, but no supplier support is linked in ClearView', 'declaration.pdf, preference field, Line 1; review_note.txt, full text', 'High'],
+    ['Line is declared US origin at 0.0% duty — preference is both duty-neutral and questionable on a US-origin good', 'declaration.pdf, origin + duty fields, Line 1', 'Medium'],
+    ['SUP-02/P1006 (Ireland) is Expired: valid_to 2025-07-31, document SD-SUP-02-P1006-2024; the entry is dated 2025-09-18, after expiry', 'supplier_origin_register.csv, SUP-02/P1006 row (valid_to, status columns); supplier_declaration_reference.txt, lookup date', 'High'],
+    ['ERP/Helios origin is US; the origin workshop states Helios "was never designed to prove preference"', 'origin-workshop.md, quoted line; product_master_current.xlsx, P1006 mfg-country field', 'High'],
+    ['The register lookup itself states absence "does not prove that no document exists outside the register"; the register is admittedly "not always updated"', 'supplier_declaration_reference.txt, disclaimer line; origin-workshop.md, quoted line', 'High'],
+    ['P1006 has five origins on file (US, IE, DE, BE, FR); suppliers SUP-03/05/06 hold current EU-origin declarations, but none is linked to this shipment', 'supplier_origin_register.csv, all P1006 rows (5 suppliers)', 'High'],
+    ['Declared tariff code 90211090 is the correct EU CN8 code for P1006 — the code itself is not the issue in this case', 'country_tariff_matrix.xlsx, EU Matrix tab, P1006 row', 'High'],
+    ['Invoice shows Quantity 10 but Line value = Unit value = EUR 193,400 (Line != Qty x Unit); the air waybill separately shows only 4 pieces — a valuation/consistency anomaly independent of the preference question', 'commercial_invoice.pdf, Qty + Unit value + Line value fields; air_waybill.pdf, piece count field', 'Medium']
   ];
   const selectedEvidence = sampleDiverse(rng, evidenceRowsPool, 6, row => sourceKey(row[1]));
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
@@ -34,10 +34,10 @@ export async function solve(email, sessionToken) {
   const rejectedText = sample(rng, rejectedPool, 3).join('\n\n');
 
   const missingEvidencePool = [
-    'A current, valid supplier declaration or origin proof for P1006 covering the 2025-09-18 entry, establishing originating status under a specific preference programme.',
-    'The preference rule/agreement actually invoked and its origin criterion — the workshop notes explicitly ask for "the supplier declaration and the rule used for the claim."',
-    'Which supplier actually sourced this shipment (US SUP-01 vs EU SUP-03/05/06 vs the expired SUP-02) — the packet never states this.',
-    'Whether a valid document exists outside the register, e.g. in procurement category folders, since the register is known to be incomplete.'
+    'A current, valid supplier declaration or origin proof for P1006 covering the 2025-09-18 entry. If one is produced and shows a qualifying EU origin, the decision flips to clear the claim as preferential; if none exists, the decision hardens toward permanently non-preferential.',
+    'The preference rule/agreement actually invoked and its origin criterion — the workshop notes ask for "the supplier declaration and the rule used for the claim." Without it, even a valid-looking document cannot be checked against the right criterion.',
+    'Which supplier actually sourced this shipment (US SUP-01 vs EU SUP-03/05/06 vs the expired SUP-02) — the packet never states this. If it was SUP-03/05/06, a current declaration already exists and just needs linking; if SUP-01, the US origin is confirmed and preference cannot apply at all.',
+    'Whether a valid document exists outside the register, e.g. in procurement category folders, since the register is known to be incomplete. Finding one there would resolve this without waiting on the supplier; finding nothing would support the fraud-referral escalation instead of the hold.'
   ];
   const missingEvidenceText = sample(rng, missingEvidencePool, 3).map(s => `- ${s}`).join('\n');
 

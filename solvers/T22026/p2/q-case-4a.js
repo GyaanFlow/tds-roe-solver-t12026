@@ -13,14 +13,14 @@ export async function solve(email, sessionToken) {
   ];
 
   const evidenceRowsPool = [
-    ['Cycle time depends on the clock chosen: receipt-to-release 45.5 h mean vs SOP\'s evidence-to-release 26.9 h mean / 21.3 h median', 'batch_release.csv + qc_release_sop.md', 'High'],
-    ['185 of 262 rows (70.6%) have qcore_release_ts stamped at exactly 02:10:00, matching QCore\'s daily-snapshot time', 'batch_release.csv + source_freshness.csv', 'High'],
-    ['Excluding the 02:10:00 rows, median evidence-to-release drops from 21.3 h to 8.4 h', 'batch_release.csv', 'High'],
-    ['73 of 262 rows (27.9%) are complex exceptions the SOP excludes from the routine target; on the 23 routine rows with a completed cycle time, median is 5.5 h and 22/23 (95.7%) land within 24 h', 'batch_release.csv + qc_release_sop.md', 'High'],
-    ['All 42 HOLD rows have a null qcore_release_ts (open, no cycle time exists yet)', 'batch_release.csv', 'High'],
-    ['All 42 HOLD rows were received on or after 2026-07-24; all 220 dispositioned rows were received on or before 2026-07-20 — the metric is right-censored and blind to roughly $6.6M in shortage-exposure value sitting in the newest week', 'batch_release.csv', 'High'],
-    ['17 RELEASED rows show COA MISSING and 13 show INDEX_PENDING — plausibly CertVault\'s nightly-index lag rather than a genuine control gap', 'batch_release.csv + source_freshness.csv', 'Medium'],
-    ['LabTrack is described as a "48 h analytics extract, not live" while QCore snapshots daily at 02:10 — mismatched refresh cadences contaminate any delta between the two', 'source_freshness.csv', 'High']
+    ['Cycle time depends on the clock chosen: receipt-to-release 45.5 h mean vs SOP\'s evidence-to-release 26.9 h mean / 21.3 h median', 'batch_release.csv, receipt_ts/lab_complete_ts/qcore_release_ts columns (262 rows) + qc_release_sop.md, target-definition clause', 'High'],
+    ['185 of 262 rows (70.6%) have qcore_release_ts stamped at exactly 02:10:00, matching QCore\'s daily-snapshot time', 'batch_release.csv, qcore_release_ts column (185 of 262 rows) + source_freshness.csv, QCore snapshot-time row', 'High'],
+    ['Excluding the 02:10:00 rows, median evidence-to-release drops from 21.3 h to 8.4 h', 'batch_release.csv, recomputed with qcore_release_ts=02:10:00 rows filtered out', 'High'],
+    ['73 of 262 rows (27.9%) are complex exceptions the SOP excludes from the routine target; on the 23 routine rows with a completed cycle time, median is 5.5 h and 22/23 (95.7%) land within 24 h', 'batch_release.csv, open_deviation/market_spec_override/coa_status columns (73 of 262 rows) + qc_release_sop.md, exclusion clause', 'High'],
+    ['All 42 HOLD rows have a null qcore_release_ts (open, no cycle time exists yet)', 'batch_release.csv, disposition="HOLD" + qcore_release_ts (null) columns, 42 of 262 rows', 'High'],
+    ['All 42 HOLD rows were received on or after 2026-07-24; all 220 dispositioned rows were received on or before 2026-07-20 — the metric is right-censored and blind to roughly $6.6M in shortage-exposure value sitting in the newest week', 'batch_release.csv, receipt_ts column, HOLD (42 rows) vs dispositioned (220 rows)', 'High'],
+    ['17 RELEASED rows show COA MISSING and 13 show INDEX_PENDING — plausibly CertVault\'s nightly-index lag rather than a genuine control gap', 'batch_release.csv, coa_status column (30 of 262 rows) + source_freshness.csv, CertVault refresh-cadence row', 'Medium'],
+    ['LabTrack is described as a "48 h analytics extract, not live" while QCore snapshots daily at 02:10 — mismatched refresh cadences contaminate any delta between the two', 'source_freshness.csv, LabTrack + QCore rows', 'High']
   ];
   const selectedEvidence = sampleDiverse(rng, evidenceRowsPool, 6, row => sourceKey(row[1]));
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);

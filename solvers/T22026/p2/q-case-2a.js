@@ -17,16 +17,16 @@ export async function solve(email, sessionToken) {
   ];
 
   const evidenceRowsPool = [
-    ['Only 4 events, 27 May-4 Jun, 4 distinct inverters (INV-17/03/22/09), no recurrence', 'inverter_events.csv', 'High'],
-    ['Each of the 4 inverters appears exactly once in the window; no unit shows a repeating or worsening pattern', 'inverter_events.csv', 'High'],
-    ['All rows impact_mw=0 and cleared=yes; severity info/warning only, none error/critical', 'inverter_events.csv', 'High'],
-    ['Severity breakdown: 3 rows info, 1 row warning (COMM_LINK_WARN on INV-17); none reach error or critical', 'inverter_events.csv', 'High'],
-    ['Durations span 1-7 minutes; event names (COMM_LINK_WARN, FAN_SPEED_HIGH, DC_INPUT_CHECK, TEMP_SENSOR_RECOVERED) are routine or self-recovered telemetry, not fault reports', 'inverter_events.csv', 'High'],
-    ['TEMP_SENSOR_RECOVERED on INV-09 explicitly names a recovery, not an open fault, reinforcing the benign read', 'inverter_events.csv', 'High'],
-    ['File carries no scope/baseline metadata, so completeness cannot be confirmed from it alone', 'inverter_events.csv', 'Medium'],
-    ['9-day window with only 4 logged events is sparse for a multi-inverter plant, which is itself the only thing worth a cheap check', 'inverter_events.csv', 'Medium'],
-    ['The four event types (COMM_LINK_WARN, FAN_SPEED_HIGH, DC_INPUT_CHECK, TEMP_SENSOR_RECOVERED) share no common signature — no shared root cause is suggested by the data', 'inverter_events.csv', 'Medium'],
-    ['Neither cross-inverter repetition nor rising severity is present anywhere in the 4-row window', 'inverter_events.csv', 'High']
+    ['Only 4 events, 27 May-4 Jun, 4 distinct inverters (INV-17/03/22/09), no recurrence', 'inverter_events.csv, timestamp_local + inverter_id columns, all 4 rows', 'High'],
+    ['Each of the 4 inverters appears exactly once in the window; no unit shows a repeating or worsening pattern', 'inverter_events.csv, inverter_id value counts, all 4 rows', 'High'],
+    ['All rows impact_mw=0 and cleared=yes; severity info/warning only, none error/critical', 'inverter_events.csv, impact_mw + cleared + severity columns, all 4 rows', 'High'],
+    ['Severity breakdown: 3 rows info, 1 row warning (COMM_LINK_WARN on INV-17); none reach error or critical', 'inverter_events.csv, severity column, all 4 rows', 'High'],
+    ['Durations span 1-7 minutes; event names (COMM_LINK_WARN, FAN_SPEED_HIGH, DC_INPUT_CHECK, TEMP_SENSOR_RECOVERED) are routine or self-recovered telemetry, not fault reports', 'inverter_events.csv, duration_min + event columns, all 4 rows', 'High'],
+    ['TEMP_SENSOR_RECOVERED on INV-09 explicitly names a recovery, not an open fault, reinforcing the benign read', 'inverter_events.csv, event column, row for INV-09 (2026-06-04)', 'High'],
+    ['File carries no scope/baseline metadata, so completeness cannot be confirmed from it alone', 'inverter_events.csv, full column list (7 fields, no scope/total-count field present)', 'Medium'],
+    ['9-day window with only 4 logged events is sparse for a multi-inverter plant, which is itself the only thing worth a cheap check', 'inverter_events.csv, timestamp_local range (27 May-4 Jun, all 4 rows)', 'Medium'],
+    ['The four event types (COMM_LINK_WARN, FAN_SPEED_HIGH, DC_INPUT_CHECK, TEMP_SENSOR_RECOVERED) share no common signature — no shared root cause is suggested by the data', 'inverter_events.csv, event column, all 4 rows', 'Medium'],
+    ['Neither cross-inverter repetition nor rising severity is present anywhere in the 4-row window', 'inverter_events.csv, inverter_id + severity columns, all 4 rows', 'High']
   ];
   const selectedEvidence = sample(rng, evidenceRowsPool, 3);
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
