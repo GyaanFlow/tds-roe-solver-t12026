@@ -1,5 +1,5 @@
 // Case Study 4B — Spare-Parts Search (Aurelia Consumer Products, Maintenance Planning)
-import { createRng, pick, sample, shuffle, formatTable } from './variations-engine.js';
+import { createRng, pick, sample, sampleDiverse, sourceKey, shuffle, formatTable } from './variations-engine.js';
 
 export const id = 'q-case-consumer-spares-search-server';
 export const title = 'Case Study 4B — Spare-Parts Search';
@@ -43,7 +43,7 @@ export async function solve(email, sessionToken) {
     ['Only 2 free revision-B valve units exist (Northport + Meridian) against 4 units of revision-B demand across three requests — free stock is allocated once, not multiply-cited', 'spare_parts.csv + part_restrictions.csv', 'High'],
     ['The global stock view (MaintStar-global) is dated 2026-06-26 and refreshes only monthly, roughly 4 weeks older than the 2026-07-24 request export; local CMMS screens are live', 'source_freshness.csv', 'High']
   ];
-  const selectedEvidence = sample(rng, evidenceRowsPool, 6);
+  const selectedEvidence = sampleDiverse(rng, evidenceRowsPool, 6, row => sourceKey(row[1]));
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
 
   const rejectedPool = [

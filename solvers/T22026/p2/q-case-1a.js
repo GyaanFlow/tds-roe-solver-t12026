@@ -1,5 +1,5 @@
 // Case Study 1A — DTH Month-End Mystery (SkyWave Direct)
-import { createRng, pick, shuffle, sample, formatTable } from './variations-engine.js';
+import { createRng, pick, shuffle, sample, sampleDiverse, sourceKey, formatTable } from './variations-engine.js';
 
 export const id = 'q-case-dth-month-end-server';
 export const title = 'Case Study 1A — DTH Month-End Mystery';
@@ -56,7 +56,7 @@ export async function solve(email, sessionToken) {
     ]
   ];
 
-  const selectedEvidence = sample(rng, evidenceRowsPool, 6);
+  const selectedEvidence = sampleDiverse(rng, evidenceRowsPool, 6, row => sourceKey(row[1]));
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
 
   const rejectedHypothesesPool = [

@@ -1,5 +1,5 @@
 // Case Study 2B — Solar 31.6% Impact Claim (ARPL Solar Wind-Stow Pilot)
-import { createRng, pick, sample, formatTable } from './variations-engine.js';
+import { createRng, pick, sample, sampleDiverse, sourceKey, formatTable } from './variations-engine.js';
 
 export const id = 'q-case-solar-impact-claim-server';
 export const title = 'Case Study 2B — Solar 31.6% Impact Claim';
@@ -21,7 +21,7 @@ export async function solve(email, sessionToken) {
     ['28 and 29 May are weather- and firmware-matched (wind mean 4.8/4.8 m/s, gust max 13.1/13.4, firmware 4.7 both days, 10/10 stow blocks)', 'dispatch_blocks.csv', 'Medium-High'],
     ['Energy priced at Rs 2.72/kWh in the commercial extract; lowering the submitted schedule cuts penalty but may forgo scheduled-energy value — net commercial value is not computed by the note', 'DSM_Commercial_Extract.pdf', 'Medium']
   ];
-  const selectedEvidence = sample(rng, evidenceRowsPool, 6);
+  const selectedEvidence = sampleDiverse(rng, evidenceRowsPool, 6, row => sourceKey(row[1]));
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
 
   const rejectedPool = [
