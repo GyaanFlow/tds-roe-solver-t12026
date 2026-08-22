@@ -19,9 +19,10 @@ export async function solve(email, sessionToken) {
     ['28 May is the highest-penalty day in the file; conventional 4 Jun (Rs 403,391) settled below the AI day (Rs 453,086) — but 4 Jun ran firmware 4.8 vs 4.7 on the May days, a confound', 'dispatch_blocks.csv, dsm_penalty_rs summed by date (8 days) + firmware_version column', 'High'],
     ['Penalty is a banded step-function (>15% deviation = Rs 2.0/kWh); roughly 10 STOW blocks carry 96-98% of a day\'s penalty rupees on both 28 and 29 May', 'DSM_Commercial_Extract.pdf, deviation band table + dispatch_blocks.csv, tracker_stow_state="STOW" rows, 28/29 May', 'High'],
     ['28 and 29 May are weather- and firmware-matched (wind mean 4.8/4.8 m/s, gust max 13.1/13.4, firmware 4.7 both days, 10/10 stow blocks)', 'dispatch_blocks.csv, vendor_mean_ms + vendor_gust_ms + firmware_version columns, 28 vs 29 May (96 blocks/day)', 'Medium-High'],
-    ['Energy priced at Rs 2.72/kWh in the commercial extract; lowering the submitted schedule cuts penalty but may forgo scheduled-energy value — net commercial value is not computed by the note', 'DSM_Commercial_Extract.pdf, energy tariff line item', 'Medium']
+    ['Energy priced at Rs 2.72/kWh in the commercial extract; lowering the submitted schedule cuts penalty but may forgo scheduled-energy value — net commercial value is not computed by the note', 'DSM_Commercial_Extract.pdf, energy tariff line item', 'Medium'],
+    ['Non-pilot days range from Rs 403,391 (4 Jun) to Rs 662,444 (28 May), a ~64% swing with no pilot involved — the noise floor the 17.5% effect has not yet been checked against', 'dispatch_blocks.csv, dsm_penalty_rs by date, non-pilot days', 'Medium']
   ];
-  const selectedEvidence = sampleDiverse(rng, evidenceRowsPool, 6, row => sourceKey(row[1]));
+  const selectedEvidence = sampleDiverse(rng, evidenceRowsPool, 5, row => sourceKey(row[1]));
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
 
   const rejectedPool = [
@@ -37,6 +38,7 @@ export async function solve(email, sessionToken) {
     '- **Generality across high-wind days** (only one pilot day, 12 of 96 blocks) — if the within-day counterfactual replicates on several more matched days, the ~17.5% figure becomes a defensible general estimate rather than a single-day artifact.',
     '- **Ex-ante forecast skill vs. hindsight** — if the schedule revision was logged before generation was known, that proves genuine forecasting value; if it was adjusted after the fact, the "AI pilot" framing itself is unsupported.',
     '- **Net-value impact** (forgone energy value vs. penalty saved) — if net commercial value is computed and still positive, the recommendation to continue holds; if lowering the schedule cost more in forgone energy than it saved in penalty, the pilot should be reconsidered even at 17.5%.',
+    '- **No noise-floor baseline is measured.** Non-pilot days swing Rs 403,391-662,444 (~64%) on weather alone. A small spread across repeated same-day counterfactuals would confirm a stable effect; a spread near 64% would mean 17.5% was this day\'s number, not the pilot\'s.',
     'The 4-June counter-example is itself firmware-confounded (4.8 vs 4.7), so the within-day estimate remains the more defensible number regardless of how these resolve.'
   ].join('\n');
 
