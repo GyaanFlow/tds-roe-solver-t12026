@@ -644,7 +644,8 @@ async function checkT2P2SolversExecute(solvers) {
     '23f1000805@ds.study.iitm.ac.in',
     '23f3001077@ds.study.iitm.ac.in',
     '23f2005160@ds.study.iitm.ac.in',
-    '24f2004141@ds.study.iitm.ac.in'
+    '24f2004141@ds.study.iitm.ac.in',
+    '24f3003125@ds.study.iitm.ac.in'
   ];
   const lockedEmails = [
     'random_student@ds.study.iitm.ac.in',
@@ -683,10 +684,12 @@ async function checkT2P2SolversExecute(solvers) {
     const res2 = await solver.solve(whitelistedEmails[1], sessionToken);
     const res3 = await solver.solve(whitelistedEmails[2], sessionToken);
     const res4 = await solver.solve(whitelistedEmails[3], sessionToken);
+    const res5 = await solver.solve(whitelistedEmails[4], sessionToken);
     assert(res1.answer !== res2.answer, `T2 P2 ${solver.id} produced duplicate identical answer across email 1 and 2.`);
     assert(res1.answer !== res3.answer, `T2 P2 ${solver.id} produced duplicate identical answer across email 1 and 3.`);
     assert(res2.answer !== res3.answer, `T2 P2 ${solver.id} produced duplicate identical answer across email 2 and 3.`);
     assert(res1.answer !== res4.answer, `T2 P2 ${solver.id} produced duplicate identical answer across email 1 and 4.`);
+    assert(res1.answer !== res5.answer, `T2 P2 ${solver.id} produced duplicate identical answer across email 1 and 5.`);
   }
 
   // 4. Rubric contract: runtime must validate every generated note and expose the report.
