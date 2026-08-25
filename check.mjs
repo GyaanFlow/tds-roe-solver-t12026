@@ -654,15 +654,26 @@ async function checkT2P2SolversExecute(solvers) {
   ];
   const sessionToken = 'quiz_sign_mock_token_1234';
 
+  const { CASE_SPECS, validateCaseAnswer, analyzeDraft } = await importFresh('solvers/T22026/p2/case-specs.js');
+
   // 1. Whitelisted emails get full solved diagnostic notes
   for (const email of whitelistedEmails) {
     for (const solver of solvers) {
+      const spec = CASE_SPECS[solver.id];
       const result = await solver.solve(email, sessionToken);
       assert(result && typeof result === 'object', `T2 P2 ${solver.id} returned non-object.`);
       assert(typeof result.answer === 'string', `T2 P2 ${solver.id} answer must be string.`);
-      assert(result.answer.length >= 150, `T2 P2 ${solver.id} answer too short: ${result.answer.length}`);
-      assert(result.answer.length <= 6000, `T2 P2 ${solver.id} answer exceeds max length: ${result.answer.length}`);
+      assert(result.answer.length >= spec.minChars, `T2 P2 ${solver.id} answer too short: ${result.answer.length} < ${spec.minChars}`);
+      assert(result.answer.length <= spec.maxChars, `T2 P2 ${solver.id} answer exceeds max length: ${result.answer.length} > ${spec.maxChars}`);
       assert(result.type === 'solved', `T2 P2 ${solver.id} should be solved for whitelisted email, got ${result.type}`);
+
+      // Deep Rubric Validation
+      const gate = validateCaseAnswer(solver.id, result.answer);
+      assert(gate.valid === true, `T2 P2 ${solver.id} failed hard gate for ${email}: ${gate.errors.join('; ')}`);
+
+      const analysis = analyzeDraft(solver.id, result.answer);
+      assert(analysis.qualityPct >= 90, `T2 P2 ${solver.id} quality score ${analysis.qualityPct}% is below 90% target for ${email}`);
+      assert(analysis.formatMarks === 2.5, `T2 P2 ${solver.id} formatMarks should be 2.5, got ${analysis.formatMarks}`);
 
       // Determinism
       const result2 = await solver.solve(email, sessionToken);
@@ -670,12 +681,24 @@ async function checkT2P2SolversExecute(solvers) {
     }
   }
 
-  // 2. Non-whitelisted emails get locked access restriction
-  for (const email of lockedEmails) {
-    for (const solver of solvers) {
-      const result = await solver.solve(email, sessionToken);
-      assert(result.debug && result.debug.locked === true, `T2 P2 ${solver.id} should be locked for ${email}`);
-      assert(result.variant === 'Locked', `T2 P2 ${solver.id} should show Locked variant`);
+  // 2. Non-whitelisted emails get locked access restriction when locked is enabled
+  {
+    const { lockConfig } = await importShared('solvers/T22026/p2/lock-config.js');
+    const originalLocked = lockConfig.locked;
+    const originalWhitelisted = lockConfig.whitelistedEmails;
+    lockConfig.locked = true;
+    lockConfig.whitelistedEmails = whitelistedEmails;
+    try {
+      for (const email of lockedEmails) {
+        for (const solver of solvers) {
+          const result = await solver.solve(email, sessionToken);
+          assert(result.debug && result.debug.locked === true, `T2 P2 ${solver.id} should be locked for ${email}`);
+          assert(result.variant === 'Locked', `T2 P2 ${solver.id} should show Locked variant`);
+        }
+      }
+    } finally {
+      lockConfig.locked = originalLocked;
+      lockConfig.whitelistedEmails = originalWhitelisted;
     }
   }
 
@@ -704,7 +727,6 @@ async function checkT2P2SolversExecute(solvers) {
   }
 
   // 5. Blank/missing email must be refused, never answered with a seeded-but-identical note.
-  //    (Same bug class as the GA7 requireEmail fix: the RNG seed IS the email.)
   {
     const { lockConfig } = await importShared('solvers/T22026/p2/lock-config.js');
     const originalLocked = lockConfig.locked;
@@ -722,13 +744,9 @@ async function checkT2P2SolversExecute(solvers) {
     }
   }
 
-  // 6. Scaled uniqueness + citation-density contract across many synthetic students.
-  //    Guards two real regressions: (a) a case whose variation pool is too small collides across
-  //    students (Case 2A once produced ONE note for every student), and (b) case-specs keyEntities
-  //    drifting out of sync with generator text, silently tanking citation density on most seeds.
+  // 6. Scaled uniqueness + citation-density + full rubric contract across 120 synthetic students.
   {
     const { lockConfig } = await importShared('solvers/T22026/p2/lock-config.js');
-    const { CASE_SPECS } = await importFresh('solvers/T22026/p2/case-specs.js');
     const originalLocked = lockConfig.locked;
     lockConfig.locked = false;
     try {
@@ -742,6 +760,14 @@ async function checkT2P2SolversExecute(solvers) {
           const { answer } = await solver.solve(email, sessionToken);
           seen.add(answer);
           assert(!/undefined|NaN|\[object Object\]/.test(answer), `T2 P2 ${solver.id} produced corrupted output for ${email}.`);
+          assert(answer.length >= spec.minChars && answer.length <= spec.maxChars, `T2 P2 ${solver.id} length bounds violated for ${email}: ${answer.length} chars (spec: ${spec.minChars}-${spec.maxChars})`);
+          
+          const gate = validateCaseAnswer(solver.id, answer);
+          assert(gate.valid === true, `T2 P2 ${solver.id} failed hard gate for ${email}: ${gate.errors.join('; ')}`);
+          
+          const analysis = analyzeDraft(solver.id, answer);
+          assert(analysis.qualityPct >= 90, `T2 P2 ${solver.id} scored quality ${analysis.qualityPct}% < 90% for ${email}`);
+
           if (spec && spec.keyEntities) {
             const hits = spec.keyEntities.filter(ent =>
               new RegExp(ent.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&'), 'i').test(answer)
@@ -753,7 +779,7 @@ async function checkT2P2SolversExecute(solvers) {
         assert(uniqueRatio >= 0.9, `T2 P2 ${solver.id} only produced ${seen.size}/${SAMPLE} unique notes (${Math.round(uniqueRatio * 100)}%) — variation pool is too small, students will collide.`);
         if (spec && spec.keyEntities) {
           const required = Math.ceil(spec.keyEntities.length / 2);
-          assert(minEntityHits >= required, `T2 P2 ${solver.id} worst-case citation density is ${minEntityHits}/${spec.keyEntities.length}, below the ${required} the rubric coach requires — case-specs keyEntities are out of sync with the generator text.`);
+          assert(minEntityHits >= required, `T2 P2 ${solver.id} worst-case citation density is ${minEntityHits}/${spec.keyEntities.length}, below the ${required} the rubric coach requires.`);
         }
       }
     } finally {

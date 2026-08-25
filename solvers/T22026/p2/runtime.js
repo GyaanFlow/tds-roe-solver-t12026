@@ -58,7 +58,8 @@ export function wrapSolverModule(mod) {
     async solve(email, sessionToken) {
       const startedAt = performance.now();
       const normalizedEmail = normalizeEmail(email);
-      const isWhitelisted = lockConfig.allowedEmails
+      const whitelist = lockConfig.whitelistedEmails || lockConfig.allowedEmails || [];
+      const isWhitelisted = whitelist.includes('*') || whitelist
         .map(e => normalizeEmail(e).toLowerCase())
         .includes(normalizedEmail.toLowerCase());
       const isLocked = lockConfig.locked && !isWhitelisted;

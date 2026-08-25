@@ -1,15 +1,10 @@
 // T2 2026 Project 2 Lock Configuration
 export const lockConfig = {
-  // Set to true to lock the solver for all non-whitelisted emails, or false to unlock it for everyone.
-  locked: true,
+  // Set to false to unlock the solver for all users dynamically
+  locked: false,
 
-  // Whitelist of emails allowed to get programmatic solved answers / guides when locked is true.
+  // Whitelist of emails
   allowedEmails: [
-    '23f1000805@ds.study.iitm.ac.in',
-    '23f3001077@ds.study.iitm.ac.in',
-    '23f2005160@ds.study.iitm.ac.in',
-    '24f2004141@ds.study.iitm.ac.in',
-    '24f3003125@ds.study.iitm.ac.in',
-    '24f3005089@ds.study.iitm.ac.in'
+    '*'
   ]
 };

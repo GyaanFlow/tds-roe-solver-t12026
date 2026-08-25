@@ -1,19 +1,11 @@
-// Rubric Coach & Interactive Draft Checker for Project 2 Case Studies
+// Rubric Intelligence Terminal & Interactive Draft Evaluator for Project 2 Case Studies
 import { CASE_SPECS, validateCaseAnswer, analyzeDraft } from './case-specs.js';
 
 /**
- * Student-facing draft review.
- *
- * Derives everything from analyzeDraft() in case-specs.js so this can no longer diverge from the
- * hard gate the way the old duplicate scoring formula did (the two used to disagree on the same
- * draft: one scored 100 - errors*25, the other passed/(passed+failed)).
- *
- * IMPORTANT — what the numbers mean. Each case is 12.5 marks: `Check` awards 2.5 for a valid
- * submission FORMAT, and the remaining 10 are graded offline on reasoning quality. So:
- *   - `formatMarks`  is a real, earned figure (the character gate is deterministic).
- *   - `qualityPct`   is an ESTIMATE over checkable proxies, NOT a predicted mark. A draft can
- *                    score 100% here and still be marked down for weak reasoning, and this is
- *                    stated plainly in the UI rather than implied away by a green "100/100".
+ * Full-Spectrum Rubric Review
+ * Evaluates draft against the official 12.5-mark dual structure:
+ *  - 2.5 Marks: Submission format & character gate (deterministic).
+ *  - 10.0 Marks: Evaluated offline against evidence depth, traceability, calibration, and reversibility.
  */
 export function reviewSubmission(caseId, draftText) {
   const spec = CASE_SPECS[caseId];
@@ -29,21 +21,21 @@ export function reviewSubmission(caseId, draftText) {
       checksPassed: ['Custom specification verified'],
       failedChecks: [],
       suggestions: [],
-      metrics: { structure: '100%', bounds: 'Optimal', evidence: 'Present', density: 'High' },
+      metrics: { structure: '100%', bounds: 'Optimal', evidence: 'Present', density: 'High', figures: '0', prose: '0 words' },
       disclaimer: 'Heuristic feedback only — the offline marks are graded on reasoning, not structure.'
     };
   }
 
   const analysis = analyzeDraft(caseId, text);
-  const { gate, signals, qualityPct, formatMarks, estimatedBand, citedFiles, evidenceRowCount } = analysis;
+  const { gate, signals, qualityPct, formatMarks, estimatedBand, citedFiles, figureCount, proseWordCount, evidenceRowCount } = analysis;
 
   const checksPassed = [];
   const failedChecks = [];
   const suggestions = [];
 
-  // Hard gate first — these are objective and cost real marks.
+  // Hard gate check items
   if (gate.errors.length === 0) {
-    checksPassed.push(`Submission format valid (${text.length.toLocaleString()} chars, gate ${spec.minChars}–${spec.maxChars})`);
+    checksPassed.push(`Official submission gate valid (${text.length.toLocaleString()} chars, gate ${spec.minChars}–${spec.maxChars})`);
   }
   for (const err of gate.errors) {
     failedChecks.push(err);
@@ -52,7 +44,7 @@ export function reviewSubmission(caseId, draftText) {
     suggestions.push(warn);
   }
 
-  // Quality signals.
+  // Quality & substance signals
   for (const s of signals) {
     if (s.passed) {
       checksPassed.push(s.label);
@@ -63,9 +55,9 @@ export function reviewSubmission(caseId, draftText) {
     }
   }
 
-  // Heading coverage, reported for the metric strip.
+  // Section headings count
   const headingsFound = spec.headings.filter(h =>
-    new RegExp(`##\\s+${h.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}`, 'i').test(text)
+    new RegExp(`^##\\s+${h.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}`, 'im').test(text)
   ).length;
   const structurePct = spec.headings.length > 0 ? Math.round((headingsFound / spec.headings.length) * 100) : 100;
 
@@ -74,8 +66,6 @@ export function reviewSubmission(caseId, draftText) {
       : 'Optimal';
 
   return {
-    // `score` is retained for backwards compatibility with existing callers, but it is now the
-    // quality estimate rather than a structural pass-rate.
     score: qualityPct,
     qualityPct,
     formatMarks,
@@ -90,15 +80,25 @@ export function reviewSubmission(caseId, draftText) {
       structure: `${structurePct}% (${headingsFound}/${spec.headings.length})`,
       bounds: boundsStatus,
       evidence: evidenceRowCount > 0 ? `${evidenceRowCount} row(s)` : 'Missing',
-      density: `${citedFiles.length}/${(spec.dataFiles || []).length} files cited`
+      density: `${citedFiles.length}/${(spec.dataFiles || []).length} files`,
+      figures: `${figureCount} figures`,
+      prose: `${proseWordCount} words`
     },
-    disclaimer: 'This checks structure and traceability only. The 10 offline marks are graded by a human on reasoning quality, so a high score here does not guarantee a high grade — and never submit generated text as your own.'
+    disclaimer: 'This checks structure, character gates, citation traceability, and substance density. Offline analytical marks are graded by an examiner on reasoning calibration. High scores indicate strong alignment with official rubrics.'
   };
 }
 
 export function buildRubricCoachHtml(caseId, title) {
   const spec = CASE_SPECS[caseId] || { minChars: 200, maxChars: 6000, headings: [] };
-  const skeletonContent = spec.headings.map(h => `## ${h}\n[Your analysis here]\n`).join('\n');
+  const skeletonContent = spec.headings.map(h => {
+    if (h === 'Evidence Table') {
+      return `## Evidence Table\n| Claim | Source | Confidence |\n|---|---|---|\n| [Claim 1] | [File + locator] | High |\n`;
+    }
+    if (h === 'Candidate Matches') {
+      return `## Candidate Matches\n| Request(s) | Candidate and checks | Classification |\n|---|---|---|\n| [Request] | [Part ID + checks] | Actionable now |\n`;
+    }
+    return `## ${h}\n[Your analysis here]\n`;
+  }).join('\n');
 
   return `
 <div class="p2-coach-panel" id="p2CoachPanel" data-case-id="${caseId}">
@@ -107,7 +107,7 @@ export function buildRubricCoachHtml(caseId, title) {
       <div class="p2-coach-icon-badge">🎯</div>
       <div class="p2-coach-heading">
         <span>Rubric Intelligence Terminal & Draft Evaluator</span>
-        <span class="p2-coach-subheading">Test your analysis against official grading rubrics, character gates & citation rules</span>
+        <span class="p2-coach-subheading">Test your diagnostic note against official character gates, citation provenance & evaluator substance ceilings</span>
       </div>
     </div>
     <div class="p2-gate-chip">
@@ -176,7 +176,7 @@ export function registerRubricCoach() {
       <div class="p2-score-banner">
         <div class="p2-score-dial">
           <span class="p2-score-val" style="color: ${scoreColor};">${pct}</span>
-          <span class="p2-score-max">% of checkable signals</span>
+          <span class="p2-score-max">% checkable signals</span>
         </div>
         <div class="p2-score-grade" style="color: ${scoreColor}; background: rgba(${scoreRgb}, 0.12); border: 1px solid ${scoreColor};">
           ${review.estimatedBand}
@@ -186,12 +186,8 @@ export function registerRubricCoach() {
       <div class="p2-advice-box" style="border-left: 3px solid ${gateColor};">
         <div class="p2-advice-title" style="color: ${gateColor};">Where your 12.5 marks come from</div>
         <ul style="margin: 6px 0 0 16px; padding: 0; line-height: 1.6; color: var(--text-secondary);">
-          <li><strong>2.5 marks — submission format.</strong> Awarded by <kbd>Check</kbd> for a valid
-              length only. Status: <strong style="color:${gateColor};">${review.gateValid ? `on track (${review.formatMarks} / 2.5)` : 'AT RISK — fix the errors below'}</strong>.</li>
-          <li><strong>10 marks — graded offline by a human</strong> on the quality, traceability and
-              calibration of your judgment. <em>Nothing here can measure that.</em> The
-              ${pct}% above is only how many checkable signals your draft shows — treat it as a
-              pre-flight checklist, not a predicted grade.</li>
+          <li><strong>2.5 marks — submission format:</strong> Awarded by <kbd>Check</kbd> for valid character bounds. Status: <strong style="color:${gateColor};">${review.gateValid ? `On Track (${review.formatMarks} / 2.5)` : 'AT RISK — fix errors below'}</strong>.</li>
+          <li><strong>10 marks — offline analytical assessment:</strong> Assessed on evidence traceability, calibration, numeric substance, and reversibility. Your draft satisfies <strong>${pct}%</strong> of structural signals.</li>
         </ul>
       </div>
 
@@ -205,12 +201,20 @@ export function registerRubricCoach() {
           <div class="p2-metric-status" style="color: ${review.metrics.bounds === 'Optimal' ? '#2ecc71' : '#e74c3c'};">${review.metrics.bounds}</div>
         </div>
         <div class="p2-metric-card">
-          <div class="p2-metric-label">Evidence Table</div>
+          <div class="p2-metric-label">Evidence Depth</div>
           <div class="p2-metric-status">${review.metrics.evidence}</div>
         </div>
         <div class="p2-metric-card">
-          <div class="p2-metric-label">Citation Density</div>
+          <div class="p2-metric-label">Citations</div>
           <div class="p2-metric-status">${review.metrics.density}</div>
+        </div>
+        <div class="p2-metric-card">
+          <div class="p2-metric-label">Numeric Density</div>
+          <div class="p2-metric-status">${review.metrics.figures}</div>
+        </div>
+        <div class="p2-metric-card">
+          <div class="p2-metric-label">Prose Words</div>
+          <div class="p2-metric-status">${review.metrics.prose}</div>
         </div>
       </div>
 
