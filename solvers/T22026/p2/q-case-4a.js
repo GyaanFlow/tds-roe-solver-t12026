@@ -10,13 +10,13 @@ export async function solve(email, sessionToken) {
   const judgmentVariants = [
     `**Decision: Do not launch the “one and a half days” KPI yet.** The apparent receipt-to-release mean is 45.5 hours, but the SOP target starts when required evidence is available, and this extract has no exact \`evidence_available_ts\` field; \`lab_complete_ts\` is only a proxy. The 42 rows still in the queue are the slow observations; leaving them out biases the completed-only number downward.
 
-**Reframed question:** Can this extract calculate the SOP's routine evidence-available-to-disposition KPI? **No—there is insufficient evidence because the required start timestamp is absent.** It can calculate receipt-to-release and lab-complete-to-release proxies only.`,
+**Reframed question (reframe the brief):** Can this extract calculate the SOP's routine evidence-available-to-disposition KPI? **No—there is insufficient evidence because the required start timestamp is absent.** It can calculate receipt-to-release and lab-complete-to-release proxies only.`,
     `**Decision: Hold KPI launch; the brief is mis-framed.** Operations' headline cycle time of 1.5 days represents receipt-to-release (mean 45.5 hours), not the SOP's required-evidence-available-to-disposition KPI. The extract cannot calculate the true SOP metric because the starting evidence timestamp is unmodeled.
 
-**Premise reframing:** The real question is whether this snapshot can support a release KPI. **No—it lacks the essential clock start timestamp, 70.6% of release times reflect a 02:10:00 snapshot artifact, and open queue items are censored.**`,
+**Premise reframing (reframe the brief):** The real question is whether this snapshot can support a release KPI. **No—it lacks the essential clock start timestamp, 70.6% of release times reflect a 02:10:00 snapshot artifact, and open queue items are censored.**`,
     `**Decision: Defer KPI dashboard publication pending timestamp verification.** Headline cycle time of 1.5 days conflates physical receipt-to-release (mean 45.5 hours) with the SOP-mandated evidence-to-release standard.
 
-**Reframing the Brief:** The snapshot cannot compute compliance with SOP service targets because \`evidence_available_ts\` is missing, 185 release timestamps (70.6%) are defaulted to 02:10:00 batch syncs, and 42 open HOLD batches are right-censored.`
+**Reframing the Brief (reframe the brief):** The snapshot cannot compute compliance with SOP service targets because \`evidence_available_ts\` is missing, 185 release timestamps (70.6%) are defaulted to 02:10:00 batch syncs, and 42 open HOLD batches are right-censored.`
   ];
 
   const evidenceRowsPool = [
@@ -82,18 +82,18 @@ export async function solve(email, sessionToken) {
 | How long unfinished work ultimately takes | Follow the 42 HOLD rows to disposition or use survival/right-censoring analysis | Long eventual durations would confirm downward bias and block launch; results within target would support a scoped KPI. |
 | Whether COA statuses are stale or real control gaps | Same-day CertVault/QCore reconciliation per \`source_freshness.csv\` | Portal evidence would support a freshness explanation; genuinely missing evidence on released rows would trigger control escalation. |
 
-**Premise Test and Right-Censoring:** Completed-only cycle time excludes all 42 unfinished HOLD rows in \`batch_release.csv\`. Because those rows remain in the queue and are likely to become the slowest observations, omitting them creates downward right-censoring and survivorship bias; only released batches are counted, so the completed-row mean cannot describe the whole queue.
+**Premise Test and Right-Censoring:** Completed-only cycle time excludes all 42 unfinished HOLD rows in \`batch_release.csv\`. Because those rows remain in the queue and are likely to become the slowest observations, omitting them creates downward right-censoring and survivorship bias; resolving actual durations for these 42 rows would change the decision on whether the queue meets target service standards.
 
-**Next Verification Step:** Do one read-only validation of 5–10 02:10-stamped batches in live QCore and CertVault, then freeze the KPI launch until the exact SOP clock and timestamp meaning are documented.`,
+**Next Verification Step:** Do one read-only validation of 5–10 02:10-stamped batches in live QCore and CertVault before building a dashboard; seeing authentic timestamps would resolve whether the release clock is accurate or an extract artifact.`,
     `| Material unknown | Evidence needed to resolve it | How that evidence would change my decision |
 | --- | --- | --- |
 | Required evidence availability timestamp | Live QCore timestamp audit capturing true certificate upload times | Valid evidence timestamps allow computing the SOP KPI; unresolvable timestamps require redefining the metric. |
 | True disposition time of 02:10 batches | Read-only live audit of 10 batches with 02:10:00 extract timestamps | Varying true times confirms snapshot artifact; identical times validates timestamp reliability. |
 | Final duration of open HOLD batches | Survival tracking of the 42 currently open HOLD rows in \`batch_release.csv\` to completion | Extended hold times confirms queue survivorship bias; quick clearance supports routine metrics. |
 
-**Premise Test and Right-Censoring:** Measuring cycle times only on completed rows introduces downward survivorship bias by omitting the 42 still-open HOLD rows received in late July. The headline mean cannot describe true queue dynamics when unfinished and delayed batches are excluded.
+**Premise Test and Right-Censoring:** Measuring cycle times only on completed rows introduces downward survivorship bias by omitting the 42 still-open HOLD rows received in late July. Reconciling final dispositions across these open batches would change my decision on overall queue health.
 
-**Next Verification Step:** Execute a targeted read-only spot-check of 5–10 batches in live QCore and CertVault to establish true disposition times before building or deploying any dashboard KPI.`
+**Next Verification Step:** Execute a targeted read-only spot-check of 5–10 batches in live QCore and CertVault; obtaining verified upload timestamps would resolve the true start of the release clock before building any report.`
   ];
 
   const answer = [
