@@ -8,12 +8,12 @@ export async function solve(email, sessionToken) {
   const rng = createRng(`${email}:${id}`);
 
   const judgmentVariants = [
-    `**Decision: Treat search results as candidates, not automatic transfers.** Of 24 open requests worth $166,495.60, eight ($20,536.31; 12.3%) pass the file checks, twelve ($64,234.05; 38.6%) need checks, and four ($81,725.24; 49.1%) are not transferable on current evidence.
+    `**Decision: Treat search results as candidates, not automatic transfers.** Of 24 open requests worth $166,495.60, eight ($20,536.31; 12.3%) pass file checks, twelve ($64,234.05; 38.6%) need checks, and four ($81,725.24; 49.1%) are not transferable on current evidence.
 
-**Reframed problem:** semantic search is not shown to be the main bottleneck. Thirteen requests have a manufacturer part number, and an exact join finds candidates for all 13. The other 11 expose missing identifiers and stale/restricted availability. Test data hygiene and exact matching first.`,
-    `**Decision: Do not convert raw search hits into automatic transfers.** A structured policy triage of all 24 open requests ($166,495.60 total, using qty × quote) classifies 8 as actionable now ($20,536.31), 12 as needs check ($64,234.05), and 4 as not transferable ($81,725.24).
+**Reframed problem (reframe the brief):** The brief assumes search recall is the constraint, but semantic search is not the real problem. Thirteen requests have an MPN, and an exact join finds candidates for all 13. The other 11 expose missing identifiers and stale availability. Test data hygiene and exact matching first.`,
+    `**Decision: Do not convert raw search hits into automatic transfers.** A policy triage of 24 open requests ($166,495.60 total, using qty × quote) classifies 8 as actionable now ($20,536.31), 12 as needs check ($64,234.05), and 4 as not transferable ($81,725.24).
 
-**Reframed problem:** semantic search is not the primary constraint. An exact manufacturer part number join resolves all 13 identified requests immediately. The remaining 11 requests require master-data hygiene and local verification, not an expensive semantic search engine.`
+**Reframed problem (reframe the brief):** The brief assumes search recall is the constraint, but semantic search is not the real problem. An exact MPN join resolves all 13 identified requests immediately. The other 11 requests require master-data hygiene, not an expensive semantic search engine.`
   ];
 
   const candidateRowsPool = [
@@ -25,7 +25,7 @@ export async function solve(email, sessionToken) {
     ['PR-260702, PR-260707', 'BLT-7302: demand exceeds clean stock; HA-0022 has available -1 vs on-hand 3', 'Needs check'],
     ['PR-260703, PR-260713, PR-260723', 'VLV-3722 rev-B demand competes for two free rev-B units; verify allocation', 'Needs check'],
     ['PR-260705, PR-260720', 'VLV-3722 rev-A requests, but stocked candidates are rev B', 'Needs check'],
-    ['PR-260709, PR-260714, PR-260716, PR-260717, PR-260719 and other blank-MPNs', 'Description matches; confirm manufacturer part identity', 'Needs check'],
+    ['PR-260709, PR-260714, PR-260716, PR-260717, PR-260719, others', 'Description matches; confirm manufacturer part identity', 'Needs check'],
     ['PR-260700, PR-260704, PR-260712, PR-260715', 'MTR-4401 stock is reserved or empty; prior guidance declined transfer', 'Not transferable']
   ];
 
@@ -67,21 +67,21 @@ export async function solve(email, sessionToken) {
   const evidenceTable = formatTable(['Claim', 'Source', 'Confidence'], selectedEvidence);
 
   const assessmentVariants = [
-    `**Assessment:** An exact join on manufacturer part numbers across \`part_requests.csv\` and \`spare_parts.csv\` retrieves every identified request. Remaining work is eligibility governed by \`spares_transfer_policy.md\`: quantity, reservation in \`part_restrictions.csv\`, revision, UOM, qualification and freshness in \`source_freshness.csv\`. Defend only the eight-request actionable slice, not gross value or lexical similarities. Per \`maintenance_email.txt\`, test semantic search on the 11 blank-MPN requests.`,
+    `**Assessment:** An exact join on manufacturer part numbers across \`part_requests.csv\` and \`spare_parts.csv\` retrieves every identified request. Remaining work is eligibility governed by \`spares_transfer_policy.md\`: quantity, reservation in \`part_restrictions.csv\`, revision, UOM, qualification and freshness in \`source_freshness.csv\`. Defend only the eight-request actionable slice, not gross value. Per \`maintenance_email.txt\`, test search on the 11 blank-MPN requests.`,
     `**Assessment & Synthesis:** An exact join on manufacturer part numbers succeeds for 100% of populated requests in \`part_requests.csv\`. The governing constraints in \`spares_transfer_policy.md\` and \`part_restrictions.csv\` are physical eligibility: engineering qualification, revision parity, and critical-asset reservations. As noted in \`maintenance_email.txt\` and \`source_freshness.csv\`, the firm saving is $20.5k across 8 requests, while $64.2k requires checks and $81.7k is restricted. Prioritizing master-data completeness delivers immediate savings.`
   ];
 
   const rejectedVariants = [
     `**“A semantic-search hit means transfer it”: rejected.** PR-260700/704/712/715 match MTR-4401 in \`spare_parts.csv\`, yet RI-0001 and ME-0003 are reserved for critical assets in \`part_restrictions.csv\` and HA-0002 has zero stock. The hypothesis survives only if those records are wrong, requiring a live CMMS check.
 
-**“Same part family means interchangeable”: rejected.** PR-260705 and PR-260720 in \`part_requests.csv\` require VLV-3722 revision A, while NO-0003 and ME-0008 are revision B and marked \`SITE_SPECIFIC_CHECK\` per \`spares_transfer_policy.md\`. Only documented engineering equivalence approval could reverse this rejection.
+**“Same part family means interchangeable”: rejected.** PR-260705 and PR-260720 in \`part_requests.csv\` require VLV-3722 revision A, while NO-0003 and ME-0008 are revision B and marked \`SITE_SPECIFIC_CHECK\` per \`spares_transfer_policy.md\`. Only documented engineering approval could reverse this rejection.
 
-**“available_qty_global=-1 means no stock”:** rejected because that hypothesis would require \`on_hand_qty=0\`, but HA-0022 has 3 on hand and ME-0006 has 1 in \`spare_parts.csv\`. As \`maintenance_email.txt\` explains, global availability lags local reservations, so -1 is a verification flag, not proof of zero stock.
+**“available_qty_global=-1 means no stock”:** rejected because that hypothesis would require \`on_hand_qty=0\`, but HA-0022 has 3 on hand and ME-0006 has 1 in \`spare_parts.csv\`. As \`maintenance_email.txt\` explains, global availability lags reservations, so -1 is a verification flag, not proof of zero stock.
 
-**“An expensive semantic-search system is required”: rejected.** Thirteen requests contain an MPN and exact join returns candidates for all 13. It survives only if semantic search finds valid matches among the 11 blank-MPN requests.`,
+**“An expensive semantic-search system is required”: rejected.** Thirteen requests contain an MPN and exact join returns candidates for all 13. It survives only if search finds valid matches among the 11 blank-MPN requests.`,
     `**“Every search hit represents a direct transfer opportunity”: rejected.** PR-260700/704/712/715 match MTR-4401, yet RI-0001 and ME-0003 are reserved for critical assets per \`part_restrictions.csv\` and HA-0002 has zero stock in \`spare_parts.csv\`. The hypothesis survives only if records are wrong, requiring a live CMMS check.
 
-**“Same part family means interchangeable”: rejected.** PR-260705 and PR-260720 require VLV-3722 revision A, while stocked units are revision B. Rules in \`spares_transfer_policy.md\` require documented engineering approval before substituting.
+**“Same part family means interchangeable”: rejected.** PR-260705 and PR-260720 require VLV-3722 revision A, while stocked units are revision B. Rules in \`spares_transfer_policy.md\` require documented approval before substituting.
 
 **“available_qty_global=-1 means zero stock”: rejected.** In \`spare_parts.csv\`, HA-0022 has 3 on hand and ME-0006 has 1. Per \`maintenance_email.txt\`, -1 is a verification sentinel indicating reservation lag, not zero stock.
 
@@ -92,7 +92,7 @@ export async function solve(email, sessionToken) {
     `| Material unknown | Evidence needed to resolve it | How that evidence would change my decision |
 | --- | --- | --- |
 | Identity of the 11 blank-part-number requests | Manufacturer part number and revision from local maintenance records | Confirmed identity plus matching UOM/revision moves candidates to actionable; mismatch rejects them. |
-| Current free stock behind negative/stale availability | Live local CMMS reservation and availability query | Positive unreserved quantity moves requests toward actionable; reserved/zero stock keeps them external. |
+| Current free stock behind negative availability | Live local CMMS reservation and availability query | Positive unreserved quantity moves requests toward actionable; reserved/zero stock keeps them external. |
 | Whether revision substitutions and site-specific parts are acceptable | Receiving engineer and qualification approval | Approval unlocks transfer; rejection classifies candidate as not transferable. |
 | Whether semantic search adds value beyond exact matching | Compare recall/precision of exact MPN join versus semantic search on 24 requests | Material additional valid matches support a pilot; little gain reframes solution as data cleanup. |`,
     `| Material unknown | Evidence needed to resolve it | How that evidence would change my decision |
