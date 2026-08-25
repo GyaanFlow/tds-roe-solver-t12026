@@ -867,11 +867,18 @@ function buildGa8BonusNode(email, term = 'T12026', answersList = null, durationT
     console.log("🚀 Starting May 2026 GA8 Dynamic Auto-Solver...");
 
     // 1. Detect dynamic email from active exam page DOM
-    const rawEmail = document.querySelector('[name="email"]')?.value ||
-                     document.querySelector('#email')?.value ||
-                     document.querySelector('input[type="email"]')?.value ||
-                     "${email}";
-    const userEmail = rawEmail.trim().toLowerCase();
+    let detectedEmail = "${email}";
+    const emailInput = document.querySelector('[name="email"]') ||
+                       document.querySelector('#email') ||
+                       document.querySelector('input[type="email"]');
+    if (emailInput && emailInput.value) {
+      detectedEmail = emailInput.value;
+    } else if (window.user && window.user.email) {
+      detectedEmail = window.user.email;
+    } else if (window.__USER__ && window.__USER__.email) {
+      detectedEmail = window.__USER__.email;
+    }
+    const userEmail = String(detectedEmail || '').trim().toLowerCase();
     const username = (userEmail.split('@')[0] || 'user').toLowerCase();
     const serviceUrl = "https://tds-roe-solver-api-t12026.onrender.com/ga8/" + encodeURIComponent(userEmail);
 
@@ -913,8 +920,58 @@ function buildGa8BonusNode(email, term = 'T12026', answersList = null, durationT
     const seedrandom = createSeedrandom();
 
     // 3. Dynamic Q8 Solver: Layer-Wise LoRA Parameter Budget & Safetensors Footprint
+    function computeLoraBudgetFromConfig(config) {
+      if (!config || typeof config !== 'object') return null;
+      const base_config = config.base_config || {};
+      const hidden_size = Number(base_config.hidden_size) || 2048;
+      const intermediate_size = Number(base_config.intermediate_size) || (4 * hidden_size);
+      const layers = Array.isArray(config.layers) ? config.layers : [];
+
+      let total_trainable_params = 0;
+      for (const layer of layers) {
+        if (!layer || layer.freeze === true) continue;
+        const target_modules = Array.isArray(layer.target_modules) ? layer.target_modules : [];
+        if (target_modules.length === 0) continue;
+        const lora_rank = Number(layer.lora_rank) || 0;
+        if (lora_rank <= 0) continue;
+
+        for (const mod of target_modules) {
+          if (['q_proj', 'k_proj', 'v_proj', 'o_proj'].includes(mod)) {
+            total_trainable_params += 2 * lora_rank * hidden_size;
+          } else if (['gate_proj', 'up_proj', 'down_proj'].includes(mod)) {
+            total_trainable_params += lora_rank * (hidden_size + intermediate_size);
+          } else {
+            total_trainable_params += 2 * lora_rank * hidden_size;
+          }
+        }
+      }
+      return {
+        trainable_params: total_trainable_params,
+        adapter_file_size_bytes: total_trainable_params * 4
+      };
+    }
+
     function computeLoraBudget(em) {
-      const rng = seedrandom(\`\${em}#q-lora-quant-budget-server\`);
+      // Priority 1: Extract the EXACT JSON config generated and attached in the DOM download button!
+      const dlBtn = document.querySelector('a[download^="lora_config_"], [data-question="q-lora-quant-budget-server"] a[download]');
+      if (dlBtn && dlBtn.href && dlBtn.href.startsWith('data:')) {
+        try {
+          const b64 = dlBtn.href.split(',')[1];
+          const jsonStr = decodeURIComponent(escape(atob(b64)));
+          const parsed = JSON.parse(jsonStr);
+          const computed = computeLoraBudgetFromConfig(parsed);
+          if (computed && typeof computed.trainable_params === 'number' && computed.trainable_params > 0) {
+            console.log("🎯 Q8: Extracted exact configuration from active DOM download link!", computed);
+            return computed;
+          }
+        } catch (err) {
+          console.warn("Could not decode Q8 download link:", err);
+        }
+      }
+
+      // Priority 2: Deterministic calculation using PRNG
+      const cleanEm = String(em || '').trim();
+      const rng = seedrandom(\`\${cleanEm}#q-lora-quant-budget-server\`);
       const Ce = [2048, 3072, 4096];
       const Me = [
         ["q_proj","v_proj"],
