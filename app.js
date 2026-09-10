@@ -122,6 +122,7 @@ const TERM_EXAMS = {
     { group: 'Weekly Graded Assignments', value: 'ga8', label: 'GA 8 (MLOps & DevOps)' },
   ],
   T22026: [
+    { group: 'End-Term Practice',         value: 'endterm', label: 'End-Term Mock (175 MCQ + 25 MSQ + 100 Subjective)' },
     { group: 'Standard Exams',           value: 'roe', label: 'ROE Re-Exam' },
     { group: 'Projects',                 value: 'p1',  label: 'Project 1' },
     { group: 'Projects',                 value: 'p2',  label: 'Project 2' },
@@ -182,6 +183,8 @@ let mobileNavOpen = false;
 let toastTimerId = null;
 let toastRoot = null;
 let openPanels = new Set(['Variant', 'Preview', 'Answer', 'Diagnostics']);
+let endTermProgress = null;
+let endTermTimerId = null;
 
 window.addEventListener('DOMContentLoaded', () => {
   const savedTerm  = safeStorageGet(STORAGE_KEYS.term);
@@ -418,6 +421,7 @@ async function copyToClipboard(text, btn) {
 
 function getStatusClass(type, locked = false) {
   if (locked) return 'status-error';
+  if (type === 'quiz') return 'status-quiz';
   if (type === 'solved') return 'status-solved';
   if (type === 'guide') return 'status-guide';
   if (type === 'bypass') return 'status-bypass';
@@ -583,6 +587,29 @@ function populateMobileQuestionPicker() {
 
 function renderSidebarNode(index, title, type) {
   const answer = workspaceData.answers[index];
+  if (answer?.quizItem) {
+    const item = answer.quizItem;
+    const state = getEndTermItemState(item);
+    const node = document.createElement('button');
+    node.type = 'button';
+    node.className = 'nav-item nav-item-animate endterm-nav-item';
+    node.style.animationDelay = `${Math.min(index * 12, 360)}ms`;
+    node.dataset.idx = String(index);
+    node.dataset.health = state;
+    node.innerHTML = `
+      <span class="nav-item-status status-quiz status-quiz-${state}"></span>
+      <span class="nav-item-num">${escapeHtml(item.id)}</span>
+      <span class="nav-item-copy">
+        <span class="nav-item-title">${escapeHtml(item.topic)}</span>
+        <span class="nav-item-meta">
+          <span class="nav-pill nav-pill-${state === 'incorrect' ? 'error' : state === 'correct' ? 'stable' : 'watch'}">${escapeHtml(getEndTermStateLabel(state))}</span>
+          <span class="nav-runtime">${escapeHtml(item.week)}</span>
+        </span>
+      </span>
+    `;
+    node.addEventListener('click', () => renderCanvas(index));
+    return node;
+  }
   const health = getHealthMeta(answer);
   const node = document.createElement('button');
   node.type = 'button';
@@ -1529,6 +1556,472 @@ function renderDashboard() {
   });
 }
 
+const ENDTERM_PROGRESS_VERSION = 2;
+
+function getEndTermProgressKey(email = workspaceData.email) {
+  return `tdsEndTermProgress:v${ENDTERM_PROGRESS_VERSION}:${String(email || '').trim().toLowerCase()}`;
+}
+
+function newEndTermProgress() {
+  return {
+    version: ENDTERM_PROGRESS_VERSION,
+    startedAt: Date.now(),
+    responses: {},
+    checked: {},
+    revealed: {},
+    rubricChecks: {},
+    bookmarks: []
+  };
+}
+
+function loadEndTermProgress(email) {
+  const fallback = newEndTermProgress();
+  try {
+    const parsed = JSON.parse(safeStorageGet(getEndTermProgressKey(email)) || 'null');
+    if (!parsed || parsed.version !== ENDTERM_PROGRESS_VERSION) return fallback;
+    return {
+      ...fallback,
+      ...parsed,
+      responses: parsed.responses && typeof parsed.responses === 'object' ? parsed.responses : {},
+      checked: parsed.checked && typeof parsed.checked === 'object' ? parsed.checked : {},
+      revealed: parsed.revealed && typeof parsed.revealed === 'object' ? parsed.revealed : {},
+      rubricChecks: parsed.rubricChecks && typeof parsed.rubricChecks === 'object' ? parsed.rubricChecks : {},
+      bookmarks: Array.isArray(parsed.bookmarks) ? parsed.bookmarks : []
+    };
+  } catch (_) {
+    return fallback;
+  }
+}
+
+function ensureEndTermProgress() {
+  if (!endTermProgress) endTermProgress = loadEndTermProgress(workspaceData.email);
+  return endTermProgress;
+}
+
+function saveEndTermProgress() {
+  if (!endTermProgress || !workspaceData.email) return;
+  safeStorageSet(getEndTermProgressKey(), JSON.stringify(endTermProgress));
+}
+
+function getEndTermItemState(item) {
+  const progress = ensureEndTermProgress();
+  if (!item) return 'unanswered';
+  if (item.kind === 'mcq' && progress.checked[item.id]) {
+    return isEndTermResponseCorrect(item, progress.responses[item.id]) ? 'correct' : 'incorrect';
+  }
+  if (item.kind === 'subjective' && String(progress.responses[item.id] || '').trim()) return 'drafted';
+  if (progress.bookmarks.includes(item.id)) return 'bookmarked';
+  return 'unanswered';
+}
+
+function isEndTermResponseCorrect(item, response) {
+  const expected = Array.isArray(item.answers) ? item.answers : [item.answer];
+  const actual = Array.isArray(response) ? response : [response];
+  return actual.length === expected.length && actual.every((value) => expected.includes(value));
+}
+
+function getEndTermStateLabel(state) {
+  if (state === 'correct') return 'Correct';
+  if (state === 'incorrect') return 'Review';
+  if (state === 'drafted') return 'Drafted';
+  if (state === 'bookmarked') return 'Saved';
+  return 'Open';
+}
+
+function getEndTermStats() {
+  const progress = ensureEndTermProgress();
+  const items = workspaceData.answers.map((answer) => answer.quizItem).filter(Boolean);
+  const objective = items.filter((item) => item.kind === 'mcq');
+  const subjective = items.filter((item) => item.kind === 'subjective');
+  const checked = objective.filter((item) => progress.checked[item.id]);
+  const correct = checked.filter((item) => isEndTermResponseCorrect(item, progress.responses[item.id])).length;
+  const drafted = subjective.filter((item) => String(progress.responses[item.id] || '').trim()).length;
+  return {
+    total: items.length,
+    objectiveTotal: objective.length,
+    subjectiveTotal: subjective.length,
+    objectiveChecked: checked.length,
+    correct,
+    drafted,
+    completed: checked.length + drafted,
+    percent: items.length ? Math.round(((checked.length + drafted) / items.length) * 100) : 0
+  };
+}
+
+function renderQuizInline(value) {
+  return escapeHtml(String(value ?? '')).replace(/`([^`]+)`/g, '<code>$1</code>');
+}
+
+function formatEndTermDuration(milliseconds) {
+  const totalSeconds = Math.max(0, Math.floor(milliseconds / 1000));
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  return [hours, minutes, seconds].map((value) => String(value).padStart(2, '0')).join(':');
+}
+
+function updateEndTermTimer() {
+  const timer = document.getElementById('endtermTimer');
+  if (!timer || !endTermProgress) return;
+  timer.textContent = formatEndTermDuration(Date.now() - endTermProgress.startedAt);
+}
+
+function startEndTermTimer() {
+  updateEndTermTimer();
+  if (endTermTimerId) return;
+  endTermTimerId = window.setInterval(updateEndTermTimer, 1000);
+}
+
+function stopEndTermTimer() {
+  if (!endTermTimerId) return;
+  window.clearInterval(endTermTimerId);
+  endTermTimerId = null;
+}
+
+function updateEndTermSidebarStatuses() {
+  document.querySelectorAll('.endterm-nav-item').forEach((node) => {
+    const answer = workspaceData.answers[Number(node.dataset.idx)];
+    const state = getEndTermItemState(answer?.quizItem);
+    node.dataset.health = state;
+    const dot = node.querySelector('.nav-item-status');
+    if (dot) dot.className = `nav-item-status status-quiz status-quiz-${state}`;
+    const pill = node.querySelector('.nav-pill');
+    if (pill) {
+      pill.className = `nav-pill nav-pill-${state === 'incorrect' ? 'error' : state === 'correct' ? 'stable' : 'watch'}`;
+      pill.textContent = getEndTermStateLabel(state);
+    }
+  });
+}
+
+function updateEndTermProgressSummary() {
+  const stats = getEndTermStats();
+  const progressFillNode = document.getElementById('endtermProgressFill');
+  const progressTextNode = document.getElementById('endtermProgressText');
+  const scoreNode = document.getElementById('endtermScore');
+  const draftedNode = document.getElementById('endtermDrafted');
+  if (progressFillNode) progressFillNode.style.width = `${stats.percent}%`;
+  if (progressTextNode) progressTextNode.textContent = `${stats.completed} / ${stats.total} completed`;
+  if (scoreNode) scoreNode.textContent = `${stats.correct} / ${stats.objectiveChecked || 0}`;
+  if (draftedNode) draftedNode.textContent = `${stats.drafted} / ${stats.subjectiveTotal}`;
+}
+
+function findNextEndTermOpenIndex(fromIndex = selectedQuestionIndex) {
+  const length = workspaceData.answers.length;
+  for (let offset = 1; offset <= length; offset += 1) {
+    const index = (fromIndex + offset) % length;
+    const item = workspaceData.answers[index]?.quizItem;
+    if (getEndTermItemState(item) === 'unanswered' || getEndTermItemState(item) === 'bookmarked') return index;
+  }
+  return -1;
+}
+
+function getEndTermSection(item) {
+  if (!item) return '';
+  if (item.kind === 'subjective') return 'SUBJECTIVE';
+  return item.format === 'MSQ' ? 'MSQ' : 'MCQ';
+}
+
+function findFirstEndTermSectionIndex(section) {
+  return workspaceData.answers.findIndex((answer) => getEndTermSection(answer?.quizItem) === section);
+}
+
+function renderSubjectiveModelAnswer(item) {
+  const answer = item.modelAnswer;
+  const checkedCriteria = ensureEndTermProgress().rubricChecks[item.id] || [];
+  const earned = item.rubric.reduce((sum, row, index) => sum + (checkedCriteria.includes(index) ? row.points : 0), 0);
+  return `
+      <div class="endterm-model-answer">
+        <div class="endterm-feedback-heading">Model answer</div>
+        <p>${renderQuizInline(answer.summary)}</p>
+      <div class="endterm-answer-subtitle">Valid vs invalid claim</div>
+      <p>${renderQuizInline(answer.claimAssessment || 'Separate the observed fact from the conclusion, then state what evidence would justify the decision.')}</p>
+      <div class="endterm-answer-subtitle">Decision-useful evidence</div>
+      <p>${renderQuizInline(answer.evidence)}</p>
+      <div class="endterm-answer-subtitle">Rejected alternative</div>
+      <p>${renderQuizInline(answer.rejectedAlternative)}</p>
+      <div class="endterm-answer-subtitle">Decision-changing uncertainty</div>
+      <p>${renderQuizInline(answer.uncertainty)}</p>
+      <ol>${answer.steps.map((step) => `<li>${renderQuizInline(step)}</li>`).join('')}</ol>
+      <div class="endterm-answer-subtitle">Failure checks</div>
+      <ul>${answer.failureChecks.map((check) => `<li>${renderQuizInline(check)}</li>`).join('')}</ul>
+      <p><strong>Trade-off:</strong> ${renderQuizInline(answer.tradeoff)}</p>
+      <p><strong>In simple words:</strong> ${renderQuizInline(answer.simpleExplanation)}</p>
+      <div class="endterm-rubric">
+        <div class="endterm-rubric-head">
+          <span>Self-assessment rubric</span>
+          <strong>${earned} / 10</strong>
+        </div>
+        ${item.rubric.map((row, index) => `
+          <label class="endterm-rubric-row">
+            <input type="checkbox" data-rubric-index="${index}" ${checkedCriteria.includes(index) ? 'checked' : ''}>
+            <span>${escapeHtml(row.criterion)}</span>
+            <strong>${row.points}</strong>
+          </label>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function bindEndTermQuizActions(item, index) {
+  document.querySelectorAll('[data-endterm-option]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const progress = ensureEndTermProgress();
+      const optionIndex = Number(button.dataset.endtermOption);
+      if (item.format === 'MSQ') {
+        const previous = Array.isArray(progress.responses[item.id]) ? progress.responses[item.id] : [];
+        progress.responses[item.id] = previous.includes(optionIndex)
+          ? previous.filter((value) => value !== optionIndex)
+          : [...previous, optionIndex].sort((a, b) => a - b);
+      } else {
+        progress.responses[item.id] = optionIndex;
+      }
+      delete progress.checked[item.id];
+      saveEndTermProgress();
+      renderEndTermQuiz(index, workspaceData.answers[index]);
+    });
+  });
+
+  document.getElementById('endtermCheckBtn')?.addEventListener('click', () => {
+    const progress = ensureEndTermProgress();
+    const response = progress.responses[item.id];
+    const hasResponse = item.format === 'MSQ'
+      ? Array.isArray(response) && response.length > 0
+      : Number.isInteger(response);
+    if (!hasResponse) {
+      showToast(item.format === 'MSQ' ? 'Select at least one option before checking the answer.' : 'Choose an option before checking the answer.', 'error');
+      return;
+    }
+    progress.checked[item.id] = true;
+    saveEndTermProgress();
+    renderEndTermQuiz(index, workspaceData.answers[index]);
+  });
+
+  document.getElementById('endtermDraft')?.addEventListener('input', (event) => {
+    const progress = ensureEndTermProgress();
+    progress.responses[item.id] = event.target.value;
+    saveEndTermProgress();
+    const words = event.target.value.trim() ? event.target.value.trim().split(/\s+/).length : 0;
+    const counter = document.getElementById('endtermWordCount');
+    if (counter) counter.textContent = `${words} words | saved locally`;
+    updateEndTermSidebarStatuses();
+    updateEndTermProgressSummary();
+  });
+
+  document.getElementById('endtermRevealBtn')?.addEventListener('click', () => {
+    const progress = ensureEndTermProgress();
+    progress.revealed[item.id] = !progress.revealed[item.id];
+    saveEndTermProgress();
+    renderEndTermQuiz(index, workspaceData.answers[index]);
+  });
+
+  document.querySelectorAll('[data-rubric-index]').forEach((checkbox) => {
+    checkbox.addEventListener('change', () => {
+      const progress = ensureEndTermProgress();
+      progress.rubricChecks[item.id] = [...document.querySelectorAll('[data-rubric-index]:checked')]
+        .map((node) => Number(node.dataset.rubricIndex));
+      saveEndTermProgress();
+      renderEndTermQuiz(index, workspaceData.answers[index]);
+    });
+  });
+
+  document.getElementById('endtermBookmarkBtn')?.addEventListener('click', () => {
+    const progress = ensureEndTermProgress();
+    progress.bookmarks = progress.bookmarks.includes(item.id)
+      ? progress.bookmarks.filter((id) => id !== item.id)
+      : [...progress.bookmarks, item.id];
+    saveEndTermProgress();
+    renderEndTermQuiz(index, workspaceData.answers[index]);
+  });
+
+  document.getElementById('endtermClearBtn')?.addEventListener('click', () => {
+    const progress = ensureEndTermProgress();
+    delete progress.responses[item.id];
+    delete progress.checked[item.id];
+    delete progress.revealed[item.id];
+    delete progress.rubricChecks[item.id];
+    saveEndTermProgress();
+    renderEndTermQuiz(index, workspaceData.answers[index]);
+  });
+
+  document.getElementById('endtermPreviousBtn')?.addEventListener('click', () => renderCanvas(Math.max(0, index - 1)));
+  document.getElementById('endtermNextBtn')?.addEventListener('click', () => renderCanvas(Math.min(workspaceData.answers.length - 1, index + 1)));
+  document.getElementById('endtermNextOpenBtn')?.addEventListener('click', () => {
+    const next = findNextEndTermOpenIndex(index);
+    if (next === -1) showToast('Every mock question has a checked answer or saved draft.', 'success');
+    else renderCanvas(next);
+  });
+  document.getElementById('endtermSectionJump')?.addEventListener('change', (event) => {
+    const section = event.target.value;
+    const next = findFirstEndTermSectionIndex(section);
+    if (next === -1) showToast(`No ${section.toLowerCase()} questions are available in this mock.`, 'error');
+    else renderCanvas(next);
+  });
+}
+
+function renderEndTermQuiz(index, data) {
+  const item = data.quizItem;
+  const progress = ensureEndTermProgress();
+  const stats = getEndTermStats();
+  const selected = progress.responses[item.id];
+  const checked = Boolean(progress.checked[item.id]);
+  const bookmarked = progress.bookmarks.includes(item.id);
+  const isObjective = item.kind === 'mcq';
+  const sectionPosition = isObjective ? index + 1 : index - stats.objectiveTotal + 1;
+  const sectionTotal = isObjective ? stats.objectiveTotal : stats.subjectiveTotal;
+
+  selectedQuestionIndex = index;
+  persistUiState();
+  document.querySelectorAll('.nav-item').forEach((node) => node.classList.remove('active'));
+  document.querySelector(`.nav-item[data-idx="${index}"]`)?.classList.add('active');
+  if (mobileQuestionPicker?.options.length) mobileQuestionPicker.value = String(index);
+
+  breadcrumbs.innerHTML = `
+    <span class="crumb crumb-home" id="breadcrumbHome" title="Back to home">tds-portal</span>
+    <span class="separator">/</span>
+    <span class="crumb">end-term mock</span>
+    <span class="separator">/</span>
+    <span class="crumb">${escapeHtml(item.id)}</span>
+  `;
+
+  let questionBody = '';
+  if (isObjective) {
+    const isMulti = item.format === 'MSQ';
+    const selectedOptions = Array.isArray(selected) ? selected : Number.isInteger(selected) ? [selected] : [];
+    const expectedOptions = Array.isArray(item.answers) ? item.answers : [item.answer];
+    const options = item.options.map((option, optionIndex) => {
+      const isSelected = selectedOptions.includes(optionIndex);
+      const isCorrect = checked && expectedOptions.includes(optionIndex);
+      const isIncorrect = checked && isSelected && !expectedOptions.includes(optionIndex);
+      const stateClass = isCorrect ? ' is-correct' : isIncorrect ? ' is-incorrect' : isSelected ? ' is-selected' : '';
+      return `
+        <button type="button" class="endterm-option${stateClass}" data-endterm-option="${optionIndex}" aria-pressed="${isSelected}">
+          <span class="endterm-option-letter">${String.fromCharCode(65 + optionIndex)}</span>
+          <span>${renderQuizInline(option)}</span>
+        </button>
+      `;
+    }).join('');
+    const feedback = checked ? `
+      <div class="endterm-feedback ${isEndTermResponseCorrect(item, selected) ? 'is-correct' : 'is-incorrect'}">
+        <div class="endterm-feedback-heading">${isEndTermResponseCorrect(item, selected) ? 'Correct answer' : `Review this answer. Correct option${expectedOptions.length > 1 ? 's' : ''}: ${expectedOptions.map((value) => String.fromCharCode(65 + value)).join(', ')}`}</div>
+        <p>${renderQuizInline(item.explanation)}</p>
+        <p><strong>Why the others are weaker:</strong> ${renderQuizInline(item.distractorNote)}</p>
+        <div class="endterm-takeaway">${renderQuizInline(item.takeaway)}</div>
+      </div>
+    ` : '';
+    questionBody = `
+      <div class="endterm-response-hint">${isMulti ? 'Select all that apply.' : 'Select one option.'}</div>
+      <div class="endterm-options">${options}</div>
+      <div class="endterm-question-actions">
+        <button type="button" class="endterm-btn endterm-btn-primary" id="endtermCheckBtn">Check answer</button>
+        <button type="button" class="endterm-btn" id="endtermClearBtn">Clear response</button>
+      </div>
+      ${feedback}
+    `;
+  } else {
+    const draft = String(selected || '');
+    const words = draft.trim() ? draft.trim().split(/\s+/).length : 0;
+    questionBody = `
+      <details class="endterm-subjective-guide" open>
+        <summary>How to build and check a strong answer</summary>
+        <div class="endterm-subjective-guide-grid">
+          <div><strong>1. Decide</strong><span>State the decision and separate observed facts from assumptions.</span></div>
+          <div><strong>2. Evidence</strong><span>Name the most useful trace, metric, sample, source, or provenance record.</span></div>
+          <div><strong>3. Unknown</strong><span>Ask what missing fact could change the decision; weigh probability and impact.</span></div>
+          <div><strong>4. Fix</strong><span>Give the smallest precise, ordered, reversible fix with authorization enforced in code.</span></div>
+          <div><strong>5. Verify</strong><span>Test the normal path and a failure path, then state observable acceptance evidence.</span></div>
+        </div>
+        <p class="endterm-subjective-guide-note">Use your own words and keep the answer tied to the scenario. The five self-rubric rows below are worth 2 marks each. This is practice guidance, not an official answer key or score guarantee.</p>
+      </details>
+      <label class="endterm-draft-label" for="endtermDraft">Your answer</label>
+      <textarea id="endtermDraft" class="endterm-draft" placeholder="Write your reasoning, steps, failure checks, and evidence here...">${escapeHtml(draft)}</textarea>
+      <div class="endterm-draft-meta" id="endtermWordCount">${words} words | saved locally</div>
+      <div class="endterm-question-actions">
+        <button type="button" class="endterm-btn endterm-btn-primary" id="endtermRevealBtn">${progress.revealed[item.id] ? 'Hide model answer' : 'Reveal model answer'}</button>
+        <button type="button" class="endterm-btn" id="endtermClearBtn">Clear response</button>
+      </div>
+      ${progress.revealed[item.id] ? renderSubjectiveModelAnswer(item) : ''}
+    `;
+  }
+
+  canvas.innerHTML = `
+    <div class="endterm-shell">
+      <aside class="endterm-reference-warning" role="note" aria-label="Reference-only mock notice">
+        <span class="endterm-warning-mark" aria-hidden="true">!</span>
+        <div>
+          <strong>Reference-only practice mock</strong>
+          <p>This is not an official IIT Madras paper, answer key, or prediction, and it cannot guarantee a high end-term score. Use it only for revision and last-minute practice. Verify important concepts against the current May 2026 course material.</p>
+        </div>
+      </aside>
+      <details class="endterm-format-guide">
+        <summary>Official end-term format and study guide reference</summary>
+        <div class="endterm-format-grid">
+          <div><strong>80 marks total</strong><span>Use this expanded bank for practice; an official-length attempt is shorter.</span></div>
+          <div><strong>Section 1 | 30 MCQ/MSQ | 39 marks</strong><span>Topics 1-5: observability, data integrity, CI/CD and security, reliable AI/LLM systems, and web/API/infra.</span></div>
+          <div><strong>Section 2 | 9 short answers | 41 marks</strong><span>Topic 6: applied AI-era judgment. Manually graded.</span></div>
+        </div>
+        <p class="endterm-guide-note">The exam emphasizes why a decision is sound: evidence, provenance, uncertainty, probability and impact, minimal fixes, and separating valid from invalid claims.</p>
+      </details>
+      <header class="endterm-overview">
+        <div class="endterm-overview-copy">
+          <div class="endterm-kicker">T2 2026 | End-Term Practice</div>
+          <h2>May 2026 Advanced Mock</h2>
+          <p>175 MCQs, 25 MSQs, 100 subjective questions, detailed explanations, and local progress.</p>
+        </div>
+        <div class="endterm-overview-actions">
+          <label class="endterm-jump-control" for="endtermSectionJump">
+            <span>Jump to portion</span>
+            <select id="endtermSectionJump">
+              <option value="MCQ" ${getEndTermSection(item) === 'MCQ' ? 'selected' : ''}>MCQ</option>
+              <option value="MSQ" ${getEndTermSection(item) === 'MSQ' ? 'selected' : ''}>MSQ</option>
+              <option value="SUBJECTIVE" ${getEndTermSection(item) === 'SUBJECTIVE' ? 'selected' : ''}>Subjective</option>
+            </select>
+          </label>
+          <button type="button" class="endterm-btn" id="endtermNextOpenBtn">Next open question</button>
+          <button type="button" class="endterm-bookmark${bookmarked ? ' is-active' : ''}" id="endtermBookmarkBtn" aria-pressed="${bookmarked}">${bookmarked ? 'Bookmarked' : 'Bookmark'}</button>
+        </div>
+        <div class="endterm-progress-row">
+          <div class="endterm-progress-copy"><strong id="endtermProgressText">${stats.completed} / ${stats.total} completed</strong><span>${stats.percent}%</span></div>
+          <div class="endterm-progress-track"><span id="endtermProgressFill" style="width:${stats.percent}%"></span></div>
+        </div>
+        <div class="endterm-stat-grid">
+          <div><span>Objective score</span><strong id="endtermScore">${stats.correct} / ${stats.objectiveChecked}</strong></div>
+          <div><span>Subjective drafts</span><strong id="endtermDrafted">${stats.drafted} / ${stats.subjectiveTotal}</strong></div>
+          <div><span>Session time</span><strong id="endtermTimer">00:00:00</strong></div>
+        </div>
+      </header>
+
+      <main class="endterm-question-card">
+        <div class="endterm-question-meta">
+          <span>${isObjective ? `Section A: ${item.format || 'MCQ'}` : 'Section B: Short Answer'}</span>
+          <span>${sectionPosition} / ${sectionTotal}</span>
+          <span>${escapeHtml(item.week)}</span>
+          <span>${escapeHtml(isObjective ? `${item.skill} | ${item.difficulty}` : `${item.difficulty} | 10 marks`)}</span>
+        </div>
+        <h3>${renderQuizInline(item.question || item.prompt)}</h3>
+        ${questionBody}
+      </main>
+
+      <nav class="endterm-footer-nav" aria-label="Mock question navigation">
+        <button type="button" class="endterm-btn" id="endtermPreviousBtn" ${index === 0 ? 'disabled' : ''}>Previous</button>
+        <span>${escapeHtml(item.id)} | ${escapeHtml(item.topic)}</span>
+        <button type="button" class="endterm-btn endterm-btn-primary" id="endtermNextBtn" ${index === workspaceData.answers.length - 1 ? 'disabled' : ''}>Next</button>
+      </nav>
+      <div class="endterm-support-strip" aria-label="Project links">
+        <span>Open-source study project by GyaanFlow</span>
+        <a href="https://github.com/GyaanFlow/tds-roe-solver-t12026" target="_blank" rel="noopener noreferrer">Star on GitHub</a>
+        <a href="https://www.linkedin.com/in/gaurav-tomar-630b2a316" target="_blank" rel="noopener noreferrer">Follow on LinkedIn</a>
+      </div>
+    </div>
+  `;
+
+  canvas.scrollTo({ top: 0, behavior: 'auto' });
+  updateEndTermSidebarStatuses();
+  bindEndTermQuizActions(item, index);
+  startEndTermTimer();
+  if (isMobileLayout()) setMobileNavOpen(false);
+}
+
 function renderCanvas(index) {
   if (index === -1) {
     renderDashboard();
@@ -1538,6 +2031,11 @@ function renderCanvas(index) {
   dashboardToggle.classList.remove('active');
   const data = workspaceData.answers[index];
   if (!data) return;
+
+  if (data.quizItem) {
+    renderEndTermQuiz(index, data);
+    return;
+  }
 
   selectedQuestionIndex = index;
   persistUiState();
@@ -1769,6 +2267,8 @@ async function startSolving() {
 
   selectedQuestionIndex = 0;
   workspaceData = { term: currentTerm, exam: currentExam, email, answers: [], meta: {} };
+  endTermProgress = currentExam === 'endterm' ? loadEndTermProgress(email) : null;
+  stopEndTermTimer();
   setMobileNavOpen(false);
   persistUiState();
 
@@ -1805,7 +2305,8 @@ async function startSolving() {
           debug: result.debug,
           backupEndpoints: result.backupEndpoints,
           usesHostedApi: result.usesHostedApi,
-          rubricCoachHtml: result.rubricCoachHtml
+          rubricCoachHtml: result.rubricCoachHtml,
+          quizItem: result.quizItem
         });
       } catch (error) {
         workspaceData.answers.push({
@@ -1839,6 +2340,8 @@ async function startSolving() {
       if (currentExam === 'ga0' && done === 10) {
         progressText.innerText = `Deploying FastAPI Students Service (Compiled 10 / ${solvers.length} nodes)...`;
         await new Promise((resolve) => window.setTimeout(resolve, 2500));
+      } else if (currentExam === 'endterm') {
+        if (done % 50 === 0) await new Promise((resolve) => window.setTimeout(resolve, 0));
       } else {
         await new Promise((resolve) => window.setTimeout(resolve, 40));
       }
@@ -1856,15 +2359,17 @@ async function startSolving() {
     }
 
     const diffMs = (performance.now() - startTime).toFixed(1);
-    connectionText.innerText = `Workspace compiled in ${diffMs}ms via local engine`;
+    connectionText.innerText = currentExam === 'endterm'
+      ? `Practice mock ready in ${diffMs}ms | progress saves locally`
+      : `Workspace compiled in ${diffMs}ms via local engine`;
     progressPanel.classList.add('hidden');
     solveBtn.disabled = false;
-    solveBtn.innerText = 'Workspace Active';
-    exportActions.classList.remove('hidden');
-    workspaceStats.classList.remove('hidden');
+    solveBtn.innerText = currentExam === 'endterm' ? 'Mock In Progress' : 'Workspace Active';
+    exportActions.classList.toggle('hidden', currentExam === 'endterm');
+    workspaceStats.classList.toggle('hidden', currentExam === 'endterm');
     navTitle.classList.remove('hidden');
     nodeSearch.classList.remove('hidden');
-    dashboardToggle.classList.remove('hidden');
+    dashboardToggle.classList.toggle('hidden', currentExam === 'endterm');
     statSolved.innerText = String(statsTracker.solved);
     statBypass.innerText = String(statsTracker.bypass);
     statGuide.innerText = String(statsTracker.guide);
@@ -1877,8 +2382,13 @@ async function startSolving() {
       if (isLocked) {
         showToast('⚠️ Academic Integrity Lock Active: If unlocked too early, you will not learn or think yourself, defeating the purpose of the TDS course. It is locked initially, but may be unlocked in the future if deemed viable. If you are a tester, contact the creator for personal access.', 'error', 12000);
       } else {
-        showToast(`Workspace ready. ${workspaceData.answers.length} questions loaded.`, 'success');
-        maybeShowCelebrateCard(workspaceData.answers.length);
+        showToast(
+          currentExam === 'endterm'
+            ? `Practice mock ready. ${workspaceData.answers.length} questions loaded.`
+            : `Workspace ready. ${workspaceData.answers.length} questions loaded.`,
+          'success'
+        );
+        if (currentExam !== 'endterm') maybeShowCelebrateCard(workspaceData.answers.length);
       }
       safeTrack('workspace_ready', {
         exam: currentExam,

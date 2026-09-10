@@ -4,6 +4,8 @@
   "type": "module",
   "scripts": {
     "check": "node check.mjs",
+    "mock:generate": "node mock-banks/t2-2026-end-term-mock.mjs",
+    "mock:check": "node mock-banks/t2-2026-end-term-mock.mjs --check",
     "start": "node server.js",
     "dev": "node server.js"
   },

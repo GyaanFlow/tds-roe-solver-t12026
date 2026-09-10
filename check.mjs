@@ -133,7 +133,9 @@ async function checkServerRoutes() {
       ['/verify.html', 200],
       ['/style.css', 200],
       ['/solvers/T12026/ga7/registry.js', 200],
-      ['/solvers/T12026/ga8/registry.js', 200]
+      ['/solvers/T12026/ga8/registry.js', 200],
+      ['/solvers/T22026/endterm/registry.js', 200],
+      ['/mock-banks/T2-2026-End-Term-Mock.browser.js', 200]
     ];
 
     for (const [pathname, expectedStatus] of checks) {
@@ -831,12 +833,45 @@ async function checkT2Ga8SolversExecute(solvers) {
   }
 }
 
+async function checkT2EndTermMock(solvers) {
+  assert(solvers.length === 300, `T2 end-term mock should expose 300 questions, got ${solvers.length}.`);
+  assert(new Set(solvers.map((solver) => solver.id)).size === 300, 'T2 end-term mock solver IDs must be unique.');
+
+  const sampleEmail = '23f1000805@ds.study.iitm.ac.in';
+  const checkpoints = [
+    [0, 'mcq', 'MCQ-001'],
+    [199, 'mcq', 'MCQ-200'],
+    [200, 'subjective', 'SUB-001'],
+    [299, 'subjective', 'SUB-100']
+  ];
+
+  for (const [index, kind, id] of checkpoints) {
+    const result = await solvers[index].solve(sampleEmail);
+    assert(result.type === 'quiz', `T2 end-term ${id} should return quiz type.`);
+    assert(result.quizItem?.kind === kind, `T2 end-term ${id} should be ${kind}.`);
+    assert(result.quizItem?.id === id, `T2 end-term index ${index} expected ${id}, got ${result.quizItem?.id}.`);
+    assert(result.debug?.normalizedEmail === sampleEmail, `T2 end-term ${id} did not preserve normalized email progress identity.`);
+  }
+
+  const bankItems = solvers.map((solver) => solver.solve(sampleEmail).quizItem);
+  const objective = bankItems.filter((item) => item.kind === 'mcq');
+  const subjective = bankItems.filter((item) => item.kind === 'subjective');
+  assert(objective.filter((item) => item.format === 'MCQ').length === 175, 'T2 end-term objective pool should contain 175 MCQs.');
+  assert(objective.filter((item) => item.format === 'MSQ').length === 25, 'T2 end-term objective pool should contain 25 MSQs.');
+  assert(objective.every((item) => [1, 2, 3, 4, 5].includes(item.guideTopic)), 'T2 end-term objective items must map to guide topics 1-5.');
+  assert(subjective.every((item) => item.guideTopic === 6), 'T2 end-term subjective items must map to applied AI-era judgment topic 6.');
+  assert(subjective.every((item) => item.modelAnswer?.claimAssessment && item.modelAnswer?.evidence && item.modelAnswer?.uncertainty), 'T2 end-term subjective model answers must expose claim assessment, evidence, and uncertainty fields.');
+}
+
 async function main() {
   installBrowserStubs();
 
   assert(fs.existsSync(path.join(rootDir, 'index.html')), 'Missing index.html.');
   assert(fs.existsSync(path.join(rootDir, 'style.css')), 'Missing style.css.');
   assert(fs.existsSync(path.join(rootDir, 'ga7-verify.html')), 'Missing ga7-verify.html.');
+  const appSource = fs.readFileSync(path.join(rootDir, 'app.js'), 'utf8');
+  assert(appSource.includes('endtermSectionJump'), 'End-term section jump control is missing from app.js.');
+  assert(appSource.includes('value="MSQ"') && appSource.includes('value="SUBJECTIVE"'), 'End-term section jump options are incomplete.');
 
   await importFresh('app.js');
   await importFresh('ga7-verify.js');
@@ -855,6 +890,7 @@ async function main() {
   const p1Registry = await importFresh('solvers/T22026/p1/registry.js');
   const t2Ga8Registry = await importFresh('solvers/T22026/ga8/registry.js');
   const t2P2Registry = await importFresh('solvers/T22026/p2/registry.js');
+  const endTermRegistry = await importFresh('solvers/T22026/endterm/registry.js');
 
   assert(Array.isArray(ga7Registry.solvers) && ga7Registry.solvers.length > 0, 'GA7 registry did not load solvers.');
   assert(Array.isArray(roeRegistry.solvers) && roeRegistry.solvers.length > 0, 'ROE registry did not load solvers.');
@@ -870,6 +906,7 @@ async function main() {
   assert(Array.isArray(p1Registry.solvers) && p1Registry.solvers.length === 5, `P1 registry should have exactly 5 solvers, got ${p1Registry.solvers.length}.`);
   assert(Array.isArray(t2Ga8Registry.solvers) && t2Ga8Registry.solvers.length === 10, `T2 GA8 registry should have exactly 10 solvers, got ${t2Ga8Registry.solvers.length}.`);
   assert(Array.isArray(t2P2Registry.solvers), 'T2 P2 registry should export solvers array.');
+  assert(Array.isArray(endTermRegistry.solvers), 'T2 end-term registry should export solvers array.');
   await checkGa8OfficialParity(ga8Registry.solvers);
   checkGa0OfficialOrder(ga0Registry.solvers);
   await checkGa0SolversExecute(ga0Registry.solvers);
@@ -888,10 +925,11 @@ async function main() {
   checkT2Ga8OfficialOrder(t2Ga8Registry.solvers);
   await checkT2Ga8SolversExecute(t2Ga8Registry.solvers);
   await checkT2P2SolversExecute(t2P2Registry.solvers);
+  await checkT2EndTermMock(endTermRegistry.solvers);
 
   await checkServerRoutes();
 
-  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}, GA5 solvers=${ga5Registry.solvers.length}, GA6 solvers=${ga6Registry.solvers.length}, P1 solvers=${p1Registry.solvers.length}, T2 GA8 solvers=${t2Ga8Registry.solvers.length}, T2 P2 solvers=${t2P2Registry.solvers.length}`);
+  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}, GA5 solvers=${ga5Registry.solvers.length}, GA6 solvers=${ga6Registry.solvers.length}, P1 solvers=${p1Registry.solvers.length}, T2 GA8 solvers=${t2Ga8Registry.solvers.length}, T2 P2 solvers=${t2P2Registry.solvers.length}, T2 end-term questions=${endTermRegistry.solvers.length}`);
 }
 
 main().catch((error) => {
