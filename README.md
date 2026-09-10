@@ -1,7 +1,5 @@
 # 🌌 TDS Exam Portal — Elite Workspace
 
-![TDS Portal Banner](file:///C:/Users/gaura/.gemini/antigravity/brain/0ccffd48-bb4b-4185-a771-ef43fa52f090/tds_portal_banner_1778839734088.png)
-
 <p align="center">
   <img src="https://img.shields.io/badge/execution-local_only-fbbf24?style=for-the-badge&logo=javascript" alt="Execution" />
   <img src="https://img.shields.io/badge/dependencies-zero-10b981?style=for-the-badge&logo=node.js" alt="Dependencies" />
@@ -36,7 +34,7 @@ graph TD
     F -->|"Access Lock Check"| G{"lockConfig.locked?"}
     G -->|"Authorized / Open"| H("Seeded Variations Engine (FNV-1a / PRNG)")
     G -->|"Restricted / External"| I["Lock Screen + Rubric Coach Terminal"]
-    H -->|"Deterministic Solved Vector"| J(("100% Rubric Compliant Case Solution"))
+    H -->|"Deterministic Solved Vector"| J(("Deterministic Case Solution"))
     J -->|"Native DOM Mount"| K["Rendered Answer + Notes Panel"]
     I -->|"Native DOM Mount"| L["Interactive Rubric Coach Evaluator"]
     K --> A
@@ -95,16 +93,17 @@ To align fully with the **IIT Madras Student Code of Conduct**, the workspace im
 
 1. **Mandatory Integrity Disclaimer**: All workspace inputs and solver executions are blocked until the user explicitly acknowledges the honor code checkbox.
 2. **Configurable Access Locking (`lock-config.js`)**: Granular per-exam security locks allow developers to restrict programmatic answer generation to authorized whitelist emails while providing external students with the interactive Rubric Coach to verify their own manual work.
-3. **Stateful Local Persistence**: The acceptance vector is saved to browser `localStorage` as `'agreeDisclaimerCheckbox' === 'true'`.
+3. **Stateful Local Persistence**: The acceptance vector is saved to browser `localStorage` as `academic_integrity_agreed === 'true'`.
 
 ---
 
 ## 🎯 Complete Exam Registry & Computational Engines
 
-The registry is split into Term 1 2026 (`T12026`) and Term 2 2026 (`T22026`), covering **162+ deterministic tasks across 14 exam suites**:
+The registry is split into Term 1 2026 (`T12026`) and Term 2 2026 (`T22026`), with solver suites plus a dedicated 300-question end-term practice workspace:
 
 | Target Engine | Term | Scope | Technical Highlights & Capabilities |
 | :--- | :--- | :--- | :--- |
+| **End-Term Mock** | `T22026` | **May 2026 Full-Course Practice** | **300-question pool**: 175 MCQs, 25 MSQs, and 100 subjective prompts, presented in a dedicated quiz UI with section jumping, answer checking, a five-step subjective guide, detailed explanations, model answers, self-assessment rubrics, bookmarks, timer, and per-email local progress. Reference-only practice material; no score guarantee. |
 | **P2** | `T22026` | **Project 2 — Forensic Case Studies** | **8 Case Studies (100 Marks)**: DTH Month-End Mystery (`DF-00020`/`$0.00`), DTH Complaints Quiet (NovaIVR/CareDesk dropouts, 5 diagnostic questions), Solar Inverter Smell Test (INV-17/0 MW telemetry), Solar 31.6% DSM Claim (within-day ~17.5% counterfactual decomposition), Swiss Customs Mismatch (tariff 9021.10.00 schema mapping), QC Queue Smell Test (02:10:00 AM QCore snapshot / 48h LabTrack latency), Irish Preference Claim (SUP-02 / P1006 / IE-2025-000411 2025 LTSD), and Spare-Parts Search ($123,565.26 inventory risk classification). Includes the full **Rubric Intelligence Terminal**. |
 | **GA8** | `T22026` | **LLM Eval, Guardrails & MLOps** | **10 Solvers**: Automated RAG hallucination scanners, LLM benchmark pipelines, semantic guardrail firewalls, model drift analyzers, and Docker/Cloud Run deployment scripts. |
 | **GA7** | `T22026` | Policy Gates & OSINT | **10 Solvers**: 5 hosted rule-engine APIs (release gates, LLM action firewall, Terraform policy, output sanitizer, OSINT corroboration); 4 seeded generators (Google-dork queries, WAF rule-order simulation, media forensics, GitHub Actions audit); Street View image intelligence. |
@@ -197,6 +196,16 @@ Execute the 800-generation Monte Carlo simulation across 100 random student seed
 ```bash
 node scratch/stress-test-raw-generator.js
 ```
+
+### 4. Generating the T2 2026 End-Term Mock Bank
+The official May 2026 course index is mapped into a reproducible practice bank with exactly 175 MCQs, 25 MSQs, and 100 subjective prompts:
+```bash
+npm run mock:check
+npm run mock:generate
+```
+Generated artifacts are written to `mock-banks/T2-2026-End-Term-Mock.md`, `mock-banks/T2-2026-End-Term-Mock.json`, and the browser data module. Select **T2 2026 → End-Term Mock** in the portal to use the interactive quiz. Use **Jump to portion** to practice MCQ, MSQ, or subjective questions separately. Progress, drafts, bookmarks, and rubric checks are saved locally per email.
+
+> **Reference-only notice:** this mock is original practice material, not an official IIT Madras paper, answer key, or prediction. It cannot guarantee a high end-term score and is intended only for revision and last-minute practice.
 
 ---
 
