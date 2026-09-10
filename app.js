@@ -580,7 +580,7 @@ function setMobileNavOpen(nextOpen) {
 function populateMobileQuestionPicker() {
   if (!mobileQuestionPicker) return;
   mobileQuestionPicker.innerHTML = workspaceData.answers.map((answer, index) => (
-    `<option value="${index}">Q${index + 1} - ${escapeHtml(answer.title)}</option>`
+    `<option value="${index}">Q${index + 1} - ${escapeHtml(answer.quizItem ? `${getEndTermDisplayMeta(index, answer.quizItem).displayId} | ${answer.quizItem.topic}` : answer.title)}</option>`
   )).join('');
   mobileQuestionPicker.value = String(selectedQuestionIndex);
 }
@@ -596,9 +596,10 @@ function renderSidebarNode(index, title, type) {
     node.style.animationDelay = `${Math.min(index * 12, 360)}ms`;
     node.dataset.idx = String(index);
     node.dataset.health = state;
+    const displayId = getEndTermDisplayMeta(index, item).displayId;
     node.innerHTML = `
       <span class="nav-item-status status-quiz status-quiz-${state}"></span>
-      <span class="nav-item-num">${escapeHtml(item.id)}</span>
+      <span class="nav-item-num">${escapeHtml(displayId)}</span>
       <span class="nav-item-copy">
         <span class="nav-item-title">${escapeHtml(item.topic)}</span>
         <span class="nav-item-meta">
@@ -1721,6 +1722,24 @@ function getEndTermSection(item) {
   return item.format === 'MSQ' ? 'MSQ' : 'MCQ';
 }
 
+function getEndTermDisplayMeta(index, item) {
+  const section = getEndTermSection(item);
+  const sectionItems = workspaceData.answers
+    .map((answer) => answer.quizItem)
+    .filter((candidate) => getEndTermSection(candidate) === section);
+  const position = workspaceData.answers
+    .slice(0, index + 1)
+    .filter((answer) => getEndTermSection(answer.quizItem) === section)
+    .length;
+  const prefix = section === 'SUBJECTIVE' ? 'SUB' : section;
+  return {
+    section,
+    position,
+    total: sectionItems.length,
+    displayId: `${prefix}-${String(position).padStart(3, '0')}`
+  };
+}
+
 function findFirstEndTermSectionIndex(section) {
   return workspaceData.answers.findIndex((answer) => getEndTermSection(answer?.quizItem) === section);
 }
@@ -1860,6 +1879,11 @@ function bindEndTermQuizActions(item, index) {
 }
 
 function renderEndTermQuiz(index, data) {
+  // Re-rendering the same question (check, clear, reveal, or rubric update)
+  // must not throw the learner back to the top of a long answer.
+  const preserveScroll = selectedQuestionIndex === index && Boolean(canvas.querySelector('.endterm-shell'));
+  const previousCanvasScrollTop = canvas.scrollTop;
+  const previousWindowScrollY = window.scrollY;
   const item = data.quizItem;
   const progress = ensureEndTermProgress();
   const stats = getEndTermStats();
@@ -1867,8 +1891,7 @@ function renderEndTermQuiz(index, data) {
   const checked = Boolean(progress.checked[item.id]);
   const bookmarked = progress.bookmarks.includes(item.id);
   const isObjective = item.kind === 'mcq';
-  const sectionPosition = isObjective ? index + 1 : index - stats.objectiveTotal + 1;
-  const sectionTotal = isObjective ? stats.objectiveTotal : stats.subjectiveTotal;
+  const sectionMeta = getEndTermDisplayMeta(index, item);
 
   selectedQuestionIndex = index;
   persistUiState();
@@ -1881,7 +1904,7 @@ function renderEndTermQuiz(index, data) {
     <span class="separator">/</span>
     <span class="crumb">end-term mock</span>
     <span class="separator">/</span>
-    <span class="crumb">${escapeHtml(item.id)}</span>
+    <span class="crumb">${escapeHtml(sectionMeta.displayId)}</span>
   `;
 
   let questionBody = '';
@@ -1994,7 +2017,7 @@ function renderEndTermQuiz(index, data) {
       <main class="endterm-question-card">
         <div class="endterm-question-meta">
           <span>${isObjective ? `Section A: ${item.format || 'MCQ'}` : 'Section B: Short Answer'}</span>
-          <span>${sectionPosition} / ${sectionTotal}</span>
+          <span>${sectionMeta.position} / ${sectionMeta.total}</span>
           <span>${escapeHtml(item.week)}</span>
           <span>${escapeHtml(isObjective ? `${item.skill} | ${item.difficulty}` : `${item.difficulty} | 10 marks`)}</span>
         </div>
@@ -2004,7 +2027,7 @@ function renderEndTermQuiz(index, data) {
 
       <nav class="endterm-footer-nav" aria-label="Mock question navigation">
         <button type="button" class="endterm-btn" id="endtermPreviousBtn" ${index === 0 ? 'disabled' : ''}>Previous</button>
-        <span>${escapeHtml(item.id)} | ${escapeHtml(item.topic)}</span>
+        <span>${escapeHtml(sectionMeta.displayId)} | ${escapeHtml(item.topic)}</span>
         <button type="button" class="endterm-btn endterm-btn-primary" id="endtermNextBtn" ${index === workspaceData.answers.length - 1 ? 'disabled' : ''}>Next</button>
       </nav>
       <div class="endterm-support-strip" aria-label="Project links">
@@ -2015,7 +2038,20 @@ function renderEndTermQuiz(index, data) {
     </div>
   `;
 
-  canvas.scrollTo({ top: 0, behavior: 'auto' });
+  const restoreScroll = () => {
+    if (!preserveScroll) {
+      canvas.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      return;
+    }
+    canvas.scrollTo({ top: previousCanvasScrollTop, left: 0, behavior: 'auto' });
+    if (window.scrollY !== previousWindowScrollY) {
+      window.scrollTo({ top: previousWindowScrollY, left: 0, behavior: 'auto' });
+    }
+  };
+  restoreScroll();
+  if (preserveScroll && typeof window.requestAnimationFrame === 'function') {
+    window.requestAnimationFrame(restoreScroll);
+  }
   updateEndTermSidebarStatuses();
   bindEndTermQuizActions(item, index);
   startEndTermTimer();

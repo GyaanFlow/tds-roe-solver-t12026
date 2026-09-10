@@ -872,6 +872,10 @@ async function main() {
   const appSource = fs.readFileSync(path.join(rootDir, 'app.js'), 'utf8');
   assert(appSource.includes('endtermSectionJump'), 'End-term section jump control is missing from app.js.');
   assert(appSource.includes('value="MSQ"') && appSource.includes('value="SUBJECTIVE"'), 'End-term section jump options are incomplete.');
+  assert(appSource.includes('previousCanvasScrollTop'), 'End-term re-renders should capture the quiz-pane scroll position.');
+  assert(appSource.includes('previousWindowScrollY'), 'End-term re-renders should capture mobile page scroll position.');
+  assert(appSource.includes('requestAnimationFrame(restoreScroll)'), 'End-term re-renders should restore scroll after layout.');
+  assert(appSource.includes('getEndTermDisplayMeta'), 'End-term UI should number MCQ, MSQ, and subjective sections independently.');
 
   await importFresh('app.js');
   await importFresh('ga7-verify.js');
