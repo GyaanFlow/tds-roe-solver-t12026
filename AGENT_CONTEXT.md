@@ -41,6 +41,7 @@ Current supported terms & targets:
   - `p1` — Project 1 (4 questions): Q1 requirements-gathering interview guide, Q2 model-intelligence differentiation (real client-side `solved` solver), Q3 AI-agent GCS bucket setup, Q4 AI-agent dataset upload to GCS (Q3/Q4 are `guide`-type — they depend on a live authenticated exam session and cannot be solved offline)
   - `p2` — Project 2 (8 offline-evaluated case studies across DTH, solar, customs, and consumer products). Answers use a shared verified evidence base, deterministic evidence-order variation, and strict runtime rubric validation.
   - `endterm` — 300-question May 2026 reference mock (200 MCQ + 100 subjective) with a dedicated quiz renderer and per-email browser-local progress.
+- `T32026` — Term 3 2026 (term dates TBD) with T3 GA1 (16 official September 2026 questions; deterministic solvers, fixed T2-compatible Q1 answer, beginner GitHub Pages and Git-forensics guides, three deferred API handoffs; locally vendored seedrandom and 1,000-email stress check)
 
 The app runs locally in the browser, loads a solver registry for the selected exam, executes each solver for a user email, and renders answers plus diagnostics.
 
@@ -57,13 +58,15 @@ The app runs locally in the browser, loads a solver registry for the selected ex
 - `verify.js`: Dynamic ESM solver verification logic for all terms/exams
 - `tds-config.json`: dynamic welcome screen config + term/exam registry metadata
 - `solvers/T12026/`: all T1 2026 exam solver folders
-- `solvers/T22026/`: T2 2026 solvers (GA0 and GA1 finalized)
+- `solvers/T22026/`: T2 2026 solvers
+- `solvers/T32026/`: T3 2026 solvers; GA1 source snapshot, question modules, and architecture notes are in `solvers/T32026/ga1/`
+- `vendor/seedrandom.min.js`: pinned local browser copy of `seedrandom@3.0.5`; GA1 and existing seeded solvers use it without depending on the seedrandom CDN
 
 ## Solver Architecture
 
 The main flow is:
 
-1. User selects **term** (T12026 / T22026) and **exam** from the sidebar.
+1. User selects **term** (T12026 / T22026 / T32026) and **exam** from the sidebar. T32026 currently registers GA1.
 2. `app.js` dynamically imports `./solvers/<term>/<exam>/registry.js`.
 3. Registry exports ordered `solvers`.
 4. Each solver returns an object like:
@@ -674,11 +677,14 @@ Then read solvers/T12026/ga8/registry.js for the pattern to follow.
 I need a new GA9 solver module under solvers/T12026/.
 ```
 
-**Adding all solvers for a new term (T22026):**
+**Adding solvers for T32026 (scaffold already exists):**
 ```
 Read AGENT_CONTEXT.md and graphify-out/GRAPH_REPORT.md.
-Create solvers/T22026/<exam>/ following the T12026 pattern.
-Add the exam to TERM_EXAMS in app.js and to tds-config.json.
+Read solvers/T32026/README.md and the GA1 audit snapshot at solvers/T32026/ga1/exam-source.js.
+Follow the T3 GA1 registry/runtime pattern and preserve official question IDs and order.
+The separate API project owns GA1 Q6, Q14, and Q15; integrate only after their deployed contracts are verified.
+Add official source-parity and solver-execution checks to check.mjs for every new exam.
+Use `node check.mjs --t3-ga1-only` for focused checks and `node check.mjs --t3-ga1-scale` for the 1,000-email T3 GA1 stress sweep.
 ```
 
 **Debugging a specific solver:**

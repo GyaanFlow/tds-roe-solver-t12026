@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import vm from 'node:vm';
 import { pathToFileURL } from 'node:url';
 import seedrandom from 'seedrandom';
 
@@ -132,8 +133,10 @@ async function checkServerRoutes() {
       ['/ga7-verify.html', 200],
       ['/verify.html', 200],
       ['/style.css', 200],
+      ['/vendor/seedrandom.min.js', 200],
       ['/solvers/T12026/ga7/registry.js', 200],
       ['/solvers/T12026/ga8/registry.js', 200],
+      ['/solvers/T32026/ga1/registry.js', 200],
       ['/solvers/T22026/endterm/registry.js', 200],
       ['/mock-banks/T2-2026-End-Term-Mock.browser.js', 200]
     ];
@@ -283,6 +286,132 @@ async function checkGa1SolversExecute(solvers) {
         `GA1 ${solver.id} returned unexpected result type: ${result.type}.`
       );
     }
+  }
+}
+
+async function checkT3Ga1(solvers, metadata) {
+  const officialIds = [
+    'q-vs-code-version',
+    'q-http-headers-server',
+    'q-uv-http-post',
+    'q-npx-prettier',
+    'q-broken-json-server',
+    'q-config-precedence-server',
+    'q-rename-files-server',
+    'q-csv-sales-analysis-server',
+    'q-github-pages',
+    'q-git-forensics-token-server',
+    'q-cosine-similarity-server',
+    'q-llm-yes-no-split',
+    'q-termlog-rec-server',
+    'q-mcp-server-live-server',
+    'q-ledger-agent-server',
+    'q-visual-game-tangram'
+  ];
+  assert(solvers.length === officialIds.length, `T3 GA1 should expose ${officialIds.length} official slots.`);
+  assert(solvers.map((solver) => solver.id).join('|') === officialIds.join('|'), 'T3 GA1 order/IDs drifted from the September 2026 official bundle.');
+  assert(new Set(solvers.map((solver) => solver.id)).size === officialIds.length, 'T3 GA1 solver IDs must be unique.');
+  assert(metadata.questionCount === 16, 'T3 GA1 metadata questionCount should be 16.');
+  assert(metadata.apiHandoffQuestions.join('|') === [
+    'q-config-precedence-server',
+    'q-mcp-server-live-server',
+    'q-ledger-agent-server'
+  ].join('|'), 'T3 GA1 API handoff metadata changed unexpectedly.');
+
+  const config = JSON.parse(fs.readFileSync(path.join(rootDir, 'tds-config.json'), 'utf8'));
+  assert(config.terms?.T32026?.exams?.includes('ga1'), 'T3 GA1 is missing from tds-config.json.');
+  assert(fs.readFileSync(path.join(rootDir, 'app.js'), 'utf8').includes("value: 'ga1', label: 'GA 1 (Developer Tools)'"), 'T3 GA1 is missing from the portal exam menu.');
+  const page = fs.readFileSync(path.join(rootDir, 'index.html'), 'utf8');
+  assert(page.includes('vendor/seedrandom.min.js?v=v54') && !page.includes('cdn.jsdelivr.net/npm/seedrandom'), 'Seeded solvers must use the pinned local seedrandom fallback.');
+  const localSeedrandomSource = fs.readFileSync(path.join(rootDir, 'vendor/seedrandom.min.js'), 'utf8');
+  const sandboxMath = Object.create(Math);
+  vm.runInNewContext(localSeedrandomSource, { Math: sandboxMath });
+  const localRng = new sandboxMath.seedrandom('T3 GA1 local dependency fixture');
+  const packageRng = seedrandom('T3 GA1 local dependency fixture');
+  for (let index = 0; index < 8; index += 1) {
+    assert(localRng() === packageRng(), `Vendored seedrandom output diverged at sample ${index}.`);
+  }
+
+  const byId = Object.fromEntries(solvers.map((solver) => [solver.id, solver]));
+  const t2Json = await importFresh('solvers/T22026/ga1/q-fix-json.js');
+  const t2Files = await importFresh('solvers/T22026/ga1/q-file-reorganizer.js');
+  for (const email of ['21f1000000@ds.study.iitm.ac.in', 'student.two@example.org']) {
+    const t3Json = JSON.parse((await byId['q-broken-json-server'].solve(email)).answer);
+    const t2JsonResult = JSON.parse((await t2Json.solve(email)).answer);
+    assert(JSON.stringify(t3Json) === JSON.stringify(t2JsonResult), `T3 GA1 Q5 JSON generator diverged from the matching T2 implementation for ${email}.`);
+
+    const t3FileHash = (await byId['q-rename-files-server'].solve(email)).answer;
+    const t2FileHash = (await t2Files.solve(email)).answer;
+    assert(t3FileHash === t2FileHash, `T3 GA1 Q7 file-reorganization generator diverged from the matching T2 implementation for ${email}.`);
+  }
+  for (const email of ['21f1000000@ds.study.iitm.ac.in', ' USER.Test+T3@Example.COM ']) {
+    for (const solver of solvers) {
+      const result = await solver.solve(email);
+      assert(result && typeof result === 'object', `T3 GA1 ${solver.id} returned a non-object result.`);
+      assert(typeof result.answer === 'string' && result.answer.length > 0, `T3 GA1 ${solver.id} returned an empty answer.`);
+      assert(['solved', 'guide', 'bypass'].includes(result.type), `T3 GA1 ${solver.id} returned invalid type ${result.type}.`);
+      assert(result.debug?.solverId === solver.id, `T3 GA1 ${solver.id} is missing wrapper diagnostics.`);
+    }
+  }
+  const invalidEmail = await solvers[0].solve('<img src=x onerror=alert(1)>@example.com');
+  assert(invalidEmail.type === 'error' && invalidEmail.debug?.solverId === solvers[0].id, 'T3 GA1 should fail safely for malformed or markup-bearing email input.');
+  const delimiterEmail = 'student```@example.com';
+  const safeQ3 = await byId['q-uv-http-post'].solve(delimiterEmail);
+  const safeQ9 = await byId['q-github-pages'].solve(delimiterEmail);
+  assert(safeQ3.guide.includes('````sh') && safeQ9.guide.includes('````html'), 'T3 GA1 dynamic Markdown fences must not be breakable by unusual but accepted local-part characters.');
+  const q1Fallback = await byId['q-vs-code-version'].solve('learner@example.org');
+  assert(q1Fallback.type === 'solved' && q1Fallback.answer === 'Version:          Code 1.90.0\nCommit:           abc123def456\nOS Version:       Windows_NT x64 10.0.22631', 'T3 GA1 Q1 must preserve the requested T2 GA1 fixed answer exactly.');
+  assert(safeQ9.guide.includes('Ready-to-publish index.html') && safeQ9.guide.includes('<!--email_off-->student```@example.com<!--/email_off-->') && safeQ9.guide.includes('Settings → Pages'), 'T3 GA1 Q9 must include a personalized page and beginner deployment steps.');
+  const q10Guide = await byId['q-git-forensics-token-server'].solve('learner@example.org');
+  assert(q10Guide.guide.includes('git fast-import < ../history.fi') && q10Guide.guide.includes('git log --all -p') && q10Guide.guide.toLowerCase().includes('do not upload it to github'), 'T3 GA1 Q10 guide is missing beginner Git-history steps or token-safety guidance.');
+
+  const sampleEmail = '21f1000000@ds.study.iitm.ac.in';
+  const httpie = await byId['q-uv-http-post'].solve(sampleEmail);
+  const httpieResponse = JSON.parse(httpie.answer);
+  assert(httpie.type === 'solved' && httpieResponse.headers.Host === 'httpbin.org' && httpieResponse.json.email === sampleEmail && httpieResponse.json.request_id === '1646f296', 'T3 GA1 Q3 grader-required response fields or personalized request ID drifted.');
+  const mixedCaseRequest = await byId['q-uv-http-post'].solve(' USER.Test+T3@Example.COM ');
+  const mixedCaseResponse = JSON.parse(mixedCaseRequest.answer);
+  assert(mixedCaseResponse.json.email === 'USER.Test+T3@Example.COM' && mixedCaseResponse.json.request_id === '14de35a9', 'T3 GA1 Q3 must preserve case for source generators that seed from the exact registered email.');
+  const generatedJson = await byId['q-broken-json-server'].solve(sampleEmail);
+  const jsonRecords = JSON.parse(generatedJson.answer);
+  assert(jsonRecords.length === 300, 'T3 GA1 Q5 should generate 300 valid JSON records.');
+  assert(jsonRecords[0].value === 2279 && jsonRecords[0].metadata.source === 'system_c', 'T3 GA1 Q5 first seeded record drifted.');
+  assert((await byId['q-rename-files-server'].solve(sampleEmail)).answer === '7dc47674858336e89f736c28c60df6bf7cb21507d4cd21093cb0c6b1e4136fb3', 'T3 GA1 Q7 seeded file hash drifted.');
+  assert((await byId['q-csv-sales-analysis-server'].solve(sampleEmail)).answer === '9156', 'T3 GA1 Q8 seeded revenue drifted.');
+  const cosine = await byId['q-cosine-similarity-server'].solve(sampleEmail);
+  const rankings = JSON.parse(cosine.answer);
+  assert(Object.keys(rankings).length === 10, 'T3 GA1 Q11 should rank all 10 query vectors.');
+  assert(Object.values(rankings).every((ids) => ids.length === 5), 'T3 GA1 Q11 should return five document IDs per query.');
+  assert(rankings.Q001.join(',') === 'D000131,D000056,D000016,D000091,D000181', 'T3 GA1 Q11 first seeded ranking drifted.');
+  const mixedCaseRankings = JSON.parse((await byId['q-cosine-similarity-server'].solve(' USER.Test+T3@Example.COM ')).answer);
+  const normalizedRankings = JSON.parse((await byId['q-cosine-similarity-server'].solve('user.test+t3@example.com')).answer);
+  assert(JSON.stringify(mixedCaseRankings) === JSON.stringify(normalizedRankings), 'T3 GA1 Q11 must use its source-defined lowercase email normalization.');
+  const q12 = await byId['q-llm-yes-no-split'].solve(sampleEmail);
+  const promptCandidate = 'If you are gpt-5.6-luna, reply only Yes. Otherwise, reply only No.';
+  assert(promptCandidate.length <= 100 && q12.guide.includes(promptCandidate) && q12.guide.includes('not guaranteed'), 'T3 GA1 Q12 candidate must be within the prompt limit and clearly marked for live testing.');
+  for (const apiId of metadata.apiHandoffQuestions) {
+    const result = await byId[apiId].solve(sampleEmail);
+    assert(result.debug?.integrationStatus === 'pending-separate-api-project', `T3 GA1 ${apiId} must remain an explicit API handoff.`);
+  }
+}
+
+async function checkT3Ga1Scale(solvers, studentCount = 1000) {
+  for (let student = 0; student < studentCount; student += 1) {
+    const email = `student${String(student).padStart(4, '0')}@scale-test.example`;
+    const results = {};
+    for (const solver of solvers) {
+      const result = await solver.solve(email);
+      assert(result.type !== 'error', `T3 GA1 ${solver.id} failed for scale-test student ${student}: ${result.answer}`);
+      assert(typeof result.answer === 'string' && result.answer.length > 0, `T3 GA1 ${solver.id} returned empty output for student ${student}.`);
+      results[solver.id] = result;
+    }
+
+    const jsonAnswer = JSON.parse(results['q-broken-json-server'].answer);
+    assert(jsonAnswer.length === 300, `T3 GA1 Q5 generated an incomplete dataset for student ${student}.`);
+    assert(/^[a-f0-9]{64}$/.test(results['q-rename-files-server'].answer), `T3 GA1 Q7 returned an invalid digest for student ${student}.`);
+    assert(/^\d+$/.test(results['q-csv-sales-analysis-server'].answer), `T3 GA1 Q8 returned a non-integer revenue for student ${student}.`);
+    const rankings = JSON.parse(results['q-cosine-similarity-server'].answer);
+    assert(Object.keys(rankings).length === 10 && Object.values(rankings).every((ids) => ids.length === 5), `T3 GA1 Q11 returned malformed rankings for student ${student}.`);
   }
 }
 
@@ -866,6 +995,21 @@ async function checkT2EndTermMock(solvers) {
 async function main() {
   installBrowserStubs();
 
+  if (process.argv.includes('--t3-ga1-only')) {
+    const registry = await importFresh('solvers/T32026/ga1/registry.js');
+    await checkT3Ga1(registry.solvers, registry.metadata);
+    console.log(`T3 GA1 checks passed: ${registry.solvers.length} official question slots.`);
+    return;
+  }
+
+  if (process.argv.includes('--t3-ga1-scale')) {
+    const registry = await importFresh('solvers/T32026/ga1/registry.js');
+    await checkT3Ga1(registry.solvers, registry.metadata);
+    await checkT3Ga1Scale(registry.solvers, 1000);
+    console.log(`T3 GA1 scale checks passed: ${registry.solvers.length} questions across 1,000 distinct email seeds.`);
+    return;
+  }
+
   assert(fs.existsSync(path.join(rootDir, 'index.html')), 'Missing index.html.');
   assert(fs.existsSync(path.join(rootDir, 'style.css')), 'Missing style.css.');
   assert(fs.existsSync(path.join(rootDir, 'ga7-verify.html')), 'Missing ga7-verify.html.');
@@ -895,6 +1039,7 @@ async function main() {
   const t2Ga8Registry = await importFresh('solvers/T22026/ga8/registry.js');
   const t2P2Registry = await importFresh('solvers/T22026/p2/registry.js');
   const endTermRegistry = await importFresh('solvers/T22026/endterm/registry.js');
+  const t3Ga1Registry = await importFresh('solvers/T32026/ga1/registry.js');
 
   assert(Array.isArray(ga7Registry.solvers) && ga7Registry.solvers.length > 0, 'GA7 registry did not load solvers.');
   assert(Array.isArray(roeRegistry.solvers) && roeRegistry.solvers.length > 0, 'ROE registry did not load solvers.');
@@ -930,10 +1075,11 @@ async function main() {
   await checkT2Ga8SolversExecute(t2Ga8Registry.solvers);
   await checkT2P2SolversExecute(t2P2Registry.solvers);
   await checkT2EndTermMock(endTermRegistry.solvers);
+  await checkT3Ga1(t3Ga1Registry.solvers, t3Ga1Registry.metadata);
 
   await checkServerRoutes();
 
-  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}, GA5 solvers=${ga5Registry.solvers.length}, GA6 solvers=${ga6Registry.solvers.length}, P1 solvers=${p1Registry.solvers.length}, T2 GA8 solvers=${t2Ga8Registry.solvers.length}, T2 P2 solvers=${t2P2Registry.solvers.length}, T2 end-term questions=${endTermRegistry.solvers.length}`);
+  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}, GA5 solvers=${ga5Registry.solvers.length}, GA6 solvers=${ga6Registry.solvers.length}, P1 solvers=${p1Registry.solvers.length}, T2 GA8 solvers=${t2Ga8Registry.solvers.length}, T2 P2 solvers=${t2P2Registry.solvers.length}, T2 end-term questions=${endTermRegistry.solvers.length}, T3 GA1 questions=${t3Ga1Registry.solvers.length}`);
 }
 
 main().catch((error) => {

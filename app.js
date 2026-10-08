@@ -135,6 +135,9 @@ const TERM_EXAMS = {
     { group: 'Weekly Graded Assignments', value: 'ga6', label: 'GA 6 (Data Forensics & Automation)' },
     { group: 'Weekly Graded Assignments', value: 'ga7', label: 'GA 7 (Policy Gates & OSINT)' },
     { group: 'Weekly Graded Assignments', value: 'ga8', label: 'GA 8 (MLOps & LLM Systems Gateway)' }
+  ],
+  T32026: [
+    { group: 'Weekly Graded Assignments', value: 'ga1', label: 'GA 1 (Developer Tools)' }
   ]
 };
 
@@ -185,6 +188,15 @@ let toastRoot = null;
 let openPanels = new Set(['Variant', 'Preview', 'Answer', 'Diagnostics']);
 let endTermProgress = null;
 let endTermTimerId = null;
+let portalConfigForWelcome = null;
+
+function updateWelcomeVersion() {
+  const versionEl = document.getElementById('welcomeVersion');
+  if (!versionEl || !portalConfigForWelcome) return;
+  versionEl.innerText = portalConfigForWelcome.terms?.[termSelect.value]?.versionLabel
+    || portalConfigForWelcome.termVersion
+    || '';
+}
 
 window.addEventListener('DOMContentLoaded', () => {
   const savedTerm  = safeStorageGet(STORAGE_KEYS.term);
@@ -197,7 +209,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Restore term first, then populate exam list, then restore exam
   const termKeys = Object.keys(TERM_EXAMS);
-  const latestTerm = termKeys.length > 0 ? termKeys[termKeys.length - 1] : '';
+  const latestTerm = [...termKeys].reverse().find((term) => TERM_EXAMS[term].length > 0)
+    || (termKeys.length > 0 ? termKeys[termKeys.length - 1] : '');
   const activeTerm = savedTerm || latestTerm;
   termSelect.value = activeTerm;
   populateExamSelect(activeTerm);
@@ -249,14 +262,12 @@ window.addEventListener('DOMContentLoaded', () => {
   fetch('tds-config.json')
     .then(res => res.json())
     .then(config => {
+      portalConfigForWelcome = config;
       if (config.termTitle) {
         const titleEl = document.getElementById('welcomeTitle');
         if (titleEl && titleEl.firstChild) titleEl.firstChild.nodeValue = config.termTitle + ' ';
       }
-      if (config.termVersion) {
-        const versionEl = document.getElementById('welcomeVersion');
-        if (versionEl) versionEl.innerText = config.termVersion;
-      }
+      updateWelcomeVersion();
       if (config.termDescription) {
         const descEl = document.getElementById('welcomeDescription');
         if (descEl) descEl.innerText = config.termDescription;
@@ -3148,6 +3159,7 @@ if (sessionTokenInput) {
 }
 termSelect.addEventListener('change', () => {
   populateExamSelect(termSelect.value);
+  updateWelcomeVersion();
   persistUiState();
 });
 examSelect.addEventListener('change', () => {
