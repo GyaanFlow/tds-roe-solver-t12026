@@ -61,21 +61,21 @@ def test_${fn}_property(price, quantity):
 
   date: (fn) => `\
 from hypothesis import given, settings, strategies as st
-from datetime import datetime
 
-@given(st.dates())
-@settings(max_examples=500)
-def test_${fn}_property(d):
-    date_str = d.strftime("%Y-%m-%d")
-    result = ${fn}(date_str)
-    assert isinstance(result, datetime), \\
-        f"Expected datetime, got {type(result)} for {date_str}"
-    assert result.year  == d.year,  \\
-        f"Year mismatch:  {result.year}  != {d.year}  for {date_str}"
-    assert result.month == d.month, \\
-        f"Month mismatch: {result.month} != {d.month} for {date_str}"
-    assert result.day   == d.day,   \\
-        f"Day mismatch:   {result.day}   != {d.day}   for {date_str}"
+@given(st.integers(min_value=2000, max_value=2400))
+@settings(max_examples=200)
+def test_${fn}_property(year):
+
+    # real leap-year check
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+
+        date_str = f"{year}-02-29"
+
+        parsed = ${fn}(date_str)
+
+        assert parsed.year == year, f"Year mismatch: {parsed.year} != {year}"
+        assert parsed.month == 2, f"Month mismatch: {parsed.month} != 2"
+        assert parsed.day == 29, f"Day mismatch: {parsed.day} != 29"
 `,
 
   dedupe: (fn) => `\
