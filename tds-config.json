@@ -1,18 +1,18 @@
 {
   "termTitle": "Tools in Data Science",
   "termVersion": "May 2026",
-  "termDescription": "Diploma level course at IIT Madras bridging the gap between theory and real-world tools implementation.",
-  "instructions": "Select term & exam, enter email to initialize. Computations run instantly and locally.",
+  "termDescription": "Tools in Data Science (TDS) solver for IIT Madras: step-by-step guides for GA0–GA8, ROE, Project 1 & 2 and end-term practice across T1, T2 and T3 2026.",
+  "instructions": "Pick a term and exam, enter your IITM email, and open your workspace instantly in your browser.",
   "terms": {
     "T12026": {
       "label": "T1 2026 (Jan–Apr)",
-      "versionLabel": "Jan 2026",
+      "versionLabel": "T1 2026",
       "active": true,
       "exams": ["roe", "p2", "ga7", "ga8"]
     },
     "T22026": {
       "label": "T2 2026 (May–Sep)",
-      "versionLabel": "May 2026",
+      "versionLabel": "T2 2026",
       "active": true,
       "exams": ["endterm", "roe", "p1", "p2", "ga0", "ga1", "ga2", "ga3", "ga4", "ga5", "ga6", "ga7", "ga8"]
     },

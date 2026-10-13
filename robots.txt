@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /discourse-cache/
+Disallow: /discourse-target-cache/
+Disallow: /scratch/
+
+Sitemap: https://tds-portal-solver.vercel.app/sitemap.xml

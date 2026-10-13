@@ -192,10 +192,33 @@ let portalConfigForWelcome = null;
 
 function updateWelcomeVersion() {
   const versionEl = document.getElementById('welcomeVersion');
-  if (!versionEl || !portalConfigForWelcome) return;
-  versionEl.innerText = portalConfigForWelcome.terms?.[termSelect.value]?.versionLabel
-    || portalConfigForWelcome.termVersion
-    || '';
+  if (!versionEl) return;
+  // If tds-config.json could not be loaded, still show a pill per known term (T12026 -> "T1 2026").
+  const config = portalConfigForWelcome || {
+    terms: Object.fromEntries(Object.keys(TERM_EXAMS).map((id) => [id, { versionLabel: id.replace(/^T(\d)(\d{4})$/, 'T$1 $2') }]))
+  };
+  // One pill per active term in tds-config.json (T1/T2/T3 …); the selected term is highlighted
+  // and clicking a pill switches the sidebar to that term.
+  const terms = Object.entries(config.terms || {}).filter(([, term]) => term.active !== false);
+  versionEl.textContent = '';
+  if (terms.length === 0) {
+    versionEl.textContent = config.termVersion || '';
+    return;
+  }
+  for (const [termId, term] of terms) {
+    const pill = document.createElement('button');
+    pill.type = 'button';
+    pill.className = 'version-badge' + (termId === termSelect.value ? ' active' : '');
+    pill.textContent = term.versionLabel || term.label || termId;
+    pill.title = term.label || termId;
+    pill.setAttribute('aria-pressed', String(termId === termSelect.value));
+    pill.addEventListener('click', () => {
+      if (!TERM_EXAMS[termId]) return;
+      termSelect.value = termId;
+      termSelect.dispatchEvent(new Event('change'));
+    });
+    versionEl.appendChild(pill);
+  }
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -277,7 +300,10 @@ window.addEventListener('DOMContentLoaded', () => {
         if (instEl) instEl.innerText = config.instructions;
       }
     })
-    .catch(err => console.warn('Could not load tds-config.json', err));
+    .catch(err => {
+      console.warn('Could not load tds-config.json', err);
+      updateWelcomeVersion();
+    });
 });
 
 function persistUiState() {
@@ -3495,30 +3521,68 @@ themeButtons.forEach(btn => {
   });
 });
 
-// Bind interactive welcome mini-cards mouse tilt & spotlight
-document.querySelectorAll('.feature-mini-card').forEach(card => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    card.style.setProperty('--x', `${x}px`);
-    card.style.setProperty('--y', `${y}px`);
-    
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -10;
-    const rotateY = ((x - centerX) / centerX) * 10;
-    
-    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  });
-  
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    card.style.removeProperty('--x');
-    card.style.removeProperty('--y');
+// Home-page solver index: "Open workspace" buttons preselect that term + exam in the sidebar.
+document.querySelectorAll('.catalog-open').forEach((button) => {
+  button.addEventListener('click', () => {
+    const term = button.dataset.openTerm;
+    const exam = button.dataset.openExam;
+    if (!TERM_EXAMS[term]?.some((item) => item.value === exam)) return;
+    termSelect.value = term;
+    populateExamSelect(term);
+    examSelect.value = exam;
+    updateWelcomeVersion();
+    toggleSessionTokenField();
+    persistUiState();
+    setMobileNavOpen(true);
+    emailInput.focus();
   });
 });
+
+// Creator card footer: live GitHub numbers (followers, repo stars). Cached for an hour in
+// localStorage, 5s timeout, and any failure just leaves the badges hidden.
+async function initCreatorLiveStats() {
+  const footer = document.getElementById('creatorFooter');
+  if (!footer || typeof fetch !== 'function') return;
+  const CACHE_KEY = 'tdsCreatorStats';
+  const TTL_MS = 60 * 60 * 1000;
+  const show = (stats) => {
+    for (const [key, value] of Object.entries(stats)) {
+      const badge = footer.querySelector(`[data-live="${key}"]`);
+      if (badge && Number.isFinite(value)) {
+        badge.textContent = new Intl.NumberFormat('en', { notation: 'compact' }).format(value);
+        badge.hidden = false;
+      }
+    }
+  };
+  try {
+    const cached = JSON.parse(safeStorageGet(CACHE_KEY) || 'null');
+    if (cached && Date.now() - cached.at < TTL_MS) {
+      show(cached.stats);
+      return;
+    }
+    if (cached && cached.stats) show(cached.stats);
+  } catch (_) { /* ignore corrupt cache */ }
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 5000);
+  try {
+    const [user, repo] = await Promise.all([
+      fetch('https://api.github.com/users/GyaanFlow', { signal: controller.signal }).then((res) => (res.ok ? res.json() : null)),
+      fetch('https://api.github.com/repos/GyaanFlow/tds-roe-solver-t12026', { signal: controller.signal }).then((res) => (res.ok ? res.json() : null))
+    ]);
+    const stats = {};
+    if (user && Number.isFinite(user.followers)) stats.followers = user.followers;
+    if (repo && Number.isFinite(repo.stargazers_count)) stats.stars = repo.stargazers_count;
+    if (Object.keys(stats).length > 0) {
+      show(stats);
+      safeStorageSet(CACHE_KEY, JSON.stringify({ at: Date.now(), stats }));
+    }
+  } catch (_) {
+    /* offline or rate-limited: keep the plain links */
+  } finally {
+    clearTimeout(timer);
+  }
+}
+initCreatorLiveStats();
 
 // Bind interactive disclaimer card mouse tilt & spotlight
 const disclaimerCard = document.getElementById('academicDisclaimer');

@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
+import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import seedrandom from 'seedrandom';
 
@@ -1296,6 +1297,10 @@ async function main() {
   assert(fs.existsSync(path.join(rootDir, 'style.css')), 'Missing style.css.');
   assert(fs.existsSync(path.join(rootDir, 'ga7-verify.html')), 'Missing ga7-verify.html.');
   const appSource = fs.readFileSync(path.join(rootDir, 'app.js'), 'utf8');
+  const catalogRun = spawnSync(process.execPath, ['scripts/build-catalog.mjs', '--check'], { cwd: rootDir, encoding: 'utf8' });
+  assert(catalogRun.status === 0, `Home-page solver index is stale (run node scripts/build-catalog.mjs): ${catalogRun.stderr}${catalogRun.stdout}`);
+  const catalogLabels = [...fs.readFileSync(path.join(rootDir, 'scripts/build-catalog.mjs'), 'utf8').matchAll(/\['(\w+)', '[^']+', '([^']+)', '/g)].map((m) => m[2]);
+  for (const label of catalogLabels) assert(appSource.includes(`label: '${label}'`), `Catalog label "${label}" is missing from TERM_EXAMS in app.js.`);
   assert(appSource.includes('endtermSectionJump'), 'End-term section jump control is missing from app.js.');
   assert(appSource.includes('value="MSQ"') && appSource.includes('value="SUBJECTIVE"'), 'End-term section jump options are incomplete.');
   assert(appSource.includes('previousCanvasScrollTop'), 'End-term re-renders should capture the quiz-pane scroll position.');

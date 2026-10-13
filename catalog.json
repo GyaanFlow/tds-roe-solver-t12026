@@ -1,0 +1,1026 @@
+{
+  "title": "Tools in Data Science (TDS) Solver & Exam Portal — solver index",
+  "terms": [
+    {
+      "id": "T32026",
+      "label": "T3 2026",
+      "period": "Sep–Dec 2026",
+      "exams": [
+        {
+          "id": "ga1",
+          "label": "GA 1 (Developer Tools)",
+          "group": "Weekly Graded Assignments",
+          "description": "Developer tooling, API servers, Git forensics and an agent ledger — including live-API questions.",
+          "solverCount": 16,
+          "questions": [
+            {
+              "id": "q-vs-code-version",
+              "title": "Q1: VS Code Version"
+            },
+            {
+              "id": "q-http-headers-server",
+              "title": "Q2: Find the Code in the Response Headers"
+            },
+            {
+              "id": "q-uv-http-post",
+              "title": "Q3: POST HTTP Requests with uv"
+            },
+            {
+              "id": "q-npx-prettier",
+              "title": "Q4: Run Prettier with npx"
+            },
+            {
+              "id": "q-broken-json-server",
+              "title": "Q5: Fix Broken JSON File"
+            },
+            {
+              "id": "q-config-precedence-server",
+              "title": "Q6: Resolve 12-Factor Config Precedence"
+            },
+            {
+              "id": "q-rename-files-server",
+              "title": "Q7: Reorganize Files with Shell Commands"
+            },
+            {
+              "id": "q-csv-sales-analysis-server",
+              "title": "Q8: Extract and Analyze CSV Sales Data from ZIP"
+            },
+            {
+              "id": "q-github-pages",
+              "title": "Q9: Host Your Portfolio on GitHub Pages"
+            },
+            {
+              "id": "q-git-forensics-token-server",
+              "title": "Q10: Git Forensics — Recover the Leaked Token"
+            },
+            {
+              "id": "q-cosine-similarity-server",
+              "title": "Q11: Cosine Similarity Search"
+            },
+            {
+              "id": "q-llm-yes-no-split",
+              "title": "Q12: One Prompt, Two Models, Two Answers"
+            },
+            {
+              "id": "q-termlog-rec-server",
+              "title": "Q13: Decode It in the Terminal (termlog)"
+            },
+            {
+              "id": "q-mcp-server-live-server",
+              "title": "Q14: Build a Live MCP Server"
+            },
+            {
+              "id": "q-ledger-agent-server",
+              "title": "Q15: The Ledger Agent"
+            },
+            {
+              "id": "q-visual-game-tangram",
+              "title": "Q16: Geometric Reasoning — Tangram"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T22026",
+      "label": "T2 2026",
+      "period": "May–Sep 2026",
+      "exams": [
+        {
+          "id": "ga8",
+          "label": "GA 8 (MLOps & LLM Systems Gateway)",
+          "group": "Weekly Graded Assignments",
+          "description": "MLOps, training-data integrity and LLM gateway systems.",
+          "solverCount": 10,
+          "questions": [
+            {
+              "id": "q-immutable-training-corpus-server",
+              "title": "Q1: Immutable Training Corpus"
+            },
+            {
+              "id": "q-leakage-safe-bqml-server",
+              "title": "Q2: Leakage-Safe BigQuery ML Gate"
+            },
+            {
+              "id": "q-mlflow-evidence-promotion-server",
+              "title": "Q3: MLflow Evidence Promotion Gate"
+            },
+            {
+              "id": "q-peft-repair-server",
+              "title": "Q4: PEFT Choice & Training Repair"
+            },
+            {
+              "id": "q-quantized-model-admission-server",
+              "title": "Q5: Quantized Model Admission Gate"
+            },
+            {
+              "id": "q-content-addressed-pipeline-server",
+              "title": "Q6: Content-Addressed DAG Pipeline"
+            },
+            {
+              "id": "q-verifiable-model-bundle-server",
+              "title": "Q7: Verifiable Model Bundle Verifier"
+            },
+            {
+              "id": "q-lora-quant-budget-server",
+              "title": "Q8: Per-Layer QLoRA Adapter Synthesis & Parameter Audit"
+            },
+            {
+              "id": "q-mlflow-fingerprint-server",
+              "title": "Q9: PyTorch Training Loop & MLflow Fingerprint"
+            },
+            {
+              "id": "q-modelcard-carbon-server",
+              "title": "Q10: Green AI & Model Card Carbon Frontmatter"
+            }
+          ]
+        },
+        {
+          "id": "ga7",
+          "label": "GA 7 (Policy Gates & OSINT)",
+          "group": "Weekly Graded Assignments",
+          "description": "CI/CD release gates, policy checks and OSINT.",
+          "solverCount": 10,
+          "questions": [
+            {
+              "id": "q-cicd-container-release-gate-server",
+              "title": "Q1: CI/CD Container Release Gate"
+            },
+            {
+              "id": "q-llm-action-firewall-server",
+              "title": "Q2: LLM Action Firewall"
+            },
+            {
+              "id": "q-terraform-plan-guard-server",
+              "title": "Q3: Terraform Plan Policy Gate"
+            },
+            {
+              "id": "q-llm-output-sanitizer-server",
+              "title": "Q4: LLM Output Handling Gate (LLM05)"
+            },
+            {
+              "id": "q-osint-corroboration-server",
+              "title": "Q5: OSINT Corroboration Engine"
+            },
+            {
+              "id": "q-streetview-geolocation-server",
+              "title": "Q6: Street View OSINT: Where Is This?"
+            },
+            {
+              "id": "q-google-dorks-advanced",
+              "title": "Q7: Advanced Search Operators"
+            },
+            {
+              "id": "q-cloudflare-waf-bypass",
+              "title": "Q8: WAF Rule Order"
+            },
+            {
+              "id": "q-media-forensics",
+              "title": "Q9: Media Forensics"
+            },
+            {
+              "id": "q-actions-workflow-audit",
+              "title": "Q10: Audit a GitHub Actions Workflow"
+            }
+          ]
+        },
+        {
+          "id": "ga6",
+          "label": "GA 6 (Data Forensics & Automation)",
+          "group": "Weekly Graded Assignments",
+          "description": "Image and data forensics with automation scripts.",
+          "solverCount": 10,
+          "questions": [
+            {
+              "id": "q-rotated-image-grid-forensics-server",
+              "title": "Q1: Image Forensics — Recover a Rotated and Mirrored Grid"
+            },
+            {
+              "id": "q-minimal-prompt-robustness",
+              "title": "Q2: The Multi-Model Robustness Audit"
+            },
+            {
+              "id": "q-duckdb-regression-analysis",
+              "title": "Q3: DuckDB — Multi-Table Linear Regression Analysis"
+            },
+            {
+              "id": "q-playwright-shadow-incident-audit-server",
+              "title": "Q4: Playwright — Reconcile a Paginated Shadow-DOM Incident Audit"
+            },
+            {
+              "id": "q-duckdb-json-ledger-reconciliation-server",
+              "title": "Q5: DuckDB — Reconcile a Versioned Nested-JSON Invoice Ledger"
+            },
+            {
+              "id": "q-politeness-audit-server",
+              "title": "Q6: Crawl a Static Site Respecting robots.txt"
+            },
+            {
+              "id": "q-scrape-books-server",
+              "title": "Q7: Scrape Books to Scrape by Category and Value"
+            },
+            {
+              "id": "q-github-action-playwright",
+              "title": "Q8: GitHub Action — Scrape Table Sums with Playwright"
+            },
+            {
+              "id": "q-playwright-table-server",
+              "title": "Q9: Sum Table Values with Playwright"
+            },
+            {
+              "id": "q-modem-in-static-server",
+              "title": "Q10: Decode a Hidden Modem Signal in Audio"
+            }
+          ]
+        },
+        {
+          "id": "ga5",
+          "label": "GA 5 (Agentic Systems Safety)",
+          "group": "Weekly Graded Assignments",
+          "description": "Agent safety, sandboxing and guard-rail challenges.",
+          "solverCount": 11,
+          "questions": [
+            {
+              "id": "maze-solve-server",
+              "title": "Q1: Solve a Generated Maze Offline"
+            },
+            {
+              "id": "q-spec-driven-correction-server",
+              "title": "Q2: Spec-Driven Development: The Proration Bug"
+            },
+            {
+              "id": "q-agent-tool-guardrail-server",
+              "title": "Q3: Agent Harness — Pre-Tool-Call Guardrail Hook"
+            },
+            {
+              "id": "q-skill-safety-audit-server",
+              "title": "Q4: Skill Safety Audit — Scanner API"
+            },
+            {
+              "id": "q-agent-budget-loop-guardrail-server",
+              "title": "Q5: Agent Harness — Run Budget & Loop Guard"
+            },
+            {
+              "id": "q-mcp-server-live-server",
+              "title": "Q6: Build a Live MCP Server"
+            },
+            {
+              "id": "q-lxd-sandbox-live-server",
+              "title": "Q7: Prove You Contained It (LXD Sandbox)"
+            },
+            {
+              "id": "q-agent-guardrail-redteam-server",
+              "title": "Q8: Guardrail Red-Team Round-Trip"
+            },
+            {
+              "id": "q-taint-aware-agent-executor-server",
+              "title": "Q9: Lethal-Trifecta Mailroom Action Gate"
+            },
+            {
+              "id": "q-a2a-durable-delegate-server",
+              "title": "Q10: A2A Invoice Action Agent"
+            },
+            {
+              "id": "q-agent-trace-integrity-server",
+              "title": "Q11: Build an Observable Incident-Response Agent"
+            }
+          ]
+        },
+        {
+          "id": "ga4",
+          "label": "GA 4 (RAG & Vector Search)",
+          "group": "Weekly Graded Assignments",
+          "description": "Chunking, embeddings, hybrid retrieval and vector search.",
+          "solverCount": 13,
+          "questions": [
+            {
+              "id": "q-rag-chunking-hybrid-search-server",
+              "title": "Q1: End-to-End Chunking & Hybrid Retrieval Pipeline"
+            },
+            {
+              "id": "q-rag-evaluation-harness-server",
+              "title": "Q2: RAG Evaluation Harness (RAGAS-style Metrics)"
+            },
+            {
+              "id": "q-grounded-answer-api-server",
+              "title": "Q3: Anti-Hallucination Grounded Answer API"
+            },
+            {
+              "id": "q-vector-search-rerank-api-server",
+              "title": "Q4: Production Vector Search API with Re-ranking"
+            },
+            {
+              "id": "q-graphrag-pipeline-api-server",
+              "title": "Q5: GraphRAG Pipeline: Extract → Index → Query"
+            },
+            {
+              "id": "q-late-chunking-context-retrieval-server",
+              "title": "Late Chunking with Contextual Retrieval"
+            },
+            {
+              "id": "q-semantic-cache-query-augmentation-server",
+              "title": "Semantic Caching and Query Augmentation"
+            },
+            {
+              "id": "q-multimodal-embedding-calibration-server",
+              "title": "Multimodal Embedding Calibration"
+            },
+            {
+              "id": "q-hyde-hypothetical-retrieval-server",
+              "title": "HyDE: Hypothetical Document Embeddings for Query Augmentation"
+            },
+            {
+              "id": "q-ann-index-recall-latency-server",
+              "title": "ANN Index: IVF Recall vs. Latency Tradeoff"
+            },
+            {
+              "id": "q-semantic-dedup-numeric-guardrail-server",
+              "title": "Semantic Deduplication with Numeric-Fact Guardrails"
+            },
+            {
+              "id": "q-context-assembly-lost-middle-server",
+              "title": "Context Assembly: Beating Lost-in-the-Middle"
+            },
+            {
+              "id": "q-rrf-fusion-server",
+              "title": "Reciprocal Rank Fusion by Hand"
+            }
+          ]
+        },
+        {
+          "id": "ga3",
+          "label": "GA 3 (System & API Architecture)",
+          "group": "Weekly Graded Assignments",
+          "description": "Pipelines and API architecture, including LLM-backed services.",
+          "solverCount": 13,
+          "questions": [
+            {
+              "id": "q-youtube-metadata-filter-server",
+              "title": "Q1: Automated Video Curation Pipeline"
+            },
+            {
+              "id": "q-multimodal-image-qa-server",
+              "title": "Q2: Multimodal Image Question-Answering API"
+            },
+            {
+              "id": "q-invoice-extract-server",
+              "title": "Q3: Fixed Schema Invoice Extraction API"
+            },
+            {
+              "id": "q-dynamic-extract-server",
+              "title": "Q4: Dynamic Schema Structured Extraction API"
+            },
+            {
+              "id": "q-cosine-similarity-server",
+              "title": "Q5: Cosine Similarity Search"
+            },
+            {
+              "id": "q-korean-audio-dataset-server",
+              "title": "Q6: Korean Audio Dataset API Verification"
+            },
+            {
+              "id": "q-structured-extraction-server",
+              "title": "Q7: Invoice Intelligence — Structured Extraction API"
+            },
+            {
+              "id": "q-semantic-rank-server",
+              "title": "Q8: Semantic Search — Top-K Ranking API"
+            },
+            {
+              "id": "q-cot-math-verifier-server",
+              "title": "Q9: Reliable Reasoning — Word-Problem Solver API"
+            },
+            {
+              "id": "q-proof-of-work-server",
+              "title": "Q10: Proof-of-Work Nonce Hunt"
+            },
+            {
+              "id": "q-context-window-heist-server",
+              "title": "Q11: Context Window Heist"
+            },
+            {
+              "id": "q-spin-up-cli-server",
+              "title": "Q12: Spin Up the CLI — LLM CLI Tools"
+            },
+            {
+              "id": "q-embedding-trap-neighbors-server",
+              "title": "Q13: Embedding Trapdoors — Nearest Neighbor Search"
+            }
+          ]
+        },
+        {
+          "id": "ga2",
+          "label": "GA 2 (API Engineering & Cloud Services)",
+          "group": "Weekly Graded Assignments",
+          "description": "Statistics APIs, CORS, serverless endpoints and cloud services.",
+          "solverCount": 10,
+          "questions": [
+            {
+              "id": "q-fastapi-metrics-cors-server",
+              "title": "Q1: Descriptive Statistics with strict CORS"
+            },
+            {
+              "id": "q-oauth-jwks-verify-server",
+              "title": "Q2: OAuth JWT Verification Service"
+            },
+            {
+              "id": "q-config-precedence-server",
+              "title": "Q3: 12-Factor Config Precedence"
+            },
+            {
+              "id": "q-compose-redis-tunnel-server",
+              "title": "Q4: Multi-Container Redis Stack with Tunnel"
+            },
+            {
+              "id": "q-deploy-analytics-platform-server",
+              "title": "Q5: POST Analytics Endpoint"
+            },
+            {
+              "id": "q-observability-metrics-server",
+              "title": "Q6: Production Observability (Metrics & Logs)"
+            },
+            {
+              "id": "q-ollama-tunnel-llm-server",
+              "title": "Q7: Expose a Local LLM through a Tunnel"
+            },
+            {
+              "id": "q-local-llm-structured-server",
+              "title": "Q8: Local LLM Structured-Output Service"
+            },
+            {
+              "id": "q-api-idempotency-pagination-server",
+              "title": "Q9: API Engineering: Idempotency + Pagination + Rate Limit"
+            },
+            {
+              "id": "q-middleware-ratelimit-cors-server",
+              "title": "Q10: Middleware Stack (Rate-Limit, CORS & Context)"
+            }
+          ]
+        },
+        {
+          "id": "ga1",
+          "label": "GA 1 (Developer Tools)",
+          "group": "Weekly Graded Assignments",
+          "description": "Git, GitHub Actions, JSON, shell tools and developer workflows.",
+          "solverCount": 20,
+          "questions": [
+            {
+              "id": "q-vscode-version",
+              "title": "Q1: VS Code Version (code -s)"
+            },
+            {
+              "id": "q-vscode-multicursor",
+              "title": "Q2: Multi-cursor → JSON (jsonhash)"
+            },
+            {
+              "id": "q-prettier-sha256",
+              "title": "Q3: Prettier SHA256 of README.md"
+            },
+            {
+              "id": "q-llm-bash-pipeline",
+              "title": "Q4: LLM Bash Pipeline"
+            },
+            {
+              "id": "q-file-reorganizer",
+              "title": "Q5: Reorganize Files with Shell Commands"
+            },
+            {
+              "id": "q-asciinema-session",
+              "title": "Q6: Record Terminal Session with asciinema"
+            },
+            {
+              "id": "q-config-merge-conflicts",
+              "title": "Q7: Three-Way Configuration Merge: Detect Conflicts"
+            },
+            {
+              "id": "q-git-time-travel",
+              "title": "Q8: Git Time Travel: History Investigation"
+            },
+            {
+              "id": "q-github-pages",
+              "title": "Q9: GitHub Pages with Email"
+            },
+            {
+              "id": "q-github-action-ga1",
+              "title": "Q10: GitHub Action with Email in Step Name"
+            },
+            {
+              "id": "q-uv-http-post",
+              "title": "Q11: POST HTTP requests with uv"
+            },
+            {
+              "id": "q-use-devtools",
+              "title": "Q12: Use DevTools"
+            },
+            {
+              "id": "q-broken-json-server",
+              "title": "Q13: Fix Broken JSON File"
+            },
+            {
+              "id": "q-extract-json-zip",
+              "title": "Q14: Extract JSON from a ZIP"
+            },
+            {
+              "id": "q-unicode-markdown",
+              "title": "Q15: Unicode → Markdown Converter"
+            },
+            {
+              "id": "q-generate-schema",
+              "title": "Q16: Infer SQL Schema from CSVs"
+            },
+            {
+              "id": "q-sql-order-average",
+              "title": "Q17: SQL: Average Order Value"
+            },
+            {
+              "id": "q-markdown-architecture",
+              "title": "Q18: Markdown Deployment Architecture"
+            },
+            {
+              "id": "q-prompt-debugging",
+              "title": "Q19: Debug and Improve a Failing Prompt"
+            },
+            {
+              "id": "q-ai-output-verification",
+              "title": "Q20: Verify and Fix AI-Generated Code"
+            }
+          ]
+        },
+        {
+          "id": "ga0",
+          "label": "GA 0 (Warm-up Exam)",
+          "group": "Weekly Graded Assignments",
+          "description": "Warm-up exam: charts, data repair and file tasks.",
+          "solverCount": 25,
+          "questions": [
+            {
+              "id": "q-axis-scale-manipulation-repair",
+              "title": "Q1: Axis Scale Manipulation Repair"
+            },
+            {
+              "id": "q-binary-eval-rubric",
+              "title": "Q2: Binary Evaluation Rubric"
+            },
+            {
+              "id": "q-bug-hunter-property-based-testing",
+              "title": "Q3: The Bug Hunter (Property-Based Testing)"
+            },
+            {
+              "id": "q-calculate-variance",
+              "title": "Q4: Quality Control (Sample Variance)"
+            },
+            {
+              "id": "q-code-interpreter-ai-analysis",
+              "title": "Q5: Code Interpreter Service"
+            },
+            {
+              "id": "q-colorencoding-server",
+              "title": "Q6: Color Encoding Mismatch Repair"
+            },
+            {
+              "id": "q-crawl-html",
+              "title": "Q7: Crawl HTML: Link Normalization"
+            },
+            {
+              "id": "q-css-selectors-sum",
+              "title": "Q8: CSS Selector Discount Sum"
+            },
+            {
+              "id": "q-dbt-operations-dashboard",
+              "title": "Q9: dbt Operations performance mart"
+            },
+            {
+              "id": "q-fastapi",
+              "title": "Q10: FastAPI Students CSV Service"
+            },
+            {
+              "id": "q-fastapi-sentiment-batch",
+              "title": "Q11: FastAPI Batch Sentiment Analysis"
+            },
+            {
+              "id": "q-get-llm-to-say-yes",
+              "title": "Q12: Get LLM to say YES (Jailbreak)"
+            },
+            {
+              "id": "q-github-action",
+              "title": "Q13: GitHub Action Workflow"
+            },
+            {
+              "id": "q-image-grayscale-rebuild",
+              "title": "Q14: Image Grayscale Reconstruction"
+            },
+            {
+              "id": "q-llm-sentiment-analysis",
+              "title": "Q15: LLM Sentiment Analysis (httpx)"
+            },
+            {
+              "id": "q-move-rename-files",
+              "title": "Q16: Move and rename files"
+            },
+            {
+              "id": "q-network-game-detective",
+              "title": "Q17: Network Game: Graph Detective"
+            },
+            {
+              "id": "q-ollama",
+              "title": "Q18: Local Ollama Endpoint"
+            },
+            {
+              "id": "q-replace-across-files",
+              "title": "Q19: Replace Across Files"
+            },
+            {
+              "id": "q-sort-filter-json",
+              "title": "Q20: Sort and Filter JSON Catalog"
+            },
+            {
+              "id": "q-sql-average-salary",
+              "title": "Q21: Average Salary by Department"
+            },
+            {
+              "id": "q-unicode-data",
+              "title": "Q22: Process Unicode Files"
+            },
+            {
+              "id": "q-use-devtools",
+              "title": "Q23: Use DevTools"
+            },
+            {
+              "id": "q-use-github",
+              "title": "Q24: Use GitHub"
+            },
+            {
+              "id": "q-vercel-latency",
+              "title": "Q25: Vercel Latency"
+            }
+          ]
+        },
+        {
+          "id": "p2",
+          "label": "Project 2",
+          "group": "Projects",
+          "description": "Data case studies solved with analysis and write-ups.",
+          "solverCount": 8,
+          "questions": [
+            {
+              "id": "q-case-dth-month-end-server",
+              "title": "Case Study 1A — DTH Month-End Mystery"
+            },
+            {
+              "id": "q-case-dth-complaints-quiet-server",
+              "title": "Case Study 1B — DTH Complaints Went Quiet"
+            },
+            {
+              "id": "q-case-solar-smell-test-server",
+              "title": "Case Study 2A — Solar Inverter Smell Test"
+            },
+            {
+              "id": "q-case-solar-impact-claim-server",
+              "title": "Case Study 2B — Solar 31.6% Impact Claim"
+            },
+            {
+              "id": "q-case-customs-mismatch-server",
+              "title": "Case Study 3A — Swiss Mismatch Control"
+            },
+            {
+              "id": "q-case-consumer-qc-queue-server",
+              "title": "Case Study 4A — QC Queue Smell Test"
+            },
+            {
+              "id": "q-case-customs-preference-server",
+              "title": "Case Study 3B — Is the Irish Preference Claim Supported?"
+            },
+            {
+              "id": "q-case-consumer-spares-search-server",
+              "title": "Case Study 4B — Spare-Parts Search"
+            }
+          ]
+        },
+        {
+          "id": "p1",
+          "label": "Project 1",
+          "group": "Projects",
+          "description": "AI problem discovery and requirements-interview tasks.",
+          "solverCount": 5,
+          "questions": [
+            {
+              "id": "q-interview-requirements-audio",
+              "title": "Q1: AI Problem Discovery — Requirements Interview"
+            },
+            {
+              "id": "q-model-intelligence-diff",
+              "title": "Q2: Differentiating Model Intelligence"
+            },
+            {
+              "id": "q-gcp-cloud-gcp-cli-server",
+              "title": "Q3: AI Agent GCS Bucket Setup"
+            },
+            {
+              "id": "q-gcp-cloud-eval-dataset-server",
+              "title": "Q4: AI Agent Dataset Upload to GCS"
+            },
+            {
+              "id": "q-tds-project-telegram-bot",
+              "title": "Q5: Data Analyst Telegram Bot"
+            }
+          ]
+        },
+        {
+          "id": "roe",
+          "label": "ROE Re-Exam",
+          "group": "Standard Exams",
+          "description": "Re-examination questions: OSINT, forensics, APIs and data tasks.",
+          "solverCount": 12,
+          "questions": [
+            {
+              "id": "q-streetview-geolocation-server",
+              "title": "Q4: Street View OSINT — Where Is This?"
+            },
+            {
+              "id": "q-donate-marks",
+              "title": "Q6: Donate Your Marks"
+            },
+            {
+              "id": "q-donate-audio",
+              "title": "Q7: Donate Your Marks — Tell Them Why (Audio)"
+            },
+            {
+              "id": "q-incident-atlas-route-server",
+              "title": "Q1: Incident Atlas — Georegister and Route"
+            },
+            {
+              "id": "q-unicode-doppelganger-ledger-server",
+              "title": "Q2: Unicode Doppelganger Ledger Forensics"
+            },
+            {
+              "id": "q-http-cache-time-machine-server",
+              "title": "Q3: HTTP Cache Time Machine — Reconstruct the Shared Cache"
+            },
+            {
+              "id": "q-ai-content-detection",
+              "title": "Q10: Prompt for Detecting AI-Generated Content"
+            },
+            {
+              "id": "q-ai-opportunity-discovery",
+              "title": "Q11: AI Opportunity Discovery"
+            },
+            {
+              "id": "q-unusual-useful-essay-server",
+              "title": "Q9: The Unusual Useful Essay"
+            },
+            {
+              "id": "q-initiative-audio",
+              "title": "Q8: Something You Did On Your Own Initiative (Audio)"
+            },
+            {
+              "id": "q-external-dataset-insight",
+              "title": "Q12: Insights from NSS80 Telecom Data"
+            },
+            {
+              "id": "q-ai-tutor-challenge-server",
+              "title": "Q13: AI Tutor Challenge"
+            }
+          ]
+        },
+        {
+          "id": "endterm",
+          "label": "End-Term Mock (175 MCQ + 25 MSQ + 100 Subjective)",
+          "group": "End-Term Practice",
+          "description": "A 300-question practice bank (MCQ, MSQ and subjective) with worked explanations.",
+          "solverCount": 300
+        }
+      ]
+    },
+    {
+      "id": "T12026",
+      "label": "T1 2026",
+      "period": "Jan–Apr 2026",
+      "exams": [
+        {
+          "id": "ga8",
+          "label": "GA 8 (MLOps & DevOps)",
+          "group": "Weekly Graded Assignments",
+          "description": "GitHub Actions, hash chains and MLOps tasks.",
+          "solverCount": 15,
+          "questions": [
+            {
+              "id": "q-gh-actions-secret-chain",
+              "title": "GitHub Actions: Secret Hash Chain"
+            },
+            {
+              "id": "q-gemini-math-puzzle",
+              "title": "GCP Gemini API: Math Puzzle"
+            },
+            {
+              "id": "q-fastapi-iris-deploy",
+              "title": "Deploy a FastAPI Iris Classifier"
+            },
+            {
+              "id": "q-hf-spaces-ml-api",
+              "title": "Hugging Face Spaces: ML Model API"
+            },
+            {
+              "id": "q-docker-hash-verify",
+              "title": "Docker Multi-stage Build: Verify Your Image"
+            },
+            {
+              "id": "q-mlops-bash-script",
+              "title": "MLOps Bash Script: Deterministic Output"
+            },
+            {
+              "id": "q-precommit-ci-gate",
+              "title": "Pre-commit Hooks + CI Gate: ruff"
+            },
+            {
+              "id": "q-mlops-concepts-quiz",
+              "title": "MLOps Concepts: Hash-Verified Quiz"
+            },
+            {
+              "id": "q-gcp-cloud-run-compute",
+              "title": "GCP Cloud Run: Deploy a Compute Service"
+            },
+            {
+              "id": "q-gcp-cloud-functions-http",
+              "title": "GCP Cloud Functions: HTTP Text Processor"
+            },
+            {
+              "id": "q-gcp-gemini-classification",
+              "title": "GCP AI Studio: Gemini Text Classification"
+            },
+            {
+              "id": "q-gcp-cloud-run-ml",
+              "title": "GCP Cloud Run: Deploy an ML Classifier"
+            },
+            {
+              "id": "q-gcp-cloud-run-envconfig",
+              "title": "GCP Cloud Run: Environment Variable Configuration"
+            },
+            {
+              "id": "q-gcp-cloud-run-hashapi",
+              "title": "GCP Cloud Run: Hash Verification API"
+            },
+            {
+              "id": "q-gcp-gemini-json-extract",
+              "title": "GCP AI Studio: Gemini JSON Data Extraction"
+            }
+          ]
+        },
+        {
+          "id": "ga7",
+          "label": "GA 7 (Data Visualization)",
+          "group": "Weekly Graded Assignments",
+          "description": "Chart repair, colour encoding and visualization fixes.",
+          "solverCount": 15,
+          "questions": [
+            {
+              "id": "q-colorencoding-server",
+              "title": "Fix the Color Encoding Mismatch"
+            },
+            {
+              "id": "q-chartjunk-server",
+              "title": "Chartjunk Removal and Data-Ink Ratio Repair"
+            },
+            {
+              "id": "q-narrative-integration-repair",
+              "title": "Narrative Integration Repair"
+            },
+            {
+              "id": "q-data-narrative-number-reconciliation",
+              "title": "Data-Narrative Number Reconciliation"
+            },
+            {
+              "id": "q-broken-aggregation-sort-repair",
+              "title": "Broken Aggregation and Sort Order Repair"
+            },
+            {
+              "id": "q-axis-scale-manipulation-repair",
+              "title": "Scale Manipulation Repair"
+            },
+            {
+              "id": "q-headline-rewriting",
+              "title": "Headline Rewriting: Description vs Finding"
+            },
+            {
+              "id": "q-prompt-reverse-engineering",
+              "title": "Prompt Reverse-Engineering"
+            },
+            {
+              "id": "q-presentation-prompt-structural-repair",
+              "title": "Presentation Prompt Structural Repair"
+            },
+            {
+              "id": "q-ranked-anomaly-detection",
+              "title": "Ranked Anomaly Detection"
+            },
+            {
+              "id": "q-poisoned-document-detection",
+              "title": "Poisoned Document Detection"
+            },
+            {
+              "id": "q-flaw-priority-ranking",
+              "title": "Flaw Priority Ranking"
+            },
+            {
+              "id": "q-chart-error-detection",
+              "title": "Chart Error Detection"
+            },
+            {
+              "id": "q-deployment-cost-analysis",
+              "title": "Cloud Deployment Cost & Performance Analysis"
+            },
+            {
+              "id": "q-latency-spike-detection",
+              "title": "Service Latency Spike Detection"
+            }
+          ]
+        },
+        {
+          "id": "p2",
+          "label": "Project 2 Part B",
+          "group": "Projects",
+          "description": "Blockchain forensics and QR tracing for Project 2 Part B.",
+          "solverCount": 2,
+          "questions": [
+            {
+              "id": "p2b-q3-qr-forensics",
+              "title": "Q3: QR Forensics — Solana Devnet Tracer"
+            },
+            {
+              "id": "p2b-q4-discourse-kb",
+              "title": "Q4: Discourse KB Solver (50 Tasks)"
+            }
+          ]
+        },
+        {
+          "id": "roe",
+          "label": "ROE Re-Exam",
+          "group": "Standard Exams",
+          "description": "Re-examination questions across APIs, encodings and data tasks.",
+          "solverCount": 15,
+          "questions": [
+            {
+              "id": "q-share-token-server",
+              "title": "Collaborative Token Exchange"
+            },
+            {
+              "id": "q-korean-audio-dataset-server",
+              "title": "韓国語音声データセットAPI検証"
+            },
+            {
+              "id": "q-regex-golf-server",
+              "title": "Regex Golf Challenge"
+            },
+            {
+              "id": "q-maze-solver-server",
+              "title": "Maze Solver with Constraints"
+            },
+            {
+              "id": "q-cipher-trail-server",
+              "title": "Cipher Trail (Caesar Decode)"
+            },
+            {
+              "id": "q-decode-layered-server",
+              "title": "Layered Encoding Challenge"
+            },
+            {
+              "id": "q-region-containing-point-server",
+              "title": "Region Containing Point (Geospatial)"
+            },
+            {
+              "id": "q-rename-files-server",
+              "title": "Reorganize Files (Shell SHA256)"
+            },
+            {
+              "id": "q-python-refactor-server",
+              "title": "Refactor Python Code (PEP 8)"
+            },
+            {
+              "id": "q-broken-json-server",
+              "title": "Fix Broken JSON"
+            },
+            {
+              "id": "q-cross-lingual-entity-disambiguation-server",
+              "title": "Cross-Lingual Entity Disambiguation"
+            },
+            {
+              "id": "q-trick-question-server",
+              "title": "Trick Question (Hidden Chinese)"
+            },
+            {
+              "id": "q-asciirec-server",
+              "title": "Terminal Recording (asciinema)"
+            },
+            {
+              "id": "q-fastapi-sensor-server",
+              "title": "FastAPI IoT Sensor Analytics"
+            },
+            {
+              "id": "q-video-attendee-server",
+              "title": "Video Attendee Extraction (Gemini)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
