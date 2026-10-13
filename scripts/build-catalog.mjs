@@ -227,7 +227,7 @@ function describePortal(config) {
     byYear.set(match[2], [...(byYear.get(match[2]) ?? []), `T${match[1]}`]);
   }
   const span = joinList([...byYear].map(([year, labels]) => `${joinList(labels.sort())} ${year}`));
-  return `Tools in Data Science (TDS) solver for IIT Madras: step-by-step guides for ${joinList(parts)} across ${span}.`;
+  return `Tools in Data Science (TDS) solver for IIT Madras TDS community: step-by-step guides for ${joinList(parts)} across ${span}.`;
 }
 const FORBIDDEN_WORDS = /\b(answers?|solutions?)\b/i;
 const portalConfig = JSON.parse(fs.readFileSync(path.join(root, 'tds-config.json'), 'utf8'));
