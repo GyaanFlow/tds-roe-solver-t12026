@@ -1,15 +1,15 @@
-import { makeGuideResult } from './utils.js';
+import { apiAnswer, ga1Url } from './api-client.js';
 
 export const id = 'q-mcp-server-live-server';
 export const title = 'Q14: Build a Live MCP Server';
 
-export async function solve() {
-  return {
-    ...makeGuideResult(
-      'API implementation intentionally deferred to the separate T3 API project.',
-      '### API project handoff\n\nThis question requires a public HTTPS MCP endpoint with exactly one `solve_challenge` tool. For each tool call, read `X-Exam-Challenge` from the HTTP request headers and return the first 16 lowercase hex characters of `SHA-256(challenge + ":" + normalizedEmail)` in one MCP text block. The grader makes five calls with fresh challenges.\n\nPer your project split, the server implementation is deferred. When it is ready, connect its endpoint through the T3 GA1 solver and keep the challenge-per-call behavior; a value computed during solver initialization will not pass later calls.',
-      'API handoff | implementation pending',
-    ),
-    debug: { integrationStatus: 'pending-separate-api-project' },
-  };
+export async function solve(email) {
+  const url = ga1Url(email, '/mcp');
+  return apiAnswer({
+    title,
+    url,
+    variant: 'Live MCP endpoint',
+    notes: 'The server exposes exactly one tool, `solve_challenge`. On every call it reads that call\'s fresh `X-Exam-Challenge` header and returns the first 16 lowercase hex characters of `SHA-256("{challenge}:{your email}")`. Nothing is precomputed, because the grader makes five calls with five different challenges and any single failure scores zero.',
+    debug: { question: 'Q14', route: '/mcp' },
+  });
 }

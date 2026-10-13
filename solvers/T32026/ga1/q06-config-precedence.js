@@ -1,15 +1,15 @@
-import { makeGuideResult } from './utils.js';
+import { apiAnswer, ga1Url } from './api-client.js';
 
 export const id = 'q-config-precedence-server';
 export const title = 'Q6: Resolve 12-Factor Config Precedence';
 
-export async function solve() {
-  return {
-    ...makeGuideResult(
-      'API implementation intentionally deferred to the separate T3 API project.',
-      '### API project handoff\n\nThis question asks you to deploy a FastAPI service that merges defaults, YAML, `.env`, OS environment variables, and fresh CLI query overrides, then exposes an `/effective-config` endpoint. Per your project split, API implementation is deferred.\n\nWhen integrating the separate API project, preserve precedence in this exact order: defaults → environment YAML → `.env` → `APP_*` OS variables → repeated `?set=key=value` CLI overrides. Convert `NUM_WORKERS` to `workers`, preserve booleans and numeric types, and return only the five requested effective keys.',
-      'API handoff | implementation pending',
-    ),
-    debug: { integrationStatus: 'pending-separate-api-project' },
-  };
+export async function solve(email) {
+  const url = ga1Url(email, '/effective-config');
+  return apiAnswer({
+    title,
+    url,
+    variant: 'Live /effective-config endpoint',
+    notes: 'The grader appends its own fresh `?set=key=value` overrides on every check, so submit the URL **without** any `?set=` of your own. The service merges your assigned defaults → YAML → `.env` → `APP_*` environment layers, applies the overrides last, coerces `port`/`workers` to integers and `debug` to a boolean, and always masks `api_key` as `****`.',
+    debug: { question: 'Q6', route: '/effective-config' },
+  });
 }

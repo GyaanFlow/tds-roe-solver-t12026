@@ -2222,6 +2222,43 @@ function renderCanvas(index) {
   }
 }
 
+// Lets an on-demand solver widget replace its own result once the user supplies input that cannot
+// exist at compile time (T3 GA1 Q15: the student's private Ledger link). Only the fields below can
+// be changed, so a widget can never rewrite another question's answer or the workspace itself.
+const PATCHABLE_ANSWER_FIELDS = ['answer', 'type', 'variant', 'answerDisplay', 'guide', 'usesHostedApi'];
+
+function patchAnswer(solverId, patch) {
+  if (!patch || typeof patch !== 'object' || typeof patch.answer !== 'string' || !patch.answer.trim()) return false;
+  const index = workspaceData.answers.findIndex((entry) => entry.id === solverId);
+  if (index === -1) return false;
+
+  const current = workspaceData.answers[index];
+  const previousType = current.type;
+  for (const field of PATCHABLE_ANSWER_FIELDS) {
+    if (field in patch) current[field] = patch[field];
+  }
+  if (patch.debug && typeof patch.debug === 'object') current.debug = { ...current.debug, ...patch.debug };
+
+  // Keep the sidebar dot and the Solved/Manual counters in step with the new result type.
+  const node = document.querySelector(`.nav-item[data-idx="${index}"]`);
+  if (node) {
+    const wasActive = node.classList.contains('active');
+    const replacement = renderSidebarNode(index, current.title, current.type);
+    if (wasActive) replacement.classList.add('active');
+    node.replaceWith(replacement);
+  }
+  if (previousType !== current.type) {
+    const counters = { solved: statSolved, bypass: statBypass, guide: statGuide };
+    if (counters[previousType]) counters[previousType].innerText = String(Math.max(0, Number(counters[previousType].innerText) - 1));
+    if (counters[current.type]) counters[current.type].innerText = String(Number(counters[current.type].innerText) + 1);
+  }
+
+  if (selectedQuestionIndex === index) renderCanvas(index);
+  return true;
+}
+
+window.tdsPatchAnswer = patchAnswer;
+
 async function startSolving() {
   const agreeDisclaimerCheckbox = document.getElementById('agreeDisclaimerCheckbox');
   if (agreeDisclaimerCheckbox && !agreeDisclaimerCheckbox.checked) {

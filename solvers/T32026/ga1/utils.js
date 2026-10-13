@@ -14,11 +14,35 @@ export function markdownCodeBlock(value, language = '') {
   return `${fence}${language}\n${content}\n${fence}`;
 }
 
+/** Escape text for safe use in HTML element content AND double/single-quoted attribute values. */
+export function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+let nodeSeedrandom = null;
+
 export function rng(seed) {
-  if (typeof Math.seedrandom !== 'function') {
-    throw new Error('The seeded random generator did not load. Reload the portal and try again.');
+  if (typeof Math.seedrandom === 'function') {
+    return new Math.seedrandom(seed);
   }
-  return new Math.seedrandom(seed);
+  if (nodeSeedrandom) {
+    return nodeSeedrandom(seed);
+  }
+  // If running in Node or testing environments
+  if (typeof globalThis !== 'undefined' && globalThis.Math?.seedrandom) {
+    return new globalThis.Math.seedrandom(seed);
+  }
+  throw new Error('The seeded random generator did not load. Reload the portal and try again.');
+}
+
+// Allow node/tests to set seedrandom generator
+export function setSeedrandom(fn) {
+  nodeSeedrandom = fn;
 }
 
 export async function sha256(value) {

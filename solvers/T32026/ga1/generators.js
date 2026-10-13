@@ -34,22 +34,33 @@ function makePrettierInput(email) {
 
 let prettierModulesPromise;
 
-function loadPrettierModules() {
+async function loadPrettierModules() {
   if (!prettierModulesPromise) {
-    let timeoutId;
-    const imports = Promise.all([
-      import('https://cdn.jsdelivr.net/npm/prettier@3.4.2/+esm'),
-      import('https://cdn.jsdelivr.net/npm/prettier@3.4.2/plugins/markdown.mjs'),
-    ]);
-    const timeout = new Promise((_, reject) => {
-      timeoutId = setTimeout(() => reject(new Error('Prettier CDN load timed out after 12 seconds.')), 12000);
-    });
-    prettierModulesPromise = Promise.race([imports, timeout])
-      .finally(() => clearTimeout(timeoutId))
-      .catch((error) => {
-        prettierModulesPromise = null;
-        throw error;
+    prettierModulesPromise = (async () => {
+      // If running in Node.js environment
+      if (typeof process !== 'undefined' && process.versions?.node) {
+        try {
+          const prettier = await import('prettier');
+          const markdownPlugin = await import('prettier/plugins/markdown');
+          return [prettier, markdownPlugin];
+        } catch (_) {}
+      }
+
+      // Browser CDN import
+      let timeoutId;
+      const imports = Promise.all([
+        import('https://cdn.jsdelivr.net/npm/prettier@3.4.2/+esm'),
+        import('https://cdn.jsdelivr.net/npm/prettier@3.4.2/plugins/markdown.mjs'),
+      ]);
+      const timeout = new Promise((_, reject) => {
+        timeoutId = setTimeout(() => reject(new Error('Prettier CDN load timed out after 12 seconds.')), 12000);
       });
+      return Promise.race([imports, timeout])
+        .finally(() => clearTimeout(timeoutId));
+    })().catch((error) => {
+      prettierModulesPromise = null;
+      throw error;
+    });
   }
   return prettierModulesPromise;
 }
@@ -57,7 +68,9 @@ function loadPrettierModules() {
 export async function solvePrettierHash(email) {
   const source = makePrettierInput(email);
   try {
-    const [{ format }, { default: markdownPlugin }] = await loadPrettierModules();
+    const [prettierMod, pluginMod] = await loadPrettierModules();
+    const format = prettierMod.format || prettierMod.default?.format;
+    const markdownPlugin = pluginMod.default || pluginMod;
     const formatted = await format(source, { parser: 'markdown', plugins: [markdownPlugin] });
     return { hash: await sha256(formatted), sourceBytes: new TextEncoder().encode(source).length };
   } catch (error) {

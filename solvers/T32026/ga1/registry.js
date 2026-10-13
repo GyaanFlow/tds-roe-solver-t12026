@@ -22,7 +22,7 @@ export const solvers = [
   q03, // Q3  - deterministic HTTPie request plus live submission guide
   q04, // Q4  - pinned Prettier Markdown hash
   q05, // Q5  - reconstructed seeded JSON source data
-  q06, // Q6  - FastAPI config precedence; separate API project handoff
+  q06, // Q6  - FastAPI config precedence; live API URL
   q07, // Q7  - seeded file reorganization hash
   q08, // Q8  - seeded CSV revenue
   q09, // Q9  - personal GitHub Pages deployment
@@ -30,8 +30,8 @@ export const solvers = [
   q11, // Q11 - seeded cosine-similarity rankings
   q12, // Q12 - live calls to two LLMs
   q13, // Q13 - live signed termlog artifact
-  q14, // Q14 - MCP server; separate API project handoff
-  q15, // Q15 - ledger agent API; separate API project handoff
+  q14, // Q14 - MCP server; live API URL
+  q15, // Q15 - ledger agent API; live URL generated from the student's private Ledger link
   q16, // Q16 - interactive Tangram and signed game token
 ].map(wrapSolverModule);
 
