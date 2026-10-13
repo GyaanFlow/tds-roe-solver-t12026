@@ -13,12 +13,12 @@ const END = '<!-- CATALOG:END -->';
 const VISIBLE_EXAMS = 4;
 const SITE_URL = 'https://tds-portal-solver.vercel.app';
 
-// Labels mirror TERM_EXAMS in app.js (check.mjs asserts they stay in sync).
-const TERMS = [
-  { id: 'T32026', label: 'T3 2026', note: 'Sep–Dec 2026', status: 'Current term' },
-  { id: 'T22026', label: 'T2 2026', note: 'May–Sep 2026', status: 'Recent term' },
-  { id: 'T12026', label: 'T1 2026', note: 'Jan–Apr 2026', status: 'Archive' },
-];
+// Which terms exist, and which exams each has, comes from tds-config.json. Everything below is
+// optional polish: a term/exam missing from these tables still appears, with a label and blurb
+// derived from its id, so adding content never needs an edit here.
+// Periods shown next to a term (optional; otherwise taken from the config label if it has one).
+const TERM_PERIODS = { T32026: 'Sep–Dec 2026', T22026: 'May–Sep 2026', T12026: 'Jan–Apr 2026' };
+// Hand-written labels and blurbs (labels mirror TERM_EXAMS in app.js; check.mjs asserts they match).
 const EXAMS = {
   T32026: [
     ['ga1', 'Weekly Graded Assignments', 'GA 1 (Developer Tools)', 'Developer tooling, API servers, Git forensics and an agent ledger — including live-API questions.'],
@@ -53,21 +53,46 @@ const esc = (value) => String(value ?? '')
   .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
 
+const parseTermId = (id) => {
+  const match = id.match(/^T(\d+)(\d{4})$/);
+  return match ? { number: Number(match[1]), year: Number(match[2]) } : { number: 0, year: 0 };
+};
+
+// Fallback metadata for exams that have no hand-written entry above.
+function deriveExam(id) {
+  const ga = id.match(/^ga(\d+)$/);
+  if (ga) return ['Weekly Graded Assignments', `GA ${ga[1]}`, `Solvers for graded assignment ${ga[1]}.`];
+  const project = id.match(/^p(\d+)$/);
+  if (project) return ['Projects', `Project ${project[1]}`, `Solvers for project ${project[1]}.`];
+  if (id === 'roe') return ['Standard Exams', 'ROE Re-Exam', 'Re-examination solvers.'];
+  if (id === 'endterm') return ['End-Term Practice', 'End-Term Mock', 'End-term practice questions.'];
+  return ['Other', id.toUpperCase(), `Solvers for ${id}.`];
+}
+
 async function loadCatalog() {
   const config = JSON.parse(fs.readFileSync(path.join(root, 'tds-config.json'), 'utf8'));
+  // Newest term first (by year, then term number).
+  const termIds = Object.entries(config.terms)
+    .filter(([, term]) => term.active !== false)
+    .map(([id]) => id)
+    .sort((a, b) => parseTermId(b).year - parseTermId(a).year || parseTermId(b).number - parseTermId(a).number);
   const terms = [];
-  for (const term of TERMS) {
+  for (const [index, id] of termIds.entries()) {
+    const parsed = parseTermId(id);
+    const configTerm = config.terms[id];
+    const label = parsed.number ? `T${parsed.number} ${parsed.year}` : (configTerm.label || id);
+    const note = TERM_PERIODS[id] ?? configTerm.label?.match(/\(([^)]+)\)/)?.[1] ?? '';
+    const known = new Map((EXAMS[id] ?? []).map(([examId, ...meta]) => [examId, meta]));
     const exams = [];
-    for (const [id, group, label, blurb] of [...EXAMS[term.id]].reverse()) {
-      if (!config.terms[term.id].exams.includes(id)) throw new Error(`${term.id}/${id} is not in tds-config.json`);
-      const registry = await import(pathToFileURL(path.join(root, 'solvers', term.id, id, 'registry.js')).href);
+    // Config lists exams oldest-first, so reverse: newest work comes first within a term.
+    for (const examId of [...configTerm.exams].reverse()) {
+      const [group, examLabel, blurb] = known.get(examId) ?? deriveExam(examId);
+      const registry = await import(pathToFileURL(path.join(root, 'solvers', id, examId, 'registry.js')).href);
       const questions = registry.solvers.map((solver) => ({ id: solver.id, title: solver.title }));
-      exams.push({ id, group, label, blurb, count: questions.length, summarised: questions.length > SUMMARISE_ABOVE, questions });
+      exams.push({ id: examId, group, label: examLabel, blurb, count: questions.length, summarised: questions.length > SUMMARISE_ABOVE, questions });
     }
-    for (const id of config.terms[term.id].exams) {
-      if (!EXAMS[term.id].some(([examId]) => examId === id)) throw new Error(`${term.id}/${id} is in tds-config.json but missing from scripts/build-catalog.mjs`);
-    }
-    terms.push({ ...term, exams });
+    const status = index === 0 ? 'current' : index === 1 ? 'recent' : 'archive';
+    terms.push({ id, label, note, status, statusLabel: { current: 'Current term', recent: 'Recent term', archive: 'Archive' }[status], exams });
   }
   return terms;
 }
@@ -77,9 +102,9 @@ function renderExam(term, exam, open, rank = -1) {
     ? `<p class="catalog-note">${esc(plural(exam.count, 'practice question'))} with explanations — open the workspace to browse and practise them.</p>`
     : `<ol class="catalog-questions">${exam.questions.map((q) => `<li>${esc(q.title)}</li>`).join('')}</ol>`;
   return [
-    `<details class="catalog-exam${rank === 0 ? ' catalog-feature' : ''}"${open ? ' open' : ''} id="${term.id}-${exam.id}" data-term="${term.id}" data-exam="${exam.id}">`,
+    `<details class="catalog-exam${rank === 0 ? ' catalog-feature' : ''}"${open ? ' open' : ''} id="${term.id}-${exam.id}" data-term="${term.id}" data-status="${term.status}" data-exam="${exam.id}">`,
     `<summary>${rank === 0 ? '<span class="catalog-live"><i></i>Newest solver</span>' : ''}<span class="catalog-exam-name">${esc(exam.label)}</span>`,
-    `<span class="catalog-chip"><b>${esc(term.label)}</b>${esc(term.status)}</span>`,
+    `<span class="catalog-chip"><b>${esc(term.label)}</b>${esc(term.statusLabel)}</span>`,
     `<span class="catalog-count">${esc(plural(exam.count, 'solver'))}</span></summary>`,
     `<p class="catalog-blurb">${esc(exam.blurb)}</p>`,
     body,
@@ -103,7 +128,7 @@ function renderHtml(terms) {
     '<h2 id="catalogTitle">What this portal can solve</h2>',
     `<p>${esc(plural(flat.length, 'exam'))}, ${esc(plural(terms.length, 'term'))} and <strong>${total}</strong> deterministic solvers for IIT Madras Tools in Data Science — every solver runs in your browser from your IITM email.</p>`,
     '</div>',
-    `<h3 class="catalog-sub catalog-sub-latest">Latest additions <span>newest first · ${esc(latest.length)} most recent solver sets</span></h3>`,
+    `<h3 class="catalog-sub catalog-sub-latest">Latest additions <span>newest first · from ${esc(joinList([...new Set(latest.map(({ term }) => term.label))]))}</span></h3>`,
     `<div class="catalog-grid catalog-latest">${latest.map(({ term, exam }, rank) => renderExam(term, exam, false, rank)).join('')}</div>`,
     '<details class="catalog-more">',
     `<summary>Browse all ${flat.length} exams and ${total} solvers</summary>`,

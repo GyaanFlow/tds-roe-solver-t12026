@@ -3721,9 +3721,9 @@ body {
 
 /* Latest additions: term-coloured, newest solver featured */
 .catalog-exam { --term: var(--theme-primary); }
-.catalog-exam[data-term="T32026"] { --term: #34d399; --term-glow: rgba(52, 211, 153, 0.35); }
-.catalog-exam[data-term="T22026"] { --term: #f59e0b; --term-glow: rgba(245, 158, 11, 0.35); }
-.catalog-exam[data-term="T12026"] { --term: #60a5fa; --term-glow: rgba(96, 165, 250, 0.35); }
+.catalog-exam[data-status="current"] { --term: #34d399; --term-glow: rgba(52, 211, 153, 0.35); }
+.catalog-exam[data-status="recent"] { --term: #f59e0b; --term-glow: rgba(245, 158, 11, 0.35); }
+.catalog-exam[data-status="archive"] { --term: #60a5fa; --term-glow: rgba(96, 165, 250, 0.35); }
 .catalog-exam { border-left: 3px solid var(--term); }
 .catalog-exam:hover, .catalog-exam[open] { border-color: var(--term); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 18px var(--term-glow, var(--theme-glow)); }
 .catalog-chip { color: var(--term); background: transparent; border-color: var(--term); display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px 2px 2px; }
