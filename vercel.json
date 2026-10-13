@@ -1,4 +1,6 @@
 {
+  "buildCommand": "node scripts/build-catalog.mjs || echo \"catalog build skipped\"",
+  "outputDirectory": ".",
   "headers": [
     {
       "source": "/(.*).js",
