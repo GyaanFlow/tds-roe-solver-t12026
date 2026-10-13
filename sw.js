@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tds-portal-v51';
+const CACHE_NAME = 'tds-portal-v54';
 
 const CORE_ASSETS = [
   '/',
@@ -6,6 +6,7 @@ const CORE_ASSETS = [
   '/style.css',
   '/manifest.json',
   '/tds-config.json',
+  '/vendor/seedrandom.min.js',
   // CDNs
   'https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/seedrandom.min.js',
   'https://cdn.jsdelivr.net/npm/marked/marked.min.js',

@@ -99,10 +99,11 @@ To align fully with the **IIT Madras Student Code of Conduct**, the workspace im
 
 ## 🎯 Complete Exam Registry & Computational Engines
 
-The registry is split into Term 1 2026 (`T12026`) and Term 2 2026 (`T22026`), with solver suites plus a dedicated 300-question end-term practice workspace:
+The registry includes Term 1 2026 (`T12026`), Term 2 2026 (`T22026`), and Term 3 2026 (`T32026`; official term dates TBD). T3 GA1 follows the official September 2026 question bundle and preserves all 16 question slots. Five deterministic questions have local answer generation; three API deployment questions are explicit handoffs to the separate API project; other live-personal tasks are shown as guides rather than guessed answers. T1/T2 solver suites and the dedicated 300-question T2 end-term practice workspace are available:
 
 | Target Engine | Term | Scope | Technical Highlights & Capabilities |
 | :--- | :--- | :--- | :--- |
+| **GA1** | `T32026` | **Developer Tools (September 2026)** | **16 official question slots** with pinned source snapshot, seeded Prettier/JSON/file-layout/CSV/cosine generators, explicit guides for live or personal tasks, and separate API handoffs for Q6, Q14, and Q15. |
 | **End-Term Mock** | `T22026` | **May 2026 Full-Course Practice** | **300-question pool**: 175 MCQs, 25 MSQs, and 100 subjective prompts, presented in a dedicated quiz UI with section jumping, answer checking, a five-step subjective guide, detailed explanations, model answers, self-assessment rubrics, bookmarks, timer, and per-email local progress. Reference-only practice material; no score guarantee. |
 | **P2** | `T22026` | **Project 2 — Forensic Case Studies** | **8 Case Studies (100 Marks)**: DTH Month-End Mystery (`DF-00020`/`$0.00`), DTH Complaints Quiet (NovaIVR/CareDesk dropouts, 5 diagnostic questions), Solar Inverter Smell Test (INV-17/0 MW telemetry), Solar 31.6% DSM Claim (within-day ~17.5% counterfactual decomposition), Swiss Customs Mismatch (tariff 9021.10.00 schema mapping), QC Queue Smell Test (02:10:00 AM QCore snapshot / 48h LabTrack latency), Irish Preference Claim (SUP-02 / P1006 / IE-2025-000411 2025 LTSD), and Spare-Parts Search ($123,565.26 inventory risk classification). Includes the full **Rubric Intelligence Terminal**. |
 | **GA8** | `T22026` | **LLM Eval, Guardrails & MLOps** | **10 Solvers**: Automated RAG hallucination scanners, LLM benchmark pipelines, semantic guardrail firewalls, model drift analyzers, and Docker/Cloud Run deployment scripts. |
@@ -144,25 +145,26 @@ tds-roe-solver/
 │   │   ├── 📂 ga8/               # Docker verification & Cloud Run triggers
 │   │   ├── 📂 roe/               # Maze pathfinding & regex golf solvers
 │   │   └── 📂 p2/                # Solana devnet QR & Discourse facts indexer
-│   └── 📂 T22026/                # Term 2 2026 Exam Registry (GA0–GA8 + ROE + P1 + P2)
-│       ├── 📂 ga0/ ... 📂 ga8/   # Modular deterministic solvers (GA0 through GA8)
-│       ├── 📂 p1/                # Project 1 AI Agent & GCS setups
-│       ├── 📂 p2/                # 🔥 Project 2 Case Study Engine & Rubric Coach
-│       │   ├── 📄 case-specs.js  # Case boundaries, headings & rubric criteria
-│       │   ├── 📄 rubric-coach.js# Rubric Coach terminal & draft evaluator
-│       │   ├── 📄 lock-config.js # Access control configuration & whitelist
-│       │   ├── 📄 runtime.js     # Solver execution wrapper & diagnostics
-│       │   ├── 📄 variations-engine.js # PRNG variation & table generator
-│       │   ├── 📄 registry.js    # Ordered question registry (1-to-1 live exam match)
-│       │   ├── 📄 q-case-1a.js   # Case 1A: DTH Month-End Mystery
-│       │   ├── 📄 q-case-1b.js   # Case 1B: DTH Complaints Went Quiet
-│       │   ├── 📄 q-case-2a.js   # Case 2A: Solar Inverter Smell Test
-│       │   ├── 📄 q-case-2b.js   # Case 2B: Solar 31.6% Impact Claim
-│       │   ├── 📄 q-case-3a.js   # Case 3A: Swiss Mismatch Control
-│       │   ├── 📄 q-case-4a.js   # Case 4A: QC Queue Smell Test
-│       │   ├── 📄 q-case-3b.js   # Case 3B: Irish Preference Claim
-│       │   └── 📄 q-case-4b.js   # Case 4B: Spare-Parts Search
-│       └── 📂 roe/               # Re-Exam solvers & offline CLI fallbacks
+│   ├── 📂 T22026/                # Term 2 2026 Exam Registry (GA0–GA8 + ROE + P1 + P2)
+│   │   ├── 📂 ga0/ ... 📂 ga8/   # Modular deterministic solvers (GA0 through GA8)
+│   │   ├── 📂 p1/                # Project 1 AI Agent & GCS setups
+│   │   ├── 📂 p2/                # Project 2 Case Study Engine & Rubric Coach
+│   │   │   ├── 📄 case-specs.js  # Case boundaries, headings & rubric criteria
+│   │   │   ├── 📄 rubric-coach.js# Rubric Coach terminal & draft evaluator
+│   │   │   ├── 📄 lock-config.js # Access control configuration & whitelist
+│   │   │   ├── 📄 runtime.js     # Solver execution wrapper & diagnostics
+│   │   │   ├── 📄 variations-engine.js # PRNG variation & table generator
+│   │   │   ├── 📄 registry.js    # Ordered question registry (1-to-1 live exam match)
+│   │   │   ├── 📄 q-case-1a.js   # Case 1A: DTH Month-End Mystery
+│   │   │   ├── 📄 q-case-1b.js   # Case 1B: DTH Complaints Went Quiet
+│   │   │   ├── 📄 q-case-2a.js   # Case 2A: Solar Inverter Smell Test
+│   │   │   ├── 📄 q-case-2b.js   # Case 2B: Solar 31.6% Impact Claim
+│   │   │   ├── 📄 q-case-3a.js   # Case 3A: Swiss Mismatch Control
+│   │   │   ├── 📄 q-case-4a.js   # Case 4A: QC Queue Smell Test
+│   │   │   ├── 📄 q-case-3b.js   # Case 3B: Irish Preference Claim
+│   │   │   └── 📄 q-case-4b.js   # Case 4B: Spare-Parts Search
+│   │   ├── 📂 roe/               # Re-Exam solvers & offline CLI fallbacks
+│   └── 📂 T32026/                # Term 3 GA1 official bundle and solver suite
 ├── 📂 scratch/                   # Automated Monte Carlo stress test harnesses
 ├── 📄 app.js                     # Central UI state machine & event orchestrator
 ├── 📄 check.mjs                  # Comprehensive multi-term test suite (14 modules)

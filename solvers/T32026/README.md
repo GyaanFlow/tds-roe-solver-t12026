@@ -1,0 +1,26 @@
+# T3 2026 Solver Notes
+
+T3 is selectable in the portal; official term dates remain TBD. GA1 is the September 2026 exam bundle.
+
+## GA1: Developer Tools
+
+- Official source snapshot: `ga1/exam-source.js` from `https://exam.sanand.workers.dev/exam-tds-2026-09-ga1.js`.
+- The ordered registry exposes all 16 official question IDs and keeps their original order.
+- Exact local generation is implemented where the bundle's answer is reproducible without a live user environment: Q3 grader-compatible HTTPie response, Q4 Prettier hash, Q5 valid JSON source, Q7 reorganization hash, Q8 revenue, and Q11 cosine rankings.
+- Q6, Q14 and Q15 are wired to the separate T3 GA1 API (`tds-roe-solver-api/T32026/GA1`, hosted at `tds-roe-solver-api-t12026.onrender.com`; integration contract in that folder's `SOLVER_INTEGRATION_GUIDE.md`). Q6 answers `/ga1/{email}/effective-config` and Q14 answers `/ga1/{email}/mcp`, built from the trimmed, lower-cased, URL-encoded email by `ga1/api-client.js`. Q15 cannot be precomputed: its form takes the student's private Ledger link, validates it (exam host, `q-ledger-agent-server`, same email, has `quizSign`) before anything is sent, wakes the Render API via `/health`, posts the link once to `/ga1/onboard`, verifies that the returned submit URL points back at this API for this email, and then fills the real Answer box through `window.tdsPatchAnswer` (see `app.js`). Live-checked against the official grader logic: Q6 matched the exam bundle's own config generator for 5 emails x 4 override sets, and Q14 passed the full MCP handshake plus five fresh-challenge calls.
+- Q1 returns the fixed T2 GA1-compatible three-line answer for every user; it is a shared constant, not machine-detected output. Q9 includes a personalized, ready-to-publish page and a beginner deployment/troubleshooting guide, but each learner must publish and submit their own GitHub Pages URL. Q10 can be solved directly from an uploaded or pasted copy of the student's `history.fi`: `ga1/git-history.js` parses the `git fast-import` stream locally (byte-counted and delimited `data`, marks, inline blobs, quoted paths, `from`/`merge`, `R`/`C`/`D`/`deleteall`), rebuilds the tree after every commit, and reports the commit that first introduced each `stg_` token plus whether it was rotated out; an ambiguous history is shown as candidates, not as a solved answer. The beginner Git walkthrough remains as the manual cross-check. Q2 cannot be automated in the browser: the exam server sends no `Access-Control-Allow-Origin`, so a page on another origin cannot read `questionData`, let alone the `X-Exam-Code` header. Other guide questions require authenticated data, live LLM calls, signed recording/game artifacts, or the separate API project.
+- T2 GA1 parity tests protect shared Q5 JSON and Q7 file-reorganization algorithms for lowercase emails. T3's case-sensitive seeds remain authoritative; do not import T2's email normalization into T3.
+
+## Architecture
+
+- `ga1/registry.js`: official question order and API metadata.
+- `ga1/api-client.js`: live API origin, email normalisation and URL building shared by Q6/Q14 (and Q15's origin).
+- `ga1/git-history.js`: pure fast-import parser and token analysis used by Q10 (no DOM, runs under Node in `check.mjs`).
+- `ga1/runtime.js`: shared response normalization, diagnostics, and failure containment.
+- `ga1/utils.js`: exact-vs-normalized email handling, local seeded RNG access, SHA-256, safe dynamic Markdown fences, and guide result helper.
+- `ga1/generators.js`: deterministic generation/reconstruction routines.
+- `ga1/qNN-*.js`: question-specific solver or guide modules.
+- `ga1/exam-source.js`: pinned official bundle snapshot used for audits; do not load it in the application.
+- `../../vendor/seedrandom.min.js`: pinned local `seedrandom@3.0.5`; the seeded answers do not depend on a third-party RNG CDN. Q4's pinned Prettier CDN load has a 12-second timeout and degrades to actionable instructions if unavailable.
+
+Run `node check.mjs --t3-ga1-only` for focused contract/seed checks, or `node check.mjs --t3-ga1-scale` to exercise all 16 questions across 1,000 distinct email seeds. `npm run check` includes the GA1 focused checks with the existing project suite.
