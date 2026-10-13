@@ -245,12 +245,14 @@ const extraFiles = { 'robots.txt': renderRobots(), 'sitemap.xml': renderSitemap(
 const nextJson = renderJson(terms);
 
 if (process.argv.includes('--check')) {
+  // Git on Windows may check files out with CRLF; compare content, not line endings.
+  const lf = (text) => text.split(String.fromCharCode(13, 10)).join(String.fromCharCode(10));
   const stale = [];
-  if (nextPage !== page) stale.push('index.html');
-  if (!fs.existsSync(jsonPath) || fs.readFileSync(jsonPath, 'utf8') !== nextJson) stale.push('catalog.json');
+  if (lf(nextPage) !== lf(page)) stale.push('index.html');
+  if (!fs.existsSync(jsonPath) || lf(fs.readFileSync(jsonPath, 'utf8')) !== lf(nextJson)) stale.push('catalog.json');
   for (const [name, body] of Object.entries(extraFiles)) {
     const file = path.join(root, name);
-    if (!fs.existsSync(file) || fs.readFileSync(file, 'utf8') !== body) stale.push(name);
+    if (!fs.existsSync(file) || lf(fs.readFileSync(file, 'utf8')) !== lf(body)) stale.push(name);
   }
   if (stale.length) {
     console.error(`Out of date: ${stale.join(', ')}. Run: node scripts/build-catalog.mjs`);
