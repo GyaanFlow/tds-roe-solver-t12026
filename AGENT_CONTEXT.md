@@ -56,7 +56,8 @@ The app runs locally in the browser, loads a solver registry for the selected ex
 - `ga7-verify.js`: GA7 batch verification logic
 - `verify.html`: Universal Solver Verification Hub dashboard
 - `verify.js`: Dynamic ESM solver verification logic for all terms/exams
-- `tds-config.json`: dynamic welcome screen config + term/exam registry metadata
+- `tds-config.json`: terms, exams, term labels (period in parentheses) and intro text; the source of truth for the home page, term pills and sidebar Term selector
+- `scripts/build-catalog.mjs`: generates the home-page solver index, SEO head block, term selector options, intro description, `catalog.json`, `sitemap.xml` and `robots.txt` (see "Home Page Index, SEO & Dynamic Config" below)
 - `solvers/T12026/`: all T1 2026 exam solver folders
 - `solvers/T22026/`: T2 2026 solvers
 - `solvers/T32026/`: T3 2026 solvers; GA1 source snapshot, question modules, and architecture notes are in `solvers/T32026/ga1/`
@@ -501,6 +502,42 @@ To encourage manual study and practice, GA1 solvers are protected by a centraliz
 - **Lock Toggle (`locked`)**: Setting `locked: true` locks the solvers. Standard non-whitelisted student emails will receive a guide-type response directing them to solve the question manually. Setting `locked: false` unlocks the solvers for everyone.
 - **Whitelist (`allowedEmails`)**: Contains specific whitelisted email addresses (e.g. instructors, testers) that bypass the lock and receive programmatic solved answers even when `locked: true` is enabled.
 
+## Home Page Index, SEO & Dynamic Config (added 2026-10)
+
+**Production:** https://tds-portal-solver.vercel.app (Vercel project `tds-roe-solver-t12026`; `main` = production, other branches get preview builds; GitHub repo `GyaanFlow/tds-roe-solver-t12026`).
+
+**How it works**
+- `node scripts/build-catalog.mjs` reads `tds-config.json` and every `solvers/<term>/<exam>/registry.js`, then rewrites three marker blocks in `index.html` — `<!-- CATALOG:START/END -->` (the index under the title), `<!-- SEO:START/END -->` (canonical, `og:url`, JSON-LD in `<head>`), `<!-- TERMS:START/END -->` (the sidebar Term `<option>` list) — plus the `#welcomeDescription` text, the meta/OG/Twitter descriptions, the `termDescription` line in `tds-config.json`, `catalog.json`, `sitemap.xml` and `robots.txt`. Never edit inside the markers by hand.
+- `node scripts/build-catalog.mjs --check` (run by `check.mjs`) fails if anything is stale; it compares with line endings normalised because Git on Windows checks files out as CRLF.
+- `vercel.json` has `buildCommand: node scripts/build-catalog.mjs || echo ...` and `outputDirectory: "."`, so Vercel regenerates everything on each deploy and falls back to the committed files if the build fails. `npm run build` does the same locally.
+- Terms are sorted newest first by year then number (`T32026` → "T3 2026"); status is Current / Recent / Archive by position, and CSS colours key off `data-status`, not term ids. Exams missing from the hand-written `EXAMS` label table are labelled from their id (`ga9` → "GA 9", `p3` → "Project 3").
+- "Latest additions" = the newest term's exams newest-first (up to 4), topped up from the previous term; the first card is the featured "Newest solver". The remaining exams are inside a collapsed `<details>` but present in the HTML for crawlers. Banks over 60 questions (the end-term mock) are summarised instead of listed.
+- The intro description is generated (`describePortal`) from the config: GA range, ROE/projects/end-term if present, and the terms grouped by year. It must never contain the words "answer(s)" or "solution(s)" (IITM rules) — the generator throws; the same applies to other home-page copy.
+- The T1 · T2 · T3 pills under the title are built in `app.js` (`updateWelcomeVersion`) from `tds-config.json` (fallback: pills from `TERM_EXAMS` if the config fails to load); clicking one switches the sidebar term.
+- Catalog "Open workspace" buttons preselect the term/exam in the sidebar (handler near the disclaimer-card tilt code in `app.js`).
+- Creator card (`index.html` + `style.css`): GitHub avatar from `github.com/GyaanFlow.png` with a hoverable popup (invisible bridge + close delay so the cursor can move into it; hover-capable screens of 641px and wider only), and a footer with live GitHub counts via `initCreatorLiveStats()` (public API, 1h `localStorage` cache, 5s timeout, silent on failure). LinkedIn has no public API, so that chip is a plain link.
+
+**Still manual when adding a new exam:** add it to `tds-config.json`, to `TERM_EXAMS` in `app.js` (labels are asserted equal to the label table in the generator by `check.mjs`), and create the `registry.js`. Optional: a nicer label/blurb in the generator's `EXAMS` table.
+
+**Responsive/touch hardening:** `100dvh` fallbacks, 40–44px touch targets under `(pointer: coarse)`, 480px-and-below tightening, landscape-phone and print rules are appended at the end of `style.css`. Tested at 320, 375, 768 and 1920px with no horizontal overflow.
+
+**Do not change:** the Academic Integrity card/checkbox gate (it also blocks end-to-end browser tests of the workspace — only the user may tick it).
+
+## T3 GA1 additions (2026-10)
+
+- Q6/Q14 answer live API URLs (`ga1/api-client.js`); Q15 is an on-demand form that validates the private Ledger link, wakes the Render API, onboards, and fills the Answer box via `window.tdsPatchAnswer`.
+- Q10 parses the student's `git fast-import` stream locally (`ga1/git-history.js`), validated against real git.
+- **Q12 (`ga1/q12-llm-yes-no.js`)** — live testing against the real exam models (via AI Pipe, 2026-10-13) showed identity/name prompts do NOT work (neither model knows "gpt-5.6-luna"; a "mini keyword" prompt passed about 3 runs in 4). Exact arithmetic does: `gpt-5.6-luna` multiplies four-digit numbers exactly, `gpt-5.4-mini` is off by about 0.01–0.2%. Every shipped prompt states a TRUE fact about products (digit sums, sums of products), so luna says Yes and mini says No. `CANDIDATES[].tested` = runs passed/runs; only perfect records of at least 8 runs are allowed (enforced in `check.mjs`). Prompts that failed even once (e.g. single digit sums of 4567×8923 / 6841×7253, 8053×7699) were dropped. The guide embeds a tester (password field, own aipipe.org token, sent only to aipipe.org, never stored, hard-stops on 401/402/429) that re-ranks prompts plus a custom one and fills the Answer box. The exam caches replies for an identical prompt, so a retry needs a one-character change. LLM behaviour can drift — re-test before relying on it.
+- Public announcement figure: the author's own account showed "Saved: 17.5 / 22".
+
+## Release / Git workflow (updated 2026-10)
+
+- Work happens on `dev`; for the 2026-10 release the user explicitly asked to "push dev, then merge to main" (the older rule that `dev` stays local was lifted for that work). Still ask before pushing anything new — approval does not carry over.
+- Release recipe: `node check.mjs` (plus `--t3-ga1-scale` for T3 changes) → secret scan of the diff → `git push origin dev` → wait for the Vercel preview (the GitHub commit status API shows `Vercel`) → `git checkout main && git pull --ff-only && git merge --no-ff dev` → `node check.mjs` on `main` → `git push origin main` → verify the live site (home page, `/sitemap.xml`, `/robots.txt`, `/catalog.json`).
+- The only expected console 404 on production is Vercel's own `/_vercel/toolbar/inject-scripts.js`.
+- Never commit tokens. Test tokens (AI Pipe) are passed via environment variables for one-off scripts and never written to files.
+- Scratch test scripts live in the session scratchpad, not the repo.
+
 ## UI Improvements Already Applied
 
 The UI in `app.js` and `style.css` has been substantially improved.
@@ -591,12 +628,14 @@ npm run check
 Current expected success output:
 
 ```text
-Checks passed: GA7 solvers=15, ROE solvers=15, GA8 solvers=15, P2 solvers=2, GA0 solvers=25, GA1 solvers=20, GA2 solvers=10, GA3 solvers=13, GA4 solvers=13, GA5 solvers=11, GA6 solvers=10, P1 solvers=5
+Checks passed: GA7 solvers=15, ROE solvers=15, GA8 solvers=15, P2 solvers=2, GA0 solvers=25, GA1 solvers=20, GA2 solvers=10, GA3 solvers=13, GA4 solvers=13, GA5 solvers=11, GA6 solvers=10, P1 solvers=5, T2 GA8 solvers=10, T2 P2 solvers=8, T2 end-term questions=300, T3 GA1 questions=16
 ```
 
 > Note: Registry paths are now `solvers/T12026/<exam>/registry.js`.
 
 The smoke check covers:
+- the generated home-page index / SEO files / term selector being up to date (`scripts/build-catalog.mjs --check`) and catalog labels matching `TERM_EXAMS`
+- T3 GA1: all 16 slots, the Q10 parser against real `git fast-export` output plus a mutation fuzz, Q6/Q14/Q15 URL and onboarding logic with scripted fetches, Q12 prompt rules, judging and tester with a scripted AI Pipe
 - registry loading
 - server startup path
 - key route serving
@@ -616,6 +655,10 @@ These are reasonable next steps:
 - add offline caching if this is meant to be reused heavily
 - fix or upgrade the installed Graphify CLI so it no longer throws `_os` after successful rebuilds
 - consider moving the Q16 bonus builder out of `app.js` into a dedicated solver file for consistency
+- derive `TERM_EXAMS` in `app.js` from `tds-config.json` so new exams need no `app.js` edit
+- T3 GA1 Q2 needs a relay route on the separate API project (the exam server has no CORS); the Q13 decoder tries only 2 of 6 transform orders; re-verify the Q12 prompt counts if the exam models change
+- `marked` is loaded unpinned from a CDN (rendering could drift)
+- add a real `og:image` of the portal and submit `sitemap.xml` in Google Search Console
 
 ## Non-Repo Context Worth Knowing
 
