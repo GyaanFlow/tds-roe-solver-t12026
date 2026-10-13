@@ -16,8 +16,6 @@ const SITE_URL = 'https://tds-portal-solver.vercel.app';
 // Which terms exist, and which exams each has, comes from tds-config.json. Everything below is
 // optional polish: a term/exam missing from these tables still appears, with a label and blurb
 // derived from its id, so adding content never needs an edit here.
-// Periods shown next to a term (optional; otherwise taken from the config label if it has one).
-const TERM_PERIODS = { T32026: 'Sep–Dec 2026', T22026: 'May–Sep 2026', T12026: 'Jan–Apr 2026' };
 // Hand-written labels and blurbs (labels mirror TERM_EXAMS in app.js; check.mjs asserts they match).
 const EXAMS = {
   T32026: [
@@ -81,7 +79,9 @@ async function loadCatalog() {
     const parsed = parseTermId(id);
     const configTerm = config.terms[id];
     const label = parsed.number ? `T${parsed.number} ${parsed.year}` : (configTerm.label || id);
-    const note = TERM_PERIODS[id] ?? configTerm.label?.match(/\(([^)]+)\)/)?.[1] ?? '';
+    // The period comes from the config label, e.g. "T2 2026 (May–Sep)".
+    const period = configTerm.label?.match(/\(([^)]+)\)/)?.[1] ?? '';
+    const note = period && parsed.year ? `${period} ${parsed.year}` : period;
     const known = new Map((EXAMS[id] ?? []).map(([examId, ...meta]) => [examId, meta]));
     const exams = [];
     // Config lists exams oldest-first, so reverse: newest work comes first within a term.
@@ -92,7 +92,7 @@ async function loadCatalog() {
       exams.push({ id: examId, group, label: examLabel, blurb, count: questions.length, summarised: questions.length > SUMMARISE_ABOVE, questions });
     }
     const status = index === 0 ? 'current' : index === 1 ? 'recent' : 'archive';
-    terms.push({ id, label, note, status, statusLabel: { current: 'Current term', recent: 'Recent term', archive: 'Archive' }[status], exams });
+    terms.push({ id, label, period, note, status, statusLabel: { current: 'Current term', recent: 'Recent term', archive: 'Archive' }[status], exams });
   }
   return terms;
 }
@@ -266,6 +266,14 @@ nextPage = nextPage
   .replace(/(<meta name="twitter:description" content=")[^"]*(")/, (_, open, close) => `${open}${escAttr(description)}${close}`);
 const configText = fs.readFileSync(path.join(root, 'tds-config.json'), 'utf8');
 const nextConfigText = configText.replace(/("termDescription":\s*)"[^"]*"/, (_, key) => `${key}${JSON.stringify(description)}`);
+// Sidebar term selector, oldest term first (same order as before).
+const termOptions = [...terms].reverse()
+  .map((term) => `                <option value="${term.id}">${esc(term.period ? `${term.label} — ${term.period}` : term.label)}</option>`)
+  .join(String.fromCharCode(10));
+const termsStart = nextPage.indexOf('<!-- TERMS:START -->');
+const termsEnd = nextPage.indexOf('<!-- TERMS:END -->');
+if (termsStart < 0 || termsEnd < termsStart) throw new Error('index.html is missing the TERMS:START / TERMS:END markers.');
+nextPage = nextPage.slice(0, termsStart) + '<!-- TERMS:START -->' + String.fromCharCode(10) + termOptions + String.fromCharCode(10) + '                ' + nextPage.slice(termsEnd);
 const extraFiles = { 'robots.txt': renderRobots(), 'sitemap.xml': renderSitemap(), 'tds-config.json': nextConfigText };
 const nextJson = renderJson(terms);
 
