@@ -392,9 +392,7 @@ async function checkT3Ga1(solvers, metadata) {
   const mixedCaseRankings = JSON.parse((await byId['q-cosine-similarity-server'].solve(' USER.Test+T3@Example.COM ')).answer);
   const normalizedRankings = JSON.parse((await byId['q-cosine-similarity-server'].solve('user.test+t3@example.com')).answer);
   assert(JSON.stringify(mixedCaseRankings) === JSON.stringify(normalizedRankings), 'T3 GA1 Q11 must use its source-defined lowercase email normalization.');
-  const q12 = await byId['q-llm-yes-no-split'].solve(sampleEmail);
-  const promptCandidate = 'If you are gpt-5.6-luna, reply only Yes. Otherwise, reply only No.';
-  assert(promptCandidate.length <= 100 && q12.guide.includes(promptCandidate) && q12.guide.includes('not guaranteed'), 'T3 GA1 Q12 candidate must be within the prompt limit and clearly marked for live testing.');
+  await checkT3Ga1LlmPrompts(byId, sampleEmail);
   await checkT3Ga1GitHistory(byId);
   await checkT3Ga1ApiQuestions(byId, sampleEmail);
 }
@@ -551,6 +549,91 @@ async function checkT3Ga1GitHistory(byId) {
     else for (let i = 0; i < 2; i += 1) { const at = Math.floor(next() * mutated.length); mutated[at] = 48 + Math.floor(next() * 10); }
     try { parseFastImport(input); } catch (error) { assert(error instanceof FastImportError, `T3 GA1 Q10 fuzz round ${round} threw ${error?.name}: ${error?.message}`); }
   }
+}
+
+async function checkT3Ga1LlmPrompts(byId, sampleEmail) {
+  const q12 = await importFresh('solvers/T32026/ga1/q12-llm-yes-no.js');
+  const official = fs.readFileSync(path.join(rootDir, 'solvers/T32026/ga1/exam-source.js'), 'utf8');
+  assert(official.includes(`(j = ${q12.PROMPT_LIMIT})`) && official.includes(`(Y = "${q12.MODEL_YES}")`) && official.includes(`(G = "${q12.MODEL_NO}")`) && official.includes('(K = (e, o) => new RegExp('), 'T3 GA1 Q12 model names, prompt limit or word test no longer match the official exam source.');
+
+  // The ten prompts: distinct, within the limit, and never contradicting the exam's own rules.
+  assert(q12.CANDIDATES.length >= 5, 'T3 GA1 Q12 must offer several live-tested prompts.');
+  assert(new Set(q12.CANDIDATES.map((c) => c.prompt)).size === q12.CANDIDATES.length && new Set(q12.CANDIDATES.map((c) => c.category)).size === q12.CANDIDATES.length, 'T3 GA1 Q12 prompts and categories must all be distinct.');
+  for (const candidate of q12.CANDIDATES) {
+    assert(candidate.prompt.length <= q12.PROMPT_LIMIT && candidate.prompt === candidate.prompt.trim() && candidate.why, `T3 GA1 Q12 prompt is over the limit or incomplete: ${candidate.prompt}`);
+  }
+
+  // Judging mirrors the exam: case-sensitive whole words, and the other word must be absent.
+  const judged = (yes, no) => q12.judgeReplies(yes, no);
+  assert(judged('Yes', 'No').pass && judged('Yes.', 'No.').pass && judged('**Yes**', 'No\n').pass, 'T3 GA1 Q12 must accept plain Yes/No replies.');
+  assert(!judged('yes', 'No').yesOk && !judged('YES', 'No').yesOk && !judged('Yes', 'no').noOk, 'T3 GA1 Q12 judging must be case-sensitive.');
+  assert(!judged('Yes, not No', 'No').yesOk && !judged('Yes', 'No, not Yes').noOk, 'T3 GA1 Q12 judging must reject replies containing both words.');
+  assert(!judged('Yesterday', 'Nothing').pass && !judged('Notable', 'Yes').pass, 'T3 GA1 Q12 judging must use word boundaries.');
+  assert(!q12.validatePrompt('').ok && !q12.validatePrompt('x'.repeat(101)).ok && q12.validatePrompt(`  ${'x'.repeat(100)}  `).ok, 'T3 GA1 Q12 prompt validation must enforce the 100-character limit after trimming.');
+
+  // Guide: starting prompt, all ten ideas, tester widget, honest about being unverified, no token field leaks.
+  const solved = await byId['q-llm-yes-no-split'].solve(sampleEmail);
+  assert(solved.type === 'solved' && solved.answer === q12.CANDIDATES[0].prompt, 'T3 GA1 Q12 must answer with the first live-tested candidate.');
+  assert(q12.CANDIDATES.every((c) => {
+    const [passed, runs] = c.tested.split('/').map(Number);
+    return passed === runs && runs >= 8;
+  }), 'T3 GA1 Q12 prompts must only be listed with a perfect live-test record of at least 8 runs.');
+  assert(q12.CANDIDATES.every((c) => solved.guide.includes(c.prompt)) && solved.guide.includes('Live-tested') && solved.guide.includes('press **Check**') && solved.guide.includes('id="t3q12Root"') && solved.guide.includes('type="password"'), 'T3 GA1 Q12 guide must list every prompt, include the tester and tell the student to re-check before submitting.');
+
+  // Live tester against a scripted AI Pipe: ranking, header use, error handling.
+  const calls = [];
+  const flakyPrompt = 'Custom flaky prompt';
+  const winner = q12.CANDIDATES[3].prompt;
+  const makeFetch = (override) => async (url, init) => {
+    const body = JSON.parse(init.body);
+    const prompt = body.messages[0].content;
+    calls.push({ url, auth: init.headers.Authorization, model: body.model, prompt, body: init.body });
+    if (override) {
+      const forced = override(body, prompt);
+      if (forced) return forced;
+    }
+    const isYesModel = body.model === q12.MODEL_YES;
+    let text = isYesModel ? 'Yes' : 'No';
+    if (prompt === flakyPrompt) text = isYesModel ? 'Yes' : (calls.filter((c) => c.prompt === flakyPrompt).length > 2 ? 'Yes' : 'No');
+    else if (prompt !== winner) text = 'Yes';
+    return { status: 200, json: async () => ({ choices: [{ message: { content: text } }] }) };
+  };
+  const secret = 'tok_secret_value_123';
+  const outcome = await q12.testCandidates({ token: ` ${secret} `, prompts: [flakyPrompt, ...q12.CANDIDATES.map((c) => c.prompt)], trials: 2, fetchImpl: makeFetch() });
+  assert(outcome.best.prompt === winner && outcome.best.robust && outcome.best.passes === 2, 'T3 GA1 Q12 tester must rank the prompt that passes every run first.');
+  assert(outcome.ranked.length === q12.CANDIDATES.length + 1 && outcome.ranked.every((entry) => entry.trials.length === 2), 'T3 GA1 Q12 tester must run every prompt the requested number of times.');
+  assert(calls.length === (q12.CANDIDATES.length + 1) * 2 * 2 && calls.every((c) => c.url === q12.AI_PIPE_URL && c.auth === `Bearer ${secret}` && !c.body.includes(secret)), 'T3 GA1 Q12 tester must send the trimmed token only in the Authorization header to AI Pipe.');
+  assert(calls.filter((c) => c.model === q12.MODEL_YES).length === calls.filter((c) => c.model === q12.MODEL_NO).length, 'T3 GA1 Q12 tester must call both models equally.');
+  const html = q12.resultsHtml(outcome);
+  assert(html.includes(winner) && html.includes('✅') && !html.includes(secret), 'T3 GA1 Q12 results table must show the winner and never the token.');
+
+  // Hostile model output must be rendered as text.
+  const hostile = await q12.testCandidates({ token: secret, prompts: [winner], trials: 1, fetchImpl: makeFetch((body) => ({ status: 200, json: async () => ({ choices: [{ message: { content: '<img src=x onerror=alert(1)> Yes' } }] }) })) });
+  const hostileHtml = q12.resultsHtml(hostile);
+  assert(!/<img/i.test(hostileHtml) && hostileHtml.includes('&lt;img'), 'T3 GA1 Q12 results must escape model replies.');
+
+  // Failure handling.
+  const expectCode = async (promise, code, label) => {
+    try {
+      await promise;
+    } catch (error) {
+      assert(error.code === code, `${label}: expected ${code}, got ${error.code}`);
+      return;
+    }
+    throw new Error(`${label}: expected a ${code} error.`);
+  };
+  calls.length = 0;
+  await expectCode(q12.testCandidates({ token: '', prompts: ['x'], fetchImpl: makeFetch() }), 'NO_TOKEN', 'empty token');
+  assert(calls.length === 0, 'T3 GA1 Q12 must not call the network without a token.');
+  await expectCode(q12.testCandidates({ token: 'bad', prompts: q12.CANDIDATES.map((c) => c.prompt), trials: 3, fetchImpl: makeFetch(() => ({ status: 401, json: async () => ({}) })) }), 'AUTH', 'rejected token');
+  assert(calls.length <= 8, `T3 GA1 Q12 must stop after an auth failure instead of spamming AI Pipe (${calls.length} calls).`);
+  await expectCode(q12.testCandidates({ token: 'x', prompts: ['p'], fetchImpl: makeFetch(() => ({ status: 429, json: async () => ({}) })) }), 'LIMIT', 'rate limit');
+  const broken = await q12.testCandidates({ token: 'x', prompts: ['p'], trials: 1, fetchImpl: makeFetch(() => ({ status: 200, json: async () => ({ error: { message: 'model overloaded' } }) })) });
+  assert(broken.best === null && broken.ranked[0].errors === 1 && broken.ranked[0].trials[0].error.includes('model overloaded'), 'T3 GA1 Q12 must report a model error without crashing.');
+  const offline = await q12.testCandidates({ token: 'x', prompts: ['p'], trials: 1, fetchImpl: async () => { throw new Error('offline'); } });
+  assert(offline.ranked[0].trials[0].error.includes('offline'), 'T3 GA1 Q12 must report network failures per run.');
+  const noJson = await q12.testCandidates({ token: 'x', prompts: ['p'], trials: 1, fetchImpl: async () => ({ status: 502, json: async () => { throw new Error('bad json'); } }) });
+  assert(noJson.ranked[0].errors === 1, 'T3 GA1 Q12 must survive a non-JSON AI Pipe response.');
 }
 
 async function checkT3Ga1ApiQuestions(byId, sampleEmail) {
