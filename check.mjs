@@ -394,6 +394,7 @@ async function checkT3Ga1(solvers, metadata) {
   assert(JSON.stringify(mixedCaseRankings) === JSON.stringify(normalizedRankings), 'T3 GA1 Q11 must use its source-defined lowercase email normalization.');
   await checkT3Ga1LlmPrompts(byId, sampleEmail);
   await checkT3Ga1Tangram(byId, sampleEmail);
+  await checkT3Ga1Headers(byId, sampleEmail);
   await checkT3Ga1GitHistory(byId);
   await checkT3Ga1ApiQuestions(byId, sampleEmail);
 }
@@ -550,6 +551,89 @@ async function checkT3Ga1GitHistory(byId) {
     else for (let i = 0; i < 2; i += 1) { const at = Math.floor(next() * mutated.length); mutated[at] = 48 + Math.floor(next() * 10); }
     try { parseFastImport(input); } catch (error) { assert(error instanceof FastImportError, `T3 GA1 Q10 fuzz round ${round} threw ${error?.name}: ${error?.message}`); }
   }
+}
+
+async function checkT3Ga1Headers(byId, sampleEmail) {
+  const apiOrigin = 'https://tds-roe-solver-api-t12026.onrender.com';
+  const q2 = await importFresh('solvers/T32026/ga1/q02-http-headers.js');
+  const email = '21f1000000@ds.study.iitm.ac.in';
+  const link = 'https://exam.sanand.workers.dev/questionData?email=21f1000000%40ds.study.iitm.ac.in&quizSign=abc%2Bdef%3D&questionId=q-http-headers-server';
+  const codeOf = (raw, who = email) => q2.validateQuestionDataUrl(raw, who).code ?? 'OK';
+
+  // Link validation happens before anything leaves the browser.
+  assert(codeOf(link) === 'OK' && q2.validateQuestionDataUrl(link, email).url === link, 'T3 GA1 Q2 must accept the official Q2 link unchanged.');
+  assert(q2.validateQuestionDataUrl(`curl -i "${link}"`, email).url === link && q2.validateQuestionDataUrl(`  \`${link}\`,  `, email).url === link, 'T3 GA1 Q2 must extract the link from a curl -i line, quotes and backticks.');
+  assert(codeOf(link.replace('q-http-headers-server', 'q-ledger-agent-server')) === 'OK', 'T3 GA1 Q2 must accept a link from any GA1 question (same signature).');
+  assert(codeOf('https://exam.sanand.workers.dev/questionData?email=a+b@x.com&quizSign=s&questionId=q-http-headers-server', 'a+b@x.com') === 'OK', 'T3 GA1 Q2 must tolerate an unescaped + in the link email.');
+  assert(codeOf('') === 'EMPTY' && codeOf('nothing') === 'EMPTY' && codeOf(null) === 'EMPTY', 'T3 GA1 Q2 must report an empty paste.');
+  assert(codeOf(link.replace('https://exam', 'https://evil.example/x?')) === 'WRONG_HOST' && codeOf(link.replace('https:', 'http:')) === 'WRONG_HOST', 'T3 GA1 Q2 must refuse other hosts and plain http.');
+  assert(codeOf('https://exam.sanand.workers.dev.evil.example/questionData?email=a&quizSign=s&questionId=q-http-headers-server') === 'WRONG_HOST', 'T3 GA1 Q2 must refuse look-alike hosts.');
+  assert(codeOf(link.replace('/questionData', '/other')) === 'WRONG_PATH', 'T3 GA1 Q2 must refuse other paths.');
+  assert(codeOf(link.replace('&questionId=q-http-headers-server', '')) === 'WRONG_QUESTION' && codeOf(link.replace('q-http-headers-server', 'Not A Question')) === 'WRONG_QUESTION', 'T3 GA1 Q2 must refuse a link without a valid question id.');
+  assert(codeOf(link.replace('&quizSign=abc%2Bdef%3D', '')) === 'NO_SIGNATURE', 'T3 GA1 Q2 must refuse a link without quizSign.');
+  assert(codeOf(link, 'someone.else@example.com') === 'EMAIL_MISMATCH', 'T3 GA1 Q2 must refuse another account\'s link.');
+
+  // Scripted API: record every call so ordering and secrecy can be asserted.
+  const script = (handler) => {
+    const calls = [];
+    return { calls, fetchImpl: async (url, init = {}) => { calls.push({ url, method: init.method || 'GET', body: init.body, init }); return handler(url, init, calls); } };
+  };
+  const reply = (status, body) => ({ ok: status >= 200 && status < 300, status, json: async () => body });
+  const instant = { sleep: async () => {}, now: () => 1700000000000 };
+  const goodReply = { question_id: 'q-http-headers-server', email, answer: '7F3KQ9M2', answer_text: '7F3KQ9M2' };
+  const endpoint = `${apiOrigin}/ga1/${encodeURIComponent(email)}/answers/headers`;
+  const run = (handler, extra = {}) => {
+    const s = script(handler);
+    return { ...s, go: () => q2.fetchHeadersCode({ email, rawUrl: link, fetchImpl: s.fetchImpl, ...instant, ...extra }) };
+  };
+
+  let r = run((url) => (url.endsWith('/health') ? reply(200, { status: 'ok' }) : reply(200, goodReply)));
+  let outcome = await r.go();
+  assert(outcome.ok && outcome.code === '7F3KQ9M2' && outcome.fetchedAt === 1700000000000, 'T3 GA1 Q2 must return the X-Exam-Code from the API.');
+  assert(r.calls.length === 2 && r.calls[0].url === `${apiOrigin}/health` && r.calls[1].url === endpoint && r.calls[1].method === 'POST', 'T3 GA1 Q2 must wake the API first, then POST once to /answers/headers.');
+  assert(r.calls[1].body === JSON.stringify({ question_data_url: link }) && r.calls[1].init.credentials === 'omit' && r.calls[0].body === undefined, 'T3 GA1 Q2 must send only the private link, only to the API, and never to /health.');
+
+  r = run(() => reply(200, goodReply));
+  await q2.fetchHeadersCode({ email, rawUrl: 'not a link', fetchImpl: r.fetchImpl, ...instant });
+  await q2.fetchHeadersCode({ email, rawUrl: link.replace('exam.sanand', 'evil'), fetchImpl: r.fetchImpl, ...instant });
+  assert(r.calls.length === 0, 'T3 GA1 Q2 must not touch the network for an invalid link.');
+  let clock = 0;
+  r = run((url) => (url.endsWith('/health') ? reply(503, {}) : reply(200, goodReply)));
+  outcome = await q2.fetchHeadersCode({ email, rawUrl: link, fetchImpl: r.fetchImpl, sleep: async () => {}, now: () => (clock += 40000) });
+  assert(!outcome.ok && outcome.code === 'API_UNREACHABLE' && r.calls.every((c) => c.url.endsWith('/health')), 'T3 GA1 Q2 must never send the link to an API that did not wake.');
+  r = run((url) => (url.endsWith('/health') ? reply(502, {}) : reply(200, goodReply)));
+  let polls = 0;
+  r = run((url) => (url.endsWith('/health') ? reply(++polls < 3 ? 502 : 200, {}) : reply(200, goodReply)));
+  outcome = await r.go();
+  assert(outcome.ok && polls === 3 && r.calls.at(-1).url === endpoint, 'T3 GA1 Q2 must keep polling /health until the API wakes.');
+
+  const failWith = async (handler, wanted, label) => {
+    const result = await run((url, init) => (url.endsWith('/health') ? reply(200, {}) : handler(url, init))).go();
+    assert(!result.ok && result.code === wanted && typeof result.message === 'string' && result.message.length > 20, `T3 GA1 Q2 ${label}: expected ${wanted}, got ${result.code}.`);
+    assert(!result.message.includes('quizSign') && !result.message.includes('abc'), `T3 GA1 Q2 ${label} must not echo the signed link.`);
+  };
+  await failWith(() => reply(400, { error: 'VALID_QUESTION_DATA_URL_REQUIRED' }), 'VALID_QUESTION_DATA_URL_REQUIRED', 'rejected link');
+  await failWith(() => reply(409, { error: 'POST_YOUR_QUESTION_DATA_URL_OR_ONBOARD_FIRST' }), 'POST_YOUR_QUESTION_DATA_URL_OR_ONBOARD_FIRST', 'missing link');
+  await failWith(() => reply(502, { error: 'UPSTREAM_REJECTED', upstream_status: 403 }), 'UPSTREAM_REJECTED', 'expired signature');
+  await failWith(() => reply(502, { error: 'UPSTREAM_REJECTED', upstream_status: 500 }), 'UPSTREAM_REJECTED', 'exam server error');
+  await failWith(() => reply(422, { error: 'NO_X_EXAM_CODE_HEADER' }), 'NO_X_EXAM_CODE_HEADER', 'no header');
+  await failWith(() => reply(504, { error: 'UPSTREAM_TIMEOUT' }), 'UPSTREAM_TIMEOUT', 'exam timeout');
+  await failWith(() => reply(429, {}), 'RATE_LIMITED', 'rate limit');
+  await failWith(() => reply(500, { error: 'BOOM' }), 'BOOM', 'unknown error');
+  await failWith(() => ({ ok: false, status: 502, json: async () => { throw new Error('html'); } }), 'HTTP_502', 'non-JSON error');
+  await failWith(() => reply(200, { ...goodReply, answer_text: '' }), 'BAD_RESPONSE', 'empty code');
+  await failWith(() => reply(200, { ...goodReply, answer_text: 'two words' }), 'BAD_RESPONSE', 'code with spaces');
+  await failWith(() => reply(200, { ...goodReply, email: 'other@example.com' }), 'BAD_RESPONSE', 'reply for another email');
+  await failWith(() => { throw new Error('offline'); }, 'NETWORK', 'network failure');
+  await failWith(() => { const e = new Error('aborted'); e.name = 'AbortError'; throw e; }, 'TIMEOUT', 'timeout');
+  outcome = await q2.fetchHeadersCode({ email, rawUrl: link, fetchImpl: null });
+  assert(!outcome.ok && outcome.code === 'NO_FETCH', 'T3 GA1 Q2 must report a browser without fetch.');
+
+  // The solver itself: a guide with the form until the student supplies the private link.
+  const guideResult = await byId['q-http-headers-server'].solve(sampleEmail);
+  assert(guideResult.type === 'guide' && guideResult.answer.startsWith('NOT FETCHED YET') && guideResult.guide.includes('id="t3q2Root"') && guideResult.guide.includes('window._t3ga1q2Generate()') && guideResult.guide.includes('curl -i') && guideResult.guide.includes('rotates every hour') && guideResult.usesHostedApi === true, 'T3 GA1 Q2 must explain the private-link step, keep the manual curl steps and mention hourly rotation.');
+  const hostile = await q2.solve('"><img/src=x/onerror=alert(1)>@x.com');
+  assert(!/<img.src=x/i.test(hostile.guide), 'T3 GA1 Q2 must escape the email in the form.');
 }
 
 async function checkT3Ga1Tangram(byId, sampleEmail) {
