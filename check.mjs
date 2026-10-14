@@ -395,6 +395,7 @@ async function checkT3Ga1(solvers, metadata) {
   await checkT3Ga1LlmPrompts(byId, sampleEmail);
   await checkT3Ga1Tangram(byId, sampleEmail);
   await checkT3Ga1Headers(byId, sampleEmail);
+  await checkT3Ga1ConsoleHelper(byId, sampleEmail);
   await checkT3Ga1GitHistory(byId);
   await checkT3Ga1ApiQuestions(byId, sampleEmail);
 }
@@ -553,6 +554,115 @@ async function checkT3Ga1GitHistory(byId) {
   }
 }
 
+async function checkT3Ga1ConsoleHelper(byId, sampleEmail) {
+  const source = fs.readFileSync(path.join(rootDir, 'console/t3-ga1-helper.js'), 'utf8');
+  const email = '21f1000000@ds.study.iitm.ac.in';
+  const quizSign = 'S3cr3t+sig=';
+
+  // Runs the helper exactly as pasted, against a fake exam page, and records everything it does.
+  const boot = ({ origin = 'https://exam.sanand.workers.dev', pathname = '/tds-2026-09-ga1', user = { email, quizSign }, fetchImpl } = {}) => {
+    const logs = [], errors = [], events = [], fetched = [];
+    const elements = {};
+    for (const id of ['q-github-pages', 'q-termlog-rec-server']) {
+      elements[id] = { value: '', dispatchEvent(e) { events.push([id, e.type]); } };
+    }
+    const sandbox = {
+      location: { origin, pathname },
+      localStorage: { getItem: (key) => (key === 'user' && user ? JSON.stringify(user) : null) },
+      document: { getElementById: (id) => elements[id] || null },
+      console: { log: (...a) => logs.push(a.join(' ')), error: (...a) => errors.push(a.join(' ')) },
+      fetch: async (url, init = {}) => { fetched.push({ url: String(url), init }); return fetchImpl(url, init); },
+      URL, Event: class { constructor(type) { this.type = type; } }, setTimeout, Date, Uint8Array, JSON, RegExp, Set, Promise, Error,
+    };
+    sandbox.window = sandbox;
+    vm.runInNewContext(source, sandbox);
+    return { t3ga1: sandbox.window.t3ga1, logs, errors, events, fetched, elements };
+  };
+  const bootError = (options) => { try { boot(options); } catch (error) { return error.message; } return ''; };
+  const page = (inner) => ({ ok: true, status: 200, text: async () => inner });
+  const html = (e = email) => `<!doctype html><p><!--email_off-->${e}<!--/email_off--></p>`;
+
+  // Guard rails: only on the logged-in GA1 exam page.
+  assert(/exam\.sanand\.workers\.dev/.test(bootError({ origin: 'https://evil.example' })), 'T3 GA1 helper must refuse to run outside the exam page.');
+  assert(/tds-2026-09-ga1/.test(bootError({ pathname: '/tds-2026-05-ga0' })), 'T3 GA1 helper must refuse to run on another exam.');
+  assert(/not logged in/i.test(bootError({ user: null })) && /not logged in/i.test(bootError({ user: {} })), 'T3 GA1 helper must refuse to run when logged out.');
+  const env = boot({ fetchImpl: async () => page(html()) });
+  assert(env.t3ga1 && typeof env.t3ga1.q9.check === 'function' && typeof env.t3ga1.q13.commands === 'function' && env.logs.join('\n').includes('t3ga1.q9.commands()'), 'T3 GA1 helper must expose t3ga1 and print its menu.');
+  assert(env.fetched.length === 0, 'T3 GA1 helper must not make any request until asked.');
+
+  // Q9 page and commands.
+  const q9html = env.t3ga1.q9.page();
+  assert(q9html.includes(`<!--email_off-->${email}<!--/email_off-->`) && q9html.includes('<!doctype html>'), 'T3 GA1 helper Q9 page must wrap the email in the email_off markers.');
+  const amp = boot({ user: { email: 'a&b@x.com', quizSign }, fetchImpl: async () => page('') });
+  assert(amp.t3ga1.q9.page().includes('a&amp;b@x.com'), 'T3 GA1 helper Q9 page must HTML-escape the email.');
+  const q9cmd = env.t3ga1.q9.commands('../x; rm -rf ~');
+  const repoName = q9cmd.match(/^mkdir (\S+) && cd/m)?.[1] || '';
+  assert(/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(repoName) && !q9cmd.includes('rm -rf'), 'T3 GA1 helper Q9 commands must sanitise the repository name.');
+  assert(q9cmd.includes('gh repo create') && q9cmd.includes('repos/{owner}/{repo}/pages') && q9cmd.includes(email) && q9cmd.includes('<!--email_off-->'), 'T3 GA1 helper Q9 commands must create the repo, publish the page and enable Pages.');
+  assert(!q9cmd.includes(quizSign), 'T3 GA1 helper Q9 commands must not include the signed link.');
+
+  // Q9 check: the page must really contain the wrapped email before anything is filled.
+  const pagesUrl = 'https://student.github.io/tds-ga1-portfolio/';
+  let run = boot({ fetchImpl: async () => page(html()) });
+  let outcome = await run.t3ga1.q9.check(pagesUrl);
+  assert(outcome.ok && outcome.filled && run.elements['q-github-pages'].value === pagesUrl && run.events.some((e) => e[1] === 'input') && run.events.some((e) => e[1] === 'change'), 'T3 GA1 helper Q9 check must fill the answer box and notify the page when the email is on the live page.');
+  assert(run.fetched.length === 1 && run.fetched[0].url.startsWith(pagesUrl) && run.fetched[0].init.credentials === 'omit' && !run.fetched[0].url.includes('quizSign'), 'T3 GA1 helper Q9 check must make exactly one anonymous request, to the student\'s own URL.');
+  run = boot({ fetchImpl: async () => page(html()) });
+  run.elements['q-github-pages'].value = pagesUrl;
+  assert((await run.t3ga1.q9.check()).ok, 'T3 GA1 helper Q9 check must fall back to the URL already typed in the box.');
+  const failCases = [
+    ['missing email', async () => page('<p>hello</p>'), undefined],
+    ['unwrapped email', async () => page(`<p>${email}</p>`), 'NOT wrapped'],
+    ['someone else\'s email', async () => page(html('other@example.com')), undefined],
+    ['HTTP 404', async () => ({ ok: false, status: 404, text: async () => '' }), '404'],
+    ['network failure', async () => { throw new Error('Failed to fetch'); }, 'could not read'],
+  ];
+  for (const [label, impl, needle] of failCases) {
+    run = boot({ fetchImpl: impl });
+    outcome = await run.t3ga1.q9.check(pagesUrl);
+    assert(!outcome.ok && run.elements['q-github-pages'].value === '' && run.events.length === 0 && (!needle || outcome.message.includes(needle)), `T3 GA1 helper Q9 check must not fill the box for: ${label}.`);
+  }
+  run = boot({ fetchImpl: async () => page(html()) });
+  assert(!(await run.t3ga1.q9.check('http://student.github.io/x/')).ok && !(await run.t3ga1.q9.check('not a url')).ok && !(await run.t3ga1.q9.check()).ok && run.fetched.length === 0, 'T3 GA1 helper Q9 check must reject http, junk and empty input without any request.');
+
+  // Q13 commands.
+  const q13cmd = env.t3ga1.q13.commands();
+  assert(q13cmd.includes(`email=${encodeURIComponent(email)}`) && q13cmd.includes('quizSign=S3cr3t%2Bsig%3D') && q13cmd.includes('questionId=q-termlog-rec-server') && q13cmd.includes('termlog rec demo.cast') && q13cmd.includes('tar -czf submission.tar.gz demo.cast demo.cast.jwt') && q13cmd.includes('termlog verify demo.cast --expect-email') && q13cmd.includes('3 hours'), 'T3 GA1 helper Q13 commands must be personalised and cover record, decode, verify and pack.');
+  assert((q13cmd.match(/--- order \d/g) || []).length === 6 && new Set(q13cmd.match(/echo "--- order \d: [^"]+"/g)).size === 6 && q13cmd.includes("tr 'A-Za-z' 'N-ZA-Mn-za-m'") && q13cmd.includes('xxd -r -p') && q13cmd.includes('| rev'), 'T3 GA1 helper Q13 commands must try all six real decoding orders.');
+  const quoted = boot({ user: { email: "o'brien@x.com", quizSign }, fetchImpl: async () => page('') }).t3ga1.q13.commands();
+  assert(quoted.includes(`--expect-email 'o'"'"'brien@x.com'`), 'T3 GA1 helper Q13 commands must shell-quote the email.');
+  assert(env.t3ga1.q13.url().startsWith('https://exam.sanand.workers.dev/questionData?') && !env.logs.some((line) => line.includes(quizSign)), 'T3 GA1 helper must keep the signed link out of the console unless asked.');
+
+  // Q13 check.
+  const archiveUrl = 'https://files.example/ga1/submission.tar.gz';
+  const bytes = (...b) => ({ ok: true, status: 200, arrayBuffer: async () => Uint8Array.from(b).buffer });
+  run = boot({ fetchImpl: async () => bytes(0x1f, 0x8b, 8, 0) });
+  outcome = await run.t3ga1.q13.check(archiveUrl);
+  assert(outcome.ok && outcome.verified === true && run.elements['q-termlog-rec-server'].value === archiveUrl && run.fetched.length === 1 && run.fetched[0].init.credentials === 'omit', 'T3 GA1 helper Q13 check must accept a gzip download and fill the box.');
+  run = boot({ fetchImpl: async () => bytes(0x3c, 0x21, 0x64, 0x6f) });
+  outcome = await run.t3ga1.q13.check(archiveUrl);
+  assert(!outcome.ok && run.elements['q-termlog-rec-server'].value === '', 'T3 GA1 helper Q13 check must reject a web page served instead of the archive.');
+  run = boot({ fetchImpl: async () => ({ ok: false, status: 403, arrayBuffer: async () => new ArrayBuffer(0) }) });
+  assert(!(await run.t3ga1.q13.check(archiveUrl)).ok, 'T3 GA1 helper Q13 check must reject a link that answers an error.');
+  run = boot({ fetchImpl: async () => { throw new Error('blocked by CORS'); } });
+  outcome = await run.t3ga1.q13.check(archiveUrl);
+  assert(outcome.ok && outcome.verified === false && run.elements['q-termlog-rec-server'].value === archiveUrl && /open the link once/i.test(outcome.message), 'T3 GA1 helper Q13 check must still fill the box, but say it could not verify, when the host blocks the browser.');
+  run = boot({ fetchImpl: async () => bytes(0x1f, 0x8b) });
+  assert(!(await run.t3ga1.q13.check('http://files.example/x.tar.gz')).ok && !(await run.t3ga1.q13.check('')).ok && run.fetched.length === 0, 'T3 GA1 helper Q13 check must reject http and empty input without any request.');
+
+  // The helper never talks to anything but the URL it was asked to check, and never fakes a response.
+  assert(!/window\.fetch\s*=|Response\(|backendVerify|localStorage\.setItem/.test(source), 'T3 GA1 helper must not patch fetch, fabricate responses or write storage.');
+
+  // Portal guides: the section, the copy control and the helper file are all in place.
+  const q9Guide = (await byId['q-github-pages'].solve(sampleEmail)).guide;
+  const q13Guide = (await byId['q-termlog-rec-server'].solve(sampleEmail)).guide;
+  for (const [label, guide] of [['Q9', q9Guide], ['Q13', q13Guide]]) {
+    assert(guide.includes('Console helper') && guide.includes('window._t3ga1CopyHelper()') && guide.includes('console/t3-ga1-helper.js') && guide.includes('t3ga1.'), `T3 GA1 ${label} guide must explain the console helper and offer the copy button.`);
+  }
+  assert((q13Guide.match(/xxd -r -p/g) || []).length >= 6 && q13Guide.includes('inside the recording'), 'T3 GA1 Q13 guide must show all six real decoding pipelines.');
+  assert(fs.existsSync(path.join(rootDir, 'console/t3-ga1-helper.js')), 'T3 GA1 console helper file is missing.');
+}
+
 async function checkT3Ga1Headers(byId, sampleEmail) {
   const apiOrigin = 'https://tds-roe-solver-api-t12026.onrender.com';
   const q2 = await importFresh('solvers/T32026/ga1/q02-http-headers.js');
@@ -660,7 +770,7 @@ async function checkT3Ga1Tangram(byId, sampleEmail) {
     verified += 1;
   }
   assert(Object.keys(solutions).every((tid) => targets.some((t) => t.id === tid)), 'T3 GA1 Q16 has an arrangement for an unknown target.');
-  assert(verified >= 96, `T3 GA1 Q16 must keep at least 96 verified arrangements (has ${verified}; missing: ${missing.join(', ')}).`);
+  assert(verified === 100 && missing.length === 0, `T3 GA1 Q16 must have a verified arrangement for all 100 silhouettes (has ${verified}; missing: ${missing.join(', ')}).`);
 
   // A deliberately wrong arrangement must be rejected (mutation check of the verifier).
   const sample = q16.posesFor(targets[1].id);
