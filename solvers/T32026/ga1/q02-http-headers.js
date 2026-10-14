@@ -100,6 +100,7 @@ async function fetchWithTimeout(fetchImpl, url, init, timeoutMs) {
 export async function fetchHeadersCode({
   email,
   rawUrl,
+  useStored = false,
   origin = T3_GA1_API_ORIGIN,
   fetchImpl = globalThis.fetch,
   timeoutMs = REQUEST_TIMEOUT_MS,
@@ -112,13 +113,23 @@ export async function fetchHeadersCode({
     return fail('NO_FETCH', 'This browser cannot make network requests from the page. Use the manual curl steps below.');
   }
 
-  let checked;
-  try {
-    checked = validateQuestionDataUrl(rawUrl, email);
-  } catch (error) {
-    return fail('BAD_EMAIL', error.message);
+  // `useStored` sends no link at all: the API then uses the signature it saved when this email was
+  // onboarded (Q15), and answers 409 if it has none.
+  let checked = { ok: true, url: null };
+  if (useStored) {
+    try {
+      apiEmail(email);
+    } catch (error) {
+      return fail('BAD_EMAIL', error.message);
+    }
+  } else {
+    try {
+      checked = validateQuestionDataUrl(rawUrl, email);
+    } catch (error) {
+      return fail('BAD_EMAIL', error.message);
+    }
+    if (!checked.ok) return checked;
   }
-  if (!checked.ok) return checked;
 
   if (wake) {
     onStatus?.('Checking that the API is awake…');
@@ -128,13 +139,13 @@ export async function fetchHeadersCode({
     }
   }
 
-  onStatus?.('Reading the X-Exam-Code header from the exam server…');
+  onStatus?.(useStored ? 'Using the signature the API already has for you…' : 'Reading the X-Exam-Code header from the exam server…');
   let response;
   try {
     response = await fetchWithTimeout(fetchImpl, ga1Url(email, '/answers/headers', origin), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ question_data_url: checked.url }),
+      body: JSON.stringify(checked.url ? { question_data_url: checked.url } : {}),
       credentials: 'omit',
       cache: 'no-store',
     }, timeoutMs);
@@ -217,7 +228,7 @@ function buildGuide(email, code, fetchedAt) {
   return [
     `### ${title}`,
     '',
-    'The code is hidden in an HTTP response header that your own signed link returns, so it is different for every student and refreshes hourly. Do this once:',
+    'The code is hidden in an HTTP response header that your own signed link returns, so it is different for every student and refreshes hourly. **If you already generated your Q15 URL, this box fills itself within a minute** (the API remembers your signature). Otherwise do this once:',
     '',
     '1. Open **Q2** on your exam page and copy the URL inside the `curl -i "…"` command.',
     '2. Paste it into the box below and press **Get code**.',
@@ -253,6 +264,8 @@ function solvedResult(email, code, fetchedAt) {
 function registerQ2Interactive() {
   if (typeof window === 'undefined' || window._t3ga1q2Registered) return;
   window._t3ga1q2Registered = true;
+  // Q15 calls this after onboarding, because that is when the API first holds the student's signature.
+  window._t3ga1q2AutoFetch = (email) => startAuto(email, { force: true });
 
   window._t3ga1q2Generate = async function t3ga1q2Generate() {
     const root = document.getElementById('t3q2Root');
@@ -287,8 +300,48 @@ function registerQ2Interactive() {
   };
 }
 
+// Real browsers only: Node (tests, tooling) reports a "Node.js/…" user agent and must never call the API.
+function inRealBrowser() {
+  return typeof window !== 'undefined' && typeof navigator !== 'undefined' && /^Mozilla\//.test(String(navigator.userAgent || ''));
+}
+
+export const AUTO_TIMING = { patchPollMs: 500, patchTries: 120 };
+const autoStarted = new Set();
+
+/**
+ * Tries to fill the Answer box without any click: wake the API, ask it for the code using the signature it
+ * already stores for this email, and patch the result in as soon as the workspace has registered the
+ * question. Silent when the API has no stored signature (the form in the guide is then the way in).
+ * Resolves true only when the Answer box was filled.
+ */
+export async function autoFetchStored(email, { fetchImpl, sleep, now, patch } = {}) {
+  const outcome = await fetchHeadersCode({ email, useStored: true, wake: true, fetchImpl, sleep, now });
+  if (!outcome.ok) return false;
+  const result = solvedResult(email, outcome.code, outcome.fetchedAt);
+  const apply = patch || ((value) => typeof window !== 'undefined' && typeof window.tdsPatchAnswer === 'function' && window.tdsPatchAnswer(id, value));
+  const wait = sleep || ((ms) => new Promise((resolve) => setTimeout(resolve, ms)));
+  for (let attempt = 0; attempt < AUTO_TIMING.patchTries; attempt += 1) {
+    if (apply(result)) return true;
+    await wait(AUTO_TIMING.patchPollMs);
+  }
+  return false;
+}
+
+function startAuto(email, { force = false } = {}) {
+  let key;
+  try {
+    key = apiEmail(email);
+  } catch {
+    return Promise.resolve(false);
+  }
+  if (!force && autoStarted.has(key)) return Promise.resolve(false);
+  autoStarted.add(key);
+  return autoFetchStored(email).catch(() => false);
+}
+
 export async function solve(email) {
   registerQ2Interactive();
+  if (inRealBrowser()) startAuto(email);
   const normalized = apiEmail(email);
   return {
     type: 'guide',
