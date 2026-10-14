@@ -394,6 +394,8 @@ async function checkT3Ga1(solvers, metadata) {
   assert(JSON.stringify(mixedCaseRankings) === JSON.stringify(normalizedRankings), 'T3 GA1 Q11 must use its source-defined lowercase email normalization.');
   await checkT3Ga1LlmPrompts(byId, sampleEmail);
   await checkT3Ga1Tangram(byId, sampleEmail);
+  await checkT3Ga1Headers(byId, sampleEmail);
+  await checkT3Ga1ConsoleHelper(byId, sampleEmail);
   await checkT3Ga1GitHistory(byId);
   await checkT3Ga1ApiQuestions(byId, sampleEmail);
 }
@@ -552,6 +554,198 @@ async function checkT3Ga1GitHistory(byId) {
   }
 }
 
+async function checkT3Ga1ConsoleHelper(byId, sampleEmail) {
+  const source = fs.readFileSync(path.join(rootDir, 'console/t3-ga1-helper.js'), 'utf8');
+  const email = '21f1000000@ds.study.iitm.ac.in';
+  const quizSign = 'S3cr3t+sig=';
+
+  // Runs the helper exactly as pasted, against a fake exam page, and records everything it does.
+  const boot = ({ origin = 'https://exam.sanand.workers.dev', pathname = '/tds-2026-09-ga1', user = { email, quizSign }, fetchImpl } = {}) => {
+    const logs = [], errors = [], events = [], fetched = [];
+    const elements = {};
+    for (const id of ['q-github-pages', 'q-termlog-rec-server']) {
+      elements[id] = { value: '', dispatchEvent(e) { events.push([id, e.type]); } };
+    }
+    const sandbox = {
+      location: { origin, pathname },
+      localStorage: { getItem: (key) => (key === 'user' && user ? JSON.stringify(user) : null) },
+      document: { getElementById: (id) => elements[id] || null },
+      console: { log: (...a) => logs.push(a.join(' ')), error: (...a) => errors.push(a.join(' ')) },
+      fetch: async (url, init = {}) => { fetched.push({ url: String(url), init }); return fetchImpl(url, init); },
+      URL, Event: class { constructor(type) { this.type = type; } }, setTimeout, Date, Uint8Array, JSON, RegExp, Set, Promise, Error,
+    };
+    sandbox.window = sandbox;
+    vm.runInNewContext(source, sandbox);
+    return { t3ga1: sandbox.window.t3ga1, logs, errors, events, fetched, elements };
+  };
+  const bootError = (options) => { try { boot(options); } catch (error) { return error.message; } return ''; };
+  const page = (inner) => ({ ok: true, status: 200, text: async () => inner });
+  const html = (e = email) => `<!doctype html><p><!--email_off-->${e}<!--/email_off--></p>`;
+
+  // Guard rails: only on the logged-in GA1 exam page.
+  assert(/exam\.sanand\.workers\.dev/.test(bootError({ origin: 'https://evil.example' })), 'T3 GA1 helper must refuse to run outside the exam page.');
+  assert(/tds-2026-09-ga1/.test(bootError({ pathname: '/tds-2026-05-ga0' })), 'T3 GA1 helper must refuse to run on another exam.');
+  assert(/not logged in/i.test(bootError({ user: null })) && /not logged in/i.test(bootError({ user: {} })), 'T3 GA1 helper must refuse to run when logged out.');
+  const env = boot({ fetchImpl: async () => page(html()) });
+  assert(env.t3ga1 && typeof env.t3ga1.q9.check === 'function' && typeof env.t3ga1.q13.commands === 'function' && env.logs.join('\n').includes('t3ga1.q9.commands()'), 'T3 GA1 helper must expose t3ga1 and print its menu.');
+  assert(env.fetched.length === 0, 'T3 GA1 helper must not make any request until asked.');
+
+  // Q9 page and commands.
+  const q9html = env.t3ga1.q9.page();
+  assert(q9html.includes(`<!--email_off-->${email}<!--/email_off-->`) && q9html.includes('<!doctype html>'), 'T3 GA1 helper Q9 page must wrap the email in the email_off markers.');
+  const amp = boot({ user: { email: 'a&b@x.com', quizSign }, fetchImpl: async () => page('') });
+  assert(amp.t3ga1.q9.page().includes('a&amp;b@x.com'), 'T3 GA1 helper Q9 page must HTML-escape the email.');
+  const q9cmd = env.t3ga1.q9.commands('../x; rm -rf ~');
+  const repoName = q9cmd.match(/^mkdir (\S+) && cd/m)?.[1] || '';
+  assert(/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(repoName) && !q9cmd.includes('rm -rf'), 'T3 GA1 helper Q9 commands must sanitise the repository name.');
+  assert(q9cmd.includes('gh repo create') && q9cmd.includes('repos/{owner}/{repo}/pages') && q9cmd.includes(email) && q9cmd.includes('<!--email_off-->'), 'T3 GA1 helper Q9 commands must create the repo, publish the page and enable Pages.');
+  assert(!q9cmd.includes(quizSign), 'T3 GA1 helper Q9 commands must not include the signed link.');
+
+  // Q9 check: the page must really contain the wrapped email before anything is filled.
+  const pagesUrl = 'https://student.github.io/tds-ga1-portfolio/';
+  let run = boot({ fetchImpl: async () => page(html()) });
+  let outcome = await run.t3ga1.q9.check(pagesUrl);
+  assert(outcome.ok && outcome.filled && run.elements['q-github-pages'].value === pagesUrl && run.events.some((e) => e[1] === 'input') && run.events.some((e) => e[1] === 'change'), 'T3 GA1 helper Q9 check must fill the answer box and notify the page when the email is on the live page.');
+  assert(run.fetched.length === 1 && run.fetched[0].url.startsWith(pagesUrl) && run.fetched[0].init.credentials === 'omit' && !run.fetched[0].url.includes('quizSign'), 'T3 GA1 helper Q9 check must make exactly one anonymous request, to the student\'s own URL.');
+  run = boot({ fetchImpl: async () => page(html()) });
+  run.elements['q-github-pages'].value = pagesUrl;
+  assert((await run.t3ga1.q9.check()).ok, 'T3 GA1 helper Q9 check must fall back to the URL already typed in the box.');
+  const failCases = [
+    ['missing email', async () => page('<p>hello</p>'), undefined],
+    ['unwrapped email', async () => page(`<p>${email}</p>`), 'NOT wrapped'],
+    ['someone else\'s email', async () => page(html('other@example.com')), undefined],
+    ['HTTP 404', async () => ({ ok: false, status: 404, text: async () => '' }), '404'],
+    ['network failure', async () => { throw new Error('Failed to fetch'); }, 'could not read'],
+  ];
+  for (const [label, impl, needle] of failCases) {
+    run = boot({ fetchImpl: impl });
+    outcome = await run.t3ga1.q9.check(pagesUrl);
+    assert(!outcome.ok && run.elements['q-github-pages'].value === '' && run.events.length === 0 && (!needle || outcome.message.includes(needle)), `T3 GA1 helper Q9 check must not fill the box for: ${label}.`);
+  }
+  run = boot({ fetchImpl: async () => page(html()) });
+  assert(!(await run.t3ga1.q9.check('http://student.github.io/x/')).ok && !(await run.t3ga1.q9.check('not a url')).ok && !(await run.t3ga1.q9.check()).ok && run.fetched.length === 0, 'T3 GA1 helper Q9 check must reject http, junk and empty input without any request.');
+
+  // Q13 commands.
+  const q13cmd = env.t3ga1.q13.commands();
+  assert(q13cmd.includes(`email=${encodeURIComponent(email)}`) && q13cmd.includes('quizSign=S3cr3t%2Bsig%3D') && q13cmd.includes('questionId=q-termlog-rec-server') && q13cmd.includes('termlog rec demo.cast') && q13cmd.includes('tar -czf submission.tar.gz demo.cast demo.cast.jwt') && q13cmd.includes('termlog verify demo.cast --expect-email') && q13cmd.includes('3 hours'), 'T3 GA1 helper Q13 commands must be personalised and cover record, decode, verify and pack.');
+  assert((q13cmd.match(/--- order \d/g) || []).length === 6 && new Set(q13cmd.match(/echo "--- order \d: [^"]+"/g)).size === 6 && q13cmd.includes("tr 'A-Za-z' 'N-ZA-Mn-za-m'") && q13cmd.includes('xxd -r -p') && q13cmd.includes('| rev'), 'T3 GA1 helper Q13 commands must try all six real decoding orders.');
+  const quoted = boot({ user: { email: "o'brien@x.com", quizSign }, fetchImpl: async () => page('') }).t3ga1.q13.commands();
+  assert(quoted.includes(`--expect-email 'o'"'"'brien@x.com'`), 'T3 GA1 helper Q13 commands must shell-quote the email.');
+  assert(env.t3ga1.q13.url().startsWith('https://exam.sanand.workers.dev/questionData?') && !env.logs.some((line) => line.includes(quizSign)), 'T3 GA1 helper must keep the signed link out of the console unless asked.');
+
+  // Q13 check.
+  const archiveUrl = 'https://files.example/ga1/submission.tar.gz';
+  const bytes = (...b) => ({ ok: true, status: 200, arrayBuffer: async () => Uint8Array.from(b).buffer });
+  run = boot({ fetchImpl: async () => bytes(0x1f, 0x8b, 8, 0) });
+  outcome = await run.t3ga1.q13.check(archiveUrl);
+  assert(outcome.ok && outcome.verified === true && run.elements['q-termlog-rec-server'].value === archiveUrl && run.fetched.length === 1 && run.fetched[0].init.credentials === 'omit', 'T3 GA1 helper Q13 check must accept a gzip download and fill the box.');
+  run = boot({ fetchImpl: async () => bytes(0x3c, 0x21, 0x64, 0x6f) });
+  outcome = await run.t3ga1.q13.check(archiveUrl);
+  assert(!outcome.ok && run.elements['q-termlog-rec-server'].value === '', 'T3 GA1 helper Q13 check must reject a web page served instead of the archive.');
+  run = boot({ fetchImpl: async () => ({ ok: false, status: 403, arrayBuffer: async () => new ArrayBuffer(0) }) });
+  assert(!(await run.t3ga1.q13.check(archiveUrl)).ok, 'T3 GA1 helper Q13 check must reject a link that answers an error.');
+  run = boot({ fetchImpl: async () => { throw new Error('blocked by CORS'); } });
+  outcome = await run.t3ga1.q13.check(archiveUrl);
+  assert(outcome.ok && outcome.verified === false && run.elements['q-termlog-rec-server'].value === archiveUrl && /open the link once/i.test(outcome.message), 'T3 GA1 helper Q13 check must still fill the box, but say it could not verify, when the host blocks the browser.');
+  run = boot({ fetchImpl: async () => bytes(0x1f, 0x8b) });
+  assert(!(await run.t3ga1.q13.check('http://files.example/x.tar.gz')).ok && !(await run.t3ga1.q13.check('')).ok && run.fetched.length === 0, 'T3 GA1 helper Q13 check must reject http and empty input without any request.');
+
+  // The helper never talks to anything but the URL it was asked to check, and never fakes a response.
+  assert(!/window\.fetch\s*=|Response\(|backendVerify|localStorage\.setItem/.test(source), 'T3 GA1 helper must not patch fetch, fabricate responses or write storage.');
+
+  // Portal guides: the section, the copy control and the helper file are all in place.
+  const q9Guide = (await byId['q-github-pages'].solve(sampleEmail)).guide;
+  const q13Guide = (await byId['q-termlog-rec-server'].solve(sampleEmail)).guide;
+  for (const [label, guide] of [['Q9', q9Guide], ['Q13', q13Guide]]) {
+    assert(guide.includes('Console helper') && guide.includes('window._t3ga1CopyHelper()') && guide.includes('console/t3-ga1-helper.js') && guide.includes('t3ga1.'), `T3 GA1 ${label} guide must explain the console helper and offer the copy button.`);
+  }
+  assert((q13Guide.match(/xxd -r -p/g) || []).length >= 6 && q13Guide.includes('inside the recording'), 'T3 GA1 Q13 guide must show all six real decoding pipelines.');
+  assert(fs.existsSync(path.join(rootDir, 'console/t3-ga1-helper.js')), 'T3 GA1 console helper file is missing.');
+}
+
+async function checkT3Ga1Headers(byId, sampleEmail) {
+  const apiOrigin = 'https://tds-roe-solver-api-t12026.onrender.com';
+  const q2 = await importFresh('solvers/T32026/ga1/q02-http-headers.js');
+  const email = '21f1000000@ds.study.iitm.ac.in';
+  const link = 'https://exam.sanand.workers.dev/questionData?email=21f1000000%40ds.study.iitm.ac.in&quizSign=abc%2Bdef%3D&questionId=q-http-headers-server';
+  const codeOf = (raw, who = email) => q2.validateQuestionDataUrl(raw, who).code ?? 'OK';
+
+  // Link validation happens before anything leaves the browser.
+  assert(codeOf(link) === 'OK' && q2.validateQuestionDataUrl(link, email).url === link, 'T3 GA1 Q2 must accept the official Q2 link unchanged.');
+  assert(q2.validateQuestionDataUrl(`curl -i "${link}"`, email).url === link && q2.validateQuestionDataUrl(`  \`${link}\`,  `, email).url === link, 'T3 GA1 Q2 must extract the link from a curl -i line, quotes and backticks.');
+  assert(codeOf(link.replace('q-http-headers-server', 'q-ledger-agent-server')) === 'OK', 'T3 GA1 Q2 must accept a link from any GA1 question (same signature).');
+  assert(codeOf('https://exam.sanand.workers.dev/questionData?email=a+b@x.com&quizSign=s&questionId=q-http-headers-server', 'a+b@x.com') === 'OK', 'T3 GA1 Q2 must tolerate an unescaped + in the link email.');
+  assert(codeOf('') === 'EMPTY' && codeOf('nothing') === 'EMPTY' && codeOf(null) === 'EMPTY', 'T3 GA1 Q2 must report an empty paste.');
+  assert(codeOf(link.replace('https://exam', 'https://evil.example/x?')) === 'WRONG_HOST' && codeOf(link.replace('https:', 'http:')) === 'WRONG_HOST', 'T3 GA1 Q2 must refuse other hosts and plain http.');
+  assert(codeOf('https://exam.sanand.workers.dev.evil.example/questionData?email=a&quizSign=s&questionId=q-http-headers-server') === 'WRONG_HOST', 'T3 GA1 Q2 must refuse look-alike hosts.');
+  assert(codeOf(link.replace('/questionData', '/other')) === 'WRONG_PATH', 'T3 GA1 Q2 must refuse other paths.');
+  assert(codeOf(link.replace('&questionId=q-http-headers-server', '')) === 'WRONG_QUESTION' && codeOf(link.replace('q-http-headers-server', 'Not A Question')) === 'WRONG_QUESTION', 'T3 GA1 Q2 must refuse a link without a valid question id.');
+  assert(codeOf(link.replace('&quizSign=abc%2Bdef%3D', '')) === 'NO_SIGNATURE', 'T3 GA1 Q2 must refuse a link without quizSign.');
+  assert(codeOf(link, 'someone.else@example.com') === 'EMAIL_MISMATCH', 'T3 GA1 Q2 must refuse another account\'s link.');
+
+  // Scripted API: record every call so ordering and secrecy can be asserted.
+  const script = (handler) => {
+    const calls = [];
+    return { calls, fetchImpl: async (url, init = {}) => { calls.push({ url, method: init.method || 'GET', body: init.body, init }); return handler(url, init, calls); } };
+  };
+  const reply = (status, body) => ({ ok: status >= 200 && status < 300, status, json: async () => body });
+  const instant = { sleep: async () => {}, now: () => 1700000000000 };
+  const goodReply = { question_id: 'q-http-headers-server', email, answer: '7F3KQ9M2', answer_text: '7F3KQ9M2' };
+  const endpoint = `${apiOrigin}/ga1/${encodeURIComponent(email)}/answers/headers`;
+  const run = (handler, extra = {}) => {
+    const s = script(handler);
+    return { ...s, go: () => q2.fetchHeadersCode({ email, rawUrl: link, fetchImpl: s.fetchImpl, ...instant, ...extra }) };
+  };
+
+  let r = run((url) => (url.endsWith('/health') ? reply(200, { status: 'ok' }) : reply(200, goodReply)));
+  let outcome = await r.go();
+  assert(outcome.ok && outcome.code === '7F3KQ9M2' && outcome.fetchedAt === 1700000000000, 'T3 GA1 Q2 must return the X-Exam-Code from the API.');
+  assert(r.calls.length === 2 && r.calls[0].url === `${apiOrigin}/health` && r.calls[1].url === endpoint && r.calls[1].method === 'POST', 'T3 GA1 Q2 must wake the API first, then POST once to /answers/headers.');
+  assert(r.calls[1].body === JSON.stringify({ question_data_url: link }) && r.calls[1].init.credentials === 'omit' && r.calls[0].body === undefined, 'T3 GA1 Q2 must send only the private link, only to the API, and never to /health.');
+
+  r = run(() => reply(200, goodReply));
+  await q2.fetchHeadersCode({ email, rawUrl: 'not a link', fetchImpl: r.fetchImpl, ...instant });
+  await q2.fetchHeadersCode({ email, rawUrl: link.replace('exam.sanand', 'evil'), fetchImpl: r.fetchImpl, ...instant });
+  assert(r.calls.length === 0, 'T3 GA1 Q2 must not touch the network for an invalid link.');
+  let clock = 0;
+  r = run((url) => (url.endsWith('/health') ? reply(503, {}) : reply(200, goodReply)));
+  outcome = await q2.fetchHeadersCode({ email, rawUrl: link, fetchImpl: r.fetchImpl, sleep: async () => {}, now: () => (clock += 40000) });
+  assert(!outcome.ok && outcome.code === 'API_UNREACHABLE' && r.calls.every((c) => c.url.endsWith('/health')), 'T3 GA1 Q2 must never send the link to an API that did not wake.');
+  r = run((url) => (url.endsWith('/health') ? reply(502, {}) : reply(200, goodReply)));
+  let polls = 0;
+  r = run((url) => (url.endsWith('/health') ? reply(++polls < 3 ? 502 : 200, {}) : reply(200, goodReply)));
+  outcome = await r.go();
+  assert(outcome.ok && polls === 3 && r.calls.at(-1).url === endpoint, 'T3 GA1 Q2 must keep polling /health until the API wakes.');
+
+  const failWith = async (handler, wanted, label) => {
+    const result = await run((url, init) => (url.endsWith('/health') ? reply(200, {}) : handler(url, init))).go();
+    assert(!result.ok && result.code === wanted && typeof result.message === 'string' && result.message.length > 20, `T3 GA1 Q2 ${label}: expected ${wanted}, got ${result.code}.`);
+    assert(!result.message.includes('quizSign') && !result.message.includes('abc'), `T3 GA1 Q2 ${label} must not echo the signed link.`);
+  };
+  await failWith(() => reply(400, { error: 'VALID_QUESTION_DATA_URL_REQUIRED' }), 'VALID_QUESTION_DATA_URL_REQUIRED', 'rejected link');
+  await failWith(() => reply(409, { error: 'POST_YOUR_QUESTION_DATA_URL_OR_ONBOARD_FIRST' }), 'POST_YOUR_QUESTION_DATA_URL_OR_ONBOARD_FIRST', 'missing link');
+  await failWith(() => reply(502, { error: 'UPSTREAM_REJECTED', upstream_status: 403 }), 'UPSTREAM_REJECTED', 'expired signature');
+  await failWith(() => reply(502, { error: 'UPSTREAM_REJECTED', upstream_status: 500 }), 'UPSTREAM_REJECTED', 'exam server error');
+  await failWith(() => reply(422, { error: 'NO_X_EXAM_CODE_HEADER' }), 'NO_X_EXAM_CODE_HEADER', 'no header');
+  await failWith(() => reply(504, { error: 'UPSTREAM_TIMEOUT' }), 'UPSTREAM_TIMEOUT', 'exam timeout');
+  await failWith(() => reply(429, {}), 'RATE_LIMITED', 'rate limit');
+  await failWith(() => reply(500, { error: 'BOOM' }), 'BOOM', 'unknown error');
+  await failWith(() => ({ ok: false, status: 502, json: async () => { throw new Error('html'); } }), 'HTTP_502', 'non-JSON error');
+  await failWith(() => reply(200, { ...goodReply, answer_text: '' }), 'BAD_RESPONSE', 'empty code');
+  await failWith(() => reply(200, { ...goodReply, answer_text: 'two words' }), 'BAD_RESPONSE', 'code with spaces');
+  await failWith(() => reply(200, { ...goodReply, email: 'other@example.com' }), 'BAD_RESPONSE', 'reply for another email');
+  await failWith(() => { throw new Error('offline'); }, 'NETWORK', 'network failure');
+  await failWith(() => { const e = new Error('aborted'); e.name = 'AbortError'; throw e; }, 'TIMEOUT', 'timeout');
+  outcome = await q2.fetchHeadersCode({ email, rawUrl: link, fetchImpl: null });
+  assert(!outcome.ok && outcome.code === 'NO_FETCH', 'T3 GA1 Q2 must report a browser without fetch.');
+
+  // The solver itself: a guide with the form until the student supplies the private link.
+  const guideResult = await byId['q-http-headers-server'].solve(sampleEmail);
+  assert(guideResult.type === 'guide' && guideResult.answer.startsWith('NOT FETCHED YET') && guideResult.guide.includes('id="t3q2Root"') && guideResult.guide.includes('window._t3ga1q2Generate()') && guideResult.guide.includes('curl -i') && guideResult.guide.includes('rotates every hour') && guideResult.usesHostedApi === true, 'T3 GA1 Q2 must explain the private-link step, keep the manual curl steps and mention hourly rotation.');
+  const hostile = await q2.solve('"><img/src=x/onerror=alert(1)>@x.com');
+  assert(!/<img.src=x/i.test(hostile.guide), 'T3 GA1 Q2 must escape the email in the form.');
+}
+
 async function checkT3Ga1Tangram(byId, sampleEmail) {
   const q16 = await importFresh('solvers/T32026/ga1/q16-tangram.js');
   const geometry = await importFresh('solvers/T32026/ga1/tangram-geometry.js');
@@ -576,7 +770,7 @@ async function checkT3Ga1Tangram(byId, sampleEmail) {
     verified += 1;
   }
   assert(Object.keys(solutions).every((tid) => targets.some((t) => t.id === tid)), 'T3 GA1 Q16 has an arrangement for an unknown target.');
-  assert(verified >= 96, `T3 GA1 Q16 must keep at least 96 verified arrangements (has ${verified}; missing: ${missing.join(', ')}).`);
+  assert(verified === 100 && missing.length === 0, `T3 GA1 Q16 must have a verified arrangement for all 100 silhouettes (has ${verified}; missing: ${missing.join(', ')}).`);
 
   // A deliberately wrong arrangement must be rejected (mutation check of the verifier).
   const sample = q16.posesFor(targets[1].id);

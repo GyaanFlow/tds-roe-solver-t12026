@@ -18,7 +18,7 @@ import { wrapSolverModule } from './runtime.js';
 
 export const solvers = [
   q01, // Q1  - VS Code version from the local environment
-  q02, // Q2  - live authenticated response header
+  q02, // Q2  - X-Exam-Code fetched through the live API from the student's private link
   q03, // Q3  - deterministic HTTPie request plus live submission guide
   q04, // Q4  - pinned Prettier Markdown hash
   q05, // Q5  - reconstructed seeded JSON source data

@@ -1,9 +1,11 @@
 import { makeGuideResult } from './utils.js';
+import { helperSection, registerHelperCopy } from './console-helper-guide.js';
 
 export const id = 'q-termlog-rec-server';
 export const title = 'Q13: Decode It in the Terminal (termlog)';
 
 export async function solve(email) {
+  registerHelperCopy();
   const guide = `### 🎯 Quick Summary
 This question tests using **termlog** (a tool that records and digitally signs terminal sessions). You record yourself decoding a 3-step transformed secret (ROT13, Hex, and Reverse String).
 
@@ -43,30 +45,19 @@ You will see an encoded text (for example: \`676e...ed63\`).
 
 ---
 
-#### Step 4: Decode the string using this Universal One-Liner
-Copy your encoded string, replace \`PASTE_ENCODED_STRING_HERE\` below, and run:
+#### Step 4: Decode it with real shell commands (inside the recording)
+Your challenge was put through three reversible steps — ROT13, hex and reversal — in some order. Save the cipher text and try all six orders; exactly one prints readable text:
 
 \`\`\`bash
-# This automatically handles ROT13, Hex decoding, and string reversal:
-python3 -c '
-import sys, codecs
-s = "PASTE_ENCODED_STRING_HERE".strip()
-# Try decode order: Hex -> ROT13 -> Reverse
-try:
-    decoded = bytes.fromhex(s).decode("utf-8")
-    rot = codecs.decode(decoded, "rot_13")
-    print("Decoded (Option A):", rot[::-1])
-except Exception:
-    pass
-try:
-    rot = codecs.decode(s, "rot_13")
-    decoded = bytes.fromhex(rot).decode("utf-8")
-    print("Decoded (Option B):", decoded[::-1])
-except Exception:
-    pass
-'
+tr -d '\\r\\n ' < challenge.txt > cipher.txt      # if the output was JSON, put just the cipher text in cipher.txt
+cat cipher.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' | xxd -r -p | rev
+cat cipher.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' | rev | xxd -r -p
+cat cipher.txt | xxd -r -p | tr 'A-Za-z' 'N-ZA-Mn-za-m' | rev
+cat cipher.txt | xxd -r -p | rev | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+cat cipher.txt | rev | tr 'A-Za-z' 'N-ZA-Mn-za-m' | xxd -r -p
+cat cipher.txt | rev | xxd -r -p | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 \`\`\`
-Your decoded answer will be printed in the terminal!
+The readable result is your code. The commands must run **inside the recording** (the grader checks the recording itself), and the code changes every 3 hours, so fetch and decode in one sitting. (\`xxd\` ships with Git for Windows, macOS and most Linux; on Windows use Git Bash.)
 
 ---
 
@@ -92,8 +83,8 @@ tar -czf submission.tar.gz demo.cast demo.cast.jwt
 2. Paste the public download URL of \`submission.tar.gz\` into the answer box and click **Submit**!`;
 
   return makeGuideResult(
-    'Follow the 6 simple steps to record termlog session, decode with the python one-liner, and submit the tar.gz URL.',
-    guide,
+    'Follow the 6 simple steps to record termlog session, decode it with the six real shell pipelines, and submit the tar.gz URL.',
+    `${guide}\n\n---\n\n${helperSection('q13')}`,
     'Signed Terminal Recording Walkthrough'
   );
 }

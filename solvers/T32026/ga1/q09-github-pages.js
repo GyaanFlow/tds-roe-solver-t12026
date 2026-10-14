@@ -1,4 +1,5 @@
 import { makeGuideResult, markdownCodeBlock } from './utils.js';
+import { helperSection, registerHelperCopy } from './console-helper-guide.js';
 
 export const id = 'q-github-pages';
 export const title = 'Q9: Host Your Portfolio on GitHub Pages';
@@ -11,6 +12,7 @@ function escapeHtml(value) {
 }
 
 export async function solve(email) {
+  registerHelperCopy();
   const safeEmail = escapeHtml(email);
   const markerHtml = `<!--email_off-->${safeEmail}<!--/email_off-->`;
   const pageHtml = `<!doctype html>
@@ -69,7 +71,7 @@ export async function solve(email) {
 
   return makeGuideResult(
     'Publish the provided index.html from your own GitHub repository, then submit its live Pages URL.',
-    `${guide}\n\n### Ready-to-publish index.html\n\n${markdownCodeBlock(pageHtml, 'html')}`,
+    `${guide}\n\n${helperSection('q9')}\n\n### Ready-to-publish index.html\n\n${markdownCodeBlock(pageHtml, 'html')}`,
     'Your GitHub account and deployment are required',
   );
 }
