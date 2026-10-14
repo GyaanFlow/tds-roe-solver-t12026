@@ -563,7 +563,7 @@ async function checkT3Ga1ConsoleHelper(byId, sampleEmail) {
   const boot = ({ origin = 'https://exam.sanand.workers.dev', pathname = '/tds-2026-09-ga1', user = { email, quizSign }, fetchImpl } = {}) => {
     const logs = [], errors = [], events = [], fetched = [];
     const elements = {};
-    for (const id of ['q-github-pages', 'q-termlog-rec-server']) {
+    for (const id of ['q-http-headers-server', 'q-github-pages', 'q-termlog-rec-server']) {
       elements[id] = { value: '', dispatchEvent(e) { events.push([id, e.type]); } };
     }
     const sandbox = {
@@ -650,12 +650,35 @@ async function checkT3Ga1ConsoleHelper(byId, sampleEmail) {
   run = boot({ fetchImpl: async () => bytes(0x1f, 0x8b) });
   assert(!(await run.t3ga1.q13.check('http://files.example/x.tar.gz')).ok && !(await run.t3ga1.q13.check('')).ok && run.fetched.length === 0, 'T3 GA1 helper Q13 check must reject http and empty input without any request.');
 
+  // Q2: reads X-Exam-Code from the student's own signed link on the exam server.
+  const withHeader = (value, status = 200) => ({ ok: status >= 200 && status < 300, status, headers: { get: (name) => (String(name).toLowerCase() === 'x-exam-code' ? value : null) } });
+  run = boot({ fetchImpl: async () => withHeader('  7F3KQ9M2 ') });
+  outcome = await run.t3ga1.q2.fill();
+  const q2Request = new URL(run.fetched[0].url);
+  assert(outcome.ok && outcome.code === '7F3KQ9M2' && outcome.filled && run.elements['q-http-headers-server'].value === '7F3KQ9M2' && run.events.some((e) => e[1] === 'input') && run.events.some((e) => e[1] === 'change'), 'T3 GA1 helper Q2 must fill the answer box with the X-Exam-Code header.');
+  assert(run.fetched.length === 1 && q2Request.origin === 'https://exam.sanand.workers.dev' && q2Request.pathname === '/questionData' && q2Request.searchParams.get('email') === email && q2Request.searchParams.get('quizSign') === quizSign && q2Request.searchParams.get('questionId') === 'q-http-headers-server' && run.fetched[0].init.credentials === 'omit', 'T3 GA1 helper Q2 must request only your own Q2 link on the exam server.');
+  assert(!JSON.stringify([run.logs, run.errors]).includes('S3cr3t'), 'T3 GA1 helper Q2 must not print the signature.');
+  for (const [label, impl, wanted] of [
+    ['no header', async () => withHeader(null), 'no X-Exam-Code'],
+    ['blank header', async () => withHeader('   '), 'no X-Exam-Code'],
+    ['expired signature', async () => withHeader(null, 403), 'rejected your signature'],
+    ['server error', async () => withHeader(null, 500), 'HTTP 500'],
+    ['network failure', async () => { throw new Error('offline'); }, 'could not reach'],
+  ]) {
+    run = boot({ fetchImpl: impl });
+    outcome = await run.t3ga1.q2.fill();
+    assert(!outcome.ok && outcome.message.includes(wanted) && run.elements['q-http-headers-server'].value === '' && run.events.length === 0, `T3 GA1 helper Q2 must not fill the box for: ${label}.`);
+  }
+  assert(env.logs.some((line) => line.includes('t3ga1.q2.fill()')), 'T3 GA1 helper menu must list Q2.');
+
   // The helper never talks to anything but the URL it was asked to check, and never fakes a response.
   assert(!/window\.fetch\s*=|Response\(|backendVerify|localStorage\.setItem/.test(source), 'T3 GA1 helper must not patch fetch, fabricate responses or write storage.');
 
   // Portal guides: the section, the copy control and the helper file are all in place.
   const q9Guide = (await byId['q-github-pages'].solve(sampleEmail)).guide;
   const q13Guide = (await byId['q-termlog-rec-server'].solve(sampleEmail)).guide;
+  const q2Guide = (await byId['q-http-headers-server'].solve(sampleEmail)).guide;
+  assert(q2Guide.includes('Console helper') && q2Guide.includes('t3ga1.q2.fill()') && q2Guide.includes('window._t3ga1CopyHelper()'), 'T3 GA1 Q2 guide must offer the console helper.');
   for (const [label, guide] of [['Q9', q9Guide], ['Q13', q13Guide]]) {
     assert(guide.includes('Console helper') && guide.includes('window._t3ga1CopyHelper()') && guide.includes('console/t3-ga1-helper.js') && guide.includes('t3ga1.'), `T3 GA1 ${label} guide must explain the console helper and offer the copy button.`);
   }
@@ -738,6 +761,63 @@ async function checkT3Ga1Headers(byId, sampleEmail) {
   await failWith(() => { const e = new Error('aborted'); e.name = 'AbortError'; throw e; }, 'TIMEOUT', 'timeout');
   outcome = await q2.fetchHeadersCode({ email, rawUrl: link, fetchImpl: null });
   assert(!outcome.ok && outcome.code === 'NO_FETCH', 'T3 GA1 Q2 must report a browser without fetch.');
+
+  // Stored-signature mode: no link in the request; the API uses the signature it saved at onboarding.
+  r = run((url) => (url.endsWith('/health') ? reply(200, {}) : reply(200, goodReply)), {});
+  outcome = await q2.fetchHeadersCode({ email, useStored: true, fetchImpl: r.fetchImpl, ...instant });
+  assert(outcome.ok && outcome.code === '7F3KQ9M2' && r.calls[1].url === endpoint && r.calls[1].body === '{}', 'T3 GA1 Q2 stored-signature mode must POST an empty body and return the code.');
+  r = run((url) => (url.endsWith('/health') ? reply(200, {}) : reply(409, { error: 'POST_YOUR_QUESTION_DATA_URL_OR_ONBOARD_FIRST' })));
+  outcome = await q2.fetchHeadersCode({ email, useStored: true, fetchImpl: r.fetchImpl, ...instant });
+  assert(!outcome.ok && outcome.code === 'POST_YOUR_QUESTION_DATA_URL_OR_ONBOARD_FIRST', 'T3 GA1 Q2 stored-signature mode must report when the API has no stored signature.');
+  assert(!(await q2.fetchHeadersCode({ email: 'not-an-email', useStored: true, fetchImpl: r.fetchImpl, ...instant })).ok, 'T3 GA1 Q2 stored-signature mode must still reject a bad email.');
+
+  // Automatic fill: wait for the API, fetch, then keep patching until the workspace has registered the question.
+  q2.AUTO_TIMING.patchPollMs = 1;
+  const autoServer = (handler) => script((url, init) => (url.endsWith('/health') ? reply(200, {}) : handler(url, init)));
+  let patches = [];
+  let ready = 0;
+  r = autoServer(() => reply(200, goodReply));
+  const filled = await q2.autoFetchStored(email, { fetchImpl: r.fetchImpl, ...instant, patch: (value) => { patches.push(value); return ++ready >= 3; } });
+  assert(filled === true && patches.length === 3 && patches.at(-1).type === 'solved' && patches.at(-1).answer === '7F3KQ9M2' && patches.at(-1).usesHostedApi === true, 'T3 GA1 Q2 automatic fill must keep trying to patch until the workspace is ready, then fill the code.');
+  patches = [];
+  r = autoServer(() => reply(409, { error: 'POST_YOUR_QUESTION_DATA_URL_OR_ONBOARD_FIRST' }));
+  assert((await q2.autoFetchStored(email, { fetchImpl: r.fetchImpl, ...instant, patch: (value) => { patches.push(value); return true; } })) === false && patches.length === 0, 'T3 GA1 Q2 automatic fill must stay silent when the API has no stored signature.');
+  const savedTries = q2.AUTO_TIMING.patchTries;
+  q2.AUTO_TIMING.patchTries = 4;
+  r = autoServer(() => reply(200, goodReply));
+  assert((await q2.autoFetchStored(email, { fetchImpl: r.fetchImpl, ...instant, patch: () => false })) === false, 'T3 GA1 Q2 automatic fill must give up if the workspace never registers the question.');
+  q2.AUTO_TIMING.patchTries = savedTries;
+
+  // solve(): Node never calls the API; a real browser starts the automatic fill, once per email, and Q15 can re-trigger it.
+  const savedFetch = globalThis.fetch, savedWindow = globalThis.window;
+  const savedNavigator = Object.getOwnPropertyDescriptor(globalThis, 'navigator');
+  const solveCalls = [];
+  try {
+    globalThis.fetch = async (url, init = {}) => { solveCalls.push({ url: String(url), body: init.body }); return String(url).endsWith('/health') ? reply(200, {}) : reply(200, { ...goodReply, email: 'auto.user@ds.study.iitm.ac.in' }); };
+    await q2.solve('auto.user@ds.study.iitm.ac.in');
+    await new Promise((resolve) => setTimeout(resolve, 20));
+    assert(solveCalls.length === 0, 'T3 GA1 Q2 must not call the API from Node.');
+
+    const patched = [];
+    globalThis.window = { tdsPatchAnswer: (pid, value) => { patched.push([pid, value]); return true; } };
+    Object.defineProperty(globalThis, 'navigator', { value: { userAgent: 'Mozilla/5.0 (check)' }, configurable: true });
+    const first = await q2.solve('auto.user@ds.study.iitm.ac.in');
+    assert(first.type === 'guide', 'T3 GA1 Q2 must still return the guide immediately in the browser.');
+    for (let i = 0; i < 50 && patched.length === 0; i += 1) await new Promise((resolve) => setTimeout(resolve, 10));
+    assert(patched.length === 1 && patched[0][0] === 'q-http-headers-server' && patched[0][1].answer === '7F3KQ9M2' && solveCalls.some((c) => c.body === '{}'), 'T3 GA1 Q2 must fill the Answer box by itself in the browser when the API holds a signature.');
+    const before = solveCalls.length;
+    await q2.solve('auto.user@ds.study.iitm.ac.in');
+    await new Promise((resolve) => setTimeout(resolve, 30));
+    assert(solveCalls.length === before, 'T3 GA1 Q2 must not repeat the automatic fetch for the same email in one page load.');
+    assert(typeof globalThis.window._t3ga1q2AutoFetch === 'function', 'T3 GA1 Q2 must expose the hook Q15 uses.');
+    await globalThis.window._t3ga1q2AutoFetch('auto.user@ds.study.iitm.ac.in');
+    assert(solveCalls.length > before && patched.length === 2, 'T3 GA1 Q2 hook must re-run the automatic fetch on demand.');
+  } finally {
+    globalThis.fetch = savedFetch;
+    if (savedWindow === undefined) delete globalThis.window; else globalThis.window = savedWindow;
+    if (savedNavigator) Object.defineProperty(globalThis, 'navigator', savedNavigator); else delete globalThis.navigator;
+  }
+  assert(fs.readFileSync(path.join(rootDir, 'solvers/T32026/ga1/q15-ledger-agent.js'), 'utf8').includes('_t3ga1q2AutoFetch'), 'T3 GA1 Q15 must trigger the Q2 automatic fetch after onboarding.');
 
   // The solver itself: a guide with the form until the student supplies the private link.
   const guideResult = await byId['q-http-headers-server'].solve(sampleEmail);

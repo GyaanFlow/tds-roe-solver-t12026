@@ -313,6 +313,8 @@ function registerQ15Interactive() {
         return;
       }
       const patched = typeof window.tdsPatchAnswer === 'function' && window.tdsPatchAnswer(id, solvedResult(email, outcome.submitUrl));
+      // Onboarding just stored the signature on the API, so the Q2 code can now be fetched with no link.
+      if (typeof window._t3ga1q2AutoFetch === 'function') window._t3ga1q2AutoFetch(email);
       if (!patched) {
         show(`Live URL: ${outcome.submitUrl}`, '#198754');
       }
