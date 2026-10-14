@@ -393,6 +393,7 @@ async function checkT3Ga1(solvers, metadata) {
   const normalizedRankings = JSON.parse((await byId['q-cosine-similarity-server'].solve('user.test+t3@example.com')).answer);
   assert(JSON.stringify(mixedCaseRankings) === JSON.stringify(normalizedRankings), 'T3 GA1 Q11 must use its source-defined lowercase email normalization.');
   await checkT3Ga1LlmPrompts(byId, sampleEmail);
+  await checkT3Ga1Tangram(byId, sampleEmail);
   await checkT3Ga1GitHistory(byId);
   await checkT3Ga1ApiQuestions(byId, sampleEmail);
 }
@@ -548,6 +549,128 @@ async function checkT3Ga1GitHistory(byId) {
     else if (kind === 2) { const cut = Math.floor(next() * mutated.length); input = Uint8Array.from([...mutated.subarray(0, cut), ...mutated.subarray(cut + Math.floor(next() * 40))]); }
     else for (let i = 0; i < 2; i += 1) { const at = Math.floor(next() * mutated.length); mutated[at] = 48 + Math.floor(next() * 10); }
     try { parseFastImport(input); } catch (error) { assert(error instanceof FastImportError, `T3 GA1 Q10 fuzz round ${round} threw ${error?.name}: ${error?.message}`); }
+  }
+}
+
+async function checkT3Ga1Tangram(byId, sampleEmail) {
+  const q16 = await importFresh('solvers/T32026/ga1/q16-tangram.js');
+  const geometry = await importFresh('solvers/T32026/ga1/tangram-geometry.js');
+  const { targets } = await importFresh('solvers/T32026/ga1/tangram-targets.js');
+  const { solutions } = await importFresh('solvers/T32026/ga1/tangram-solutions.js');
+
+  // The exam bundle's own target list is the source of truth for ids, outlines and expected match keys.
+  const official = fs.readFileSync(path.join(rootDir, 'solvers/T32026/ga1/exam-source.js'), 'utf8');
+  assert(targets.length === 100 && new Set(targets.map((t) => t.id)).size === 100, 'T3 GA1 Q16 must list the exam\'s 100 distinct silhouettes.');
+  for (const t of targets.slice(0, 100)) {
+    assert(official.includes(t.matchKey) && official.includes(t.svgPath), `T3 GA1 Q16 target ${t.id} no longer matches the official exam source.`);
+  }
+
+  // Every stored arrangement must pass the game's own validator and hash to the exam's expected key.
+  let verified = 0;
+  const missing = [];
+  for (const t of targets) {
+    const pieces = q16.posesFor(t.id);
+    if (!pieces) { missing.push(t.id); continue; }
+    const result = await q16.verifyArrangement(t, pieces);
+    assert(result.ok, `T3 GA1 Q16 stored arrangement for ${t.id} fails verification: ${result.reason}`);
+    verified += 1;
+  }
+  assert(Object.keys(solutions).every((tid) => targets.some((t) => t.id === tid)), 'T3 GA1 Q16 has an arrangement for an unknown target.');
+  assert(verified >= 96, `T3 GA1 Q16 must keep at least 96 verified arrangements (has ${verified}; missing: ${missing.join(', ')}).`);
+
+  // A deliberately wrong arrangement must be rejected (mutation check of the verifier).
+  const sample = q16.posesFor(targets[1].id);
+  const moved = sample.map((p, i) => (i === 3 ? { ...p, x: p.x + 3 } : p));
+  assert(!(await q16.verifyArrangement(targets[1], moved)).ok, 'T3 GA1 Q16 verifier must reject a shifted piece.');
+  assert(!(await q16.verifyArrangement(targets[2], sample)).ok, 'T3 GA1 Q16 verifier must reject another target\'s arrangement.');
+
+  // Board link round-trips through the game's own decoder.
+  const link = q16.boardLink(sample);
+  const fragment = new URLSearchParams(link.split('#')[1]);
+  assert(link.startsWith(`${q16.GAME_URL}#v=1&s=`) && fragment.get('v') === '1', 'T3 GA1 Q16 board link must use the game\'s state-link format.');
+  const padded = fragment.get('s').replace(/-/g, '+').replace(/_/g, '/');
+  const decoded = geometry.tangramAdapter.decodeCandidate(Uint8Array.from(Buffer.from(padded, 'base64')), geometry.TANGRAM_CONFIG);
+  assert(JSON.stringify(decoded.pieces.map((p) => [p.x, p.y, p.orientation, p.reflected])) === JSON.stringify(sample.map((p) => [p.x, p.y, p.orientation, p.reflected])), 'T3 GA1 Q16 board link must decode back to the same arrangement.');
+
+  // Target assignment matches the exam's seeded pick and spreads over the pool.
+  const seen = new Set();
+  for (let i = 0; i < 1000; i += 1) {
+    const email = `student${i}@ds.study.iitm.ac.in`;
+    const { index, target } = q16.targetForEmail(email);
+    const expectedIndex = Math.floor(seedrandom(`${email}#q-visual-game-tangram`)() * targets.length);
+    assert(index === expectedIndex && target.id === targets[index].id, `T3 GA1 Q16 target pick differs from the exam for ${email}.`);
+    seen.add(target.id);
+  }
+  assert(seen.size >= 60, 'T3 GA1 Q16 target assignment must spread across the silhouette pool.');
+
+  // Guide (Node: no automatic signing) — arrangement, board link, widget, escaping.
+  const guideResult = await byId['q-visual-game-tangram'].solve(sampleEmail);
+  const { target: myTarget } = q16.targetForEmail(sampleEmail);
+  assert(guideResult.type === 'guide' && guideResult.guide.includes(myTarget.id) && guideResult.guide.includes('id="t3q16Root"') && guideResult.guide.includes('<svg') && guideResult.guide.includes(q16.GAME_URL), 'T3 GA1 Q16 guide must show the target, the diagram, the signing widget and the board link.');
+  assert(guideResult.debug.verified === true && guideResult.debug.matchKey === myTarget.matchKey, 'T3 GA1 Q16 must verify the stored arrangement before showing it.');
+  const hostile = await q16.solve('"><img src=x onerror=alert(1)>@x.com');
+  assert(!/<img src=x/i.test(hostile.guide), 'T3 GA1 Q16 must escape the email in the guide.');
+
+  // Token requests against a scripted game server.
+  const b64 = (obj) => Buffer.from(JSON.stringify(obj)).toString('base64url');
+  const jwt = (payload) => `${b64({ alg: 'ES256', typ: 'JWT' })}.${b64(payload)}.c2ln`;
+  const pieces = q16.posesFor(myTarget.id);
+  const calls = [];
+  const server = (override) => async (url, init) => {
+    const body = JSON.parse(init.body);
+    calls.push({ url, init, body });
+    const forced = override?.(body);
+    if (forced) return forced;
+    return { status: 200, ok: true, json: async () => ({ invalid: false, errors: [], match_key: myTarget.matchKey, receipt: jwt({ sub: sampleEmail, game: 'tangram' }) }) };
+  };
+  const good = await q16.requestToken({ email: sampleEmail, target: myTarget, pieces, fetchImpl: server() });
+  assert(good.token.split('.').length === 3 && good.payload.sub === sampleEmail, 'T3 GA1 Q16 must return the signed token.');
+  const sent = calls[0];
+  assert(sent.url === q16.ATTEST_URL && sent.init.credentials === 'omit' && sent.body.email === sampleEmail && sent.body.game === 'tangram' && sent.body.config_id === 'standard-seven-v1' && sent.body.state === q16.stateBase64Url(pieces) && sent.body.client_report.events.length === 0, 'T3 GA1 Q16 must send only the documented attestation fields.');
+  const expectFail = async (override, code) => {
+    try {
+      await q16.requestToken({ email: sampleEmail, target: myTarget, pieces, fetchImpl: override });
+    } catch (error) {
+      assert(error.code === code, `T3 GA1 Q16 expected ${code}, got ${error.code} (${error.message})`);
+      return;
+    }
+    throw new Error(`T3 GA1 Q16 expected a ${code} failure.`);
+  };
+  await expectFail(server(() => ({ status: 200, ok: true, json: async () => ({ invalid: true, errors: [{ code: 'overlap' }], receipt: 'x' }) })), 'REJECTED');
+  await expectFail(server(() => ({ status: 200, ok: true, json: async () => ({ invalid: false, errors: [], match_key: 'f'.repeat(64), receipt: jwt({ sub: sampleEmail }) }) })), 'MISMATCH');
+  await expectFail(server(() => ({ status: 200, ok: true, json: async () => ({ invalid: false, errors: [], match_key: myTarget.matchKey, receipt: jwt({ sub: 'someone@else.com' }) }) })), 'WRONG_EMAIL');
+  await expectFail(server(() => ({ status: 200, ok: true, json: async () => ({ invalid: false, errors: [], match_key: myTarget.matchKey, receipt: 'not-a-jwt' }) })), 'BAD_TOKEN');
+  await expectFail(server(() => ({ status: 429, ok: false, json: async () => ({}) })), 'RATE_LIMITED');
+  await expectFail(server(() => ({ status: 500, ok: false, json: async () => ({ message: 'boom' }) })), 'HTTP_500');
+  await expectFail(server(() => ({ status: 502, ok: false, json: async () => { throw new Error('html'); } })), 'HTTP_502');
+  await expectFail(async () => { throw new Error('offline'); }, 'NETWORK');
+  await expectFail(async () => { const e = new Error('aborted'); e.name = 'AbortError'; throw e; }, 'NETWORK');
+  try {
+    await q16.requestToken({ email: sampleEmail, target: myTarget, pieces: sample, fetchImpl: server() });
+    throw new Error('wrong arrangement must not be signed');
+  } catch (error) {
+    assert(error.code === 'BAD_ARRANGEMENT', 'T3 GA1 Q16 must refuse to sign an arrangement that fails local verification.');
+  }
+
+  // Browser path: solve() signs automatically, caches the token, and falls back to the guide on failure.
+  const savedWindow = globalThis.window, savedFetch = globalThis.fetch;
+  const savedNavigator = Object.getOwnPropertyDescriptor(globalThis, 'navigator');
+  try {
+    globalThis.window = {};
+    Object.defineProperty(globalThis, 'navigator', { value: { userAgent: 'Mozilla/5.0 (check)' }, configurable: true });
+    calls.length = 0;
+    globalThis.fetch = server();
+    const auto = await q16.solve(sampleEmail);
+    assert(auto.type === 'solved' && auto.answer.split('.').length === 3 && auto.debug.autoSigned === true && auto.usesHostedApi === true, 'T3 GA1 Q16 must fill the signed token automatically in the browser.');
+    await q16.solve(sampleEmail);
+    assert(calls.length === 1, 'T3 GA1 Q16 must not re-request a token it already has.');
+    globalThis.fetch = async () => { throw new Error('offline'); };
+    const offlineResult = await q16.solve('someone.else@ds.study.iitm.ac.in');
+    assert(offlineResult.type === 'guide' && offlineResult.guide.includes('Automatic signing did not complete'), 'T3 GA1 Q16 must fall back to the guide when signing fails.');
+  } finally {
+    if (savedWindow === undefined) delete globalThis.window; else globalThis.window = savedWindow;
+    globalThis.fetch = savedFetch;
+    if (savedNavigator) Object.defineProperty(globalThis, 'navigator', savedNavigator); else delete globalThis.navigator;
   }
 }
 

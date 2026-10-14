@@ -103,7 +103,7 @@ The registry includes Term 1 2026 (`T12026`), Term 2 2026 (`T22026`), and Term 3
 
 | Target Engine | Term | Scope | Technical Highlights & Capabilities |
 | :--- | :--- | :--- | :--- |
-| **GA1** | `T32026` | **Developer Tools (September 2026)** | **16 official question slots** with pinned source snapshot, seeded Prettier/JSON/file-layout/CSV/cosine generators, explicit guides for live or personal tasks, and separate API handoffs for Q6, Q14, and Q15. |
+| **GA1** | `T32026` | **Developer Tools (September 2026)** | **16 official question slots** with a pinned source snapshot. Seeded generators for Q3/Q4/Q5/Q7/Q8/Q11; **live API URLs for Q6/Q14** and an on-demand **Q15** form (private Ledger link → live URL, filled into the Answer box); a local **Q10** Git-history finder (upload/paste `history.fi`); **Q12** live-tested prompts plus an in-browser tester (your own aipipe.org token, never stored); guides for Q2/Q9/Q13/Q16 where the student must act. |
 | **End-Term Mock** | `T22026` | **May 2026 Full-Course Practice** | **300-question pool**: 175 MCQs, 25 MSQs, and 100 subjective prompts, presented in a dedicated quiz UI with section jumping, answer checking, a five-step subjective guide, detailed explanations, model answers, self-assessment rubrics, bookmarks, timer, and per-email local progress. Reference-only practice material; no score guarantee. |
 | **P2** | `T22026` | **Project 2 — Forensic Case Studies** | **8 Case Studies (100 Marks)**: DTH Month-End Mystery (`DF-00020`/`$0.00`), DTH Complaints Quiet (NovaIVR/CareDesk dropouts, 5 diagnostic questions), Solar Inverter Smell Test (INV-17/0 MW telemetry), Solar 31.6% DSM Claim (within-day ~17.5% counterfactual decomposition), Swiss Customs Mismatch (tariff 9021.10.00 schema mapping), QC Queue Smell Test (02:10:00 AM QCore snapshot / 48h LabTrack latency), Irish Preference Claim (SUP-02 / P1006 / IE-2025-000411 2025 LTSD), and Spare-Parts Search ($123,565.26 inventory risk classification). Includes the full **Rubric Intelligence Terminal**. |
 | **GA8** | `T22026` | **LLM Eval, Guardrails & MLOps** | **10 Solvers**: Automated RAG hallucination scanners, LLM benchmark pipelines, semantic guardrail firewalls, model drift analyzers, and Docker/Cloud Run deployment scripts. |
@@ -119,6 +119,22 @@ The registry includes Term 1 2026 (`T12026`), Term 2 2026 (`T22026`), and Term 3
 | **ROE** | `T22026` | Re-Exam Suite | **12 Solvers**: Incident-atlas routing, Unicode ledger forensics, HTTP cache simulation with standalone offline Node.js CLI fallbacks, byte-verified hash/HMAC transcriptions, and audio/essay pre-flight checkers. |
 | **ROE** | `T12026` | Re-exam Workflows | **15 Solvers**: Procedural maze pathfinding, regex golf parsing, and programmatic arithmetic validation. |
 | **GA7 / GA8 / P2**| `T12026` | Data Viz, MLOps & Solana | **15 Solvers**: Midpoint diverging palette sampler, chartjunk analyzers, Docker verification hashes, Cloud Run triggers, and Solana devnet QR transaction repair + Discourse facts indexer. |
+
+---
+
+## 🏠 Home Page Solver Index, SEO & Dynamic Config
+
+The home page lists every term, exam and question the portal supports, so students and search engines can see the whole project without running a solver.
+
+*   **Source of truth:** `tds-config.json` (terms, their exams, the term label such as `"T3 2026 (Sep–Dec)"`) plus each exam's `registry.js`. Nothing about terms or years is hard-coded in the generator.
+*   **Generator:** `node scripts/build-catalog.mjs` rewrites marker blocks in `index.html` (`CATALOG`, `SEO`, `TERMS`), the intro description (visible text, meta, Open Graph, Twitter and `tds-config.json`), and writes `catalog.json`, `sitemap.xml` and `robots.txt`. `--check` fails if anything is stale (line endings ignored); `check.mjs` runs it.
+*   **Latest additions:** the newest work of the newest term (up to four cards), filled from the previous term when it has fewer than four. Term status (Current / Recent / Archive) and colours follow recency, not term ids.
+*   **Dynamic UI pieces:** the **T1 · T2 · T3** pills under the title and the sidebar **Term** selector come from the config; new terms appear without edits. Exams missing from the label table in the script get a label derived from their id.
+*   **Deploy:** `vercel.json` runs the generator on every build (`buildCommand`, falling back to the committed files if it fails), so a push is enough to refresh the index, sitemap and descriptions.
+*   **Still manual for a new exam:** add it to `tds-config.json`, the exam menu (`TERM_EXAMS` in `app.js`) and create `solvers/<term>/<exam>/registry.js`.
+*   **Wording rule:** generated copy must not contain the words "answer(s)" or "solution(s)" (IITM academic-integrity expectations); the generator throws if it does.
+*   **Creator card:** photo (hover popup with GitHub and LinkedIn links), live GitHub follower and star counts (cached for an hour, hidden if the API is unreachable), and LinkedIn/GitHub/repo chips.
+*   **Production:** https://tds-portal-solver.vercel.app (Vercel; `main` deploys to production, `dev` gets a preview).
 
 ---
 
@@ -166,9 +182,15 @@ tds-roe-solver/
 │   │   ├── 📂 roe/               # Re-Exam solvers & offline CLI fallbacks
 │   └── 📂 T32026/                # Term 3 GA1 official bundle and solver suite
 ├── 📂 scratch/                   # Automated Monte Carlo stress test harnesses
+├── 📂 scripts/
+│   └── 📄 build-catalog.mjs      # Generates the home-page index, SEO files and term selector
 ├── 📄 app.js                     # Central UI state machine & event orchestrator
 ├── 📄 check.mjs                  # Comprehensive multi-term test suite (14 modules)
-├── 📄 index.html                 # Main portal glassmorphic shell structure
+├── 📄 index.html                 # Main portal shell (contains generated CATALOG/SEO/TERMS blocks)
+├── 📄 catalog.json               # Generated machine-readable solver index
+├── 📄 sitemap.xml / robots.txt   # Generated SEO files
+├── 📄 tds-config.json            # Terms, exams and intro text (source of truth for the home page)
+├── 📄 vercel.json                # Build command (runs the generator) and cache headers
 ├── 📄 server.js                  # Traversal-safe lightweight local static server
 ├── 📄 style.css                  # Master stylesheets & Rubric Coach terminal styles
 ├── 📄 sw.js                      # Progressive Web App offline Service Worker
