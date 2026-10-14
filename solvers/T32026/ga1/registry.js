@@ -32,7 +32,7 @@ export const solvers = [
   q13, // Q13 - live signed termlog artifact
   q14, // Q14 - MCP server; live API URL
   q15, // Q15 - ledger agent API; live URL generated from the student's private Ledger link
-  q16, // Q16 - interactive Tangram and signed game token
+  q16, // Q16 - verified Tangram arrangement + signed game token fetched automatically in the browser
 ].map(wrapSolverModule);
 
 export const metadata = {
