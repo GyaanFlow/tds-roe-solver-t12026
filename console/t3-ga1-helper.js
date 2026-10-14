@@ -1,4 +1,4 @@
-/* T3 2026 GA1 — console helper for Q9 (GitHub Pages) and Q13 (termlog).
+/* T3 2026 GA1 — console helper for Q2 (header code), Q9 (GitHub Pages) and Q13 (termlog).
  *
  * Paste this into the browser console on YOUR logged-in exam page:
  *   https://exam.sanand.workers.dev/tds-2026-09-ga1
@@ -6,17 +6,19 @@
  *
  * What it does (everything stays in your browser):
  *   - reads your email and signed link from the page you are already logged in to,
+ *   - Q2: fetches your own signed Q2 link from the exam server (exactly what curl -i does) and fills the code,
  *   - prints commands personalised for you, to run in your OWN terminal,
  *   - checks the page / archive you published, and only then fills the answer box.
  *
  * What it never does: send your email, signature or any login anywhere, fake a server
- * response, or produce the proof of work for you. The only network request it can make is a
- * GET of the public URL you ask it to check.
+ * response, or produce the proof of work for you. The only network requests it can make are a
+ * GET of your own Q2 link on the exam server and a GET of the public URL you ask it to check.
  */
 (() => {
   'use strict';
   const QUIZ = 'tds-2026-09-ga1';
   const EXAM_ORIGIN = 'https://exam.sanand.workers.dev';
+  const Q2 = 'q-http-headers-server';
   const Q9 = 'q-github-pages';
   const Q13 = 'q-termlog-rec-server';
 
@@ -60,6 +62,42 @@
     if (url.protocol !== 'https:') return { ok: false, message: `${what}: use an https:// address (plain http is not accepted).` };
     return { ok: true, url };
   }
+
+  /* ------------------------------ Q2: header code ------------------------------ */
+  const q2 = {
+    /** Reads X-Exam-Code from your own signed Q2 link (what `curl -i` shows) and fills the answer box. */
+    async fill() {
+      const url = new URL('/questionData', EXAM_ORIGIN);
+      url.searchParams.set('email', EMAIL);
+      url.searchParams.set('quizSign', QUIZ_SIGN);
+      url.searchParams.set('questionId', Q2);
+      let response;
+      try {
+        response = await fetch(url.href, { cache: 'no-store', credentials: 'omit' });
+      } catch (error) {
+        const message = `Q2: could not reach the exam server (${error?.message || 'network error'}). Check your connection and try again.`;
+        console.error(message);
+        return { ok: false, message };
+      }
+      if (!response.ok) {
+        const message = response.status === 401 || response.status === 403
+          ? 'Q2: the exam server rejected your signature — it may have expired. Reload the exam page, log in again, paste the helper again and retry.'
+          : `Q2: the exam server answered HTTP ${response.status}. Try again in a minute.`;
+        console.error(message);
+        return { ok: false, status: response.status, message };
+      }
+      const code = String(response.headers?.get?.('X-Exam-Code') || '').trim();
+      if (!code) {
+        const message = 'Q2: the response had no X-Exam-Code header. Reload the exam page, log in again and retry.';
+        console.error(message);
+        return { ok: false, message };
+      }
+      const filled = fill(Q2, code);
+      const message = `Q2: X-Exam-Code read from your own link — ${filled ? 'answer box filled' : `paste ${code} into the answer box`}. It rotates every hour, so press Check now (run this again if you wait).`;
+      console.log(message);
+      return { ok: true, code, filled, message };
+    },
+  };
 
   /* ------------------------------ Q9: GitHub Pages ------------------------------ */
   function pageHtml() {
@@ -248,6 +286,9 @@
   const help = () => say([
     `T3 GA1 helper — logged in as ${EMAIL}`,
     '',
+    'Q2  header code',
+    '  await t3ga1.q2.fill()      reads X-Exam-Code from your own link and fills the answer box',
+    '',
     'Q9  GitHub Pages',
     '  t3ga1.q9.page()            the index.html to publish (your email already wrapped)',
     '  t3ga1.q9.page({download:true})  also downloads it as index.html',
@@ -261,6 +302,6 @@
     'Nothing here is sent anywhere. The helper cannot fake a check or record for you.',
   ].join('\n'));
 
-  window.t3ga1 = { help, q9, q13 };
+  window.t3ga1 = { help, q2, q9, q13 };
   help();
 })();

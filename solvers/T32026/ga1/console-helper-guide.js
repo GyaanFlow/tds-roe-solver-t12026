@@ -8,7 +8,12 @@ const BUTTON_STYLE = 'background:var(--theme-primary,#3b82f6);color:#000;border:
 
 /** Markdown (with one small HTML control block) explaining how to use the helper for one question. */
 export function helperSection(question) {
-  const steps = question === 'q9'
+  const steps = question === 'q2'
+    ? [
+        '3. Run `await t3ga1.q2.fill()`. It reads the `X-Exam-Code` header from your own signed Q2 link — exactly what `curl -i` shows — and fills the answer box.',
+        '4. The code rotates every hour, so run it right before you press **Check**.',
+      ]
+    : question === 'q9'
     ? [
         '3. Run `t3ga1.q9.commands()` and run the printed commands in **your own terminal** (needs `git` and the GitHub CLI `gh`). They create a public repo, push the ready-made `index.html` and turn on Pages.',
         '4. When your site is live, run `await t3ga1.q9.check("https://YOUR-USER.github.io/tds-ga1-portfolio/")`. It downloads your live page, confirms your email is really inside the `<!--email_off-->` markers, and only then fills the answer box.',
@@ -31,7 +36,7 @@ export function helperSection(question) {
     '',
     '**What the helper does and does not do**',
     '',
-    '- It reads your email and signed link from the page you are already logged in to, and uses them only to print commands for you. Nothing is sent anywhere; its only network request is a GET of the public URL you ask it to check.',
+    '- It reads your email and signed link from the page you are already logged in to. Nothing is sent anywhere else: its only requests are a GET of your own Q2 link on the exam server and a GET of the public URL you ask it to check.',
     '- It does **not** fake any check, answer for you, or record the terminal session — the page must really be published and the recording must really be yours.',
     '- Read it before you paste it: it is one short file (link above).',
   ].join('\n');

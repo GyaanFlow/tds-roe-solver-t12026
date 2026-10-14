@@ -1,6 +1,7 @@
 import { escapeHtml, markdownCodeBlock } from './utils.js';
 import { T3_GA1_API_ORIGIN, apiEmail, ga1Url } from './api-client.js';
 import { extractLedgerUrl, waitForApi } from './q15-ledger-agent.js';
+import { helperSection, registerHelperCopy } from './console-helper-guide.js';
 
 export const id = 'q-http-headers-server';
 export const title = 'Q2: Find the Code in the Response Headers';
@@ -222,6 +223,8 @@ function buildGuide(email, code, fetchedAt) {
       '',
       ...privacyAndWake(),
       '',
+      helperSection('q2'),
+      '',
       ...MANUAL_STEPS,
     ].join('\n');
   }
@@ -237,6 +240,8 @@ function buildGuide(email, code, fetchedAt) {
     formHtml(email),
     '',
     ...privacyAndWake(),
+    '',
+    helperSection('q2'),
     '',
     ...MANUAL_STEPS,
   ].join('\n');
@@ -341,6 +346,7 @@ function startAuto(email, { force = false } = {}) {
 
 export async function solve(email) {
   registerQ2Interactive();
+  registerHelperCopy();
   if (inRealBrowser()) startAuto(email);
   const normalized = apiEmail(email);
   return {

@@ -563,7 +563,7 @@ async function checkT3Ga1ConsoleHelper(byId, sampleEmail) {
   const boot = ({ origin = 'https://exam.sanand.workers.dev', pathname = '/tds-2026-09-ga1', user = { email, quizSign }, fetchImpl } = {}) => {
     const logs = [], errors = [], events = [], fetched = [];
     const elements = {};
-    for (const id of ['q-github-pages', 'q-termlog-rec-server']) {
+    for (const id of ['q-http-headers-server', 'q-github-pages', 'q-termlog-rec-server']) {
       elements[id] = { value: '', dispatchEvent(e) { events.push([id, e.type]); } };
     }
     const sandbox = {
@@ -650,12 +650,35 @@ async function checkT3Ga1ConsoleHelper(byId, sampleEmail) {
   run = boot({ fetchImpl: async () => bytes(0x1f, 0x8b) });
   assert(!(await run.t3ga1.q13.check('http://files.example/x.tar.gz')).ok && !(await run.t3ga1.q13.check('')).ok && run.fetched.length === 0, 'T3 GA1 helper Q13 check must reject http and empty input without any request.');
 
+  // Q2: reads X-Exam-Code from the student's own signed link on the exam server.
+  const withHeader = (value, status = 200) => ({ ok: status >= 200 && status < 300, status, headers: { get: (name) => (String(name).toLowerCase() === 'x-exam-code' ? value : null) } });
+  run = boot({ fetchImpl: async () => withHeader('  7F3KQ9M2 ') });
+  outcome = await run.t3ga1.q2.fill();
+  const q2Request = new URL(run.fetched[0].url);
+  assert(outcome.ok && outcome.code === '7F3KQ9M2' && outcome.filled && run.elements['q-http-headers-server'].value === '7F3KQ9M2' && run.events.some((e) => e[1] === 'input') && run.events.some((e) => e[1] === 'change'), 'T3 GA1 helper Q2 must fill the answer box with the X-Exam-Code header.');
+  assert(run.fetched.length === 1 && q2Request.origin === 'https://exam.sanand.workers.dev' && q2Request.pathname === '/questionData' && q2Request.searchParams.get('email') === email && q2Request.searchParams.get('quizSign') === quizSign && q2Request.searchParams.get('questionId') === 'q-http-headers-server' && run.fetched[0].init.credentials === 'omit', 'T3 GA1 helper Q2 must request only your own Q2 link on the exam server.');
+  assert(!JSON.stringify([run.logs, run.errors]).includes('S3cr3t'), 'T3 GA1 helper Q2 must not print the signature.');
+  for (const [label, impl, wanted] of [
+    ['no header', async () => withHeader(null), 'no X-Exam-Code'],
+    ['blank header', async () => withHeader('   '), 'no X-Exam-Code'],
+    ['expired signature', async () => withHeader(null, 403), 'rejected your signature'],
+    ['server error', async () => withHeader(null, 500), 'HTTP 500'],
+    ['network failure', async () => { throw new Error('offline'); }, 'could not reach'],
+  ]) {
+    run = boot({ fetchImpl: impl });
+    outcome = await run.t3ga1.q2.fill();
+    assert(!outcome.ok && outcome.message.includes(wanted) && run.elements['q-http-headers-server'].value === '' && run.events.length === 0, `T3 GA1 helper Q2 must not fill the box for: ${label}.`);
+  }
+  assert(env.logs.some((line) => line.includes('t3ga1.q2.fill()')), 'T3 GA1 helper menu must list Q2.');
+
   // The helper never talks to anything but the URL it was asked to check, and never fakes a response.
   assert(!/window\.fetch\s*=|Response\(|backendVerify|localStorage\.setItem/.test(source), 'T3 GA1 helper must not patch fetch, fabricate responses or write storage.');
 
   // Portal guides: the section, the copy control and the helper file are all in place.
   const q9Guide = (await byId['q-github-pages'].solve(sampleEmail)).guide;
   const q13Guide = (await byId['q-termlog-rec-server'].solve(sampleEmail)).guide;
+  const q2Guide = (await byId['q-http-headers-server'].solve(sampleEmail)).guide;
+  assert(q2Guide.includes('Console helper') && q2Guide.includes('t3ga1.q2.fill()') && q2Guide.includes('window._t3ga1CopyHelper()'), 'T3 GA1 Q2 guide must offer the console helper.');
   for (const [label, guide] of [['Q9', q9Guide], ['Q13', q13Guide]]) {
     assert(guide.includes('Console helper') && guide.includes('window._t3ga1CopyHelper()') && guide.includes('console/t3-ga1-helper.js') && guide.includes('t3ga1.'), `T3 GA1 ${label} guide must explain the console helper and offer the copy button.`);
   }
