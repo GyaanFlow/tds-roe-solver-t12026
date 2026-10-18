@@ -39,20 +39,38 @@ export function computeDockerAnswer(email) {
   };
 }
 
+export const T3_GA2_DOCKER_BACKEND = 'https://tds-solver-backend.onrender.com';
+
+export function getDockerPublicUrl(email, origin = T3_GA2_DOCKER_BACKEND) {
+  const norm = normalizeEmail(email);
+  return `${origin}/s/${encodeURIComponent(norm)}/docker.json`;
+}
+
 export async function solve(email) {
   const norm = normalizeEmail(email);
   const costs = computeDockerCosts(norm);
   const answerObj = computeDockerAnswer(norm);
   const jsonContent = JSON.stringify(answerObj, null, 2);
+  const dynamicUrl = getDockerPublicUrl(norm);
 
   const guide = `### 🎯 Quick Summary
-This question requires serving a JSON response predicting Docker layer cache invalidation steps and execution times across scenarios A through E.
-Your individual costs derived from \`${norm}\` are:
-- **L2 (install):** ${costs.install}s
-- **L4 (compile):** ${costs.compile}s
-- **L5 (test):** ${costs.test}s
+This question requires submitting a **Public URL** returning a JSON structure with Docker layer cache invalidation steps and execution times across scenarios A through E.
 
-The exact computed solution is:
+The exam server makes a direct HTTP \`GET\` request to your URL and validates that it returns the exact computed timing and steps within 10 seconds.
+
+---
+
+### 🚀 Instant One-Click Submission URL:
+The live multi-tenant backend serves your deterministic answer at:
+\`\`\`text
+${dynamicUrl}
+\`\`\`
+
+> **Note:** The backend sleeps when idle on Render. Before clicking **Check**, open [${dynamicUrl}](${dynamicUrl}) in a new tab once to ensure it responds with \`200 OK\`.
+
+---
+
+### 📋 Expected JSON Content (Served at the above URL):
 \`\`\`json
 ${jsonContent}
 \`\`\`
@@ -68,40 +86,27 @@ ${jsonContent}
 
 ---
 
-### 🧒 Child-Friendly Step-by-Step Instructions:
-
-#### Option 1: Quick GitHub Gist (Easiest & Fastest — 2 minutes)
+### 🛡️ Backup Option: Quick GitHub Gist (If you prefer hosting yourself — 1 minute)
 1. Go to [gist.github.com](https://gist.github.com/).
-2. Create a new gist:
-   - **Filename:** \`docker.json\`
-   - **File contents:** Copy and paste the exact JSON above:
-     \`\`\`json
-     ${jsonContent}
-     \`\`\`
-3. Click **Create public gist**.
-4. Click the **"Raw"** button at the top right of the file.
-5. Copy the raw URL from your browser address bar (it looks like \`https://gist.githubusercontent.com/.../raw/.../docker.json\`).
-6. Paste that raw URL into the exam answer box and click **Check**!
-
----
-
-#### Option 2: Deploy on Render / Vercel / Cloudflare Worker / Python HTTP Server
-Serve the exact JSON above with \`Content-Type: application/json\` on any public endpoint (e.g. \`GET /docker.json\`).`;
+2. Create a public gist named \`docker.json\` containing the JSON above.
+3. Click **Create public gist** $\\rightarrow$ click **Raw**.
+4. Submit that raw URL (\`https://gist.githubusercontent.com/.../raw/.../docker.json\`).`;
 
   return {
     type: 'solved',
-    answer: JSON.stringify(answerObj),
-    variant: `Docker layer cache calculation for ${norm}`,
+    answer: dynamicUrl,
+    variant: `Live Docker layer cache URL for ${norm}`,
     guide,
     answerDisplay: [
       `### ${title}`,
       '',
-      '**Computed Docker Layer Solution (Host this at a public URL):**',
+      '**Submit this Public URL:**',
       '',
-      markdownCodeBlock(jsonContent, 'json'),
+      markdownCodeBlock(dynamicUrl, 'text'),
       '',
-      '*Follow the 2-minute GitHub Gist instructions in the Implementation Guide below to get your public submission URL.*'
+      '*(Pre-configured live endpoint returning your deterministic JSON payload)*'
     ].join('\n'),
-    debug: { question: 'Q14', costs, answerObj }
+    usesHostedApi: true,
+    debug: { question: 'Q14', url: dynamicUrl, costs, answerObj }
   };
 }

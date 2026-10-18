@@ -27,55 +27,64 @@ export function computeStreamAnswer(email) {
   };
 }
 
+export const T3_GA2_STREAM_BACKEND = 'https://tds-solver-backend.onrender.com';
+
+export function getStreamPublicUrl(email, origin = T3_GA2_STREAM_BACKEND) {
+  const norm = normalizeEmail(email);
+  return `${origin}/s/${encodeURIComponent(norm)}/stream.json`;
+}
+
 export async function solve(email) {
   const norm = normalizeEmail(email);
   const streamData = computeStreamAnswer(norm);
   const jsonContent = JSON.stringify(streamData, null, 2);
+  const dynamicUrl = getStreamPublicUrl(norm);
 
   const guide = `### 🎯 Quick Summary
-This question requires serving a reconstructed JSON structure representing three fragmented Ollama-style NDJSON byte streams (A, B, and C).
-The deterministic solution computed from your email (\`${norm}\`) is:
+This question requires submitting a **Public URL** returning a JSON structure with reconstructed texts for three fragmented Ollama-style NDJSON byte streams (A, B, and C).
 
+The exam server makes a direct HTTP \`GET\` request to your URL and validates that it returns the exact reconstructed payload within 10 seconds.
+
+---
+
+### 🚀 Instant One-Click Submission URL:
+The live multi-tenant backend serves your deterministic answer at:
+\`\`\`text
+${dynamicUrl}
+\`\`\`
+
+> **Note:** The backend sleeps when idle on Render. Before clicking **Check**, open [${dynamicUrl}](${dynamicUrl}) in a new tab once to ensure it responds with \`200 OK\`.
+
+---
+
+### 📋 Expected JSON Content (Served at the above URL):
 \`\`\`json
 ${jsonContent}
 \`\`\`
 
 ---
 
-### 🧒 Child-Friendly Step-by-Step Instructions:
-
-#### Option 1: Quick GitHub Gist (Easiest & Fastest — 2 minutes)
+### 🛡️ Backup Option: Quick GitHub Gist (If you prefer hosting yourself — 1 minute)
 1. Go to [gist.github.com](https://gist.github.com/).
-2. Create a new gist:
-   - **Filename:** \`stream.json\`
-   - **File contents:** Copy and paste the exact JSON above:
-     \`\`\`json
-     ${jsonContent}
-     \`\`\`
-3. Click **Create public gist**.
-4. Click the **"Raw"** button at the top right of the file.
-5. Copy the URL from your browser address bar (it looks like \`https://gist.githubusercontent.com/.../raw/.../stream.json\`).
-6. Paste that raw URL into the exam answer box and click **Check**!
-
----
-
-#### Option 2: Deploy on Render / Vercel / Cloudflare Worker / Python HTTP Server
-Serve the exact JSON above with \`Content-Type: application/json\` on any public endpoint (e.g. \`GET /stream.json\`).`;
+2. Create a public gist named \`stream.json\` containing the JSON above.
+3. Click **Create public gist** $\\rightarrow$ click **Raw**.
+4. Submit that raw URL (\`https://gist.githubusercontent.com/.../raw/.../stream.json\`).`;
 
   return {
     type: 'solved',
-    answer: JSON.stringify(streamData),
-    variant: `Reconstructed Ollama streams for ${norm}`,
+    answer: dynamicUrl,
+    variant: `Live reconstructed stream URL for ${norm}`,
     guide,
     answerDisplay: [
       `### ${title}`,
       '',
-      '**Computed Reconstructed JSON (Host this at a public URL):**',
+      '**Submit this Public URL:**',
       '',
-      markdownCodeBlock(jsonContent, 'json'),
+      markdownCodeBlock(dynamicUrl, 'text'),
       '',
-      '*Follow the 2-minute GitHub Gist instructions in the Implementation Guide below to get your public submission URL.*'
+      '*(Pre-configured live endpoint returning your deterministic JSON payload)*'
     ].join('\n'),
-    debug: { question: 'Q13', streamData }
+    usesHostedApi: true,
+    debug: { question: 'Q13', url: dynamicUrl, streamData }
   };
 }
