@@ -50,6 +50,9 @@ const mobileQuestionPicker = document.getElementById('mobileQuestionPicker');
 const mobileQuestionPickerWrap = document.getElementById('mobileQuestionPickerWrap');
 const dashboardToggle = document.getElementById('dashboardToggle');
 
+let _lastEmailForNetwork = '';
+let _emailDebounceTimer = null;
+
 let rawFocusEnabled = safeStorageGet('rawFocusEnabled') === 'true';
 
 let workspaceData = {
@@ -2366,6 +2369,12 @@ async function startSolving() {
   const datalist = document.getElementById('emailHistory');
   if (datalist) datalist.innerHTML = history.map(e => `<option value="${e}">`).join('');
 
+  if (_emailDebounceTimer) {
+    clearTimeout(_emailDebounceTimer);
+    _emailDebounceTimer = null;
+  }
+  _lastEmailForNetwork = email;
+
   solveBtn.disabled = true;
   solveBtn.innerText = 'Initializing...';
   if (networkCanvas) {
@@ -3235,8 +3244,6 @@ examSelect.addEventListener('change', () => {
   toggleSessionTokenField();
   persistUiState();
 });
-let _lastEmailForNetwork = '';
-let _emailDebounceTimer = null;
 emailInput.addEventListener('input', () => {
   const emailVal = emailInput.value.trim();
   updateVibeProfileBadge(emailVal);
@@ -3483,17 +3490,10 @@ function drawEmailIdenticon(email) {
     const loop = (timestamp) => {
       identiconAnimationId = requestAnimationFrame(loop);
       if (document.hidden) return;
-      // Cap at ~30fps for the tiny 36x36 canvas
+      // Cap at ~30fps for the tiny 36x36 canvas (smooth, gentle rotation with zero lag)
       if (timestamp - lastTime < 32) return;
       lastTime = timestamp;
-
-      // Only draw if hovering or has not settled
-      const isHovering = identiconState.targetHoverScale > 1.0;
-      const isSettled = Math.abs(identiconState.hoverScale - 1.0) < 0.01 && Math.abs(identiconState.hoverSpeed - 1.0) < 0.01;
-      if (isHovering || !isSettled || identiconState.isDirty) {
-        updateAndDrawIdenticon();
-        if (isSettled && !isHovering) identiconState.isDirty = false;
-      }
+      updateAndDrawIdenticon();
     };
     identiconAnimationId = requestAnimationFrame(loop);
   }
