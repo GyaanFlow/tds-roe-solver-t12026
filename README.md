@@ -179,8 +179,9 @@ tds-roe-solver/
 │   │   │   ├── 📄 q-case-4a.js   # Case 4A: QC Queue Smell Test
 │   │   │   ├── 📄 q-case-3b.js   # Case 3B: Irish Preference Claim
 │   │   │   └── 📄 q-case-4b.js   # Case 4B: Spare-Parts Search
-│   │   ├── 📂 roe/               # Re-Exam solvers & offline CLI fallbacks
-│   └── 📂 T32026/                # Term 3 GA1 official bundle and solver suite
+│   └── 📂 T32026/                # Term 3 (GA1 Developer Tools & GA2 API Engineering)
+│       ├── 📂 ga1/               # GA1 16 official slots (Tangram SVG, Git forensics, Ledger)
+│       └── 📂 ga2/               # GA2 15 official slots (CORS, OAuth, Observability, Ollama)
 ├── 📂 scratch/                   # Automated Monte Carlo stress test harnesses
 ├── 📂 scripts/
 │   └── 📄 build-catalog.mjs      # Generates the home-page index, SEO files and term selector
