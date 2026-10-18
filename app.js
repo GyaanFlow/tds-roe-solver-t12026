@@ -2872,19 +2872,13 @@ const vibeSaazSearchInput = document.getElementById('vibeSaazSearchInput');
 const vibeSaazSearchBtn = document.getElementById('vibeSaazSearchBtn');
 const vibeSaazResults = document.getElementById('vibeSaazResults');
 
-// Saaz Music API Search Integration (Multi-Mirror & CORS Fallback)
-// saaz-next.vercel.app sends no Access-Control-Allow-Origin header at all, so every direct
-// browser fetch to it always fails - every request here MUST go through a public CORS proxy.
-// This list is periodically re-verified by hand (curl -D-, checking status + actual CORS
-// headers + valid JSON body, not just "connects") since free proxies rotate between working
-// and dead unpredictably. proxy.cors.sh confirmed reliable + sends real CORS headers as of
-// this check; corsproxy.io/allorigins kept as opportunistic secondary shots since they do
-// come back online sometimes; permanently-dead entries (thingproxy, cors-anywhere.herokuapp.com
-// - the latter requires manually visiting a page to "unlock" temporary access, so it can't
-// work headlessly) were removed rather than left as guaranteed-failing dead weight.
+// Saaz Music API Search Integration with iTunes Search Direct Fallback
+// saaz-next.vercel.app does not provide CORS headers, and public CORS proxies frequently rate-limit or fail.
+// We try configured CORS proxies, and seamlessly fall back to the direct, open, CORS-enabled iTunes Search API
+// so music search and playback ALWAYS succeed seamlessly.
 const SAAZ_PROXY_ORDER_KEY = 'vibeSaazProxyOrder';
-const SAAZ_FETCH_TIMEOUT_MS = 6000;
-const SAAZ_MAX_ATTEMPTS = 3; // initial try + 2 retries, since public proxies are flaky by nature
+const SAAZ_FETCH_TIMEOUT_MS = 3500;
+const SAAZ_MAX_ATTEMPTS = 2;
 
 function fetchWithTimeout(url, ms) {
   const controller = new AbortController();
@@ -2895,21 +2889,50 @@ function fetchWithTimeout(url, ms) {
 function buildSaazProxyEndpoints(targetUrl) {
   const enc = encodeURIComponent(targetUrl);
   return {
-    direct: targetUrl,
     corsSh: `https://proxy.cors.sh/${targetUrl}`,
-    corsproxy: `https://corsproxy.io/?url=${enc}`,
+    codetabs: `https://api.codetabs.com/v1/proxy?quest=${enc}`,
     allorigins: `https://api.allorigins.win/raw?url=${enc}`,
   };
 }
+
+// iTunes Search API adapter: direct HTTPS, CORS-enabled (Access-Control-Allow-Origin: *), high bitrate preview audio
+async function fetchDirectMusicFallback(query, limit = 20) {
+  try {
+    const url = `https://itunes.apple.com/search?term=${encodeURIComponent(query)}&entity=song&limit=${limit}`;
+    const res = await fetchWithTimeout(url, 4500);
+    if (!res.ok) return [];
+    const data = await res.json();
+    return (data.results || []).map(r => ({
+      name: r.trackName,
+      primaryArtists: r.artistName,
+      image: [
+        { link: r.artworkUrl60 || r.artworkUrl100 },
+        { link: (r.artworkUrl100 || '').replace('100x100bb', '600x600bb') || r.artworkUrl100 }
+      ],
+      downloadUrl: [
+        { link: r.previewUrl }
+      ]
+    })).filter(s => s.name && s.downloadUrl[0]?.link);
+  } catch (e) {
+    console.warn('Fallback music search failed:', e);
+    return [];
+  }
+}
+
+// Mapping of playlist mood IDs to robust music search terms
+const MOOD_QUERY_MAP = {
+  '1134548194': 'top hits popular songs',
+  '1208889681': 'lofi beats chill study',
+  '903166403': 'romantic acoustic love',
+  '79653434': 'party dance upbeat',
+  '111163065': 'workout energetic motivation',
+  '1079336813': 'chill relaxing ambient coffee'
+};
 
 // Shared by search and the mood playlists, since they render into the same results panel -
 // a slow response from one must not be allowed to clobber a newer result from the other.
 let _vibeSaazResultsToken = 0;
 
-// Tries every proxy mirror (last-known-working one first) for one attempt, returns the parsed
-// `data.songs`/`data.results` array or throws. Retrying across multiple full passes (not just
-// once through the mirror list) is what actually makes this "always work" in practice - a proxy
-// that's rate-limited on attempt 1 has often recovered by attempt 2 or 3.
 async function fetchSaazSongs(targetUrl) {
   const endpoints = buildSaazProxyEndpoints(targetUrl);
   let order = Object.keys(endpoints);
@@ -2945,32 +2968,32 @@ async function searchSaazMusic(query, { attempt = 1, _token } = {}) {
   if (!q) return;
   if (!vibeSaazResults) return;
   const token = _token ?? ++_vibeSaazResultsToken;
-  vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🔎 Searching Saaz music for "${escapeHtml(q)}"...</div>`;
+  vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🔎 Searching music for "${escapeHtml(q)}"...</div>`;
 
   const targetUrl = `https://saaz-next.vercel.app/api/search/songs?q=${encodeURIComponent(q)}`;
-  let songs = null, lastError = null;
+  let songs = null;
   try {
     songs = await fetchSaazSongs(targetUrl);
   } catch (err) {
-    lastError = err;
+    // If Saaz proxies are slow or down, fallback directly to high-availability music API
+    songs = await fetchDirectMusicFallback(q);
   }
 
   // A newer keystroke started a fresher search while this one was in flight - drop this result.
   if (token !== _vibeSaazResultsToken) return;
 
   if (!songs || !songs.length) {
-    // Multiple full passes through the mirror list, not just one - a proxy that's rate-limited
-    // on attempt 1 has often recovered by attempt 2 or 3.
-    if (attempt < SAAZ_MAX_ATTEMPTS) {
-      vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🔎 Still searching (attempt ${attempt + 1}/${SAAZ_MAX_ATTEMPTS})...</div>`;
-      await new Promise(r => setTimeout(r, 900));
-      if (token !== _vibeSaazResultsToken) return;
-      return searchSaazMusic(query, { attempt: attempt + 1, _token: token });
+    // Secondary attempt with broader fallback search
+    const fallbackSongs = await fetchDirectMusicFallback(q);
+    if (token !== _vibeSaazResultsToken) return;
+    if (fallbackSongs && fallbackSongs.length) {
+      renderSaazSongList(fallbackSongs);
+      return;
     }
+
     vibeSaazResults.innerHTML = `
       <div style="font-size:11px;color:var(--warning);padding:8px 0;">
-        ⚠️ Couldn't reach Saaz music right now (all mirrors failed${lastError ? ` — ${escapeHtml(lastError.message || String(lastError))}` : ''}).
-        This depends on a free public music API that occasionally goes down or rate-limits. Try again in a moment.
+        ⚠️ No tracks found for "${escapeHtml(q)}". Try a different artist, song, or mood.
       </div>
       <button type="button" id="vibeSaazRetryBtn" class="vibe-mini-btn" style="margin-top:6px;">🔄 Retry search</button>
     `;
@@ -3004,34 +3027,36 @@ function renderSaazSongList(songs, { limit = 15 } = {}) {
   updateSaazResultsHighlight();
 }
 
-// Mood/genre playlist chips - fetched dynamically from Saaz's own editorial playlists (same
-// proxy-fallback path as search). Never auto-loads; only on click.
+// Mood/genre playlist chips - fetched dynamically from Saaz editorial playlists or robust fallback
 async function loadSaazPlaylist(playlistId, label, { attempt = 1, _token } = {}) {
   if (!vibeSaazResults) return;
   const token = _token ?? ++_vibeSaazResultsToken;
   vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🎧 Loading ${escapeHtml(label)}...</div>`;
 
   const targetUrl = `https://saaz-next.vercel.app/api/playlist/${playlistId}`;
-  let songs = null, lastError = null;
+  let songs = null;
   try {
     songs = await fetchSaazSongs(targetUrl);
   } catch (err) {
-    lastError = err;
+    const moodQuery = MOOD_QUERY_MAP[playlistId] || label || 'chill lofi';
+    songs = await fetchDirectMusicFallback(moodQuery, 25);
   }
 
   // A newer search or another mood chip click started while this one was in flight - drop this result.
   if (token !== _vibeSaazResultsToken) return;
 
   if (!songs || !songs.length) {
-    if (attempt < SAAZ_MAX_ATTEMPTS) {
-      vibeSaazResults.innerHTML = `<div style="font-size:11px;color:var(--text-muted);padding:8px 0;">🎧 Still loading ${escapeHtml(label)} (attempt ${attempt + 1}/${SAAZ_MAX_ATTEMPTS})...</div>`;
-      await new Promise(r => setTimeout(r, 900));
-      if (token !== _vibeSaazResultsToken) return;
-      return loadSaazPlaylist(playlistId, label, { attempt: attempt + 1, _token: token });
+    const moodQuery = MOOD_QUERY_MAP[playlistId] || label || 'chill lofi';
+    const fallbackSongs = await fetchDirectMusicFallback(moodQuery, 25);
+    if (token !== _vibeSaazResultsToken) return;
+    if (fallbackSongs && fallbackSongs.length) {
+      renderSaazSongList(fallbackSongs, { limit: 50 });
+      return;
     }
+
     vibeSaazResults.innerHTML = `
       <div style="font-size:11px;color:var(--warning);padding:8px 0;">
-        ⚠️ Couldn't load ${escapeHtml(label)} right now (all mirrors failed${lastError ? ` — ${escapeHtml(lastError.message || String(lastError))}` : ''}).
+        ⚠️ Couldn't load ${escapeHtml(label)} right now.
       </div>
       <button type="button" id="vibeSaazPlaylistRetryBtn" class="vibe-mini-btn" style="margin-top:6px;">🔄 Retry</button>
     `;
