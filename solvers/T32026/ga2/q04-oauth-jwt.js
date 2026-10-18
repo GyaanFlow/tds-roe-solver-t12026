@@ -17,7 +17,7 @@ export function computeOAuthSeeds(email) {
 }
 
 export async function solve(email) {
-  const url = ga2Url(email, '/q4/verify');
+  const url = ga2Url(email, '/q2/verify');
   const seeds = computeOAuthSeeds(email);
 
   return apiAnswer({
@@ -25,6 +25,6 @@ export async function solve(email) {
     url,
     variant: `OIDC RS256 Verification API (aud: ${seeds.aud})`,
     notes: `Your assigned OIDC claims are:\n- **Issuer (iss):** \`${seeds.iss}\`\n- **Audience (aud):** \`${seeds.aud}\`\n- **Subject (sub):** \`${seeds.sub}\`\n\nThe backend validates RS256 signatures using the official IdP public key, verifies claims, checks future expiration (\`exp > now\`), and correctly rejects expired, wrong-audience, and tampered tokens with HTTP 401.`,
-    debug: { question: 'Q4', route: '/q4/verify', seeds }
+    debug: { question: 'Q4', route: '/q2/verify', seeds }
   });
 }

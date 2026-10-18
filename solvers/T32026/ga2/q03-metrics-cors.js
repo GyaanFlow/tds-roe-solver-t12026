@@ -13,7 +13,7 @@ export function computeAllowedOrigin(email) {
 }
 
 export async function solve(email) {
-  const url = ga2Url(email, '/q3');
+  const url = ga2Url(email, '/q1');
   const allowedOrigin = computeAllowedOrigin(email);
 
   return apiAnswer({
@@ -21,6 +21,6 @@ export async function solve(email) {
     url,
     variant: `CORS-Aware Metrics API (assigned origin: ${allowedOrigin})`,
     notes: `Your assigned allowed CORS origin is: \`${allowedOrigin}\`.\n\nThe backend computes descriptive statistics (\`count\`, \`sum\`, \`min\`, \`max\`, \`mean\`), enforces strict per-origin CORS (returning ACAO only for your assigned origin and rejecting evil origins), and sets \`X-Request-ID\` and \`X-Process-Time\` middleware response headers.`,
-    debug: { question: 'Q3', route: '/q3', allowedOrigin }
+    debug: { question: 'Q3', route: '/q1', allowedOrigin }
   });
 }
