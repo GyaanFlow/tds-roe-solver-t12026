@@ -1757,35 +1757,43 @@ body {
 
 
 
-/* Metallic gradient text */
+/* Metallic gradient text — dynamically blends with active theme */
 .welcome-screen h1.gradient-text {
   font-size: 28px;
   font-weight: 700;
-  background: linear-gradient(135deg, #ffffff 40%, #fbbf24 100%);
+  background: linear-gradient(135deg, #ffffff 35%, var(--theme-primary-hover) 75%, var(--theme-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 14px;
   letter-spacing: -0.02em;
+  transition: all 0.3s ease;
 }
 
-/* Glassmorphism version badge */
+/* Glassmorphism version badge — dynamically theme reactive */
 .version-badges { display: inline-flex; flex-wrap: wrap; gap: 6px; vertical-align: middle; margin-left: 8px; }
 .version-badge {
   font: inherit;
   font-size: 11px;
   cursor: pointer;
-  opacity: 0.55;
-  transition: opacity 0.2s ease, background 0.2s ease;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   font-weight: 600;
   vertical-align: middle;
-  background: rgba(245, 158, 11, 0.1);
-  border: 1px solid rgba(245, 158, 11, 0.25);
-  color: #fbbf24;
-  padding: 2px 6px;
+  background: var(--theme-glow);
+  border: 1px solid var(--theme-primary);
+  color: var(--theme-primary);
+  padding: 2px 7px;
   border-radius: 6px;
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.1);
+  box-shadow: 0 0 10px var(--theme-glow);
   text-shadow: none;
-  -webkit-text-fill-color: #fbbf24; /* override parent transparent text fill */
+  -webkit-text-fill-color: var(--theme-primary); /* override parent transparent text fill */
+}
+.version-badge:hover, .version-badge.active {
+  opacity: 1;
+  background: var(--theme-glow-intense);
+  -webkit-text-fill-color: var(--theme-primary-hover);
+  color: var(--theme-primary-hover);
+  border-color: var(--theme-primary-hover);
 }
 
 /* Features Grid */
@@ -3787,7 +3795,22 @@ body {
 .catalog-chip b { background: var(--term); color: #000; border-radius: 999px; padding: 1px 8px; font-weight: 750; }
 .catalog-open { color: var(--term); border-color: var(--term); }
 .catalog-open:hover { background: var(--term); }
-.catalog-sub-latest { color: var(--text-primary); font-size: 12px; }
+.catalog-sub-latest {
+  color: var(--theme-primary);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.catalog-sub-latest::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--theme-primary);
+  box-shadow: 0 0 8px var(--theme-primary);
+}
 .catalog-latest { grid-template-columns: repeat(3, 1fr); }
 .catalog-feature {
   grid-column: 1 / -1;
@@ -3819,7 +3842,7 @@ body {
 .catalog-latest .catalog-count { grid-column: 1 / -1; }
 @media (max-width: 860px) { .catalog-latest { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); } }
 
-/* Home page creator card */
+/* Home page creator card — seamlessly themed */
 .creator-card {
   display: flex;
   align-items: center;
@@ -3830,13 +3853,14 @@ body {
   margin: 36px auto 0;
   padding: 16px 20px;
   text-align: left;
-  border: 1px solid rgba(251, 191, 36, 0.35);
-  border-left: 3px solid #fbbf24;
+  border: 1px solid var(--theme-primary);
+  border-left: 3px solid var(--theme-primary);
   border-radius: 14px;
-  background: linear-gradient(120deg, rgba(251, 191, 36, 0.14), rgba(6, 6, 10, 0.6) 60%);
-  box-shadow: 0 0 26px rgba(251, 191, 36, 0.18), 0 6px 24px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(120deg, var(--theme-glow), rgba(6, 6, 10, 0.7) 60%);
+  box-shadow: 0 0 26px var(--theme-glow), 0 6px 24px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(14px) saturate(150%);
   -webkit-backdrop-filter: blur(14px) saturate(150%);
+  transition: all 0.3s ease;
 }
 .creator-avatar {
   flex: none;
@@ -3849,16 +3873,16 @@ body {
   font-size: 15px;
   letter-spacing: 0.02em;
   color: #000;
-  background: linear-gradient(135deg, #fde68a, #f59e0b);
-  box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.18);
+  background: linear-gradient(135deg, var(--theme-primary-hover), var(--theme-primary));
+  box-shadow: 0 0 0 4px var(--theme-glow);
 }
 .creator-info { flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
-.creator-kicker { font-size: 10px; font-weight: 750; letter-spacing: 0.14em; text-transform: uppercase; color: #fbbf24; }
+.creator-kicker { font-size: 10px; font-weight: 750; letter-spacing: 0.14em; text-transform: uppercase; color: var(--theme-primary); transition: color 0.3s ease; }
 .creator-name { font-size: 17px; font-weight: 700; color: var(--text-primary); }
 .creator-card .creator-nickname { font-size: 12px; font-weight: 500; color: var(--text-secondary); }
 .creator-sub { font-size: 12px; color: var(--text-secondary); }
-.creator-sub a { color: #fbbf24; text-decoration: none; }
-.creator-sub a:hover { text-decoration: underline; }
+.creator-sub a { color: var(--theme-primary); text-decoration: none; transition: color 0.2s ease; }
+.creator-sub a:hover { text-decoration: underline; color: var(--theme-primary-hover); }
 .creator-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .creator-btn {
   padding: 8px 14px;
@@ -3866,17 +3890,17 @@ body {
   font-weight: 650;
   text-decoration: none;
   white-space: nowrap;
-  color: #fbbf24;
-  border: 1px solid #fbbf24;
+  color: var(--theme-primary);
+  border: 1px solid var(--theme-primary);
   border-radius: 8px;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
 }
-.creator-btn:hover { background: #fbbf24; color: #000; transform: translateY(-1px); }
-.creator-btn-primary { background: #fbbf24; color: #000; }
-.creator-btn-primary:hover { background: #fde68a; }
+.creator-btn:hover { background: var(--theme-primary); color: #000; transform: translateY(-1px); }
+.creator-btn-primary { background: var(--theme-primary); color: #000; border-color: var(--theme-primary); }
+.creator-btn-primary:hover { background: var(--theme-primary-hover); border-color: var(--theme-primary-hover); }
 @media (max-width: 640px) { .creator-actions { width: 100%; } .creator-btn { flex: 1; text-align: center; } }
 .creator-avatar { position: relative; overflow: hidden; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-.creator-avatar:hover { transform: scale(1.06); box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.4), 0 0 18px rgba(251, 191, 36, 0.5); }
+.creator-avatar:hover { transform: scale(1.06); box-shadow: 0 0 0 4px var(--theme-glow), 0 0 18px var(--theme-glow-intense); }
 .creator-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 
 /* ── Responsive / touch hardening ── */
@@ -3921,10 +3945,10 @@ body {
     bottom: calc(100% + 14px);
     z-index: 20;
     padding: 12px 12px 10px;
-    border: 1px solid rgba(251, 191, 36, 0.5);
+    border: 1px solid var(--theme-primary);
     border-radius: 18px;
     background: rgba(8, 8, 12, 0.96);
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6), 0 0 28px rgba(251, 191, 36, 0.3);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6), 0 0 28px var(--theme-glow);
     opacity: 0;
     visibility: hidden;
     transform: translate(-50%, 8px) scale(0.92);
@@ -3941,8 +3965,8 @@ body {
     width: 12px;
     height: 12px;
     background: rgba(8, 8, 12, 0.96);
-    border-right: 1px solid rgba(251, 191, 36, 0.5);
-    border-bottom: 1px solid rgba(251, 191, 36, 0.5);
+    border-right: 1px solid var(--theme-primary);
+    border-bottom: 1px solid var(--theme-primary);
     transform: translate(-50%, -6px) rotate(45deg);
   }
   .creator-avatar-preview img { width: 176px; height: 176px; border-radius: 14px; object-fit: cover; display: block; }
@@ -3972,11 +3996,11 @@ body {
   padding: 5px 10px;
   font-size: 11px;
   font-weight: 650;
-  border: 1px solid rgba(251, 191, 36, 0.5);
+  border: 1px solid var(--theme-primary);
   border-radius: 8px;
-  color: #fbbf24;
+  color: var(--theme-primary);
 }
-.preview-links a:hover { background: #fbbf24; color: #000; }
+.preview-links a:hover { background: var(--theme-primary); color: #000; }
 @media (hover: hover) and (min-width: 641px) {
   .creator-avatar-preview { pointer-events: auto; transition: opacity 0.2s ease 0.12s, transform 0.2s ease 0.12s, visibility 0s linear 0.32s; }
   .creator-avatar-wrap:hover .creator-avatar-preview,
