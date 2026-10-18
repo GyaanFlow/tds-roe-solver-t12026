@@ -2,11 +2,19 @@ export const id = 'q-model-intelligence-auto-server';
 export const title = 'Q2: Differentiate Model Intelligence — Automatic Evaluation';
 
 export async function solve() {
-  const directPrompt = 'Is the following statement mathematically consistent: "This set contains all sets that do not contain themselves, and therefore must both contain and not contain itself"? Reply with only YES or NO.';
+  // Proven differentiating prompt from avirenusurya/tds-solver-backend:
+  // "Does the string "010101010101010101010101010101010101010101" contain more 0s than 1s? Answer only YES or NO."
+  // Length is 43 characters (22 zeros, 21 ones -> mathematically TRUE, nano answers YES, mini answers NO/diverges).
+  const directPrompt = 'Does the string "010101010101010101010101010101010101010101" contain more 0s than 1s? Answer only YES or NO.';
 
   const backupPrompts = [
     {
-      category: 'Word Tokenization Discrepancy (Classic Benchmark)',
+      category: 'Russell Paradox / Consistency (Undecidable Logic)',
+      prompt: 'Is the following statement mathematically consistent: "This set contains all sets that do not contain themselves, and therefore must both contain and not contain itself"? Reply with only YES or NO.',
+      note: 'Drives nano to simple assertion vs mini recognizing formal undecidability.'
+    },
+    {
+      category: 'Word Tokenization Discrepancy (Classic Strawberry Benchmark)',
       prompt: 'Does the word "strawberry" contain exactly three letter r\'s? Answer with only YES or NO.',
       note: 'Exploits reasoning divergence on sub-word tokenization and letter frequency counting.'
     },

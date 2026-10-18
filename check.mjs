@@ -1226,12 +1226,14 @@ async function checkT3Ga2(solvers, metadata) {
   // Check deterministic output for Q13 and Q14
   const byId = Object.fromEntries(solvers.map((solver) => [solver.id, solver]));
   const streamRes = await byId['q-ollama-stream-reassembly-server'].solve('23f1000001@ds.study.iitm.ac.in');
-  const streamJson = JSON.parse(streamRes.answer);
-  assert(streamJson.A && streamJson.B && streamJson.C, 'T3 GA2 Q13 stream JSON must contain streams A, B, and C.');
+  assert(/^https?:\/\//i.test(streamRes.answer), 'T3 GA2 Q13 answer must be a public URL.');
+  const streamJson = streamRes.debug?.streamData;
+  assert(streamJson?.A && streamJson?.B && streamJson?.C, 'T3 GA2 Q13 stream JSON must contain streams A, B, and C.');
 
   const dockerRes = await byId['q-docker-build-cache-server'].solve('23f1000001@ds.study.iitm.ac.in');
-  const dockerJson = JSON.parse(dockerRes.answer);
-  assert(dockerJson.A && dockerJson.B && dockerJson.C && dockerJson.D && dockerJson.E, 'T3 GA2 Q14 docker JSON must contain cases A through E.');
+  assert(/^https?:\/\//i.test(dockerRes.answer), 'T3 GA2 Q14 answer must be a public URL.');
+  const dockerJson = dockerRes.debug?.answerObj;
+  assert(dockerJson?.A && dockerJson?.B && dockerJson?.C && dockerJson?.D && dockerJson?.E, 'T3 GA2 Q14 docker JSON must contain cases A through E.');
 }
 
 async function checkGa2SolversExecute(solvers) {
