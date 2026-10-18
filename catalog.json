@@ -7,6 +7,75 @@
       "period": "Sep–Dec 2026",
       "exams": [
         {
+          "id": "ga2",
+          "label": "GA 2 (API Engineering & Cloud Services)",
+          "group": "Weekly Graded Assignments",
+          "description": "Statistics APIs, CORS, OAuth JWKS verification, Redis counters, Prometheus observability, and LLM endpoints.",
+          "solverCount": 15,
+          "questions": [
+            {
+              "id": "q-termlog-httpbin-server",
+              "title": "Q1: HTTPBin Terminal Lab (termlog)"
+            },
+            {
+              "id": "q-model-intelligence-auto-server",
+              "title": "Q2: Differentiate Model Intelligence — Automatic Evaluation"
+            },
+            {
+              "id": "q-fastapi-metrics-cors-server",
+              "title": "Q3: Deploy a CORS-Aware Metrics API"
+            },
+            {
+              "id": "q-oauth-jwks-verify-server",
+              "title": "Q4: OAuth 2.0 / OIDC Token Verification Service"
+            },
+            {
+              "id": "q-config-precedence-server",
+              "title": "Q5: Resolve 12-Factor Config Precedence"
+            },
+            {
+              "id": "q-compose-redis-tunnel-server",
+              "title": "Q6: Multi-Container App via Compose, Exposed by Tunnel"
+            },
+            {
+              "id": "q-deploy-analytics-platform-server",
+              "title": "Q7: Deploy a POST Analytics Endpoint"
+            },
+            {
+              "id": "q-observability-metrics-server",
+              "title": "Q8: Production Observability: Metrics, Health & Structured Logs"
+            },
+            {
+              "id": "q-ollama-tunnel-llm-server",
+              "title": "Q9: Expose a Local LLM through a Tunnel"
+            },
+            {
+              "id": "q-local-llm-structured-server",
+              "title": "Q10: Local LLM Structured-Output Service"
+            },
+            {
+              "id": "q-api-idempotency-pagination-server",
+              "title": "Q11: API Engineering: Idempotency + Pagination + Rate Limit"
+            },
+            {
+              "id": "q-middleware-ratelimit-cors-server",
+              "title": "Q12: Middleware Stack: Rate-Limit + CORS + Request Context"
+            },
+            {
+              "id": "q-ollama-stream-reassembly-server",
+              "title": "Q13: Recover a Fragmented LLM Stream"
+            },
+            {
+              "id": "q-docker-build-cache-server",
+              "title": "Q14: Diagnose Docker Build Cache Misses"
+            },
+            {
+              "id": "q-termlog-ollama-modelfile-server",
+              "title": "Q15: Create a Custom Ollama Model (termlog)"
+            }
+          ]
+        },
+        {
           "id": "ga1",
           "label": "GA 1 (Developer Tools)",
           "group": "Weekly Graded Assignments",

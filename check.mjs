@@ -138,6 +138,7 @@ async function checkServerRoutes() {
       ['/solvers/T12026/ga7/registry.js', 200],
       ['/solvers/T12026/ga8/registry.js', 200],
       ['/solvers/T32026/ga1/registry.js', 200],
+      ['/solvers/T32026/ga2/registry.js', 200],
       ['/solvers/T22026/endterm/registry.js', 200],
       ['/mock-banks/T2-2026-End-Term-Mock.browser.js', 200]
     ];
@@ -1178,6 +1179,61 @@ async function checkT3Ga1Scale(solvers, studentCount = 1000) {
   }
 }
 
+async function checkT3Ga2(solvers, metadata) {
+  const officialIds = [
+    'q-termlog-httpbin-server',
+    'q-model-intelligence-auto-server',
+    'q-fastapi-metrics-cors-server',
+    'q-oauth-jwks-verify-server',
+    'q-config-precedence-server',
+    'q-compose-redis-tunnel-server',
+    'q-deploy-analytics-platform-server',
+    'q-observability-metrics-server',
+    'q-ollama-tunnel-llm-server',
+    'q-local-llm-structured-server',
+    'q-api-idempotency-pagination-server',
+    'q-middleware-ratelimit-cors-server',
+    'q-ollama-stream-reassembly-server',
+    'q-docker-build-cache-server',
+    'q-termlog-ollama-modelfile-server'
+  ];
+
+  assert(solvers.length === officialIds.length, `T3 GA2 should expose ${officialIds.length} official slots, got ${solvers.length}.`);
+  assert(solvers.map((solver) => solver.id).join('|') === officialIds.join('|'), 'T3 GA2 order/IDs drifted from the official exam bundle.');
+  assert(new Set(solvers.map((solver) => solver.id)).size === officialIds.length, 'T3 GA2 solver IDs must be unique.');
+  assert(metadata.questionCount === 15, 'T3 GA2 metadata questionCount should be 15.');
+
+  const sampleEmails = [
+    '21f1000000@ds.study.iitm.ac.in',
+    '23f1000805@ds.study.iitm.ac.in',
+    ' USER.Test+T3GA2@Example.COM '
+  ];
+
+  for (const email of sampleEmails) {
+    for (const solver of solvers) {
+      const result = await solver.solve(email);
+      assert(result && typeof result === 'object', `T3 GA2 ${solver.id} returned a non-object result.`);
+      assert(typeof result.answer === 'string' && result.answer.length > 0, `T3 GA2 ${solver.id} returned an empty answer.`);
+      assert(['solved', 'guide', 'bypass'].includes(result.type), `T3 GA2 ${solver.id} returned invalid type ${result.type}.`);
+      assert(result.debug?.solverId === solver.id, `T3 GA2 ${solver.id} is missing wrapper diagnostics.`);
+    }
+  }
+
+  // Check invalid email fails safely
+  const invalidEmail = await solvers[0].solve('<img src=x onerror=alert(1)>@example.com');
+  assert(invalidEmail.type === 'error' && invalidEmail.debug?.solverId === solvers[0].id, 'T3 GA2 should fail safely for malformed email input.');
+
+  // Check deterministic output for Q13 and Q14
+  const byId = Object.fromEntries(solvers.map((solver) => [solver.id, solver]));
+  const streamRes = await byId['q-ollama-stream-reassembly-server'].solve('23f1000001@ds.study.iitm.ac.in');
+  const streamJson = JSON.parse(streamRes.answer);
+  assert(streamJson.A && streamJson.B && streamJson.C, 'T3 GA2 Q13 stream JSON must contain streams A, B, and C.');
+
+  const dockerRes = await byId['q-docker-build-cache-server'].solve('23f1000001@ds.study.iitm.ac.in');
+  const dockerJson = JSON.parse(dockerRes.answer);
+  assert(dockerJson.A && dockerJson.B && dockerJson.C && dockerJson.D && dockerJson.E, 'T3 GA2 Q14 docker JSON must contain cases A through E.');
+}
+
 async function checkGa2SolversExecute(solvers) {
   const sampleEmails = [
     '21f1000000@ds.study.iitm.ac.in',
@@ -1813,6 +1869,7 @@ async function main() {
   const t2P2Registry = await importFresh('solvers/T22026/p2/registry.js');
   const endTermRegistry = await importFresh('solvers/T22026/endterm/registry.js');
   const t3Ga1Registry = await importFresh('solvers/T32026/ga1/registry.js');
+  const t3Ga2Registry = await importFresh('solvers/T32026/ga2/registry.js');
 
   assert(Array.isArray(ga7Registry.solvers) && ga7Registry.solvers.length > 0, 'GA7 registry did not load solvers.');
   assert(Array.isArray(roeRegistry.solvers) && roeRegistry.solvers.length > 0, 'ROE registry did not load solvers.');
@@ -1849,10 +1906,11 @@ async function main() {
   await checkT2P2SolversExecute(t2P2Registry.solvers);
   await checkT2EndTermMock(endTermRegistry.solvers);
   await checkT3Ga1(t3Ga1Registry.solvers, t3Ga1Registry.metadata);
+  await checkT3Ga2(t3Ga2Registry.solvers, t3Ga2Registry.metadata);
 
   await checkServerRoutes();
 
-  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}, GA5 solvers=${ga5Registry.solvers.length}, GA6 solvers=${ga6Registry.solvers.length}, P1 solvers=${p1Registry.solvers.length}, T2 GA8 solvers=${t2Ga8Registry.solvers.length}, T2 P2 solvers=${t2P2Registry.solvers.length}, T2 end-term questions=${endTermRegistry.solvers.length}, T3 GA1 questions=${t3Ga1Registry.solvers.length}`);
+  console.log(`Checks passed: GA7 solvers=${ga7Registry.solvers.length}, ROE solvers=${roeRegistry.solvers.length}, GA8 solvers=${ga8Registry.solvers.length}, P2 solvers=${p2Registry.solvers.length}, GA0 solvers=${ga0Registry.solvers.length}, GA1 solvers=${ga1Registry.solvers.length}, GA2 solvers=${ga2Registry.solvers.length}, GA3 solvers=${ga3Registry.solvers.length}, GA4 solvers=${ga4Registry.solvers.length}, GA5 solvers=${ga5Registry.solvers.length}, GA6 solvers=${ga6Registry.solvers.length}, P1 solvers=${p1Registry.solvers.length}, T2 GA8 solvers=${t2Ga8Registry.solvers.length}, T2 P2 solvers=${t2P2Registry.solvers.length}, T2 end-term questions=${endTermRegistry.solvers.length}, T3 GA1 questions=${t3Ga1Registry.solvers.length}, T3 GA2 questions=${t3Ga2Registry.solvers.length}`);
 }
 
 main().catch((error) => {
