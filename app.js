@@ -2696,13 +2696,26 @@ function updateMiniVibeState() {
   const miniWidget = document.getElementById('miniVibeWidget');
   const miniEq = document.getElementById('miniVibeEqAnim');
   const miniLabel = document.getElementById('miniVibeLabel');
+
+  const navBtn = document.getElementById('navbarVibeBtn');
+  const navEq = document.getElementById('navbarVibeEq');
+  const navLabel = document.getElementById('navbarVibeLabel');
   
   if (miniBtn) miniBtn.textContent = isPlaying ? '⏸' : '▶';
   if (miniWidget) miniWidget.classList.toggle('playing', isPlaying);
   if (miniEq) miniEq.classList.toggle('playing', isPlaying);
+
+  if (navBtn) navBtn.classList.toggle('playing', isPlaying);
+  if (navEq) navEq.classList.toggle('playing', isPlaying);
+
+  const currentTrack = vibePlaylist[vibeTrackIndex];
+  const trackTitle = currentTrack?.title || 'Vibe Mode';
+
   if (miniLabel) {
-    const currentTrack = vibePlaylist[vibeTrackIndex];
     miniLabel.textContent = currentTrack?.title || '🎵 Vibe Music';
+  }
+  if (navLabel) {
+    navLabel.textContent = isPlaying ? (currentTrack?.title ? `🎵 ${currentTrack.title}` : '🎵 Playing') : 'Vibe Mode';
   }
 }
 
@@ -2720,10 +2733,37 @@ function updateSaazResultsHighlight() {
   });
 }
 
+function openVibePlayer() {
+  if (!vibePlayer) return;
+  if (!vibePlayer.classList.contains('expanded')) {
+    vibePlayer.classList.add('expanded');
+    vibeModeToggle?.setAttribute('aria-expanded', 'true');
+    vibeModeToggle?.setAttribute('aria-pressed', 'true');
+  }
+  // Scroll into view gently on sidebar if needed
+  vibePlayer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
 vibeModeToggle?.addEventListener('click', () => {
   const isExpanded = vibePlayer.classList.toggle('expanded');
   vibeModeToggle.setAttribute('aria-expanded', String(isExpanded));
   vibeModeToggle.setAttribute('aria-pressed', String(isExpanded));
+});
+
+// Navbar Vibe Button: if already playing, toggles play/pause; if paused/unloaded, expands player & starts
+document.getElementById('navbarVibeBtn')?.addEventListener('click', (e) => {
+  openVibePlayer();
+  if (vibePlaylist.length > 0) {
+    toggleVibePlayback();
+  } else {
+    // If empty playlist, open the search/browse panel automatically
+    if (vibeAddPanel && vibeAddPanel.hidden) {
+      vibeAddPanel.hidden = false;
+      vibeAddToggle?.setAttribute('aria-expanded', 'true');
+    }
+    // Focus search box smoothly
+    vibeSaazSearchInput?.focus();
+  }
 });
 
 vibeAudio?.addEventListener('play', () => {
