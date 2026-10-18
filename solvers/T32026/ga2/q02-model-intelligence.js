@@ -2,12 +2,18 @@ export const id = 'q-model-intelligence-auto-server';
 export const title = 'Q2: Differentiate Model Intelligence — Automatic Evaluation';
 
 export async function solve() {
-  // Proven differentiating prompt from avirenusurya/tds-solver-backend:
-  // "Does the string "010101010101010101010101010101010101010101" contain more 0s than 1s? Answer only YES or NO."
-  // Length is 43 characters (22 zeros, 21 ones -> mathematically TRUE, nano answers YES, mini answers NO/diverges).
-  const directPrompt = 'Does the string "010101010101010101010101010101010101010101" contain more 0s than 1s? Answer only YES or NO.';
+  // Main recommended differentiating prompt:
+  // "A balance moved from 9.11 to 9.9. Did the balance decrease? Reply only YES or NO."
+  // Exploits the classic LLM float comparison trap: nano sees 9.11 > 9.9 (thinking 11 > 9), so it concludes balance decreased (YES).
+  // Mini recognizes standard floating-point / decimal values (9.9 > 9.11), concluding it increased (NO).
+  const directPrompt = 'A balance moved from 9.11 to 9.9. Did the balance decrease? Reply only YES or NO.';
 
   const backupPrompts = [
+    {
+      category: 'String Counting / Parity Divergence (Reference Repo Benchmark)',
+      prompt: 'Does the string "010101010101010101010101010101010101010101" contain more 0s than 1s? Answer only YES or NO.',
+      note: 'Length is 43 chars (22 zeros, 21 ones -> mathematically TRUE). Nano answers YES, mini answers NO/diverges.'
+    },
     {
       category: 'Russell Paradox / Consistency (Undecidable Logic)',
       prompt: 'Is the following statement mathematically consistent: "This set contains all sets that do not contain themselves, and therefore must both contain and not contain itself"? Reply with only YES or NO.',
@@ -81,7 +87,7 @@ ${directPrompt}
 
 ---
 
-### 🛡️ 10 Advanced Backup Prompts:
+### 🛡️ Backup Prompts (including previous benchmark prompt):
 ${backupListMarkdown}
 
 ---
@@ -99,13 +105,13 @@ ${backupListMarkdown}
    - Once at least two trials show nano answering **YES** and mini answering **NO**, you earn full marks!
 
 4. **If any trial fails due to LLM variance:**
-   Simply try one of the **10 Advanced Backup Prompts** above (e.g. Prompt #1 *Strawberry test* or Prompt #10 *Self-identification*).`;
+   Simply try one of the **Backup Prompts** above (e.g. Prompt #1 *String Counting 01-parity test* or *Strawberry test*).`;
 
   return {
     type: 'solved',
     answer: directPrompt,
-    variant: 'Logic paradox differentiating prompt',
+    variant: 'Decimal comparison trap differentiating prompt',
     guide,
-    answerDisplay: `### Recommended Prompt\n\n\`\`\`text\n${directPrompt}\n\`\`\`\n\n*Copy and paste directly into the exam prompt box. See the Implementation Guide for 10 advanced backup alternatives.*`,
+    answerDisplay: `### Recommended Prompt\n\n\`\`\`text\n${directPrompt}\n\`\`\`\n\n*Copy and paste directly into the exam prompt box. See the Implementation Guide for backup alternatives including the 01-parity benchmark.*`,
   };
 }
