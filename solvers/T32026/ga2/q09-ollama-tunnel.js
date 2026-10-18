@@ -9,7 +9,7 @@ export async function solve(email) {
   const endpointUrl = ga2Url(norm, '/q7/v1/chat/completions');
   const payload = {
     url: endpointUrl,
-    model: 'mock-model'
+    model: 'llama3.2'
   };
   const jsonAnswer = JSON.stringify(payload);
 
