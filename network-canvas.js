@@ -53,11 +53,12 @@ export class NetworkCanvasManager {
     this.camera.position.set(0, 0, 90);
 
     this.renderer = new THREE.WebGLRenderer({
-      canvas: this.canvas, antialias: true, alpha: true,
+      canvas: this.canvas, antialias: false, alpha: true,
       powerPreference: 'high-performance'
     });
     this.renderer.setSize(W(), H());
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    // Cap pixel ratio to 1.5 to dramatically reduce fillrate overhead on high-DPI/Retina screens
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.3;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -65,8 +66,8 @@ export class NetworkCanvasManager {
     // ── Network architecture: 7 layers, each with N neurons ──────────────
     this.LAYER_SIZES    = [4, 7, 10, 12, 10, 7, 4]; // neurons per layer
     this.MAX_CONNS_PER  = 3;     // max forward connections per neuron
-    this.MAX_PULSES     = 60;    // concurrent signal pulses
-    this.STAR_COUNT     = 350;
+    this.MAX_PULSES     = 45;    // concurrent signal pulses (optimized from 60)
+    this.STAR_COUNT     = 250;   // optimized from 350
 
     // State
     this.isDimmed    = false;
@@ -74,6 +75,8 @@ export class NetworkCanvasManager {
     this.neurons     = [];   // { x, y, z, layer, idx, origY, phase, glowFreq, size, isHub }
     this.connections = [];   // { from, to } (neuron indices)
     this.pulses      = [];   // active signal pulses
+    this.isPaused    = false;
+    this._lastFrameTime = 0;
 
     // Pre-allocated scratch colors (zero GC in render loop)
     this._colA = new THREE.Color();
@@ -89,6 +92,7 @@ export class NetworkCanvasManager {
     this._mouseNDC    = new THREE.Vector2(0, 0);
     this._camTarget   = new THREE.Vector2(0, 0);
     this._mouseActive = false;
+    this._mouseMovePending = false;
 
     // Build everything
     this._buildStars();
@@ -98,16 +102,27 @@ export class NetworkCanvasManager {
     this._buildDustMesh();
 
     // Bind
-    this.animate        = this.animate.bind(this);
-    this._onResize      = this._onResize.bind(this);
-    this._onMouseMove   = this._onMouseMove.bind(this);
-    this._onMouseLeave  = this._onMouseLeave.bind(this);
-    window.addEventListener('resize',    this._onResize,    { passive: true });
-    window.addEventListener('mousemove', this._onMouseMove, { passive: true });
-    window.addEventListener('mouseleave',this._onMouseLeave,{ passive: true });
+    this.animate            = this.animate.bind(this);
+    this._onResize          = this._onResize.bind(this);
+    this._onMouseMove       = this._onMouseMove.bind(this);
+    this._onMouseLeave      = this._onMouseLeave.bind(this);
+    this._onVisibilityChange= this._onVisibilityChange.bind(this);
+
+    window.addEventListener('resize',          this._onResize,          { passive: true });
+    window.addEventListener('mousemove',       this._onMouseMove,       { passive: true });
+    window.addEventListener('mouseleave',      this._onMouseLeave,      { passive: true });
+    document.addEventListener('visibilitychange', this._onVisibilityChange, { passive: true });
 
     this.generateNetwork('anonymous');
     this._animId = requestAnimationFrame(this.animate);
+  }
+
+  _onVisibilityChange() {
+    this.isPaused = document.hidden;
+    if (!this.isPaused && !this._animId) {
+      this._lastFrameTime = performance.now();
+      this._animId = requestAnimationFrame(this.animate);
+    }
   }
 
   // ── Star field (Twinkling Shader) ──────────────────────────────────────────
@@ -522,18 +537,34 @@ export class NetworkCanvasManager {
 
   // ── Mouse ─────────────────────────────────────────────────────────────────
   _onMouseMove(e) {
-    this._mouseNDC.set(
-      (e.clientX / this._W()) * 2 - 1,
-     -(e.clientY / this._H()) * 2 + 1
-    );
-    this._mouseActive = true;
+    if (this._mouseMovePending) return;
+    this._mouseMovePending = true;
+    requestAnimationFrame(() => {
+      this._mouseNDC.set(
+        (e.clientX / this._W()) * 2 - 1,
+       -(e.clientY / this._H()) * 2 + 1
+      );
+      this._mouseActive = true;
+      this._mouseMovePending = false;
+    });
   }
   _onMouseLeave() { this._mouseActive = false; }
 
   // ── Main loop ─────────────────────────────────────────────────────────────
-  animate() {
+  animate(timestamp = performance.now()) {
+    if (this.isPaused || document.hidden) {
+      this._animId = null;
+      return;
+    }
+
     this._animId = requestAnimationFrame(this.animate);
-    const t = performance.now() * 0.001;
+
+    // Limit background WebGL animation to ~40fps to free 60% GPU/CPU for UI responsiveness
+    const delta = timestamp - this._lastFrameTime;
+    if (delta < 24) return;
+    this._lastFrameTime = timestamp - (delta % 24);
+
+    const t = timestamp * 0.001;
 
     // Theme color lerp
     this._primary.lerp(this._tPrimary,   0.03);
@@ -695,9 +726,10 @@ export class NetworkCanvasManager {
 
   dispose() {
     if (this._animId) cancelAnimationFrame(this._animId);
-    window.removeEventListener('resize',     this._onResize);
-    window.removeEventListener('mousemove',  this._onMouseMove);
-    window.removeEventListener('mouseleave', this._onMouseLeave);
+    window.removeEventListener('resize',           this._onResize);
+    window.removeEventListener('mousemove',        this._onMouseMove);
+    window.removeEventListener('mouseleave',       this._onMouseLeave);
+    document.removeEventListener('visibilitychange', this._onVisibilityChange);
     [this._neurMesh, this._lineMesh, this._pulseMesh, this._starMesh, this._dustMesh].forEach(m => {
       if (!m) return;
       m.geometry?.dispose();

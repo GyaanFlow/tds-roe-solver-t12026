@@ -1571,23 +1571,28 @@ function renderDashboard() {
   // Bind interactive card tilts & spotlight effects
   const cards = canvas.querySelectorAll('.dashboard-card');
   cards.forEach(card => {
+    let pendingRaf = null;
     card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      card.style.setProperty('--x', `${x}px`);
-      card.style.setProperty('--y', `${y}px`);
-      
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const rotateX = ((y - centerY) / centerY) * -8;
-      const rotateY = ((x - centerX) / centerX) * 8;
-      
-      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
+      if (pendingRaf) return;
+      const clientX = e.clientX;
+      const clientY = e.clientY;
+      pendingRaf = requestAnimationFrame(() => {
+        pendingRaf = null;
+        const rect = card.getBoundingClientRect();
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
+        card.style.setProperty('--x', `${x}px`);
+        card.style.setProperty('--y', `${y}px`);
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+    }, { passive: true });
     
     card.addEventListener('mouseleave', () => {
+      if (pendingRaf) { cancelAnimationFrame(pendingRaf); pendingRaf = null; }
       card.style.transform = 'rotateX(0deg) rotateY(0deg)';
       card.style.removeProperty('--x');
       card.style.removeProperty('--y');
@@ -3231,14 +3236,20 @@ examSelect.addEventListener('change', () => {
   persistUiState();
 });
 let _lastEmailForNetwork = '';
+let _emailDebounceTimer = null;
 emailInput.addEventListener('input', () => {
-  persistUiState();
   const emailVal = emailInput.value.trim();
   updateVibeProfileBadge(emailVal);
-  if (networkCanvas && emailVal !== _lastEmailForNetwork) {
-    _lastEmailForNetwork = emailVal;
-    networkCanvas.generateNetwork(emailVal || 'anonymous');
-  }
+  drawEmailIdenticon(emailVal);
+
+  clearTimeout(_emailDebounceTimer);
+  _emailDebounceTimer = setTimeout(() => {
+    persistUiState();
+    if (networkCanvas && emailVal !== _lastEmailForNetwork) {
+      _lastEmailForNetwork = emailVal;
+      networkCanvas.generateNetwork(emailVal || 'anonymous');
+    }
+  }, 250);
 });
 
 copyAllBtn?.addEventListener('click', (event) => {
@@ -3465,11 +3476,24 @@ function drawEmailIdenticon(email) {
   }
 
   identiconState.vertices = vertices;
+  identiconState.isDirty = true;
 
   if (!identiconAnimationId) {
-    const loop = () => {
+    let lastTime = 0;
+    const loop = (timestamp) => {
       identiconAnimationId = requestAnimationFrame(loop);
-      updateAndDrawIdenticon();
+      if (document.hidden) return;
+      // Cap at ~30fps for the tiny 36x36 canvas
+      if (timestamp - lastTime < 32) return;
+      lastTime = timestamp;
+
+      // Only draw if hovering or has not settled
+      const isHovering = identiconState.targetHoverScale > 1.0;
+      const isSettled = Math.abs(identiconState.hoverScale - 1.0) < 0.01 && Math.abs(identiconState.hoverSpeed - 1.0) < 0.01;
+      if (isHovering || !isSettled || identiconState.isDirty) {
+        updateAndDrawIdenticon();
+        if (isSettled && !isHovering) identiconState.isDirty = false;
+      }
     };
     identiconAnimationId = requestAnimationFrame(loop);
   }
@@ -3588,23 +3612,28 @@ initCreatorLiveStats();
 // Bind interactive disclaimer card mouse tilt & spotlight
 const disclaimerCard = document.getElementById('academicDisclaimer');
 if (disclaimerCard) {
+  let pendingDisclaimerRaf = null;
   disclaimerCard.addEventListener('mousemove', (e) => {
-    const rect = disclaimerCard.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    disclaimerCard.style.setProperty('--x', `${x}px`);
-    disclaimerCard.style.setProperty('--y', `${y}px`);
-    
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -5;
-    const rotateY = ((x - centerX) / centerX) * 5;
-    
-    disclaimerCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  });
+    if (pendingDisclaimerRaf) return;
+    const clientX = e.clientX;
+    const clientY = e.clientY;
+    pendingDisclaimerRaf = requestAnimationFrame(() => {
+      pendingDisclaimerRaf = null;
+      const rect = disclaimerCard.getBoundingClientRect();
+      const x = clientX - rect.left;
+      const y = clientY - rect.top;
+      disclaimerCard.style.setProperty('--x', `${x}px`);
+      disclaimerCard.style.setProperty('--y', `${y}px`);
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+      disclaimerCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+  }, { passive: true });
   
   disclaimerCard.addEventListener('mouseleave', () => {
+    if (pendingDisclaimerRaf) { cancelAnimationFrame(pendingDisclaimerRaf); pendingDisclaimerRaf = null; }
     disclaimerCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
     disclaimerCard.style.removeProperty('--x');
     disclaimerCard.style.removeProperty('--y');

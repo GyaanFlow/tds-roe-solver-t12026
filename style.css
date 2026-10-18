@@ -74,6 +74,7 @@ body {
   z-index: 0;
   pointer-events: none;
   display: block;
+  transform: translateZ(0);
   /* Subtle vignette helps UI contrast without hiding the constellation */
   mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 55%, rgba(0,0,0,0.65) 100%);
   -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 55%, rgba(0,0,0,0.65) 100%);
