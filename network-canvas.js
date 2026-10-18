@@ -119,7 +119,12 @@ export class NetworkCanvasManager {
 
   _onVisibilityChange() {
     this.isPaused = document.hidden;
-    if (!this.isPaused && !this._animId) {
+    if (this.isPaused) {
+      if (this._animId) {
+        cancelAnimationFrame(this._animId);
+        this._animId = null;
+      }
+    } else if (!this._animId) {
       this._lastFrameTime = performance.now();
       this._animId = requestAnimationFrame(this.animate);
     }
@@ -539,10 +544,12 @@ export class NetworkCanvasManager {
   _onMouseMove(e) {
     if (this._mouseMovePending) return;
     this._mouseMovePending = true;
+    const clientX = e.clientX;
+    const clientY = e.clientY;
     requestAnimationFrame(() => {
       this._mouseNDC.set(
-        (e.clientX / this._W()) * 2 - 1,
-       -(e.clientY / this._H()) * 2 + 1
+        (clientX / this._W()) * 2 - 1,
+       -(clientY / this._H()) * 2 + 1
       );
       this._mouseActive = true;
       this._mouseMovePending = false;
