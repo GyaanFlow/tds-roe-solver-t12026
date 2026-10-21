@@ -1,6 +1,6 @@
 // Dated copy of https://stats.aipipe.org/usage.json (the public AI Pipe usage feed the P1 prediction question uses).
-// The live feed sends no CORS headers, so the browser cannot fetch it; this snapshot is the fallback and the tool also
-// accepts a pasted copy. Refresh with: node scripts/refresh-aipipe-snapshot.mjs
+// The live feed allows browser requests, so the tool loads it directly; this dated copy is only the offline fallback
+// (the tool also accepts a pasted copy). Refresh with: node scripts/refresh-aipipe-snapshot.mjs
 export const snapshotFetchedAt = '2026-10-21T10:42:15Z';
 export const snapshot = {
   "schema_version": 1,

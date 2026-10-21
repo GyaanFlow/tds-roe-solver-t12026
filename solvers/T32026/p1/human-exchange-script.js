@@ -54,7 +54,8 @@ function clip(value, maxWords) {
   return words.length <= maxWords ? words.join(' ') : words.slice(0, maxWords).join(' ');
 }
 
-const pick = (list, seed, salt) => list[(seed + salt * 7) % list.length];
+// Each part of the script draws its own wording from a separate hash, so students get many different combinations.
+const pick = (list, seed, salt) => list[hashSeed(`${seed}:${salt}`) % list.length];
 
 // Things the exam says an offer must not involve; this is a reminder, not a judge.
 const SAFETY_RULES = [

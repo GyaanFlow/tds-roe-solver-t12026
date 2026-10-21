@@ -13,7 +13,7 @@ const DEFAULTS = { sigma: 0.5, scale: 1 };
  * Everything the forecast panel shows, as one pure function: the feed in, a recommendation and a draft reason out.
  * `previous` is what this student last recorded ({ label, fp }), used to tell new evidence from a refreshed copy.
  */
-export function analyze({ feed, sigma = DEFAULTS.sigma, scale = DEFAULTS.scale, limits = F.DEFAULT_LIMITS, previous = null, samples = 20000 }) {
+export function analyze({ feed, sigma = DEFAULTS.sigma, scale = DEFAULTS.scale, limits = F.DEFAULT_LIMITS, previous = null, samples = 20000, now = Date.now() }) {
   const summary = F.summarize(feed);
   if (summary.count === 0) return { ok: false, message: 'The feed has no completed days yet, so there is nothing to learn from.' };
   const plan = F.planTargetWeek(feed, { targetStart: WINDOWS.market.targetStart, targetEnd: WINDOWS.market.targetEnd });
@@ -37,6 +37,10 @@ export function analyze({ feed, sigma = DEFAULTS.sigma, scale = DEFAULTS.scale, 
   });
   const warnings = [];
   if (summary.count < 7) warnings.push(`Only ${summary.count} completed days are available, so the spread is wide and the uncertainty setting matters. Revisit when new reports arrive.`);
+  // A stale feed (for example the built-in copy opened weeks later) would quietly give out-of-date numbers.
+  const newest = feed.days.filter((d) => d.usable).map((d) => d.date).sort().at(-1);
+  const ageDays = (now - Date.parse(`${newest}T00:00:00Z`)) / 86400000;
+  if (ageDays > 3) warnings.push(`The newest completed day in this feed is ${newest}, about ${Math.floor(ageDays)} days ago. Open ${FEED_URL}, copy the whole page and paste it above for current numbers.`);
   if (plan.usingTargetDaysAsHistory) warnings.push('All completed days fall inside the target week, so they are also used as the history for the remaining days.');
   return { ok: true, summary, plan, forecast, choice, fingerprint, evidence, reason, warnings };
 }
@@ -51,8 +55,8 @@ function widgetHtml(email) {
   return [
     `<div id="t3p1Q1Root" data-email="${escapeHtml(email)}">`,
     '<div class="p1-kicker">1 · Load the usage feed</div>',
-    `<p>The public feed at <a href="${FEED_URL}" target="_blank" rel="noopener noreferrer">stats.aipipe.org/usage.json</a> lists each UTC day's <code>total.spend_usd</code>. Browsers cannot read it directly (it sends no CORS header), so use the built-in copy, or open the link, copy the whole page and paste it below.</p>`,
-    '<div class="p1-actions"><button type="button" class="p1-btn" onclick="window._t3p1Q1.snapshot()">Use built-in copy</button><button type="button" class="p1-btn ghost" onclick="window._t3p1Q1.live()">Try live feed</button><button type="button" class="p1-btn ghost" onclick="window._t3p1Q1.pasted()">Use pasted JSON</button></div>',
+    `<p>The public feed at <a href="${FEED_URL}" target="_blank" rel="noopener noreferrer">stats.aipipe.org/usage.json</a> lists each UTC day's <code>total.spend_usd</code>. The forecast loads it live when you run it. If you are offline or it is blocked, the built-in copy is used, or you can open the link, copy the whole page and paste it below.</p>`,
+    '<div class="p1-actions"><button type="button" class="p1-btn" onclick="window._t3p1Q1.live()">Load live feed</button><button type="button" class="p1-btn ghost" onclick="window._t3p1Q1.snapshot()">Use built-in copy</button><button type="button" class="p1-btn ghost" onclick="window._t3p1Q1.pasted()">Use pasted JSON</button></div>',
     '<label for="t3p1Feed" style="margin-top:10px">Paste feed JSON (optional)</label><textarea id="t3p1Feed" spellcheck="false" placeholder=\'{"schema_version":1,"days":[…]}\'></textarea>',
     '<div id="t3p1FeedInfo" class="p1-status" role="status"></div>',
     '<div class="p1-kicker" style="margin-top:12px">2 · Settings</div>',
@@ -146,7 +150,8 @@ function register() {
     state.feed = parsed.feed;
     state.source = source;
     const usable = parsed.feed.days.filter((d) => d.usable).length;
-    say('t3p1FeedInfo', `${source}: ${usable} completed days${parsed.feed.publishedAt ? `, published ${parsed.feed.publishedAt}` : ''}.${parsed.warnings.length ? ` Note: ${parsed.warnings.join(' ')}` : ''}`, 'ok');
+    state.info = `${source}: ${usable} completed days${parsed.feed.publishedAt ? `, published ${parsed.feed.publishedAt}` : ''}.${parsed.warnings.length ? ` Note: ${parsed.warnings.join(' ')}` : ''}`;
+    say('t3p1FeedInfo', state.info, 'ok');
     return true;
   }
 
@@ -167,20 +172,27 @@ function register() {
   window._t3p1Q1 = {
     snapshot() { adopt(F.parseFeed(snapshot), `Built-in copy (${snapshotFetchedAt})`); renderRecord(); },
     async live() {
-      say('t3p1FeedInfo', 'Trying the live feed…', '');
+      say('t3p1FeedInfo', 'Loading the live feed…', '');
       try {
         const response = await fetch(FEED_URL, { cache: 'no-store', credentials: 'omit' });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        adopt(F.parseFeed(await response.text()), 'Live feed');
+        const ok = adopt(F.parseFeed(await response.text()), 'Live feed');
+        renderRecord();
+        return ok;
       } catch (error) {
-        say('t3p1FeedInfo', `The browser could not read the live feed (${error?.message || 'blocked'}) — it does not allow other sites to fetch it. Open ${FEED_URL}, copy the whole page, paste it in the box and press “Use pasted JSON”.`, 'bad');
+        say('t3p1FeedInfo', `The live feed could not be loaded (${error?.message || 'network problem'}). Use the built-in copy, or open ${FEED_URL}, copy the whole page and paste it in the box.`, 'bad');
+        renderRecord();
+        return false;
       }
-      renderRecord();
     },
     pasted() { adopt(F.parseFeed($('t3p1Feed')?.value ?? ''), 'Pasted feed'); renderRecord(); },
-    run() {
-      if (!state.feed) this.snapshot();
+    async run() {
+      if (!state.feed) {
+        if (!(await this.live())) this.snapshot();
+      }
       if (!state.feed) return;
+      // The guide may have been re-rendered (switching questions) while the loaded feed is still in use.
+      if (state.info && !$('t3p1FeedInfo')?.textContent) say('t3p1FeedInfo', state.info, 'ok');
       const limitsCheck = F.parseLimits($('t3p1Limits')?.value);
       if (!limitsCheck.ok) { say('t3p1Status', limitsCheck.message, 'bad'); return; }
       const sigma = Number($('t3p1Sigma')?.value);

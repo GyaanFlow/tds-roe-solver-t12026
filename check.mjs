@@ -372,6 +372,10 @@ async function checkT3P1(solvers, metadata) {
   assert(forecastLib.validateReason(analysis.reason).ok && analysis.reason.length <= 1000, 'T3 P1 draft reason must satisfy the market\'s rules.');
   const revised = q1.analyze({ feed: parsed.feed, previous: { label: '$2–$5', fp: 'old|1|1.000000' } });
   assert(revised.reason.includes('changing my prediction from $2–$5') && revised.reason.includes('New evidence'), 'T3 P1 a revision draft must say what changed and why.');
+  const dayMs = 86400000;
+  const fresh = q1.analyze({ feed: parsed.feed, now: Date.parse('2026-10-22T12:00:00Z') });
+  const stale = q1.analyze({ feed: parsed.feed, now: Date.parse('2026-11-05T12:00:00Z') });
+  assert(!fresh.warnings.some((w) => w.includes('days ago')) && stale.warnings.some((w) => w.includes('2026-10-20') && w.includes('days ago')), 'T3 P1 must warn when the feed is stale and stay quiet when it is current.');
   assert(!q1.analyze({ feed: forecastLib.parseFeed(make([day('2026-10-01', 1, { complete: false })])).feed }).ok, 'T3 P1 analysis must refuse a feed with no completed days.');
   assert(!forecastLib.validateReason('too short').ok && !forecastLib.validateReason('ab').ok && forecastLib.validateReason('Three words here ok').ok && !forecastLib.validateReason('x '.repeat(600)).ok && !forecastLib.validateReason(null).ok, 'T3 P1 reason validation must enforce 3 words, 15 characters and 1,000 characters.');
   const longDraft = forecastLib.draftReason({ summary: analysis.summary, forecast: analysis.forecast, choice: analysis.choice, planned: null, previousChoice: 'x'.repeat(400), newEvidence: 'y'.repeat(900) });
@@ -401,6 +405,7 @@ async function checkT3P1(solvers, metadata) {
   const fields = { title: 'Your First Confused User', receives: 'a screen recording of me trying your website', why: 'it shows where visitors get stuck', personal: 'I will use the site cold and narrate', delivery: 'within 24 hours', limits: 'one site, ten minutes', verify: 'by watching the recording' };
   const built = script.buildScript(fields, { email: sampleEmail });
   assert(built.fits && built.missing.length === 0 && built.seconds <= 60 && built.script.includes('Your First Confused User') && fields.verify.split(' ').every((w) => built.script.includes(w)), 'T3 P1 script must cover every point and fit in 60 seconds.');
+  assert(new Set(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'].map((x) => script.buildScript(fields, { email: `${x}@ds.study.iitm.ac.in` }).script)).size >= 6, 'T3 P1 scripts must differ between most students (independent wording per part).');
   assert(script.buildScript(fields, { email: sampleEmail }).script === built.script && script.buildScript(fields, { email: 'someone.else@ds.study.iitm.ac.in' }).script !== built.script, 'T3 P1 script wording must be deterministic per email and differ between students.');
   const wordy = Object.fromEntries(Object.entries(fields).map(([k, v]) => [k, `${v} ${'and more detail about this part '.repeat(8)}`]));
   const trimmed = script.buildScript(wordy, { email: sampleEmail });
