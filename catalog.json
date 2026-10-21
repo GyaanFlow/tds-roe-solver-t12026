@@ -32,6 +32,35 @@
           ]
         },
         {
+          "id": "ga3",
+          "label": "GA 3 (Agent Safety & Trading Games)",
+          "group": "Weekly Graded Assignments",
+          "description": "A2A invoice agent, taint-aware mailroom executor and incident-trace agent — personal API links with a pre-flight test — plus a guess-your-number helper and the Humans Only drawing game guide.",
+          "solverCount": 5,
+          "questions": [
+            {
+              "id": "q-guess-number-server",
+              "title": "Guess your number"
+            },
+            {
+              "id": "q-a2a-durable-delegate-server-v2",
+              "title": "A2A Invoice Agent: decide and act safely"
+            },
+            {
+              "id": "q-taint-aware-agent-executor-server-v2",
+              "title": "Taint-aware agent executor"
+            },
+            {
+              "id": "q-agent-trace-integrity-server-v2",
+              "title": "Agent trace integrity"
+            },
+            {
+              "id": "q-trading-humans-only",
+              "title": "Trading game: Humans Only"
+            }
+          ]
+        },
+        {
           "id": "ga2",
           "label": "GA 2 (API Engineering & Cloud Services)",
           "group": "Weekly Graded Assignments",

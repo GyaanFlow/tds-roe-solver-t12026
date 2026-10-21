@@ -139,6 +139,7 @@ async function checkServerRoutes() {
       ['/solvers/T12026/ga8/registry.js', 200],
       ['/solvers/T32026/ga1/registry.js', 200],
       ['/solvers/T32026/ga2/registry.js', 200],
+      ['/solvers/T32026/ga3/registry.js', 200],
       ['/solvers/T32026/p1/registry.js', 200],
       ['/solvers/T22026/endterm/registry.js', 200],
       ['/mock-banks/T2-2026-End-Term-Mock.browser.js', 200]
@@ -488,6 +489,79 @@ async function checkT3P1(solvers, metadata) {
     assert(!/<img.src=x/i.test(hostile.guide), 'T3 P1 must escape the email in its forms.');
     const hostile4 = await solvers[3].solve('"><img/src=x/onerror=alert(1)>@x.com').catch((e) => ({ type: 'error', guide: String(e) }));
     assert(!/<img.src=x/i.test(hostile4.guide ?? ''), 'T3 P1 wrapper must not echo a hostile email unescaped.');
+  } finally {
+    globalThis.fetch = savedFetch;
+  }
+}
+
+async function checkT3Ga3(solvers, metadata) {
+  const official = fs.readFileSync(path.join(rootDir, 'solvers/T32026/ga3/exam-source.js'), 'utf8');
+  const officialIds = [...official.matchAll(/^\s+(?:let )?[a-z] = "(q-[a-z0-9-]+)"/gm)].map((m) => m[1]);
+  assert(solvers.length === 5 && metadata.questionCount === 5 && metadata.exam === 'ga3' && metadata.term === 'T32026', 'T3 GA3 must register exactly five questions.');
+  assert(JSON.stringify(solvers.map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 5, `T3 GA3 ids/order differ from the official bundle: ${officialIds.join(', ')}`);
+  const api = await importFresh('solvers/T32026/ga3/api-client.js');
+  const guess = await importFresh('solvers/T32026/ga3/q01-guess-number.js');
+  const windows = await importFresh('solvers/T32026/ga3/windows.js');
+  const email = 'student.one@ds.study.iitm.ac.in';
+  const goodToken = `eyJhbGciOiJIUzI1NiJ9.${Buffer.from(JSON.stringify({ exp: Math.floor(Date.now() / 1000) + 3600 })).toString('base64url')}.sig`;
+  const expiredToken = `eyJhbGciOiJIUzI1NiJ9.${Buffer.from(JSON.stringify({ exp: 1000 })).toString('base64url')}.sig`;
+
+  // Token handling.
+  assert(api.checkToken(goodToken).ok && api.checkToken('').code === 'NO_TOKEN' && api.checkToken(expiredToken).code === 'TOKEN_EXPIRED', 'T3 GA3 token check must accept a live token and reject empty/expired ones.');
+  assert(['a b', 'x/y', '"quoted"', 'tok?x=1', 'a'.repeat(5000)].every((t) => !api.checkToken(t).ok), 'T3 GA3 token check must reject spaces, slashes, quotes, queries and absurd lengths.');
+
+  // URLs: the exact shapes the exam grader appends to.
+  const base = `${api.GA3_API_ORIGIN}/ga5/${encodeURIComponent(email)}/${goodToken}`;
+  assert(api.a2aBase(email, goodToken) === `${base}/a2a/` && api.mailroomUrl(email, goodToken) === `${base}/mailroom` && api.incidentBase(email, goodToken) === base, 'T3 GA3 personal URLs changed shape.');
+
+  // Guess helper.
+  assert(guess.nextGuess(0, 10000) === 5000 && guess.nextGuess(5001, 10000) === 7500 && guess.nextGuess(7, 7) === 7 && guess.nextGuess(9, 3) === null && guess.nextGuess('x', 3) === null && guess.nextGuess(0, 99999) === null, 'T3 GA3 guess helper arithmetic is wrong.');
+  let range = { low: 0, high: 10000 };
+  for (const [g, v] of [[5000, 'Too low'], [7500, 'too high'], [6250, 'Too low']]) range = guess.narrow(range, g, v);
+  assert(range.low === 6251 && range.high === 7499 && guess.narrow(range, 'x', 'low') === null && guess.narrow(range, 5, 'huh') === null, 'T3 GA3 guess helper must narrow the range correctly.');
+
+  // Windows.
+  const W = windows.HUMANS_ONLY;
+  assert(windows.windowStatus(W.draw, W.draw.opens - 1).state === 'before' && windows.windowStatus(W.draw, W.draw.opens).state === 'open' && windows.windowStatus(W.draw, W.draw.closes).state === 'closed' && windows.formatIst(W.draw.closes) === '24 Oct 2026, 08:00 IST' && windows.formatIst(W.submit.closes) === '25 Oct 2026, 23:59 IST', 'T3 GA3 Humans Only windows are wrong.');
+
+  // Probes with a scripted fetch: a healthy API passes, a broken one fails, and nothing ever throws.
+  const json = (status, body, headers = {}) => ({ ok: status < 400, status, redirected: false, headers: { get: (k) => headers[k.toLowerCase()] ?? 'application/json' }, json: async () => body, text: async () => JSON.stringify(body) });
+  const broken = async () => json(500, { detail: 'boom' });
+  for (const [name, fn] of [['a2a', () => api.probeA2a({ base: `${base}/a2a/`, token: goodToken, fetchImpl: broken })], ['mailroom', () => api.probeMailroom({ url: `${base}/mailroom`, fetchImpl: broken })], ['incident', () => api.probeIncident({ base, fetchImpl: broken })]]) {
+    const results = await fn();
+    assert(Array.isArray(results) && results.length >= 3 && !api.summarizeProbes(results).allPassed, `T3 GA3 ${name} probe must fail against a broken API.`);
+    assert(!JSON.stringify(results).includes(goodToken), `T3 GA3 ${name} probe output must not contain the token.`);
+  }
+  const throwing = async () => { throw new Error('network down'); };
+  assert(Array.isArray(await api.probeMailroom({ url: `${base}/mailroom`, fetchImpl: throwing })), 'T3 GA3 probes must survive network errors.');
+  assert(!api.redact(`oops ${goodToken} here`, goodToken).includes(goodToken), 'T3 GA3 redact must hide the token.');
+
+  // Solvers: no network, correct shapes, guides contiguous, hostile input escaped.
+  const savedFetch = globalThis.fetch;
+  let networkCalls = 0;
+  globalThis.fetch = async () => { networkCalls += 1; throw new Error('network is not allowed while preparing'); };
+  try {
+    const results = [];
+    for (const solver of solvers) results.push(await solver.solve(email, goodToken));
+    assert(networkCalls === 0, 'T3 GA3 solvers must not make any network request while preparing.');
+    assert(results[0].type === 'guide' && results[0].guide.includes('Next-guess helper') && results[4].type === 'guide' && results[4].answer.includes('played'), 'T3 GA3 Q1/Q5 must be guides.');
+    [`${base}/a2a/`, `${base}/mailroom`, base].forEach((url, i) => {
+      const r = results[i + 1];
+      assert(r.type === 'solved' && r.answer === url && r.usesHostedApi === true, `T3 GA3 Q${i + 2} must give the personal URL.`);
+      assert(r.guide.includes('Run pre-flight test') && /Step by step for beginners/.test(r.guide), `T3 GA3 Q${i + 2} must carry the pre-flight widget and beginner steps.`);
+    });
+    for (const [i, r] of results.entries()) {
+      assert(!/\n\s*\n/.test(r.guide) && r.guide.includes('class="p1"'), `T3 GA3 Q${i + 1} guide must be one contiguous HTML block.`);
+      if (i >= 1 && i <= 3) assert(!r.guide.includes(goodToken) || r.guide.includes(base), `T3 GA3 Q${i + 1} guide may only show the token inside the personal URL.`);
+    }
+    for (const i of [1, 2, 3]) {
+      const none = await solvers[i].solve(email, '');
+      assert(none.type === 'guide' && none.variant.includes('token') && !/ga5\//.test(none.answer), `T3 GA3 Q${i + 1} must ask for a token instead of inventing a URL.`);
+      const expired = await solvers[i].solve(email, expiredToken);
+      assert(expired.type === 'guide' && /expired/i.test(expired.answer), `T3 GA3 Q${i + 1} must say when the token has expired.`);
+      const hostile = await solvers[i].solve('"><img/src=x/onerror=alert(1)>@x.com', goodToken).catch((e) => ({ guide: '', error: e }));
+      assert(!/<img.src=x/i.test(hostile.guide ?? ''), `T3 GA3 Q${i + 1} must not echo a hostile email unescaped.`);
+    }
   } finally {
     globalThis.fetch = savedFetch;
   }
@@ -2020,6 +2094,13 @@ async function main() {
     return;
   }
 
+  if (process.argv.includes('--t3-ga3-only')) {
+    const registry = await importFresh('solvers/T32026/ga3/registry.js');
+    await checkT3Ga3(registry.solvers, registry.metadata);
+    console.log(`T3 GA3 checks passed: ${registry.solvers.length} official question slots.`);
+    return;
+  }
+
   if (process.argv.includes('--t3-p1-only')) {
     const registry = await importFresh('solvers/T32026/p1/registry.js');
     await checkT3P1(registry.solvers, registry.metadata);
@@ -2115,6 +2196,8 @@ async function main() {
   await checkT3Ga1(t3Ga1Registry.solvers, t3Ga1Registry.metadata);
   await checkT3Ga2(t3Ga2Registry.solvers, t3Ga2Registry.metadata);
   await checkT3P1(t3P1Registry.solvers, t3P1Registry.metadata);
+  const t3Ga3Registry = await importFresh('solvers/T32026/ga3/registry.js');
+  await checkT3Ga3(t3Ga3Registry.solvers, t3Ga3Registry.metadata);
 
   await checkServerRoutes();
 
