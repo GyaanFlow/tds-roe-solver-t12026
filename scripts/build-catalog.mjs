@@ -21,6 +21,7 @@ const EXAMS = {
   T32026: [
     ['ga1', 'Weekly Graded Assignments', 'GA 1 (Developer Tools)', 'Developer tooling, API servers, Git forensics and an agent ledger — including live-API questions.'],
     ['ga2', 'Weekly Graded Assignments', 'GA 2 (API Engineering & Cloud Services)', 'Statistics APIs, CORS, OAuth JWKS verification, Redis counters, Prometheus observability, and LLM endpoints.'],
+    ['p1', 'Projects', 'Project 1', 'AI Pipe usage prediction market, a 60-second Human Exchange offer, Air Ink phone drawing and the Missing Invoice trading game — with forecast, script and invoice tools.'],
   ],
   T22026: [
     ['endterm', 'End-Term Practice', 'End-Term Mock (175 MCQ + 25 MSQ + 100 Subjective)', 'A 300-question practice bank (MCQ, MSQ and subjective) with worked explanations.'],
