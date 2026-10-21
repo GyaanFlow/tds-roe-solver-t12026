@@ -142,6 +142,7 @@ const TERM_EXAMS = {
   T32026: [
     { group: 'Weekly Graded Assignments', value: 'ga1', label: 'GA 1 (Developer Tools)' },
     { group: 'Weekly Graded Assignments', value: 'ga2', label: 'GA 2 (API Engineering & Cloud Services)' },
+    { group: 'Weekly Graded Assignments', value: 'ga3', label: 'GA 3 (Agent Safety & Trading Games)' },
     { group: 'Projects', value: 'p1', label: 'Project 1' }
   ]
 };
