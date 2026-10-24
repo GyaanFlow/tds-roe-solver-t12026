@@ -74,10 +74,7 @@ body {
   z-index: 0;
   pointer-events: none;
   display: block;
-  transform: translateZ(0);
-  /* Subtle vignette helps UI contrast without hiding the constellation */
-  mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 55%, rgba(0,0,0,0.65) 100%);
-  -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 55%, rgba(0,0,0,0.65) 100%);
+  opacity: 0.78;
 }
 .sr-only {
   position: absolute;
@@ -1340,6 +1337,16 @@ body {
   .answer-preview {
     min-height: 240px;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+  #threeCanvas { display: none !important; }
 }
 
 /* ── Dashboard (Overview) ── */
@@ -3854,7 +3861,7 @@ body {
   padding: 20px 24px;
   text-align: left;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-top: 1px solid rgba(255, 255, 255, 0.22);
@@ -3874,11 +3881,13 @@ body {
 .creator-card:hover {
   transform: translateY(-2px);
   border-color: var(--theme-primary-hover);
+  z-index: 30;
   box-shadow: 
     0 16px 44px rgba(0, 0, 0, 0.65),
     0 0 45px var(--theme-glow-intense),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
+.creator-card:focus-within { z-index: 30; }
 .creator-card::before {
   content: '';
   position: absolute;

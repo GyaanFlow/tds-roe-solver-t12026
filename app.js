@@ -1,4 +1,5 @@
 // TDS Exam Portal - Workspace Application Engine
+import { shouldEnableNetworkCanvas } from './network-canvas-policy.js';
 
 // One stable value per page load, not per import() call. A fresh Date.now() on every dynamic
 // import forces the browser to re-fetch and re-execute every solver module from scratch on
@@ -7,6 +8,7 @@
 const MODULE_CACHE_BUST = Date.now();
 
 let networkCanvas = null;
+let networkCanvasInitPromise = null;
 
 const THEME_HUES = {
   amber: { primary: 38, secondary: 4 },
@@ -76,6 +78,20 @@ function isPlausibleEmail(value) {
   // copy-paste artefacts (a trailing comma or semicolon) are rejected rather than silently
   // becoming part of the seed.
   return /^[^\s@]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/.test(String(value).trim());
+}
+
+function renderEmailHistory(entries) {
+  const datalist = document.getElementById('emailHistory');
+  if (!datalist) return;
+
+  const options = document.createDocumentFragment();
+  for (const entry of Array.isArray(entries) ? entries.slice(0, 10) : []) {
+    if (typeof entry !== 'string' || !isPlausibleEmail(entry)) continue;
+    const option = document.createElement('option');
+    option.value = entry.trim();
+    options.appendChild(option);
+  }
+  datalist.replaceChildren(options);
 }
 
 function safeStorageSet(key, value) {
@@ -280,10 +296,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (savedEmailHistory) {
     try {
       const history = JSON.parse(savedEmailHistory);
-      const datalist = document.getElementById('emailHistory');
-      if (datalist && Array.isArray(history)) {
-        datalist.innerHTML = history.map(e => `<option value="${e}">`).join('');
-      }
+      renderEmailHistory(history);
     } catch (_) {}
   }
 
@@ -373,6 +386,16 @@ function showToast(message, tone = 'info', duration = 2200) {
       }
     }, 220);
   }, duration);
+}
+
+function yieldToBrowser() {
+  return new Promise((resolve) => {
+    if (!document.hidden && typeof window.requestAnimationFrame === 'function') {
+      window.requestAnimationFrame(() => resolve());
+    } else {
+      window.setTimeout(resolve, 0);
+    }
+  });
 }
 
 const REPO_URL = 'https://github.com/GyaanFlow/tds-roe-solver-t12026';
@@ -2366,10 +2389,10 @@ async function startSolving() {
   // Update email history
   let history = [];
   try { history = JSON.parse(safeStorageGet(STORAGE_KEYS.emailHistory) || '[]'); } catch (_) {}
-  history = [email, ...history.filter(e => e !== email)].slice(0, 10);
+  if (!Array.isArray(history)) history = [];
+  history = [email, ...history.filter((entry) => typeof entry === 'string' && entry !== email && isPlausibleEmail(entry))].slice(0, 10);
   safeStorageSet(STORAGE_KEYS.emailHistory, JSON.stringify(history));
-  const datalist = document.getElementById('emailHistory');
-  if (datalist) datalist.innerHTML = history.map(e => `<option value="${e}">`).join('');
+  renderEmailHistory(history);
 
   if (_emailDebounceTimer) {
     clearTimeout(_emailDebounceTimer);
@@ -2410,6 +2433,9 @@ async function startSolving() {
     } catch (_) {
       throw new Error(`CRITICAL SYSTEM FAULT: Failed to fetch module registry for ${currentTerm}/${currentExam}. Target may be missing or corrupt.`);
     }
+    if (!Array.isArray(solvers) || solvers.length === 0 || solvers.some((solver) => !solver || typeof solver.solve !== 'function')) {
+      throw new Error(`The ${currentTerm}/${currentExam} registry is empty or contains an invalid solver entry.`);
+    }
 
     let done = 0;
 
@@ -2420,7 +2446,10 @@ async function startSolving() {
           : ((solver.id === 'q-context-window-heist-server' && heistDocument)
             ? heistDocument
             : sessionToken);
-        const result = await Promise.resolve(solver.solve(email, inputToken));
+        const result = await solver.solve(email, inputToken);
+        if (!result || typeof result !== 'object' || Array.isArray(result) || !('answer' in result)) {
+          throw new TypeError('Solver returned an invalid result; expected an object with an answer field.');
+        }
         workspaceData.answers.push({
           id: solver.id,
           title: solver.title,
@@ -2461,17 +2490,9 @@ async function startSolving() {
       progressText.innerText = `Compiled ${done} / ${solvers.length} nodes...`;
       solverCountEl.innerText = String(done);
       questionNav.appendChild(renderSidebarNode(done - 1, latestAnswer.title, latestAnswer.type));
-      populateMobileQuestionPicker();
-      persistUiState();
 
-      if (currentExam === 'ga0' && done === 10) {
-        progressText.innerText = `Deploying FastAPI Students Service (Compiled 10 / ${solvers.length} nodes)...`;
-        await new Promise((resolve) => window.setTimeout(resolve, 2500));
-      } else if (currentExam === 'endterm') {
-        if (done % 50 === 0) await new Promise((resolve) => window.setTimeout(resolve, 0));
-      } else {
-        await new Promise((resolve) => window.setTimeout(resolve, 40));
-      }
+      const yieldInterval = currentExam === 'endterm' ? 25 : 4;
+      if (done % yieldInterval === 0 || done === solvers.length) await yieldToBrowser();
     }
 
     if (currentExam === 'ga8') {
@@ -2481,8 +2502,6 @@ async function startSolving() {
       done += 1;
       solverCountEl.innerText = String(done);
       questionNav.appendChild(renderSidebarNode(done - 1, bonusAnswer.title, bonusAnswer.type));
-      populateMobileQuestionPicker();
-      persistUiState();
     }
 
     const diffMs = (performance.now() - startTime).toFixed(1);
@@ -3707,41 +3726,67 @@ if (disclaimerCard) {
   });
 }
 
-// Initialize WebGL background canvas dynamically to support check.mjs Node environment compatibility
+function waitForNetworkIdle() {
+  return new Promise((resolve) => {
+    if (typeof window.requestIdleCallback === 'function') {
+      window.requestIdleCallback(resolve, { timeout: 2500 });
+    } else {
+      window.setTimeout(resolve, 1200);
+    }
+  });
+}
+
 async function initNetworkCanvas() {
-  if (typeof process === 'undefined') {
+  if (typeof process !== 'undefined' || networkCanvas || document.hidden || !shouldEnableNetworkCanvas()) return networkCanvas;
+  if (networkCanvasInitPromise) return networkCanvasInitPromise;
+
+  networkCanvasInitPromise = (async () => {
+    await waitForNetworkIdle();
+    if (document.hidden || networkCanvas || !shouldEnableNetworkCanvas()) return networkCanvas;
     try {
       const module = await import('./network-canvas.js');
-      networkCanvas = new module.NetworkCanvasManager('threeCanvas');
+      if (!document.hidden && !networkCanvas) networkCanvas = new module.NetworkCanvasManager('threeCanvas');
+      return networkCanvas;
     } catch (e) {
       console.warn('WebGL/Three.js background constellation could not be initialized:', e);
+      return null;
     }
+  })();
+
+  try {
+    return await networkCanvasInitPromise;
+  } finally {
+    networkCanvasInitPromise = null;
   }
 }
 // Apply theme immediately to prevent FOUC (Flash of Unstyled Content) and UI lag
 switchTheme(activeTheme);
 
-// Initial call to draw default identicon and update 3D network once dynamic import completes
-initNetworkCanvas().then(() => {
-  setTimeout(() => {
-    const initialEmail = emailInput.value.trim();
-    _lastEmailForNetwork = initialEmail; // Sync sentinel so first input event doesn't double-regenerate
-    drawEmailIdenticon(initialEmail);
-    if (networkCanvas) {
-      networkCanvas.generateNetwork(initialEmail || 'anonymous');
-      // Apply theme colors immediately
-      const hue = THEME_HUES[activeTheme];
-      if (hue) {
-        const primary   = `hsl(${hue.primary}, 90%, 58%)`;
-        const secondary = `hsl(${hue.secondary}, 90%, 58%)`;
-        networkCanvas.setThemeColors(primary, secondary);
-      }
-      // If workspace is already restored from cache, set dimmed state
-      if (workspaceData.answers && workspaceData.answers.length > 0) {
-        networkCanvas.setDimmed(true);
-      }
-    }
-  }, 150);
+const initialEmail = emailInput.value.trim();
+_lastEmailForNetwork = initialEmail;
+drawEmailIdenticon(initialEmail);
+
+function syncNetworkCanvas() {
+  if (!networkCanvas) return;
+  const currentEmail = emailInput.value.trim();
+  _lastEmailForNetwork = currentEmail;
+  drawEmailIdenticon(currentEmail);
+  networkCanvas.generateNetwork(currentEmail || 'anonymous');
+  const hue = THEME_HUES[activeTheme];
+  if (hue) {
+    networkCanvas.setThemeColors(`hsl(${hue.primary}, 90%, 58%)`, `hsl(${hue.secondary}, 90%, 58%)`);
+  }
+  if (workspaceData.answers?.length) networkCanvas.setDimmed(true);
+}
+
+initNetworkCanvas().then(syncNetworkCanvas);
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden || networkCanvas) return;
+  const retryAfterPendingInit = () => {
+    if (!document.hidden && !networkCanvas) initNetworkCanvas().then(syncNetworkCanvas);
+  };
+  if (networkCanvasInitPromise) networkCanvasInitPromise.then(retryAfterPendingInit);
+  else retryAfterPendingInit();
 });
 
 // Delegated click handler for Q11 Context Heist card actions

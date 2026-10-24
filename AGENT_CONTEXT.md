@@ -13,10 +13,10 @@ This project has a **graphify knowledge graph** at `graphify-out/`.
 4. Use `graphify explain "<concept>"` for plain-language node explanations
 5. After modifying code files, run `graphify update .` to keep the graph current (AST-only, free)
 
-**Graph stats:** 1517 nodes · 2715 edges · 188 communities (last rebuilt 2026-07-28)
+**Graph stats:** 4552 nodes · 7612 edges · 268 communities (last rebuilt 2026-10-24)
 **God nodes:** `normalizeEmail()` (138 edges), `rng()` (117 edges), `renderCanvas()` (20 edges)
 
-**Current graphify CLI note:** `python -m graphify update .` successfully rebuilds `graphify-out/graph.json`, `graph.html`, and `GRAPH_REPORT.md`, then the installed CLI currently exits with `NameError: name '_os' is not defined` while printing optional tips. Treat the graph outputs as updated if the rebuild lines appear before that traceback.
+**Current graphify CLI note:** `python -m graphify update .` completed successfully on 2026-10-24 and rebuilt `graphify-out/graph.json`, `graph.html`, and `GRAPH_REPORT.md`. It warned that the installed skill is older than the package; the optional semantic-labeling step needs a Gemini API key.
 
 ## Project Purpose
 
@@ -61,6 +61,14 @@ Current supported terms & targets:
     - **Q15 (`q-termlog-ollama-modelfile-server`)**: Seeded Ollama Modelfile walkthrough with `termlog rec`, `ollama create`, verification markers, and submission tarball guide.
 
 The app runs locally in the browser, loads a solver registry for the selected exam, executes each solver for a user email, and renders answers plus diagnostics.
+
+## Runtime Performance Invariants
+
+- Keep the decorative Three.js canvas deferred until browser idle time; do not make it a prerequisite for the portal or identicon.
+- `shouldEnableNetworkCanvas()` must continue to skip animation for mobile/narrow, reduced-motion, data-saver, slow-network, and lower-resource devices. Keep the renderer at a 1.25 DPR cap and lower frame rate while a workspace is active.
+- During workspace compilation, update progress in batches and build the mobile question picker once after results are ready. Do not rebuild the full picker or persist unchanged UI state for every solver, especially for the 300-question mock.
+- Treat localStorage as optional/untrusted input. Render saved email history via DOM APIs, validate its shape, and never interpolate it into `innerHTML`.
+- The service worker must only delete cache names with the `tds-portal-v` prefix; the app may share an origin with other cached applications.
 
 ## Important Entry Points
 

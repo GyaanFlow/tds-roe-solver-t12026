@@ -54,20 +54,20 @@ export class NetworkCanvasManager {
 
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas, antialias: false, alpha: true,
-      powerPreference: 'high-performance'
+      powerPreference: 'low-power'
     });
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.25));
     this.renderer.setSize(W(), H());
-    // Cap pixel ratio to 1.5 to dramatically reduce fillrate overhead on high-DPI/Retina screens
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.3;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
 
     // ── Network architecture: 7 layers, each with N neurons ──────────────
-    this.LAYER_SIZES    = [4, 7, 10, 12, 10, 7, 4]; // neurons per layer
+    this.LAYER_SIZES    = [3, 5, 7, 8, 7, 5, 3]; // neurons per layer
     this.MAX_CONNS_PER  = 3;     // max forward connections per neuron
-    this.MAX_PULSES     = 45;    // concurrent signal pulses (optimized from 60)
-    this.STAR_COUNT     = 250;   // optimized from 350
+    this.MAX_PULSES     = 20;
+    this.STAR_COUNT     = 120;
+    this.FRAME_INTERVAL = 1000 / 24;
 
     // State
     this.isDimmed    = false;
@@ -232,7 +232,7 @@ export class NetworkCanvasManager {
 
   // ── Ambient Dust Motes System ─────────────────────────────────────────────
   _buildDustMesh() {
-    this.DUST_COUNT = 150;
+    this.DUST_COUNT = 60;
     this.dustParticles = [];
     
     const pos = new Float32Array(this.DUST_COUNT * 3);
@@ -520,24 +520,27 @@ export class NetworkCanvasManager {
 
   // ── Resize ────────────────────────────────────────────────────────────────
   _onResize() {
-    const w = this._W(), h = this._H();
-    this.camera.aspect = w / h;
-    this.camera.updateProjectionMatrix();
-    this.renderer.setSize(w, h);
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    if (this._resizeFrame) return;
+    this._resizeFrame = requestAnimationFrame(() => {
+      this._resizeFrame = null;
+      const w = Math.max(1, this._W()), h = Math.max(1, this._H());
+      this.camera.aspect = w / h;
+      this.camera.updateProjectionMatrix();
+      this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.25));
+      this.renderer.setSize(w, h);
 
-    // Re-span current neurons dynamically to fit the new viewport
-    const { xSpan, ySpan } = this._getSpans();
-    for (let i = 0; i < this.neurons.length; i++) {
-      const n = this.neurons[i];
-      n.x = n.nx * xSpan;
-      n.origY = n.ny * ySpan;
-      n.y = n.origY;
-    }
+      // Re-span current neurons dynamically to fit the new viewport.
+      const { xSpan, ySpan } = this._getSpans();
+      for (let i = 0; i < this.neurons.length; i++) {
+        const n = this.neurons[i];
+        n.x = n.nx * xSpan;
+        n.origY = n.ny * ySpan;
+        n.y = n.origY;
+      }
 
-    // Refresh buffers
-    this._updateLineBuffer();
-    this._syncNeuronPositions();
+      this._updateLineBuffer();
+      this._syncNeuronPositions();
+    });
   }
 
   // ── Mouse ─────────────────────────────────────────────────────────────────
@@ -566,10 +569,11 @@ export class NetworkCanvasManager {
 
     this._animId = requestAnimationFrame(this.animate);
 
-    // Limit background WebGL animation to ~40fps to free 60% GPU/CPU for UI responsiveness
+    // Keep the decorative background below 24fps, and slow it further behind an active workspace.
     const delta = timestamp - this._lastFrameTime;
-    if (delta < 24) return;
-    this._lastFrameTime = timestamp - (delta % 24);
+    const frameInterval = this.isDimmed ? 1000 / 12 : this.FRAME_INTERVAL;
+    if (delta < frameInterval) return;
+    this._lastFrameTime = timestamp - (delta % frameInterval);
 
     const t = timestamp * 0.001;
 
@@ -733,6 +737,7 @@ export class NetworkCanvasManager {
 
   dispose() {
     if (this._animId) cancelAnimationFrame(this._animId);
+    if (this._resizeFrame) cancelAnimationFrame(this._resizeFrame);
     window.removeEventListener('resize',           this._onResize);
     window.removeEventListener('mousemove',        this._onMouseMove);
     window.removeEventListener('mouseleave',       this._onMouseLeave);

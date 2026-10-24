@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tds-portal-v54';
+const CACHE_NAME = 'tds-portal-v55';
 
 const CORE_ASSETS = [
   '/',
@@ -27,13 +27,13 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate Event - Clean up all old caches
+// Remove only this app's old caches; other apps may share the same origin.
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cache) => {
-          if (cache !== CACHE_NAME) {
+          if (cache.startsWith('tds-portal-v') && cache !== CACHE_NAME) {
             console.log('[ServiceWorker] Removing old cache:', cache);
             return caches.delete(cache);
           }

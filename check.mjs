@@ -2096,6 +2096,21 @@ async function checkT2EndTermMock(solvers) {
 async function main() {
   installBrowserStubs();
 
+  const { shouldEnableNetworkCanvas } = await importFresh('network-canvas-policy.js');
+  const capableDevice = { width: 1440, reducedMotion: false, saveData: false, effectiveType: '4g', hardwareConcurrency: 8, deviceMemory: 8 };
+  assert(shouldEnableNetworkCanvas(capableDevice), 'Network canvas should remain available on capable desktop devices.');
+  for (const limits of [
+    { width: 760 },
+    { reducedMotion: true },
+    { saveData: true },
+    { effectiveType: '2g' },
+    { hardwareConcurrency: 4 },
+    { deviceMemory: 4 },
+  ]) {
+    assert(!shouldEnableNetworkCanvas({ ...capableDevice, ...limits }), `Network canvas policy should disable animation for ${JSON.stringify(limits)}.`);
+  }
+  assert(fs.readFileSync(path.join(rootDir, 'style.css'), 'utf8').includes('@media (prefers-reduced-motion: reduce)'), 'The stylesheet must suppress motion for users who request reduced motion.');
+
   if (process.argv.includes('--t3-ga1-only')) {
     const registry = await importFresh('solvers/T32026/ga1/registry.js');
     await checkT3Ga1(registry.solvers, registry.metadata);
@@ -2129,11 +2144,22 @@ async function main() {
   assert(fs.existsSync(path.join(rootDir, 'style.css')), 'Missing style.css.');
   assert(fs.existsSync(path.join(rootDir, 'ga7-verify.html')), 'Missing ga7-verify.html.');
   const appSource = fs.readFileSync(path.join(rootDir, 'app.js'), 'utf8');
+  const htmlSource = fs.readFileSync(path.join(rootDir, 'index.html'), 'utf8');
+  const stylesheetSource = fs.readFileSync(path.join(rootDir, 'style.css'), 'utf8');
+  const serviceWorkerSource = fs.readFileSync(path.join(rootDir, 'sw.js'), 'utf8');
   const catalogRun = spawnSync(process.execPath, ['scripts/build-catalog.mjs', '--check'], { cwd: rootDir, encoding: 'utf8' });
   assert(catalogRun.status === 0, `Home-page solver index is stale (run node scripts/build-catalog.mjs): ${catalogRun.stderr}${catalogRun.stdout}`);
   const catalogLabels = [...fs.readFileSync(path.join(rootDir, 'scripts/build-catalog.mjs'), 'utf8').matchAll(/\['(\w+)', '[^']+', '([^']+)', '/g)].map((m) => m[2]);
   for (const label of catalogLabels) assert(appSource.includes(`label: '${label}'`), `Catalog label "${label}" is missing from TERM_EXAMS in app.js.`);
   assert(appSource.includes('endtermSectionJump'), 'End-term section jump control is missing from app.js.');
+  assert(appSource.includes('requestIdleCallback') && appSource.includes("import('./network-canvas.js')"), 'The animated network background must load only during browser idle time.');
+  assert(htmlSource.includes('<script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>'), 'Marked must not block initial HTML parsing.');
+  assert(appSource.includes('function renderEmailHistory') && !appSource.includes('datalist.innerHTML = history.map'), 'Saved email history must be validated and rendered with DOM APIs.');
+  assert(appSource.includes('solvers.some((solver) => !solver || typeof solver.solve !== \'function\')'), 'Workspace startup must reject malformed solver registries.');
+  assert(appSource.includes("!('answer' in result)"), 'Solver execution must surface malformed result objects as question errors.');
+  assert(appSource.includes("currentExam === 'endterm' ? 25 : 4") && !appSource.includes('Deploying FastAPI Students Service (Compiled 10'), 'Workspace progress should yield in batches without artificial per-solver or GA0 delays.');
+  assert(serviceWorkerSource.includes("cache.startsWith('tds-portal-v')"), 'Service worker activation must preserve unrelated origin caches.');
+  assert(/\.creator-card\s*\{[^}]*overflow:\s*visible;/s.test(stylesheetSource) && stylesheetSource.includes('.creator-card:focus-within { z-index: 30; }'), 'The creator profile preview must escape clipping and stay above neighboring homepage content.');
   assert(appSource.includes('value="MSQ"') && appSource.includes('value="SUBJECTIVE"'), 'End-term section jump options are incomplete.');
   assert(appSource.includes('previousCanvasScrollTop'), 'End-term re-renders should capture the quiz-pane scroll position.');
   assert(appSource.includes('previousWindowScrollY'), 'End-term re-renders should capture mobile page scroll position.');
