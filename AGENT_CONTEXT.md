@@ -70,6 +70,14 @@ The app runs locally in the browser, loads a solver registry for the selected ex
 - Treat localStorage as optional/untrusted input. Render saved email history via DOM APIs, validate its shape, and never interpolate it into `innerHTML`.
 - The service worker must only delete cache names with the `tds-portal-v` prefix; the app may share an origin with other cached applications.
 
+## Latest Verified Production Release
+
+- Commit `4140b0f` (`perf: harden portal startup and creator profile UI`) is pushed to `origin/main` and live at `https://tds-portal-solver.vercel.app/` as of 2026-10-24. The local `main` branch was synchronized with `origin/main` after the push.
+- Live smoke verification confirmed `/sw.js` serves `tds-portal-v55` and production `style.css` includes the creator-preview clipping/stacking fix.
+- `npm run build` passed and generated the catalog for 3 terms / 21 exams. `npm run mock:check` passed with 200 objective questions (175 MCQ + 25 MSQ), 100 subjective questions, and 126 course topics.
+- `npm run check` printed its complete success summary across T1/T2/T3 registries and the 300-question end-term bank. On this Windows runner, it leaves an open process handle after printing success and may need Ctrl+C to exit; sandboxed runs also need loopback permission for the local-server route checks.
+- The homepage creator popup was clipped by `.creator-card { overflow: hidden }`. It now uses visible overflow and a raised stacking order while hovered/focused; `check.mjs` contains a regression assertion for this contract.
+
 ## Important Entry Points
 
 - `index.html`: app shell

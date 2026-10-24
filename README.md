@@ -1,11 +1,11 @@
 # 🌌 TDS Exam Portal — Elite Workspace
 
 <p align="center">
-  <img src="https://img.shields.io/badge/execution-local_only-fbbf24?style=for-the-badge&logo=javascript" alt="Execution" />
-  <img src="https://img.shields.io/badge/dependencies-zero-10b981?style=for-the-badge&logo=node.js" alt="Dependencies" />
+  <img src="https://img.shields.io/badge/execution-browser--based-fbbf24?style=for-the-badge&logo=javascript" alt="Execution" />
+  <img src="https://img.shields.io/badge/dependencies-lightweight-10b981?style=for-the-badge&logo=node.js" alt="Dependencies" />
   <img src="https://img.shields.io/badge/deployment-vercel_ready-000000?style=for-the-badge&logo=vercel" alt="Vercel Ready" />
   <img src="https://img.shields.io/badge/architecture-deterministic_esm-3b82f6?style=for-the-badge&logo=dependency-weaver" alt="Architecture" />
-  <img src="https://img.shields.io/badge/solvers-162+_active-8b5cf6?style=for-the-badge" alt="Active Solvers" />
+  <img src="https://img.shields.io/badge/question_slots-534-8b5cf6?style=for-the-badge" alt="Registered question slots" />
   <img src="https://img.shields.io/badge/evaluator-rubric_coach_ai-ec4899?style=for-the-badge" alt="Rubric Coach AI" />
 </p>
 
@@ -13,9 +13,9 @@
 
 ## 🌟 The Vision
 
-**TDS Portal** is a production-grade, highly secure, browser-based sandbox environment engineered for the automated execution, verification, and forensic analysis of deterministic computational solvers. Built specifically as an advanced study companion for the **IIT Madras Tools in Data Science (TDS)** degree curriculum, the portal bridges the gap between intricate, multi-layered data science pipelines and reproducible, instantaneous client-side computations.
+**TDS Portal** is a browser-based study workspace for the **IIT Madras Tools in Data Science (TDS)** curriculum. It combines deterministic client-side solvers, interactive guides and quizzes, diagnostics, and integrations with separately hosted services where a question requires an API. Solver results and external-service availability depend on their respective inputs and services; the portal does not guarantee grades or uptime.
 
-Constructed around a core philosophy of **visual excellence**, **academic transparency**, and **mathematical determinism**, the platform registers and orchestrates **162+ specialized solvers across 14 exam suites**, delivering sub-millisecond output vectors, interactive diagnostic notes, and automated rubric evaluations 100% client-side.
+As of 2026-10-24, the catalog contains **534 registered question slots across 21 exams in three terms**. The T2 2026 end-term practice bank includes 175 MCQs, 25 MSQs, and 100 subjective prompts. Practice material is reference-only and is not an official paper or score guarantee.
 
 ---
 
@@ -29,7 +29,7 @@ graph TD
     B -->|"Active Checkbox Guard"| C{"Academic Integrity Guard"}
     C -->|"Pass (Read Storage)"| D["Dynamic ESM Import"]
     C -->|"Fail (Block Action)"| A
-    D -->|"Import Registry"| E["Term Registry Map (T1/T2)"]
+    D -->|"Import Registry"| E["Term Registry Map (T1/T2/T3)"]
     E -->|"Load Target Solver"| F["Shared runtime.js"]
     F -->|"Access Lock Check"| G{"lockConfig.locked?"}
     G -->|"Authorized / Open"| H("Seeded Variations Engine (FNV-1a / PRNG)")
@@ -212,7 +212,7 @@ npm run dev
 🌐 **Local Endpoint**: `http://localhost:3000/`
 
 ### 2. Running the Full Test Suite
-Verify that all 14 exam registries, deterministic outputs, character boundaries, and dynamic exports perform cleanly with 0 regressions:
+Run the registry, solver-output, mock-bank, catalog, and local static-server checks:
 ```bash
 npm run check
 ```
@@ -232,6 +232,15 @@ npm run mock:generate
 Generated artifacts are written to `mock-banks/T2-2026-End-Term-Mock.md`, `mock-banks/T2-2026-End-Term-Mock.json`, and the browser data module. Select **T2 2026 → End-Term Mock** in the portal to use the interactive quiz. Use **Jump to portion** to practice MCQ, MSQ, or subjective questions separately. Progress, drafts, bookmarks, and rubric checks are saved locally per email.
 
 > **Reference-only notice:** this mock is original practice material, not an official IIT Madras paper, answer key, or prediction. It cannot guarantee a high end-term score and is intended only for revision and last-minute practice.
+
+### Production and Performance Notes
+
+- Production: [tds-portal-solver.vercel.app](https://tds-portal-solver.vercel.app/). Pushing to `main` triggers the Vercel production deployment; other branches create previews.
+- The decorative Three.js background is deferred until browser idle time and skipped for narrow/mobile, reduced-motion, data-saver, slow-network, and lower-resource devices. It is not required for the portal or its email identicon.
+- Solver progress yields in batches; the mobile question picker is built after compilation rather than repeatedly rebuilt for every question. Saved email history is validated and rendered with DOM APIs.
+- The creator profile preview is unclipped and raised above nearby homepage content on hover and keyboard focus.
+- The service worker uses versioned `tds-portal-v*` caches and only removes caches owned by this app.
+- Latest verified production release: commit `4140b0f` (`perf: harden portal startup and creator profile UI`), deployed 2026-10-24.
 
 ---
 
