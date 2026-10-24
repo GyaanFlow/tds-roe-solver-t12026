@@ -2346,7 +2346,7 @@ async function startSolving() {
     return;
   }
 
-  if ((currentExam === 'ga3' || currentExam === 'ga4' || currentExam === 'ga5') && !sessionToken) {
+  if (((currentExam === 'ga3' && currentTerm !== 'T32026') || currentExam === 'ga4' || currentExam === 'ga5') && !sessionToken) {
     showToast(`aipipe.org token is required for ${currentExam.toUpperCase()}!`, 'error');
     if (sessionTokenInput) {
       sessionTokenInput.focus();

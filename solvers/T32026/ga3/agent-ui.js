@@ -1,10 +1,8 @@
-// Shared guide, widgets and result shape for the three T3 GA3 engineering questions (A2A invoice agent, mailroom action gate,
-// incident triage). They all submit a personal URL on the hosted API, so the answer is direct once the student's own
-// aipipe.org token is in the sidebar; the guide adds a pre-flight test (no model call, no Check spent) and beginner steps.
+// Shared guide and result shape for the three T3 GA3 engineering questions.
 import { page, card, details, escapeHtml } from './ui.js';
 import { GA3_API_ORIGIN, checkToken, healthUrl, onboardTenant, probeA2a, probeIncident, probeMailroom, redact, summarizeProbes } from './api-client.js';
 
-export const FOOTNOTE = 'Your token is only ever sent to your own API route and to aipipe.org by that API. The URL contains your token, so do not share it.';
+export const FOOTNOTE = 'The backup URL contains your private token. Do not share it.';
 
 // Credentials live only in memory (never in the DOM, storage or logs); the widgets read them from here.
 const credentials = new Map();
@@ -25,7 +23,7 @@ function widgetHtml(kind, email) {
     : '';
   return [
     `<div id="t3ga3-${kind}" data-kind="${kind}" data-email="${escapeHtml(email)}">`,
-    '<p>Before you use one of your 10 daily Checks, run this quick test. It asks your own API the same first questions a grader would (headers, errors, no redirects) and never calls an AI model, so it costs nothing.</p>',
+    '<p>This checks only your personalized backup endpoint, not the primary answer above. It does not call an AI model.</p>',
     `<div class="p1-actions"><button type="button" class="p1-btn" onclick="window._t3ga3.test('${kind}')">Run pre-flight test</button>${register}</div>`,
     `<div id="t3ga3-${kind}-status" class="p1-status" role="status"></div>`,
     `<div id="t3ga3-${kind}-out"></div>`,
@@ -36,25 +34,26 @@ function widgetHtml(kind, email) {
 const list = (items, tag = 'ol') => `<${tag}>${items.map((i) => `<li>${i}</li>`).join('')}</${tag}>`;
 
 /** The guide + answer for one agent question. `token` may be missing or invalid: the guide then says exactly what to do. */
-export function agentResult({ id, title, kind, email, tokenCheck, urls, question, steps, tips, extraCards = [], note = '', origin = GA3_API_ORIGIN }) {
-  const answerUrl = tokenCheck.ok ? urls.answer(email, tokenCheck.token, origin) : '';
+export function agentResult({ id, title, kind, email, tokenCheck, urls, primaryUrl, question, steps, tips, extraCards = [], note = '', origin = GA3_API_ORIGIN }) {
+  const answerUrl = primaryUrl;
+  const backupUrl = tokenCheck.ok ? urls.answer(email, tokenCheck.token, origin) : '';
   const health = healthUrl(email, origin);
-  if (tokenCheck.ok) credentials.set(kind, { email, token: tokenCheck.token, url: answerUrl });
+  if (tokenCheck.ok) credentials.set(kind, { email, token: tokenCheck.token, url: backupUrl });
 
-  const urlCard = tokenCheck.ok
-    ? card('Your answer for the exam box', `<p>Copy this URL exactly (it is also in the Answer box):</p><pre class="mono" style="white-space:pre-wrap;word-break:break-all">${escapeHtml(answerUrl)}</pre><p class="p1-foot">${escapeHtml(FOOTNOTE)}</p>`, 'accent')
-    : card('One thing is missing', `<p class="p1-note">${escapeHtml(tokenCheck.message)}</p><p>Your personal URL is built from your own aipipe.org token, so nothing can be shown until it is in the box.</p>`, 'accent');
+  const urlCard = card('Primary answer', `<p>Use this provided endpoint in the exam answer box:</p><pre class="mono" style="white-space:pre-wrap;word-break:break-all">${escapeHtml(answerUrl)}</pre><p>The primary answer does not require your personal token.</p>`, 'accent');
 
   const chips = [
-    { text: tokenCheck.ok ? 'Token ready' : 'Token needed', tone: tokenCheck.ok ? 'ok' : 'warn' },
+    { text: tokenCheck.ok ? 'Personal backup ready' : 'Primary answer ready', tone: tokenCheck.ok ? 'ok' : 'ok' },
     { text: '10 Checks per 24 h', tone: '' },
     { text: '4 marks', tone: '' },
   ];
   const stepCard = card('Step by step for beginners', list([
-    'Get your token: open <a href="https://aipipe.org" target="_blank" rel="noopener noreferrer">aipipe.org</a>, sign in, and copy your token (everyone gets a small free weekly allowance).',
-    'Paste it into the <strong>token box in the sidebar</strong> and press <strong>Initialize Workspace</strong>. This question\'s Answer box now shows your personal URL.',
-    `The hosted API sleeps when nobody uses it. Open <a href="${escapeHtml(health)}" target="_blank" rel="noopener noreferrer">its health link</a> and wait until it shows <code>"status":"ok"</code> (the first time can take up to a minute).`,
+    'Copy the primary URL shown above into the exam answer box. This is the recommended answer and works without setting up a personal token.',
     ...steps,
+    ...(tokenCheck.ok ? [
+      'Optional backup: the personalized URL is listed separately below. It uses your aipipe.org token; do not share it.',
+      `To test that backup only, open <a href="${escapeHtml(health)}" target="_blank" rel="noopener noreferrer">its health link</a> and wait for <code>"status":"ok"</code>, then run the pre-flight test.`,
+    ] : ['Optional: add your aipipe.org token in the sidebar and initialize again to generate a personalized backup endpoint.']),
   ]));
 
   const sections = [
@@ -62,7 +61,8 @@ export function agentResult({ id, title, kind, email, tokenCheck, urls, question
     card('What the exam wants', question),
     stepCard,
   ];
-  if (tokenCheck.ok) sections.push(card('Test your endpoint first', widgetHtml(kind, email), 'accent'));
+  if (!tokenCheck.ok && tokenCheck.code !== 'NO_TOKEN') sections.unshift(`<div class="p1-note">${escapeHtml(tokenCheck.message)} The primary answer above is still ready; only the optional personalized backup is unavailable.</div>`);
+  if (tokenCheck.ok) sections.push(card('Test your backup endpoint', widgetHtml(kind, email), 'accent'));
   sections.push(...extraCards);
   sections.push(details('Good to know', list([...tips,
     'A language model makes the decisions, so a result can occasionally wobble. If a Check fails on a decision, run it again once or twice before changing anything.',
@@ -71,25 +71,15 @@ export function agentResult({ id, title, kind, email, tokenCheck, urls, question
   if (note) sections.unshift(`<div class="p1-note">${escapeHtml(note)}</div>`);
 
   const guide = page({ title, chips, sections });
-  if (!tokenCheck.ok) {
-    return {
-      type: 'guide',
-      answer: tokenCheck.message,
-      variant: tokenCheck.code === 'NO_TOKEN' ? 'aipipe.org token needed' : 'Fix the token',
-      guide,
-      answerDisplay: `### ${title}\n\n${tokenCheck.message}`,
-      usesHostedApi: true,
-      debug: { question: kind, needsUserInput: true, tokenProblem: tokenCheck.code },
-    };
-  }
   return {
     type: 'solved',
     answer: answerUrl,
-    variant: `${title} — your personal API URL`,
+    variant: `${title} — primary endpoint`,
+    ...(tokenCheck.ok ? { backupEndpoints: [{ label: 'Personalized API backup', url: backupUrl }] } : {}),
     guide,
-    answerDisplay: `### ${title}\n\n**Submit this URL:**\n\n\`\`\`text\n${answerUrl}\n\`\`\`\n\nRun the pre-flight test in the Implementation Guide first, and open the API health link so it is awake before you press Check.`,
+    answerDisplay: `### ${title}\n\n**Primary answer:**\n\n\`\`\`text\n${answerUrl}\n\`\`\`\n\n${tokenCheck.ok ? `Personalized backup is available below. The pre-flight test checks the backup only.` : 'No token is needed for this primary answer.'}`,
     usesHostedApi: true,
-    debug: { question: kind, apiOrigin: origin, tokenExpiresAt: tokenCheck.expiresAt ?? null },
+    debug: { question: kind, apiOrigin: origin, tokenExpiresAt: tokenCheck.ok ? tokenCheck.expiresAt ?? null : null },
   };
 }
 
