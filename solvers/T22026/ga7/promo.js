@@ -7,6 +7,7 @@
 const REPO_URL = 'https://github.com/GyaanFlow/tds-roe-solver-t12026';
 const PROFILE_URL = 'https://github.com/GyaanFlow';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/gaurav-tomar-630b2a316';
+const INSTAGRAM_URL = 'https://www.instagram.com/gt_techie/';
 
 /**
  * Markdown-safe HTML block (guides are rendered through marked with HTML passthrough).
@@ -19,7 +20,7 @@ export const promoLines = [
   '<div style="font-size:12px;opacity:0.7;padding:6px 0;">',
   '  Built by <a href="' + PROFILE_URL + '" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">GyaanFlow</a> &mdash; ',
   '  if this saved you time, a quiet <a href="' + REPO_URL + '" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">⭐ on GitHub</a> or a ',
-  '  <a href="' + LINKEDIN_URL + '" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">connect on LinkedIn</a> is appreciated, never required.',
+  '  <a href="' + LINKEDIN_URL + '" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">connect on LinkedIn</a> or DM <a href="' + INSTAGRAM_URL + '" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">@gt_techie on Instagram</a>; both are appreciated, never required.',
   '</div>'
 ];
 

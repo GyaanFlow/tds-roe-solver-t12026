@@ -234,6 +234,9 @@ body {
 .celebrate-btn-linkedin {
   background: linear-gradient(120deg, #7dd3fc, #60a5fa);
 }
+.celebrate-btn-instagram {
+  background: linear-gradient(120deg, #f9a8d4, #c4b5fd);
+}
 .celebrate-dismiss {
   position: absolute;
   top: 9px;
@@ -1583,6 +1586,7 @@ body {
   color: var(--theme-primary-hover);
   transform: scale(1.1);
 }
+.navbar-instagram-btn { white-space: nowrap; }
 
 @media (max-width: 760px) {
   .header-right-group {
@@ -3980,6 +3984,7 @@ body {
   box-shadow: 0 6px 22px var(--theme-glow-intense);
   transform: translateY(-2px);
 }
+.creator-btn-instagram { border-color: rgba(225, 48, 108, 0.55); }
 @media (max-width: 640px) { .creator-actions { width: 100%; } .creator-btn { flex: 1; text-align: center; } }
 
 /* ── Responsive / touch hardening ── */
@@ -4080,6 +4085,7 @@ body {
   color: var(--theme-primary);
 }
 .preview-links a:hover { background: var(--theme-primary); color: #000; }
+.preview-links a[aria-label*="Instagram"] { white-space: nowrap; }
 @media (hover: hover) and (min-width: 641px) {
   .creator-avatar-preview { pointer-events: auto; transition: opacity 0.2s ease 0.12s, transform 0.2s ease 0.12s, visibility 0s linear 0.32s; }
   .creator-avatar-wrap:hover .creator-avatar-preview,

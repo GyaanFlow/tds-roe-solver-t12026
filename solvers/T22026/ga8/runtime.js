@@ -1,4 +1,5 @@
 import { normalizeEmail, formatDuration } from './utils.js';
+import { withTimeout } from '../../shared/with-timeout.js';
 import { lockConfig } from './lock-config.js';
 
 const SOLVER_TIMEOUT_MS = 30000;
@@ -57,13 +58,11 @@ export function wrapSolverModule(mod) {
 
       try {
         let result;
-        const timeoutPromise = new Promise((_, reject) =>
-          setTimeout(() => reject(new Error(`Solver timed out after ${SOLVER_TIMEOUT_MS}ms`)), SOLVER_TIMEOUT_MS)
+        result = await withTimeout(
+          () => solveImpl(normalizedEmail, sessionToken),
+          SOLVER_TIMEOUT_MS,
+          `Solver timed out after ${SOLVER_TIMEOUT_MS}ms`
         );
-        const solvePromise = (async () => {
-          return await solveImpl(normalizedEmail, sessionToken);
-        })();
-        result = await Promise.race([solvePromise, timeoutPromise]);
 
         const durationMs = performance.now() - startedAt;
         diagnostics.durationMs = durationMs;

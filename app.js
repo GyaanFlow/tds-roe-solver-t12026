@@ -401,6 +401,7 @@ function yieldToBrowser() {
 const REPO_URL = 'https://github.com/GyaanFlow/tds-roe-solver-t12026';
 const PROFILE_URL = 'https://github.com/GyaanFlow';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/gaurav-tomar-630b2a316';
+const INSTAGRAM_URL = 'https://www.instagram.com/gt_techie/';
 
 // A dismissible "nice work" card shown every time a (public, unlocked) workspace finishes
 // solving — never blocks anything, auto-dismisses on its own if ignored, and the star/follow
@@ -416,12 +417,13 @@ function maybeShowCelebrateCard(questionCount) {
     <button type="button" class="celebrate-dismiss" aria-label="Dismiss">&times;</button>
     <div class="celebrate-title"><span class="celebrate-emoji">🎉</span> Workspace solved!</div>
     <div class="celebrate-body">${questionCount} question${questionCount === 1 ? '' : 's'} compiled. Hope it saved you some time.
-    If you'd like to support the project, a <a href="${REPO_URL}" target="_blank" rel="noopener noreferrer" class="celebrate-inline-link">star on GitHub</a> or a
-    <a href="${LINKEDIN_URL}" target="_blank" rel="noopener noreferrer" class="celebrate-inline-link">follow on LinkedIn</a> is always appreciated — totally optional.</div>
+    If you'd like to support the project, a <a href="${REPO_URL}" target="_blank" rel="noopener noreferrer" class="celebrate-inline-link">star on GitHub</a>, a
+    <a href="${LINKEDIN_URL}" target="_blank" rel="noopener noreferrer" class="celebrate-inline-link">LinkedIn connection</a>, or an Instagram DM to <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer" class="celebrate-inline-link">@gt_techie</a> is always appreciated — totally optional.</div>
     <div class="celebrate-actions">
       <a class="celebrate-btn celebrate-btn-star" href="${REPO_URL}" target="_blank" rel="noopener noreferrer">⭐ Star</a>
       <a class="celebrate-btn celebrate-btn-follow" href="${PROFILE_URL}" target="_blank" rel="noopener noreferrer">🐙 Follow</a>
       <a class="celebrate-btn celebrate-btn-linkedin" href="${LINKEDIN_URL}" target="_blank" rel="noopener noreferrer">💼 Connect</a>
+      <a class="celebrate-btn celebrate-btn-instagram" href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer">📷 Instagram DM</a>
     </div>
   `;
   document.body.appendChild(host);
@@ -2105,6 +2107,7 @@ function renderEndTermQuiz(index, data) {
         <span>Open-source study project by GyaanFlow</span>
         <a href="https://github.com/GyaanFlow/tds-roe-solver-t12026" target="_blank" rel="noopener noreferrer">Star on GitHub</a>
         <a href="https://www.linkedin.com/in/gaurav-tomar-630b2a316" target="_blank" rel="noopener noreferrer">Follow on LinkedIn</a>
+        <a href="https://www.instagram.com/gt_techie/" target="_blank" rel="noopener noreferrer">DM @gt_techie on Instagram</a>
       </div>
     </div>
   `;
@@ -2266,6 +2269,8 @@ function renderCanvas(index) {
       <span class="support-highlight">If this helped, <a href="https://github.com/GyaanFlow/tds-roe-solver-t12026" target="_blank" rel="noopener noreferrer">⭐ star the repo</a></span>
       <span class="dot-separator">•</span>
       <span class="support-highlight">Connect on <a href="https://www.linkedin.com/in/gaurav-tomar-630b2a316" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+      <span class="dot-separator">•</span>
+      <span class="support-highlight">DM <a href="https://www.instagram.com/gt_techie/" target="_blank" rel="noopener noreferrer">@gt_techie on Instagram</a></span>
     </div>
   `;
 

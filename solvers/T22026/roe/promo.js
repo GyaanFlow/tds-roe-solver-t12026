@@ -8,6 +8,7 @@
 const REPO_URL = 'https://github.com/GyaanFlow/tds-roe-solver-t12026';
 const PROFILE_URL = 'https://github.com/GyaanFlow';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/gaurav-tomar-630b2a316';
+const INSTAGRAM_URL = 'https://www.instagram.com/gt_techie/';
 
 const BTN = 'display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:9px;' +
   'font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap;' +
@@ -30,6 +31,7 @@ export const promoLines = [
   `    <a href="${REPO_URL}" target="_blank" rel="noopener noreferrer" style="${BTN}background:linear-gradient(120deg,#fbbf24,#f59e0b);color:#1a1a1a;">⭐ Star the Repo</a>`,
   `    <a href="${PROFILE_URL}" target="_blank" rel="noopener noreferrer" style="${BTN}background:linear-gradient(120deg,#e0e7ff,#c7d2fe);color:#1e1b4b;">🐙 Follow on GitHub</a>`,
   `    <a href="${LINKEDIN_URL}" target="_blank" rel="noopener noreferrer" style="${BTN}background:linear-gradient(120deg,#7dd3fc,#38bdf8);color:#0c2d48;">💼 Connect on LinkedIn</a>`,
+  `    <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer" style="${BTN}background:linear-gradient(120deg,#f9a8d4,#c4b5fd);color:#312044;">📷 DM @gt_techie on Instagram</a>`,
   '  </div>',
   '</div>'
 ];

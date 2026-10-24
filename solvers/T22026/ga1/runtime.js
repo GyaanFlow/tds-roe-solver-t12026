@@ -1,5 +1,6 @@
 // Solver: GA1 Runtime Wrapper
 import { normalizeEmail } from './utils.js';
+import { withTimeout } from '../../shared/with-timeout.js';
 
 import { lockConfig } from './lock-config.js';
 
@@ -47,11 +48,11 @@ export function wrapSolverModule(mod) {
 
       try {
         const timeoutMs = 60000; // 60 second timeout
-        const resultPromise = Promise.resolve(solveImpl(normalizedEmail));
-        const timeoutPromise = new Promise((_, reject) =>
-          setTimeout(() => reject(new Error(`Solver ${id} timed out after ${timeoutMs}ms`)), timeoutMs)
+        const result = await withTimeout(
+          () => solveImpl(normalizedEmail),
+          timeoutMs,
+          `Solver ${id} timed out after ${timeoutMs}ms`
         );
-        const result = await Promise.race([resultPromise, timeoutPromise]);
 
         const durationMs = performance.now() - startedAt;
         diagnostics.durationMs = durationMs;

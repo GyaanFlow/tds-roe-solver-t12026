@@ -1,4 +1,12 @@
 node_modules/
+.env
+.env.*
+!.env.example
+.vercel/
+coverage/
+playwright-report/
+test-results/
+*.log
 core-roe.js
 .DS_Store
 graphify-out/

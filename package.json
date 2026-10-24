@@ -5,6 +5,7 @@
   "scripts": {
     "build": "node scripts/build-catalog.mjs",
     "check": "node check.mjs",
+    "test": "npm run check",
     "mock:generate": "node mock-banks/t2-2026-end-term-mock.mjs",
     "mock:check": "node mock-banks/t2-2026-end-term-mock.mjs --check",
     "start": "node server.js",
@@ -19,5 +20,8 @@
     "@vercel/speed-insights": "^2.0.0",
     "@vercel/toolbar": "^0.2.5",
     "jsqr": "^1.4.0"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

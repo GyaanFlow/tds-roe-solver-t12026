@@ -4,6 +4,7 @@ import vm from 'node:vm';
 import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import seedrandom from 'seedrandom';
+import { withTimeout } from './solvers/shared/with-timeout.js';
 
 const rootDir = process.cwd();
 const serverUrl = 'http://127.0.0.1:3000';
@@ -11,6 +12,30 @@ const serverUrl = 'http://127.0.0.1:3000';
 function assert(condition, message) {
   if (!condition) {
     throw new Error(message);
+  }
+}
+
+async function checkTimeoutCleanup() {
+  const originalSetTimeout = globalThis.setTimeout;
+  const originalClearTimeout = globalThis.clearTimeout;
+  let scheduledTimer;
+  let cleared = false;
+
+  globalThis.setTimeout = (...args) => {
+    scheduledTimer = originalSetTimeout(...args);
+    return scheduledTimer;
+  };
+  globalThis.clearTimeout = (timer) => {
+    if (timer === scheduledTimer) cleared = true;
+    return originalClearTimeout(timer);
+  };
+
+  try {
+    const result = await withTimeout(() => 'complete', 60000, 'test timeout');
+    assert(result === 'complete' && cleared, 'Completed solver work must clear its timeout timer.');
+  } finally {
+    globalThis.setTimeout = originalSetTimeout;
+    globalThis.clearTimeout = originalClearTimeout;
   }
 }
 
@@ -142,12 +167,17 @@ async function checkServerRoutes() {
       ['/solvers/T32026/ga3/registry.js', 200],
       ['/solvers/T32026/p1/registry.js', 200],
       ['/solvers/T22026/endterm/registry.js', 200],
-      ['/mock-banks/T2-2026-End-Term-Mock.browser.js', 200]
+      ['/mock-banks/T2-2026-End-Term-Mock.browser.js', 200],
+      ['/PRIVACY.md', 200],
+      ['/THIRD_PARTY_NOTICES.md', 200]
     ];
 
     for (const [pathname, expectedStatus] of checks) {
       const res = await fetch(`${serverUrl}${pathname}`);
       assert(res.status === expectedStatus, `Expected ${pathname} to return ${expectedStatus}, got ${res.status}.`);
+      if (pathname.endsWith('.md')) {
+        assert(res.headers.get('content-type')?.startsWith('text/markdown'), `${pathname} should be served as readable Markdown.`);
+      }
       // Read the body to the end. fetch() keeps the socket reserved for an unread body, and then
       // server.close() below waits forever for that connection — which used to hang the whole
       // suite after every check had already passed, so "Checks passed" never printed.
@@ -2094,6 +2124,7 @@ async function checkT2EndTermMock(solvers) {
 }
 
 async function main() {
+  await checkTimeoutCleanup();
   installBrowserStubs();
 
   const { shouldEnableNetworkCanvas } = await importFresh('network-canvas-policy.js');
@@ -2147,8 +2178,13 @@ async function main() {
   const htmlSource = fs.readFileSync(path.join(rootDir, 'index.html'), 'utf8');
   const stylesheetSource = fs.readFileSync(path.join(rootDir, 'style.css'), 'utf8');
   const serviceWorkerSource = fs.readFileSync(path.join(rootDir, 'sw.js'), 'utf8');
+  const vercelConfig = JSON.parse(fs.readFileSync(path.join(rootDir, 'vercel.json'), 'utf8'));
   const catalogRun = spawnSync(process.execPath, ['scripts/build-catalog.mjs', '--check'], { cwd: rootDir, encoding: 'utf8' });
-  assert(catalogRun.status === 0, `Home-page solver index is stale (run node scripts/build-catalog.mjs): ${catalogRun.stderr}${catalogRun.stdout}`);
+  assert(catalogRun.status === 0, `Generated portal/README indexes are stale (run npm run build): ${catalogRun.stderr}${catalogRun.stdout}`);
+  assert(vercelConfig.buildCommand === 'npm run build', 'Vercel must fail the build if catalog generation fails.');
+  const globalHeaders = vercelConfig.headers.find((entry) => entry.source === '/(.*)')?.headers || [];
+  assert(globalHeaders.some((header) => header.key === 'X-Content-Type-Options' && header.value === 'nosniff'), 'Vercel must set X-Content-Type-Options: nosniff.');
+  assert(globalHeaders.some((header) => header.key === 'Referrer-Policy' && header.value === 'strict-origin-when-cross-origin'), 'Vercel must use a restrictive referrer policy.');
   const catalogLabels = [...fs.readFileSync(path.join(rootDir, 'scripts/build-catalog.mjs'), 'utf8').matchAll(/\['(\w+)', '[^']+', '([^']+)', '/g)].map((m) => m[2]);
   for (const label of catalogLabels) assert(appSource.includes(`label: '${label}'`), `Catalog label "${label}" is missing from TERM_EXAMS in app.js.`);
   assert(appSource.includes('endtermSectionJump'), 'End-term section jump control is missing from app.js.');

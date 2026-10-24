@@ -91,7 +91,7 @@ The app runs locally in the browser, loads a solver registry for the selected ex
 - `verify.html`: Universal Solver Verification Hub dashboard
 - `verify.js`: Dynamic ESM solver verification logic for all terms/exams
 - `tds-config.json`: terms, exams, term labels (period in parentheses) and intro text; the source of truth for the home page, term pills and sidebar Term selector
-- `scripts/build-catalog.mjs`: generates the home-page solver index, SEO head block, term selector options, intro description, `catalog.json`, `sitemap.xml` and `robots.txt` (see "Home Page Index, SEO & Dynamic Config" below)
+- `scripts/build-catalog.mjs`: generates the README solver matrix/count badge, home-page index/SEO blocks, term selector, descriptions, `catalog.json`, `sitemap.xml` and `robots.txt` from `tds-config.json` and the exam registries
 - `solvers/T12026/`: all T1 2026 exam solver folders
 - `solvers/T22026/`: T2 2026 solvers
 - `solvers/T32026/`: T3 2026 solvers; GA1 source snapshot, question modules, and architecture notes are in `solvers/T32026/ga1/`
@@ -541,9 +541,9 @@ To encourage manual study and practice, GA1 solvers are protected by a centraliz
 **Production:** https://tds-portal-solver.vercel.app (Vercel project `tds-roe-solver-t12026`; `main` = production, other branches get preview builds; GitHub repo `GyaanFlow/tds-roe-solver-t12026`).
 
 **How it works**
-- `node scripts/build-catalog.mjs` reads `tds-config.json` and every `solvers/<term>/<exam>/registry.js`, then rewrites three marker blocks in `index.html` — `<!-- CATALOG:START/END -->` (the index under the title), `<!-- SEO:START/END -->` (canonical, `og:url`, JSON-LD in `<head>`), `<!-- TERMS:START/END -->` (the sidebar Term `<option>` list) — plus the `#welcomeDescription` text, the meta/OG/Twitter descriptions, the `termDescription` line in `tds-config.json`, `catalog.json`, `sitemap.xml` and `robots.txt`. Never edit inside the markers by hand.
-- `node scripts/build-catalog.mjs --check` (run by `check.mjs`) fails if anything is stale; it compares with line endings normalised because Git on Windows checks files out as CRLF.
-- `vercel.json` has `buildCommand: node scripts/build-catalog.mjs || echo ...` and `outputDirectory: "."`, so Vercel regenerates everything on each deploy and falls back to the committed files if the build fails. `npm run build` does the same locally.
+- `npm run build` reads `tds-config.json` and every `solvers/<term>/<exam>/registry.js`, then generates the portal catalog/SEO, the README coverage matrix/count badge, and the sidebar term options. Keep edits outside generated marker blocks.
+- `npm run check` runs `scripts/build-catalog.mjs --check` and fails on stale output; line endings are normalized for Windows checkouts.
+- `vercel.json` runs `npm run build` with no fallback, so catalog-generation errors fail deployment rather than publishing stale metadata.
 - Terms are sorted newest first by year then number (`T32026` → "T3 2026"); status is Current / Recent / Archive by position, and CSS colours key off `data-status`, not term ids. Exams missing from the hand-written `EXAMS` label table are labelled from their id (`ga9` → "GA 9", `p3` → "Project 3").
 - "Latest additions" = the newest term's exams newest-first (up to 4), topped up from the previous term; the first card is the featured "Newest solver". The remaining exams are inside a collapsed `<details>` but present in the HTML for crawlers. Banks over 60 questions (the end-term mock) are summarised instead of listed.
 - The intro description is generated (`describePortal`) from the config: GA range, ROE/projects/end-term if present, and the terms grouped by year. It must never contain the words "answer(s)" or "solution(s)" (IITM rules) — the generator throws; the same applies to other home-page copy.
@@ -603,7 +603,7 @@ The UI in `app.js` and `style.css` has been substantially improved.
 - HTML answer preview iframe
 - **Implementation Guide Panel**: A dedicated success-themed panel for detailed usage instructions, ordered cleanly above computed answers.
 - **Academic Integrity Validation Lock**: A high-visibility, top-of-homepage disclaimer card with continuous glowing amber/red warning pulse (`pulse-attention`) and interactive checkbox validation. Restricts solver initialization and triggers a screen smooth-scroll + keyframe card shake (`shake-attention`) on unaccepted bypass attempts. Stores acceptance state in `localStorage` for returning sessions.
-- **Creator Social Credits**: Completely name-free creator credits in both the sidebar footer and navbar/header with dynamic hover transforms, HSL amber glows, and SVG links to LinkedIn and GitHub.
+- **Creator Social Credits**: Creator credits in the sidebar footer and navbar/header include accessible GitHub, LinkedIn, and Instagram links. Instagram DMs go to `@gt_techie` (`https://www.instagram.com/gt_techie/`).
 - Keyboard navigation with arrow keys and focus-visible rings
 - Debounced sidebar filtering
 - Mobile question picker
@@ -618,9 +618,9 @@ The UI in `app.js` and `style.css` has been substantially improved.
 - **Answer-first panel ordering for direct-answer questions**: `renderGuidePanel(data)` now collapses by default (`open: !isSolved`) and — via a `guideAfterAnswer` flag (`data.type === 'solved'` or the pre-existing onrender ga2/ga3 URL-answer special case) — renders the guide panel **after** the Answer panel in the DOM for `solved`-type questions, instead of before. The point is that a student solving a `solved` question should see the actual answer first, not a guide box (even collapsed) sitting above it.
 - **Download Answer as .txt**: a `Download .txt` button sits next to `Copy Answer` in the Answer panel's `.panel-actions` row (`app.js`, `bindCanvasActions`), reusing the existing `downloadFile(filename, content, mime)` blob helper. Filename is the question title slugified. No new mobile handling needed — `.panel-actions` already wraps responsively.
 - **Backup Answer Endpoints box**: `renderBackupEndpointsPanel(data)` renders a distinct amber-gradient box (`.backup-endpoints-box` in `style.css`) directly above the Answer panel whenever `data.backupEndpoints` (an array of `{label, url}`) is present and non-empty, with per-URL Copy buttons wired in `bindCanvasActions` (`.backup-copy-btn`, `data-backup-url`). Currently used by GA5 Q9/Q10/Q11 (see "GA5 (T22026) Notes"). **To add this to any other solver**: just add the `backupEndpoints` field to the solver's returned object — but also check that the workspace-compile loop's fixed field-copy list in `app.js` includes `backupEndpoints`, since a new field on a solver's return value is silently dropped there unless explicitly copied (this exact omission caused the box not to render on first implementation).
-- **Post-solve celebration card**: `maybeShowCelebrateCard(questionCount)` in `app.js` shows a dismissible, auto-timing-out (16s) card after every successful **public/unlocked** workspace compile (only in the `!isLocked` branch) — not gated by a one-time-per-browser flag (that gate was removed per explicit request; it now shows every time). Contains inline `<a>` links to the GitHub repo and LinkedIn profile in the body text, plus ⭐ Star / 🐙 Follow / 💼 Connect buttons. Links point to `https://github.com/GyaanFlow/tds-roe-solver-t12026` (repo), `https://github.com/GyaanFlow` (profile), `https://www.linkedin.com/in/gaurav-tomar-630b2a316`.
+- **Post-solve celebration card**: `maybeShowCelebrateCard(questionCount)` in `app.js` shows a dismissible, auto-timing-out (16s) card after every successful **public/unlocked** workspace compile. It contains optional GitHub, LinkedIn, and Instagram links; Instagram DMs go to `@gt_techie`.
 - **Home navigation**: both the sidebar "TDS Portal" brand header (`#brandHome`) and the "tds-portal" breadcrumb crumb (`.crumb-home` class, delegated click listener on the stable `#breadcrumbs` container since its innerHTML gets fully rebuilt on every navigation) call `window.location.reload()` to return to the welcome screen from anywhere. A full reload is deliberate — the welcome screen's markup is static in `index.html` and isn't worth reconstructing in JS, and `DOMContentLoaded` already re-fills term/email/exam from `localStorage`, so nothing typed is lost.
-- **Highlighted footer support note**: the "Project Sandbox by GyaanFlow • star the repo • Connect on LinkedIn" footer (both `.welcome-footer-credits` in `index.html` and `.canvas-footer-credits` in `app.js`) went from a low-opacity (0.55), easy-to-miss dashed-border line to a full-opacity amber-gradient pill, with a `.support-highlight` class bolding the star/follow portions in amber so they read as an actual call-to-action.
+- **Highlighted footer support note**: the project footer credits include optional GitHub, LinkedIn, and Instagram contact actions; Instagram is labeled `@gt_techie` and opens the public profile for direct messaging.
 - **Navbar decluttered**: removed the `Export MD` / `Export JSON` buttons from the navbar (the underlying export logic in `app.js` is untouched, just not exposed as buttons) since `Copy All` / per-answer `Download .txt` already cover the common cases and the navbar was overcrowded on smaller screens. GitHub/LinkedIn navbar links reworded to "⭐ Star + Follow" / "Follow on LinkedIn" with warmer tooltip copy, pointing at the actual project repo (`.../tds-roe-solver-t12026`) instead of just the profile.
 
 ### Recent State and Feedback Improvements
@@ -666,13 +666,13 @@ npm run check
 Current expected success output:
 
 ```text
-Checks passed: GA7 solvers=15, ROE solvers=15, GA8 solvers=15, P2 solvers=2, GA0 solvers=25, GA1 solvers=20, GA2 solvers=10, GA3 solvers=13, GA4 solvers=13, GA5 solvers=11, GA6 solvers=10, P1 solvers=5, T2 GA8 solvers=10, T2 P2 solvers=8, T2 end-term questions=300, T3 GA1 questions=16
+Checks passed: GA7 solvers=15, ROE solvers=15, GA8 solvers=15, P2 solvers=2, GA0 solvers=25, GA1 solvers=20, GA2 solvers=10, GA3 solvers=13, GA4 solvers=13, GA5 solvers=11, GA6 solvers=10, P1 solvers=5, T2 GA8 solvers=10, T2 P2 solvers=8, T2 end-term questions=300, T3 GA1 questions=16, T3 GA2 questions=15, T3 P1 questions=4
 ```
 
 > Note: Registry paths are now `solvers/T12026/<exam>/registry.js`.
 
 The smoke check covers:
-- the generated home-page index / SEO files / term selector being up to date (`scripts/build-catalog.mjs --check`) and catalog labels matching `TERM_EXAMS`
+- the generated README matrix, home-page index / SEO files / term selector being up to date (`scripts/build-catalog.mjs --check`) and catalog labels matching `TERM_EXAMS`
 - T3 GA1: all 16 slots, the Q10 parser against real `git fast-export` output plus a mutation fuzz, Q6/Q14/Q15 URL and onboarding logic with scripted fetches, Q12 prompt rules, judging and tester with a scripted AI Pipe
 - registry loading
 - server startup path
@@ -697,6 +697,17 @@ These are reasonable next steps:
 - T3 GA1 Q2 needs a relay route on the separate API project (the exam server has no CORS); the Q13 decoder tries only 2 of 6 transform orders; re-verify the Q12 prompt counts if the exam models change
 - `marked` is loaded unpinned from a CDN (rendering could drift)
 - add a real `og:image` of the portal and submit `sitemap.xml` in Google Search Console
+- finish a file-by-file rights and attribution review for bundled official exam snapshots and linked third-party assets before treating redistribution rights as confirmed
+- consider a Content Security Policy only after inventorying the app's inline scripts and question-specific external endpoints; current headers intentionally avoid breaking these integrations
+
+## Open-Source Readiness Notes (2026-10-24)
+
+- Node.js support is `>=22`, with `.nvmrc` recommending Node 24. CI uses locked installs and tests Node 22 and 24; Dependabot checks npm dependencies and GitHub Actions weekly.
+- `npm test` starts a temporary HTTP server on `127.0.0.1:3000`; that port must be free. The integration suite should exit cleanly after completion.
+- T2 solver runtimes that race against timeouts should use `solvers/shared/with-timeout.js` so completed work clears its timer. `check.mjs` includes a cleanup regression check.
+- `discourse-cache/`, `discourse-target-cache/`, and `core-roe.js` are intentionally ignored and may remain locally as fallbacks; do not add their scraped/generated contents to Git.
+- Review `PRIVACY.md` and `THIRD_PARTY_NOTICES.md` when changing external requests, local persistence, or bundled source material. Browser-side access locks are UX controls, not authentication.
+- CI workflow: `.github/workflows/ci.yml`; deployment builds fail if catalog generation fails. Security reporting also requires private vulnerability reporting to be enabled in repository settings for the primary path to work.
 
 ## Non-Repo Context Worth Knowing
 
