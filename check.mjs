@@ -552,12 +552,12 @@ async function checkT3Ga3(solvers, metadata) {
     const q6 = results[5];
     assert(q6.type === 'guide' && q6.debug?.maxBytes === 2000000 && q6.guide.includes('Meshy 6 Lite') && q6.guide.includes('2,000,000 bytes') && q6.guide.includes('CORS') && q6.guide.includes('Public GLB URL') && q6.guide.includes('7.5 marks'), 'T3 GA3 Q6 must explain the Meshy workflow, exact GLB constraints and grading split.');
     assert(q6.guide.includes('github.com/new') && q6.guide.includes('Public') && q6.guide.includes('Add file') && q6.guide.includes('raw.githubusercontent.com') && q6.guide.includes('YOUR-USERNAME') && q6.guide.includes('github.com/…/blob/'), 'T3 GA3 Q6 must include the beginner GitHub upload path, sample Raw URL and distinguish Raw file URLs from preview pages.');
-    const primaryUrls = [q2.PRIMARY_URL, q3.PRIMARY_URL, q4.PRIMARY_URL];
-    const backupUrls = [`${base}/a2a/`, `${base}/mailroom`, base];
-    primaryUrls.forEach((url, i) => {
+    const backupUrls = [q2.PRIMARY_URL, q3.PRIMARY_URL, q4.PRIMARY_URL];
+    const personalUrls = [`${base}/a2a/`, `${base}/mailroom`, base];
+    personalUrls.forEach((url, i) => {
       const r = results[i + 1];
-      assert(r.type === 'solved' && r.answer === url && r.usesHostedApi === true, `T3 GA3 Q${i + 2} must give its fixed primary URL.`);
-      assert(r.backupEndpoints?.[0]?.url === backupUrls[i] && r.guide.includes('pre-flight test') && /Step by step for beginners/.test(r.guide), `T3 GA3 Q${i + 2} must show the personal endpoint only as an optional tested backup.`);
+      assert(r.type === 'solved' && r.answer === url && r.debug?.primaryReady === true && r.usesHostedApi === true, `T3 GA3 Q${i + 2} must give its personalized endpoint as the main answer.`);
+      assert(r.backupEndpoints?.[0]?.url === backupUrls[i] && r.backupEndpoints[0].label.includes('fallback') && r.guide.includes('pre-flight test') && /Step by step for beginners/.test(r.guide), `T3 GA3 Q${i + 2} must provide the shared endpoint only as a fallback and test the personalized main URL.`);
     });
     for (const [i, r] of results.entries()) {
       assert(!/\n\s*\n/.test(r.guide) && r.guide.includes('class="p1"'), `T3 GA3 Q${i + 1} guide must be one contiguous HTML block.`);
@@ -565,9 +565,9 @@ async function checkT3Ga3(solvers, metadata) {
     }
     for (const i of [1, 2, 3]) {
       const none = await solvers[i].solve(email, '');
-      assert(none.type === 'solved' && none.answer === primaryUrls[i - 1] && !none.backupEndpoints, `T3 GA3 Q${i + 1} must provide its primary answer without requiring a token.`);
+      assert(none.type === 'guide' && none.answer.includes('token') && none.backupEndpoints?.[0]?.url === backupUrls[i - 1], `T3 GA3 Q${i + 1} must explain its token requirement while preserving the shared fallback.`);
       const expired = await solvers[i].solve(email, expiredToken);
-      assert(expired.type === 'solved' && expired.answer === primaryUrls[i - 1] && !expired.backupEndpoints && /expired/i.test(expired.guide), `T3 GA3 Q${i + 1} must keep its primary answer available and explain the expired optional backup token.`);
+      assert(expired.type === 'guide' && /expired/i.test(expired.answer) && expired.backupEndpoints?.[0]?.url === backupUrls[i - 1] && /expired/i.test(expired.guide), `T3 GA3 Q${i + 1} must explain an expired main-token and preserve the shared fallback.`);
       const hostile = await solvers[i].solve('"><img/src=x/onerror=alert(1)>@x.com', goodToken).catch((e) => ({ guide: '', error: e }));
       assert(!/<img.src=x/i.test(hostile.guide ?? ''), `T3 GA3 Q${i + 1} must not echo a hostile email unescaped.`);
     }

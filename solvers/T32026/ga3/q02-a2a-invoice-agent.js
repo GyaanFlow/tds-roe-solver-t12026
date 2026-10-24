@@ -13,8 +13,8 @@ export function build(email, sessionToken, origin) {
     primaryUrl: PRIMARY_URL,
     question: '<p>Submit the public base URL of an A2A invoice agent. The grader reads the Agent Card, sends invoice packages, expects action proposals with cited evidence, then sends results and expects receipts handled safely and retries that never repeat a payment. Your hosted API already does all of this and uses your own AI Pipe token for the decisions.</p>',
     steps: [
-      'The primary URL above is the supplied answer. Copy it exactly; do not add a path.',
-      'The pre-flight test is optional and checks only the personalized backup URL, not the primary URL.',
+      'Use your personalized main URL above in the exam answer box. It already includes the required A2A path and trailing slash.',
+      'The shared endpoint in the backup section is a fallback. The pre-flight test checks your personalized main URL.',
       'On the exam page press <strong>Check</strong>. If a decision row fails, press Check again once or twice; the model can vary.',
       'When you are happy, press <strong>Save</strong>. Only your last Save counts.',
     ],
