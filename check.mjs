@@ -497,10 +497,14 @@ async function checkT3P1(solvers, metadata) {
 async function checkT3Ga3(solvers, metadata) {
   const official = fs.readFileSync(path.join(rootDir, 'solvers/T32026/ga3/exam-source.js'), 'utf8');
   const officialIds = [...official.matchAll(/^\s+(?:let )?[a-z] = "(q-[a-z0-9-]+)"/gm)].map((m) => m[1]);
-  assert(solvers.length === 5 && metadata.questionCount === 5 && metadata.exam === 'ga3' && metadata.term === 'T32026', 'T3 GA3 must register exactly five questions.');
-  assert(JSON.stringify(solvers.map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 5, `T3 GA3 ids/order differ from the official bundle: ${officialIds.join(', ')}`);
+  assert(solvers.length === 6 && metadata.questionCount === 6 && metadata.exam === 'ga3' && metadata.term === 'T32026', 'T3 GA3 must register six questions including the recently added Q6.');
+  assert(JSON.stringify(solvers.slice(0, 5).map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 5, `T3 GA3 Q1-Q5 ids/order differ from the checked-in official snapshot: ${officialIds.join(', ')}`);
+  assert(solvers[5].id === 'q-famous-face-3d-model', 'T3 GA3 Q6 should be the famous-face 3D model guide.');
   const api = await importFresh('solvers/T32026/ga3/api-client.js');
   const guess = await importFresh('solvers/T32026/ga3/q01-guess-number.js');
+  const q2 = await importFresh('solvers/T32026/ga3/q02-a2a-invoice-agent.js');
+  const q3 = await importFresh('solvers/T32026/ga3/q03-taint-aware-executor.js');
+  const q4 = await importFresh('solvers/T32026/ga3/q04-agent-trace-integrity.js');
   const windows = await importFresh('solvers/T32026/ga3/windows.js');
   const email = 'student.one@ds.study.iitm.ac.in';
   const goodToken = `eyJhbGciOiJIUzI1NiJ9.${Buffer.from(JSON.stringify({ exp: Math.floor(Date.now() / 1000) + 3600 })).toString('base64url')}.sig`;
@@ -545,20 +549,24 @@ async function checkT3Ga3(solvers, metadata) {
     for (const solver of solvers) results.push(await solver.solve(email, goodToken));
     assert(networkCalls === 0, 'T3 GA3 solvers must not make any network request while preparing.');
     assert(results[0].type === 'guide' && results[0].guide.includes('Next-guess helper') && results[4].type === 'guide' && results[4].answer.includes('played'), 'T3 GA3 Q1/Q5 must be guides.');
-    [`${base}/a2a/`, `${base}/mailroom`, base].forEach((url, i) => {
+    const q6 = results[5];
+    assert(q6.type === 'guide' && q6.debug?.maxBytes === 2000000 && q6.guide.includes('Meshy 6 Lite') && q6.guide.includes('2,000,000 bytes') && q6.guide.includes('CORS') && q6.guide.includes('direct download URL') && q6.guide.includes('7.5 marks'), 'T3 GA3 Q6 must explain the Meshy workflow, exact GLB constraints and grading split.');
+    const primaryUrls = [q2.PRIMARY_URL, q3.PRIMARY_URL, q4.PRIMARY_URL];
+    const backupUrls = [`${base}/a2a/`, `${base}/mailroom`, base];
+    primaryUrls.forEach((url, i) => {
       const r = results[i + 1];
-      assert(r.type === 'solved' && r.answer === url && r.usesHostedApi === true, `T3 GA3 Q${i + 2} must give the personal URL.`);
-      assert(r.guide.includes('Run pre-flight test') && /Step by step for beginners/.test(r.guide), `T3 GA3 Q${i + 2} must carry the pre-flight widget and beginner steps.`);
+      assert(r.type === 'solved' && r.answer === url && r.usesHostedApi === true, `T3 GA3 Q${i + 2} must give its fixed primary URL.`);
+      assert(r.backupEndpoints?.[0]?.url === backupUrls[i] && r.guide.includes('pre-flight test') && /Step by step for beginners/.test(r.guide), `T3 GA3 Q${i + 2} must show the personal endpoint only as an optional tested backup.`);
     });
     for (const [i, r] of results.entries()) {
       assert(!/\n\s*\n/.test(r.guide) && r.guide.includes('class="p1"'), `T3 GA3 Q${i + 1} guide must be one contiguous HTML block.`);
-      if (i >= 1 && i <= 3) assert(!r.guide.includes(goodToken) || r.guide.includes(base), `T3 GA3 Q${i + 1} guide may only show the token inside the personal URL.`);
+      if (i >= 1 && i <= 3) assert(!r.guide.includes(goodToken), `T3 GA3 Q${i + 1} must not leak the backup token into guide HTML.`);
     }
     for (const i of [1, 2, 3]) {
       const none = await solvers[i].solve(email, '');
-      assert(none.type === 'guide' && none.variant.includes('token') && !/ga5\//.test(none.answer), `T3 GA3 Q${i + 1} must ask for a token instead of inventing a URL.`);
+      assert(none.type === 'solved' && none.answer === primaryUrls[i - 1] && !none.backupEndpoints, `T3 GA3 Q${i + 1} must provide its primary answer without requiring a token.`);
       const expired = await solvers[i].solve(email, expiredToken);
-      assert(expired.type === 'guide' && /expired/i.test(expired.answer), `T3 GA3 Q${i + 1} must say when the token has expired.`);
+      assert(expired.type === 'solved' && expired.answer === primaryUrls[i - 1] && !expired.backupEndpoints && /expired/i.test(expired.guide), `T3 GA3 Q${i + 1} must keep its primary answer available and explain the expired optional backup token.`);
       const hostile = await solvers[i].solve('"><img/src=x/onerror=alert(1)>@x.com', goodToken).catch((e) => ({ guide: '', error: e }));
       assert(!/<img.src=x/i.test(hostile.guide ?? ''), `T3 GA3 Q${i + 1} must not echo a hostile email unescaped.`);
     }
@@ -2097,7 +2105,7 @@ async function main() {
   if (process.argv.includes('--t3-ga3-only')) {
     const registry = await importFresh('solvers/T32026/ga3/registry.js');
     await checkT3Ga3(registry.solvers, registry.metadata);
-    console.log(`T3 GA3 checks passed: ${registry.solvers.length} official question slots.`);
+    console.log(`T3 GA3 checks passed: ${registry.solvers.length} registered question slots.`);
     return;
   }
 

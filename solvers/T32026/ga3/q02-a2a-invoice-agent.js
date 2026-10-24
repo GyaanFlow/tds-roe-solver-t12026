@@ -3,16 +3,18 @@ import { agentResult, registerAgentWidgets } from './agent-ui.js';
 
 export const id = 'q-a2a-durable-delegate-server-v2';
 export const title = 'A2A Invoice Agent: decide and act safely';
+export const PRIMARY_URL = 'https://tds-ga3-hir3.onrender.com';
 
 export function build(email, sessionToken, origin) {
   return agentResult({
     id, title, kind: 'a2a', email, origin,
     tokenCheck: checkToken(sessionToken),
     urls: { answer: a2aBase },
+    primaryUrl: PRIMARY_URL,
     question: '<p>Submit the public base URL of an A2A invoice agent. The grader reads the Agent Card, sends invoice packages, expects action proposals with cited evidence, then sends results and expects receipts handled safely and retries that never repeat a payment. Your hosted API already does all of this and uses your own AI Pipe token for the decisions.</p>',
     steps: [
-      'Check that the URL shown above is in the Answer box. It ends with <code>/a2a/</code>; keep the last slash.',
-      'Press <strong>Run pre-flight test</strong> below. Every row should be green. It never calls an AI model.',
+      'The primary URL above is the supplied answer. Copy it exactly; do not add a path.',
+      'The pre-flight test is optional and checks only the personalized backup URL, not the primary URL.',
       'On the exam page press <strong>Check</strong>. If a decision row fails, press Check again once or twice; the model can vary.',
       'When you are happy, press <strong>Save</strong>. Only your last Save counts.',
     ],
