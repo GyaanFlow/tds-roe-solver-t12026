@@ -18,7 +18,7 @@
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
-    "@vercel/toolbar": "^0.2.5",
+    "@vercel/toolbar": "^0.2.7",
     "jsqr": "^1.4.0"
   },
   "engines": {
