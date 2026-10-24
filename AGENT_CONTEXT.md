@@ -16,7 +16,7 @@ This project has a **graphify knowledge graph** at `graphify-out/`.
 **Graph stats:** 4552 nodes · 7612 edges · 268 communities (last rebuilt 2026-10-24)
 **God nodes:** `normalizeEmail()` (138 edges), `rng()` (117 edges), `renderCanvas()` (20 edges)
 
-**Current graphify CLI note:** `python -m graphify update .` completed successfully on 2026-10-24 and rebuilt `graphify-out/graph.json`, `graph.html`, and `GRAPH_REPORT.md`. It warned that the installed skill is older than the package; the optional semantic-labeling step needs a Gemini API key.
+**Current graphify CLI note:** The graph topology was rebuilt on 2026-10-24. A follow-up `python -m graphify update .` at commit `9ae8a933` found no topology changes and left the large graph artifacts untouched. `GRAPH_REPORT.md` records the code snapshot commit `4140b0f6`; `9ae8a933` only changes documentation. The installed skill is older than the package; semantic community relabeling requires a Gemini API key.
 
 ## Project Purpose
 
@@ -73,6 +73,7 @@ The app runs locally in the browser, loads a solver registry for the selected ex
 ## Latest Verified Production Release
 
 - Commit `4140b0f` (`perf: harden portal startup and creator profile UI`) is pushed to `origin/main` and live at `https://tds-portal-solver.vercel.app/` as of 2026-10-24. The local `main` branch was synchronized with `origin/main` after the push.
+- Documentation commit `9ae8a93` refreshed `README.md` and this handoff, and is also pushed to `origin/main`.
 - Live smoke verification confirmed `/sw.js` serves `tds-portal-v55` and production `style.css` includes the creator-preview clipping/stacking fix.
 - `npm run build` passed and generated the catalog for 3 terms / 21 exams. `npm run mock:check` passed with 200 objective questions (175 MCQ + 25 MSQ), 100 subjective questions, and 126 course topics.
 - `npm run check` printed its complete success summary across T1/T2/T3 registries and the 300-question end-term bank. On this Windows runner, it leaves an open process handle after printing success and may need Ctrl+C to exit; sandboxed runs also need loopback permission for the local-server route checks.
