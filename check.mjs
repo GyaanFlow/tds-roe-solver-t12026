@@ -550,7 +550,8 @@ async function checkT3Ga3(solvers, metadata) {
     assert(networkCalls === 0, 'T3 GA3 solvers must not make any network request while preparing.');
     assert(results[0].type === 'guide' && results[0].guide.includes('Next-guess helper') && results[4].type === 'guide' && results[4].answer.includes('played'), 'T3 GA3 Q1/Q5 must be guides.');
     const q6 = results[5];
-    assert(q6.type === 'guide' && q6.debug?.maxBytes === 2000000 && q6.guide.includes('Meshy 6 Lite') && q6.guide.includes('2,000,000 bytes') && q6.guide.includes('CORS') && q6.guide.includes('direct download URL') && q6.guide.includes('7.5 marks'), 'T3 GA3 Q6 must explain the Meshy workflow, exact GLB constraints and grading split.');
+    assert(q6.type === 'guide' && q6.debug?.maxBytes === 2000000 && q6.guide.includes('Meshy 6 Lite') && q6.guide.includes('2,000,000 bytes') && q6.guide.includes('CORS') && q6.guide.includes('Public GLB URL') && q6.guide.includes('7.5 marks'), 'T3 GA3 Q6 must explain the Meshy workflow, exact GLB constraints and grading split.');
+    assert(q6.guide.includes('github.com/new') && q6.guide.includes('Public') && q6.guide.includes('Add file') && q6.guide.includes('raw.githubusercontent.com') && q6.guide.includes('YOUR-USERNAME') && q6.guide.includes('github.com/…/blob/'), 'T3 GA3 Q6 must include the beginner GitHub upload path, sample Raw URL and distinguish Raw file URLs from preview pages.');
     const primaryUrls = [q2.PRIMARY_URL, q3.PRIMARY_URL, q4.PRIMARY_URL];
     const backupUrls = [`${base}/a2a/`, `${base}/mailroom`, base];
     primaryUrls.forEach((url, i) => {
