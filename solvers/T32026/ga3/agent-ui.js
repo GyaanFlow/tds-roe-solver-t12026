@@ -2,8 +2,6 @@
 import { page, card, details, escapeHtml } from './ui.js';
 import { GA3_API_ORIGIN, checkToken, healthUrl, onboardTenant, probeA2a, probeIncident, probeMailroom, redact, summarizeProbes } from './api-client.js';
 
-export const FOOTNOTE = 'The backup URL contains your private token. Do not share it.';
-
 // Credentials live only in memory (never in the DOM, storage or logs); the widgets read them from here.
 const credentials = new Map();
 
@@ -23,7 +21,7 @@ function widgetHtml(kind, email) {
     : '';
   return [
     `<div id="t3ga3-${kind}" data-kind="${kind}" data-email="${escapeHtml(email)}">`,
-    '<p>This checks only your personalized backup endpoint, not the primary answer above. It does not call an AI model.</p>',
+    '<p>This checks your personalized main endpoint before you use an exam Check. It does not call an AI model.</p>',
     `<div class="p1-actions"><button type="button" class="p1-btn" onclick="window._t3ga3.test('${kind}')">Run pre-flight test</button>${register}</div>`,
     `<div id="t3ga3-${kind}-status" class="p1-status" role="status"></div>`,
     `<div id="t3ga3-${kind}-out"></div>`,
@@ -33,27 +31,30 @@ function widgetHtml(kind, email) {
 
 const list = (items, tag = 'ol') => `<${tag}>${items.map((i) => `<li>${i}</li>`).join('')}</${tag}>`;
 
-/** The guide + answer for one agent question. `token` may be missing or invalid: the guide then says exactly what to do. */
+/** The personalized endpoint is primary; the supplied shared endpoint stays available as a fallback. */
 export function agentResult({ id, title, kind, email, tokenCheck, urls, primaryUrl, question, steps, tips, extraCards = [], note = '', origin = GA3_API_ORIGIN }) {
-  const answerUrl = primaryUrl;
-  const backupUrl = tokenCheck.ok ? urls.answer(email, tokenCheck.token, origin) : '';
+  const answerUrl = tokenCheck.ok ? urls.answer(email, tokenCheck.token, origin) : '';
   const health = healthUrl(email, origin);
-  if (tokenCheck.ok) credentials.set(kind, { email, token: tokenCheck.token, url: backupUrl });
+  if (tokenCheck.ok) credentials.set(kind, { email, token: tokenCheck.token, url: answerUrl });
 
-  const urlCard = card('Primary answer', `<p>Use this provided endpoint in the exam answer box:</p><pre class="mono" style="white-space:pre-wrap;word-break:break-all">${escapeHtml(answerUrl)}</pre><p>The primary answer does not require your personal token.</p>`, 'accent');
+  const urlCard = tokenCheck.ok
+    ? card('Personalized main answer ready', `<p>Your account-specific URL is in the Answer box. Copy it there into the exam; do not share it because it contains your private token.</p>`, 'accent')
+    : card('Personalized main answer needs a token', `<p class="p1-note">${escapeHtml(tokenCheck.message)}</p><p>The shared endpoint is still available in the backup section below.</p>`, 'accent');
 
   const chips = [
-    { text: tokenCheck.ok ? 'Personal backup ready' : 'Primary answer ready', tone: tokenCheck.ok ? 'ok' : 'ok' },
+    { text: tokenCheck.ok ? 'Personalized main answer ready' : 'Token needed for main answer', tone: tokenCheck.ok ? 'ok' : 'warn' },
     { text: '10 Checks per 24 h', tone: '' },
     { text: '4 marks', tone: '' },
   ];
   const stepCard = card('Step by step for beginners', list([
-    'Copy the primary URL shown above into the exam answer box. This is the recommended answer and works without setting up a personal token.',
+    ...(tokenCheck.ok
+      ? ['Copy the personalized main URL shown above into the exam answer box.']
+      : ['To create your personalized main URL, paste a fresh aipipe.org token into the sidebar and initialize GA3 again. Until then, the shared endpoint below is available as a backup.']),
     ...steps,
     ...(tokenCheck.ok ? [
-      'Optional backup: the personalized URL is listed separately below. It uses your aipipe.org token; do not share it.',
-      `To test that backup only, open <a href="${escapeHtml(health)}" target="_blank" rel="noopener noreferrer">its health link</a> and wait for <code>"status":"ok"</code>, then run the pre-flight test.`,
-    ] : ['Optional: add your aipipe.org token in the sidebar and initialize again to generate a personalized backup endpoint.']),
+      'The shared fallback endpoint is listed separately below. Use it only if your personalized main endpoint is unavailable.',
+      `Before testing the main endpoint, open <a href="${escapeHtml(health)}" target="_blank" rel="noopener noreferrer">the API health link</a> and wait for <code>"status":"ok"</code>.`,
+    ] : []),
   ]));
 
   const sections = [
@@ -61,8 +62,8 @@ export function agentResult({ id, title, kind, email, tokenCheck, urls, primaryU
     card('What the exam wants', question),
     stepCard,
   ];
-  if (!tokenCheck.ok && tokenCheck.code !== 'NO_TOKEN') sections.unshift(`<div class="p1-note">${escapeHtml(tokenCheck.message)} The primary answer above is still ready; only the optional personalized backup is unavailable.</div>`);
-  if (tokenCheck.ok) sections.push(card('Test your backup endpoint', widgetHtml(kind, email), 'accent'));
+  if (!tokenCheck.ok && tokenCheck.code !== 'NO_TOKEN') sections.unshift(`<div class="p1-note">${escapeHtml(tokenCheck.message)} Your personalized main answer is unavailable until you enter a valid token; the shared fallback remains listed below.</div>`);
+  if (tokenCheck.ok) sections.push(card('Test your main endpoint', widgetHtml(kind, email), 'accent'));
   sections.push(...extraCards);
   sections.push(details('Good to know', list([...tips,
     'A language model makes the decisions, so a result can occasionally wobble. If a Check fails on a decision, run it again once or twice before changing anything.',
@@ -72,14 +73,16 @@ export function agentResult({ id, title, kind, email, tokenCheck, urls, primaryU
 
   const guide = page({ title, chips, sections });
   return {
-    type: 'solved',
-    answer: answerUrl,
-    variant: `${title} — primary endpoint`,
-    ...(tokenCheck.ok ? { backupEndpoints: [{ label: 'Personalized API backup', url: backupUrl }] } : {}),
+    type: tokenCheck.ok ? 'solved' : 'guide',
+    answer: tokenCheck.ok ? answerUrl : tokenCheck.message,
+    variant: tokenCheck.ok ? `${title} — personalized main endpoint` : `${title} — token needed`,
+    backupEndpoints: [{ label: 'Shared fallback endpoint', url: primaryUrl }],
     guide,
-    answerDisplay: `### ${title}\n\n**Primary answer:**\n\n\`\`\`text\n${answerUrl}\n\`\`\`\n\n${tokenCheck.ok ? `Personalized backup is available below. The pre-flight test checks the backup only.` : 'No token is needed for this primary answer.'}`,
+    answerDisplay: tokenCheck.ok
+      ? `### ${title}\n\n**Personalized main answer:**\n\n\`\`\`text\n${answerUrl}\n\`\`\`\n\nThe shared fallback endpoint is available below.`
+      : `### ${title}\n\n${tokenCheck.message}\n\nThe shared fallback endpoint is available below.`,
     usesHostedApi: true,
-    debug: { question: kind, apiOrigin: origin, tokenExpiresAt: tokenCheck.ok ? tokenCheck.expiresAt ?? null : null },
+    debug: { question: kind, apiOrigin: origin, tokenExpiresAt: tokenCheck.ok ? tokenCheck.expiresAt ?? null : null, primaryReady: tokenCheck.ok },
   };
 }
 
