@@ -334,7 +334,7 @@ The GA3 suite contains 13 solvers for the System & API Architecture exam.
 - **Q11 Context Window Heist** — Rewrote console extractor with multi-strategy iframe selection, DOMParser fallback
 - **Q12 Spin Up CLI** — Added version passthrough, cleaned up FNV-1a hash, hardened asciinema generation
 - **Q13 Embedding Trapdoors** — Verified 90 trapdoor entries across 9 domains, uses seedrandom for deterministic output
-- **Lock config**: `locked: true` with 8 whitelisted emails
+- **Lock config**: `locked: false`; the public client bundle contains no personal-email allowlist. Client-side locking is a study/workflow control, not a security boundary.
 
 ## GA5 (T22026) Notes
 
@@ -396,7 +396,7 @@ Per-student WAV audio containing a hidden DTMF-style modem burst sequence in a 1
 
 ## GA7 (T22026) Notes — "Policy Gates & OSINT"
 
-10 questions, `solvers/T22026/ga7/` (public by default, `lock-config.js` matches the standard GA whitelist pattern). Two structurally different halves:
+10 questions, `solvers/T22026/ga7/` (public by default; the client-side allowlist is empty). Two structurally different halves:
 
 - **Q1–Q5** (2 marks each) wire in a hosted rule-engine API the user deployed separately (`tds-roe-solver-api-t12026.onrender.com/ga7`, defined in `api-client.js`). Each solver computes a fixed per-student `serviceUrl` and ships an interactive tester panel that POSTs live requests to the real endpoints. Q1 additionally guides the ~25% GitHub Actions evidence requirement (workflow named exactly `TDS GA7 Release Gate`, a step named exactly `TDS identity: {email}`, submit the **workflow page URL**, not a run URL — this exact mistake was found and fixed as a real guide bug).
 - **Q6 (Street View)** is guide-only — no client-exposed hash/normalizer this time (unlike ROE's equivalent), so nothing to pre-verify. The guide includes a **known-image lookup gallery** (10 community-sourced image→coordinate pairs, credited to `github.com/24f1002249` / `hypemonk.github.io/Geo-locations`) with a live "🔄 Check for new images" refresh button — fetches the source's current answer list via a hand-written JSON-safe parser (regex-transforms the source's JS-array-literal into valid JSON, never `eval`/`Function`, proven with a hostile-payload test) and cross-checks against the actual image directory listing before trusting any entry. This is explicitly **not** verified against the exam bundle (flagged as such in the guide) — treat as a strong lead, not a guarantee.
@@ -474,7 +474,7 @@ The "800/800 flawless" and "100%" figures come from the repo's **own heuristic c
 - P2 case modules contain no generated answers beyond the above forensic-fact pools — nothing invents an unverifiable "hidden intended answer." Even if the lock configuration is changed accidentally, the fallback (below) returns only a disabled guide result.
 - `case-specs.js` encodes prompt-derived heading order, min/max length, evidence-table structure, the 1B five-question requirement, the 2A item caps, and the 4B candidate-table schema without embedding a hidden answer key.
 - `runtime.js` rejects any solved answer that fails the rubric contract and exposes the validation report at `debug.rubric`.
-- `lock-config.js` has `locked: true` with a **4-email whitelist** (not empty — it has been extended per-student over several commits). `runtime.js` genuinely returns before invoking any solver for a non-whitelisted email, so no such email causes a P2 note to be generated at all. **This was only made true on 2026-08-22**: the previous implementation ran `solveImpl()` and then discarded its answer in favour of the locked guide, so the documented short-circuit did not actually exist. Verified with a spy solver asserting 0 invocations when locked (see the hardening notes above).
+- `lock-config.js` is currently unlocked with the public wildcard allowlist. Do not put personal email addresses in client-side config: deployed source is public, and this mechanism is not a security boundary. `runtime.js` short-circuits generation when a lock is enabled and the email is not allowed; verify the configured policy whenever changing the lock.
 - `rubric-coach.js` provides a client-only reviewer for student-authored drafts while the solver remains locked. It checks the official character gate, exact heading order, evidence schema, traceability, confidence, alternatives, unknowns, safe actions, and case-specific constraints; it never returns generated submission text or claims to detect plagiarism.
 - `check.mjs` verifies official ID/order, universal locking for arbitrary users, synthetic rubric fixtures, coach safety, Solar 2A item caps, and Consumer 4B value fractions.
 
@@ -534,7 +534,7 @@ The GA1 suite contains 20 solvers for the Developer Tools exam.
 To encourage manual study and practice, GA1 solvers are protected by a centralized academic integrity lock in `solvers/T22026/ga1/runtime.js`.
 - **Configuration File**: Controlled via [lock-config.js](file:///c:/Users/gaura/Downloads/tds-roe-solver/tds-roe-solver/solvers/T22026/ga1/lock-config.js).
 - **Lock Toggle (`locked`)**: Setting `locked: true` locks the solvers. Standard non-whitelisted student emails will receive a guide-type response directing them to solve the question manually. Setting `locked: false` unlocks the solvers for everyone.
-- **Whitelist (`allowedEmails`)**: Contains specific whitelisted email addresses (e.g. instructors, testers) that bypass the lock and receive programmatic solved answers even when `locked: true` is enabled.
+- **Whitelist (`allowedEmails`)**: Any entries are shipped to every browser and must be treated as public. Current GA1 config is unlocked with an empty allowlist. Never commit personal email addresses; use server-side authentication and authorization if actual access control is required.
 
 ## Home Page Index, SEO & Dynamic Config (added 2026-10)
 

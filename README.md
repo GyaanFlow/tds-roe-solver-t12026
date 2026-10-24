@@ -92,8 +92,12 @@ To align fully with the **IIT Madras Student Code of Conduct**, the workspace im
 > **MALPRACTICE ALERT**: This sandbox is strictly designed for local educational research, study, algorithm verification, and rubric calibration. Using this portal during active, live, proctored, or graded exams is a direct violation of university rules and constitutes academic dishonesty.
 
 1. **Mandatory Integrity Disclaimer**: All workspace inputs and solver executions are blocked until the user explicitly acknowledges the honor code checkbox.
-2. **Configurable Access Locking (`lock-config.js`)**: Granular per-exam security locks allow developers to restrict programmatic answer generation to authorized whitelist emails while providing external students with the interactive Rubric Coach to verify their own manual work.
+2. **Configurable Study Lock (`lock-config.js`)**: Per-exam client-side switches can change the study experience, but allowlists ship in the public browser bundle and are not a security boundary. Never commit personal email addresses; use server-side authentication for genuinely restricted content.
 3. **Stateful Local Persistence**: The acceptance vector is saved to browser `localStorage` as `academic_integrity_agreed === 'true'`.
+
+### Repository Hygiene
+
+Discourse scraper caches (`discourse-cache/` and `discourse-target-cache/`) and the legacy `core-roe.js` bundle are intentionally excluded from Git. The ignored cache directories may remain on a maintainer's machine as offline fallbacks for the scraper scripts; they are not required by the deployed portal. Do not commit scraped personal data or generated bundles.
 
 ---
 
