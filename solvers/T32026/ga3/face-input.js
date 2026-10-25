@@ -35,11 +35,53 @@ export function parseQuestionDataLink(raw, kind) {
   return { ok: true, url: target.toString(), email };
 }
 
-/** Reads the assigned faces from the JSON the questionData endpoint returns. */
+const IMAGE_MD = /!\[([^\]]*)\]\(\s*<?(https:\/\/[^\s)>]+)>?\s*\)/g;
+const cleanUrl = (raw) => httpsUrl(String(raw).replace(/\\([_*()[\]])/g, '$1'));
+
+/**
+ * Reads the faces from the question text copied off the exam page (markdown with ![alt](url) images). Pairs are matched
+ * by their alt text ("From face, pair 3", "Start face", "Reference photograph of …"), never by de-duplicating photos,
+ * because the same photo can appear in two pairs.
+ */
+export function extractFromPageText(kind, text) {
+  const images = [...String(text ?? '').matchAll(IMAGE_MD)].map((m) => ({ alt: m[1].trim(), url: cleanUrl(m[2]) })).filter((i) => i.url);
+  if (kind === 'q6') {
+    const hit = images.find((i) => /reference photograph|photograph of/i.test(i.alt)) || images[0];
+    if (!hit) return null;
+    const title = hit.alt.replace(/^reference photograph of\s*/i, '').trim();
+    return { url: hit.url, title };
+  }
+  if (kind === 'q7') {
+    const from = images.find((i) => /^start face$/i.test(i.alt) || /from/i.test(i.alt)) || images[0];
+    const to = images.find((i) => /^end face$/i.test(i.alt) || /to/i.test(i.alt)) || images[1];
+    return from && to ? { from: { url: from.url }, to: { url: to.url } } : null;
+  }
+  if (kind === 'q8') {
+    const pairs = new Map();
+    for (const image of images) {
+      const m = /^(from|to) face,?\s*pair\s*(\d+)/i.exec(image.alt);
+      if (!m) continue;
+      const n = Number(m[2]);
+      const entry = pairs.get(n) || { number: n };
+      entry[m[1].toLowerCase()] = { url: image.url };
+      pairs.set(n, entry);
+    }
+    return pairs.size ? [...pairs.values()] : null;
+  }
+  return null;
+}
+
+/** Reads the assigned faces from the JSON the questionData endpoint returns, or from the page text copied off the exam. */
 export function normalizeAssigned(kind, input) {
   let data = input;
   if (typeof input === 'string') {
-    try { data = JSON.parse(input.trim()); } catch { return { ok: false, message: 'That text is not valid JSON. Copy everything the link shows, from the first { or [ to the last } or ].' }; }
+    const text = input.trim();
+    if (/^[{[]/.test(text)) {
+      try { data = JSON.parse(text); } catch { return { ok: false, message: 'That text is not valid JSON. Copy everything the link shows, from the first { or [ to the last } or ].' }; }
+    } else {
+      data = extractFromPageText(kind, text);
+      if (!data) return { ok: false, message: 'No photos found in that text. Copy the whole question from the exam page (select it all and copy), or paste the data the link shows.' };
+    }
   }
   if (kind === 'q6') {
     const photo = httpsUrl(data?.url);

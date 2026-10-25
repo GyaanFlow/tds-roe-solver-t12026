@@ -666,6 +666,15 @@ async function checkT3Ga3Faces() {
   const blocked = await (await importFresh('solvers/T32026/ga3/face-loader.js')).loadAssigned('q7', link, '', async () => { throw new TypeError('Failed to fetch'); });
   const pasted = await (await importFresh('solvers/T32026/ga3/face-loader.js')).loadAssigned('q7', '', JSON.stringify({ from: { url: 'https://x.org/1.jpg' }, to: { url: 'https://x.org/2.jpg' } }), async () => { throw new Error('must not fetch'); });
   assert(fetched.ok && blocked.ok === false && blocked.blocked === true && pasted.ok, 'T3 GA3 loader must fetch, explain blocked fetches, and prefer pasted data.');
+  const photo = (name) => `https://upload.wikimedia.org/wikipedia/commons/9/90/${name}.jpg`;
+  const pageQ8 = Array.from({ length: 10 }, (_, i) => `${i + 1}. **${i + 1}**\n![From face, pair ${i + 1}](${photo(i === 8 ? 'Miriam_Hopkins' : `A%28${i}%29`)})![To face, pair ${i + 1}](${photo(i === 7 ? 'Miriam_Hopkins' : `B_${i}`)})\nPair ${i + 1} ⠿ ↑ ↓`).join('\n');
+  const fromText = inp.normalizeAssigned('q8', pageQ8);
+  assert(fromText.ok && fromText.pairs.length === 10 && fromText.pairs[7].to === fromText.pairs[8].from && fromText.pairs[0].from.includes('A%280%29'), 'T3 GA3 Q8 page text must give ten pairs, keeping a photo that appears in two pairs.');
+  const pageQ7 = `![Start face](${photo('Imran_Khan_01')}) \n\nFrom · [Source photo](${photo('Imran%5FKhan%5F01')})\n\n![End face](${photo('Farage_crop_2')}) \n\nTo · [Source photo](https://x.org/y.jpg)`;
+  const pageQ6 = `![Reference photograph of Dwight D. Eisenhower](${photo('Dwight_D._Eisenhower%2C_1959')}) \n\n**Dwight D. Eisenhower** · [ Q9916 ](https://www.wikidata.org/wiki/Q9916)`;
+  assert(inp.normalizeAssigned('q7', pageQ7).from.endsWith('Imran_Khan_01.jpg') && inp.normalizeAssigned('q7', pageQ7).to.endsWith('Farage_crop_2.jpg') && inp.normalizeAssigned('q6', pageQ6).title === 'Dwight D. Eisenhower' && !inp.normalizeAssigned('q6', 'just words').ok && !inp.normalizeAssigned('q8', 'no images here').ok && !inp.normalizeAssigned('q8', pageQ8.replace(photo('B_3'), 'http://x.org/b.jpg')).ok, 'T3 GA3 Q6/Q7 page text must be read, and junk text refused.');
+  const viaBox = await (await importFresh('solvers/T32026/ga3/face-loader.js')).loadAssigned('q6', pageQ6, '', async () => { throw new Error('must not fetch'); });
+  assert(viaBox.ok && viaBox.photo.includes('Eisenhower'), 'T3 GA3 pasted question text in the link box must work without a network call.');
   const lm = (overrides = {}) => { const pts = Array.from({ length: 468 }, () => ({ x: 0.5, y: 0.5 })); const set = { 1: [0.5, 0.55], 152: [0.5, 0.85], 10: [0.5, 0.15], 234: [0.3, 0.5], 454: [0.7, 0.5], 33: [0.38, 0.42], 263: [0.62, 0.42], 13: [0.5, 0.68], 14: [0.5, 0.69], ...overrides }; for (const [i, [x, y]] of Object.entries(set)) pts[i] = { x, y }; return pts; };
   const front = inp.faceMetrics(lm(), 400, 500);
   const turned = inp.faceMetrics(lm({ 1: [0.64, 0.55] }), 400, 500);

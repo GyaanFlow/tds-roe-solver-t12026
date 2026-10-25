@@ -7,7 +7,8 @@ const LANDMARKER_MODEL = 'https://storage.googleapis.com/mediapipe-models/face_l
 
 /** `linkText` and `dataText` are the two boxes; pasted data wins when present. Returns `{ ok, ...assigned }` or `{ ok:false, message }`. */
 export async function loadAssigned(kind, linkText, dataText, fetchImpl = globalThis.fetch) {
-  if (String(dataText ?? '').trim()) return normalizeAssigned(kind, dataText);
+  const typed = String(dataText ?? '').trim() || (String(linkText ?? '').includes('![') ? String(linkText).trim() : '');
+  if (typed) return normalizeAssigned(kind, typed);
   const parsed = parseQuestionDataLink(linkText, kind);
   if (!parsed.ok) return parsed;
   try {
@@ -82,10 +83,10 @@ export async function measureFace(img, landmarker) {
 export function assignedBoxesHtml(prefix, buttonLabel, onclick) {
   return [
     `<div class="p1-grid"><div><label for="${prefix}Link">Paste your personal questionData link</label><input type="text" id="${prefix}Link" placeholder="https://exam.sanand.workers.dev/questionData?email=…&quizSign=…"></div>`,
-    `<div><label for="${prefix}Data">…or paste what that link shows (only if the first box fails)</label><textarea id="${prefix}Data" placeholder="{ ... }" style="min-height:60px"></textarea></div></div>`,
+    `<div><label for="${prefix}Data">…or paste the whole question copied from the exam page, or what the link shows</label><textarea id="${prefix}Data" placeholder="{ ... }" style="min-height:60px"></textarea></div></div>`,
     `<div class="p1-actions"><button type="button" class="p1-btn" id="${prefix}Load" onclick="${onclick}">${buttonLabel}</button></div>`,
     `<div id="${prefix}LoadStatus" class="p1-status" role="status"></div>`,
   ].join('');
 }
 
-export const HOW_TO_LINK = '<ol><li>Open your exam page in Chrome or Edge, right-click anywhere and choose <strong>Inspect</strong>, then open the <strong>Network</strong> tab.</li><li>Reload the page. In the filter box type <code>questionData</code>.</li><li>Right-click the request for this question and choose <strong>Copy → Copy URL</strong>. Paste it in the box. (Any of the face questions\' links works; the tool switches it to the right question.)</li><li>If the tool says it cannot fetch the link, click the request, open <strong>Response</strong>, copy everything shown, and paste it into the second box.</li></ol>';
+export const HOW_TO_LINK = '<p><strong>Easiest:</strong> on the exam page select this whole question with your mouse, copy it (Ctrl+C), and paste it into the second box. The photos are found automatically.</p><p>Or use the personal link:</p><ol><li>Open your exam page in Chrome or Edge, right-click anywhere and choose <strong>Inspect</strong>, then open the <strong>Network</strong> tab.</li><li>Reload the page. In the filter box type <code>questionData</code>.</li><li>Right-click the request for this question and choose <strong>Copy → Copy URL</strong>. Paste it in the box. (Any of the face questions\' links works; the tool switches it to the right question.)</li><li>If the tool says it cannot fetch the link, click the request, open <strong>Response</strong>, copy everything shown, and paste it into the second box.</li></ol>';
