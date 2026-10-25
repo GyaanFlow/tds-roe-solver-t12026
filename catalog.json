@@ -35,8 +35,8 @@
           "id": "ga3",
           "label": "GA 3 (Agent Safety & Trading Games)",
           "group": "Weekly Graded Assignments",
-          "description": "A2A invoice agent, taint-aware mailroom executor, incident-trace agent and Agostinho Neto 3D face task — plus the guess-your-number helper and Humans Only drawing game guide.",
-          "solverCount": 6,
+          "description": "A2A invoice agent, taint-aware mailroom executor, incident-trace agent, a 3D face model guide, an in-browser face-morph video maker and a morph-difficulty ranking helper — plus the guess-your-number helper and Humans Only drawing game guide.",
+          "solverCount": 8,
           "questions": [
             {
               "id": "q-guess-number-server",
@@ -59,8 +59,16 @@
               "title": "Trading game: Humans Only"
             },
             {
-              "id": "q-famous-face-3d-model",
+              "id": "q-3d-face-model",
               "title": "Reconstruct a famous face in 3D"
+            },
+            {
+              "id": "q-face-morph-video",
+              "title": "Morph two faces into a video"
+            },
+            {
+              "id": "q-face-morph-rank",
+              "title": "Which faces are easiest to morph?"
             }
           ]
         },

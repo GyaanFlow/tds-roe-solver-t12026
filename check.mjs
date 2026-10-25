@@ -527,10 +527,9 @@ async function checkT3P1(solvers, metadata) {
 async function checkT3Ga3(solvers, metadata) {
   const official = fs.readFileSync(path.join(rootDir, 'solvers/T32026/ga3/exam-source.js'), 'utf8');
   const officialIds = [...official.matchAll(/^\s+(?:let )?[a-z] = "(q-[a-z0-9-]+)"/gm)].map((m) => m[1]);
-  assert(solvers.length === 6 && metadata.questionCount === 6 && metadata.exam === 'ga3' && metadata.term === 'T32026', 'T3 GA3 must register six questions including the recently added Q6.');
-  assert(JSON.stringify(solvers.slice(0, 5).map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 5, `T3 GA3 Q1-Q5 ids/order differ from the checked-in official snapshot: ${officialIds.join(', ')}`);
-  assert(solvers[5].id === 'q-famous-face-3d-model', 'T3 GA3 Q6 should be the famous-face 3D model guide.');
-  const api = await importFresh('solvers/T32026/ga3/api-client.js');
+  assert(solvers.length === 8 && metadata.questionCount === 8 && metadata.exam === 'ga3' && metadata.term === 'T32026', 'T3 GA3 must register all eight official questions.');
+  assert(JSON.stringify(solvers.map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 8, `T3 GA3 ids/order differ from the checked-in official snapshot: ${officialIds.join(', ')}`);
+    const api = await importFresh('solvers/T32026/ga3/api-client.js');
   const guess = await importFresh('solvers/T32026/ga3/q01-guess-number.js');
   const q2 = await importFresh('solvers/T32026/ga3/q02-a2a-invoice-agent.js');
   const q3 = await importFresh('solvers/T32026/ga3/q03-taint-aware-executor.js');
@@ -580,8 +579,13 @@ async function checkT3Ga3(solvers, metadata) {
     assert(networkCalls === 0, 'T3 GA3 solvers must not make any network request while preparing.');
     assert(results[0].type === 'guide' && results[0].guide.includes('Next-guess helper') && results[4].type === 'guide' && results[4].answer.includes('played'), 'T3 GA3 Q1/Q5 must be guides.');
     const q6 = results[5];
-    assert(q6.type === 'guide' && q6.debug?.maxBytes === 2000000 && q6.guide.includes('Meshy 6 Lite') && q6.guide.includes('2,000,000 bytes') && q6.guide.includes('CORS') && q6.guide.includes('Public GLB URL') && q6.guide.includes('7.5 marks'), 'T3 GA3 Q6 must explain the Meshy workflow, exact GLB constraints and grading split.');
-    assert(q6.guide.includes('github.com/new') && q6.guide.includes('Public') && q6.guide.includes('Add file') && q6.guide.includes('raw.githubusercontent.com') && q6.guide.includes('YOUR-USERNAME') && q6.guide.includes('github.com/…/blob/'), 'T3 GA3 Q6 must include the beginner GitHub upload path, sample Raw URL and distinguish Raw file URLs from preview pages.');
+    assert(q6.type === 'guide' && q6.debug?.maxBytes === 2000000 && q6.guide.includes('Meshy 6 Lite') && q6.guide.includes('2,000,000 bytes') && q6.guide.includes('CORS') && q6.guide.includes('7.5 marks'), 'T3 GA3 Q6 must explain the Meshy workflow, exact GLB constraints and grading split.');
+    assert(q6.guide.includes('github.com/new') && q6.guide.includes('Public') && q6.guide.includes('Add file') && q6.guide.includes('raw.githubusercontent.com') && q6.guide.includes('github.com/…/blob/'), 'T3 GA3 Q6 must include the beginner GitHub upload path, sample Raw URL and distinguish Raw file URLs from preview pages.');
+    assert(!/Neto|Agostinho/i.test(q6.guide + q6.answer), 'T3 GA3 Q6 must not name one person for every student.');
+    const q7 = results[6];
+    const q8 = results[7];
+    assert(q7.type === 'guide' && q7.guide.includes('Make my morph video') && q7.guide.includes('100,000 bytes') && q7.guide.includes('raw.githubusercontent.com') && /Step by step for beginners/.test(q7.guide), 'T3 GA3 Q7 must carry the maker, the exact size limit and beginner steps.');
+    assert(q8.type === 'guide' && q8.guide.includes('Work out my order') && q8.guide.includes('Confirm this order') && (q8.guide.match(/data-pair="/g) || []).length === 80 && /Step by step for beginners/.test(q8.guide), 'T3 GA3 Q8 must carry an 8-trait rating table for all ten pairs.');
     const backupUrls = [q2.PRIMARY_URL, q3.PRIMARY_URL, q4.PRIMARY_URL];
     const personalUrls = [`${base}/a2a/`, `${base}/mailroom`, base];
     personalUrls.forEach((url, i) => {
@@ -604,6 +608,37 @@ async function checkT3Ga3(solvers, metadata) {
   } finally {
     globalThis.fetch = savedFetch;
   }
+  await checkT3Ga3Faces();
+}
+
+async function checkT3Ga3Faces() {
+  const f = await importFresh('solvers/T32026/ga3/face-logic.js');
+  const q6 = await importFresh('solvers/T32026/ga3/q06-famous-face-3d.js');
+  // Ranking: same rule as the exam (each of 1..10 once), and our ordering must be a valid, deterministic one.
+  assert(f.validateOrder('3,1,4,10,2,5,6,9,7,8').ok && f.validateOrder('3 1 4 10 2 5 6 9 7 8').ok, 'T3 GA3 valid orders must be accepted.');
+  for (const bad of ['', '1,2,3', '1,2,3,4,5,6,7,8,9,9', '0,1,2,3,4,5,6,7,8,9', '1,2,3,4,5,6,7,8,9,11', '1,2,3,4,5,6,7,8,9,1.5', '1,2,3,4,5,6,7,8,9,x', '01,2,3,4,5,6,7,8,9,10']) assert(!f.validateOrder(bad).ok, `T3 GA3 must reject the order "${bad}".`);
+  const mk = (n, ratings = {}) => ({ number: n, ratings });
+  const flat = Array.from({ length: 10 }, (_, i) => mk(i + 1));
+  assert(f.rankPairs(flat).text === '1,2,3,4,5,6,7,8,9,10', 'T3 GA3 equal pairs must keep numeric order.');
+  const mixed = flat.map((p) => (p.number === 3 ? mk(3, { pose: 2, gender: 2 }) : p.number === 7 ? mk(7, { glasses: 1 }) : p));
+  const ranked = f.rankPairs(mixed);
+  assert(ranked.ok && ranked.order[9] === 3 && ranked.order[8] === 7 && f.validateOrder(ranked.text).ok, 'T3 GA3 the hardest pair must rank last.');
+  assert(!f.rankPairs(flat.slice(1)).ok && !f.rankPairs(flat.map((p) => mk(p.number, { pose: 5 }))).ok && !f.rankPairs(flat.map((p, i) => mk(i ? p.number : 2))).ok && !f.rankPairs(null).ok, 'T3 GA3 ranking must reject incomplete, out-of-range and duplicated input.');
+  // Hosted links.
+  assert(f.checkHostedUrl('https://raw.githubusercontent.com/me/face-3d/main/x.glb', 'glb').ok && f.checkHostedUrl('https://x.org/v.MP4', ['mp4', 'webm']).ok, 'T3 GA3 must accept direct file links.');
+  const codes = (u, e) => f.checkHostedUrl(u, e).code;
+  assert(codes('', 'glb') === 'EMPTY' && codes('face.glb', 'glb') === 'NOT_URL' && codes('http://x.org/a.glb', 'glb') === 'NOT_HTTPS' && codes('https://github.com/me/r/blob/main/a.glb', 'glb') === 'GITHUB_BLOB' && codes('https://drive.google.com/file/d/1/view', 'glb') === 'SHARE_PAGE' && codes('https://x.org/a.zip', 'glb') === 'WRONG_EXT' && codes('https://x.org/a.glb', ['mp4']) === 'WRONG_EXT', 'T3 GA3 must explain each wrong kind of link.');
+  assert(f.rawGithubUrl('me', 'face-3d', 'a b.glb') === null && f.rawGithubUrl('me', 'face-3d', 'a.glb') === 'https://raw.githubusercontent.com/me/face-3d/main/a.glb' && f.rawGithubUrl('', 'r', 'f') === null && f.rawGithubUrl('m e', 'r', 'f') === null, 'T3 GA3 Raw link builder is wrong.');
+  // Video limits mirror the exam: 100,000 bytes is already too big; MP4 "ftyp" or WebM header only.
+  const mp4 = new Uint8Array(64); mp4.set([0x66, 0x74, 0x79, 0x70], 4);
+  const webm = new Uint8Array(64); webm.set([0x1a, 0x45, 0xdf, 0xa3]);
+  assert(f.sniffVideo(mp4).type === 'video/mp4' && f.sniffVideo(webm).type === 'video/webm' && !f.sniffVideo(new Uint8Array(64)).ok && !f.sniffVideo(new Uint8Array(8)).ok && !f.sniffVideo(Object.assign(new Uint8Array(100000), { 0: 0x1a, 1: 0x45, 2: 0xdf, 3: 0xa3 })).ok && f.sniffVideo(Object.assign(new Uint8Array(99999), { 0: 0x1a, 1: 0x45, 2: 0xdf, 3: 0xa3 })).ok && !f.sniffVideo(null).ok, 'T3 GA3 video sniffing must mirror the exam.');
+  for (const seconds of [2, 3, 4]) {
+    const ladder = f.bitrateLadder(seconds);
+    assert(ladder.length >= 3 && ladder.every((b, i) => i === 0 || b < ladder[i - 1]) && ladder[0] * seconds / 8 < f.VIDEO_MAX_BYTES, `T3 GA3 bitrate ladder for ${seconds}s must descend and stay under the size limit.`);
+  }
+  assert(f.ease(0) === 0 && f.ease(1) === 1 && f.ease(-3) === 0 && f.ease(9) === 1 && f.ease(0.5) === 0.5, 'T3 GA3 easing must be clamped.');
+  assert(q6.fileNames('Marie Curie').file === 'marie-curie.glb' && q6.fileNames('').repo === 'face-3d' && q6.fileNames('"><img src=x>').file === 'img-src-x.glb', 'T3 GA3 Q6 file names must be safe slugs.');
 }
 
 async function checkT3Ga1(solvers, metadata) {

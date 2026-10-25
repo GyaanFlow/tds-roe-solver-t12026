@@ -25,7 +25,7 @@ const EXAMS = {
   T32026: [
     ['ga1', 'Weekly Graded Assignments', 'GA 1 (Developer Tools)', 'Developer tooling, API servers, Git forensics and an agent ledger — including live-API questions.'],
     ['ga2', 'Weekly Graded Assignments', 'GA 2 (API Engineering & Cloud Services)', 'Statistics APIs, CORS, OAuth JWKS verification, Redis counters, Prometheus observability, and LLM endpoints.'],
-    ['ga3', 'Weekly Graded Assignments', 'GA 3 (Agent Safety & Trading Games)', 'A2A invoice agent, taint-aware mailroom executor, incident-trace agent and Agostinho Neto 3D face task — plus the guess-your-number helper and Humans Only drawing game guide.'],
+    ['ga3', 'Weekly Graded Assignments', 'GA 3 (Agent Safety & Trading Games)', 'A2A invoice agent, taint-aware mailroom executor, incident-trace agent, a 3D face model guide, an in-browser face-morph video maker and a morph-difficulty ranking helper — plus the guess-your-number helper and Humans Only drawing game guide.'],
     ['p1', 'Projects', 'Project 1', 'AI Pipe usage prediction market, a 60-second Human Exchange offer, Air Ink phone drawing and the Missing Invoice trading game — with forecast, script and invoice tools.'],
   ],
   T22026: [
