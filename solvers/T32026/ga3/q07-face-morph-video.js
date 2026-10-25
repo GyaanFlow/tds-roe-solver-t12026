@@ -1,4 +1,5 @@
 import { page, card, details } from './ui.js';
+import { HOW_TO_LINK, assignedBoxesHtml, loadAssigned, loadImage as loadFromUrl } from './face-loader.js';
 import { VIDEO_MAX_BYTES, bitrateLadder, checkHostedUrl, ease, rawGithubUrl, sniffVideo } from './face-logic.js';
 
 export const id = 'q-face-morph-video';
@@ -7,10 +8,13 @@ export const title = 'Morph two faces into a video';
 const SIZE = 256;
 const FPS = 15;
 
+let loaded = null; // both faces once the student's link has been read (memory only)
+
 function widgetHtml() {
   return [
     '<div id="t3ga3-morph">',
-    '<p>This makes a small video in <strong>your own browser</strong> (nothing is uploaded). Save the two photos from the exam page to your device first, then choose them here: the <strong>From</strong> face first, the <strong>To</strong> face second.</p>',
+    '<p>This makes a small video in <strong>your own browser</strong> (nothing is uploaded). Easiest: paste your personal link and let it load both faces. Otherwise save the two photos from the exam page and choose them below (<strong>From</strong> first, <strong>To</strong> second).</p>',
+    assignedBoxesHtml('t3m', 'Load my two faces from the link', 'window._t3ga3Morph.load()'),
     '<div class="p1-grid"><div><label for="t3mFrom">From face (image file)</label><input type="file" id="t3mFrom" accept="image/*"></div>',
     '<div><label for="t3mTo">To face (image file)</label><input type="file" id="t3mTo" accept="image/*"></div>',
     '<div><label for="t3mSecs">Length in seconds</label><select id="t3mSecs"><option>2</option><option selected>3</option><option>4</option></select></div></div>',
@@ -82,11 +86,29 @@ function register() {
   const $ = (name) => document.getElementById(name);
   const say = (el, text, tone) => { const node = $(el); if (!node) return; node.textContent = text; node.style.color = tone === 'bad' ? '#f87171' : tone === 'ok' ? '#34d399' : '#93c5fd'; };
   window._t3ga3Morph = {
+    async load() {
+      const button = $('t3mLoad');
+      try {
+        button.disabled = true;
+        say('t3mLoadStatus', 'Reading your link…', '');
+        const assigned = await loadAssigned('q7', $('t3mLink')?.value, $('t3mData')?.value);
+        if (!assigned.ok) throw new Error(assigned.message);
+        const [from, to] = await Promise.all([loadFromUrl(assigned.from), loadFromUrl(assigned.to)]);
+        loaded = { from, to };
+        say('t3mLoadStatus', 'Loaded both faces. Now press “Make my morph video”.', 'ok');
+      } catch (error) {
+        loaded = null;
+        say('t3mLoadStatus', error?.message || 'Could not load your faces.', 'bad');
+      } finally {
+        button.disabled = false;
+      }
+    },
     async make() {
       const go = $('t3mGo');
       try {
         go.disabled = true;
-        const [a, b] = await Promise.all([loadImage($('t3mFrom')?.files?.[0]), loadImage($('t3mTo')?.files?.[0])]);
+        const chosen = $('t3mFrom')?.files?.[0] || $('t3mTo')?.files?.[0];
+        const [a, b] = chosen || !loaded ? await Promise.all([loadImage($('t3mFrom')?.files?.[0]), loadImage($('t3mTo')?.files?.[0])]) : [loaded.from, loaded.to];
         const seconds = Number($('t3mSecs')?.value) || 3;
         let best = null;
         for (const [i, bitrate] of bitrateLadder(seconds).entries()) {
@@ -128,6 +150,7 @@ export async function solve() {
       card('Your task', `<p>The exam page shows two faces (From and To), different for every student. Make a short video that turns the first face smoothly into the second, then submit a public HTTPS link to an <strong>MP4 or WebM</strong> file smaller than <strong>${VIDEO_MAX_BYTES.toLocaleString('en-US')} bytes</strong>. Check gives 0.5 marks for a playable video; classmates rate how smooth it looks for 4 more marks later.</p>`, 'accent'),
       card('Step by step for beginners', '<ol><li>On the exam page, right-click the <strong>From</strong> photo and save it. Then save the <strong>To</strong> photo.</li><li>Use the maker below: choose the From file, then the To file, and press <strong>Make my morph video</strong>. Wait while it records (a few seconds). It makes a small WebM that is already under the size limit.</li><li>Press <strong>Download</strong>. Play it once to check it looks smooth.</li><li>Put it online: create a <em>public</em> GitHub repository, press <strong>Add file → Upload files</strong>, drag the video in, press <strong>Commit changes</strong>. Then click the file, press <strong>Raw</strong>, and copy the address (starts with <code>https://raw.githubusercontent.com/</code>). The tool below can also build it.</li><li>Paste the link in the exam Answer box and press <strong>Check</strong>, then <strong>Save</strong>.</li></ol>'),
       card('Video maker and link helper', widgetHtml(), 'accent'),
+      details('How to get your personal link', HOW_TO_LINK),
       card('Want a more convincing morph?', '<p>The maker above does a smooth cross-dissolve with a slight zoom, which is enough for Check. Classmates score how natural the change looks, so for a better one:</p><ol><li>Use a free face-morph tool (search for “face morph video online”) with your two photos, keep the clip short (2 to 3 seconds).</li><li>Shrink it to under 100 KB: lower the resolution to about 240 to 320 pixels wide, 10 to 15 frames per second, no sound. An online “video compressor” can do this; check the exact size in your file properties (<strong>must be below 100,000 bytes</strong>).</li><li>Line up the eyes of the two photos before morphing; it makes the change look much more natural.</li></ol>'),
       details('If something goes wrong', '<ul><li><strong>“Could not fetch the video”</strong>: the link is not public, or the host blocks other websites. Use a GitHub Raw link.</li><li><strong>“Submit a valid MP4 or WebM”</strong>: you linked a web page. Use the Raw link to the file itself.</li><li><strong>Too big</strong>: choose 2 seconds and make it again, or compress further.</li><li>The maker needs a computer browser with video recording (Chrome, Edge or Firefox).</li></ul>'),
     ],
