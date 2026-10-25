@@ -1,5 +1,6 @@
 import { page, card, details, escapeHtml } from './ui.js';
 import { GLB_MAX_BYTES, checkHostedUrl, rawGithubUrl } from './face-logic.js';
+import { buildHeadGlb, validateGlb } from './head-glb.js';
 
 export const id = 'q-3d-face-model';
 export const title = 'Reconstruct a famous face in 3D';
@@ -11,6 +12,17 @@ const slug = (text) => String(text ?? '').toLowerCase().normalize('NFKD').replac
 export function fileNames(person) {
   const base = slug(person);
   return { repo: `${base}-3d`, file: `${base}.glb` };
+}
+
+function quickHtml() {
+  return [
+    '<div id="t3ga3-quick">',
+    '<p><strong>No time for Meshy?</strong> This makes a valid, rotatable 3D head from your photo in your browser: a head-shaped model wearing your photo. It passes the 0.5-mark file check, but it is only a rough likeness, so use Meshy below if you want the 7.5 likeness marks.</p>',
+    '<label for="t3qPhoto">Your assigned photograph (saved from the exam page)</label><input type="file" id="t3qPhoto" accept="image/*">',
+    '<div class="p1-actions"><button type="button" class="p1-btn" id="t3qGo" onclick="window._t3ga3Face.quick()">Make my 3D head (.glb)</button></div>',
+    '<div id="t3qStatus" class="p1-status" role="status"></div><div id="t3qOut"></div>',
+    '</div>',
+  ].join('');
 }
 
 function widgetHtml() {
@@ -50,6 +62,40 @@ function register() {
       say('t3f3Out', url, 'ok');
       if ($('t3f3Url')) $('t3f3Url').value = url;
     },
+    async quick() {
+      const go = $('t3qGo');
+      try {
+        go.disabled = true;
+        const file = $('t3qPhoto')?.files?.[0];
+        if (!file || !/^image\//.test(file.type)) throw new Error('Choose the image file you saved from the exam page.');
+        const img = await new Promise((resolve, reject) => {
+          const url = URL.createObjectURL(file);
+          const el = new Image();
+          el.onload = () => { URL.revokeObjectURL(url); resolve(el); };
+          el.onerror = () => { URL.revokeObjectURL(url); reject(new Error('That image could not be opened. Try a JPG or PNG.')); };
+          el.src = url;
+        });
+        const scale = Math.min(1, 768 / Math.max(img.width, img.height));
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.max(2, Math.round(img.width * scale));
+        canvas.height = Math.max(2, Math.round(img.height * scale));
+        canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+        let glb = null;
+        for (const quality of [0.9, 0.8, 0.65, 0.5, 0.35]) {
+          const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', quality));
+          const bytes = buildHeadGlb({ jpeg: new Uint8Array(await blob.arrayBuffer()), aspect: canvas.width / canvas.height });
+          if (validateGlb(bytes).ok) { glb = bytes; break; }
+        }
+        if (!glb) throw new Error('Could not make a file under 2,000,000 bytes from that photo. Try a smaller image.');
+        const url = URL.createObjectURL(new Blob([glb], { type: 'model/gltf-binary' }));
+        $('t3qOut').innerHTML = `<p><a class="p1-btn" download="face.glb" href="${url}">Download face.glb</a></p><p class="p1-foot">${glb.length.toLocaleString('en-US')} bytes. Check it by dropping it on <a href="https://gltf-viewer.donmccurdy.com/" target="_blank" rel="noopener noreferrer">gltf-viewer.donmccurdy.com</a>, then host it with the GitHub steps below.</p>`;
+        say('t3qStatus', 'Done. Valid GLB created.', 'ok');
+      } catch (error) {
+        say('t3qStatus', error?.message || 'Could not make the model.', 'bad');
+      } finally {
+        go.disabled = false;
+      }
+    },
     check() {
       const result = checkHostedUrl($('t3f3Url')?.value, 'glb');
       say('t3f3CheckOut', result.ok ? `Looks right. ${result.warnings.join(' ')} Open it in a private window: it should download or show a file, not a web page.` : result.message, result.ok ? 'ok' : 'bad');
@@ -64,6 +110,7 @@ export async function solve() {
     chips: [{ text: '0.5 marks: file check', tone: '' }, { text: '7.5 marks: likeness review', tone: '' }, { text: 'Your own photo', tone: 'warn' }],
     sections: [
       card('Your task', `<p>The exam page shows <strong>one photograph of a famous person, different for every student</strong>. Create a rotatable 3D face of that person, then submit one direct public HTTPS link to a valid <code>.glb</code> file. The file must allow cross-origin requests and be no larger than <strong>${GLB_MAX_BYTES.toLocaleString('en-US')} bytes</strong>.</p><p class="p1-note">Use the photograph and name shown on <em>your</em> exam page. Nothing here can know your person, so the tools below ask you for it.</p>`, 'accent'),
+      card('Quick start: instant 3D head from your photo', quickHtml(), 'accent'),
       card('Step by step: make the 3D face', '<ol><li>On the exam page, right-click your photograph and save it to your device (or press “Open source photograph”).</li><li>Open <a href="https://www.meshy.ai/" target="_blank" rel="noopener noreferrer">Meshy</a> and sign in.</li><li>Choose <strong>Image to 3D</strong> and select <strong>Meshy 6 Lite</strong>.</li><li>Upload your saved photograph as the reference image. Use the supplied photograph, not a different person.</li><li>Generate the model and wait. Check that the face looks like the photograph, not a generic person.</li><li>Generate the texture too: click the large green texture button shown after the first generation, then wait for it to finish.</li><li>Rotate the preview: front, sides, back. If the likeness is poor, try again with a clearer image prepared by GPT or Gemini. Tell it to keep the person\'s distinctive features and match the reference exactly; do not ask it to invent a different face.</li><li>Export/download as <strong>GLB</strong> (glTF 2.0). Do not submit a screenshot, OBJ, ZIP, or a viewer-page link.</li></ol>'),
       card('Make the file fit the limit', `<ol><li>Check the downloaded file ends in <code>.glb</code> and see its size in your file properties.</li><li>If it is over ${GLB_MAX_BYTES.toLocaleString('en-US')} bytes, ask GPT to compress it. Prompt: <blockquote>Compress this attached 3D model into a valid GLB (glTF 2.0) no larger than 1,900,000 bytes. Preserve the face likeness, shape, and texture as much as possible. Return the compressed .glb file and tell me its exact byte size. Do not return a viewer link or change it to another format.</blockquote></li><li>Download the result and check its exact size again. If it is still too large, ask for another pass or lower the texture size.</li><li>Open the final GLB in a viewer and rotate it once. Keep a backup of the original export.</li></ol>`),
       card('Easy hosting with GitHub', '<ol><li>Sign in to <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>.</li><li>Open <a href="https://github.com/new" target="_blank" rel="noopener noreferrer">github.com/new</a>. Use the repository name suggested by the tool below, choose <strong>Public</strong>, press <strong>Create repository</strong>. It must be public so the exam can download the model.</li><li>On the new repository page press <strong>Add file → Upload files</strong>, drag in your final GLB, and press <strong>Commit changes</strong>. You do not need GitHub Pages.</li><li>Click the uploaded file, press <strong>Raw</strong>, and copy the address. It starts with <code>https://raw.githubusercontent.com/</code>. Or let the tool below build it from your username, repository and file name.</li><li>Never submit the repository page or a <code>github.com/…/blob/…</code> link; those are preview pages.</li><li>Open the link in a private window where you are signed out. A file should download or show; if it says 404, the repository is not public or the name is wrong.</li></ol>'),

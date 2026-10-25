@@ -611,6 +611,8 @@ async function checkT3Ga3(solvers, metadata) {
   await checkT3Ga3Faces();
 }
 
+function throwsSync(fn) { try { fn(); return false; } catch { return true; } }
+
 async function checkT3Ga3Faces() {
   const f = await importFresh('solvers/T32026/ga3/face-logic.js');
   const q6 = await importFresh('solvers/T32026/ga3/q06-famous-face-3d.js');
@@ -637,6 +639,19 @@ async function checkT3Ga3Faces() {
     const ladder = f.bitrateLadder(seconds);
     assert(ladder.length >= 3 && ladder.every((b, i) => i === 0 || b < ladder[i - 1]) && ladder[0] * seconds / 8 < f.VIDEO_MAX_BYTES, `T3 GA3 bitrate ladder for ${seconds}s must descend and stay under the size limit.`);
   }
+  const head = await importFresh('solvers/T32026/ga3/head-glb.js');
+  const jpegLike = Uint8Array.from({ length: 5000 }, (_, i) => i % 251);
+  const glb = head.buildHeadGlb({ jpeg: jpegLike, aspect: 0.75 });
+  const checked = head.validateGlb(glb);
+  assert(checked.ok && glb.length < 2000000 && checked.json.accessors.length === 4 && checked.json.meshes.length === 1 && checked.json.images[0].mimeType === 'image/jpeg' && glb.length % 4 === 0, 'T3 GA3 quick head must be a valid GLB under the size limit.');
+  const view = new DataView(glb.buffer);
+  const bufferView = checked.json.bufferViews[4];
+  const binStart = 20 + view.getUint32(12, true) + 8;
+  assert(glb.slice(binStart + bufferView.byteOffset, binStart + bufferView.byteOffset + 5000).every((byte, i) => byte === jpegLike[i]), 'T3 GA3 quick head must embed the texture bytes unchanged.');
+  const bounds = checked.json.accessors[0];
+  assert(new Float32Array(glb.buffer.slice(binStart, binStart + 12 * 49 * 49)).every((x, i) => Math.abs(x) <= [bounds.max[0], bounds.max[1], bounds.max[2]][i % 3] + 1e-6), 'T3 GA3 quick head vertices must stay inside the declared bounds.');
+  for (const broken of [glb.slice(0, 19), glb.slice(0, glb.length - 4), Uint8Array.from(glb, (b, i) => (i === 0 ? 0 : b)), Uint8Array.from(glb, (b, i) => (i === 4 ? 1 : b)), new Uint8Array(2000001)]) assert(!head.validateGlb(broken).ok, 'T3 GA3 GLB validator must reject broken files.');
+  assert(throwsSync(() => head.buildHeadGlb({ jpeg: new Uint8Array(3) })), 'T3 GA3 quick head needs a real texture.');
   assert(f.ease(0) === 0 && f.ease(1) === 1 && f.ease(-3) === 0 && f.ease(9) === 1 && f.ease(0.5) === 0.5, 'T3 GA3 easing must be clamped.');
   assert(q6.fileNames('Marie Curie').file === 'marie-curie.glb' && q6.fileNames('').repo === 'face-3d' && q6.fileNames('"><img src=x>').file === 'img-src-x.glb', 'T3 GA3 Q6 file names must be safe slugs.');
 }
