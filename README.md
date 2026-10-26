@@ -198,9 +198,11 @@ tds-roe-solver/
 │   │   │   ├── 📄 q-case-4a.js   # Case 4A: QC Queue Smell Test
 │   │   │   ├── 📄 q-case-3b.js   # Case 3B: Irish Preference Claim
 │   │   │   └── 📄 q-case-4b.js   # Case 4B: Spare-Parts Search
-│   ├── 📂 T32026/                # Term 3 (GA1 Developer Tools & GA2 API Engineering)
+│   ├── 📂 T32026/                # Term 3 (GA1, GA2, GA3 Agent Safety & Trading Games, Project 1)
 │       ├── 📂 ga1/               # GA1 16 official slots (Tangram SVG, Git forensics, Ledger)
-│       └── 📂 ga2/               # GA2 15 official slots (CORS, OAuth, Observability, Ollama)
+│       ├── 📂 ga2/               # GA2 15 official slots (CORS, OAuth, Observability, Ollama)
+│       ├── 📂 ga3/               # GA3 8 official slots (agent endpoints, face tools, game guides)
+│       └── 📂 p1/                # Project 1 7 official slots (forecast, games, receipts)
 │   └── 📂 shared/                # Cross-term helpers, including timeout cleanup
 ├── 📂 .github/                   # CI, security guidance, and dependency automation
 ├── 📂 scripts/
