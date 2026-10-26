@@ -42,6 +42,47 @@ export const WINDOWS = {
     settlementTo: at('2026-11-16T23:59:59Z'),
     note: 'Predictions can be saved and revised until trading closes; the result token exists only after settlement.',
   },
+  faceExpressions: {
+    key: 'faceExpressions',
+    label: 'Face-expression photos',
+    opens: null,
+    closes: at('2026-10-26T23:59:59+05:30'),
+    graceMs: 0,
+    note: 'Worth 0 marks, but needed for the next task. Due the end of Monday 26 October 2026 (IST).',
+  },
+  exchangeR1: {
+    key: 'exchangeR1',
+    label: 'Human Exchange, Round 1 trading',
+    opens: at('2026-10-22T12:00:00+05:30'),
+    closes: at('2026-11-01T00:00:00+05:30'),
+    graceMs: 0,
+    settlesBy: at('2026-11-03T00:00:00+05:30'),
+    note: 'Open orders can still be paid and confirmed until the end of Monday 2 November; the final receipt exists after that.',
+  },
+  pictureCreate: {
+    key: 'pictureCreate',
+    label: 'Picture Stories: create',
+    opens: at('2026-10-24T12:00:00+05:30'),
+    closes: at('2026-10-29T12:00:00+05:30'),
+    graceMs: 0,
+    note: 'You can replace your picture and story until the deadline.',
+  },
+  pictureNarrate: {
+    key: 'pictureNarrate',
+    label: 'Picture Stories: narrate and rank',
+    opens: at('2026-10-29T12:00:00+05:30'),
+    closes: at('2026-11-01T12:00:00+05:30'),
+    graceMs: 0,
+    note: 'Narrate 10 classmate pictures (45 seconds each) and confirm your final order.',
+  },
+  pictureReceipt: {
+    key: 'pictureReceipt',
+    label: 'Picture Stories: final receipt',
+    opens: at('2026-11-03T00:00:00+05:30'),
+    closes: at('2026-11-18T00:00:00+05:30'),
+    graceMs: 0,
+    note: 'Copy the final receipt from Result after the game closes and paste it by the end of Tuesday 17 November.',
+  },
 };
 
 /** The two-digit pad used by every formatter below. */

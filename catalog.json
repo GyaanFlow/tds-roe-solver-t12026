@@ -10,8 +10,8 @@
           "id": "p1",
           "label": "Project 1",
           "group": "Projects",
-          "description": "AI Pipe usage prediction market, a 60-second Human Exchange offer, Air Ink phone drawing and the Missing Invoice trading game — with forecast, script and invoice tools.",
-          "solverCount": 4,
+          "description": "AI Pipe usage prediction market, a 60-second Human Exchange offer, Air Ink phone drawing, the Missing Invoice game, face-expression capture, Human Exchange Round 1 and Picture Stories — with forecast, script, invoice, marks-planner, story and receipt tools.",
+          "solverCount": 7,
           "questions": [
             {
               "id": "q-prediction-aipipe-server",
@@ -28,6 +28,18 @@
             {
               "id": "q-trading-missing-invoice",
               "title": "Trading game: Reconcile the Missing Invoice"
+            },
+            {
+              "id": "q-face-expressions",
+              "title": "Capture 10 facial expressions (preparation for the next task)"
+            },
+            {
+              "id": "q-trading-human-exchange-r1",
+              "title": "Trading game: Human Exchange, Round 1"
+            },
+            {
+              "id": "q-trading-picture-story",
+              "title": "Trading game: Picture Stories"
             }
           ]
         },

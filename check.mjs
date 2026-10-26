@@ -340,12 +340,13 @@ async function checkT3P1(solvers, metadata) {
 
   // Registry: same ids, titles and order as the official bundle snapshot.
   const official = fs.readFileSync(path.join(rootDir, 'solvers/T32026/p1/exam-source.js'), 'utf8');
-  const officialIds = [...official.matchAll(/\be = "(q-[a-z-]+)"/g)].map((m) => m[1]);
-  const officialTitles = [...official.matchAll(/\bs = "([^"]+)"/g)].map((m) => m[1].replace(/\\u2013/g, '–'));
-  assert(solvers.length === 4 && metadata.questionCount === 4 && metadata.exam === 'p1' && metadata.term === 'T32026', 'T3 P1 must register exactly four questions.');
-  assert(JSON.stringify(solvers.map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 4, `T3 P1 ids/order differ from the official bundle: ${officialIds.join(', ')}`);
+  const officialPairs = [...official.matchAll(/\b[a-z] = "(q-[a-z0-9-]+)",\s*\n\s*[a-z] = "([^"]+)"/g)].map((m) => [m[1], m[2].replace(/\\u2013/g, '–')]);
+  const officialIds = officialPairs.map((pair) => pair[0]);
+  const officialTitles = officialPairs.map((pair) => pair[1]);
+  assert(solvers.length === 7 && metadata.questionCount === 7 && metadata.exam === 'p1' && metadata.term === 'T32026', 'T3 P1 must register all seven official questions.');
+  assert(JSON.stringify(solvers.map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 7, `T3 P1 ids/order differ from the official bundle: ${officialIds.join(', ')}`);
   assert(solvers.every((s, i) => s.title === officialTitles[i]), 'T3 P1 titles must match the official bundle.');
-  assert(solvers.map((s) => s.id).join() === 'q-prediction-aipipe-server,q-audio-tds-human-exchange,q-motion-air-ink,q-trading-missing-invoice', 'T3 P1 question ids changed.');
+  assert(solvers.map((s) => s.id).join() === 'q-prediction-aipipe-server,q-audio-tds-human-exchange,q-motion-air-ink,q-trading-missing-invoice,q-face-expressions,q-trading-human-exchange-r1,q-trading-picture-story', 'T3 P1 question ids changed.');
 
   // ---- deadlines (IST, injectable clock) ----
   const W = windows.WINDOWS;
@@ -515,6 +516,10 @@ async function checkT3P1(solvers, metadata) {
     assert(results[1].guide.includes('t3p1HeRoot') && results[1].guide.includes('recorded') && results[1].guide.includes('own natural voice') && results[1].answer.includes('recorded'), 'T3 P1 Q2 must offer the script builder and require the student\'s own voice.');
     assert(results[2].guide.includes('t3p1AirRoot') && /no AI agents/i.test(results[2].guide) && results[2].answer.includes('yourself'), 'T3 P1 Q3 must keep the no-AI-agents rule.');
     assert(results[3].guide.includes('t3p1InvRoot') && results[3].guide.includes('Pay for goods received') && results[3].guide.includes('played') && results[3].answer.includes('played'), 'T3 P1 Q4 must offer the calculator and state the rule.');
+    assert(results[4].guide.includes('t3p1Face') && results[4].guide.includes('completed') && results[4].guide.includes('Google Form') && results[4].answer.includes('completed') && (results[4].guide.match(/data-expr="/g) || []).length === 10, 'T3 P1 Q5 must carry the 10-expression checklist and the honest completed rule.');
+    assert(results[5].guide.includes('t3p1Ex') && results[5].guide.includes('t3p1R-exchange') && results[5].guide.includes('final receipt') && /confirm.*Google/i.test(results[5].guide), 'T3 P1 Q6 must carry the listing writer, marks planner and receipt check.');
+    assert(results[6].guide.includes('t3p1Ps') && results[6].guide.includes('t3p1R-stories') && /No words at all/.test(results[6].guide) && results[6].guide.includes('45-second'), 'T3 P1 Q7 must carry the story tools, the no-words rule and the receipt check.');
+    await checkT3P1Extras();
     const hostile = await q1.solve('"><img/src=x/onerror=alert(1)>@x.com');
     assert(!/<img.src=x/i.test(hostile.guide), 'T3 P1 must escape the email in its forms.');
     const hostile4 = await solvers[3].solve('"><img/src=x/onerror=alert(1)>@x.com').catch((e) => ({ type: 'error', guide: String(e) }));
@@ -682,6 +687,37 @@ async function checkT3Ga3Faces() {
   assert(inp.suggestRatings(front, front, 100, 100).pose === 0 && inp.suggestRatings(front, turned, 100, 100).pose === 2 && inp.suggestRatings(front, front, 40, 140).skin === 2 && inp.suggestRatings(front, front, 100, 120).skin === 0 && inp.suggestRatings(null, front, NaN, 5).pose === 2 && inp.suggestRatings(front, front, NaN, NaN).skin === 0, 'T3 GA3 rating suggestions must follow pose and lighting differences.');
   assert(f.ease(0) === 0 && f.ease(1) === 1 && f.ease(-3) === 0 && f.ease(9) === 1 && f.ease(0.5) === 0.5, 'T3 GA3 easing must be clamped.');
   assert(q6.fileNames('Marie Curie').file === 'marie-curie.glb' && q6.fileNames('').repo === 'face-3d' && q6.fileNames('"><img src=x>').file === 'img-src-x.glb', 'T3 GA3 Q6 file names must be safe slugs.');
+}
+
+async function checkT3P1Extras() {
+  const receipt = await importFresh('solvers/T32026/p1/receipt.js');
+  const marks = await importFresh('solvers/T32026/p1/trade-marks.js');
+  const windows = await importFresh('solvers/T32026/p1/windows.js');
+  const b64 = (value) => Buffer.from(JSON.stringify(value)).toString('base64url');
+  const good = `${b64({ alg: 'ES256', typ: 'JWT' })}.${b64({ final: true, score: 3.5, email: 'a@b.c' })}.c2ln`;
+  const now = Date.parse('2026-11-04T00:00:00Z');
+  assert(receipt.checkReceipt(good, { now }).ok && receipt.checkReceipt(`  "${good}"\n`, { now }).ok && receipt.checkReceipt(good.replace('.', '.\n'), { now }).receipt === good, 'T3 P1 receipt check must accept a well-formed receipt and clean copy/paste noise.');
+  assert(receipt.checkReceipt(good, { now, finalFrom: now + 1000 }).warnings.some((w) => w.includes('has not closed')), 'T3 P1 receipt check must warn before the game has closed.');
+  const provisional = `${b64({ alg: 'ES256' })}.${b64({ provisional: true })}.c2ln`;
+  const expired = `${b64({ alg: 'ES256' })}.${b64({ exp: 1000 })}.c2ln`;
+  assert(!receipt.checkReceipt(provisional, { now }).ok && receipt.checkReceipt(expired, { now }).warnings.some((w) => w.includes('expired')), 'T3 P1 receipt check must reject provisional receipts and warn about expired ones.');
+  for (const bad of ['', 'hello', 'a.b', 'a.b.c.d', 'https://x.org/receipt', 'eyJ!.eyJ!.x', `${b64({ alg: 'ES256' })}.${Buffer.from('not json').toString('base64url')}.x`, 'x'.repeat(25000)]) assert(!receipt.checkReceipt(bad, { now }).ok, `T3 P1 receipt check must reject "${bad.slice(0, 20)}".`);
+  assert(receipt.checkReceipt(good, { now }).fields.score === '3.5' && !('nested' in receipt.checkReceipt(`${b64({ alg: 'ES256' })}.${b64({ nested: { a: 1 } })}.x`, { now }).fields), 'T3 P1 receipt fields must show simple values only.');
+  // Published mark formulas.
+  const m = marks.exchangeMarks;
+  assert(m({}).total === 0 && m({ newBuyers: 1 }).total === 4 && m({ newBuyers: 3 }).selling === 7 && m({ newSellers: 3 }).buying === 3.5 && m({ newBuyers: 2, newSellers: 1 }).total === 8 && m({ newBuyers: 6, newSellers: 6 }).total === 10 && m({ newBuyers: 6, newSellers: 6 }).capped && m({ newBuyers: -5, newSellers: 'x' }).total === 0, 'T3 P1 exchange marks must follow the published halving formulas, capped at 10.');
+  assert(marks.nextTradeValue({}).selling === 4 && marks.nextTradeValue({ newBuyers: 2, newSellers: 1 }).selling === 1 && marks.nextTradeValue({ newBuyers: 2, newSellers: 1 }).buying === 1, 'T3 P1 next-trade value must halve each time.');
+  const offer = marks.buildOffer({ service: 'I can explain SQL joins.', forWho: 'beginners', deliver: 'I will send a short note', price: 99 });
+  assert(offer.ok && offer.credits === 10 && !/I can I can|I will I will/.test(offer.text) && offer.text.includes('SQL joins') && !marks.buildOffer({ service: '', forWho: 'x', deliver: 'y' }).ok && marks.buildOffer({ service: 'a', forWho: 'b', deliver: 'c', price: 'abc' }).credits === 3, 'T3 P1 listing writer must be clean and bounded.');
+  const story = marks.buildStory({ situation: 'A robot is alone', change: 'A girl shares an umbrella', outcome: 'They leave together.' });
+  assert(story.ok && story.lines.length === 3 && story.lines.every((l) => /[.!?]$/.test(l)) && !marks.buildStory({ situation: 'x' }).ok, 'T3 P1 story builder needs all three parts.');
+  const prompt = marks.buildPicturePrompt({ situation: 'A robot is alone', change: 'A girl shares an umbrella', outcome: 'They leave together', panels: 9 });
+  assert(prompt.ok && /NO words/.test(prompt.prompt) && prompt.prompt.includes('4 panels') && marks.buildPicturePrompt({ situation: 'A', change: 'B', outcome: 'C', panels: 1 }).prompt.includes('one single scene'), 'T3 P1 picture prompt must forbid words and clamp the panel count.');
+  const crop = marks.squareCrop(1600, 900, 1024);
+  assert(crop.side === 900 && crop.sx === 350 && crop.sy === 0 && crop.out === 900 && marks.squareCrop(400, 600, 1024).sy === 100 && marks.squareCrop(3000, 3000, 1024).out === 1024 && marks.squareCrop(0, 5) === null && marks.squareCrop('x', 5) === null, 'T3 P1 square crop must centre-crop and never upscale.');
+  // New deadlines.
+  const W = windows.WINDOWS;
+  assert(windows.windowStatus(W.faceExpressions, Date.parse('2026-10-26T23:59:58+05:30')).state === 'open' && windows.windowStatus(W.faceExpressions, Date.parse('2026-10-27T00:00:00+05:30')).state === 'closed' && windows.windowStatus(W.exchangeR1, Date.parse('2026-10-22T11:59:59+05:30')).state === 'before' && windows.windowStatus(W.exchangeR1, Date.parse('2026-10-22T12:00:00+05:30')).state === 'open' && windows.windowStatus(W.pictureCreate, Date.parse('2026-10-29T12:00:00+05:30')).state === 'closed' && windows.windowStatus(W.pictureNarrate, Date.parse('2026-10-29T12:00:00+05:30')).state === 'open' && windows.windowStatus(W.pictureReceipt, Date.parse('2026-11-02T12:00:00+05:30')).state === 'before', 'T3 P1 new deadlines are wrong.');
 }
 
 async function checkT3Ga1(solvers, metadata) {
