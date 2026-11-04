@@ -165,6 +165,7 @@ async function checkServerRoutes() {
       ['/solvers/T32026/ga1/registry.js', 200],
       ['/solvers/T32026/ga2/registry.js', 200],
       ['/solvers/T32026/ga3/registry.js', 200],
+      ['/solvers/T32026/ga4/registry.js', 200],
       ['/solvers/T32026/p1/registry.js', 200],
       ['/solvers/T22026/endterm/registry.js', 200],
       ['/mock-banks/T2-2026-End-Term-Mock.browser.js', 200],
@@ -687,6 +688,40 @@ async function checkT3Ga3Faces() {
   assert(inp.suggestRatings(front, front, 100, 100).pose === 0 && inp.suggestRatings(front, turned, 100, 100).pose === 2 && inp.suggestRatings(front, front, 40, 140).skin === 2 && inp.suggestRatings(front, front, 100, 120).skin === 0 && inp.suggestRatings(null, front, NaN, 5).pose === 2 && inp.suggestRatings(front, front, NaN, NaN).skin === 0, 'T3 GA3 rating suggestions must follow pose and lighting differences.');
   assert(f.ease(0) === 0 && f.ease(1) === 1 && f.ease(-3) === 0 && f.ease(9) === 1 && f.ease(0.5) === 0.5, 'T3 GA3 easing must be clamped.');
   assert(q6.fileNames('Marie Curie').file === 'marie-curie.glb' && q6.fileNames('').repo === 'face-3d' && q6.fileNames('"><img src=x>').file === 'img-src-x.glb', 'T3 GA3 Q6 file names must be safe slugs.');
+}
+
+async function checkT3Ga4(solvers, metadata) {
+  const official = fs.readFileSync(path.join(rootDir, 'solvers/T32026/ga4/exam-source.js'), 'utf8');
+  const officialIds = [...official.matchAll(/^\s+(?:let )?[a-z] = "(q-[a-z0-9-]+)"/gm)].map((m) => m[1]);
+  assert(solvers.length === 1 && metadata.questionCount === 1 && metadata.exam === 'ga4' && metadata.term === 'T32026', 'T3 GA4 must register its one official question.');
+  assert(JSON.stringify(solvers.map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 1, `T3 GA4 ids differ from the official bundle: ${officialIds.join(', ')}`);
+  const fr = await importFresh('solvers/T32026/ga4/face-receipt.js');
+  const b64 = (value) => Buffer.from(JSON.stringify(value)).toString('base64url');
+  const email = 'student.one@ds.study.iitm.ac.in';
+  const now = Date.parse('2026-11-04T08:00:00Z');
+  const make = (overrides = {}, counts = [17, 8, 8], header = { alg: 'ES256', typ: 'JWT', kid: 'k' }) => `${b64(header)}.${b64({ iss: fr.ISSUER, aud: fr.AUDIENCE, purpose: fr.PURPOSE, exam: fr.REVIEWED_EXAM, sub: email, assessments: Object.fromEntries(fr.CATEGORIES.map((c, i) => [c.id, { count: counts[i], required: 8, completed: counts[i] >= 8 }])), completed: counts.every((n) => n >= 8), iat: now / 1000 - 3600, exp: now / 1000 + 86400, ...overrides })}.c2ln`;
+  const good = fr.checkFaceReceipt(make(), { email, now });
+  assert(good.ok && good.categories.length === 3 && good.categories[0].count === 17 && good.categories.every((c) => c.done) && fr.checkFaceReceipt(`  "${make()}"\n`, { email: email.toUpperCase(), now }).ok, 'T3 GA4 a complete receipt for the right student must be accepted.');
+  assert(!fr.checkFaceReceipt(make(), { email: 'someone.else@ds.study.iitm.ac.in', now }).ok && fr.checkFaceReceipt(make(), { email: 'someone.else@ds.study.iitm.ac.in', now }).problems[0].includes('belongs to'), 'T3 GA4 another student\'s receipt must be refused.');
+  const short = fr.checkFaceReceipt(make({}, [8, 3, 8]), { email, now });
+  assert(!short.ok && short.problems.some((p) => p.includes('Morph videos 3/8')) && short.categories[1].missing === 5, 'T3 GA4 an unfinished category must be named.');
+  assert(!fr.checkFaceReceipt(make({ completed: false }), { email, now }).ok && !fr.checkFaceReceipt(make({ exp: now / 1000 - 5 }), { email, now }).ok && !fr.checkFaceReceipt(make({ purpose: 'trading' }), { email, now }).ok && !fr.checkFaceReceipt(make({}, [17, 8, 8], { alg: 'none' }), { email, now }).ok && !fr.checkFaceReceipt(make({ sub: '' }), { email, now }).ok, 'T3 GA4 expired, wrong-purpose, unsigned-looking and incomplete receipts must be refused.');
+  assert(fr.checkFaceReceipt(make({ iss: 'evil.example' }), { email, now }).warnings.length === 1 && fr.checkFaceReceipt(make({ assessments: null }), { email, now }).categories.every((c) => c.count === 0), 'T3 GA4 odd issuers must warn and missing counts must read as zero.');
+  for (const bad of ['', 'hello', 'a.b', 'https://x.org/r', 'x'.repeat(9000), 'eyJ!.eyJ!.x', `${b64({ alg: 'ES256' })}.${Buffer.from('nope').toString('base64url')}.x`]) assert(!fr.checkFaceReceipt(bad, { email, now }).ok, `T3 GA4 must refuse "${bad.slice(0, 20)}".`);
+  const plan = fr.reviewPlan({ 'q-3d-face-model': 8, 'q-face-morph-video': 3, 'q-face-morph-rank': 'x' });
+  assert(plan.missing === 13 && plan.total === 11 && !plan.done && fr.reviewPlan({ 'q-3d-face-model': 8, 'q-face-morph-video': 9, 'q-face-morph-rank': 50 }).done && fr.reviewPlan().missing === 24 && fr.reviewPlan({ 'q-3d-face-model': -4 }).rows[0].count === 0, 'T3 GA4 review planner arithmetic is wrong.');
+  const savedFetch = globalThis.fetch;
+  let networkCalls = 0;
+  globalThis.fetch = async () => { networkCalls += 1; throw new Error('network is not allowed while preparing'); };
+  try {
+    const result = await solvers[0].solve(email);
+    assert(networkCalls === 0 && result.type === 'guide' && result.guide.includes('t3g4Text') && result.guide.includes('Generate &amp; copy receipt') && /Step by step for beginners/.test(result.guide) && result.answer.length > 40 && !/eyJ[A-Za-z0-9_-]{10,}/.test(result.guide + result.answer), 'T3 GA4 must return a guide with the receipt checker and no network calls.');
+    assert(!/\n\s*\n/.test(result.guide) && result.guide.includes('class="p1"'), 'T3 GA4 guide must be one contiguous HTML block.');
+    const hostile = await solvers[0].solve('"><img/src=x/onerror=alert(1)>@x.com').catch((e) => ({ guide: String(e) }));
+    assert(!/<img.src=x/i.test(hostile.guide ?? ''), 'T3 GA4 must not echo a hostile email unescaped.');
+  } finally {
+    globalThis.fetch = savedFetch;
+  }
 }
 
 async function checkT3P1Extras() {
@@ -2263,6 +2298,13 @@ async function main() {
     return;
   }
 
+  if (process.argv.includes('--t3-ga4-only')) {
+    const registry = await importFresh('solvers/T32026/ga4/registry.js');
+    await checkT3Ga4(registry.solvers, registry.metadata);
+    console.log(`T3 GA4 checks passed: ${registry.solvers.length} official question slot.`);
+    return;
+  }
+
   if (process.argv.includes('--t3-ga3-only')) {
     const registry = await importFresh('solvers/T32026/ga3/registry.js');
     await checkT3Ga3(registry.solvers, registry.metadata);
@@ -2383,6 +2425,8 @@ async function main() {
   await checkT3P1(t3P1Registry.solvers, t3P1Registry.metadata);
   const t3Ga3Registry = await importFresh('solvers/T32026/ga3/registry.js');
   await checkT3Ga3(t3Ga3Registry.solvers, t3Ga3Registry.metadata);
+  const t3Ga4Registry = await importFresh('solvers/T32026/ga4/registry.js');
+  await checkT3Ga4(t3Ga4Registry.solvers, t3Ga4Registry.metadata);
 
   await checkServerRoutes();
 

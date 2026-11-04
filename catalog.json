@@ -44,6 +44,19 @@
           ]
         },
         {
+          "id": "ga4",
+          "label": "GA 4 (Peer Review of GA3 Faces)",
+          "group": "Weekly Graded Assignments",
+          "description": "Peer review of classmates' GA3 face work: a step-by-step guide, a progress planner and a receipt checker for the signed participation proof.",
+          "solverCount": 1,
+          "questions": [
+            {
+              "id": "q-ga4-face-peer-review-server",
+              "title": "Review classmates' GA3 faces (24 comparisons)"
+            }
+          ]
+        },
+        {
           "id": "ga3",
           "label": "GA 3 (Agent Safety & Trading Games)",
           "group": "Weekly Graded Assignments",

@@ -4,7 +4,7 @@
 
 const B64URL = /^[A-Za-z0-9_-]+$/;
 
-function decodePart(part) {
+export function decodePart(part) {
   try {
     const padded = part.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - (part.length % 4)) % 4);
     const text = typeof atob === 'function' ? atob(padded) : Buffer.from(padded, 'base64').toString('binary');
