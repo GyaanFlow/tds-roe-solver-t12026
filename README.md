@@ -157,6 +157,21 @@ The home page lists every term, exam and question the portal supports, so studen
 *   **Creator card:** photo (hover popup with GitHub, LinkedIn, and Instagram DM links), live GitHub follower and star counts (cached for an hour, hidden if the API is unreachable), and GitHub/repository/LinkedIn/Instagram contact chips. Instagram: [@gt_techie](https://www.instagram.com/gt_techie/).
 *   **Production:** https://tds-portal-solver.vercel.app (Vercel; `main` deploys to production, `dev` gets a preview).
 
+### T3 2026 at a glance
+
+| Exam | Questions | What the portal gives the student |
+|---|---|---|
+| GA1 Developer Tools | 16 | Local solvers, live API links (Q6, Q14, Q15, Q2), Git-history finder, Tangram, LLM prompt tester |
+| GA2 API Engineering | 15 | Live API links, model-prompt tools |
+| GA3 Agent Safety & Trading Games | 8 | Agent endpoints (shared endpoint by default, optional personal one), 3D-face, morph-video and ranking tools, game guides |
+| GA4 Peer Review & Live Games | 4 | Peer-review planner and receipt checker, Food Court and Time Use Charts guides with live session times, optional idea builder |
+| GA5 RAG, Embeddings & Safety Router | 4 | Live RAG and harness endpoints with a wake-and-test tool, a local Ollama script with a matrix checker, a ball-tracking frame viewer |
+| Project 1 | 9 | Forecast, script, invoice, marks and story tools, model.json checker, receipt and record checkers |
+
+*   **Hosted hubs:** the live endpoints (GA1, GA3, GA5) run in the separate `tds-roe-solver-api` project on Render. Its GA5 hub is mounted at `/t3ga5`; each student's endpoint URL is built from their own exam email, so no token is needed.
+*   **Where the work happens:** questions that need a student's own camera, recording, game play or private files are tools plus step-by-step guides. Questions that can be completed from an email or a pasted link are filled in directly.
+*   **Browser-only extras:** face tools, the frame viewer and the checkers run entirely in the student's browser; nothing they load is uploaded.
+
 ---
 
 ## 🎨 Premium Glassmorphic UI & Workspace Experience
@@ -246,6 +261,13 @@ With port 3000 available, run the registry, solver-output, mock-bank, catalog, a
 npm run check
 ```
 The same command is available as `npm test`. Validate the mock bank with `npm run mock:check`; `npm run mock:generate` intentionally rewrites generated mock artifacts.
+
+### Keeping up with the live exams
+The official exam files change after release (questions are added, deadlines move, marking is reworded). This command compares every T3 exam's live file with what the portal has built and with the saved snapshot of each exam's text:
+```bash
+npm run check:live
+```
+It needs the network, so it is not part of `npm run check`. Exit code 1 means something drifted; it prints the new or removed question ids and the changed lines. After updating the solvers, refresh the exam's `exam-source.js` snapshot and run it again.
 
 ### Generating the T2 2026 End-Term Mock Bank
 The official May 2026 course index is mapped into a reproducible practice bank with exactly 175 MCQs, 25 MSQs, and 100 subjective prompts:
