@@ -166,6 +166,7 @@ async function checkServerRoutes() {
       ['/solvers/T32026/ga2/registry.js', 200],
       ['/solvers/T32026/ga3/registry.js', 200],
       ['/solvers/T32026/ga4/registry.js', 200],
+      ['/solvers/T32026/ga5/registry.js', 200],
       ['/solvers/T32026/p1/registry.js', 200],
       ['/solvers/T22026/endterm/registry.js', 200],
       ['/mock-banks/T2-2026-End-Term-Mock.browser.js', 200],
@@ -696,6 +697,124 @@ async function checkT3Ga3Faces() {
   assert(q6.fileNames('Marie Curie').file === 'marie-curie.glb' && q6.fileNames('').repo === 'face-3d' && q6.fileNames('"><img src=x>').file === 'img-src-x.glb', 'T3 GA3 Q6 file names must be safe slugs.');
 }
 
+
+async function checkT3Ga5(solvers, metadata) {
+  const official = fs.readFileSync(path.join(rootDir, 'solvers/T32026/ga5/exam-source.js'), 'utf8');
+  const officialIds = [...official.matchAll(/^\s+(?:let )?[a-z] = "(q-[a-z0-9-]+)"/gm)].map((m) => m[1]);
+  assert(solvers.length === 4 && metadata.questionCount === 4 && metadata.exam === 'ga5' && metadata.term === 'T32026', 'T3 GA5 must register its four official questions.');
+  assert(JSON.stringify(solvers.map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 4, `T3 GA5 ids/order differ from the official bundle: ${officialIds.join(', ')}`);
+  const api = await importFresh('solvers/T32026/ga5/api-client.js');
+  const tools = await importFresh('solvers/T32026/ga5/ga5-tools.js');
+  const me = 'student.one@ds.study.iitm.ac.in';
+  const enc = 'student.one%40ds.study.iitm.ac.in';
+
+  // The answer URLs are exactly what the integration guide says: lower-cased, trimmed, @ encoded.
+  assert(api.examEmail('  Student.One@DS.Study.IITM.AC.IN ') === me && api.examEmail('nope') === '' && api.examEmail('a@b') === '' && api.examEmail('a b@c.de') === '' && api.examEmail('a@b.c/d') === '' && api.examEmail(`${'x'.repeat(250)}@a.bc`) === '' && api.examEmail(null) === '', 'T3 GA5 email normalising is wrong.');
+  assert(api.t3ga5Url(me) === `${api.T3_API_ORIGIN}/t3ga5/${enc}` && api.t3ga5Url('STUDENT.ONE@ds.study.iitm.ac.in', '/harness') === `${api.T3_API_ORIGIN}/t3ga5/${enc}/harness` && api.healthUrl() === `${api.T3_API_ORIGIN}/t3ga5/health` && api.scriptUrl(me).endsWith(`/t3ga5/${enc}/answers/ollama-script`) && api.datasetUrl(me).endsWith(`/t3ga5/${enc}/answers/ollama-dataset`) && throwsSync(() => api.t3ga5Url('bad')), 'T3 GA5 URL builders changed shape.');
+
+  // Waking the free server: retries, gives up, never throws.
+  let calls = 0;
+  const sleeps = [];
+  const sleepy = async (ms) => { sleeps.push(ms); };
+  const eventually = await api.wakeApi({ fetchImpl: async () => { calls += 1; if (calls < 3) throw new TypeError('Failed to fetch'); return { ok: true, json: async () => ({ status: 'ok' }) }; }, sleep: sleepy, tries: 6 });
+  const never = await api.wakeApi({ fetchImpl: async () => ({ ok: false }), sleep: sleepy, tries: 3 });
+  const wrongBody = await api.wakeApi({ fetchImpl: async () => ({ ok: true, json: async () => ({ status: 'starting' }) }), sleep: sleepy, tries: 2 });
+  assert(eventually.ok && eventually.tries === 3 && !never.ok && never.tries === 3 && !wrongBody.ok && !(await api.wakeApi({ fetchImpl: null })).ok && sleeps.length === 2 + 2 + 1, 'T3 GA5 wake-up must retry, stop, and never throw.');
+
+  // A fake hub that follows the contract; the probes must pass against it and fail against a broken one.
+  const passages = Array.from({ length: 50 }, (_, i) => ({ id: i, text: `Passage ${i} says that item ${i} has a value of ${i * 3}. It is noted elsewhere.` }));
+  const hub = (broken = '') => async (url, init = {}) => {
+    const route = new URL(url).pathname.replace(/^.*\/t3ga5\//, '');
+    const reply = (status, body) => ({ ok: status < 400, status, json: async () => body, headers: { get: () => 'application/json' } });
+    if (route.endsWith('/kb')) return broken === 'kb' ? reply(200, { count: 3, passages: [] }) : reply(200, { count: 50, passages });
+    const text = typeof init.body === 'string' ? init.body : '';
+    let body; try { body = JSON.parse(text); } catch { return reply(400, { error: 'INVALID_JSON' }); }
+    if (route.endsWith('/query')) {
+      if (!body || typeof body.question !== 'string') return reply(400, { error: 'QUESTION_STRING_REQUIRED' });
+      if (broken === 'order') return reply(200, { answer: 'x', sources: [1, 2], scores: [0.2, 0.9], confidence: 0.5 });
+      if (broken === 'range') return reply(200, { answer: 'x', sources: [77], scores: [0.9], confidence: 0.5 });
+      if (broken === 'length') return reply(200, { answer: 'x', sources: [1, 2], scores: [0.9], confidence: 0.5 });
+      return reply(200, { answer: 'The value is 3.', sources: [1, 4], scores: [0.9, 0.4], confidence: 0.8 });
+    }
+    if (route.endsWith('/harness')) {
+      if (!body || Array.isArray(body) || typeof body !== 'object') return reply(400, { error: 'JSON_OBJECT_REQUIRED' });
+      const ids = (body.cases || []).map((c) => c.caseId);
+      if (new Set(ids).size !== ids.length) return reply(422, { error: 'INVALID_BATCH' });
+      if (broken === 'profile') return reply(200, { batchId: body.batchId, results: [] });
+      return reply(200, { profile: 'ga5-harness/v1', batchId: body.batchId, results: ids.map((caseId) => ({ caseId, requestDecision: 'allow', toolDecision: 'none', route: 'small', trajectory: 'continue' })) });
+    }
+    return reply(404, {});
+  };
+  const base = api.t3ga5Url(me);
+  const good = api.summarizeProbes(await api.probeRag({ base, fetchImpl: hub() }));
+  assert(good.allPassed && good.total === 5, 'T3 GA5 the RAG probe must pass against a hub that follows the contract.');
+  for (const fault of ['kb', 'order', 'range', 'length']) assert(!api.summarizeProbes(await api.probeRag({ base, fetchImpl: hub(fault) })).allPassed, `T3 GA5 the RAG probe must catch a hub with the "${fault}" fault.`);
+  const harnessOk = api.summarizeProbes(await api.probeHarness({ url: `${base}/harness`, fetchImpl: hub() }));
+  assert(harnessOk.allPassed && harnessOk.total === 5 && !api.summarizeProbes(await api.probeHarness({ url: `${base}/harness`, fetchImpl: hub('profile') })).allPassed, 'T3 GA5 the harness probe must pass a correct hub and catch a missing profile.');
+  const down = async () => { throw new TypeError('Failed to fetch'); };
+  const downRag = await api.probeRag({ base, fetchImpl: down });
+  const downHarness = await api.probeHarness({ url: `${base}/harness`, fetchImpl: down });
+  assert(downRag.length === 5 && downRag.every((r) => !r.ok) && downHarness.length === 5 && downHarness.every((r) => !r.ok), 'T3 GA5 probes must report every row as failed (never throw) when the server is unreachable.');
+
+  // Q2 matrix rules, exactly as the exam states them.
+  const row = (a, rho = 0.7) => [...a, rho];
+  const goodMatrix = Array.from({ length: 10 }, (_, i) => row([i, i + 1, i + 2, i + 3, i + 4, i + 5], 0.5 + i / 100));
+  const parsed = tools.parseMatrixText('```json\n' + JSON.stringify(goodMatrix, null, 1).replace(/\]\s*\]$/, '],\n]') + '\n```');
+  assert(parsed.ok && tools.validateMatrix(parsed.value).ok && tools.validateMatrix(goodMatrix).compact === JSON.stringify(goodMatrix), 'T3 GA5 a correct matrix (even in a code fence with a trailing comma) must be accepted.');
+  const bad = (m) => !tools.validateMatrix(m).ok;
+  const withRow = (i, r) => goodMatrix.map((x, k) => (k === i ? r : x));
+  assert(bad(goodMatrix.slice(1)) && bad([...goodMatrix, goodMatrix[0]]) && bad('x') && bad(null) && bad(withRow(0, [1, 2, 3, 4, 5, 6])) && bad(withRow(0, row([0, 1, 2, 3, 4, 50]))) && bad(withRow(0, row([0, 1, 2, 3, 4, -1]))) && bad(withRow(0, row([0, 1, 1, 3, 4, 5]))) && bad(withRow(0, row([0, 1, 2, 3, 3, 5]))) && bad(withRow(0, row([0, 1, 2.5, 3, 4, 5]))) && bad(withRow(0, row([0, 1, 2, 3, 4, 5], 0.95))) && bad(withRow(0, row([0, 1, 2, 3, 4, 5], 1.2))) && bad(withRow(0, row([0, 1, 2, 3, 4, 5], '0.7'))) && bad(withRow(0, row([0, 1, 2, 3, 4, 5], null))), 'T3 GA5 broken matrices must be rejected with a reason.');
+  assert(tools.validateMatrix(withRow(2, row([0, 1, 2, 3, 4, 5], 0.99))).problems[0].startsWith('Row 3:') && !tools.parseMatrixText('').ok && !tools.parseMatrixText('[[1,2').ok && !tools.parseMatrixText('x'.repeat(30000)).ok, 'T3 GA5 matrix problems must name the row, and junk text must be refused.');
+  assert(tools.ollamaCommands(me, api.T3_API_ORIGIN, 'windows')[3] === `python ollama_matrix.py --email ${me} --host ${api.T3_API_ORIGIN}` && tools.ollamaCommands(me, api.T3_API_ORIGIN, 'mac')[3].startsWith('python3 ') && tools.ollamaCommands(me, api.T3_API_ORIGIN, 'linux')[2] === 'pip3 install requests numpy' && tools.ollamaCommands(me, api.T3_API_ORIGIN)[0] === 'ollama pull nomic-embed-text' && tools.ollamaCommands(me, api.T3_API_ORIGIN)[1] === 'ollama pull mxbai-embed-large', 'T3 GA5 Ollama commands changed.');
+
+  // Q3 frames file: the exam's own binary layout.
+  const png = (extra = 0) => Buffer.concat([Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]), Buffer.alloc(8 + extra, 1)]);
+  const u32 = (n) => { const b = Buffer.alloc(4); b.writeUInt32BE(n); return b; };
+  const framesFile = (count = 5, targets = [1, 3, 4], fps = 25) => Buffer.concat([u32(fps), u32(count), ...targets.map(u32), ...Array.from({ length: count }, (_, i) => Buffer.concat([u32(png(i).length), png(i)]))]);
+  const pf = tools.parseFrames(new Uint8Array(framesFile()));
+  assert(pf.ok && pf.fps === 25 && pf.count === 5 && JSON.stringify(pf.targets) === '[1,3,4]' && pf.frames.length === 5 && pf.trailing === 0 && pf.frames[0][0] === 24, 'T3 GA5 the frames file layout must be read exactly as the exam writes it.');
+  const whole = framesFile();
+  assert(!tools.parseFrames(new Uint8Array(whole.subarray(0, whole.length - 5))).ok && !tools.parseFrames(new Uint8Array(10)).ok && !tools.parseFrames(new Uint8Array(framesFile(5, [1, 3, 9]))).ok && !tools.parseFrames(new Uint8Array(framesFile(5, [1, 3, 4], 0))).ok && !tools.parseFrames(new Uint8Array(Buffer.concat([whole.subarray(0, 24), Buffer.from('notapngbytes!!!!'), whole.subarray(24 + 16)]))).ok && tools.parseFrames(new Uint8Array(Buffer.concat([whole, Buffer.from([1, 2, 3])]))).trailing === 3, 'T3 GA5 broken frames files must be refused with a reason.');
+  const ca = tools.composeAnswer;
+  assert(ca('042', [{ x: 118, y: 203 }, { x: 260.4, y: 97 }, { x: 301, y: 288 }]).text === '42; 118,203; 260,97; 301,288' && !ca('', [{}, {}, {}]).ok && !ca('4a', [{ x: 1, y: 1 }, { x: 1, y: 1 }, { x: 1, y: 1 }]).ok && !ca('7', [{ x: 1, y: 1 }, null, { x: 1, y: 1 }]).ok && !ca('7', [{ x: -3, y: 1 }, { x: 1, y: 1 }, { x: 1, y: 1 }]).ok && !ca('7', [{ x: 1, y: 1 }]).ok && !ca('12345', [{ x: 1, y: 1 }, { x: 1, y: 1 }, { x: 1, y: 1 }]).ok, 'T3 GA5 the ball answer line must follow "number; x,y; x,y; x,y".');
+  const rect = { left: 100, top: 50, width: 400, height: 400 };
+  assert(JSON.stringify(tools.clickToPixel(100, 50, rect, 200, 200)) === '{"x":0,"y":0}' && JSON.stringify(tools.clickToPixel(300, 250, rect, 200, 200)) === '{"x":100,"y":100}' && tools.clickToPixel(99, 50, rect, 200, 200) === null && tools.clickToPixel(500, 450, rect, 200, 200) === null && tools.clickToPixel(1, 1, { width: 0, height: 0 }, 200, 200) === null, 'T3 GA5 clicks must map back to the original pixels.');
+  const rgba = new Uint8ClampedArray(60 * 40 * 4).fill(255);
+  for (let y = 10; y < 20; y += 1) for (let x = 30; x < 40; x += 1) { const i = (y * 60 + x) * 4; rgba[i] = 220; rgba[i + 1] = 20; rgba[i + 2] = 20; rgba[i + 3] = 255; }
+  const red = tools.findRedBall(rgba, 60, 40);
+  assert(red && Math.abs(red.x - 34.5) <= 1 && Math.abs(red.y - 14.5) <= 1 && red.pixels === 100 && tools.findRedBall(new Uint8ClampedArray(60 * 40 * 4).fill(128), 60, 40) === null, 'T3 GA5 the red ball must be located (and absent when there is none).');
+
+  // Solvers: direct URLs for Q1/Q4, guides for Q2/Q3, no network, clean HTML.
+  const savedFetch = globalThis.fetch;
+  let networkCalls = 0;
+  globalThis.fetch = async () => { networkCalls += 1; throw new Error('network is not allowed while preparing'); };
+  try {
+    const results = [];
+    for (const solver of solvers) results.push(await solver.solve('  Student.One@DS.Study.IITM.AC.IN  '));
+    assert(networkCalls === 0, 'T3 GA5 solvers must not make network requests while preparing.');
+    assert(results[0].type === 'solved' && results[0].answer === `${api.T3_API_ORIGIN}/t3ga5/${enc}` && !results[0].answer.endsWith('/query') && results[3].type === 'solved' && results[3].answer === `${api.T3_API_ORIGIN}/t3ga5/${enc}/harness` && results[0].usesHostedApi && results[3].usesHostedApi, 'T3 GA5 Q1/Q4 must give the exact base URL and /harness route for the lower-cased email.');
+    assert(results[1].type === 'guide' && results[1].guide.includes(`--email ${me}`) && results[1].guide.includes('ollama pull nomic-embed-text') && results[1].guide.includes('t3ga5MatrixText') && results[1].guide.includes('ollama_matrix.py') && results[2].type === 'guide' && results[2].guide.includes('t3ga5BallFile') && results[2].guide.includes('ball_frames.py') && results[2].guide.includes('number; x,y'), 'T3 GA5 Q2/Q3 must carry their commands, checker and viewer.');
+    results.forEach((r, i) => {
+      assert(!/\n\s*\n/.test(r.guide) && r.guide.includes('class="p1"') && /Step by step for beginners/.test(r.guide) && !/eyJ[A-Za-z0-9_-]{10,}/.test(r.guide + r.answer), `T3 GA5 Q${i + 1} guide must be clean, contiguous and beginner-friendly.`);
+    });
+    for (const i of [0, 3]) {
+      assert(results[i].guide.includes('Run pre-flight test') && results[i].guide.includes('Wake the server') && results[i].guide.includes('/t3ga5/health'), `T3 GA5 Q${i + 1} must carry the wake-and-test widget.`);
+      const direct = await importFresh(i === 0 ? 'solvers/T32026/ga5/q01-rag-colosseum.js' : 'solvers/T32026/ga5/q04-harness-safety-router.js');
+      for (const bad of ['', 'nope', '  ', 'a@b']) {
+        const wrapped = await solvers[i].solve(bad);
+        assert(wrapped.type === 'error' && !/t3ga5\//.test(wrapped.answer), `T3 GA5 Q${i + 1} must refuse an invalid email instead of inventing a URL ("${bad}").`);
+        const r = await direct.solve(bad);
+        assert(r.type === 'guide' && r.debug.needsUserInput === true && !/t3ga5\//.test(r.answer), `T3 GA5 Q${i + 1} must ask for a valid email instead of inventing a URL ("${bad}").`);
+      }
+      const hostile = await solvers[i].solve('"><img/src=x/onerror=alert(1)>@x.com').catch((e) => ({ guide: String(e) }));
+      assert(!/<img.src=x/i.test(hostile.guide ?? ''), `T3 GA5 Q${i + 1} must not echo a hostile email unescaped.`);
+    }
+    const noEmail = await (await importFresh('solvers/T32026/ga5/q02-ollama-faiss.js')).solve('');
+    assert(noEmail.type === 'guide' && /Enter your full exam email/.test(noEmail.guide) && !noEmail.guide.includes('--email'), 'T3 GA5 Q2 must not print commands without an email.');
+  } finally {
+    globalThis.fetch = savedFetch;
+  }
+}
 
 async function checkT3P1Classifier(q8, q9) {
   const mj = await importFresh('solvers/T32026/p1/model-json.js');
@@ -2381,6 +2500,13 @@ async function main() {
     return;
   }
 
+  if (process.argv.includes('--t3-ga5-only')) {
+    const registry = await importFresh('solvers/T32026/ga5/registry.js');
+    await checkT3Ga5(registry.solvers, registry.metadata);
+    console.log(`T3 GA5 checks passed: ${registry.solvers.length} official question slots.`);
+    return;
+  }
+
   if (process.argv.includes('--t3-ga4-only')) {
     const registry = await importFresh('solvers/T32026/ga4/registry.js');
     await checkT3Ga4(registry.solvers, registry.metadata);
@@ -2510,6 +2636,8 @@ async function main() {
   await checkT3Ga3(t3Ga3Registry.solvers, t3Ga3Registry.metadata);
   const t3Ga4Registry = await importFresh('solvers/T32026/ga4/registry.js');
   await checkT3Ga4(t3Ga4Registry.solvers, t3Ga4Registry.metadata);
+  const t3Ga5Registry = await importFresh('solvers/T32026/ga5/registry.js');
+  await checkT3Ga5(t3Ga5Registry.solvers, t3Ga5Registry.metadata);
 
   await checkServerRoutes();
 

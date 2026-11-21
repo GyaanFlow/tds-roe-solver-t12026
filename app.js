@@ -160,6 +160,7 @@ const TERM_EXAMS = {
     { group: 'Weekly Graded Assignments', value: 'ga2', label: 'GA 2 (API Engineering & Cloud Services)' },
     { group: 'Weekly Graded Assignments', value: 'ga3', label: 'GA 3 (Agent Safety & Trading Games)' },
     { group: 'Weekly Graded Assignments', value: 'ga4', label: 'GA 4 (Peer Review & Live Games)' },
+    { group: 'Weekly Graded Assignments', value: 'ga5', label: 'GA 5 (RAG, Embeddings & Safety Router)' },
     { group: 'Projects', value: 'p1', label: 'Project 1' }
   ]
 };

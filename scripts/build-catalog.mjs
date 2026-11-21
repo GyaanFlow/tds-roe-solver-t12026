@@ -27,6 +27,7 @@ const EXAMS = {
     ['ga2', 'Weekly Graded Assignments', 'GA 2 (API Engineering & Cloud Services)', 'Statistics APIs, CORS, OAuth JWKS verification, Redis counters, Prometheus observability, and LLM endpoints.'],
     ['ga3', 'Weekly Graded Assignments', 'GA 3 (Agent Safety & Trading Games)', 'A2A invoice agent, taint-aware mailroom executor, incident-trace agent, a 3D face model guide, an in-browser face-morph video maker and a morph-difficulty ranking helper — plus the guess-your-number helper and Humans Only drawing game guide.'],
     ['ga4', 'Weekly Graded Assignments', 'GA 4 (Peer Review & Live Games)', 'Peer review of classmates\' GA3 face work, the Food Court and Time Use Charts live games and an optional ROE idea — beginner guides with a progress planner, signed-record checkers and an idea builder.'],
+    ['ga5', 'Weekly Graded Assignments', 'GA 5 (RAG, Embeddings & Safety Router)', 'Live RAG question-answering and harness safety-router endpoints with a wake-and-test tool, a local Ollama rank-correlation script with a matrix checker, and a ball-tracking frame viewer.'],
     ['p1', 'Projects', 'Project 1', 'AI Pipe usage prediction market, a 60-second Human Exchange offer, Air Ink phone drawing, the Missing Invoice game, face-expression capture, Human Exchange Round 1, Picture Stories, a face-expression classifier (with your model.json checker) and Invisible Ink — with forecast, script, invoice, marks-planner, story, model and receipt tools.'],
   ],
   T22026: [

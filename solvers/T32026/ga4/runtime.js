@@ -24,7 +24,7 @@ export function wrapSolverModule(module) {
       try {
         const solverEmail = trimEmail(email);
         normalizedEmail = normalizeEmail(solverEmail);
-        if (!solverEmail) throw new Error('Enter the registered email before preparing GA3 helpers.');
+        if (!solverEmail) throw new Error('Enter the registered email before preparing GA4 helpers.');
         if (solverEmail.length > 254) throw new Error('Email is too long to be a valid address.');
         if (/[<>]/.test(solverEmail) || !/^[^\s@]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/.test(solverEmail)) {
           throw new Error('Enter a complete email address with a valid dotted domain.');

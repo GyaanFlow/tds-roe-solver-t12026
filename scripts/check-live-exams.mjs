@@ -44,7 +44,7 @@ function prose(source) {
     for (const raw of text.split('\n')) {
       const line = raw.replace(/\s+/g, ' ').trim();
       // Prose only: skip anything that reads like code left over from a ${...} expression inside the template.
-      const looksLikeCode = /^(let|var|const|return|await|if|else|for|while)\b|^[\w$.]+\s*[:=(]|[;{}]|=>/.test(line);
+      const looksLikeCode = /^(let|var|const|return|await|if|else|for|while)\b|^\(+[\w$]+\.[\w$.]+\s*[=(]|^[\w$.]+\s*[:=(]|[;{}]|=>/.test(line);
       if (line.split(' ').length >= 5 && /^[A-Za-z0-9"'(\[*•\-–—]/.test(line) && !looksLikeCode) lines.add(line);
     }
   }

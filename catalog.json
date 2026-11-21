@@ -52,6 +52,31 @@
           ]
         },
         {
+          "id": "ga5",
+          "label": "GA 5 (RAG, Embeddings & Safety Router)",
+          "group": "Weekly Graded Assignments",
+          "description": "Live RAG question-answering and harness safety-router endpoints with a wake-and-test tool, a local Ollama rank-correlation script with a matrix checker, and a ball-tracking frame viewer.",
+          "solverCount": 4,
+          "questions": [
+            {
+              "id": "q-rag-colosseum-server",
+              "title": "RAG Colosseum"
+            },
+            {
+              "id": "q-ollama-faiss-rank-correlation-server",
+              "title": "Dual Embedding Alignment: Ollama, FAISS, and Rank Correlation"
+            },
+            {
+              "id": "q-ball-tracker-server",
+              "title": "Track the red ball"
+            },
+            {
+              "id": "q-harness-safety-router-server",
+              "title": "Harness Engineering: Contextual Safety and Model Routing"
+            }
+          ]
+        },
+        {
           "id": "ga4",
           "label": "GA 4 (Peer Review & Live Games)",
           "group": "Weekly Graded Assignments",
