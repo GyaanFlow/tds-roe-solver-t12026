@@ -344,16 +344,16 @@ async function checkT3P1(solvers, metadata) {
   const officialPairs = [...official.matchAll(/\b[a-z] = "(q-[a-z0-9-]+)",\s*\n\s*[a-z] = "([^"]+)"/g)].map((m) => [m[1], m[2].replace(/\\u2013/g, '–')]);
   const officialIds = officialPairs.map((pair) => pair[0]);
   const officialTitles = officialPairs.map((pair) => pair[1]);
-  assert(solvers.length === 7 && metadata.questionCount === 7 && metadata.exam === 'p1' && metadata.term === 'T32026', 'T3 P1 must register all seven official questions.');
-  assert(JSON.stringify(solvers.map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 7, `T3 P1 ids/order differ from the official bundle: ${officialIds.join(', ')}`);
+  assert(solvers.length === 9 && metadata.questionCount === 9 && metadata.exam === 'p1' && metadata.term === 'T32026', 'T3 P1 must register all seven official questions.');
+  assert(JSON.stringify(solvers.map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 9, `T3 P1 ids/order differ from the official bundle: ${officialIds.join(', ')}`);
   assert(solvers.every((s, i) => s.title === officialTitles[i]), 'T3 P1 titles must match the official bundle.');
-  assert(solvers.map((s) => s.id).join() === 'q-prediction-aipipe-server,q-audio-tds-human-exchange,q-motion-air-ink,q-trading-missing-invoice,q-face-expressions,q-trading-human-exchange-r1,q-trading-picture-story', 'T3 P1 question ids changed.');
+  assert(solvers.map((s) => s.id).join() === 'q-prediction-aipipe-server,q-audio-tds-human-exchange,q-motion-air-ink,q-trading-missing-invoice,q-face-expressions,q-trading-human-exchange-r1,q-trading-picture-story,q-face-expression-classifier,q-air-ink-classifier', 'T3 P1 question ids changed.');
 
   // ---- deadlines (IST, injectable clock) ----
   const W = windows.WINDOWS;
   assert(windows.windowStatus(W.audio, W.audio.opens - 1).state === 'before' && windows.windowStatus(W.audio, W.audio.opens).state === 'open' && windows.windowStatus(W.audio, W.audio.closes - 1).state === 'open', 'T3 P1 audio window must open on 19 Oct 08:00 IST and run to the close.');
   assert(windows.windowStatus(W.audio, W.audio.closes).state === 'grace' && windows.windowStatus(W.audio, W.audio.closes + 2 * 60 * 1000).state === 'closed', 'T3 P1 audio window must include the two-minute upload grace period.');
-  assert(windows.formatIst(W.audio.closes) === '21 Oct 2026, 23:59 IST' && windows.formatIst(W.invoice.opens) === '21 Oct 2026, 12:00 IST' && windows.formatIst(W.market.closes) === '9 Nov 2026, 05:30 IST', 'T3 P1 IST formatting must match the official dates.');
+  assert(windows.formatIst(W.audio.closes) === '5 Nov 2026, 23:59 IST' && windows.formatIst(W.invoice.opens) === '21 Oct 2026, 12:00 IST' && windows.formatIst(W.market.closes) === '9 Nov 2026, 05:30 IST', 'T3 P1 IST formatting must match the official dates.');
   assert(W.invoice.closes - W.invoice.requestsClose === 8 * 3600 * 1000 && W.invoice.closes - W.invoice.opens === 48 * 3600 * 1000, 'T3 P1 invoice game must last 48 hours with requests closing 8 hours before the end.');
   assert(windows.formatRemaining(90 * 60000) === '1 h 30 min' && windows.formatRemaining(-5) === '0 min' && windows.formatRemaining(26 * 3600000) === '1 d 2 h 0 min', 'T3 P1 countdown formatting is wrong.');
 
@@ -519,8 +519,9 @@ async function checkT3P1(solvers, metadata) {
     assert(results[3].guide.includes('t3p1InvRoot') && results[3].guide.includes('Pay for goods received') && results[3].guide.includes('played') && results[3].answer.includes('played'), 'T3 P1 Q4 must offer the calculator and state the rule.');
     assert(results[4].guide.includes('t3p1Face') && results[4].guide.includes('completed') && results[4].guide.includes('Google Form') && results[4].answer.includes('completed') && (results[4].guide.match(/data-expr="/g) || []).length === 10, 'T3 P1 Q5 must carry the 10-expression checklist and the honest completed rule.');
     assert(results[5].guide.includes('t3p1Ex') && results[5].guide.includes('t3p1R-exchange') && results[5].guide.includes('final receipt') && /confirm.*Google/i.test(results[5].guide), 'T3 P1 Q6 must carry the listing writer, marks planner and receipt check.');
-    assert(results[6].guide.includes('t3p1Ps') && results[6].guide.includes('t3p1R-stories') && /No words at all/.test(results[6].guide) && results[6].guide.includes('45-second'), 'T3 P1 Q7 must carry the story tools, the no-words rule and the receipt check.');
+    assert(results[6].guide.includes('t3p1Ps') && results[6].guide.includes('t3p1R-stories') && /Keep it wordless/.test(results[6].guide) && results[6].guide.includes('0.8 × creator') && results[6].guide.includes('45-second'), 'T3 P1 Q7 must carry the story tools, the no-words rule and the receipt check.');
     await checkT3P1Extras();
+    await checkT3P1Classifier(results[7], results[8]);
     const hostile = await q1.solve('"><img/src=x/onerror=alert(1)>@x.com');
     assert(!/<img.src=x/i.test(hostile.guide), 'T3 P1 must escape the email in its forms.');
     const hostile4 = await solvers[3].solve('"><img/src=x/onerror=alert(1)>@x.com').catch((e) => ({ type: 'error', guide: String(e) }));
@@ -561,7 +562,7 @@ async function checkT3Ga3(solvers, metadata) {
 
   // Windows.
   const W = windows.HUMANS_ONLY;
-  assert(windows.windowStatus(W.draw, W.draw.opens - 1).state === 'before' && windows.windowStatus(W.draw, W.draw.opens).state === 'open' && windows.windowStatus(W.draw, W.draw.closes).state === 'closed' && windows.formatIst(W.draw.closes) === '24 Oct 2026, 08:00 IST' && windows.formatIst(W.submit.closes) === '25 Oct 2026, 23:59 IST', 'T3 GA3 Humans Only windows are wrong.');
+  assert(windows.windowStatus(W.draw, W.draw.opens - 1).state === 'before' && windows.windowStatus(W.draw, W.draw.opens).state === 'open' && windows.windowStatus(W.draw, W.draw.closes).state === 'closed' && windows.formatIst(W.draw.closes) === '24 Oct 2026, 08:00 IST' && windows.formatIst(W.submit.closes) === '31 Oct 2026, 23:59 IST', 'T3 GA3 Humans Only windows are wrong.');
 
   // Probes with a scripted fetch: a healthy API passes, a broken one fails, and nothing ever throws.
   const json = (status, body, headers = {}) => ({ ok: status < 400, status, redirected: false, headers: { get: (k) => headers[k.toLowerCase()] ?? 'application/json' }, json: async () => body, text: async () => JSON.stringify(body) });
@@ -690,11 +691,69 @@ async function checkT3Ga3Faces() {
   assert(q6.fileNames('Marie Curie').file === 'marie-curie.glb' && q6.fileNames('').repo === 'face-3d' && q6.fileNames('"><img src=x>').file === 'img-src-x.glb', 'T3 GA3 Q6 file names must be safe slugs.');
 }
 
+
+async function checkT3P1Classifier(q8, q9) {
+  const mj = await importFresh('solvers/T32026/p1/model-json.js');
+  const good = { version: 'linear-rank-v1', weights: Array.from({ length: 10 }, (_, r) => Array.from({ length: 156 }, (__, c) => ((r * 156 + c) % 17) / 100 - 0.08)) };
+  const ok = mj.validateModel(JSON.stringify(good));
+  assert(ok.ok && ok.bytes < 65536 && mj.validateModel(good).ok && mj.validateModel(JSON.stringify(good, null, 2)).ok, 'T3 P1 a well-formed model must be accepted.');
+  const bad = (value) => !mj.validateModel(typeof value === 'string' ? value : JSON.stringify(value)).ok;
+  const row = (n) => Array.from({ length: n }, () => 0.5);
+  assert(bad('') && bad('{') && bad('[]') && bad('null') && bad({ version: 'linear-rank-v1' }) && bad({ ...good, extra: 1 }) && bad({ ...good, version: 'linear-rank-v2' }) && bad({ ...good, weights: good.weights.slice(1) }) && bad({ ...good, weights: [...good.weights.slice(1), row(155)] }) && bad({ ...good, weights: [...good.weights.slice(1), row(157)] }) && bad({ ...good, weights: [...good.weights.slice(1), [...row(155), 'x']] }) && bad({ ...good, weights: [...good.weights.slice(1), [...row(155), null]] }) && bad('x'.repeat(70000)), 'T3 P1 broken models must be rejected with a reason.');
+  assert(mj.validateModel('{"version":"linear-rank-v1","weights":[[1e999]]}').ok === false && mj.validateModel(JSON.stringify({ ...good, weights: [...good.weights.slice(1), [...row(155), 1e999]] })).ok === false, 'T3 P1 non-finite numbers must be rejected.');
+  assert(mj.expectedBonus(60) === 0 && mj.expectedBonus(70) === 5 && mj.expectedBonus(80) === 10 && mj.expectedBonus(95) === 10 && mj.expectedBonus(50) === 0 && mj.expectedBonus('x') === null && Math.abs(mj.expectedBonus(69.9) - 4.95) < 1e-9, 'T3 P1 expected-bonus scale is wrong.');
+  assert(q8.type === 'guide' && q8.guide.includes(mj.APP_URL) && q8.guide.includes('Download model.json') && q8.guide.includes('t3p1FxFile') && /Step by step for beginners/.test(q8.guide) && q8.answer.includes('model.json'), 'T3 P1 Q8 must point to the app and carry the model checker.');
+  assert(q9.type === 'guide' && q9.guide.includes('t3p1R-ink') && q9.guide.includes('ACEFHJKMNPRTUVWXY') && /Step by step for beginners/.test(q9.guide) && q9.guide.includes('Sat 14 Nov'), 'T3 P1 Q9 must carry the session table and the record checker.');
+  assert(mj.EXPRESSIONS.length === 10 && mj.ROWS === 10 && mj.COLS === 156 && mj.MAX_BYTES === 65536 && mj.APP_URL.startsWith('https://'), 'T3 P1 model constants changed.');
+}
+
+async function checkT3Ga4Games(solvers) {
+  const rc = await importFresh('solvers/T32026/ga4/record-check.js');
+  const fc = await importFresh('solvers/T32026/ga4/q02-food-court.js');
+  const tu = await importFresh('solvers/T32026/ga4/q03-time-use-charts.js');
+  const roe = await importFresh('solvers/T32026/ga4/roe-idea.js');
+  const b64 = (value) => Buffer.from(JSON.stringify(value)).toString('base64url');
+  const me = 'student.one@ds.study.iitm.ac.in';
+  const now = Date.parse('2026-11-21T00:00:00Z');
+  const rec = (payload, header = { alg: 'ES256', typ: 'JWT' }) => `${b64(header)}.${b64(payload)}.c2ln`;
+  const good = rc.checkRecord(rec({ sub: me, score: 71.5, exp: now / 1000 + 100 }), { email: me, now });
+  assert(good.ok && good.fields.score === '71.5' && rc.checkRecord(`  "${rec({ sub: me })}"\n`, { email: me.toUpperCase(), now }).ok && rc.checkRecord(rec({ score: 3 }), { email: me, now }).ok, 'T3 GA4 a well-formed record must be accepted, with or without an owner field.');
+  assert(!rc.checkRecord(rec({ sub: 'someone.else@ds.study.iitm.ac.in' }), { email: me, now }).ok && rc.checkRecord(rec({ sub: 'someone.else@ds.study.iitm.ac.in' }), { email: me, now }).problems[0].includes('belongs to') && !rc.checkRecord(rec({ sub: me, exp: now / 1000 - 5 }), { email: me, now }).ok && rc.checkRecord(rec({ sub: me }, { alg: 'HS256' }), { email: me, now }).warnings.length === 1, 'T3 GA4 other-student, expired and odd-algorithm records must be flagged.');
+  for (const badRecord of ['', 'hello', 'a.b', 'https://x.org/r', 'x'.repeat(25000), 'eyJ!.eyJ!.x', `${b64({ alg: 'ES256' })}.${Buffer.from('nope').toString('base64url')}.x`, `${b64({ alg: 'ES256' })}.${b64([1, 2])}.x`]) assert(!rc.checkRecord(badRecord, { email: me, now }).ok, `T3 GA4 must refuse the record "${badRecord.slice(0, 20)}".`);
+  assert(!('nested' in rc.checkRecord(rec({ sub: me, nested: { a: 1 } }), { email: me, now }).fields), 'T3 GA4 record fields must show simple values only.');
+  // Session clocks (fixed times from the games site schedule).
+  assert(fc.sessionState(Date.parse('2026-11-10T12:00:00Z')).state === 'before' && fc.sessionState(Date.parse('2026-11-10T12:35:00Z')).state === 'live' && fc.sessionState(Date.parse('2026-11-11T00:00:00Z')).state === 'before' && fc.sessionState(Date.parse('2026-11-21T00:00:00Z')).state === 'over' && fc.SESSIONS.length === 3, 'T3 GA4 Food Court session clock is wrong.');
+  assert(tu.sessionState(Date.parse('2026-11-12T15:00:00Z')).state === 'before' && tu.sessionState(Date.parse('2026-11-13T12:40:00Z')).state === 'live' && tu.sessionState(Date.parse('2026-11-14T04:00:00Z')).state === 'over' && tu.sessionState(Date.parse('2026-11-21T00:00:00Z')).state === 'over' && tu.SESSIONS.length === 3, 'T3 GA4 Time Use Charts session clock is wrong.');
+  // ROE idea builder: mirrors the exam rule (blank or under 10 characters = opt out).
+  const parts = { question: 'Students photograph a leaf and measure it with a ruler in the picture.', evaluation: 'A script compares their measured length with the hidden true length.', learning: 'They learn calibration and measurement error with real data.', resistance: 'An agent has no leaf; the student supplies the real photo and scale.' };
+  const built = roe.buildIdea(parts);
+  assert(built.ok && roe.checkIdea(built.text).ok && built.text.startsWith('Question:') && built.text.includes('Agent/solver resistance:') && !roe.buildIdea({ ...parts, learning: 'short' }).ok && roe.buildIdea({ ...parts, learning: 'short' }).missing[0] === 'Learning' && roe.checkIdea('').optedOut && roe.checkIdea('too short').optedOut && !roe.checkIdea('Just a long sentence about nothing in particular here.').ok && roe.buildIdea({ ...parts, question: 'x'.repeat(9000) }).text.length <= roe.MAX_CHARS, 'T3 GA4 ROE idea builder rules are wrong.');
+  // Solvers: guides, no network, honest wording, escaped input.
+  const savedFetch = globalThis.fetch;
+  let networkCalls = 0;
+  globalThis.fetch = async () => { networkCalls += 1; throw new Error('network is not allowed while preparing'); };
+  try {
+    const results = [];
+    for (const solver of solvers.slice(1)) results.push(await solver.solve(me));
+    assert(networkCalls === 0, 'T3 GA4 solvers must not make network requests while preparing.');
+    for (const [i, r] of results.entries()) {
+      assert(r.type === 'guide' && r.debug.needsUserInput === true && !/\n\s*\n/.test(r.guide) && r.guide.includes('class="p1"') && /Step by step for beginners/.test(r.guide) && r.answer.length > 40 && !/eyJ[A-Za-z0-9_-]{10,}/.test(r.guide + r.answer), `T3 GA4 Q${i + 2} must be a clean beginner guide.`);
+    }
+    assert(results[0].guide.includes('t3g4R-foodcourt') && results[0].guide.includes('Join') && results[1].guide.includes('t3g4R-timeuse') && results[1].guide.includes(tu.DATA_URL) && results[2].guide.includes('t3g4Idea') && /MINUS 1|−1/.test(results[2].guide + results[2].answer), 'T3 GA4 Q2-Q4 must carry their tools and the Q4 penalty warning.');
+    for (const solver of solvers.slice(1)) {
+      const hostile = await solver.solve('"><img/src=x/onerror=alert(1)>@x.com').catch((e) => ({ guide: String(e) }));
+      assert(!/<img.src=x/i.test(hostile.guide ?? ''), 'T3 GA4 must not echo a hostile email unescaped.');
+    }
+  } finally {
+    globalThis.fetch = savedFetch;
+  }
+}
+
 async function checkT3Ga4(solvers, metadata) {
   const official = fs.readFileSync(path.join(rootDir, 'solvers/T32026/ga4/exam-source.js'), 'utf8');
   const officialIds = [...official.matchAll(/^\s+(?:let )?[a-z] = "(q-[a-z0-9-]+)"/gm)].map((m) => m[1]);
-  assert(solvers.length === 1 && metadata.questionCount === 1 && metadata.exam === 'ga4' && metadata.term === 'T32026', 'T3 GA4 must register its one official question.');
-  assert(JSON.stringify(solvers.map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 1, `T3 GA4 ids differ from the official bundle: ${officialIds.join(', ')}`);
+  assert(solvers.length === 4 && metadata.questionCount === 4 && metadata.exam === 'ga4' && metadata.term === 'T32026', 'T3 GA4 must register its four official questions.');
+  assert(JSON.stringify(solvers.map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 4, `T3 GA4 ids differ from the official bundle: ${officialIds.join(', ')}`);
   const fr = await importFresh('solvers/T32026/ga4/face-receipt.js');
   const b64 = (value) => Buffer.from(JSON.stringify(value)).toString('base64url');
   const email = 'student.one@ds.study.iitm.ac.in';
@@ -714,6 +773,7 @@ async function checkT3Ga4(solvers, metadata) {
   let networkCalls = 0;
   globalThis.fetch = async () => { networkCalls += 1; throw new Error('network is not allowed while preparing'); };
   try {
+    await checkT3Ga4Games(solvers);
     const result = await solvers[0].solve(email);
     assert(networkCalls === 0 && result.type === 'guide' && result.guide.includes('t3g4Text') && result.guide.includes('Generate &amp; copy receipt') && /Step by step for beginners/.test(result.guide) && result.answer.length > 40 && !/eyJ[A-Za-z0-9_-]{10,}/.test(result.guide + result.answer), 'T3 GA4 must return a guide with the receipt checker and no network calls.');
     assert(!/\n\s*\n/.test(result.guide) && result.guide.includes('class="p1"'), 'T3 GA4 guide must be one contiguous HTML block.');
@@ -752,7 +812,7 @@ async function checkT3P1Extras() {
   assert(crop.side === 900 && crop.sx === 350 && crop.sy === 0 && crop.out === 900 && marks.squareCrop(400, 600, 1024).sy === 100 && marks.squareCrop(3000, 3000, 1024).out === 1024 && marks.squareCrop(0, 5) === null && marks.squareCrop('x', 5) === null, 'T3 P1 square crop must centre-crop and never upscale.');
   // New deadlines.
   const W = windows.WINDOWS;
-  assert(windows.windowStatus(W.faceExpressions, Date.parse('2026-10-26T23:59:58+05:30')).state === 'open' && windows.windowStatus(W.faceExpressions, Date.parse('2026-10-27T00:00:00+05:30')).state === 'closed' && windows.windowStatus(W.exchangeR1, Date.parse('2026-10-22T11:59:59+05:30')).state === 'before' && windows.windowStatus(W.exchangeR1, Date.parse('2026-10-22T12:00:00+05:30')).state === 'open' && windows.windowStatus(W.pictureCreate, Date.parse('2026-10-29T12:00:00+05:30')).state === 'closed' && windows.windowStatus(W.pictureNarrate, Date.parse('2026-10-29T12:00:00+05:30')).state === 'open' && windows.windowStatus(W.pictureReceipt, Date.parse('2026-11-02T12:00:00+05:30')).state === 'before', 'T3 P1 new deadlines are wrong.');
+  assert(windows.windowStatus(W.faceExpressions, Date.parse('2026-11-01T23:59:58+05:30')).state === 'open' && windows.windowStatus(W.faceExpressions, Date.parse('2026-11-02T00:00:00+05:30')).state === 'closed' && windows.windowStatus(W.invisibleInk, Date.parse('2026-11-14T15:59:00+05:30')).state === 'before' && windows.windowStatus(W.invisibleInk, Date.parse('2026-11-15T21:00:01+05:30')).state === 'closed' && windows.windowStatus(W.exchangeR1, Date.parse('2026-10-22T11:59:59+05:30')).state === 'before' && windows.windowStatus(W.exchangeR1, Date.parse('2026-10-22T12:00:00+05:30')).state === 'open' && windows.windowStatus(W.pictureCreate, Date.parse('2026-10-29T12:00:00+05:30')).state === 'closed' && windows.windowStatus(W.pictureNarrate, Date.parse('2026-10-29T12:00:00+05:30')).state === 'open' && windows.windowStatus(W.pictureReceipt, Date.parse('2026-11-02T12:00:00+05:30')).state === 'before', 'T3 P1 new deadlines are wrong.');
 }
 
 async function checkT3Ga1(solvers, metadata) {
@@ -2301,7 +2361,7 @@ async function main() {
   if (process.argv.includes('--t3-ga4-only')) {
     const registry = await importFresh('solvers/T32026/ga4/registry.js');
     await checkT3Ga4(registry.solvers, registry.metadata);
-    console.log(`T3 GA4 checks passed: ${registry.solvers.length} official question slot.`);
+    console.log(`T3 GA4 checks passed: ${registry.solvers.length} official question slots.`);
     return;
   }
 

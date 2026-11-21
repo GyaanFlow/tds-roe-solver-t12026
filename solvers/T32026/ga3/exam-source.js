@@ -1,67 +1,67 @@
-// Audit snapshot of https://exam.sanand.workers.dev/exam-tds-2026-09-ga3.js (prettier 3.4.2), fetched 2026-10-25.
+// Audit snapshot of https://exam.sanand.workers.dev/exam-tds-2026-09-ga3.js (prettier 3.4.2), fetched 2026-11-21.
 // check.mjs compares the question ids and order in this file with the registry. Do not edit.
-var re = Object.defineProperty;
-var u = (o, r) => () => (o && (r = o((o = 0))), r);
-var h = (o, r) => {
-  for (var a in r) re(o, a, { get: r[a], enumerable: !0 });
+var ie = Object.defineProperty;
+var m = (a, r) => () => (a && (r = a((a = 0))), r);
+var g = (a, r) => {
+  for (var o in r) ie(a, o, { get: r[o], enumerable: !0 });
 };
-var L = {};
-h(L, { checkLimit: () => C, default: () => ie });
-import { html as se } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function ie({ user: o, weight: r = 0 }) {
-  let a = "q-guess-number-server",
-    t = "Guess your number",
-    c = se`
+var P = {};
+g(P, { checkLimit: () => D, default: () => le });
+import { html as de } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function le({ user: a, weight: r = 0 }) {
+  let o = "q-guess-number-server",
+    e = "Guess your number",
+    d = de`
     <p>We've chosen a whole number from <strong>0 to 10,000</strong>, just for you.</p>
     <p>Enter a guess. Click <strong>Check</strong> to learn whether it is too high, too low, or correct.
     You can make <strong>3 guesses every 24 hours</strong>. Each Check or Save uses one guess.
     The page reserves your final guess for Save. Saving when no guesses remain gives 0 marks.</p>
     <p>This question earns <strong>no marks</strong>. It shows how limited checking works.
     You do not need to guess correctly to continue.</p>
-    <label for="${a}" class="form-label">Your guess (whole number)</label>
-    <input id="${a}" name="${a}" type="number" min="0" max="10000"
+    <label for="${o}" class="form-label">Your guess (whole number)</label>
+    <input id="${o}" name="${o}" type="number" min="0" max="10000"
       step="1" inputmode="numeric" class="form-control" autocomplete="off" />
   `;
   return {
-    id: a,
-    title: t,
-    question: c,
+    id: o,
+    title: e,
+    question: d,
     weight: r,
-    checkLimit: C,
-    answer: async (i) => {
-      let d = await fetch("/backendVerify", {
+    checkLimit: D,
+    answer: async (c) => {
+      let l = await fetch("/backendVerify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            quiz: o.quiz,
-            email: o.email,
-            quizSign: o.quizSign,
-            response: String(i ?? "").trim(),
+            quiz: a.quiz,
+            email: a.email,
+            quizSign: a.quizSign,
+            response: String(c ?? "").trim(),
             weight: r,
-            questionId: a,
+            questionId: o,
           }),
         }),
-        l = await d.json();
-      if (!d.ok)
+        i = await l.json();
+      if (!l.ok)
         throw new Error(
-          l.error || "Could not check your guess. Please try again.",
+          i.error || "Could not check your guess. Please try again.",
         );
-      return l;
+      return i;
     },
   };
 }
-var C,
-  _ = u(() => {
+var D,
+  O = m(() => {
     "use strict";
-    C = { max: 3, hours: 24 };
+    D = { max: 3, hours: 24 };
   });
-var O = {};
-h(O, { checkLimit: () => D, default: () => de });
-import { html as ce } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function de({ user: o, weight: r = 4, version: a = "v3" }) {
-  let t = "q-a2a-durable-delegate-server-v2",
-    c = "A2A Invoice Agent: decide and act safely",
-    n = ce`
+var N = {};
+g(N, { checkLimit: () => $, default: () => ue });
+import { html as pe } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function ue({ user: a, weight: r = 4, version: o = "v3" }) {
+  let e = "q-a2a-durable-delegate-server-v2",
+    d = "A2A Invoice Agent: decide and act safely",
+    n = pe`
     <div class="mb-3">
       <p class="lead">Build a public HTTPS invoice agent. Read each invoice package, choose the right business action, and cite the supporting evidence. Carry out only approved actions, and save task state so retries cannot repeat payments.</p>
       <div class="alert alert-info" role="note">
@@ -293,51 +293,51 @@ POST {base}/tasks/{id}:cancel</code></pre>
       </p>
 
       </details>
-      <label for="${t}" class="form-label"><strong>A2A interface base URL</strong></label>
-      <textarea class="form-control font-monospace" id="${t}" name="${t}" rows="2"
+      <label for="${e}" class="form-label"><strong>A2A interface base URL</strong></label>
+      <textarea class="form-control font-monospace" id="${e}" name="${e}" rows="2"
         placeholder="https://delegate.example/a2a/" autocomplete="off"></textarea>
     </div>
   `;
   return {
-    id: t,
-    title: c,
+    id: e,
+    title: d,
     weight: r,
     question: n,
-    checkLimit: D,
-    answer: async (d) => {
-      let l = String(d || "").trim();
-      if (!l) throw new Error("Enter your deployed A2A interface URL.");
-      let e = await fetch("/backendVerify", {
+    checkLimit: $,
+    answer: async (l) => {
+      let i = String(l || "").trim();
+      if (!i) throw new Error("Enter your deployed A2A interface URL.");
+      let t = await fetch("/backendVerify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            quiz: o.quiz,
-            email: o.email,
-            quizSign: o.quizSign,
-            response: l,
+            quiz: a.quiz,
+            email: a.email,
+            quizSign: a.quizSign,
+            response: i,
             weight: r,
-            questionId: t,
-            version: a,
+            questionId: e,
+            version: o,
           }),
         }),
-        s = await e.json();
-      if (!e.ok) throw new Error(s.error || "Verification failed.");
+        s = await t.json();
+      if (!t.ok) throw new Error(s.error || "Verification failed.");
       return s;
     },
   };
 }
-var D,
-  P = u(() => {
+var $,
+  U = m(() => {
     "use strict";
-    D = { max: 10, hours: 24 };
+    $ = { max: 10, hours: 24 };
   });
-var $ = {};
-h($, { checkLimit: () => N, default: () => pe });
-import { html as le } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function pe({ user: o, weight: r = 4, version: a = "v3" }) {
-  let t = "q-taint-aware-agent-executor-server-v2",
-    c = "Safe AI Mailroom: check authority before acting",
-    n = le`
+var z = {};
+g(z, { checkLimit: () => j, default: () => me });
+import { html as he } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function me({ user: a, weight: r = 4, version: o = "v3" }) {
+  let e = "q-taint-aware-agent-executor-server-v2",
+    d = "Safe AI Mailroom: check authority before acting",
+    n = he`
     <div class="mb-3">
       <p class="lead">Build a public HTTPS mailroom agent. Read each case file, choose one permitted action, and cite the evidence. Wait for signed receipts before recording an action as completed.</p>
       <div class="alert alert-info" role="note">
@@ -605,51 +605,51 @@ no_action
       </p>
 
       </details>
-      <label for="${t}" class="form-label"><strong>Deployed mailroom agent endpoint URL</strong></label>
-      <textarea class="form-control font-monospace" id="${t}" name="${t}" rows="2"
+      <label for="${e}" class="form-label"><strong>Deployed mailroom agent endpoint URL</strong></label>
+      <textarea class="form-control font-monospace" id="${e}" name="${e}" rows="2"
         placeholder="https://agent.example/v1/mailroom/actions" autocomplete="off"></textarea>
     </div>
   `;
   return {
-    id: t,
-    title: c,
+    id: e,
+    title: d,
     weight: r,
     question: n,
-    checkLimit: N,
-    answer: async (d) => {
-      let l = String(d || "").trim();
-      if (!l) throw new Error("Enter your deployed mailroom agent URL.");
-      let e = await fetch("/backendVerify", {
+    checkLimit: j,
+    answer: async (l) => {
+      let i = String(l || "").trim();
+      if (!i) throw new Error("Enter your deployed mailroom agent URL.");
+      let t = await fetch("/backendVerify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            quiz: o.quiz,
-            email: o.email,
-            quizSign: o.quizSign,
-            response: l,
+            quiz: a.quiz,
+            email: a.email,
+            quizSign: a.quizSign,
+            response: i,
             weight: r,
-            questionId: t,
-            version: a,
+            questionId: e,
+            version: o,
           }),
         }),
-        s = await e.json();
-      if (!e.ok) throw new Error(s.error || "Verification failed.");
+        s = await t.json();
+      if (!t.ok) throw new Error(s.error || "Verification failed.");
       return s;
     },
   };
 }
-var N,
-  U = u(() => {
+var j,
+  B = m(() => {
     "use strict";
-    N = { max: 10, hours: 24 };
+    j = { max: 10, hours: 24 };
   });
-var z = {};
-h(z, { checkLimit: () => j, default: () => he });
-import { html as ue } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function he({ user: o, weight: r = 4, version: a = "v3" }) {
-  let t = "q-agent-trace-integrity-server-v2",
-    c = "Observable Incident Triage: diagnose before acting",
-    n = ue`
+var G = {};
+g(G, { checkLimit: () => M, default: () => fe });
+import { html as ge } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function fe({ user: a, weight: r = 4, version: o = "v3" }) {
+  let e = "q-agent-trace-integrity-server-v2",
+    d = "Observable Incident Triage: diagnose before acting",
+    n = ge`
     <div class="mb-3">
       <p class="lead">Build a public HTTPS incident agent. Find the cause of a problem, run only necessary diagnostics, and choose a permitted response. Save real action results and matching telemetry.</p>
       <div class="alert alert-info" role="note">
@@ -905,67 +905,67 @@ GET  /v2/incidents/{runId}</code></pre>
       </p>
 
       </details>
-      <label for="${t}" class="form-label"><strong>Deployed incident-agent base URL</strong></label>
-      <textarea class="form-control font-monospace" id="${t}" name="${t}" rows="2"
+      <label for="${e}" class="form-label"><strong>Deployed incident-agent base URL</strong></label>
+      <textarea class="form-control font-monospace" id="${e}" name="${e}" rows="2"
         placeholder="https://incident-agent.example/" autocomplete="off"></textarea>
     </div>
   `;
   return {
-    id: t,
-    title: c,
+    id: e,
+    title: d,
     weight: r,
     question: n,
-    checkLimit: j,
-    answer: async (d) => {
-      let l = String(d || "").trim();
-      if (!l) throw new Error("Enter your deployed incident-agent base URL.");
-      let e = await fetch("/backendVerify", {
+    checkLimit: M,
+    answer: async (l) => {
+      let i = String(l || "").trim();
+      if (!i) throw new Error("Enter your deployed incident-agent base URL.");
+      let t = await fetch("/backendVerify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            quiz: o.quiz,
-            email: o.email,
-            quizSign: o.quizSign,
-            response: l,
+            quiz: a.quiz,
+            email: a.email,
+            quizSign: a.quizSign,
+            response: i,
             weight: r,
-            questionId: t,
-            version: a,
+            questionId: e,
+            version: o,
           }),
         }),
-        s = await e.json();
-      if (!e.ok) throw new Error(s.error || "Verification failed.");
+        s = await t.json();
+      if (!t.ok) throw new Error(s.error || "Verification failed.");
       return s;
     },
   };
 }
-var j,
-  B = u(() => {
+var M,
+  J = m(() => {
     "use strict";
-    j = { max: 10, hours: 24 };
+    M = { max: 10, hours: 24 };
   });
-var M = {};
-h(M, { default: () => me });
-import { html as I } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function me({ user: o, weight: r = 1 }) {
-  let a = "q-trading-humans-only",
-    t = "Trading game: Humans Only",
-    c = new URLSearchParams({
-      email: o.email,
-      quizSign: o.quizSign || "",
-      questionId: a,
+var V = {};
+g(V, { default: () => ye });
+import { html as A } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function ye({ user: a, weight: r = 1 }) {
+  let o = "q-trading-humans-only",
+    e = "Trading game: Humans Only",
+    d = new URLSearchParams({
+      email: a.email,
+      quizSign: a.quizSign || "",
+      questionId: o,
     }),
     n,
-    i;
+    c;
   try {
-    let e = await fetch(`./questionData?${c}`),
-      s = await e.json();
-    if (!e.ok)
+    let t = await fetch(`./questionData?${d}`),
+      s = await t.json();
+    if (!t.ok)
       throw new Error(s.error || "Unable to load your personal game link.");
     n = s;
-  } catch (e) {
-    i = e.message;
+  } catch (t) {
+    c = t.message;
   }
-  let d = I`
+  let l = A`
     <div class="mb-3">
       <p>A drawing game where people should win and AI should lose.</p>
       <ol>
@@ -981,35 +981,36 @@ async function me({ user: o, weight: r = 1 }) {
         <li><strong>Drawing (5):</strong> for each drawing, the share of classmates who got it right × the share of AI models that got it wrong.</li>
         <li><strong>Guessing (5):</strong> the share you get right. Drawings that fooled the AI panel count double. Guesses you skip count as wrong.</li>
       </ul>
-      <p><strong>Results</strong> appear on Sunday 25 October afternoon, after the AI panel has judged every drawing.
-        Press Check and Save by Sunday 25 October 2026, 11:59pm IST.</p>
+      <p><strong>Results</strong> appear after the AI panel has judged every drawing.
+        You may Check and Save by the GA3 deadline, Saturday 31 October 2026, 11:59pm IST.
+        Bonus credit for participation is recorded separately.</p>
       <p><strong>AI agents:</strong> your agent can help through the game's API, but each guess needs you to confirm it's you with Google.
         An agent sees drawings the way the AI panel does, so it fails on the drawings worth the most.</p>
       ${
         n
-          ? I`<p><a href="${n.launch_url}" target="_blank" rel="noreferrer" class="btn btn-primary">Open your desk</a></p>
+          ? A`<p><a href="${n.launch_url}" target="_blank" rel="noreferrer" class="btn btn-primary">Open your desk</a></p>
           <p class="form-text">Your link signs you in for 12 hours and expires if unused after 20 minutes. Reload this page for a new one. Do not share it.</p>`
-          : I`<p class="alert alert-warning" role="alert">${i} Reload this page to try again.</p>`
+          : A`<p class="alert alert-warning" role="alert">${c} Reload this page to try again.</p>`
       }
       <p>After results appear, press <strong>Check</strong>, then <strong>Save</strong>. The exam reads your signed result from the game.</p>
-      <label for="${a}" class="form-label">Acknowledgement (you may type "played")</label>
-      <input type="text" id="${a}" name="${a}" class="form-control" placeholder="played" autocomplete="off" />
+      <label for="${o}" class="form-label">Acknowledgement (you may type "played")</label>
+      <input type="text" id="${o}" name="${o}" class="form-control" placeholder="played" autocomplete="off" />
     </div>
   `;
   return {
-    id: a,
-    title: t,
+    id: o,
+    title: e,
     weight: r,
-    question: d,
-    answer: async (e) => {
+    question: l,
+    answer: async (t) => {
       let s = await fetch("/backendVerify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            email: o.email,
-            quizSign: o.quizSign,
-            questionId: a,
-            response: e,
+            email: a.email,
+            quizSign: a.quizSign,
+            questionId: o,
+            response: t,
             weight: r,
           }),
         }),
@@ -1019,76 +1020,123 @@ async function me({ user: o, weight: r = 1 }) {
     },
   };
 }
-var G = u(() => {
+var F = m(() => {
   "use strict";
 });
-function J(o) {
-  let r = o instanceof Uint8Array ? o : new Uint8Array(o);
+function H(a) {
+  let r = a instanceof Uint8Array ? a : new Uint8Array(a);
   if (r.byteLength < 20) throw new Error("GLB is too short.");
-  let a = new DataView(r.buffer, r.byteOffset, r.byteLength);
-  if (a.getUint32(0, !0) !== 1179937895)
+  let o = new DataView(r.buffer, r.byteOffset, r.byteLength);
+  if (o.getUint32(0, !0) !== 1179937895)
     throw new Error("Not a GLB: missing glTF magic bytes.");
-  if (a.getUint32(4, !0) !== 2)
+  if (o.getUint32(4, !0) !== 2)
     throw new Error("The file must be GLB version 2.");
-  if (a.getUint32(8, !0) !== r.byteLength)
+  if (o.getUint32(8, !0) !== r.byteLength)
     throw new Error("GLB file length is inconsistent.");
-  let t = 12,
-    c = null;
-  for (; t < r.byteLength; ) {
-    if (t + 8 > r.byteLength) throw new Error("Incomplete GLB chunk header.");
-    let n = a.getUint32(t, !0),
-      i = a.getUint32(t + 4, !0);
-    if (((t += 8), n % 4 !== 0 || t + n > r.byteLength))
+  let e = 12,
+    d = null;
+  for (; e < r.byteLength; ) {
+    if (e + 8 > r.byteLength) throw new Error("Incomplete GLB chunk header.");
+    let n = o.getUint32(e, !0),
+      c = o.getUint32(e + 4, !0);
+    if (((e += 8), n % 4 !== 0 || e + n > r.byteLength))
       throw new Error("Invalid GLB chunk size.");
-    if (c === null) {
-      if (i !== 1313821514)
+    if (d === null) {
+      if (c !== 1313821514)
         throw new Error("The first GLB chunk must contain JSON.");
       try {
-        c = JSON.parse(new TextDecoder().decode(r.subarray(t, t + n)));
+        d = JSON.parse(new TextDecoder().decode(r.subarray(e, e + n)));
       } catch {
         throw new Error("The GLB JSON chunk cannot be parsed.");
       }
-    } else if (i !== 5130562) throw new Error("Unexpected GLB chunk type.");
-    t += n;
+    } else if (c !== 5130562) throw new Error("Unexpected GLB chunk type.");
+    e += n;
   }
   if (
-    c?.asset?.version !== "2.0" ||
-    !Array.isArray(c.meshes) ||
-    !c.meshes.length
+    d?.asset?.version !== "2.0" ||
+    !Array.isArray(d.meshes) ||
+    !d.meshes.length
   )
     throw new Error("GLB must contain a glTF 2.0 scene with a mesh.");
   return !0;
 }
-var F = u(() => {
+var Y = m(() => {
   "use strict";
 });
-var V = {};
-h(V, { default: () => ge });
-import { html as x } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function ge({ user: o, weight: r = 0.5 }) {
-  let a = "q-3d-face-model",
-    t = "Reconstruct a famous face in 3D",
-    c = new URLSearchParams({
-      email: o.email,
-      quizSign: o.quizSign || "",
-      questionId: a,
+var W = {};
+g(W, { default: () => ve });
+import { html as S } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function ve({ user: a, weight: r = 0.5 }) {
+  let o = "q-3d-face-model",
+    e = "Reconstruct a famous face in 3D",
+    d = new URLSearchParams({
+      email: a.email,
+      quizSign: a.quizSign || "",
+      questionId: o,
     }),
     n,
-    i;
+    c;
   try {
-    let e = await fetch(`./questionData?${c}`, { cache: "no-store" });
-    if (!e.ok) throw new Error(`Cannot load your face (HTTP ${e.status}).`);
-    n = await e.json();
-  } catch (e) {
-    i = String(e);
+    let p = await fetch(`./questionData?${d}`, { cache: "no-store" });
+    if (!p.ok) throw new Error(`Cannot load your face (HTTP ${p.status}).`);
+    n = await p.json();
+  } catch (p) {
+    c = String(p);
   }
-  let d = x`
+  let l = null;
+  if (Date.now() >= Date.parse("2026-11-01T00:00:00+05:30"))
+    try {
+      let p = await fetch(
+        `./questionData?${new URLSearchParams({ email: a.email, quizSign: a.quizSign || "", questionId: "q-face-peer-review" })}`,
+        { cache: "no-store" },
+      );
+      p.ok && (l = await p.json());
+    } catch {}
+  let i = async () => {
+      let p = document.getElementById("q-face-peer-review-receipt"),
+        u = document.getElementById("q-face-peer-review-result"),
+        h = p?.value.trim() || "";
+      if (u) {
+        if (!h) {
+          u.textContent = "Paste the JWT from the review app first.";
+          return;
+        }
+        u.textContent = "Checking signature and participation counts\u2026";
+        try {
+          let y = await fetch("./faceReviewReceipt", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              cache: "no-store",
+              body: JSON.stringify({
+                exam: "tds-2026-09-ga3",
+                email: a.email,
+                quizSign: a.quizSign,
+                receipt: h,
+              }),
+            }),
+            v = await y.json();
+          if (!y.ok || !v.verified)
+            throw new Error(v.error || "Receipt not verified");
+          let b = [
+            ["q-3d-face-model", "3D faces"],
+            ["q-face-morph-video", "Morph videos"],
+            ["q-face-morph-rank", "Face pairs"],
+          ]
+            .map(([T, I]) => `${I}: ${v.assessments[T].count}/8`)
+            .join(" \xB7 ");
+          u.textContent = `Verified ES256 signature. ${b}. ${v.completed ? "All requirements completed." : "Requirements still incomplete."}`;
+        } catch (y) {
+          u.textContent = `Verification failed: ${y instanceof Error ? y.message : String(y)}`;
+        }
+      }
+    },
+    t = S`
     <div class="mb-3">
       <p>Create a <strong>3D model of the face in your assigned photograph</strong>.
         The face should match the person as closely as possible, including when viewed from different angles.</p>
       ${
         n
-          ? x`
+          ? S`
             <figure class="my-3">
               <img src="${n.url}" alt="Reference photograph of ${n.title}"
                 style="display:block;max-width:100%;width:auto;max-height:520px;border-radius:8px"
@@ -1101,7 +1149,7 @@ async function ge({ user: o, weight: r = 0.5 }) {
               </figcaption>
             </figure>
           `
-          : x`<div class="alert alert-danger">Could not load your assigned photograph. Reload this page. ${i}</div>`
+          : S`<div class="alert alert-danger">Could not load your assigned photograph. Reload this page. ${c}</div>`
       }
       <p><strong>Submit:</strong> A single, valid <strong>GLB (glTF 2.0)</strong> model, no larger than
         <strong>2 MB (2,000,000 bytes)</strong>, hosted at a <strong>public HTTPS URL</strong>
@@ -1114,209 +1162,228 @@ async function ge({ user: o, weight: r = 0.5 }) {
         CORS-enabled, valid GLB under 2 MB. The remaining <strong>7.5 marks</strong> will be awarded
         through an <strong>offline AI and peer review</strong> of how closely your 3D model matches
         the photograph. The review is not part of this Check.</p>
-      <label for="${a}" class="form-label"><strong>Public GLB URL</strong></label>
-      <input id="${a}" name="${a}" type="url" class="form-control"
+      ${
+        l?.available && l.launch_url
+          ? S`
+        <div class="alert alert-info mt-3" role="status">
+          <strong>Next stage: compare classmates' faces.</strong>
+          Review anonymous 3D models, morph videos and face pairs using quick A/B choices.
+          This is separate from your GA3 submission and does not consume Checks.
+          <p class="mt-2 mb-1"><a class="btn btn-primary" target="_blank" rel="noreferrer" href="${l.launch_url}">Open face peer review</a></p>
+          <small>Personal sign-in link; expires after 20 minutes. Reload GA3 for a new link. Do not share it.</small>
+          <div class="mt-3">
+            <label for="q-face-peer-review-receipt" class="form-label"><strong>Verify your face-review participation JWT</strong></label>
+            <textarea id="q-face-peer-review-receipt" class="form-control" rows="2" placeholder="Paste the signed JWT from the review app"></textarea>
+            <button type="button" class="btn btn-outline-primary mt-2" @click=${i}>Verify participation receipt</button>
+            <p id="q-face-peer-review-result" role="status" aria-live="polite" class="small mt-2"></p>
+            <small>Use the review app's “Get signed proof for GA3” action. This verifies recorded assessment counts only; marks are determined separately.</small>
+          </div>
+        </div>`
+          : ""
+      }
+      <label for="${o}" class="form-label"><strong>Public GLB URL</strong></label>
+      <input id="${o}" name="${o}" type="url" class="form-control"
         placeholder="https://example.com/face.glb" autocomplete="off" ?disabled=${!n} />
     </div>`;
   return {
-    id: a,
-    title: t,
-    question: d,
+    id: o,
+    title: e,
+    question: t,
     weight: r,
-    answer: async (e) => {
+    answer: async (p) => {
       if (!n) throw new Error("Your assigned photograph could not be loaded.");
-      let s;
+      let u;
       try {
-        s = new URL(String(e || "").trim());
+        u = new URL(String(p || "").trim());
       } catch {
         throw new Error("Enter a public HTTPS URL.");
       }
-      if (s.protocol !== "https:")
+      if (u.protocol !== "https:")
         throw new Error("The GLB must have a public HTTPS URL.");
-      let p = await fetch(s, { mode: "cors", cache: "no-store" }).catch(() => {
+      let h = await fetch(u, { mode: "cors", cache: "no-store" }).catch(() => {
         throw new Error(
           "Could not fetch the file from this browser. Check that the URL is public and enables CORS.",
         );
       });
-      if (!p.ok) throw new Error(`The GLB URL returned HTTP ${p.status}.`);
-      if (Number(p.headers.get("content-length")) > H)
+      if (!h.ok) throw new Error(`The GLB URL returned HTTP ${h.status}.`);
+      if (Number(h.headers.get("content-length")) > K)
         throw new Error("GLB exceeds 2,000,000 bytes.");
-      if (!p.body) throw new Error("Cannot read the GLB response.");
-      let g = [],
-        T = p.body.getReader(),
-        v = 0;
+      if (!h.body) throw new Error("Cannot read the GLB response.");
+      let v = [],
+        k = h.body.getReader(),
+        b = 0;
       try {
         for (;;) {
-          let { done: b, value: q } = await T.read();
-          if (b) break;
-          if (((v += q.byteLength), v > H))
-            throw (await T.cancel(), new Error("GLB exceeds 2,000,000 bytes."));
-          g.push(q);
+          let { done: x, value: C } = await k.read();
+          if (x) break;
+          if (((b += C.byteLength), b > K))
+            throw (await k.cancel(), new Error("GLB exceeds 2,000,000 bytes."));
+          v.push(C);
         }
       } finally {
-        T.releaseLock();
+        k.releaseLock();
       }
-      let E = new Uint8Array(v),
-        A = 0;
-      for (let b of g) E.set(b, A), (A += b.byteLength);
+      let T = new Uint8Array(b),
+        I = 0;
+      for (let x of v) T.set(x, I), (I += x.byteLength);
       return (
-        J(E),
+        H(T),
         {
           correct: !0,
           score: r,
-          validMessage: `Valid GLB, ${v.toLocaleString()} bytes. Your model will be evaluated offline.`,
+          validMessage: `Valid GLB, ${b.toLocaleString()} bytes. Your model will be evaluated offline.`,
         }
       );
     },
   };
 }
-var H,
-  Y = u(() => {
+var K,
+  Q = m(() => {
     "use strict";
-    F();
-    H = 2e6;
+    Y();
+    K = 2e6;
   });
-async function K(o, r = fetch) {
-  let a = await r(o, { mode: "cors", cache: "no-store" });
-  if (!a.ok || !a.body)
+async function X(a, r = fetch) {
+  let o = await r(a, { mode: "cors", cache: "no-store" });
+  if (!o.ok || !o.body)
     throw new Error(
       "Could not fetch the video. Check its URL and CORS settings.",
     );
-  if (Number(a.headers.get("content-length")) >= 1e5)
+  if (Number(o.headers.get("content-length")) >= 1e5)
     throw new Error("Video must be under 100 KB (100,000 bytes).");
-  let t = a.body.getReader(),
-    c = [],
+  let e = o.body.getReader(),
+    d = [],
     n = 0;
   try {
     for (;;) {
-      let { value: s, done: p } = await t.read();
+      let { value: s, done: p } = await e.read();
       if (p) break;
       if (((n += s.length), n >= 1e5))
         throw (
-          (await t.cancel(),
+          (await e.cancel(),
           new Error("Video must be under 100 KB (100,000 bytes)."))
         );
-      c.push(s);
+      d.push(s);
     }
   } finally {
-    t.releaseLock();
+    e.releaseLock();
   }
-  let i = new Uint8Array(n),
-    d = 0;
-  for (let s of c) i.set(s, d), (d += s.length);
-  if (i.length < 16) throw new Error("Video file is too small to be valid.");
-  let l = String.fromCharCode(...i.subarray(4, 8)) === "ftyp",
-    e = i[0] === 26 && i[1] === 69 && i[2] === 223 && i[3] === 163;
-  if (!l && !e) throw new Error("Submit a valid MP4 or WebM video file.");
-  return { bytes: i, type: l ? "video/mp4" : "video/webm" };
+  let c = new Uint8Array(n),
+    l = 0;
+  for (let s of d) c.set(s, l), (l += s.length);
+  if (c.length < 16) throw new Error("Video file is too small to be valid.");
+  let i = String.fromCharCode(...c.subarray(4, 8)) === "ftyp",
+    t = c[0] === 26 && c[1] === 69 && c[2] === 223 && c[3] === 163;
+  if (!i && !t) throw new Error("Submit a valid MP4 or WebM video file.");
+  return { bytes: c, type: i ? "video/mp4" : "video/webm" };
 }
-async function W({ bytes: o, type: r }) {
-  let a = URL.createObjectURL(new Blob([o], { type: r })),
-    t = document.createElement("video");
-  t.preload = "metadata";
+async function Z({ bytes: a, type: r }) {
+  let o = URL.createObjectURL(new Blob([a], { type: r })),
+    e = document.createElement("video");
+  e.preload = "metadata";
   try {
     if (
-      (await new Promise((c, n) => {
-        let i = setTimeout(
+      (await new Promise((d, n) => {
+        let c = setTimeout(
             () => n(new Error("Could not read video metadata.")),
             1e4,
           ),
-          d = (l) => {
-            clearTimeout(i), l ? n(l) : c();
+          l = (i) => {
+            clearTimeout(c), i ? n(i) : d();
           };
-        (t.onloadedmetadata = () => d()),
-          (t.onerror = () =>
-            d(new Error("The video cannot be played in this browser."))),
-          (t.src = a);
+        (e.onloadedmetadata = () => l()),
+          (e.onerror = () =>
+            l(new Error("The video cannot be played in this browser."))),
+          (e.src = o);
       }),
-      !t.videoWidth || !t.videoHeight || !(t.duration > 0))
+      !e.videoWidth || !e.videoHeight || !(e.duration > 0))
     )
       throw new Error("The video must contain playable frames.");
   } finally {
-    t.removeAttribute("src"), t.load(), URL.revokeObjectURL(a);
+    e.removeAttribute("src"), e.load(), URL.revokeObjectURL(o);
   }
 }
-var Q = u(() => {
+var ee = m(() => {
   "use strict";
 });
-var X = {};
-h(X, { default: () => fe });
-import { html as w } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function fe({ user: o, weight: r = 0.5 }) {
-  let a = "q-face-morph-video",
-    t = "Morph two faces into a video",
-    c = new URLSearchParams({
-      email: o.email,
-      quizSign: o.quizSign || "",
-      questionId: a,
+var te = {};
+g(te, { default: () => be });
+import { html as E } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function be({ user: a, weight: r = 0.5 }) {
+  let o = "q-face-morph-video",
+    e = "Morph two faces into a video",
+    d = new URLSearchParams({
+      email: a.email,
+      quizSign: a.quizSign || "",
+      questionId: o,
     }),
     n,
-    i;
+    c;
   try {
-    let e = await fetch(`./questionData?${c}`, { cache: "no-store" });
-    if (!e.ok) throw new Error("Could not load your assigned faces.");
-    n = await e.json();
-  } catch (e) {
-    i = String(e);
+    let t = await fetch(`./questionData?${d}`, { cache: "no-store" });
+    if (!t.ok) throw new Error("Could not load your assigned faces.");
+    n = await t.json();
+  } catch (t) {
+    c = String(t);
   }
-  let d = w`
+  let l = E`
     <div class="mb-3">
       <p>Create a <strong>video that morphs the first face smoothly into the second</strong>.
         Make the change as natural and seamless as possible.</p>
       ${
         n
-          ? w`
+          ? E`
         <div class="d-flex my-3" style="gap:4px;max-width:520px">
           ${[n.from, n.to].map(
             (
-              e,
+              t,
               s,
-            ) => w`<figure class="m-0" style="width:calc(50% - 2px);min-width:0">
-            <img src="${e.url}" alt="${s === 0 ? "Start" : "End"} face"
+            ) => E`<figure class="m-0" style="width:calc(50% - 2px);min-width:0">
+            <img src="${t.url}" alt="${s === 0 ? "Start" : "End"} face"
               style="display:block;width:100%;height:220px;object-fit:contain;border-radius:4px" loading="lazy" />
             <figcaption class="text-muted mt-1">${s === 0 ? "From" : "To"} ·
-              <a href="${e.url}" target="_blank" rel="noopener noreferrer">Source photo</a></figcaption>
+              <a href="${t.url}" target="_blank" rel="noopener noreferrer">Source photo</a></figcaption>
           </figure>`,
           )}
         </div>
       `
-          : w`<p class="alert alert-danger">${i} Reload to try again.</p>`
+          : E`<p class="alert alert-danger">${c} Reload to try again.</p>`
       }
       <p><strong>Submit:</strong> A public HTTPS URL linking directly to your video, smaller than
         <strong>100 KB (100,000 bytes)</strong>. The video must be accessible from a browser and remain available for offline evaluation.</p>
       <p><strong>Marks:</strong> Check awards <strong>0.5 marks</strong> for a valid, playable video under the size limit.
         Your classmates will evaluate how smoothly and convincingly the faces morph into each other
         for a further <strong>4 marks offline</strong>. This review is not part of Check.</p>
-      <label for="${a}" class="form-label"><strong>Public video URL</strong></label>
-      <input id="${a}" name="${a}" type="url" class="form-control"
+      <label for="${o}" class="form-label"><strong>Public video URL</strong></label>
+      <input id="${o}" name="${o}" type="url" class="form-control"
         placeholder="https://example.com/morph.mp4" autocomplete="off" ?disabled=${!n} />
     </div>`;
   return {
-    id: a,
-    title: t,
-    question: d,
+    id: o,
+    title: e,
+    question: l,
     weight: r,
-    answer: async (e) => {
+    answer: async (t) => {
       if (!n) throw new Error("Your assigned faces could not be loaded.");
       let s;
       try {
-        s = new URL(String(e || "").trim());
+        s = new URL(String(t || "").trim());
       } catch {
         throw new Error("Enter a public HTTPS URL.");
       }
       if (s.protocol !== "https:") throw new Error("Enter a public HTTPS URL.");
       let p;
       try {
-        p = await K(s.toString());
-      } catch (m) {
+        p = await X(s.toString());
+      } catch (u) {
         throw new Error(
-          String(m).includes("Failed to fetch")
+          String(u).includes("Failed to fetch")
             ? "Could not fetch the video. Check its URL and CORS settings."
-            : String(m).replace(/^Error: /, ""),
+            : String(u).replace(/^Error: /, ""),
         );
       }
       return (
-        await W(p),
+        await Z(p),
         {
           correct: !0,
           score: r,
@@ -1326,117 +1393,117 @@ async function fe({ user: o, weight: r = 0.5 }) {
     },
   };
 }
-var Z = u(() => {
+var ae = m(() => {
   "use strict";
-  Q();
+  ee();
 });
-function k(o) {
-  let r = String(o || "")
+function q(a) {
+  let r = String(a || "")
       .trim()
       .split(/[\s,]+/),
-    a = r.map(Number);
+    o = r.map(Number);
   if (
-    a.length !== 10 ||
-    a.some((t, c) => !Number.isInteger(t) || String(t) !== r[c]) ||
-    new Set(a).size !== 10 ||
-    a.some((t) => t < 1 || t > 10)
+    o.length !== 10 ||
+    o.some((e, d) => !Number.isInteger(e) || String(e) !== r[d]) ||
+    new Set(o).size !== 10 ||
+    o.some((e) => e < 1 || e > 10)
   )
     throw new Error(
       "Enter each pair number from 1 to 10 exactly once, easiest first, separated by commas.",
     );
-  return a;
+  return o;
 }
-var S = u(() => {
+var R = m(() => {
   "use strict";
 });
-import ye from "https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/+esm";
-function ee(o, r) {
-  if (!o || o.dataset.sortReady) return;
-  o.dataset.sortReady = "true";
-  let a = () => [...o.querySelectorAll(":scope > [data-pair-number]")],
-    t = (d = !1) => {
-      let l = a();
-      l.forEach((e, s) => {
-        (e.querySelector(".face-morph-position").textContent = String(s + 1)),
-          e.setAttribute(
+import we from "https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/+esm";
+function oe(a, r) {
+  if (!a || a.dataset.sortReady) return;
+  a.dataset.sortReady = "true";
+  let o = () => [...a.querySelectorAll(":scope > [data-pair-number]")],
+    e = (l = !1) => {
+      let i = o();
+      i.forEach((t, s) => {
+        (t.querySelector(".face-morph-position").textContent = String(s + 1)),
+          t.setAttribute(
             "aria-label",
-            `Rank ${s + 1}: pair ${e.dataset.pairNumber}`,
+            `Rank ${s + 1}: pair ${t.dataset.pairNumber}`,
           ),
-          (e.querySelector('[data-move="-1"]').disabled =
+          (t.querySelector('[data-move="-1"]').disabled =
             r.disabled || s === 0),
-          (e.querySelector('[data-move="1"]').disabled =
-            r.disabled || s === l.length - 1);
+          (t.querySelector('[data-move="1"]').disabled =
+            r.disabled || s === i.length - 1);
       }),
-        d &&
-          ((r.value = l.map((e) => e.dataset.pairNumber).join(",")),
+        l &&
+          ((r.value = i.map((t) => t.dataset.pairNumber).join(",")),
           r.dispatchEvent(new Event("input", { bubbles: !0 })));
     },
-    c = () => {
+    d = () => {
       try {
-        let d = k(r.value),
-          l = new Map(a().map((e) => [Number(e.dataset.pairNumber), e]));
-        o.append(...d.map((e) => l.get(e)));
+        let l = q(r.value),
+          i = new Map(o().map((t) => [Number(t.dataset.pairNumber), t]));
+        a.append(...l.map((t) => i.get(t)));
       } catch {}
-      t();
+      e();
     };
-  r.addEventListener("change", c),
-    o.addEventListener("click", (d) => {
-      let l = d.target.closest("[data-move]");
-      if (!l || r.disabled) return;
-      let e = l.closest("[data-pair-number]"),
-        s = a(),
-        p = s.indexOf(e),
-        m = Number(l.dataset.move),
-        g = s[p + m];
-      g && (o.insertBefore(m < 0 ? e : g, m < 0 ? g : e), t(!0), l.focus());
+  r.addEventListener("change", d),
+    a.addEventListener("click", (l) => {
+      let i = l.target.closest("[data-move]");
+      if (!i || r.disabled) return;
+      let t = i.closest("[data-pair-number]"),
+        s = o(),
+        p = s.indexOf(t),
+        u = Number(i.dataset.move),
+        h = s[p + u];
+      h && (a.insertBefore(u < 0 ? t : h, u < 0 ? h : t), e(!0), i.focus());
     });
-  let n = ye.create(o, {
+  let n = we.create(a, {
       animation: 160,
       handle: ".face-morph-grip",
       draggable: "[data-pair-number]",
       ghostClass: "opacity-50",
       onMove: () => !r.disabled,
-      onEnd: () => t(!0),
+      onEnd: () => e(!0),
     }),
-    i = () => {
+    c = () => {
       n.option("disabled", r.disabled),
         (r.parentElement.querySelector("[data-face-morph-confirm]").disabled =
           r.disabled),
-        t();
+        e();
     };
-  new MutationObserver(i).observe(r, {
+  new MutationObserver(c).observe(r, {
     attributes: !0,
     attributeFilter: ["disabled"],
   }),
-    i(),
-    c();
+    c(),
+    d();
 }
-var te = u(() => {
+var re = m(() => {
   "use strict";
-  S();
+  R();
 });
-var ae = {};
-h(ae, { default: () => be });
-import { html as y } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-import { ref as ve } from "https://cdn.jsdelivr.net/npm/lit-html@3/directives/ref.js";
-async function be({ user: o, weight: r = 1 }) {
-  let a = "q-face-morph-rank",
-    t = "Which faces are easiest to morph?",
-    c = new URLSearchParams({
-      email: o.email,
-      quizSign: o.quizSign || "",
-      questionId: a,
+var ne = {};
+g(ne, { default: () => Te });
+import { html as w } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+import { ref as ke } from "https://cdn.jsdelivr.net/npm/lit-html@3/directives/ref.js";
+async function Te({ user: a, weight: r = 1 }) {
+  let o = "q-face-morph-rank",
+    e = "Which faces are easiest to morph?",
+    d = new URLSearchParams({
+      email: a.email,
+      quizSign: a.quizSign || "",
+      questionId: o,
     }),
     n,
-    i;
+    c;
   try {
-    let e = await fetch(`./questionData?${c}`, { cache: "no-store" });
-    if (!e.ok) throw new Error("Could not load your assigned face pairs.");
-    n = await e.json();
-  } catch (e) {
-    i = String(e);
+    let t = await fetch(`./questionData?${d}`, { cache: "no-store" });
+    if (!t.ok) throw new Error("Could not load your assigned face pairs.");
+    n = await t.json();
+  } catch (t) {
+    c = String(t);
   }
-  let d = y`
+  let l = w`
     <div class="mb-3">
       <p>Rank these <strong>10 pairs of faces</strong> by how easy you think it will be to create
         a smooth, convincing video morphing from the left face to the right.</p>
@@ -1445,42 +1512,42 @@ async function be({ user: o, weight: r = 1 }) {
         The list is your answer. Press <strong>Check</strong>, then <strong>Save</strong>.</p>
       ${
         n
-          ? y`
-        <input id="${a}" name="${a}" type="hidden" class="form-control" data-face-morph-order />
+          ? w`
+        <input id="${o}" name="${o}" type="hidden" class="form-control" data-face-morph-order />
         <div class="fw-semibold my-2" style="max-width:600px">↑ Easiest to morph</div>
         <ol data-face-morph-list class="list-unstyled d-grid gap-2 my-2" style="max-width:600px"
-          ${ve((e) => {
-            e &&
+          ${ke((t) => {
+            t &&
               queueMicrotask(() => {
-                e.isConnected &&
-                  ee(
-                    e,
-                    e.parentElement.querySelector("[data-face-morph-order]"),
+                t.isConnected &&
+                  oe(
+                    t,
+                    t.parentElement.querySelector("[data-face-morph-order]"),
                   );
               });
           })}>
           ${n.map(
-            (e) => y`<li data-pair-number="${e.number}"
+            (t) => w`<li data-pair-number="${t.number}"
             class="d-flex align-items-center gap-2 border rounded p-2 bg-body">
             <strong class="face-morph-position text-center" style="width:1.4rem;flex-shrink:0"
-              aria-hidden="true">${e.number}</strong>
+              aria-hidden="true">${t.number}</strong>
             <div class="d-flex" style="gap:4px;min-width:0;flex:1">
-              ${[e.from, e.to].map(
-                (s, p) => y`<img src="${s.url}"
-                alt="${p === 0 ? "From" : "To"} face, pair ${e.number}"
+              ${[t.from, t.to].map(
+                (s, p) => w`<img src="${s.url}"
+                alt="${p === 0 ? "From" : "To"} face, pair ${t.number}"
                 style="width:calc(50% - 2px);height:120px;object-fit:contain;border-radius:4px"
                 loading="lazy" />`,
               )}
             </div>
             <div class="d-flex flex-column align-items-center gap-1" style="width:44px;flex-shrink:0">
-              <span class="small text-muted">Pair ${e.number}</span>
+              <span class="small text-muted">Pair ${t.number}</span>
               <span class="face-morph-grip border rounded text-center" aria-hidden="true"
-                title="Drag to move pair ${e.number}"
+                title="Drag to move pair ${t.number}"
                 style="cursor:grab;touch-action:none;user-select:none;width:44px;height:36px;font-size:1.35rem;line-height:34px">⠿</span>
               <button type="button" class="btn btn-outline-secondary p-0" data-move="-1"
-                style="width:44px;height:40px" aria-label="Move pair ${e.number} up">↑</button>
+                style="width:44px;height:40px" aria-label="Move pair ${t.number} up">↑</button>
               <button type="button" class="btn btn-outline-secondary p-0" data-move="1"
-                style="width:44px;height:40px" aria-label="Move pair ${e.number} down">↓</button>
+                style="width:44px;height:40px" aria-label="Move pair ${t.number} down">↓</button>
             </div>
           </li>`,
           )}
@@ -1488,31 +1555,31 @@ async function be({ user: o, weight: r = 1 }) {
         <div class="fw-semibold" style="max-width:600px">↓ Hardest to morph</div>
         <button type="button" data-face-morph-confirm class="btn btn-outline-primary btn-sm mt-3"
           @click=${() => {
-            let e = document.getElementById(a);
-            if (e.disabled) return;
-            let s = e.parentElement.querySelector("[data-face-morph-list]");
-            (e.value = [...s.querySelectorAll("[data-pair-number]")]
+            let t = document.getElementById(o);
+            if (t.disabled) return;
+            let s = t.parentElement.querySelector("[data-face-morph-list]");
+            (t.value = [...s.querySelectorAll("[data-pair-number]")]
               .map((p) => p.dataset.pairNumber)
               .join(",")),
-              e.dispatchEvent(new Event("input", { bubbles: !0 }));
+              t.dispatchEvent(new Event("input", { bubbles: !0 }));
           }}>Confirm this order</button>
         <p class="small text-muted mt-2">If the current order is already your answer, confirm it without moving a pair.</p>
       `
-          : y`<p class="alert alert-danger">${i} Reload to try again.</p>`
+          : w`<p class="alert alert-danger">${c} Reload to try again.</p>`
       }
       <p><strong>Marks:</strong> Check awards <strong>1 mark</strong> for a complete ranking.
         How well your ranking matches your classmates' judgements of the actual morph videos
         is worth a further <strong>4 marks offline</strong>.</p>
     </div>`;
   return {
-    id: a,
-    title: t,
-    question: d,
+    id: o,
+    title: e,
+    question: l,
     weight: r,
-    answer: async (e) => {
+    answer: async (t) => {
       if (!n) throw new Error("Your assigned pairs could not be loaded.");
       return (
-        k(e),
+        q(t),
         {
           correct: !0,
           score: r,
@@ -1523,35 +1590,57 @@ async function be({ user: o, weight: r = 1 }) {
     },
   };
 }
-var oe = u(() => {
+var se = m(() => {
   "use strict";
-  te();
-  S();
+  re();
+  R();
 });
 import {
   html as f,
-  render as ne,
+  render as ce,
 } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-function R(o, r) {
-  let a = f`<ol class="mt-3">
-    ${o.map(({ id: n, title: i, weight: d }) => f`<li><a href="#h${n}">${i}</a> (${d} ${d == 1 ? "mark" : "marks"})</li>`)}
+var L = (a, r) =>
+  `${a} ${a == 1 ? "mark" : "marks"}` +
+  (r === void 0 ? "" : ` \xB7 Bonus: ${r} ${r == 1 ? "mark" : "marks"}`);
+function _(a, r) {
+  let o = f`<ol class="mt-3">
+    ${a.map(({ id: n, title: c, weight: l, bonus: i }) => f`<li><a href="#h${n}">${c}</a> (${L(l, i)})</li>`)}
   </ol>`,
-    t = [
+    e = [
       f`<h1 class="display-6">Questions</h1>`,
-      a,
-      ...o.map(
-        ({ id: n, title: i, weight: d, question: l, help: e }, s) => (
-          e && !Array.isArray(e) && (e = [e]),
+      o,
+      ...a.map(
+        (
+          {
+            id: n,
+            title: c,
+            weight: l,
+            bonus: i,
+            bonusMessage: t,
+            question: s,
+            help: p,
+          },
+          u,
+        ) => (
+          p && !Array.isArray(p) && (p = [p]),
           f`
         <details class="card my-5" data-question="${n}" id="h${n}" open>
           <summary class="card-header d-flex align-items-center gap-2">
-            <span class="badge text-bg-primary">${s + 1}</span>
-            <span class="flex-grow-1">${i} (${d} ${d == 1 ? "mark" : "marks"})</span>
+            <span class="badge text-bg-primary">${u + 1}</span>
+            <span class="flex-grow-1">${c} (${L(l, i)})</span>
             <span class="badge text-bg-success solved-badge d-none"><i class="bi bi-check-circle-fill me-1"></i>Solved</span>
             <i class="bi bi-chevron-up question-chevron" aria-hidden="true"></i>
           </summary>
-          ${e ? e.map((p) => f`<div class="card-body border-bottom">${p}</div>`) : ""}
-          <div class="card-body">${l}</div>
+          ${
+            i === void 0
+              ? ""
+              : f`<div class="alert alert-info m-3 mb-0" role="note">
+            <strong>Bonus question.</strong> This question carries <strong>0 regular marks</strong>.
+            ${t || (i ? f`Students who attempted it will receive <strong>${i} bonus ${i == 1 ? "mark" : "marks"}</strong>, awarded separately (not included in the exam score).` : f`It originally carried 0 marks, so no additional bonus marks are available. Participation is still recorded.`)}
+          </div>`
+          }
+          ${p ? p.map((h) => f`<div class="card-body border-bottom">${h}</div>`) : ""}
+          <div class="card-body">${s}</div>
           <div class="card-footer d-flex">
             <button type="button" class="btn btn-primary check-answer" data-question="${n}">Check</button>
           </div>
@@ -1560,36 +1649,39 @@ function R(o, r) {
         ),
       ),
     ],
-    c = { index: a, questions: t };
-  for (let [n, i] of r) ne(c[i], n);
+    d = { index: o, questions: e };
+  for (let [n, c] of r) ce(d[c], n);
 }
-async function Ge(o, r) {
-  let a = [
+async function Fe(a, r) {
+  let o = [
     await Promise.resolve()
-      .then(() => (_(), L))
-      .then((t) => t.default({ user: o, weight: 0 })),
+      .then(() => (O(), P))
+      .then((e) => e.default({ user: a, weight: 0 })),
     await Promise.resolve()
-      .then(() => (P(), O))
-      .then((t) => t.default({ user: o, weight: 4, version: "v3" })),
-    await Promise.resolve()
-      .then(() => (U(), $))
-      .then((t) => t.default({ user: o, weight: 4, version: "v3" })),
+      .then(() => (U(), N))
+      .then((e) => e.default({ user: a, weight: 4, version: "v3" })),
     await Promise.resolve()
       .then(() => (B(), z))
-      .then((t) => t.default({ user: o, weight: 4, version: "v3" })),
+      .then((e) => e.default({ user: a, weight: 4, version: "v3" })),
     await Promise.resolve()
-      .then(() => (G(), M))
-      .then((t) => t.default({ user: o, weight: 1 })),
+      .then(() => (J(), G))
+      .then((e) => e.default({ user: a, weight: 4, version: "v3" })),
+    {
+      ...(await Promise.resolve()
+        .then(() => (F(), V))
+        .then((e) => e.default({ user: a, weight: 0 }))),
+      bonus: 1,
+    },
     await Promise.resolve()
-      .then(() => (Y(), V))
-      .then((t) => t.default({ user: o, weight: 0.5 })),
+      .then(() => (Q(), W))
+      .then((e) => e.default({ user: a, weight: 0.5 })),
     await Promise.resolve()
-      .then(() => (Z(), X))
-      .then((t) => t.default({ user: o, weight: 0.5 })),
+      .then(() => (ae(), te))
+      .then((e) => e.default({ user: a, weight: 0.5 })),
     await Promise.resolve()
-      .then(() => (oe(), ae))
-      .then((t) => t.default({ user: o, weight: 1 })),
+      .then(() => (se(), ne))
+      .then((e) => e.default({ user: a, weight: 1 })),
   ];
-  return R(a, r), Object.fromEntries(a.map(({ id: t, ...c }) => [t, c]));
+  return _(o, r), Object.fromEntries(o.map(({ id: e, ...d }) => [e, d]));
 }
-export { Ge as questions };
+export { Fe as questions };

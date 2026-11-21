@@ -26,8 +26,8 @@ const EXAMS = {
     ['ga1', 'Weekly Graded Assignments', 'GA 1 (Developer Tools)', 'Developer tooling, API servers, Git forensics and an agent ledger — including live-API questions.'],
     ['ga2', 'Weekly Graded Assignments', 'GA 2 (API Engineering & Cloud Services)', 'Statistics APIs, CORS, OAuth JWKS verification, Redis counters, Prometheus observability, and LLM endpoints.'],
     ['ga3', 'Weekly Graded Assignments', 'GA 3 (Agent Safety & Trading Games)', 'A2A invoice agent, taint-aware mailroom executor, incident-trace agent, a 3D face model guide, an in-browser face-morph video maker and a morph-difficulty ranking helper — plus the guess-your-number helper and Humans Only drawing game guide.'],
-    ['ga4', 'Weekly Graded Assignments', 'GA 4 (Peer Review of GA3 Faces)', 'Peer review of classmates\' GA3 face work: a step-by-step guide, a progress planner and a receipt checker for the signed participation proof.'],
-    ['p1', 'Projects', 'Project 1', 'AI Pipe usage prediction market, a 60-second Human Exchange offer, Air Ink phone drawing, the Missing Invoice game, face-expression capture, Human Exchange Round 1 and Picture Stories — with forecast, script, invoice, marks-planner, story and receipt tools.'],
+    ['ga4', 'Weekly Graded Assignments', 'GA 4 (Peer Review & Live Games)', 'Peer review of classmates\' GA3 face work, the Food Court and Time Use Charts live games and an optional ROE idea — beginner guides with a progress planner, signed-record checkers and an idea builder.'],
+    ['p1', 'Projects', 'Project 1', 'AI Pipe usage prediction market, a 60-second Human Exchange offer, Air Ink phone drawing, the Missing Invoice game, face-expression capture, Human Exchange Round 1, Picture Stories, a face-expression classifier (with your model.json checker) and Invisible Ink — with forecast, script, invoice, marks-planner, story, model and receipt tools.'],
   ],
   T22026: [
     ['endterm', 'End-Term Practice', 'End-Term Mock (175 MCQ + 25 MSQ + 100 Subjective)', 'A 300-question practice bank (MCQ, MSQ and subjective) with worked explanations.'],

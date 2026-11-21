@@ -1,32 +1,32 @@
-// Audit snapshot of https://exam.sanand.workers.dev/exam-tds-2026-09-p1.js (prettier 3.4.2), fetched 2026-10-26.
+// Audit snapshot of https://exam.sanand.workers.dev/exam-tds-2026-09-p1.js (prettier 3.4.2), fetched 2026-11-21.
 // check.mjs compares the question ids, titles and order in this file with the registry. Do not edit.
-var E = Object.defineProperty;
-var h = (r, n) => () => (r && (n = r((r = 0))), n);
-var p = (r, n) => {
-  for (var e in n) E(r, e, { get: n[e], enumerable: !0 });
+var V = Object.defineProperty;
+var h = (t, a) => () => (t && (a = t((t = 0))), a);
+var p = (t, a) => {
+  for (var e in a) V(t, e, { get: a[e], enumerable: !0 });
 };
-var x = {};
-p(x, { default: () => z });
-import { html as m } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function z({ user: r, weight: n = 1 }) {
+var T = {};
+p(T, { default: () => X });
+import { html as y } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function X({ user: t, weight: a = 1 }) {
   let e = "q-prediction-aipipe-server",
     s = "Predict AI Pipe usage: 2\u20138 November 2026",
     d = new URLSearchParams({
-      email: r.email,
-      quizSign: r.quizSign || "",
+      email: t.email,
+      quizSign: t.quizSign || "",
       questionId: e,
     }),
-    a,
-    i;
+    n,
+    l;
   try {
-    let t = await fetch(`./questionData?${d}`),
-      o = await t.json();
-    if (!t.ok) throw new Error(o.error || "Unable to load your sign-in code.");
-    a = o;
-  } catch (t) {
-    i = t.message;
+    let o = await fetch(`./questionData?${d}`),
+      r = await o.json();
+    if (!o.ok) throw new Error(r.error || "Unable to load your sign-in code.");
+    n = r;
+  } catch (o) {
+    l = o.message;
   }
-  let c = m`
+  let u = y`
     <div class="mb-3">
       <p>Predict the <strong>total AI Pipe cost in US dollars for 2–8 November 2026</strong>, using UTC dates.
         Add the seven daily <code>total.spend_usd</code> values from the
@@ -37,15 +37,15 @@ async function z({ user: r, weight: n = 1 }) {
         Trading closes on <strong>9 November at 00:00 UTC</strong>. Start early: your marks depend on
         how long you hold each prediction and how you use new evidence. Trading credits are optional practice points.</p>
       ${
-        a
-          ? m`
-        <p><a href="${a.launch_url}" target="_blank" rel="noreferrer" class="btn btn-primary">Open AI Pipe prediction market</a></p>
-        <label for="${e}-signin" class="form-label">Your personalized sign-in code for ${a.email}</label>
-        <textarea id="${e}-signin" class="form-control font-monospace" rows="4" readonly spellcheck="false">${a.launch_token}</textarea>
+        n
+          ? y`
+        <p><a href="${n.launch_url}" target="_blank" rel="noreferrer" class="btn btn-primary">Open AI Pipe prediction market</a></p>
+        <label for="${e}-signin" class="form-label">Your personalized sign-in code for ${n.email}</label>
+        <textarea id="${e}-signin" class="form-control font-monospace" rows="4" readonly spellcheck="false">${n.launch_token}</textarea>
         <p class="form-text">Keep this code private. Anyone with this code, including another student or an AI agent, can trade as you, make unwanted trades, and use up your credits and trading turns. The link signs you in automatically, or you can paste the code into the market's sign-in form.
           It expires after 20 minutes. Reload this exam to get a new code.</p>
       `
-          : m`<p class="alert alert-warning" role="alert">${i} Reload this exam to try again.</p>`
+          : y`<p class="alert alert-warning" role="alert">${l} Reload this exam to try again.</p>`
       }
       <h2 class="h6">Rules: what counts, and when</h2>
       <ul>
@@ -154,55 +154,55 @@ async function z({ user: r, weight: n = 1 }) {
   return {
     id: e,
     title: s,
-    weight: n,
-    question: c,
-    answer: async (t) => {
-      let o = await fetch("/backendVerify", {
+    weight: a,
+    question: u,
+    answer: async (o) => {
+      let r = await fetch("/backendVerify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            email: r.email,
-            quizSign: r.quizSign,
+            email: t.email,
+            quizSign: t.quizSign,
             questionId: e,
-            response: t,
-            weight: n,
+            response: o,
+            weight: a,
           }),
         }),
-        l = await o.json();
-      if (!o.ok)
-        throw new Error(l.error || "Unable to verify your market result.");
-      return l;
+        i = await r.json();
+      if (!r.ok)
+        throw new Error(i.error || "Unable to verify your market result.");
+      return i;
     },
   };
 }
-var S = h(() => {
+var I = h(() => {
   "use strict";
 });
-var T = {};
-p(T, { default: () => D });
-import { html as y } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function D({ user: r, weight: n = 1 }) {
+var $ = {};
+p($, { default: () => Q });
+import { html as f } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function Q({ user: t, weight: a = 1 }) {
   let e = "q-audio-tds-human-exchange",
     s = "TDS Human Exchange: Offer something useful",
     d = new URLSearchParams({
-      email: r.email,
-      quizSign: r.quizSign || "",
+      email: t.email,
+      quizSign: t.quizSign || "",
       questionId: e,
     }),
-    a,
-    i;
+    n,
+    l;
   try {
-    let t = await fetch(`./questionData?${d}`),
-      o = await t.json();
-    if (!t.ok)
+    let o = await fetch(`./questionData?${d}`),
+      r = await o.json();
+    if (!o.ok)
       throw new Error(
-        o.error || "Unable to load your personal recording link.",
+        r.error || "Unable to load your personal recording link.",
       );
-    a = o;
-  } catch (t) {
-    i = t.message;
+    n = r;
+  } catch (o) {
+    l = o.message;
   }
-  let c = y`
+  let u = f`
     <div class="mb-3">
       <p>Imagine a marketplace where TDS students can buy services from each other using credits.
         <strong>Offer a service that another student would find useful.</strong>
@@ -215,7 +215,7 @@ async function D({ user: r, weight: n = 1 }) {
         The buyer and seller agree on a price in credits. We will record each trade when both agree to it.</p>
       <p>Offers will appear in random order by default.
         You will be able to sort them by total credits traded, number of trades and other measures.</p>
-      <p><strong>You can practice recording and listen to your take now, without uploading it.</strong> Submissions open <strong>Monday, 19 October 2026 at 8:00 AM IST</strong> and close <strong>Wednesday, 21 October 2026 at 11:59:59 PM IST.</strong>
+      <p><strong>You can practice recording and listen to your take now, without uploading it.</strong> Submissions open <strong>Monday, 19 October 2026 at 8:00 AM IST</strong> and close <strong>Thursday, 5 November 2026 at 11:59:59 PM IST.</strong>
         You may upload an initial recording and revise it <strong>twice</strong> — three total submissions.
         Only your latest submitted recording will be used. You may review and re-record locally without spending an attempt;
         submitting/uploading uses an attempt. A two-minute upload grace period accommodates slow networks.</p>
@@ -250,13 +250,13 @@ async function D({ user: r, weight: n = 1 }) {
         Keep your offer specific and feasible. Do not offer credentials, private data, unsafe activities, or contact third parties without consent.
         The marketplace itself will launch separately; <strong>you do not need to deliver or trade this week</strong>.</p>
       ${
-        a
-          ? y`
-        <p><a href="${a.launch_url}" target="_blank" rel="noreferrer" class="btn btn-primary">Record your Human Exchange offer</a></p>
+        n
+          ? f`
+        <p><a href="${n.launch_url}" target="_blank" rel="noreferrer" class="btn btn-primary">Record your Human Exchange offer</a></p>
         <p class="form-text">Your link signs you in to the audio recorder. It expires after 20 minutes.
           Reload Project 1 for a fresh link. Do not share your link or sign-in code; someone else could use your submissions.</p>
       `
-          : y`<p class="alert alert-warning" role="alert">${i} Reload Project 1 to try again.</p>`
+          : f`<p class="alert alert-warning" role="alert">${l} Reload Project 1 to try again.</p>`
       }
       <p>After the recorder confirms your upload, return here and press <strong>Check</strong>, then <strong>Save</strong>.
         The exam checks the authenticated audio service; typing an answer cannot replace a recording.
@@ -268,52 +268,52 @@ async function D({ user: r, weight: n = 1 }) {
   return {
     id: e,
     title: s,
-    weight: n,
-    question: c,
-    answer: async (t) => {
-      let o = await fetch("/backendVerify", {
+    weight: a,
+    question: u,
+    answer: async (o) => {
+      let r = await fetch("/backendVerify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            email: r.email,
-            quizSign: r.quizSign,
+            email: t.email,
+            quizSign: t.quizSign,
             questionId: e,
-            response: t,
-            weight: n,
+            response: o,
+            weight: a,
           }),
         }),
-        l = await o.json();
-      if (!o.ok)
-        throw new Error(l.error || "Unable to verify your audio submission.");
-      return l;
+        i = await r.json();
+      if (!r.ok)
+        throw new Error(i.error || "Unable to verify your audio submission.");
+      return i;
     },
   };
 }
-var I = h(() => {
+var q = h(() => {
   "use strict";
 });
-var q = {};
-p(q, { default: () => N });
-import { html as f } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function N({ user: r, weight: n = 1 }) {
+var A = {};
+p(A, { default: () => Z });
+import { html as w } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function Z({ user: t, weight: a = 1 }) {
   let e = "q-motion-air-ink",
     s = "Motion games: Air Ink character drawing",
     d = new URLSearchParams({
-      email: r.email,
-      quizSign: r.quizSign || "",
+      email: t.email,
+      quizSign: t.quizSign || "",
       questionId: e,
     }),
-    a,
-    i;
+    n,
+    l;
   try {
-    let t = await fetch(`./questionData?${d}`),
-      o = await t.json();
-    if (!t.ok) throw new Error(o.error || "Unable to load your Air Ink link.");
-    a = o;
-  } catch (t) {
-    i = t.message;
+    let o = await fetch(`./questionData?${d}`),
+      r = await o.json();
+    if (!o.ok) throw new Error(r.error || "Unable to load your Air Ink link.");
+    n = r;
+  } catch (o) {
+    l = o.message;
   }
-  let c = f`
+  let u = w`
     <div class="mb-3">
       <p>Draw the three short character codes assigned to you by tilting your phone. Tilt to move, hold to ink, and release to lift.
         You may practise and redo drawings freely. The complete set of three drawings is one submission; you may submit it up to three times total.</p>
@@ -321,14 +321,14 @@ async function N({ user: r, weight: n = 1 }) {
       <p>The exercise begins with calibration. Follow the prompts to hold your phone flat, tilt left, right, forward and back, then draw a circle. Calibration checks that orientation and motion sensors work well enough to cover the canvas. If it fails, follow the suggested fix; a phone and an HTTPS page are required for many sensor APIs.</p>
       <p>There is no live OCR or score. Each drawing will be checked offline by OCR. It passes if the character is clearly legible; it does not need to be perfect.</p>
       <p>Complete this part yourself; <strong>do not use AI agents</strong>. Agent use may receive a small penalty. The drawing exercise is intentionally short.</p>
-      <p>Submissions close <strong>Monday, 26 October 2026 at 11:59:59 PM IST</strong>. A two-minute upload grace period accommodates slow networks. Submit after you are happy with all three drawings. You can revise twice; the latest received set is used.</p>
+      <p>Submissions close <strong>Sunday, 1 November 2026 at 11:59:59 PM IST</strong>. A two-minute upload grace period accommodates slow networks. Submit after you are happy with all three drawings. You can revise twice; the latest received set is used.</p>
       ${
-        a
-          ? f`
-        <p><a href="${a.launch_url}" target="_blank" rel="noreferrer" class="btn btn-primary">Open Motion games: Air Ink</a></p>
+        n
+          ? w`
+        <p><a href="${n.launch_url}" target="_blank" rel="noreferrer" class="btn btn-primary">Open Motion games: Air Ink</a></p>
         <p class="form-text">Your link signs you in and expires after 20 minutes. Reload Project 1 for a fresh link. Keep it private because it can use your submissions.</p>
       `
-          : f`<p class="alert alert-warning" role="alert">${i} Reload Project 1 to try again.</p>`
+          : w`<p class="alert alert-warning" role="alert">${l} Reload Project 1 to try again.</p>`
       }
       <p>After the game confirms an upload, return here and press <strong>Check</strong>, then <strong>Save</strong>. The exam verifies the authenticated server upload; typing cannot replace it. Participation is confirmed here, and drawing legibility is reviewed offline.</p>
       <label for="${e}" class="form-label">Upload acknowledgment (any text triggers the check)</label>
@@ -338,53 +338,53 @@ async function N({ user: r, weight: n = 1 }) {
   return {
     id: e,
     title: s,
-    weight: n,
-    question: c,
-    answer: async (t) => {
-      let o = await fetch("/backendVerify", {
+    weight: a,
+    question: u,
+    answer: async (o) => {
+      let r = await fetch("/backendVerify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            email: r.email,
-            quizSign: r.quizSign,
+            email: t.email,
+            quizSign: t.quizSign,
             questionId: e,
-            response: t,
-            weight: n,
+            response: o,
+            weight: a,
           }),
         }),
-        l = await o.json();
-      if (!o.ok)
-        throw new Error(l.error || "Unable to verify your Air Ink upload.");
-      return l;
+        i = await r.json();
+      if (!r.ok)
+        throw new Error(i.error || "Unable to verify your Air Ink upload.");
+      return i;
     },
   };
 }
-var $ = h(() => {
+var E = h(() => {
   "use strict";
 });
-var A = {};
-p(A, { default: () => F });
-import { html as w } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function F({ user: r, weight: n = 1 }) {
+var P = {};
+p(P, { default: () => ee });
+import { html as b } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function ee({ user: t, weight: a = 1 }) {
   let e = "q-trading-missing-invoice",
     s = "Trading game: Reconcile the Missing Invoice",
     d = new URLSearchParams({
-      email: r.email,
-      quizSign: r.quizSign || "",
+      email: t.email,
+      quizSign: t.quizSign || "",
       questionId: e,
     }),
-    a,
-    i;
+    n,
+    l;
   try {
-    let t = await fetch(`./questionData?${d}`),
-      o = await t.json();
-    if (!t.ok)
-      throw new Error(o.error || "Unable to load your personal game link.");
-    a = o;
-  } catch (t) {
-    i = t.message;
+    let o = await fetch(`./questionData?${d}`),
+      r = await o.json();
+    if (!o.ok)
+      throw new Error(r.error || "Unable to load your personal game link.");
+    n = r;
+  } catch (o) {
+    l = o.message;
   }
-  let c = w`
+  let u = b`
     <div class="mb-3">
       <p>You work in a shop's accounts team. A supplier has sent an invoice. Work out how much to pay.</p>
       <p>On your desk you have the invoice, the purchase order, the goods received note and an email from the supplier.
@@ -406,10 +406,10 @@ async function F({ user: r, weight: n = 1 }) {
       <p><strong>AI agents:</strong> your agent can read your documents, send requests and draft your answer through the game's API.
         It cannot decide for you. Granting, refusing and paying need you to confirm it's you with Google.</p>
       ${
-        a
-          ? w`<p><a href="${a.launch_url}" target="_blank" rel="noreferrer" class="btn btn-primary">Open your desk</a></p>
+        n
+          ? b`<p><a href="${n.launch_url}" target="_blank" rel="noreferrer" class="btn btn-primary">Open your desk</a></p>
           <p class="form-text">Your link signs you in for 12 hours and expires if unused after 20 minutes. Reload this page for a new one. Do not share it.</p>`
-          : w`<p class="alert alert-warning" role="alert">${i} Reload this page to try again.</p>`
+          : b`<p class="alert alert-warning" role="alert">${l} Reload this page to try again.</p>`
       }
       <p>After the game closes, press <strong>Check</strong>, then <strong>Save</strong>. The exam reads your signed result from the game. Typing an answer here does nothing.</p>
       <label for="${e}" class="form-label">Acknowledgement (you may type "played")</label>
@@ -419,36 +419,36 @@ async function F({ user: r, weight: n = 1 }) {
   return {
     id: e,
     title: s,
-    weight: n,
-    question: c,
-    answer: async (t) => {
-      let o = await fetch("/backendVerify", {
+    weight: a,
+    question: u,
+    answer: async (o) => {
+      let r = await fetch("/backendVerify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            email: r.email,
-            quizSign: r.quizSign,
+            email: t.email,
+            quizSign: t.quizSign,
             questionId: e,
-            response: t,
-            weight: n,
+            response: o,
+            weight: a,
           }),
         }),
-        l = await o.json();
-      if (!o.ok) throw new Error(l.error || "Unable to check your result.");
-      return l;
+        i = await r.json();
+      if (!r.ok) throw new Error(i.error || "Unable to check your result.");
+      return i;
     },
   };
 }
-var R = h(() => {
+var O = h(() => {
   "use strict";
 });
-var P = {};
-p(P, { default: () => L });
-import { html as _ } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function L({ weight: r = 0 } = {}) {
-  let n = "q-face-expressions",
+var C = {};
+p(C, { default: () => oe });
+import { html as te } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function oe({ weight: t = 0 } = {}) {
+  let a = "q-face-expressions",
     e = "Capture 10 facial expressions (preparation for the next task)",
-    s = _`
+    s = te`
     <p>Use your phone or laptop camera to record <strong>10 expressions</strong>: neutral, happy, sad, angry,
       surprised, contempt, restrained amusement, scepticism, uncertainty, and hopelessness.
       This dataset will support next week's assignment: <strong>train a small classifier to distinguish
@@ -471,17 +471,17 @@ async function L({ weight: r = 0 } = {}) {
     </ol>
     <p class="text-muted">Submitting photos of your own face is voluntary. If you prefer not to,
       contact the course team about an alternative for the next phase.</p>
-    <label for="${n}" class="form-label"><strong>Confirmation</strong></label>
-    <input type="text" id="${n}" name="${n}" class="form-control"
+    <label for="${a}" class="form-label"><strong>Confirmation</strong></label>
+    <input type="text" id="${a}" name="${a}" class="form-control"
       placeholder="completed" autocomplete="off" />
   `;
   return {
-    id: n,
+    id: a,
     title: e,
     question: s,
-    weight: r,
-    answer: async (a) =>
-      String(a ?? "")
+    weight: t,
+    answer: async (n) =>
+      String(n ?? "")
         .trim()
         .toLowerCase() !== "completed"
         ? {
@@ -497,36 +497,36 @@ async function L({ weight: r = 0 } = {}) {
           },
   };
 }
-var O = h(() => {
+var R = h(() => {
   "use strict";
 });
-var C = {};
-p(C, { default: () => W });
-import { html as b } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function W({ user: r, weight: n = 1 }) {
+var N = {};
+p(N, { default: () => re });
+import { html as v } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function re({ user: t, weight: a = 1 }) {
   let e = "q-trading-human-exchange-r1",
     s = "Trading game: Human Exchange, Round 1",
     d = new URLSearchParams({
-      email: r.email,
-      quizSign: r.quizSign || "",
+      email: t.email,
+      quizSign: t.quizSign || "",
       questionId: e,
     }),
-    a,
-    i;
+    n,
+    l;
   try {
-    let t = await fetch(`./questionData?${d}`),
-      o = await t.json();
-    if (!t.ok)
-      throw new Error(o.error || "Unable to load your personal game link.");
-    a = o;
-  } catch (t) {
-    i = t.message;
+    let o = await fetch(`./questionData?${d}`),
+      r = await o.json();
+    if (!o.ok)
+      throw new Error(r.error || "Unable to load your personal game link.");
+    n = r;
+  } catch (o) {
+    l = o.message;
   }
-  let c = b`
+  let u = v`
     <div class="mb-3">
       <p>In the audio question you recorded a service you can offer classmates. Now trade it.
         The <strong>Human Exchange</strong> lists everyone's offers as text, under a pseudonym. Buy services from classmates and sell yours.</p>
-      <p class="alert alert-info">This is a separate game. Its marks are in addition to the audio question's marks.</p>
+      <p class="alert alert-info">This is a separate game. Bonus credit for participation is awarded outside the regular exam score.</p>
       <h3 class="h6">How a trade works</h3>
       <ol>
         <li><strong>Buy.</strong> You start with 10 credits. Buying holds 1 credit for 48 hours (you can extend once). You can have 3 open orders.</li>
@@ -534,7 +534,7 @@ async function W({ user: r, weight: n = 1 }) {
         <li><strong>Pay.</strong> Enter the price and one sentence saying what you received.</li>
         <li><strong>Seller confirms.</strong> The seller enters one sentence saying what they delivered. Only then do credits move and marks count. The seller has 48 hours.</li>
       </ol>
-      <h3 class="h6">Marks (up to 10, added to this exam when the round closes)</h3>
+      <h3 class="h6">Game score (up to 10; bonus credit is awarded separately)</h3>
       <ul>
         <li>Selling: 4 marks for your first new buyer, 2 for the second, 1 for the third, and so on, halving each time.</li>
         <li>Buying: 2 marks for your first new seller, 1 for the second, 0.5 for the third, and so on.</li>
@@ -546,10 +546,10 @@ async function W({ user: r, weight: n = 1 }) {
       <p><strong>AI agents:</strong> your agent can browse the market, place orders and chat through the game's API.
         Paying and confirming delivery need you to confirm it's you with Google.</p>
       ${
-        a
-          ? b`<p><a href="${a.launch_url}" target="_blank" rel="noreferrer" class="btn btn-primary">Open the Human Exchange</a></p>
+        n
+          ? v`<p><a href="${n.launch_url}" target="_blank" rel="noreferrer" class="btn btn-primary">Open the Human Exchange</a></p>
           <p class="form-text">Your link signs you in for 12 hours and expires if unused after 20 minutes. Reload this page for a new one. Do not share it.</p>`
-          : b`<p class="alert alert-warning" role="alert">${i} Reload this page to try again.</p>`
+          : v`<p class="alert alert-warning" role="alert">${l} Reload this page to try again.</p>`
       }
       <p>After the round closes on Monday 2 November 2026, midnight IST, open the game, go to <strong>Result</strong>,
         copy your <strong>final receipt</strong> and paste it below. Press <strong>Check</strong>, then <strong>Save</strong>.
@@ -561,23 +561,23 @@ async function W({ user: r, weight: n = 1 }) {
   return {
     id: e,
     title: s,
-    weight: n,
-    question: c,
-    answer: async (t) => {
-      let o = await fetch("/backendVerify", {
+    weight: a,
+    question: u,
+    answer: async (o) => {
+      let r = await fetch("/backendVerify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            email: r.email,
-            quizSign: r.quizSign,
+            email: t.email,
+            quizSign: t.quizSign,
             questionId: e,
-            response: t,
-            weight: n,
+            response: o,
+            weight: a,
           }),
         }),
-        l = await o.json();
-      if (!o.ok) throw new Error(l.error || "Unable to check your result.");
-      return l;
+        i = await r.json();
+      if (!r.ok) throw new Error(i.error || "Unable to check your result.");
+      return i;
     },
   };
 }
@@ -585,37 +585,37 @@ var Y = h(() => {
   "use strict";
 });
 var U = {};
-p(U, { default: () => G });
+p(U, { default: () => ae });
 import { html as k } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function G({ user: r, weight: n = 1 }) {
+async function ae({ user: t, weight: a = 1 }) {
   let e = "q-trading-picture-story",
     s = "Trading game: Picture Stories",
     d = new URLSearchParams({
-      email: r.email,
-      quizSign: r.quizSign || "",
+      email: t.email,
+      quizSign: t.quizSign || "",
       questionId: e,
     }),
-    a,
-    i;
+    n,
+    l;
   try {
-    let t = await fetch(`./questionData?${d}`),
-      o = await t.json();
-    if (!t.ok)
-      throw new Error(o.error || "Unable to load your personal game link.");
-    a = o;
-  } catch (t) {
-    i = t.message;
+    let o = await fetch(`./questionData?${d}`),
+      r = await o.json();
+    if (!o.ok)
+      throw new Error(r.error || "Unable to load your personal game link.");
+    n = r;
+  } catch (o) {
+    l = o.message;
   }
-  let c = k`
+  let u = k`
     <div class="mb-3">
       <p>Make one <strong>wordless</strong> picture that tells a story. Then tell classmates' picture stories aloud and decide which stories are better.</p>
       <h3 class="h6">1. Create: Saturday 24 October, 12 noon IST, to Thursday 29 October, 12 noon IST</h3>
       <ul>
         <li>Upload one square picture that tells a story. Draw it, photograph a drawing on paper, make a collage or use an AI tool: anything works. One to four panels usually works best.</li>
-        <li><strong>No words</strong>: no letters, numbers, captions, signatures or text in speech bubbles. An AI model checks every picture after the game closes, and a picture with any words gets 0 creator marks. Arrows and pictorial symbols are fine.</li>
+        <li>Pictures can use drawings, collages, photographs or AI tools. All submitted pictures have been accepted, including pictures containing words.</li>
         <li>Write your story privately, ideally in three lines: the situation, what changes, the outcome. Only the course team and the marking AI read it.</li>
         <li>You can replace your picture or story until the deadline. Then pictures freeze, so readers never see something that might still change.</li>
-        <li>If you upload nothing, you get 0 of the 5 creator marks. You can still earn the 5 reader marks.</li>
+        <li>If you upload nothing, you get 0 creator marks. You can still earn reader marks.</li>
       </ul>
       <h3 class="h6">2. Narrate and rank: Thursday 29 October, 12 noon IST, to Sunday 1 November, 12 noon IST</h3>
       <ul>
@@ -625,21 +625,23 @@ async function G({ user: r, weight: n = 1 }) {
         <li>After each one, place it in your ranking: better than these, worse than those. Rank by <em>which is the better story</em>, not which looks better.</li>
         <li>At the end, confirm your full order. Volunteers can narrate more than 10.</li>
       </ul>
-      <h3 class="h6">Marks (up to 10, added to this exam after the game closes)</h3>
+      <h3 class="h6">How marks work (out of 10)</h3>
+      <p><strong>Creator: 80% of your total. Reader: 20% of your total.</strong> Each part is marked out of 10.</p>
       <ul>
-        <li><strong>Creator, 5.</strong> Understood (2.5): an AI gets each reader's narration and five private stories, yours and four others, and picks the one it describes; you earn the share it gets right. Preferred (2.5): how highly readers ranked your story.</li>
-        <li><strong>Reader, 5.</strong> Completed (1): 0.08 per narration up to 10, plus 0.2 for confirming your final order. Read the story (2.5): an AI scores each narration 0 to 3 against the author's story, crediting other sensible readings; a story most readers missed does not count against anyone. Ranking agreement (1.5): how well your order agrees with everyone else's; close calls cost almost nothing.</li>
-        <li>AI judgements never enter the ranking: only classmates' orders do.</li>
+        <li><strong>Creator /10.</strong> Understanding (5): how often the AI matched classmates' narrations to your story. Preference (5): how highly classmates ranked your story.</li>
+        <li><strong>Reader /10.</strong> Complete your narrations and ranking (2). Understand the stories you read (5). Rank the stories in line with other readers (3).</li>
+        <li><strong>Your total /10 = 0.8 × creator + 0.2 × reader.</strong> For creator 8 and reader 6, your total is 7.6.</li>
+        <li>All submitted pictures were accepted, including pictures with text. The separate story-quality score on the public results site includes uniqueness. It does not affect your exam marks.</li>
       </ul>
       <p class="alert alert-secondary"><strong>Recordings and research.</strong> The game asks for your consent before you start. It records your voice for up to 45 seconds per picture and stores your picture, private story, recordings, rankings and their timings. Recordings are never played to other students; the course team transcribes and translates them offline with AI models to mark them. After the game closes, each author sees anonymous transcripts of what readers said about their picture. We use these anonymously for later course exercises and research.</p>
       <p><strong>AI agents:</strong> an agent can read your desk through the game's API, but the recording is your own first reading, and confirming your final order needs you to confirm it's you with Google.</p>
       ${
-        a
-          ? k`<p><a href="${a.launch_url}" target="_blank" rel="noreferrer" class="btn btn-primary">Open Picture Stories</a></p>
+        n
+          ? k`<p><a href="${n.launch_url}" target="_blank" rel="noreferrer" class="btn btn-primary">Open Picture Stories</a></p>
           <p class="form-text">Your link signs you in for 12 hours and expires if unused after 20 minutes. Reload this page for a new one. Do not share it.</p>`
-          : k`<p class="alert alert-warning" role="alert">${i} Reload this page to try again.</p>`
+          : k`<p class="alert alert-warning" role="alert">${l} Reload this page to try again.</p>`
       }
-      <p>After the game closes on Monday 2 November 2026, open it, go to <strong>Result</strong>, copy your <strong>final receipt</strong>
+      <p>After the game closes, open it, go to <strong>Result</strong>, copy your <strong>final receipt</strong>
         and paste it below by Tuesday 17 November. Press <strong>Check</strong>, then <strong>Save</strong>. Receipts copied before the game closes are provisional and are rejected.</p>
       <label for="${e}" class="form-label">Final receipt</label>
       <textarea id="${e}" name="${e}" class="form-control font-monospace" rows="4" placeholder="eyJhbGciOiJFUzI1NiIs…" autocomplete="off" spellcheck="false"></textarea>
@@ -648,55 +650,379 @@ async function G({ user: r, weight: n = 1 }) {
   return {
     id: e,
     title: s,
-    weight: n,
-    question: c,
-    answer: async (t) => {
-      let o = await fetch("/backendVerify", {
+    weight: a,
+    question: u,
+    answer: async (o) => {
+      let r = await fetch("/backendVerify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            email: r.email,
-            quizSign: r.quizSign,
+            email: t.email,
+            quizSign: t.quizSign,
             questionId: e,
-            response: t,
-            weight: n,
+            response: o,
+            weight: a,
           }),
         }),
-        l = await o.json();
-      if (!o.ok) throw new Error(l.error || "Unable to check your result.");
-      return l;
+        i = await r.json();
+      if (!r.ok) throw new Error(i.error || "Unable to check your result.");
+      return i;
     },
   };
 }
 var j = h(() => {
   "use strict";
 });
+function M(t, a) {
+  let e = URL.createObjectURL(t),
+    s = document.createElement("a");
+  (s.href = e),
+    (s.download = a),
+    document.body.appendChild(s),
+    s.click(),
+    document.body.removeChild(s),
+    URL.revokeObjectURL(e);
+}
+var D = h(() => {
+  "use strict";
+});
+function _(t) {
+  if (typeof t != "string" || !t.trim())
+    throw new Error("Upload a JSON model first.");
+  if (new TextEncoder().encode(t).byteLength > 65536)
+    throw new Error("The JSON model must be at most 64 KiB.");
+  let a;
+  try {
+    a = JSON.parse(t);
+  } catch {
+    throw new Error("Invalid JSON. Upload a complete JSON file.");
+  }
+  if (
+    !a ||
+    typeof a != "object" ||
+    Array.isArray(a) ||
+    Object.keys(a).sort().join(",") !== "version,weights"
+  )
+    throw new Error(
+      'The JSON must have exactly two keys: "version" and "weights".',
+    );
+  if (a.version !== z) throw new Error(`"version" must be "${z}".`);
+  if (!Array.isArray(a.weights) || a.weights.length !== se.length)
+    throw new Error(
+      '"weights" must contain exactly 10 arrays, one per expression.',
+    );
+  if (
+    !a.weights.every(
+      (e) =>
+        Array.isArray(e) &&
+        e.length === 156 &&
+        e.every((s) => typeof s == "number" && Number.isFinite(s)),
+    )
+  )
+    throw new Error(
+      "Each weights row must contain exactly 156 finite JSON numbers.",
+    );
+  return {
+    correct: !0,
+    score: 0,
+    validMessage:
+      "Valid model JSON. Click Save. Your bonus score is evaluated after the deadline.",
+  };
+}
+var z,
+  se,
+  F = h(() => {
+    "use strict";
+    (z = "linear-rank-v1"),
+      (se = [
+        "neutral",
+        "happy",
+        "sad",
+        "angry",
+        "surprised",
+        "contempt",
+        "restrained-amusement",
+        "scepticism",
+        "uncertainty",
+        "hopelessness",
+      ]);
+  });
+var J = {};
+p(J, { default: () => ie });
+import { html as ne } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function ie({ user: t, weight: a = 0 }) {
+  let e = "q-face-expression-classifier",
+    s = "Train a face-expression classifier (10 bonus marks later)",
+    l = ne`
+    <p><strong>Train a model that matches ten expressions to ten photographs of someone it has never seen.</strong>
+      The expressions are neutral, happy, sad, angry, surprised, contempt, restrained amusement,
+      scepticism, uncertainty and hopelessness. The label is what the person was <em>asked to show</em>.
+      It may not match how they felt or even how their expression looks.</p>
+
+    <h3 class="h6">1. Download 300 labeled photographs</h3>
+    <p>Google sign-in is required. Your ZIP has <strong>30 people with 10 photos each</strong> and a
+      <code>features.csv</code> with 78 numerical features per photo. People are numbered <code>01</code> to
+      <code>30</code>. Files such as <code>photos/01-03.jpg</code> match the <code>photo_id</code> column.
+      Both the people and their photo order are randomized for you, but stay the same on repeated downloads.
+      IITM email accounts get different subsets. All other Google accounts share one subset.</p>
+    <p><button type="button" class="btn btn-primary" @click=${async (c) => {
+      let o = c.currentTarget,
+        r = document.getElementById(`${e}-download-status`);
+      (o.disabled = !0), (r.textContent = "Preparing your personal dataset...");
+      try {
+        let i = await fetch(
+          `/face-expression-dataset?${new URLSearchParams({ email: t.email })}`,
+          {
+            headers: { Authorization: `Bearer ${t.faceDatasetToken || ""}` },
+            cache: "no-store",
+          },
+        );
+        if (!i.ok)
+          throw new Error(
+            i.status === 403
+              ? "Sign out and sign in with Google again, then retry."
+              : `Download unavailable (HTTP ${i.status}). Contact the course team if this continues.`,
+          );
+        M(await i.blob(), "tds-2026-09-p1-face-expressions.zip"),
+          (r.textContent =
+            "Dataset downloaded. You will get the same people every time you download it.");
+      } catch (i) {
+        r.textContent = i.message;
+      } finally {
+        o.disabled = !1;
+      }
+    }}>Download my training data (ZIP)</button>
+      <span id="${e}-download-status" role="status" class="ms-2"></span></p>
+
+    <h3 class="h6">2. Understand the features, then make more data</h3>
+    <p>We used <strong>Py-Feat 2.1.5, Detectorv2</strong>. RetinaFace finds the face. Py-Feat's multitask
+      model then predicts <strong>51 blendshape values</strong> (facial movements), <strong>20 Action Unit
+      values</strong> (muscle movements) and <strong>7 emotion scores</strong>. These 78 numbers are model
+      predictions, not facts about someone's feelings. The <code>intended_expression</code> label came from
+      the photograph's original instructions, not from Py-Feat.</p>
+    <p><strong>We strongly encourage you to collect many more examples.</strong> Ask yourself and willing friends
+      to photograph all ten requested expressions. Try appropriately licensed photos or face datasets from
+      the Internet too. Use only photos you have permission to process; avoid identifying people or
+      uploading classmates' photos to outside services. Web photographs rarely tell you which expression
+      someone was <em>asked</em> to show, so label new training examples carefully.</p>
+    <p><a href="/face-expression-features.py" download>Download the Python feature extractor</a>.
+      It runs on your computer and produces the same 78 feature columns. Install <code>uv</code>, save the
+      script, put photos in a folder using names such as <code>sara-01.jpg</code> and
+      <code>sara-02.jpg</code>, then run:</p>
+    <pre class="p-2 bg-body-tertiary border rounded"><code>uv run face-expression-features.py photos/ --labels labels.csv --output more-features.csv</code></pre>
+    <p class="form-text">For labeled photos, <code>labels.csv</code> has columns
+      <code>photo_id,intended_expression</code>, for example <code>sara-01,happy</code>.
+      Omit <code>--labels labels.csv</code> to explore unlabeled photos. The first run downloads model
+      weights. Keep each person's ten images together when splitting training and validation data.</p>
+
+    <h3 class="h6">3. Train a model and submit its JSON</h3>
+    <p>Predict a score for each of the ten expressions for each photo. You may also use 78 extra numbers:
+      each feature's rank among that person's ten photographs, scaled from 0 to 1 (ties use their average
+      rank). The grader calculates the ranks and matches each expression to exactly one photograph,
+      choosing the assignment with the highest total score.</p>
+    <p>Submit JSON with <strong>exactly two keys</strong>: <code>"version":"linear-rank-v1"</code> and
+      <code>"weights"</code>, a matrix of <strong>10 rows × 156 finite numbers</strong>. The row order is
+      <code>neutral, happy, sad, angry, surprised, contempt, restrained-amusement, scepticism, uncertainty, hopelessness</code>.
+      Use the 78 feature columns in the CSV, followed by the 78 within-person ranks in the same order.
+      The grader computes <code>scores = weights × inputs</code>. For a scikit-learn linear model trained
+      with <code>StandardScaler</code>, divide each coefficient by <code>scale_</code>. Bias terms cancel
+      because all ten labels are used once. Maximum JSON size: 64 KiB.</p>
+    <p>You may use AI, share code and combine training sets with classmates. Check accuracy on <em>new people</em>
+      before submitting. You can update your JSON and <strong>Check and Save as often as you like</strong>
+      until Project 1 closes. Only your latest saved version counts.</p>
+    <p><strong>Marks:</strong> a valid JSON earns <strong>0 marks now</strong>. We will evaluate it on
+      unseen people <em>after</em> Project 1 closes, for up to <strong>10 bonus marks</strong>.
+      The provisional scale is 0 at 60% accuracy, 5 at 70% and 10 at 80% or above.
+      Checking validates the JSON, not your model's accuracy.</p>
+    <label for="${e}-file" class="form-label">Choose your model JSON file</label>
+    <input type="file" id="${e}-file" accept=".json,application/json" class="form-control mb-2" @change=${async (
+      c,
+    ) => {
+      let o = c.target.files?.[0];
+      if (!o) return;
+      let r = document.getElementById(e),
+        i = document.getElementById(`${e}-model-status`);
+      if (o.size > 65536) {
+        i.textContent = "Model JSON must be 64 KiB or smaller.";
+        return;
+      }
+      (r.value = await o.text()),
+        r.dispatchEvent(new Event("input", { bubbles: !0 })),
+        (i.textContent = `Loaded ${o.name}. Click Check, then Save.`);
+    }} />
+    <p id="${e}-model-status" role="status" class="form-text"></p>
+    <label for="${e}" class="form-label">Your JSON model (loaded from the file, or paste it here)</label>
+    <textarea id="${e}" name="${e}" rows="4" class="form-control font-monospace" spellcheck="false"
+      placeholder='{"version":"linear-rank-v1","weights":[...]}'></textarea>
+    <p class="form-text">Click <strong>Check</strong> to validate the JSON. Then click <strong>Save</strong> to submit it.</p>
+  `;
+  return {
+    id: e,
+    title: s,
+    weight: a,
+    question: l,
+    answer: async (c) => {
+      _(c);
+      let o = await fetch("/backendVerify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            quiz: t.quiz,
+            email: t.email,
+            quizSign: t.quizSign,
+            questionId: e,
+            response: c,
+            weight: a,
+          }),
+        }),
+        r = await o.json();
+      if (!o.ok) throw new Error(r.error || "Unable to validate your model.");
+      return r;
+    },
+  };
+}
+var L = h(() => {
+  "use strict";
+  D();
+  F();
+});
+var B = {};
+p(B, { default: () => de });
+import { html as m } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function de({ user: t, weight: a = 0 }) {
+  let e = "q-air-ink-classifier",
+    s = "Invisible Ink: read phone writing (10 bonus marks later)",
+    d = new URLSearchParams({
+      email: t.email,
+      quizSign: t.quizSign || "",
+      questionId: e,
+    }),
+    n,
+    l;
+  try {
+    let o = await fetch(`./questionData?${d}`, { cache: "no-store" }),
+      r = await o.json();
+    if (!o.ok) throw Error(r.error || "Could not get your personal game link.");
+    n = r;
+  } catch (o) {
+    l = o.message || "Could not load your game link.";
+  }
+  let u = m`
+  <p><strong>Recover letters written without visible ink.</strong> Students moved a phone to draw random letter codes. The phone recorded its movement. The recording does not show when the student pressed the button to draw. Your task is to work out what they wrote.</p>
+  <p>Each code has 3, 4 or 5 letters from <code>ACEFHJKMNPRTUVWXY</code>. Codes are random: <code>XRM</code> is valid, even though it is not a word.</p>
+  <p><strong>What you will learn:</strong> how to make predictions from incomplete sensor data, check them against unseen examples and improve them with other people or AI tools.</p>
+
+  <h3 class="h6">1. Prepare your predictor</h3>
+  <p>Open your personal game link. Download <strong>60 labeled examples</strong>: 50 are the same for everyone; 10 are chosen for you from a larger pool of 500. Each example includes the correct code and when the pen was down.</p>
+  <p>Use the <a href="${le}/motion/ink-viewer/" target="_blank" rel="noopener noreferrer">motion viewer</a> to watch one or more recordings. Make a predictor using any method: code, AI or your own eyes. <strong>You may share examples, use AI and work with classmates.</strong> You do not need to upload your predictor.</p>
+
+  <h3 class="h6">2. Join one or more live sessions</h3>
+  <p>Each session stays open for one hour. You can enter the waiting room <strong>2 minutes early</strong> and watch the countdown. The game opens without reloading. Press Start during the first 40 minutes to get your own full 20 minutes.</p>
+  <table class="table table-sm"><thead><tr><th>Date</th><th>Session (IST)</th><th>Last start (IST)</th></tr></thead><tbody>
+   ${ce.map(([o, r, i]) => m`<tr><td>${o} 2026</td><td>${r}</td><td>${i}</td></tr>`)}
+  </tbody></table>
+  <p>You may play once in each session. Each session uses a different set of test recordings.</p>
+
+  <h3 class="h6">3. Guess the codes</h3>
+  <ol>
+   <li><strong>First 2 minutes:</strong> you get six recordings in a random order. You can view or download all six. Guess <strong>Drawing 1 only</strong>. This first guess is worth <strong>20%</strong>.</li>
+   <li><strong>Next 18 minutes:</strong> use your predictor, AI or classmates to guess all six codes. You can change any final guess. These six codes are worth <strong>80%</strong>.</li>
+   <li><strong>At 20 minutes:</strong> the answer form closes. Complete codes save automatically. A message beside Save confirms when the server has received your answers.</li>
+   <li><strong>For one more minute:</strong> the server accepts any last save or retry if your connection is slow. You cannot change your answers.</li>
+  </ol>
+  <p>Each correctly placed letter earns credit. All six final codes count equally. A blank letter earns no marks.</p>
+
+  <h3 class="h6">4. Save your signed record in P1</h3>
+  <p>After the extra minute, the game gives you a <strong>signed record (JWT)</strong>. It contains your guesses, <strong>not your score or the correct answers</strong>. Copy the full record into the box below. Press <strong>Check</strong>, then <strong>Save</strong> in P1.</p>
+  <p>We mark the saved record offline after the sessions. If you play more than once, you choose which session's record to save. The last one you save in P1 counts.</p>
+  ${n?.launch_url ? m`<p><a class="btn btn-primary" target="_blank" rel="noopener noreferrer" href="${n.launch_url}">Open my Invisible Ink game</a></p><p class="form-text">This link is personal and expires after 20 minutes. Open P1 again for a fresh link if needed. Do not share it.</p>` : m`<p class="alert alert-info" role="status">${l || "Your personal game link is not ready. Reload P1."}</p>`}
+  <label class="form-label" for="${e}"><strong>Signed record from the game (JWT)</strong></label>
+  <textarea id="${e}" name="${e}" class="form-control font-monospace" rows="5" spellcheck="false" autocomplete="off" placeholder="Paste your signed record here"></textarea>
+  <p class="form-text">Check verifies your record but shows no marks yet. <strong>Save is still required in P1</strong> to submit it.</p>
+ `;
+  return {
+    id: e,
+    title: s,
+    weight: a,
+    question: u,
+    answer: async (o) => {
+      let r = await fetch("/backendVerify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: t.email,
+            quizSign: t.quizSign,
+            questionId: e,
+            quiz: "tds-2026-09-p1",
+            response: o,
+            weight: a,
+          }),
+        }),
+        i = await r.json();
+      if (!r.ok) throw Error(i.error || "Could not verify this signed record.");
+      return i;
+    },
+  };
+}
+var le,
+  ce,
+  W = h(() => {
+    "use strict";
+    (le = "https://tds-network-games.sanand.workers.dev"),
+      (ce = [
+        ["Sat 14 Nov", "4:00\u20135:00 PM", "4:40 PM"],
+        ["Sun 15 Nov", "8:00\u20139:00 AM", "8:40 AM"],
+        ["Sun 15 Nov", "8:00\u20139:00 PM", "8:40 PM"],
+      ]);
+  });
 import {
   html as g,
-  render as M,
+  render as K,
 } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-function v(r, n) {
+var S = (t, a) =>
+  `${t} ${t == 1 ? "mark" : "marks"}` +
+  (a === void 0 ? "" : ` \xB7 Bonus: ${a} ${a == 1 ? "mark" : "marks"}`);
+function x(t, a) {
   let e = g`<ol class="mt-3">
-    ${r.map(({ id: a, title: i, weight: c }) => g`<li><a href="#h${a}">${i}</a> (${c} ${c == 1 ? "mark" : "marks"})</li>`)}
+    ${t.map(({ id: n, title: l, weight: u, bonus: c }) => g`<li><a href="#h${n}">${l}</a> (${S(u, c)})</li>`)}
   </ol>`,
     s = [
       g`<h1 class="display-6">Questions</h1>`,
       e,
-      ...r.map(
-        ({ id: a, title: i, weight: c, question: u, help: t }, o) => (
-          t && !Array.isArray(t) && (t = [t]),
+      ...t.map(
+        (
+          {
+            id: n,
+            title: l,
+            weight: u,
+            bonus: c,
+            bonusMessage: o,
+            question: r,
+            help: i,
+          },
+          G,
+        ) => (
+          i && !Array.isArray(i) && (i = [i]),
           g`
-        <details class="card my-5" data-question="${a}" id="h${a}" open>
+        <details class="card my-5" data-question="${n}" id="h${n}" open>
           <summary class="card-header d-flex align-items-center gap-2">
-            <span class="badge text-bg-primary">${o + 1}</span>
-            <span class="flex-grow-1">${i} (${c} ${c == 1 ? "mark" : "marks"})</span>
+            <span class="badge text-bg-primary">${G + 1}</span>
+            <span class="flex-grow-1">${l} (${S(u, c)})</span>
             <span class="badge text-bg-success solved-badge d-none"><i class="bi bi-check-circle-fill me-1"></i>Solved</span>
             <i class="bi bi-chevron-up question-chevron" aria-hidden="true"></i>
           </summary>
-          ${t ? t.map((l) => g`<div class="card-body border-bottom">${l}</div>`) : ""}
-          <div class="card-body">${u}</div>
+          ${
+            c === void 0
+              ? ""
+              : g`<div class="alert alert-info m-3 mb-0" role="note">
+            <strong>Bonus question.</strong> This question carries <strong>0 regular marks</strong>.
+            ${o || (c ? g`Students who attempted it will receive <strong>${c} bonus ${c == 1 ? "mark" : "marks"}</strong>, awarded separately (not included in the exam score).` : g`It originally carried 0 marks, so no additional bonus marks are available. Participation is still recorded.`)}
+          </div>`
+          }
+          ${i ? i.map((H) => g`<div class="card-body border-bottom">${H}</div>`) : ""}
+          <div class="card-body">${r}</div>
           <div class="card-footer d-flex">
-            <button type="button" class="btn btn-primary check-answer" data-question="${a}">Check</button>
+            <button type="button" class="btn btn-primary check-answer" data-question="${n}">Check</button>
           </div>
         </details>
       `
@@ -704,44 +1030,65 @@ function v(r, n) {
       ),
     ],
     d = { index: e, questions: s };
-  for (let [a, i] of n) M(d[i], a);
+  for (let [n, l] of a) K(d[l], n);
 }
-async function oe(r, n) {
+async function Ae(t, a) {
   let e = [
     {
       ...(await Promise.resolve()
-        .then(() => (S(), x))
-        .then((s) => s.default({ user: r, weight: 1 }))),
-    },
-    {
-      ...(await Promise.resolve()
         .then(() => (I(), T))
-        .then((s) => s.default({ user: r, weight: 1 }))),
+        .then((s) => s.default({ user: t, weight: 1 }))),
     },
     {
       ...(await Promise.resolve()
-        .then(() => ($(), q))
-        .then((s) => s.default({ user: r, weight: 1 }))),
+        .then(() => (q(), $))
+        .then((s) => s.default({ user: t, weight: 1 }))),
     },
     {
       ...(await Promise.resolve()
-        .then(() => (R(), A))
-        .then((s) => s.default({ user: r, weight: 1 }))),
+        .then(() => (E(), A))
+        .then((s) => s.default({ user: t, weight: 1 }))),
     },
-    await Promise.resolve()
-      .then(() => (O(), P))
-      .then((s) => s.default({ weight: 0 })),
     {
       ...(await Promise.resolve()
-        .then(() => (Y(), C))
-        .then((s) => s.default({ user: r, weight: 10 }))),
+        .then(() => (O(), P))
+        .then((s) => s.default({ user: t, weight: 0 }))),
+      bonus: 1,
+    },
+    {
+      ...(await Promise.resolve()
+        .then(() => (R(), C))
+        .then((s) => s.default({ weight: 0 }))),
+      bonus: 0,
+    },
+    {
+      ...(await Promise.resolve()
+        .then(() => (Y(), N))
+        .then((s) => s.default({ user: t, weight: 0 }))),
+      bonus: 10,
     },
     {
       ...(await Promise.resolve()
         .then(() => (j(), U))
-        .then((s) => s.default({ user: r, weight: 10 }))),
+        .then((s) => s.default({ user: t, weight: 10 }))),
+    },
+    {
+      ...(await Promise.resolve()
+        .then(() => (L(), J))
+        .then((s) => s.default({ user: t, weight: 0 }))),
+      bonus: 10,
+      bonusMessage:
+        "Your saved model will be evaluated after Project 1 closes, for up to 10 bonus marks awarded separately.",
+    },
+    {
+      ...(await Promise.resolve()
+        .then(() => (W(), B))
+        .then((s) => s.default({ user: t, weight: 0 }))),
+      bonus: 10,
+      bonusMessage:
+        "We will mark your signed Invisible Ink record after the live sessions, for up to 10 bonus marks awarded separately.",
     },
   ];
-  return v(e, n), Object.fromEntries(e.map(({ id: s, ...d }) => [s, d]));
+  return x(e, a), Object.fromEntries(e.map(({ id: s, ...d }) => [s, d]));
 }
-export { oe as questions };
+export { Ae as questions };

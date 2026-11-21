@@ -10,8 +10,8 @@
           "id": "p1",
           "label": "Project 1",
           "group": "Projects",
-          "description": "AI Pipe usage prediction market, a 60-second Human Exchange offer, Air Ink phone drawing, the Missing Invoice game, face-expression capture, Human Exchange Round 1 and Picture Stories — with forecast, script, invoice, marks-planner, story and receipt tools.",
-          "solverCount": 7,
+          "description": "AI Pipe usage prediction market, a 60-second Human Exchange offer, Air Ink phone drawing, the Missing Invoice game, face-expression capture, Human Exchange Round 1, Picture Stories, a face-expression classifier (with your model.json checker) and Invisible Ink — with forecast, script, invoice, marks-planner, story, model and receipt tools.",
+          "solverCount": 9,
           "questions": [
             {
               "id": "q-prediction-aipipe-server",
@@ -40,19 +40,39 @@
             {
               "id": "q-trading-picture-story",
               "title": "Trading game: Picture Stories"
+            },
+            {
+              "id": "q-face-expression-classifier",
+              "title": "Train a face-expression classifier (10 bonus marks later)"
+            },
+            {
+              "id": "q-air-ink-classifier",
+              "title": "Invisible Ink: read phone writing (10 bonus marks later)"
             }
           ]
         },
         {
           "id": "ga4",
-          "label": "GA 4 (Peer Review of GA3 Faces)",
+          "label": "GA 4 (Peer Review & Live Games)",
           "group": "Weekly Graded Assignments",
-          "description": "Peer review of classmates' GA3 face work: a step-by-step guide, a progress planner and a receipt checker for the signed participation proof.",
-          "solverCount": 1,
+          "description": "Peer review of classmates' GA3 face work, the Food Court and Time Use Charts live games and an optional ROE idea — beginner guides with a progress planner, signed-record checkers and an idea builder.",
+          "solverCount": 4,
           "questions": [
             {
               "id": "q-ga4-face-peer-review-server",
               "title": "Review classmates' GA3 faces (24 comparisons)"
+            },
+            {
+              "id": "q-food-court-discount",
+              "title": "Food Court: share a food court, live (20 minutes)"
+            },
+            {
+              "id": "q-time-use-charts",
+              "title": "Time Use Charts: make a data poster with your team, live (45 minutes)"
+            },
+            {
+              "id": "q-roe-ideas",
+              "title": "Invent an ROE question"
             }
           ]
         },
