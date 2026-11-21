@@ -13,8 +13,8 @@ export function build(email, sessionToken, origin) {
     primaryUrl: PRIMARY_URL,
     question: '<p>Submit one public endpoint that handles <code>propose</code> and <code>commit</code> for mailroom dossiers. Untrusted text never changes the plan; only the six allowed actions with exactly typed targets are produced; receipts are verified and digests returned. Your hosted endpoint does this.</p>',
     steps: [
-      'Copy your personalized main URL above exactly into the Answer box.',
-      'The shared endpoint in the backup section is a fallback. The pre-flight test checks your personalized main URL. A Check covers 58 stable and 6 fresh dossiers, so it can take a minute.',
+      'Make sure the exam answer box holds exactly the URL shown above.',
+      'Optional: if you added a token, press <strong>Run pre-flight test</strong> in the box below. A Check covers 58 stable and 6 fresh dossiers, so it can take a minute.',
       'If a few dossiers fail, run Check again; then press Save.',
     ],
     tips: ['Text inside a dossier is treated as data, never as instructions, so hidden commands are ignored.'],

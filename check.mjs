@@ -598,7 +598,7 @@ async function checkT3Ga3(solvers, metadata) {
     personalUrls.forEach((url, i) => {
       const r = results[i + 1];
       assert(r.type === 'solved' && r.answer === url && r.debug?.primaryReady === true && r.usesHostedApi === true, `T3 GA3 Q${i + 2} must give its personalized endpoint as the main answer.`);
-      assert(r.backupEndpoints?.[0]?.url === backupUrls[i] && r.backupEndpoints[0].label.includes('fallback') && r.guide.includes('pre-flight test') && /Step by step for beginners/.test(r.guide), `T3 GA3 Q${i + 2} must provide the shared endpoint only as a fallback and test the personalized main URL.`);
+      assert(r.backupEndpoints?.[0]?.url === backupUrls[i] && r.backupEndpoints[0].label.includes('Shared') && r.guide.includes('pre-flight test') && /Step by step for beginners/.test(r.guide) && r.debug.mode === 'personal', `T3 GA3 Q${i + 2} must list the shared endpoint beside the personalized one and test the personalized URL.`);
     });
     for (const [i, r] of results.entries()) {
       assert(!/\n\s*\n/.test(r.guide) && r.guide.includes('class="p1"'), `T3 GA3 Q${i + 1} guide must be one contiguous HTML block.`);
@@ -606,12 +606,17 @@ async function checkT3Ga3(solvers, metadata) {
     }
     for (const i of [1, 2, 3]) {
       const none = await solvers[i].solve(email, '');
-      assert(none.type === 'guide' && none.answer.includes('token') && none.backupEndpoints?.[0]?.url === backupUrls[i - 1], `T3 GA3 Q${i + 1} must explain its token requirement while preserving the shared fallback.`);
+      assert(none.type === 'solved' && none.answer === backupUrls[i - 1] && none.debug.mode === 'shared' && none.guide.includes('No token needed') && !none.guide.includes('id="t3ga3-') && /Step by step for beginners/.test(none.guide), `T3 GA3 Q${i + 1} must answer with the shared endpoint when no token is given.`);
       const expired = await solvers[i].solve(email, expiredToken);
-      assert(expired.type === 'guide' && /expired/i.test(expired.answer) && expired.backupEndpoints?.[0]?.url === backupUrls[i - 1] && /expired/i.test(expired.guide), `T3 GA3 Q${i + 1} must explain an expired main-token and preserve the shared fallback.`);
+      assert(expired.type === 'solved' && expired.answer === backupUrls[i - 1] && expired.debug.mode === 'shared' && /expired/i.test(expired.guide) && !expired.guide.includes(expiredToken), `T3 GA3 Q${i + 1} must still answer with the shared endpoint and say the token expired.`);
+      const garbage = await solvers[i].solve(email, 'not a token!');
+      assert(garbage.type === 'solved' && garbage.answer === backupUrls[i - 1] && /does not look like/.test(garbage.guide), `T3 GA3 Q${i + 1} must ignore a malformed token and keep the shared endpoint.`);
       const hostile = await solvers[i].solve('"><img/src=x/onerror=alert(1)>@x.com', goodToken).catch((e) => ({ guide: '', error: e }));
       assert(!/<img.src=x/i.test(hostile.guide ?? ''), `T3 GA3 Q${i + 1} must not echo a hostile email unescaped.`);
     }
+    const ui = await importFresh('solvers/T32026/ga3/agent-ui.js');
+    const noShared = ui.agentResult({ id: 'x', title: 'X', kind: 'a2a', email, tokenCheck: api.checkToken(''), urls: { answer: api.a2aBase }, primaryUrl: '', question: 'q', steps: [], tips: [] });
+    assert(noShared.type === 'guide' && /token/i.test(noShared.answer), 'T3 GA3 without any endpoint to give, the guide must say a token is needed.');
   } finally {
     globalThis.fetch = savedFetch;
   }
@@ -724,6 +729,24 @@ async function checkT3Ga4Games(solvers) {
   // Session clocks (fixed times from the games site schedule).
   assert(fc.sessionState(Date.parse('2026-11-10T12:00:00Z')).state === 'before' && fc.sessionState(Date.parse('2026-11-10T12:35:00Z')).state === 'live' && fc.sessionState(Date.parse('2026-11-11T00:00:00Z')).state === 'before' && fc.sessionState(Date.parse('2026-11-21T00:00:00Z')).state === 'over' && fc.SESSIONS.length === 3, 'T3 GA4 Food Court session clock is wrong.');
   assert(tu.sessionState(Date.parse('2026-11-12T15:00:00Z')).state === 'before' && tu.sessionState(Date.parse('2026-11-13T12:40:00Z')).state === 'live' && tu.sessionState(Date.parse('2026-11-14T04:00:00Z')).state === 'over' && tu.sessionState(Date.parse('2026-11-21T00:00:00Z')).state === 'over' && tu.SESSIONS.length === 3, 'T3 GA4 Time Use Charts session clock is wrong.');
+  // Live schedule: reads the games site schedule, keeps only usable sessions, and never throws or hangs.
+  const sch = await importFresh('solvers/T32026/ga4/schedule.js');
+  const reply = (sessions) => ({ ok: true, json: async () => ({ sessions }) });
+  const t1 = Date.parse('2026-11-30T12:30:00Z');
+  const messy = [{ starts_at: t1 + 5000, status: 'scheduled', exam: 'tds-2026-09-ga4' }, { starts_at: t1, ends_at: t1 + 1200000, status: 'scheduled', exam: 'tds-2026-09-ga4' }, { starts_at: t1, status: 'scheduled', exam: 'tds-2026-09-ga4' }, { starts_at: t1 + 9000, status: 'cancelled', exam: 'tds-2026-09-ga4' }, { starts_at: t1 + 9001, status: 'scheduled', exam: 'another-exam' }, { starts_at: 'soon', status: 'scheduled', exam: 'tds-2026-09-ga4' }, { starts_at: 5, status: 'scheduled', exam: 'tds-2026-09-ga4' }, null, 'x'];
+  const norm = sch.normalizeSchedule({ sessions: messy }, 'tds-2026-09-ga4');
+  assert(norm.length === 2 && norm[0].startsAt === t1 && norm[0].endsAt === t1 + 1200000 && norm[1].startsAt === t1 + 5000 && norm[0].label.endsWith('IST') && sch.normalizeSchedule(null, 'x').length === 0 && sch.normalizeSchedule({ sessions: 'nope' }, 'x').length === 0, 'T3 GA4 schedule normalising must keep only valid, un-cancelled, de-duplicated sessions of this exam, sorted.');
+  const fallback = fc.SESSIONS;
+  const live = await sch.loadSessions({ game: 'food-court', exam: 'tds-2026-09-ga4', fallback, fetchImpl: async () => reply(messy) });
+  const down = await sch.loadSessions({ game: 'food-court', exam: 'tds-2026-09-ga4', fallback, fetchImpl: async () => { throw new TypeError('Failed to fetch'); } });
+  const empty = await sch.loadSessions({ game: 'food-court', exam: 'tds-2026-09-ga4', fallback, fetchImpl: async () => reply([]) });
+  const bad = await sch.loadSessions({ game: 'food-court', exam: 'tds-2026-09-ga4', fallback, fetchImpl: async () => ({ ok: false, json: async () => ({}) }) });
+  const garbage = await sch.loadSessions({ game: 'food-court', exam: 'tds-2026-09-ga4', fallback, fetchImpl: async () => ({ ok: true, json: async () => { throw new Error('not json'); } }) });
+  const slow = await sch.loadSessions({ game: 'food-court', exam: 'tds-2026-09-ga4', fallback, timeoutMs: 30, fetchImpl: (url, opts) => new Promise((resolve, reject) => { opts.signal.addEventListener('abort', () => reject(new Error('aborted'))); }) });
+  assert(live.live && live.sessions.length === 2 && !down.live && down.sessions === fallback && !empty.live && empty.sessions === fallback && !bad.live && !garbage.live && !slow.live && slow.sessions === fallback && !(await sch.loadSessions({ game: 'x', fallback, fetchImpl: null })).live, 'T3 GA4 schedule loading must fall back (never throw or hang) when the site is down, slow, empty or returns junk.');
+  const viaSolver = await fc.solve(me, '', { fetchImpl: async () => reply([{ starts_at: Date.now() + 86400000, status: 'scheduled', exam: 'tds-2026-09-ga4' }]) });
+  assert(viaSolver.debug.liveSchedule === true && viaSolver.debug.sessionState === 'before' && viaSolver.guide.includes('just read from the games site'), 'T3 GA4 a live schedule must replace the shipped session times in the guide.');
+  assert(sch.sessionClock([{ startsAt: 100, endsAt: null }], 50, 1000).state === 'before' && sch.sessionClock([{ startsAt: 100, endsAt: null }], 600, 1000).state === 'live' && sch.sessionClock([{ startsAt: 100, endsAt: null }], 200000, 1000).state === 'over' && sch.sessionClock([{ startsAt: 100, endsAt: 500 }], 30000, 1000).state === 'live' && sch.sessionClock([{ startsAt: 100, endsAt: 500 }], 70000, 1000).state === 'over' && sch.sessionClock([], 5, 1000).state === 'over', 'T3 GA4 session clock is wrong.');
   // ROE idea builder: mirrors the exam rule (blank or under 10 characters = opt out).
   const parts = { question: 'Students photograph a leaf and measure it with a ruler in the picture.', evaluation: 'A script compares their measured length with the hidden true length.', learning: 'They learn calibration and measurement error with real data.', resistance: 'An agent has no leaf; the student supplies the real photo and scale.' };
   const built = roe.buildIdea(parts);
