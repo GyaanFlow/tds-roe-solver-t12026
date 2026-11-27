@@ -3,7 +3,7 @@ import { rng } from '../ga1/utils.js';
 import { T3_API_ORIGIN, datasetUrl, examEmail, scriptUrl } from './api-client.js';
 import { ollamaCommands, parseMatrixText, validateMatrix } from './ga5-tools.js';
 import { buildMatrix } from './matrix.js';
-import { helperCard } from './helper-card.js';
+import { helperCard, codeBlock } from './helper-card.js';
 
 export const id = 'q-ollama-faiss-rank-correlation-server';
 export const title = 'Dual Embedding Alignment: Ollama, FAISS, and Rank Correlation';
@@ -48,7 +48,7 @@ function register() {
 }
 
 function buildGuide(email, computed) {
-  const commands = (os) => `<pre class="mono" style="white-space:pre-wrap;word-break:break-all">${escapeHtml(ollamaCommands(email, origin, os).join('\n'))}</pre>`;
+  const commands = (os) => codeBlock(ollamaCommands(email, origin, os).join('\n'), os === 'windows' ? 'powershell' : 'bash');
   const local = email
     ? [`<p><a class="p1-btn ghost" href="${escapeHtml(scriptUrl(email, origin))}" download="ollama_matrix.py">Download ollama_matrix.py</a> <a class="p1-btn ghost" href="${escapeHtml(datasetUrl(email, origin))}" target="_blank" rel="noopener noreferrer">See my dataset.json</a></p>`,
       '<p>Install <a href="https://ollama.com/download" target="_blank" rel="noopener noreferrer">Ollama</a> and Python 3, save the script, then run these in its folder.</p>',
@@ -59,7 +59,7 @@ function buildGuide(email, computed) {
     chips: [{ text: computed ? 'Computed for you' : 'Email needed', tone: computed ? 'ok' : 'warn' }, { text: '2 marks', tone: '' }, { text: 'No install needed', tone: 'ok' }],
     sections: [
       card('Your matrix', computed
-        ? `<p class="p1-note"><strong>It is in the Answer box.</strong> Copy it into the exam, press <strong>Check</strong>, then <strong>Save</strong>.</p><pre class="mono" style="white-space:pre-wrap;word-break:break-all">${escapeHtml(computed)}</pre><p class="p1-foot">Your 50 sentences are drawn from a fixed pool using your email, and the two models' scores for that pool were computed once with the real models, so your table follows without installing anything.</p>`
+        ? `<p class="p1-note"><strong>It is in the Answer box.</strong> Copy it into the exam, press <strong>Check</strong>, then <strong>Save</strong>.</p>${codeBlock(computed)}<p class="p1-foot">Your 50 sentences are drawn from a fixed pool using your email, and the two models' scores for that pool were computed once with the real models, so your table follows without installing anything.</p>`
         : '<p class="p1-note">Enter your full IITM exam email in the sidebar and initialize again: your sentences are chosen from it.</p>', 'accent'),
       card('Step by step for beginners', '<ol><li>Check that the email in the sidebar is the one you use for the exam (the sentences depend on it).</li><li>Copy the Answer box exactly: it starts with <code>[[</code> and ends with <code>]]</code>.</li><li>Paste it into the Q2 box on the exam page, press <strong>Check</strong>, then <strong>Save</strong>.</li></ol>'),
       helperCard(),

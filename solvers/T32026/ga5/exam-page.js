@@ -73,7 +73,8 @@ export async function solveBall({ user, origin, fetchImpl, decode = decodePng, o
   if (!parsed.ok) throw Object.assign(new Error(parsed.message), { frames: bytes, report: { bytes: bytes.length, start: Array.from(bytes.subarray(0, 32)) } });
   const frameAt = (i) => decode(bytes.subarray(parsed.frames[i][0], parsed.frames[i][0] + parsed.frames[i][1]));
   try {
-    return await trackBall({ count: parsed.count, targets: parsed.targets, onProgress, frameAt });
+    const result = await trackBall({ count: parsed.count, targets: parsed.targets, onProgress, frameAt });
+    return Object.assign(result, { frames: bytes });
   } catch (error) {
     // Keep what is needed to fix the tracker: the frames themselves and a short description of two of them.
     const report = { error: error.message, fps: parsed.fps, frames: parsed.count, targets: parsed.targets };
@@ -88,14 +89,15 @@ export async function solveBall({ user, origin, fetchImpl, decode = decodePng, o
 }
 
 /**
- * Fills everything that can be filled. `report(key, state, text)` is called as each question progresses
- * (state: 'working', 'done' or 'failed'). One failing question never stops the others.
+ * Fills everything that can be filled. `report(key, state, text, extra)` is called as each question progresses
+ * (state: 'working', 'done', 'failed' or 'manual'; extra may carry {value, progress, frames}). One failing question
+ * never stops the others.
  */
 export async function fillAll({ doc, user, origin, random, fetchImpl = globalThis.fetch.bind(globalThis), decode = decodePng, report = () => {}, EventClass, wake = wakeApi, onBallFailure = () => {} }) {
   const done = {};
-  const put = (key, value, note) => {
-    if (setField(doc, IDS[key], value, EventClass)) { done[key] = value; report(key, 'done', note); return; }
-    report(key, 'failed', 'The answer box was not found or is locked. Copy it by hand: ' + value);
+  const put = (key, value, note, extra = {}) => {
+    if (setField(doc, IDS[key], value, EventClass)) { done[key] = value; report(key, 'done', note, { value, ...extra }); return; }
+    report(key, 'failed', 'The answer box was not found or is locked. Use Copy and paste it yourself.', { value, ...extra });
   };
   const guard = async (key, work) => {
     try { await work(); } catch (error) { report(key, 'failed', error?.message || String(error)); }
@@ -106,10 +108,12 @@ export async function fillAll({ doc, user, origin, random, fetchImpl = globalThi
   report('server', 'working', 'Waking your API server…');
   const awake = wake({ onStatus: () => {} }).then((r) => report('server', r.ok ? 'done' : 'failed', r.ok ? 'Server awake: you can Check Q1 and Q4.' : 'The server did not wake; wait a minute before checking Q1 and Q4.'));
   await guard('ball', async () => {
-    report('ball', 'working', 'Downloading your frames…');
+    report('ball', 'working', 'Downloading your frames…', { progress: 0 });
     try {
-      const result = await solveBall({ user, origin, fetchImpl, decode, onProgress: (f, n) => report('ball', 'working', `Tracking your ball: frame ${f} of ${n}`) });
-      put('ball', result.answer, `Number ${result.number} read; positions filled.${result.margin < 3 ? ' Two balls came very close once: double-check in the viewer.' : ''}`);
+      const result = await solveBall({ user, origin, fetchImpl, decode, onProgress: (f, n) => report('ball', 'working', `Tracking your ball: frame ${f} of ${n}`, { progress: n ? f / n : 0 }) });
+      const close = result.margin < 3;
+      put('ball', result.answer, `Number ${result.number} read; positions filled.${close ? ' Two balls came very close once: save your frames and double-check in the viewer.' : ''}`,
+        { progress: 1, frames: close ? result.frames : undefined });
     } catch (error) {
       if (error?.frames) onBallFailure({ frames: error.frames, report: error.report });
       throw error;
@@ -122,43 +126,196 @@ export async function fillAll({ doc, user, origin, random, fetchImpl = globalThi
 
 const LABELS = { rag: 'Q1 RAG', ollama: 'Q2 matrix', ball: 'Q3 ball', harness: 'Q4 harness', review: 'Q5 review', server: 'API server' };
 const ICON = { working: '⏳', done: '✅', failed: '❌', manual: '✍️' };
+const AUTOMATIC = ['rag', 'ollama', 'ball', 'harness'];
+const PANEL_CSS = `
+#tds-ga5-panel{position:fixed;right:16px;bottom:16px;z-index:99999;width:min(380px,calc(100vw - 32px));max-height:75vh;overflow:auto;
+  border-radius:14px;background:#0f172a;color:#f1f5f9;font:13px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;box-shadow:0 12px 36px rgba(0,0,0,.45);border:1px solid #1e293b}
+#tds-ga5-panel *{box-sizing:border-box}
+#tds-ga5-panel .g5-head{position:sticky;top:0;display:flex;align-items:center;gap:8px;padding:10px 12px;background:#111c33;border-bottom:1px solid #1e293b;border-radius:14px 14px 0 0}
+#tds-ga5-panel .g5-title{font-weight:750;flex:1}
+#tds-ga5-panel button{font:inherit;cursor:pointer;border-radius:8px}
+#tds-ga5-panel .g5-icon{background:transparent;border:0;color:#93c5fd;padding:2px 8px;font-size:15px;line-height:1}
+#tds-ga5-panel .g5-icon:hover,#tds-ga5-panel .g5-icon:focus-visible{background:#1e293b;outline:none}
+#tds-ga5-panel .g5-body{padding:10px 12px 12px}
+#tds-ga5-panel .g5-summary{margin:0 0 8px;padding:6px 10px;border-radius:8px;background:#1e293b;font-weight:650}
+#tds-ga5-panel .g5-row{padding:7px 0;border-bottom:1px solid #1e293b}
+#tds-ga5-panel .g5-row:last-of-type{border-bottom:0}
+#tds-ga5-panel .g5-line{display:flex;gap:6px;align-items:flex-start}
+#tds-ga5-panel .g5-text{flex:1;word-break:break-word}
+#tds-ga5-panel .g5-label{font-weight:650}
+#tds-ga5-panel .g5-acts{display:flex;gap:6px;margin:5px 0 0 22px;flex-wrap:wrap}
+#tds-ga5-panel .g5-btn{background:#1e293b;border:1px solid #334155;color:#e2e8f0;padding:2px 10px;font-size:12px}
+#tds-ga5-panel .g5-btn:hover,#tds-ga5-panel .g5-btn:focus-visible{border-color:#60a5fa;outline:none}
+#tds-ga5-panel .g5-bar{height:6px;margin:6px 0 0 22px;border-radius:3px;background:#1e293b;overflow:hidden}
+#tds-ga5-panel .g5-bar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#3b82f6,#22d3ee);transition:width .25s}
+#tds-ga5-panel .g5-next{margin-top:10px;padding:8px 10px;border-radius:8px;border:1px solid #1d4ed8;background:#0b1f4a;color:#dbeafe}
+#tds-ga5-panel .g5-foot{margin-top:10px;color:#94a3b8;font-size:12px}
+#tds-ga5-panel .g5-foot-acts{display:flex;gap:8px;margin-top:8px}
+#tds-ga5-panel a{color:#93c5fd}
+#tds-ga5-panel.g5-min .g5-body{display:none}
+.tds-ga5-flash{outline:3px solid #22d3ee !important;outline-offset:3px;transition:outline-color .3s}
+`;
 
-function panel(doc) {
+async function copyText(doc, text) {
+  try {
+    await globalThis.navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    const ghost = doc.createElement('textarea');
+    ghost.value = text;
+    ghost.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+    doc.body.append(ghost);
+    ghost.select();
+    let ok = false;
+    try { ok = doc.execCommand('copy'); } catch { ok = false; }
+    ghost.remove();
+    return ok;
+  }
+}
+
+/** The floating progress panel. Returns report(key, state, text, extra) with report.ballFailed attached. */
+export function panel(doc, { onRerun } = {}) {
   doc.getElementById('tds-ga5-panel')?.remove();
-  const box = doc.createElement('div');
+  if (!doc.getElementById('tds-ga5-style')) {
+    const style = doc.createElement('style');
+    style.id = 'tds-ga5-style';
+    style.textContent = PANEL_CSS;
+    doc.head.append(style);
+  }
+  const el = (tag, cls, text) => { const n = doc.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
+  const box = el('div');
   box.id = 'tds-ga5-panel';
-  box.style.cssText = 'position:fixed;right:16px;bottom:16px;z-index:99999;max-width:360px;max-height:70vh;overflow:auto;padding:14px 16px;border-radius:12px;background:#111827;color:#f9fafb;font:13px/1.5 system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.4)';
-  const title = doc.createElement('div');
-  title.style.cssText = 'display:flex;justify-content:space-between;gap:12px;font-weight:700;margin-bottom:6px';
-  title.textContent = 'GA5 helper';
-  const close = doc.createElement('button');
-  close.type = 'button'; close.textContent = 'Close';
-  close.style.cssText = 'background:transparent;color:#93c5fd;border:0;cursor:pointer';
-  close.onclick = () => box.remove();
-  title.append(close);
-  box.append(title);
+  box.setAttribute('role', 'region');
+  box.setAttribute('aria-label', 'GA5 helper progress');
+
+  const head = el('div', 'g5-head');
+  const title = el('div', 'g5-title', 'GA5 helper');
+  const minBtn = el('button', 'g5-icon', '–');
+  minBtn.type = 'button'; minBtn.title = 'Minimise'; minBtn.setAttribute('aria-label', 'Minimise the panel');
+  const closeBtn = el('button', 'g5-icon', '×');
+  closeBtn.type = 'button'; closeBtn.title = 'Close (Esc)'; closeBtn.setAttribute('aria-label', 'Close the panel');
+  head.append(title, minBtn, closeBtn);
+
+  const body = el('div', 'g5-body');
+  const summary = el('div', 'g5-summary', 'Starting…');
+  summary.setAttribute('role', 'status');
+  summary.setAttribute('aria-live', 'polite');
+  body.append(summary);
+
+  const state = {};
   const rows = {};
   for (const key of Object.keys(LABELS)) {
-    const row = doc.createElement('div');
-    row.textContent = `⬜ ${LABELS[key]}`;
-    rows[key] = row; box.append(row);
+    const row = el('div', 'g5-row');
+    const line = el('div', 'g5-line');
+    const icon = el('span', '', '⬜');
+    const text = el('span', 'g5-text');
+    const label = el('span', 'g5-label', LABELS[key]);
+    const msg = el('span', '', '');
+    text.append(label, msg);
+    line.append(icon, text);
+    const acts = el('div', 'g5-acts');
+    acts.hidden = true;
+    row.append(line, acts);
+    if (key === 'ball') {
+      const bar = el('div', 'g5-bar');
+      bar.hidden = true;
+      bar.append(el('span'));
+      row.append(bar);
+      rows[key] = { row, icon, msg, acts, bar };
+    } else {
+      rows[key] = { row, icon, msg, acts };
+    }
+    body.append(row);
   }
-  const foot = doc.createElement('div');
-  foot.style.cssText = 'margin-top:8px;color:#9ca3af';
-  foot.textContent = 'Nothing is submitted for you. Read the boxes, then press Check and Save yourself.';
-  box.append(foot);
+
+  const next = el('div', 'g5-next', 'Next: press Check on Q1 and Q4 (server is awake), check Q2 and Q3, do the Q5 review and paste its receipt, then press Save.');
+  next.hidden = true;
+  body.append(next);
+  const foot = el('div', 'g5-foot', 'Nothing is submitted for you. Read each box, then press Check and Save yourself.');
+  const footActs = el('div', 'g5-foot-acts');
+  if (onRerun) {
+    const again = el('button', 'g5-btn', '↻ Run again');
+    again.type = 'button';
+    again.onclick = () => onRerun();
+    footActs.append(again);
+  }
+  foot.append(footActs);
+  body.append(foot);
+  box.append(head, body);
   doc.body.append(box);
-  const report = (key, state, text) => { if (rows[key]) rows[key].textContent = `${ICON[state] || '⬜'} ${LABELS[key]}: ${text}`; };
+
+  const onKey = (event) => { if (event.key === 'Escape') shut(); };
+  function shut() { box.remove(); doc.removeEventListener('keydown', onKey); }
+  doc.addEventListener('keydown', onKey);
+  closeBtn.onclick = shut;
+  minBtn.onclick = () => {
+    const min = box.classList.toggle('g5-min');
+    minBtn.textContent = min ? '+' : '–';
+    minBtn.setAttribute('aria-label', min ? 'Expand the panel' : 'Minimise the panel');
+  };
+
+  const button = (label, onClick) => { const b = el('button', 'g5-btn', label); b.type = 'button'; b.onclick = onClick; return b; };
+  const flash = (b, text) => { const o = b.textContent; b.textContent = text; setTimeout(() => { b.textContent = o; }, 1500); };
+  const show = (key) => {
+    const field = findField(doc, IDS[key]);
+    if (!field) return;
+    const target = field.closest?.('.question, .card, details') || field;
+    target.scrollIntoView?.({ behavior: 'smooth', block: 'center' });
+    field.classList.add('tds-ga5-flash');
+    setTimeout(() => field.classList.remove('tds-ga5-flash'), 2200);
+    try { field.focus({ preventScroll: true }); } catch { /* not focusable */ }
+  };
+  const saveLink = (frames, label) => {
+    const a = el('a', '', label);
+    a.download = 'ga5-frames.bin';
+    a.href = URL.createObjectURL(new Blob([frames], { type: 'application/octet-stream' }));
+    return a;
+  };
+
+  const refresh = () => {
+    const filled = AUTOMATIC.filter((k) => state[k] === 'done').length;
+    const failed = AUTOMATIC.filter((k) => state[k] === 'failed').length;
+    const working = AUTOMATIC.some((k) => state[k] === 'working') || state.server === 'working';
+    summary.textContent = working
+      ? `Working… ${filled}/4 automatic answers filled`
+      : failed
+        ? `${filled}/4 filled, ${failed} need attention (see ❌ below)`
+        : `${filled}/4 automatic answers filled. Q5 is yours to do.`;
+    summary.style.background = !working && !failed && filled === 4 ? '#064e3b' : failed && !working ? '#4c0519' : '#1e293b';
+    next.hidden = working || filled === 0;
+  };
+
+  const report = (key, st, text, extra = {}) => {
+    const r = rows[key];
+    if (!r) return;
+    state[key] = st;
+    r.icon.textContent = ICON[st] || '⬜';
+    r.msg.textContent = text ? `: ${text}` : '';
+    if (r.bar) {
+      const working = st === 'working' && typeof extra.progress === 'number';
+      r.bar.hidden = !working;
+      if (working) r.bar.firstChild.style.width = `${Math.round(Math.min(1, Math.max(0, extra.progress)) * 100)}%`;
+    }
+    if (st !== 'working') {
+      r.acts.replaceChildren();
+      if (findField(doc, IDS[key]) && key !== 'server') r.acts.append(button('Show', () => show(key)));
+      if (extra.value) {
+        const copy = button('Copy', async () => flash(copy, (await copyText(doc, extra.value)) ? 'Copied ✓' : 'Copy failed'));
+        r.acts.append(copy);
+      }
+      if (extra.frames) r.acts.append(saveLink(extra.frames, 'Save frames for the viewer'));
+      r.acts.hidden = !r.acts.childElementCount;
+    }
+    refresh();
+  };
   // When Q3 fails: print what was seen, and let the student keep the frames file (to open in the viewer or to report).
   report.ballFailed = ({ frames, report: seen }) => {
     console.log('GA5 Q3 report (copy this when asking for help):\n' + JSON.stringify(seen));
-    const save = doc.createElement('a');
-    save.textContent = 'Save my frames file (for the viewer or to report the problem)';
-    save.download = 'ga5-frames.bin';
-    save.href = URL.createObjectURL(new Blob([frames], { type: 'application/octet-stream' }));
-    save.style.cssText = 'display:block;margin-top:8px;color:#93c5fd';
-    box.append(save);
+    const r = rows.ball;
+    r.acts.append(saveLink(frames, 'Save my frames file (viewer / report)'));
+    r.acts.hidden = false;
   };
+  report.close = shut;
   return report;
 }
 
@@ -170,10 +327,13 @@ export async function run(env = globalThis) {
   if (!user) throw new Error('Sign in on the exam page first, then run this line again.');
   if (!(await waitForQuestions(doc))) throw new Error('This page does not show the GA5 questions. Open the GA5 exam, sign in, wait until the questions appear, then run the line again.');
   const { default: seedrandom } = await import('https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/+esm');
-  const report = panel(doc);
+  const report = panel(doc, { onRerun: () => run(env).catch((error) => console.error(`GA5 helper: ${error.message}`)) });
   return fillAll({ doc, user, origin: location.origin, random: seedrandom, report, onBallFailure: report.ballFailed, EventClass: env.Event });
 }
 
 if (typeof window !== 'undefined' && window.location?.hostname === EXAM_HOST) {
-  run(window).catch((error) => console.error(`GA5 helper: ${error.message}`));
+  run(window).catch((error) => {
+    console.error(`GA5 helper: ${error.message}`);
+    try { window.alert(`GA5 helper: ${error.message}`); } catch { /* no dialogs */ }
+  });
 }

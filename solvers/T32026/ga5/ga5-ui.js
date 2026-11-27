@@ -1,7 +1,7 @@
 // Shared page chrome and the live-endpoint widget for the two hosted GA5 questions (Q1 RAG Colosseum, Q4 harness router).
 import { page, card, details, escapeHtml } from '../p1/ui.js';
 import { T3_API_ORIGIN, examEmail, healthUrl, probeHarness, probeRag, summarizeProbes, t3ga5Url, wakeApi } from './api-client.js';
-import { helperCard } from './helper-card.js';
+import { helperCard, codeBlock } from './helper-card.js';
 
 export { page, card, details, escapeHtml };
 
@@ -37,7 +37,7 @@ export function endpointResult({ id, title, kind, email, suffix, question, steps
     title,
     chips: [{ text: 'Direct answer', tone: 'ok' }, { text: `${marks} marks`, tone: '' }, { text: 'No token needed', tone: '' }],
     sections: [
-      card('Your answer for the exam box', `<p>Copy this URL exactly (it is also in the Answer box):</p><pre class="mono" style="white-space:pre-wrap;word-break:break-all">${escapeHtml(url)}</pre><p class="p1-foot">It is built from your exam email, in the form the exam uses to make your private questions, so every student gets a different URL and nobody needs an AI token.</p>`, 'accent'),
+      card('Your answer for the exam box', `<p>Copy this URL exactly (it is also in the Answer box) with the <strong>Copy</strong> button:</p>${codeBlock(url)}<p class="p1-foot">It is built from your exam email, in the form the exam uses to make your private questions, so every student gets a different URL and nobody needs an AI token.</p>`, 'accent'),
       card('What the exam wants', question),
       card('Step by step for beginners', list([`Check that the Answer box shows the URL above, exactly. ${suffix ? '' : 'Do not add /query: the grader adds it.'}`, `Open <a href="${escapeHtml(healthUrl(origin))}" target="_blank" rel="noopener noreferrer">the server health link</a> and wait until it shows <code>"status":"ok"</code>. The free server can take up to a minute to wake.`, ...steps])),
       card('Wake and test your endpoint', widgetHtml(kind), 'accent'),
