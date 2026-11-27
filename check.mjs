@@ -699,6 +699,26 @@ async function checkT3Ga3Faces() {
 }
 
 
+// The sidebar must ask for an aipipe.org token only where a solver cannot work without one.
+function checkSessionTokenPolicy() {
+  const app = fs.readFileSync(path.join(rootDir, 'app.js'), 'utf8').replace(/\r\n/g, '\n');
+  const pick = (name) => { const m = app.match(new RegExp(`function ${name}\\(term, exam\\) \\{[\\s\\S]*?\\n\\}`)); assert(m, `app.js must define ${name}.`); return m[0]; };
+  const policy = new Function(`${pick('requiresSessionToken')}\n${pick('offersSessionToken')}\nreturn { requires: requiresSessionToken, offers: offersSessionToken };`)();
+  const config = JSON.parse(fs.readFileSync(path.join(rootDir, 'tds-config.json'), 'utf8'));
+  const required = [];
+  const offered = [];
+  for (const [term, info] of Object.entries(config.terms)) {
+    for (const exam of info.exams) {
+      if (policy.requires(term, exam)) required.push(`${term}/${exam}`);
+      if (policy.offers(term, exam)) offered.push(`${term}/${exam}`);
+    }
+  }
+  assert(required.sort().join() === 'T22026/ga3,T22026/ga4,T22026/ga5', `Only T2 2026 GA3-GA5 may require a token, got: ${required.join()}`);
+  assert(offered.sort().join() === 'T22026/ga3,T22026/ga4,T22026/ga5,T32026/ga3', `The token box may show only for T2 GA3-GA5 and T3 GA3, got: ${offered.join()}`);
+  assert(app.includes('requiresSessionToken(currentTerm, currentExam) && !sessionToken') && !/currentExam === 'ga[45]'/.test(app), 'Initialize Workspace must use the term-aware token rule.');
+  assert(/termSelect\.addEventListener\('change'[\s\S]{0,200}toggleSessionTokenField|toggleSessionTokenField\(\)\)/.test(app), 'Changing the term must refresh the token box.');
+}
+
 async function checkT3Ga5Direct(solvers, api, tools, seedrandom) {
   const mx = await importFresh('solvers/T32026/ga5/matrix.js');
   const data = await importFresh('solvers/T32026/ga5/embedding-data.js');
@@ -854,6 +874,7 @@ async function checkT3Ga5(solvers, metadata) {
   const red = tools.findRedBall(rgba, 60, 40);
   assert(red && Math.abs(red.x - 34.5) <= 1 && Math.abs(red.y - 14.5) <= 1 && red.pixels === 100 && tools.findRedBall(new Uint8ClampedArray(60 * 40 * 4).fill(128), 60, 40) === null, 'T3 GA5 the red ball must be located (and absent when there is none).');
 
+  checkSessionTokenPolicy();
   await checkT3Ga5Direct(solvers, api, tools, seedrandom);
 
   // Solvers: direct URLs for Q1/Q4, matrix for Q2, guides for Q3/Q5, no network, clean HTML.

@@ -344,10 +344,25 @@ function persistUiState() {
   // panel toggle / question select / etc. It is called only when email changes (see emailInput listener).
 }
 
+// Exams are only identified by term AND id: T3 2026 reuses the ids ga3-ga5 for questions that need no token.
+function requiresSessionToken(term, exam) {
+  return term === 'T22026' && ['ga3', 'ga4', 'ga5'].includes(exam);
+}
+
+// T3 2026 GA3 accepts a token only to add an optional personal endpoint.
+function offersSessionToken(term, exam) {
+  return requiresSessionToken(term, exam) || (term === 'T32026' && exam === 'ga3');
+}
+
 function toggleSessionTokenField() {
   if (!sessionTokenWrapper) return;
+  const term = termSelect.value;
   const exam = examSelect.value;
-  sessionTokenWrapper.style.display = (exam === 'ga3' || exam === 'ga4' || exam === 'ga5') ? '' : 'none';
+  sessionTokenWrapper.style.display = offersSessionToken(term, exam) ? '' : 'none';
+  if (sessionTokenInput) {
+    sessionTokenInput.placeholder = requiresSessionToken(term, exam) ? `aipipe.org Token (needed for ${exam.toUpperCase()})` : 'aipipe.org Token (optional)';
+    sessionTokenInput.style.borderColor = 'var(--border)';
+  }
 }
 
 function ensureToastRoot() {
@@ -2376,7 +2391,7 @@ async function startSolving() {
     return;
   }
 
-  if (((currentExam === 'ga3' && currentTerm !== 'T32026') || currentExam === 'ga4' || currentExam === 'ga5') && !sessionToken) {
+  if (requiresSessionToken(currentTerm, currentExam) && !sessionToken) {
     showToast(`aipipe.org token is required for ${currentExam.toUpperCase()}!`, 'error');
     if (sessionTokenInput) {
       sessionTokenInput.focus();
@@ -3333,6 +3348,8 @@ termSelect.addEventListener('change', () => {
   updateWelcomeVersion();
   persistUiState();
 });
+termSelect.addEventListener('change', () => toggleSessionTokenField());
+
 examSelect.addEventListener('change', () => {
   toggleSessionTokenField();
   persistUiState();
