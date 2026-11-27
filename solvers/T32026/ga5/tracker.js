@@ -282,6 +282,22 @@ export async function trackBall({ count, targets, frameAt, onProgress = () => {}
   };
 }
 
+/**
+ * What the tracker sees in one frame, as plain numbers, for reporting a failure: size, the commonest colours, how many
+ * balls each step finds and whether a red ball shows. Contains no personal data.
+ */
+export function describeFrame(frame) {
+  const { width, height, rgb } = frame;
+  const counts = new Map();
+  for (let i = 0; i < rgb.length; i += 3) {
+    const key = `${rgb[i] >> 3 << 3},${rgb[i + 1] >> 3 << 3},${rgb[i + 2] >> 3 << 3}`;
+    counts.set(key, (counts.get(key) || 0) + 1);
+  }
+  const colours = [...counts].sort((a, b) => b[1] - a[1]).slice(0, 8).map(([rgbKey, n]) => ({ rgb: rgbKey, share: Math.round((n / (width * height)) * 10000) / 100 }));
+  const { points, red } = detectBalls(frame);
+  return { width, height, ballsFound: points.length, redBall: red ? red.map(Math.round) : null, colours };
+}
+
 /** Browser only: decodes one PNG (a byte range of the frames file) into RGB pixels. */
 export async function decodePng(bytes) {
   const bitmap = await createImageBitmap(new Blob([bytes], { type: 'image/png' }));

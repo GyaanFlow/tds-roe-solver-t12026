@@ -780,6 +780,10 @@ async function checkT3Ga5Direct(solvers, api, tools, seedrandom) {
   const states = {};
   const partial = makeDoc([helper.IDS.rag]);
   await helper.fillAll({ ...env(partial, async () => ({ ok: false, status: 403 })), report: (k, st, t) => { states[k] = [st, t]; } });
+  const kept = [];
+  const broken = simulate({ seed: 31, frames: 12 });
+  await helper.fillAll({ ...env(makeDoc(), async () => ({ ok: true, status: 200, arrayBuffer: async () => binary.buffer.slice(binary.byteOffset, binary.byteOffset + binary.length) })), decode: async (bytes) => broken.render(Buffer.from(bytes).readUInt32BE(8), { noRed: true }), onBallFailure: (x) => kept.push(x) });
+  assert(kept.length === 1 && kept[0].frames.length === binary.length && /No red ball/.test(kept[0].report.error) && kept[0].report.frames === 12 && kept[0].report.firstFrame.ballsFound === 100 && kept[0].report.firstFrame.redBall === null && kept[0].report.lastFrame.width === 600 && kept[0].report.firstFrame.colours.length > 0 && !JSON.stringify(kept[0].report).includes(me) && !JSON.stringify(kept[0].report).includes('sig+'), 'T3 GA5 a failed track must keep the frames and a report without personal data.');
   assert(states.rag[0] === 'failed' && states.ball[0] === 'failed' && /403/.test(states.ball[1]) && states.ollama[0] === 'done' && states.harness[0] === 'done' && states.review[0] === 'manual' && partial.fields[helper.IDS.ball].value === '', 'T3 GA5 one failing question must not stop the others.');
   assert(await refused(helper.run({ document: { getElementById: () => null }, location: { hostname: 'evil.example' }, localStorage: { getItem: () => JSON.stringify({ email: me, quizSign: 's' }) } }), /exam\.sanand\.workers\.dev/), 'T3 GA5 the helper must refuse to run anywhere but the exam site.');
   const source = fs.readFileSync(path.join(rootDir, 'solvers/T32026/ga5/exam-page.js'), 'utf8');

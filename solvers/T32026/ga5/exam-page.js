@@ -5,7 +5,7 @@
 // nowhere except the exam site itself.
 import { t3ga5Url, wakeApi } from './api-client.js';
 import { buildMatrix } from './matrix.js';
-import { decodePng, trackBall } from './tracker.js';
+import { decodePng, describeFrame, trackBall } from './tracker.js';
 import { parseFrames } from './ga5-tools.js';
 
 export const EXAM_HOST = 'exam.sanand.workers.dev';
@@ -49,20 +49,28 @@ export async function solveBall({ user, origin, fetchImpl, decode = decodePng, o
   if (!response.ok) throw new Error(`The exam site would not send your frames (HTTP ${response.status}). Reload the exam page and run the helper again.`);
   const bytes = new Uint8Array(await response.arrayBuffer());
   const parsed = parseFrames(bytes);
-  if (!parsed.ok) throw new Error(parsed.message);
-  return trackBall({
-    count: parsed.count,
-    targets: parsed.targets,
-    onProgress,
-    frameAt: (i) => decode(bytes.subarray(parsed.frames[i][0], parsed.frames[i][0] + parsed.frames[i][1])),
-  });
+  if (!parsed.ok) throw Object.assign(new Error(parsed.message), { frames: bytes, report: { bytes: bytes.length, start: Array.from(bytes.subarray(0, 32)) } });
+  const frameAt = (i) => decode(bytes.subarray(parsed.frames[i][0], parsed.frames[i][0] + parsed.frames[i][1]));
+  try {
+    return await trackBall({ count: parsed.count, targets: parsed.targets, onProgress, frameAt });
+  } catch (error) {
+    // Keep what is needed to fix the tracker: the frames themselves and a short description of two of them.
+    const report = { error: error.message, fps: parsed.fps, frames: parsed.count, targets: parsed.targets };
+    try {
+      report.firstFrame = describeFrame(await frameAt(0));
+      report.lastFrame = describeFrame(await frameAt(parsed.count - 1));
+    } catch (inner) {
+      report.describeFailed = inner.message;
+    }
+    throw Object.assign(error, { frames: bytes, report });
+  }
 }
 
 /**
  * Fills everything that can be filled. `report(key, state, text)` is called as each question progresses
  * (state: 'working', 'done' or 'failed'). One failing question never stops the others.
  */
-export async function fillAll({ doc, user, origin, random, fetchImpl = globalThis.fetch.bind(globalThis), decode = decodePng, report = () => {}, EventClass, wake = wakeApi }) {
+export async function fillAll({ doc, user, origin, random, fetchImpl = globalThis.fetch.bind(globalThis), decode = decodePng, report = () => {}, EventClass, wake = wakeApi, onBallFailure = () => {} }) {
   const done = {};
   const put = (key, value, note) => {
     if (setField(doc, IDS[key], value, EventClass)) { done[key] = value; report(key, 'done', note); return; }
@@ -78,8 +86,13 @@ export async function fillAll({ doc, user, origin, random, fetchImpl = globalThi
   const awake = wake({ onStatus: () => {} }).then((r) => report('server', r.ok ? 'done' : 'failed', r.ok ? 'Server awake: you can Check Q1 and Q4.' : 'The server did not wake; wait a minute before checking Q1 and Q4.'));
   await guard('ball', async () => {
     report('ball', 'working', 'Downloading your frames…');
-    const result = await solveBall({ user, origin, fetchImpl, decode, onProgress: (f, n) => report('ball', 'working', `Tracking your ball: frame ${f} of ${n}`) });
-    put('ball', result.answer, `Number ${result.number} read; positions filled.${result.margin < 3 ? ' Two balls came very close once: double-check in the viewer.' : ''}`);
+    try {
+      const result = await solveBall({ user, origin, fetchImpl, decode, onProgress: (f, n) => report('ball', 'working', `Tracking your ball: frame ${f} of ${n}`) });
+      put('ball', result.answer, `Number ${result.number} read; positions filled.${result.margin < 3 ? ' Two balls came very close once: double-check in the viewer.' : ''}`);
+    } catch (error) {
+      if (error?.frames) onBallFailure({ frames: error.frames, report: error.report });
+      throw error;
+    }
   });
   report('review', 'manual', 'Do the poster review yourself, then paste your signed receipt.');
   await awake;
@@ -114,7 +127,18 @@ function panel(doc) {
   foot.textContent = 'Nothing is submitted for you. Read the boxes, then press Check and Save yourself.';
   box.append(foot);
   doc.body.append(box);
-  return (key, state, text) => { if (rows[key]) rows[key].textContent = `${ICON[state] || '⬜'} ${LABELS[key]}: ${text}`; };
+  const report = (key, state, text) => { if (rows[key]) rows[key].textContent = `${ICON[state] || '⬜'} ${LABELS[key]}: ${text}`; };
+  // When Q3 fails: print what was seen, and let the student keep the frames file (to open in the viewer or to report).
+  report.ballFailed = ({ frames, report: seen }) => {
+    console.log('GA5 Q3 report (copy this when asking for help):\n' + JSON.stringify(seen));
+    const save = doc.createElement('a');
+    save.textContent = 'Save my frames file (for the viewer or to report the problem)';
+    save.download = 'ga5-frames.bin';
+    save.href = URL.createObjectURL(new Blob([frames], { type: 'application/octet-stream' }));
+    save.style.cssText = 'display:block;margin-top:8px;color:#93c5fd';
+    box.append(save);
+  };
+  return report;
 }
 
 /** Entry point when imported on the exam page. */
@@ -125,7 +149,8 @@ export async function run(env = globalThis) {
   if (!user) throw new Error('Sign in on the exam page first, then run this line again.');
   if (!doc.getElementById(IDS.rag)) throw new Error('This page does not show the GA5 questions. Open the GA5 exam and wait for it to load.');
   const { default: seedrandom } = await import('https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/+esm');
-  return fillAll({ doc, user, origin: location.origin, random: seedrandom, report: panel(doc), EventClass: env.Event });
+  const report = panel(doc);
+  return fillAll({ doc, user, origin: location.origin, random: seedrandom, report, onBallFailure: report.ballFailed, EventClass: env.Event });
 }
 
 if (typeof window !== 'undefined' && window.location?.hostname === EXAM_HOST) {
