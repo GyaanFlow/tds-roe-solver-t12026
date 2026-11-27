@@ -763,6 +763,17 @@ async function checkT3Ga5Direct(solvers, api, tools, seedrandom) {
   assert(tracker.readNumber({ width: 60, height: 60, rgb: blob }, [30, 30]) === null && tracker.readNumber({ width: 60, height: 60, rgb: new Uint8Array(60 * 60 * 3).fill(140) }, [30, 30]) === null, 'T3 GA5 the digit reader must return nothing for marks that are not a number.');
   assert((await api.wakeApi({ fetchImpl: async () => ({ ok: true, json: async () => ({ ok: true, service: 't3ga5' }) }), sleep: async () => {}, tries: 1 })).ok, 'T3 GA5 wake-up must accept the health reply the integration guide describes as well as the live one.');
 
+  // The REAL exam layout: Q1's box has its own element id and carries the question id only as its name.
+  const bundle = fs.readFileSync(path.join(rootDir, 'solvers/T32026/ga5/exam-source.js'), 'utf8');
+  assert(/id="rag-colosseum-url"\s*\n\s*name="\$\{[a-z]\}"/.test(bundle), 'T3 GA5 exam layout for Q1 changed: re-check how the helper finds the box.');
+  const realBox = { value: '', disabled: false, readOnly: false, events: [], dispatchEvent(e) { this.events.push(e.type); } };
+  const asked = [];
+  const realDoc = { getElementById: () => null, querySelector: (selector) => { asked.push(selector); return selector === `input[name="${helper.IDS.rag}"], textarea[name="${helper.IDS.rag}"]` ? realBox : null; } };
+  assert(helper.findField(realDoc, helper.IDS.rag) === realBox && helper.setField(realDoc, helper.IDS.rag, 'https://x.example/base', class { constructor(type) { this.type = type; } }) && realBox.value === 'https://x.example/base' && realBox.events.join() === 'input,change' && helper.findField(realDoc, helper.IDS.ball) === null, 'T3 GA5 the helper must find Q1 by its name on the real exam page.');
+  let looks = 0;
+  const late = { getElementById: (id) => (looks >= 3 && id === helper.IDS.harness ? realBox : null), querySelector: () => null };
+  assert((await helper.waitForQuestions(late, { tries: 10, sleep: async () => { looks += 1; } })) === true && looks === 3 && (await helper.waitForQuestions({ getElementById: () => null, querySelector: () => null }, { tries: 3, sleep: async () => {} })) === false, 'T3 GA5 the helper must wait for the questions to load.');
+
   // The exam-page helper: fills what it can, one failure never stops the others, nothing is submitted.
   assert(helper.readUser({ getItem: () => JSON.stringify({ email: me, quizSign: 's' }) }).email === me && helper.readUser({ getItem: () => 'junk' }) === null && helper.readUser({ getItem: () => null }) === null, 'T3 GA5 helper must read the signed-in student safely.');
   const makeDoc = (locked = []) => { const fields = Object.fromEntries(Object.values(helper.IDS).map((k) => [k, { value: '', disabled: locked.includes(k), readOnly: false, events: [], dispatchEvent(e) { this.events.push(e.type); } }])); return { fields, getElementById: (k) => fields[k] || null }; };

@@ -29,9 +29,23 @@ export function readUser(storage) {
   }
 }
 
+/** A question's input. Most use the question id as the element id; Q1 only carries it as the input's name. */
+export function findField(doc, id) {
+  return doc.getElementById(id) || doc.querySelector?.(`input[name="${id}"], textarea[name="${id}"]`) || null;
+}
+
+/** Waits for the exam to draw its questions. Resolves true as soon as any GA5 box exists. */
+export async function waitForQuestions(doc, { tries = 40, delayMs = 500, sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms)) } = {}) {
+  for (let attempt = 0; attempt < tries; attempt += 1) {
+    if (Object.values(IDS).some((id) => findField(doc, id))) return true;
+    await sleep(delayMs);
+  }
+  return false;
+}
+
 /** Puts a value into an exam field the way typing would. Returns false when the field is missing or locked. */
 export function setField(doc, id, value, EventClass = globalThis.Event) {
-  const field = doc.getElementById(id);
+  const field = findField(doc, id);
   if (!field || field.disabled || field.readOnly) return false;
   field.value = value;
   field.dispatchEvent(new EventClass('input', { bubbles: true }));
@@ -147,7 +161,7 @@ export async function run(env = globalThis) {
   if (!doc || location?.hostname !== EXAM_HOST) throw new Error(`Open your signed-in GA5 exam page on ${EXAM_HOST} first, then run this line in that page's console.`);
   const user = readUser(localStorage);
   if (!user) throw new Error('Sign in on the exam page first, then run this line again.');
-  if (!doc.getElementById(IDS.rag)) throw new Error('This page does not show the GA5 questions. Open the GA5 exam and wait for it to load.');
+  if (!(await waitForQuestions(doc))) throw new Error('This page does not show the GA5 questions. Open the GA5 exam, sign in, wait until the questions appear, then run the line again.');
   const { default: seedrandom } = await import('https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/+esm');
   const report = panel(doc);
   return fillAll({ doc, user, origin: location.origin, random: seedrandom, report, onBallFailure: report.ballFailed, EventClass: env.Event });
