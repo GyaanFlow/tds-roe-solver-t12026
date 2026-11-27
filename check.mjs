@@ -770,6 +770,8 @@ async function checkT3Ga5Direct(solvers, api, tools, seedrandom) {
   const asked = [];
   const realDoc = { getElementById: () => null, querySelector: (selector) => { asked.push(selector); return selector === `input[name="${helper.IDS.rag}"], textarea[name="${helper.IDS.rag}"]` ? realBox : null; } };
   assert(helper.findField(realDoc, helper.IDS.rag) === realBox && helper.setField(realDoc, helper.IDS.rag, 'https://x.example/base', class { constructor(type) { this.type = type; } }) && realBox.value === 'https://x.example/base' && realBox.events.join() === 'input,change' && helper.findField(realDoc, helper.IDS.ball) === null, 'T3 GA5 the helper must find Q1 by its name on the real exam page.');
+  const aliasDoc = { getElementById: (id) => (id === 'rag-colosseum-url' ? realBox : null), querySelector: () => null };
+  assert(helper.findField(aliasDoc, helper.IDS.rag) === realBox && helper.findField(aliasDoc, helper.IDS.harness) === null, 'T3 GA5 the helper must also find Q1 by its element id alias.');
   let looks = 0;
   const late = { getElementById: (id) => (looks >= 3 && id === helper.IDS.harness ? realBox : null), querySelector: () => null };
   assert((await helper.waitForQuestions(late, { tries: 10, sleep: async () => { looks += 1; } })) === true && looks === 3 && (await helper.waitForQuestions({ getElementById: () => null, querySelector: () => null }, { tries: 3, sleep: async () => {} })) === false, 'T3 GA5 the helper must wait for the questions to load.');

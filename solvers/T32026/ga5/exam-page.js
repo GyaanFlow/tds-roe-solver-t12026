@@ -29,9 +29,16 @@ export function readUser(storage) {
   }
 }
 
-/** A question's input. Most use the question id as the element id; Q1 only carries it as the input's name. */
+// The exam draws Q1's box as <input id="rag-colosseum-url" name="q-rag-colosseum-server">; the other boxes use the
+// question id as their element id.
+const FIELD_ALIASES = { 'q-rag-colosseum-server': ['rag-colosseum-url'] };
+
+/** A question's input, looked up by element id, then a known alias, then its name attribute. */
 export function findField(doc, id) {
-  return doc.getElementById(id) || doc.querySelector?.(`input[name="${id}"], textarea[name="${id}"]`) || null;
+  return doc.getElementById(id)
+    || (FIELD_ALIASES[id] || []).map((alias) => doc.getElementById(alias)).find(Boolean)
+    || doc.querySelector?.(`input[name="${id}"], textarea[name="${id}"]`)
+    || null;
 }
 
 /** Waits for the exam to draw its questions. Resolves true as soon as any GA5 box exists. */
