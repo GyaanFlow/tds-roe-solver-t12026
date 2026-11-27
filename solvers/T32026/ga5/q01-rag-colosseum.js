@@ -1,4 +1,4 @@
-import { endpointResult, registerEndpointWidgets } from './ga5-ui.js';
+import { endpointResult, registerEndpointWidgets, wakeInBackground } from './ga5-ui.js';
 
 export const id = 'q-rag-colosseum-server';
 export const title = 'RAG Colosseum';
@@ -14,5 +14,6 @@ export function build(email, origin) {
 
 export async function solve(email) {
   registerEndpointWidgets();
+  wakeInBackground();
   return build(String(email || '').trim());
 }

@@ -55,8 +55,8 @@
           "id": "ga5",
           "label": "GA 5 (RAG, Embeddings & Safety Router)",
           "group": "Weekly Graded Assignments",
-          "description": "Live RAG question-answering and harness safety-router endpoints with a wake-and-test tool, a local Ollama rank-correlation script with a matrix checker, and a ball-tracking frame viewer.",
-          "solverCount": 4,
+          "description": "Live RAG and harness safety-router endpoints with a wake-and-test tool, your rank-correlation matrix, an in-browser ball tracker, a one-line exam-page helper and a poster-review guide.",
+          "solverCount": 5,
           "questions": [
             {
               "id": "q-rag-colosseum-server",
@@ -73,6 +73,10 @@
             {
               "id": "q-harness-safety-router-server",
               "title": "Harness Engineering: Contextual Safety and Model Routing"
+            },
+            {
+              "id": "q-time-use-review-server",
+              "title": "Time Use Charts: which data story would you share?"
             }
           ]
         },

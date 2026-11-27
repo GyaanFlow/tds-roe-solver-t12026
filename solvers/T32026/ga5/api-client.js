@@ -33,7 +33,7 @@ export async function wakeApi({ origin = T3_API_ORIGIN, fetchImpl = globalThis.f
       const response = await fetchImpl(healthUrl(origin), { cache: 'no-store' });
       if (response?.ok) {
         const body = await response.json().catch(() => null);
-        if (!body || body.status === 'ok') return { ok: true, tries: attempt };
+        if (!body || body.status === 'ok' || body.ok === true) return { ok: true, tries: attempt };
       }
     } catch { /* asleep or offline: try again */ }
     if (attempt < tries) await sleep(delayMs);

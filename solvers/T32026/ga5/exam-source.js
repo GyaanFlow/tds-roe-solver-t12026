@@ -1,30 +1,30 @@
-// Audit snapshot of https://exam.sanand.workers.dev/exam-tds-2026-09-ga5.js (prettier 3.4.2), fetched 2026-11-21.
+// Audit snapshot of https://exam.sanand.workers.dev/exam-tds-2026-09-ga5.js (prettier 3.4.2), fetched 2026-11-27.
 // check.mjs compares the question ids and order in this file with the registry. Do not edit.
-var Me = Object.create;
+var He = Object.create;
 var j = Object.defineProperty;
-var Oe = Object.getOwnPropertyDescriptor;
-var ze = Object.getOwnPropertyNames;
-var He = Object.getPrototypeOf,
-  De = Object.prototype.hasOwnProperty;
-var O = (d, c) => () => (d && (c = d((d = 0))), c);
-var C = (d, c) => () => (c || d((c = { exports: {} }).exports, c), c.exports),
+var De = Object.getOwnPropertyDescriptor;
+var Le = Object.getOwnPropertyNames;
+var Ue = Object.getPrototypeOf,
+  $e = Object.prototype.hasOwnProperty;
+var M = (d, c) => () => (d && (c = d((d = 0))), c);
+var I = (d, c) => () => (c || d((c = { exports: {} }).exports, c), c.exports),
   H = (d, c) => {
     for (var s in c) j(d, s, { get: c[s], enumerable: !0 });
   },
-  Le = (d, c, s, u) => {
+  Be = (d, c, s, u) => {
     if ((c && typeof c == "object") || typeof c == "function")
-      for (let p of ze(c))
-        !De.call(d, p) &&
+      for (let p of Le(c))
+        !$e.call(d, p) &&
           p !== s &&
           j(d, p, {
             get: () => c[p],
-            enumerable: !(u = Oe(c, p)) || u.enumerable,
+            enumerable: !(u = De(c, p)) || u.enumerable,
           });
     return d;
   };
-var Ue = (d, c, s) => (
-  (s = d != null ? Me(He(d)) : {}),
-  Le(
+var je = (d, c, s) => (
+  (s = d != null ? He(Ue(d)) : {}),
+  Be(
     c || !d || !d.__esModule
       ? j(s, "default", { value: d, enumerable: !0 })
       : s,
@@ -33,53 +33,53 @@ var Ue = (d, c, s) => (
 );
 var ne = {};
 H(ne, {
-  DOMAINS: () => X,
-  PASSAGE_TEMPLATES: () => te,
-  TOKENS: () => ee,
-  default: () => je,
-  generateKB: () => oe,
-  normalizeEmail: () => ie,
+  DOMAINS: () => ee,
+  PASSAGE_TEMPLATES: () => ie,
+  TOKENS: () => te,
+  default: () => Fe,
+  generateKB: () => re,
+  normalizeEmail: () => oe,
 });
-import { html as Z } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-import Be from "https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/+esm";
-function ie(d) {
+import { html as X } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+import Ge from "https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/+esm";
+function oe(d) {
   return String(d || "")
     .trim()
     .toLowerCase();
 }
-function oe(d) {
-  let c = ie(d),
-    s = Be(`${c}#rag-colosseum-server`),
-    u = [...X],
+function re(d) {
+  let c = oe(d),
+    s = Ge(`${c}#rag-colosseum-server`),
+    u = [...ee],
     p = [],
     m = [];
   for (let a of u) {
-    let e = te[a];
-    for (let t = 0; t < e.length; t++) {
-      let n = e[t],
-        i = n,
-        o = n.match(/\{\{([A-Z_]+)\}\}/g) || [],
-        r = {};
+    let e = ie[a];
+    for (let i = 0; i < e.length; i++) {
+      let r = e[i],
+        t = r,
+        o = r.match(/\{\{([A-Z_]+)\}\}/g) || [],
+        n = {};
       for (let l of o) {
-        let h = l.replace(/[\{\}]/g, ""),
-          f = ee[h],
-          w = f[Math.floor(s() * f.length)];
-        (i = i.replace(l, w)), (r[h] = w);
+        let h = l.replace(/[{}]/g, ""),
+          g = te[h],
+          v = g[Math.floor(s() * g.length)];
+        (t = t.replace(l, v)), (n[h] = v);
       }
-      p.push(i), m.push(r);
+      p.push(t), m.push(n);
     }
   }
   return { passages: p, activeDomains: u, passageTokens: m };
 }
-async function je({ user: d, weight: c = 2, version: s = "" }) {
+async function Fe({ user: d, weight: c = 2, version: s = "" }) {
   let u = "q-rag-colosseum-server",
     p =
       "RAG Colosseum: 20-Probe Deployment Gauntlet (50-Passage Knowledge Base)",
-    { passages: m } = oe(d.email),
+    { passages: m } = re(d.email),
     a = JSON.stringify(m, null, 2),
     e = new Blob([a], { type: "application/json" }),
-    t = URL.createObjectURL(e),
-    n = Z`
+    i = URL.createObjectURL(e),
+    r = X`
     <div class="mb-3">
       <p class="lead">
         You will deploy a RAG system that the exam server will probe with 20 questions across 5 rounds.
@@ -97,7 +97,7 @@ async function je({ user: d, weight: c = 2, version: s = "" }) {
           designed to challenge lexical keyword matchers and reward dense semantic embeddings.
         </p>
         <p class="mb-0">
-          <a class="btn btn-sm btn-primary" href="${t}" download="knowledge_base.json">
+          <a class="btn btn-sm btn-primary" href="${i}" download="knowledge_base.json">
             Download Knowledge Base (50 passages)
           </a>
           <button
@@ -105,11 +105,11 @@ async function je({ user: d, weight: c = 2, version: s = "" }) {
             type="button"
             @click=${(o) => {
               navigator.clipboard.writeText(a);
-              let r = o.currentTarget,
-                l = r.textContent;
-              (r.textContent = "Copied!"),
+              let n = o.currentTarget,
+                l = n.textContent;
+              (n.textContent = "Copied!"),
                 setTimeout(() => {
-                  r.textContent = l;
+                  n.textContent = l;
                 }, 1500);
             }}
           >
@@ -124,7 +124,7 @@ async function je({ user: d, weight: c = 2, version: s = "" }) {
         </summary>
         <div class="card-body p-2">
           <ol class="small m-0 ps-3" style="max-height: 360px; overflow: auto;">
-            ${m.map((o, r) => Z`<li class="mb-2"><strong>[Passage ${r}]:</strong> ${o}</li>`)}
+            ${m.map((o, n) => X`<li class="mb-2"><strong>[Passage ${n}]:</strong> ${o}</li>`)}
           </ol>
         </div>
       </details>
@@ -190,6 +190,7 @@ Content-Type: application/json
           type="url"
           placeholder="https://your-space.hf.space"
           required
+          @input=${(o) => o.currentTarget.setCustomValidity("")}
         />
         <div class="form-text">
           Provide your public service base URL (without <code>/query</code>). Must start with <code>https://</code>.
@@ -202,28 +203,54 @@ Content-Type: application/json
           class="btn btn-primary"
           id="rag-colosseum-submit-btn"
           @click=${async (o) => {
-            let r = o.currentTarget,
-              l = r.textContent;
-            (r.disabled = !0),
-              (r.textContent = "Running 20-probe gauntlet (~15\u201325s)...");
+            let n = o.currentTarget,
+              l = n.textContent;
+            (n.disabled = !0),
+              (n.textContent = "Running 20-probe gauntlet (~15\u201325s)...");
             let h = document.getElementById("rag-colosseum-status");
             h &&
               ((h.className = "alert alert-info mt-3"),
               (h.textContent =
                 "Probing rounds 1 through 5 in progress. Please wait..."));
             try {
-              let f = await i();
+              let g = await t(),
+                v = document.getElementById("rag-colosseum-url"),
+                E = v?.closest(".question"),
+                C =
+                  (g.correct ? g.validMessage : g.invalidMessage) ||
+                  g.validMessage ||
+                  g.invalidMessage ||
+                  g.error;
+              if (
+                (v && v.setCustomValidity(g.correct ? "" : "Incorrect answer"),
+                E)
+              ) {
+                E.classList.add("was-validated"),
+                  E.classList.toggle("solved", !!g.correct),
+                  E.querySelector(".solved-badge")?.classList.toggle(
+                    "d-none",
+                    !g.correct,
+                  );
+                let f = E.querySelector(
+                  g.correct ? ".valid-feedback" : ".invalid-feedback",
+                );
+                f && C && (f.textContent = C);
+              }
               h &&
-                ((h.className = f.correct
+                ((h.className = g.correct
                   ? "alert alert-success mt-3"
-                  : "alert alert-warning mt-3"),
-                (h.textContent = f.validMessage || `Score: ${f.score}/${c}`));
-            } catch (f) {
+                  : "alert alert-danger mt-3"),
+                (h.textContent =
+                  C ||
+                  (g.correct
+                    ? "All 20/20 requests passed."
+                    : "Some requests failed.")));
+            } catch (g) {
               h &&
                 ((h.className = "alert alert-danger mt-3"),
-                (h.textContent = f.message || String(f)));
+                (h.textContent = g.message || String(g)));
             } finally {
-              (r.disabled = !1), (r.textContent = l);
+              (n.disabled = !1), (n.textContent = l);
             }
           }}
         >
@@ -236,14 +263,14 @@ Content-Type: application/json
       </div>
     </div>
   `,
-    i = async (o) => {
-      let r = document.getElementById("rag-colosseum-url"),
-        l = r ? r.value : o,
+    t = async (o) => {
+      let n = document.getElementById("rag-colosseum-url"),
+        l = n ? n.value : o,
         h = String(l || "").trim();
       if (!h) throw new Error("Enter your deployment URL.");
       if (!h.startsWith("https://"))
         throw new Error("URL must start with https://");
-      let f = await fetch("/backendVerify", {
+      let g = await fetch("/backendVerify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -255,25 +282,25 @@ Content-Type: application/json
             version: s,
           }),
         }),
-        w = await f.json();
-      if (!f.ok) throw new Error(w.error || "Verification failed.");
-      return w;
+        v = await g.json();
+      if (!g.ok) throw new Error(v.error || "Verification failed.");
+      return v;
     };
-  return { id: u, title: p, weight: c, question: n, answer: i };
+  return { id: u, title: p, weight: c, question: r, answer: t };
 }
-var X,
-  ee,
+var ee,
   te,
-  re = O(() => {
+  ie,
+  ae = M(() => {
     "use strict";
-    (X = [
+    (ee = [
       "distributed_systems",
       "machine_learning",
       "databases",
       "networking",
       "security",
     ]),
-      (ee = {
+      (te = {
         QUORUM: ["2", "3", "4", "5"],
         HEARTBEAT_MS: ["100", "150", "200", "250"],
         BATCH_SIZE: ["32", "64", "128", "256"],
@@ -285,7 +312,7 @@ var X,
         KEY_BITS: ["128", "192", "256", "512"],
         HASH_ALG: ["SHA-256", "SHA-3", "BLAKE2"],
       }),
-      (te = {
+      (ie = {
         distributed_systems: [
           "Raft consensus requires a quorum of {{QUORUM}} nodes to commit a log entry. The leader sends {{HEARTBEAT_MS}}ms heartbeats to prevent follower election timeouts. Network partitions cause the minority partition to stop accepting writes. Log compaction via snapshotting reduces replay time after a crash. etcd and CockroachDB both implement Raft for replicated state machines.",
           "Multi-Paxos consensus coordinates distributed replicated state without a single permanent master. Leader leases establish proposal rights for lease terms of {{TIMEOUT_MS}}ms before re-election. In the accept phase, a commit quorum of {{QUORUM}} acceptors must acknowledge the ballot number. Proposers resolve ballot conflicts through randomized backoff intervals. Google Chubby and Apache ZooKeeper incorporate Paxos-family consensus protocols.",
@@ -348,41 +375,41 @@ var X,
         ],
       });
   });
-var se = {};
-H(se, { DOMAINS: () => D, buildStudentDataset: () => ae, default: () => Ke });
-import { html as Ne } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-import Ge from "https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/+esm";
-function ae(d, c = "") {
+var ce = {};
+H(ce, { DOMAINS: () => D, buildStudentDataset: () => se, default: () => Ve });
+import { html as Ke } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+import Qe from "https://cdn.jsdelivr.net/npm/seedrandom@3.0.5/+esm";
+function se(d, c = "") {
   let s = String(d || "")
       .trim()
       .toLowerCase(),
-    u = Ge(`${Fe}#${s}#${c}`),
+    u = Qe(`${We}#${s}#${c}`),
     p = [];
   for (let e = 0; e < D.length; e++) {
-    let t = [0, 1, 2, 3, 4, 5];
-    for (let i = t.length - 1; i > 0; i--) {
-      let o = Math.floor(u() * (i + 1));
-      [t[i], t[o]] = [t[o], t[i]];
+    let i = [0, 1, 2, 3, 4, 5];
+    for (let t = i.length - 1; t > 0; t--) {
+      let o = Math.floor(u() * (t + 1));
+      [i[t], i[o]] = [i[o], i[t]];
     }
-    let n = t.slice(0, 5);
-    for (let i of n) p.push({ domain: e, text: D[e].sentences[i] });
+    let r = i.slice(0, 5);
+    for (let t of r) p.push({ domain: e, text: D[e].sentences[t] });
   }
   for (let e = p.length - 1; e > 0; e--) {
-    let t = Math.floor(u() * (e + 1));
-    [p[e], p[t]] = [p[t], p[e]];
+    let i = Math.floor(u() * (e + 1));
+    [p[e], p[i]] = [p[i], p[e]];
   }
   let m = p.map((e) => e.text),
     a = D.map((e) => e.query);
   return { sentences: m, queries: a };
 }
-async function Ke({ user: d, weight: c = 2, version: s = "" }) {
+async function Ve({ user: d, weight: c = 2, version: s = "" }) {
   let u = "q-ollama-faiss-rank-correlation-server",
     p = "Dual Embedding Alignment: Ollama, FAISS, and Rank Correlation",
-    { sentences: m, queries: a } = ae(d.email, s),
+    { sentences: m, queries: a } = se(d.email, s),
     e = JSON.stringify({ sentences: m, queries: a }, null, 2),
-    t = new Blob([e], { type: "application/json" }),
-    n = URL.createObjectURL(t),
-    o = Ne`
+    i = new Blob([e], { type: "application/json" }),
+    r = URL.createObjectURL(i),
+    o = Ke`
     <div class="mb-3">
       <p class="lead">
         Different embedding models represent text in distinct semantic latent spaces.
@@ -410,7 +437,7 @@ async function Ke({ user: d, weight: c = 2, version: s = "" }) {
       </ol>
 
       <p>
-        <a class="btn btn-sm btn-primary" href="${n}" download="dataset.json">
+        <a class="btn btn-sm btn-primary" href="${r}" download="dataset.json">
           Download dataset.json
         </a>
         <button
@@ -419,10 +446,10 @@ async function Ke({ user: d, weight: c = 2, version: s = "" }) {
           @click=${(l) => {
             navigator.clipboard.writeText(e);
             let h = l.currentTarget,
-              f = h.textContent;
+              g = h.textContent;
             (h.textContent = "Copied!"),
               setTimeout(() => {
-                h.textContent = f;
+                h.textContent = g;
               }, 1500);
           }}
         >
@@ -550,20 +577,20 @@ print(json.dumps(matrix))`}</code></pre>
             version: s,
           }),
         }),
-        f = await h.json();
+        g = await h.json();
       if (!h.ok)
         throw new Error(
-          f.error || "Verification failed. Check your submission.",
+          g.error || "Verification failed. Check your submission.",
         );
-      return f;
+      return g;
     },
   };
 }
-var Fe,
+var We,
   D,
-  ce = O(() => {
+  le = M(() => {
     "use strict";
-    (Fe = "tds-ga4-ollama-faiss-correlation-salt-2026-09"),
+    (We = "tds-ga4-ollama-faiss-correlation-salt-2026-09"),
       (D = [
         {
           id: "distributed",
@@ -707,79 +734,79 @@ var Fe,
         },
       ]);
   });
-var le = {};
-H(le, { default: () => We });
-import { html as Qe } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function We({ user: d, weight: c = 2 }) {
+var de = {};
+H(de, { default: () => Ye });
+import { html as Je } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function Ye({ user: d, weight: c = 2 }) {
   let s = "q-ball-tracker-server",
     u = "Track the red ball",
     p = `${location.origin}/questionData?email=${encodeURIComponent(d.email)}&quizSign=${encodeURIComponent(d.quizSign || "")}&questionId=${encodeURIComponent(s)}`;
   async function m() {
-    let t = document.getElementById(`${s}-status`),
-      n = document.getElementById(`${s}-make`),
-      i = document.getElementById(`${s}-video`),
+    let i = document.getElementById(`${s}-status`),
+      r = document.getElementById(`${s}-make`),
+      t = document.getElementById(`${s}-video`),
       o = document.getElementById(`${s}-download`);
     if (!("VideoEncoder" in window)) {
-      t.textContent =
+      i.textContent =
         "This browser can't encode video. Use a recent Chrome, Edge or Brave.";
       return;
     }
-    n.disabled = !0;
+    r.disabled = !0;
     try {
-      t.textContent = "Downloading frames\u2026";
-      let r = await fetch(p);
-      if (!r.ok)
-        throw new Error(`Could not load frames: ${r.status} ${await r.text()}`);
-      let l = new Uint8Array(await r.arrayBuffer()),
+      i.textContent = "Downloading frames\u2026";
+      let n = await fetch(p);
+      if (!n.ok)
+        throw new Error(`Could not load frames: ${n.status} ${await n.text()}`);
+      let l = new Uint8Array(await n.arrayBuffer()),
         h = new DataView(l.buffer),
-        f = h.getUint32(0),
-        w = h.getUint32(4),
-        P = [8, 12, 16].map((x) => h.getUint32(x));
-      document.getElementById(`${s}-frames`).textContent = P.join(", ");
+        g = h.getUint32(0),
+        v = h.getUint32(4),
+        E = [8, 12, 16].map((x) => h.getUint32(x));
+      document.getElementById(`${s}-frames`).textContent = E.join(", ");
       let {
-          BufferTarget: I,
-          CanvasSource: g,
+          BufferTarget: C,
+          CanvasSource: f,
           Output: b,
           WebMOutputFormat: T,
         } = await import("https://cdn.jsdelivr.net/npm/mediabunny@1.60.0/+esm"),
-        v = document.createElement("canvas"),
-        y = new b({ format: new T(), target: new I() }),
+        w = document.createElement("canvas"),
+        y = new b({ format: new T(), target: new C() }),
         k,
         q,
         S = 20;
-      for (let x = 0; x < w; x++) {
-        let A = h.getUint32(S),
-          _ = await createImageBitmap(
-            new Blob([l.subarray(S + 4, S + 4 + A)], { type: "image/png" }),
+      for (let x = 0; x < v; x++) {
+        let _ = h.getUint32(S),
+          R = await createImageBitmap(
+            new Blob([l.subarray(S + 4, S + 4 + _)], { type: "image/png" }),
           );
-        (S += 4 + A),
+        (S += 4 + _),
           k ||
-            ((v.width = _.width),
-            (v.height = _.height),
-            (q = v.getContext("2d")),
-            (k = new g(v, { codec: "vp9", bitrate: 4e6 })),
-            y.addVideoTrack(k, { frameRate: f }),
+            ((w.width = R.width),
+            (w.height = R.height),
+            (q = w.getContext("2d")),
+            (k = new f(w, { codec: "vp9", bitrate: 4e6 })),
+            y.addVideoTrack(k, { frameRate: g }),
             await y.start()),
-          q.drawImage(_, 0, 0),
-          _.close(),
-          await k.add(x / f, 1 / f),
+          q.drawImage(R, 0, 0),
+          R.close(),
+          await k.add(x / g, 1 / g),
           x % 25 == 0 &&
-            (t.textContent = `Making your video\u2026 ${Math.round((100 * x) / w)}%`);
+            (i.textContent = `Making your video\u2026 ${Math.round((100 * x) / v)}%`);
       }
       await y.finalize();
-      let E = URL.createObjectURL(
+      let A = URL.createObjectURL(
         new Blob([y.target.buffer], { type: "video/webm" }),
       );
-      (i.src = E),
-        i.classList.remove("d-none"),
-        (o.href = E),
+      (t.src = A),
+        t.classList.remove("d-none"),
+        (o.href = A),
         o.classList.remove("d-none"),
-        (t.textContent = "Your video is ready.");
-    } catch (r) {
-      (t.textContent = `Error: ${r.message}`), (n.disabled = !1);
+        (i.textContent = "Your video is ready.");
+    } catch (n) {
+      (i.textContent = `Error: ${n.message}`), (r.disabled = !1);
     }
   }
-  let a = Qe`
+  let a = Je`
     <div class="mb-3">
       <p>
         100 balls bounce around inside a circle. At the start, <strong>your ball is red</strong>. It then turns grey
@@ -809,77 +836,77 @@ async function We({ user: d, weight: c = 2 }) {
     title: u,
     weight: c,
     question: a,
-    answer: async (t) => {
-      let n = await fetch("/backendVerify", {
+    answer: async (i) => {
+      let r = await fetch("/backendVerify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             email: d.email,
             quizSign: d.quizSign,
-            response: t,
+            response: i,
             weight: c,
             questionId: s,
           }),
         }),
-        i = await n.json();
-      if (!n.ok) throw new Error(i.error || "Unable to verify.");
-      return i;
+        t = await r.json();
+      if (!r.ok) throw new Error(t.error || "Unable to verify.");
+      return t;
     },
   };
 }
-var de = O(() => {
+var ue = M(() => {
   "use strict";
 });
-var pe = C((ue, N) => {
+var me = I((pe, N) => {
   (function (d, c, s) {
     function u(e) {
-      var t = this,
-        n = a();
-      (t.next = function () {
-        var i = 2091639 * t.s0 + t.c * 23283064365386963e-26;
-        return (t.s0 = t.s1), (t.s1 = t.s2), (t.s2 = i - (t.c = i | 0));
+      var i = this,
+        r = a();
+      (i.next = function () {
+        var t = 2091639 * i.s0 + i.c * 23283064365386963e-26;
+        return (i.s0 = i.s1), (i.s1 = i.s2), (i.s2 = t - (i.c = t | 0));
       }),
-        (t.c = 1),
-        (t.s0 = n(" ")),
-        (t.s1 = n(" ")),
-        (t.s2 = n(" ")),
-        (t.s0 -= n(e)),
-        t.s0 < 0 && (t.s0 += 1),
-        (t.s1 -= n(e)),
-        t.s1 < 0 && (t.s1 += 1),
-        (t.s2 -= n(e)),
-        t.s2 < 0 && (t.s2 += 1),
-        (n = null);
+        (i.c = 1),
+        (i.s0 = r(" ")),
+        (i.s1 = r(" ")),
+        (i.s2 = r(" ")),
+        (i.s0 -= r(e)),
+        i.s0 < 0 && (i.s0 += 1),
+        (i.s1 -= r(e)),
+        i.s1 < 0 && (i.s1 += 1),
+        (i.s2 -= r(e)),
+        i.s2 < 0 && (i.s2 += 1),
+        (r = null);
     }
-    function p(e, t) {
-      return (t.c = e.c), (t.s0 = e.s0), (t.s1 = e.s1), (t.s2 = e.s2), t;
+    function p(e, i) {
+      return (i.c = e.c), (i.s0 = e.s0), (i.s1 = e.s1), (i.s2 = e.s2), i;
     }
-    function m(e, t) {
-      var n = new u(e),
-        i = t && t.state,
-        o = n.next;
+    function m(e, i) {
+      var r = new u(e),
+        t = i && i.state,
+        o = r.next;
       return (
         (o.int32 = function () {
-          return (n.next() * 4294967296) | 0;
+          return (r.next() * 4294967296) | 0;
         }),
         (o.double = function () {
           return o() + ((o() * 2097152) | 0) * 11102230246251565e-32;
         }),
         (o.quick = o),
-        i &&
-          (typeof i == "object" && p(i, n),
+        t &&
+          (typeof t == "object" && p(t, r),
           (o.state = function () {
-            return p(n, {});
+            return p(r, {});
           })),
         o
       );
     }
     function a() {
       var e = 4022871197,
-        t = function (n) {
-          n = String(n);
-          for (var i = 0; i < n.length; i++) {
-            e += n.charCodeAt(i);
+        i = function (r) {
+          r = String(r);
+          for (var t = 0; t < r.length; t++) {
+            e += r.charCodeAt(t);
             var o = 0.02519603282416938 * e;
             (e = o >>> 0),
               (o -= e),
@@ -890,7 +917,7 @@ var pe = C((ue, N) => {
           }
           return (e >>> 0) * 23283064365386963e-26;
         };
-      return t;
+      return i;
     }
     c && c.exports
       ? (c.exports = m)
@@ -899,56 +926,56 @@ var pe = C((ue, N) => {
             return m;
           })
         : (this.alea = m);
-  })(ue, typeof N == "object" && N, typeof define == "function" && define);
+  })(pe, typeof N == "object" && N, typeof define == "function" && define);
 });
-var he = C((me, G) => {
+var ge = I((he, G) => {
   (function (d, c, s) {
     function u(a) {
       var e = this,
-        t = "";
+        i = "";
       (e.x = 0),
         (e.y = 0),
         (e.z = 0),
         (e.w = 0),
         (e.next = function () {
-          var i = e.x ^ (e.x << 11);
+          var t = e.x ^ (e.x << 11);
           return (
             (e.x = e.y),
             (e.y = e.z),
             (e.z = e.w),
-            (e.w ^= (e.w >>> 19) ^ i ^ (i >>> 8))
+            (e.w ^= (e.w >>> 19) ^ t ^ (t >>> 8))
           );
         }),
-        a === (a | 0) ? (e.x = a) : (t += a);
-      for (var n = 0; n < t.length + 64; n++)
-        (e.x ^= t.charCodeAt(n) | 0), e.next();
+        a === (a | 0) ? (e.x = a) : (i += a);
+      for (var r = 0; r < i.length + 64; r++)
+        (e.x ^= i.charCodeAt(r) | 0), e.next();
     }
     function p(a, e) {
       return (e.x = a.x), (e.y = a.y), (e.z = a.z), (e.w = a.w), e;
     }
     function m(a, e) {
-      var t = new u(a),
-        n = e && e.state,
-        i = function () {
-          return (t.next() >>> 0) / 4294967296;
+      var i = new u(a),
+        r = e && e.state,
+        t = function () {
+          return (i.next() >>> 0) / 4294967296;
         };
       return (
-        (i.double = function () {
+        (t.double = function () {
           do
-            var o = t.next() >>> 11,
-              r = (t.next() >>> 0) / 4294967296,
-              l = (o + r) / (1 << 21);
+            var o = i.next() >>> 11,
+              n = (i.next() >>> 0) / 4294967296,
+              l = (o + n) / (1 << 21);
           while (l === 0);
           return l;
         }),
-        (i.int32 = t.next),
-        (i.quick = i),
-        n &&
-          (typeof n == "object" && p(n, t),
-          (i.state = function () {
-            return p(t, {});
+        (t.int32 = i.next),
+        (t.quick = t),
+        r &&
+          (typeof r == "object" && p(r, i),
+          (t.state = function () {
+            return p(i, {});
           })),
-        i
+        t
       );
     }
     c && c.exports
@@ -958,22 +985,22 @@ var he = C((me, G) => {
             return m;
           })
         : (this.xor128 = m);
-  })(me, typeof G == "object" && G, typeof define == "function" && define);
+  })(he, typeof G == "object" && G, typeof define == "function" && define);
 });
-var fe = C((ge, F) => {
+var be = I((fe, F) => {
   (function (d, c, s) {
     function u(a) {
       var e = this,
-        t = "";
+        i = "";
       (e.next = function () {
-        var i = e.x ^ (e.x >>> 2);
+        var t = e.x ^ (e.x >>> 2);
         return (
           (e.x = e.y),
           (e.y = e.z),
           (e.z = e.w),
           (e.w = e.v),
           ((e.d = (e.d + 362437) | 0) +
-            (e.v = e.v ^ (e.v << 4) ^ (i ^ (i << 1)))) |
+            (e.v = e.v ^ (e.v << 4) ^ (t ^ (t << 1)))) |
             0
         );
       }),
@@ -982,10 +1009,10 @@ var fe = C((ge, F) => {
         (e.z = 0),
         (e.w = 0),
         (e.v = 0),
-        a === (a | 0) ? (e.x = a) : (t += a);
-      for (var n = 0; n < t.length + 64; n++)
-        (e.x ^= t.charCodeAt(n) | 0),
-          n == t.length && (e.d = (e.x << 10) ^ (e.x >>> 4)),
+        a === (a | 0) ? (e.x = a) : (i += a);
+      for (var r = 0; r < i.length + 64; r++)
+        (e.x ^= i.charCodeAt(r) | 0),
+          r == i.length && (e.d = (e.x << 10) ^ (e.x >>> 4)),
           e.next();
     }
     function p(a, e) {
@@ -1000,28 +1027,28 @@ var fe = C((ge, F) => {
       );
     }
     function m(a, e) {
-      var t = new u(a),
-        n = e && e.state,
-        i = function () {
-          return (t.next() >>> 0) / 4294967296;
+      var i = new u(a),
+        r = e && e.state,
+        t = function () {
+          return (i.next() >>> 0) / 4294967296;
         };
       return (
-        (i.double = function () {
+        (t.double = function () {
           do
-            var o = t.next() >>> 11,
-              r = (t.next() >>> 0) / 4294967296,
-              l = (o + r) / (1 << 21);
+            var o = i.next() >>> 11,
+              n = (i.next() >>> 0) / 4294967296,
+              l = (o + n) / (1 << 21);
           while (l === 0);
           return l;
         }),
-        (i.int32 = t.next),
-        (i.quick = i),
-        n &&
-          (typeof n == "object" && p(n, t),
-          (i.state = function () {
-            return p(t, {});
+        (t.int32 = i.next),
+        (t.quick = t),
+        r &&
+          (typeof r == "object" && p(r, i),
+          (t.state = function () {
+            return p(i, {});
           })),
-        i
+        t
       );
     }
     c && c.exports
@@ -1031,83 +1058,83 @@ var fe = C((ge, F) => {
             return m;
           })
         : (this.xorwow = m);
-  })(ge, typeof F == "object" && F, typeof define == "function" && define);
+  })(fe, typeof F == "object" && F, typeof define == "function" && define);
 });
-var ye = C((be, K) => {
+var ve = I((ye, K) => {
   (function (d, c, s) {
     function u(a) {
       var e = this;
       e.next = function () {
-        var n = e.x,
-          i = e.i,
+        var r = e.x,
+          t = e.i,
           o,
-          r,
+          n,
           l;
         return (
-          (o = n[i]),
+          (o = r[t]),
           (o ^= o >>> 7),
-          (r = o ^ (o << 24)),
-          (o = n[(i + 1) & 7]),
-          (r ^= o ^ (o >>> 10)),
-          (o = n[(i + 3) & 7]),
-          (r ^= o ^ (o >>> 3)),
-          (o = n[(i + 4) & 7]),
-          (r ^= o ^ (o << 7)),
-          (o = n[(i + 7) & 7]),
+          (n = o ^ (o << 24)),
+          (o = r[(t + 1) & 7]),
+          (n ^= o ^ (o >>> 10)),
+          (o = r[(t + 3) & 7]),
+          (n ^= o ^ (o >>> 3)),
+          (o = r[(t + 4) & 7]),
+          (n ^= o ^ (o << 7)),
+          (o = r[(t + 7) & 7]),
           (o = o ^ (o << 13)),
-          (r ^= o ^ (o << 9)),
-          (n[i] = r),
-          (e.i = (i + 1) & 7),
-          r
+          (n ^= o ^ (o << 9)),
+          (r[t] = n),
+          (e.i = (t + 1) & 7),
+          n
         );
       };
-      function t(n, i) {
+      function i(r, t) {
         var o,
-          r,
+          n,
           l = [];
-        if (i === (i | 0)) r = l[0] = i;
+        if (t === (t | 0)) n = l[0] = t;
         else
-          for (i = "" + i, o = 0; o < i.length; ++o)
+          for (t = "" + t, o = 0; o < t.length; ++o)
             l[o & 7] =
-              (l[o & 7] << 15) ^ ((i.charCodeAt(o) + l[(o + 1) & 7]) << 13);
+              (l[o & 7] << 15) ^ ((t.charCodeAt(o) + l[(o + 1) & 7]) << 13);
         for (; l.length < 8; ) l.push(0);
         for (o = 0; o < 8 && l[o] === 0; ++o);
         for (
-          o == 8 ? (r = l[7] = -1) : (r = l[o]), n.x = l, n.i = 0, o = 256;
+          o == 8 ? (n = l[7] = -1) : (n = l[o]), r.x = l, r.i = 0, o = 256;
           o > 0;
           --o
         )
-          n.next();
+          r.next();
       }
-      t(e, a);
+      i(e, a);
     }
     function p(a, e) {
       return (e.x = a.x.slice()), (e.i = a.i), e;
     }
     function m(a, e) {
       a == null && (a = +new Date());
-      var t = new u(a),
-        n = e && e.state,
-        i = function () {
-          return (t.next() >>> 0) / 4294967296;
+      var i = new u(a),
+        r = e && e.state,
+        t = function () {
+          return (i.next() >>> 0) / 4294967296;
         };
       return (
-        (i.double = function () {
+        (t.double = function () {
           do
-            var o = t.next() >>> 11,
-              r = (t.next() >>> 0) / 4294967296,
-              l = (o + r) / (1 << 21);
+            var o = i.next() >>> 11,
+              n = (i.next() >>> 0) / 4294967296,
+              l = (o + n) / (1 << 21);
           while (l === 0);
           return l;
         }),
-        (i.int32 = t.next),
-        (i.quick = i),
-        n &&
-          (n.x && p(n, t),
-          (i.state = function () {
-            return p(t, {});
+        (t.int32 = i.next),
+        (t.quick = t),
+        r &&
+          (r.x && p(r, i),
+          (t.state = function () {
+            return p(i, {});
           })),
-        i
+        t
       );
     }
     c && c.exports
@@ -1117,101 +1144,101 @@ var ye = C((be, K) => {
             return m;
           })
         : (this.xorshift7 = m);
-  })(be, typeof K == "object" && K, typeof define == "function" && define);
+  })(ye, typeof K == "object" && K, typeof define == "function" && define);
 });
-var we = C((ve, Q) => {
+var xe = I((we, Q) => {
   (function (d, c, s) {
     function u(a) {
       var e = this;
       e.next = function () {
-        var n = e.w,
-          i = e.X,
+        var r = e.w,
+          t = e.X,
           o = e.i,
-          r,
+          n,
           l;
         return (
-          (e.w = n = (n + 1640531527) | 0),
-          (l = i[(o + 34) & 127]),
-          (r = i[(o = (o + 1) & 127)]),
+          (e.w = r = (r + 1640531527) | 0),
+          (l = t[(o + 34) & 127]),
+          (n = t[(o = (o + 1) & 127)]),
           (l ^= l << 13),
-          (r ^= r << 17),
+          (n ^= n << 17),
           (l ^= l >>> 15),
-          (r ^= r >>> 12),
-          (l = i[o] = l ^ r),
+          (n ^= n >>> 12),
+          (l = t[o] = l ^ n),
           (e.i = o),
-          (l + (n ^ (n >>> 16))) | 0
+          (l + (r ^ (r >>> 16))) | 0
         );
       };
-      function t(n, i) {
+      function i(r, t) {
         var o,
-          r,
+          n,
           l,
           h,
-          f,
-          w = [],
-          P = 128;
+          g,
+          v = [],
+          E = 128;
         for (
-          i === (i | 0)
-            ? ((r = i), (i = null))
-            : ((i = i + "\0"), (r = 0), (P = Math.max(P, i.length))),
+          t === (t | 0)
+            ? ((n = t), (t = null))
+            : ((t = t + "\0"), (n = 0), (E = Math.max(E, t.length))),
             l = 0,
             h = -32;
-          h < P;
+          h < E;
           ++h
         )
-          i && (r ^= i.charCodeAt((h + 32) % i.length)),
-            h === 0 && (f = r),
-            (r ^= r << 10),
-            (r ^= r >>> 15),
-            (r ^= r << 4),
-            (r ^= r >>> 13),
+          t && (n ^= t.charCodeAt((h + 32) % t.length)),
+            h === 0 && (g = n),
+            (n ^= n << 10),
+            (n ^= n >>> 15),
+            (n ^= n << 4),
+            (n ^= n >>> 13),
             h >= 0 &&
-              ((f = (f + 1640531527) | 0),
-              (o = w[h & 127] ^= r + f),
+              ((g = (g + 1640531527) | 0),
+              (o = v[h & 127] ^= n + g),
               (l = o == 0 ? l + 1 : 0));
         for (
-          l >= 128 && (w[((i && i.length) || 0) & 127] = -1), l = 127, h = 512;
+          l >= 128 && (v[((t && t.length) || 0) & 127] = -1), l = 127, h = 512;
           h > 0;
           --h
         )
-          (r = w[(l + 34) & 127]),
-            (o = w[(l = (l + 1) & 127)]),
-            (r ^= r << 13),
+          (n = v[(l + 34) & 127]),
+            (o = v[(l = (l + 1) & 127)]),
+            (n ^= n << 13),
             (o ^= o << 17),
-            (r ^= r >>> 15),
+            (n ^= n >>> 15),
             (o ^= o >>> 12),
-            (w[l] = r ^ o);
-        (n.w = f), (n.X = w), (n.i = l);
+            (v[l] = n ^ o);
+        (r.w = g), (r.X = v), (r.i = l);
       }
-      t(e, a);
+      i(e, a);
     }
     function p(a, e) {
       return (e.i = a.i), (e.w = a.w), (e.X = a.X.slice()), e;
     }
     function m(a, e) {
       a == null && (a = +new Date());
-      var t = new u(a),
-        n = e && e.state,
-        i = function () {
-          return (t.next() >>> 0) / 4294967296;
+      var i = new u(a),
+        r = e && e.state,
+        t = function () {
+          return (i.next() >>> 0) / 4294967296;
         };
       return (
-        (i.double = function () {
+        (t.double = function () {
           do
-            var o = t.next() >>> 11,
-              r = (t.next() >>> 0) / 4294967296,
-              l = (o + r) / (1 << 21);
+            var o = i.next() >>> 11,
+              n = (i.next() >>> 0) / 4294967296,
+              l = (o + n) / (1 << 21);
           while (l === 0);
           return l;
         }),
-        (i.int32 = t.next),
-        (i.quick = i),
-        n &&
-          (n.X && p(n, t),
-          (i.state = function () {
-            return p(t, {});
+        (t.int32 = i.next),
+        (t.quick = t),
+        r &&
+          (r.X && p(r, i),
+          (t.state = function () {
+            return p(i, {});
           })),
-        i
+        t
       );
     }
     c && c.exports
@@ -1221,27 +1248,27 @@ var we = C((ve, Q) => {
             return m;
           })
         : (this.xor4096 = m);
-  })(ve, typeof Q == "object" && Q, typeof define == "function" && define);
+  })(we, typeof Q == "object" && Q, typeof define == "function" && define);
 });
-var ke = C((xe, W) => {
+var Se = I((ke, W) => {
   (function (d, c, s) {
     function u(a) {
       var e = this,
-        t = "";
+        i = "";
       (e.next = function () {
-        var i = e.b,
+        var t = e.b,
           o = e.c,
-          r = e.d,
+          n = e.d,
           l = e.a;
         return (
-          (i = (i << 25) ^ (i >>> 7) ^ o),
-          (o = (o - r) | 0),
-          (r = (r << 24) ^ (r >>> 8) ^ l),
-          (l = (l - i) | 0),
-          (e.b = i = (i << 20) ^ (i >>> 12) ^ o),
-          (e.c = o = (o - r) | 0),
-          (e.d = (r << 16) ^ (o >>> 16) ^ l),
-          (e.a = (l - i) | 0)
+          (t = (t << 25) ^ (t >>> 7) ^ o),
+          (o = (o - n) | 0),
+          (n = (n << 24) ^ (n >>> 8) ^ l),
+          (l = (l - t) | 0),
+          (e.b = t = (t << 20) ^ (t >>> 12) ^ o),
+          (e.c = o = (o - n) | 0),
+          (e.d = (n << 16) ^ (o >>> 16) ^ l),
+          (e.a = (l - t) | 0)
         );
       }),
         (e.a = 0),
@@ -1250,36 +1277,36 @@ var ke = C((xe, W) => {
         (e.d = 1367130551),
         a === Math.floor(a)
           ? ((e.a = (a / 4294967296) | 0), (e.b = a | 0))
-          : (t += a);
-      for (var n = 0; n < t.length + 20; n++)
-        (e.b ^= t.charCodeAt(n) | 0), e.next();
+          : (i += a);
+      for (var r = 0; r < i.length + 20; r++)
+        (e.b ^= i.charCodeAt(r) | 0), e.next();
     }
     function p(a, e) {
       return (e.a = a.a), (e.b = a.b), (e.c = a.c), (e.d = a.d), e;
     }
     function m(a, e) {
-      var t = new u(a),
-        n = e && e.state,
-        i = function () {
-          return (t.next() >>> 0) / 4294967296;
+      var i = new u(a),
+        r = e && e.state,
+        t = function () {
+          return (i.next() >>> 0) / 4294967296;
         };
       return (
-        (i.double = function () {
+        (t.double = function () {
           do
-            var o = t.next() >>> 11,
-              r = (t.next() >>> 0) / 4294967296,
-              l = (o + r) / (1 << 21);
+            var o = i.next() >>> 11,
+              n = (i.next() >>> 0) / 4294967296,
+              l = (o + n) / (1 << 21);
           while (l === 0);
           return l;
         }),
-        (i.int32 = t.next),
-        (i.quick = i),
-        n &&
-          (typeof n == "object" && p(n, t),
-          (i.state = function () {
-            return p(t, {});
+        (t.int32 = i.next),
+        (t.quick = t),
+        r &&
+          (typeof r == "object" && p(r, i),
+          (t.state = function () {
+            return p(i, {});
           })),
-        i
+        t
       );
     }
     c && c.exports
@@ -1289,30 +1316,30 @@ var ke = C((xe, W) => {
             return m;
           })
         : (this.tychei = m);
-  })(xe, typeof W == "object" && W, typeof define == "function" && define);
+  })(ke, typeof W == "object" && W, typeof define == "function" && define);
 });
-var Se = C(() => {});
-var qe = C((Te, L) => {
+var Te = I(() => {});
+var Ee = I((qe, L) => {
   (function (d, c, s) {
     var u = 256,
       p = 6,
       m = 52,
       a = "random",
       e = s.pow(u, p),
-      t = s.pow(2, m),
-      n = t * 2,
-      i = u - 1,
+      i = s.pow(2, m),
+      r = i * 2,
+      t = u - 1,
       o;
-    function r(g, b, T) {
-      var v = [];
+    function n(f, b, T) {
+      var w = [];
       b = b == !0 ? { entropy: !0 } : b || {};
-      var y = w(f(b.entropy ? [g, I(c)] : (g ?? P()), 3), v),
-        k = new l(v),
+      var y = v(g(b.entropy ? [f, C(c)] : (f ?? E()), 3), w),
+        k = new l(w),
         q = function () {
-          for (var S = k.g(p), E = e, x = 0; S < t; )
-            (S = (S + x) * u), (E *= u), (x = k.g(1));
-          for (; S >= n; ) (S /= 2), (E /= 2), (x >>>= 1);
-          return (S + x) / E;
+          for (var S = k.g(p), A = e, x = 0; S < i; )
+            (S = (S + x) * u), (A *= u), (x = k.g(1));
+          for (; S >= r; ) (S /= 2), (A /= 2), (x >>>= 1);
+          return (S + x) / A;
         };
       return (
         (q.int32 = function () {
@@ -1322,120 +1349,120 @@ var qe = C((Te, L) => {
           return k.g(4) / 4294967296;
         }),
         (q.double = q),
-        w(I(k.S), c),
+        v(C(k.S), c),
         (
           b.pass ||
           T ||
-          function (S, E, x, A) {
+          function (S, A, x, _) {
             return (
-              A &&
-                (A.S && h(A, k),
+              _ &&
+                (_.S && h(_, k),
                 (S.state = function () {
                   return h(k, {});
                 })),
-              x ? ((s[a] = S), E) : S
+              x ? ((s[a] = S), A) : S
             );
           }
         )(q, y, "global" in b ? b.global : this == s, b.state)
       );
     }
-    function l(g) {
+    function l(f) {
       var b,
-        T = g.length,
-        v = this,
+        T = f.length,
+        w = this,
         y = 0,
-        k = (v.i = v.j = 0),
-        q = (v.S = []);
-      for (T || (g = [T++]); y < u; ) q[y] = y++;
+        k = (w.i = w.j = 0),
+        q = (w.S = []);
+      for (T || (f = [T++]); y < u; ) q[y] = y++;
       for (y = 0; y < u; y++)
-        (q[y] = q[(k = i & (k + g[y % T] + (b = q[y])))]), (q[k] = b);
-      (v.g = function (S) {
-        for (var E, x = 0, A = v.i, _ = v.j, z = v.S; S--; )
-          (E = z[(A = i & (A + 1))]),
-            (x = x * u + z[i & ((z[A] = z[(_ = i & (_ + E))]) + (z[_] = E))]);
-        return (v.i = A), (v.j = _), x;
+        (q[y] = q[(k = t & (k + f[y % T] + (b = q[y])))]), (q[k] = b);
+      (w.g = function (S) {
+        for (var A, x = 0, _ = w.i, R = w.j, O = w.S; S--; )
+          (A = O[(_ = t & (_ + 1))]),
+            (x = x * u + O[t & ((O[_] = O[(R = t & (R + A))]) + (O[R] = A))]);
+        return (w.i = _), (w.j = R), x;
       })(u);
     }
-    function h(g, b) {
-      return (b.i = g.i), (b.j = g.j), (b.S = g.S.slice()), b;
+    function h(f, b) {
+      return (b.i = f.i), (b.j = f.j), (b.S = f.S.slice()), b;
     }
-    function f(g, b) {
+    function g(f, b) {
       var T = [],
-        v = typeof g,
+        w = typeof f,
         y;
-      if (b && v == "object")
-        for (y in g)
+      if (b && w == "object")
+        for (y in f)
           try {
-            T.push(f(g[y], b - 1));
+            T.push(g(f[y], b - 1));
           } catch {}
-      return T.length ? T : v == "string" ? g : g + "\0";
+      return T.length ? T : w == "string" ? f : f + "\0";
     }
-    function w(g, b) {
-      for (var T = g + "", v, y = 0; y < T.length; )
-        b[i & y] = i & ((v ^= b[i & y] * 19) + T.charCodeAt(y++));
-      return I(b);
+    function v(f, b) {
+      for (var T = f + "", w, y = 0; y < T.length; )
+        b[t & y] = t & ((w ^= b[t & y] * 19) + T.charCodeAt(y++));
+      return C(b);
     }
-    function P() {
+    function E() {
       try {
-        var g;
+        var f;
         return (
-          o && (g = o.randomBytes)
-            ? (g = g(u))
-            : ((g = new Uint8Array(u)),
-              (d.crypto || d.msCrypto).getRandomValues(g)),
-          I(g)
+          o && (f = o.randomBytes)
+            ? (f = f(u))
+            : ((f = new Uint8Array(u)),
+              (d.crypto || d.msCrypto).getRandomValues(f)),
+          C(f)
         );
       } catch {
         var b = d.navigator,
           T = b && b.plugins;
-        return [+new Date(), d, T, d.screen, I(c)];
+        return [+new Date(), d, T, d.screen, C(c)];
       }
     }
-    function I(g) {
-      return String.fromCharCode.apply(0, g);
+    function C(f) {
+      return String.fromCharCode.apply(0, f);
     }
-    if ((w(s.random(), c), typeof L == "object" && L.exports)) {
-      L.exports = r;
+    if ((v(s.random(), c), typeof L == "object" && L.exports)) {
+      L.exports = n;
       try {
-        o = Se();
+        o = Te();
       } catch {}
     } else
       typeof define == "function" && define.amd
         ? define(function () {
-            return r;
+            return n;
           })
-        : (s["seed" + a] = r);
-  })(typeof self < "u" ? self : Te, [], Math);
+        : (s["seed" + a] = n);
+  })(typeof self < "u" ? self : qe, [], Math);
 });
-var Ae = C((mt, Ee) => {
-  var Ve = pe(),
-    Je = he(),
-    Ye = fe(),
-    Ze = ye(),
-    Xe = we(),
-    et = ke(),
-    M = qe();
-  M.alea = Ve;
-  M.xor128 = Je;
-  M.xorwow = Ye;
-  M.xorshift7 = Ze;
-  M.xor4096 = Xe;
-  M.tychei = et;
-  Ee.exports = M;
+var Ce = I((bt, Ae) => {
+  var Ze = me(),
+    Xe = ge(),
+    et = be(),
+    tt = ve(),
+    it = xe(),
+    ot = Se(),
+    z = Ee();
+  z.alea = Ze;
+  z.xor128 = Xe;
+  z.xorwow = et;
+  z.xorshift7 = tt;
+  z.xor4096 = it;
+  z.tychei = ot;
+  Ae.exports = z;
 });
-var _e = O(() => {
+var _e = M(() => {
   "use strict";
 });
-var tt,
+var rt,
   U,
-  Ce,
+  Re,
   $,
-  Re = O(() => {
+  Ie = M(() => {
     "use strict";
-    tt = Ue(Ae(), 1);
+    rt = je(Ce(), 1);
     _e();
     (U = "agent-harness-2026-09"),
-      (Ce = {
+      (Re = {
         profile: U,
         description: "Hypothetical agent harness",
         authority: [
@@ -1489,9 +1516,9 @@ var tt,
       });
   });
 var Pe = {};
-H(Pe, { checkLimit: () => B, default: () => it });
+H(Pe, { checkLimit: () => B, default: () => nt });
 import { html as V } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-async function it({ user: d, weight: c = 1 }) {
+async function nt({ user: d, weight: c = 1 }) {
   let s = "q-harness-safety-router-server",
     u = "Harness Engineering: Contextual Safety and Model Routing",
     p = V`<div class="mb-3">
@@ -1552,7 +1579,7 @@ async function it({ user: d, weight: c = 1 }) {
       ${["authority", "content", "tools", "routing"].map(
         (a) => V`<h6>${a}</h6>
             <ol>
-              ${Ce[a].map((e) => V`<li>${e}</li>`)}
+              ${Re[a].map((e) => V`<li>${e}</li>`)}
             </ol>`,
       )}
     </details>
@@ -1579,7 +1606,7 @@ async function it({ user: d, weight: c = 1 }) {
     answer: async (a) => {
       let e = String(a || "").trim();
       if (!e) throw new Error("Enter your public HTTPS URL.");
-      let t = await fetch("/backendVerify", {
+      let i = await fetch("/backendVerify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -1591,31 +1618,87 @@ async function it({ user: d, weight: c = 1 }) {
             weight: c,
           }),
         }),
-        n = await t.json();
-      if (!t.ok) throw new Error(n.error || "Verification failed.");
-      return n;
+        r = await i.json();
+      if (!i.ok) throw new Error(r.error || "Verification failed.");
+      return r;
     },
   };
 }
 var B,
-  Ie = O(() => {
+  Me = M(() => {
     "use strict";
-    Re();
+    Ie();
     B = { max: 10, hours: 24 };
   });
+var ze = {};
+H(ze, { default: () => at });
+import { html as J } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
+async function at({ user: d, weight: c = 2 }) {
+  let s = "q-time-use-review-server",
+    u = "Time Use Charts: which data story would you share?",
+    p,
+    m;
+  try {
+    let i = new URLSearchParams({
+        email: d.email,
+        quizSign: d.quizSign || "",
+        questionId: s,
+      }),
+      r = await fetch("./questionData?" + i, { cache: "no-store" }),
+      t = await r.json();
+    if (!r.ok || !t.available)
+      throw Error(t.error || t.message || "Review is not open yet.");
+    p = t.launch_url;
+  } catch (i) {
+    m = i.message;
+  }
+  let a = J`
+  <p>Explore the posters your classmates made in GA4 about India’s Time Use Survey 2024.</p>
+  <p>For each pair, read both posters. Choose which story you would rather share: A, B, or Both about equal. Give a short reason for your choice (a few words are enough). Use Can't judge for broken or unreviewable posters.</p>
+  <p><strong>Complete 8 valid comparisons (16 posters) for 2 marks.</strong> You will not see your own team's posters. Choices are anonymous to classmates. You can stop and resume, and optionally review more (up to 20 pairs) for fun; extra comparisons do not earn more marks.</p>
+  ${p ? J`<p><a href="${p}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Compare Time Use Charts</a></p>` : J`<p class="alert alert-info" role="status">${m} Reload GA5 for a new link.</p>`}
+  <p>Generate and copy your signed receipt, paste it here, then <strong>Check and Save</strong>. Marks reward completed participation, not whether your taste agrees with others.</p>
+  <label for="${s}" class="form-label">Signed review receipt (JWT)</label><textarea id="${s}" name="${s}" rows="4" class="form-control font-monospace" spellcheck="false" autocomplete="off"></textarea>`;
+  return {
+    id: s,
+    title: u,
+    weight: c,
+    question: a,
+    answer: async (i) => {
+      let r = await fetch("/backendVerify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: d.email,
+            quizSign: d.quizSign,
+            questionId: s,
+            quiz: "tds-2026-09-ga5",
+            response: i,
+            weight: c,
+          }),
+        }),
+        t = await r.json();
+      if (!r.ok) throw Error(t.error || "Could not verify receipt");
+      return t;
+    },
+  };
+}
+var Oe = M(() => {
+  "use strict";
+});
 import {
-  html as R,
-  render as $e,
+  html as P,
+  render as Ne,
 } from "https://cdn.jsdelivr.net/npm/lit-html@3/lit-html.js";
-var J = (d, c) =>
+var Y = (d, c) =>
   `${d} ${d == 1 ? "mark" : "marks"}` +
   (c === void 0 ? "" : ` \xB7 Bonus: ${c} ${c == 1 ? "mark" : "marks"}`);
-function Y(d, c) {
-  let s = R`<ol class="mt-3">
-    ${d.map(({ id: m, title: a, weight: e, bonus: t }) => R`<li><a href="#h${m}">${a}</a> (${J(e, t)})</li>`)}
+function Z(d, c) {
+  let s = P`<ol class="mt-3">
+    ${d.map(({ id: m, title: a, weight: e, bonus: i }) => P`<li><a href="#h${m}">${a}</a> (${Y(e, i)})</li>`)}
   </ol>`,
     u = [
-      R`<h1 class="display-6">Questions</h1>`,
+      P`<h1 class="display-6">Questions</h1>`,
       s,
       ...d.map(
         (
@@ -1623,32 +1706,32 @@ function Y(d, c) {
             id: m,
             title: a,
             weight: e,
-            bonus: t,
-            bonusMessage: n,
-            question: i,
+            bonus: i,
+            bonusMessage: r,
+            question: t,
             help: o,
           },
-          r,
+          n,
         ) => (
           o && !Array.isArray(o) && (o = [o]),
-          R`
+          P`
         <details class="card my-5" data-question="${m}" id="h${m}" open>
           <summary class="card-header d-flex align-items-center gap-2">
-            <span class="badge text-bg-primary">${r + 1}</span>
-            <span class="flex-grow-1">${a} (${J(e, t)})</span>
+            <span class="badge text-bg-primary">${n + 1}</span>
+            <span class="flex-grow-1">${a} (${Y(e, i)})</span>
             <span class="badge text-bg-success solved-badge d-none"><i class="bi bi-check-circle-fill me-1"></i>Solved</span>
             <i class="bi bi-chevron-up question-chevron" aria-hidden="true"></i>
           </summary>
           ${
-            t === void 0
+            i === void 0
               ? ""
-              : R`<div class="alert alert-info m-3 mb-0" role="note">
+              : P`<div class="alert alert-info m-3 mb-0" role="note">
             <strong>Bonus question.</strong> This question carries <strong>0 regular marks</strong>.
-            ${n || (t ? R`Students who attempted it will receive <strong>${t} bonus ${t == 1 ? "mark" : "marks"}</strong>, awarded separately (not included in the exam score).` : R`It originally carried 0 marks, so no additional bonus marks are available. Participation is still recorded.`)}
+            ${r || (i ? P`Students who attempted it will receive <strong>${i} bonus ${i == 1 ? "mark" : "marks"}</strong>, awarded separately (not included in the exam score).` : P`It originally carried 0 marks, so no additional bonus marks are available. Participation is still recorded.`)}
           </div>`
           }
-          ${o ? o.map((l) => R`<div class="card-body border-bottom">${l}</div>`) : ""}
-          <div class="card-body">${i}</div>
+          ${o ? o.map((l) => P`<div class="card-body border-bottom">${l}</div>`) : ""}
+          <div class="card-body">${t}</div>
           <div class="card-footer d-flex">
             <button type="button" class="btn btn-primary check-answer" data-question="${m}">Check</button>
           </div>
@@ -1658,23 +1741,26 @@ function Y(d, c) {
       ),
     ],
     p = { index: s, questions: u };
-  for (let [m, a] of c) $e(p[a], m);
+  for (let [m, a] of c) Ne(p[a], m);
 }
-async function kt(d, c) {
+async function At(d, c) {
   let s = [
     await Promise.resolve()
-      .then(() => (re(), ne))
+      .then(() => (ae(), ne))
       .then((u) => u.default({ user: d, weight: 2 })),
     await Promise.resolve()
-      .then(() => (ce(), se))
+      .then(() => (le(), ce))
       .then((u) => u.default({ user: d, weight: 2 })),
     await Promise.resolve()
-      .then(() => (de(), le))
+      .then(() => (ue(), de))
       .then((u) => u.default({ user: d, weight: 2 })),
     await Promise.resolve()
-      .then(() => (Ie(), Pe))
+      .then(() => (Me(), Pe))
+      .then((u) => u.default({ user: d, weight: 2 })),
+    await Promise.resolve()
+      .then(() => (Oe(), ze))
       .then((u) => u.default({ user: d, weight: 2 })),
   ];
-  return Y(s, c), Object.fromEntries(s.map(({ id: u, ...p }) => [u, p]));
+  return Z(s, c), Object.fromEntries(s.map(({ id: u, ...p }) => [u, p]));
 }
-export { kt as questions };
+export { At as questions };

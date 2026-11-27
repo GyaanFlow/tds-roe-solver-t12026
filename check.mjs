@@ -1,3 +1,4 @@
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -698,13 +699,82 @@ async function checkT3Ga3Faces() {
 }
 
 
+async function checkT3Ga5Direct(solvers, api, tools, seedrandom) {
+  const mx = await importFresh('solvers/T32026/ga5/matrix.js');
+  const data = await importFresh('solvers/T32026/ga5/embedding-data.js');
+  const tracker = await importFresh('solvers/T32026/ga5/tracker.js');
+  const helper = await importFresh('solvers/T32026/ga5/exam-page.js');
+  const { simulate } = await importFresh('scripts/ball-sim.mjs');
+  const me = 'student.one@ds.study.iitm.ac.in';
+
+  // Q2: the dataset is the exam's own seeded draw, and the matrix follows from the fixed table.
+  const set = mx.buildDataset(me, seedrandom);
+  const pool = data.DOMAINS.flatMap((d) => d.sentences);
+  assert(data.DOMAINS.length === 10 && pool.length === 60 && new Set(pool).size === 60 && set.sentences.length === 50 && new Set(set.sentences).size === 50 && set.queries.length === 10 && set.poolIndex.every((p, i) => pool[p] === set.sentences[i]) && data.DOMAINS.every((d, t) => set.poolIndex.filter((p) => Math.floor(p / 6) === t).length === 5), 'T3 GA5 dataset must draw five of each topic from the fixed pool.');
+  assert(crypto.createHash('sha256').update(Buffer.from(data.SCORES_BASE64, 'base64')).digest('hex') === data.SCORES_SHA256 && data.SCORES_SHA256 === 'f72edc433973dd83d0c656b43468f44800b8be11ea7f98f13b3e7bebc950ec4a', 'T3 GA5 score table changed.');
+  const built = mx.buildMatrix(me, seedrandom);
+  assert(JSON.stringify(mx.buildMatrix(`  ${me.toUpperCase()} `, seedrandom).matrix) === built.text && built.text !== mx.buildMatrix('someone.else@ds.study.iitm.ac.in', seedrandom).text && tools.validateMatrix(built.matrix).ok, 'T3 GA5 matrix must depend only on the lower-cased email and satisfy the exam rules.');
+  assert(built.text === '[[29,37,5,37,29,5,0.7673],[41,19,21,21,19,41,0.6791],[23,46,8,46,23,8,0.759],[27,2,22,27,2,6,0.4994],[36,47,0,36,0,9,0.6907],[15,18,21,15,26,18,0.7943],[42,4,48,42,35,4,0.786],[38,49,28,38,17,28,0.5869],[43,32,40,43,32,40,0.7294],[11,12,14,11,12,14,0.6962]]', 'T3 GA5 matrix for the reference student changed (dataset draw, ranking or rounding).');
+  for (let i = 0; i < 300; i += 1) assert(tools.validateMatrix(mx.buildMatrix(`${22 + (i % 4)}f${1000000 + i * 7919}@ds.study.iitm.ac.in`, seedrandom).matrix).ok, 'T3 GA5 every student\'s matrix must satisfy the exam rules.');
+  assert(JSON.stringify(mx.ranks([10, 30, 10, 20])) === '[1.5,4,1.5,3]' && Math.abs(mx.spearman([1, 2, 3, 4], [4, 3, 2, 1]) + 1) < 1e-12 && Math.abs(mx.spearman([1, 2, 3], [10, 20, 30]) - 1) < 1e-12 && JSON.stringify(mx.top3([1, 9, 9, 3])) === '[1,2,3]' && throwsSync(() => mx.spearman([1, 1], [1, 2])) && throwsSync(() => mx.buildDataset('nobody', seedrandom)), 'T3 GA5 rank maths is wrong.');
+
+  // Q3: the tracker against simulated videos whose truth is known.
+  assert(JSON.stringify(Array.from(tracker.assign([[4, 1, 3], [2, 0, 5], [3, 2, 2]]))) === '[1,0,2]', 'T3 GA5 assignment solver is wrong.');
+  for (const [seed, speed] of [[11, 2.5], [23, 5]]) {
+    const sim = simulate({ seed, speed, frames: 45 });
+    const targets = [7, 21, 40];
+    const r = await tracker.trackBall({ count: sim.count, targets, frameAt: (f) => sim.render(f) });
+    assert(r.number === sim.number && targets.every((t, i) => Math.hypot(r.positions[i][0] - sim.positions[t][0], r.positions[i][1] - sim.positions[t][1]) <= 3) && /^\d+; \d+,\d+; \d+,\d+; \d+,\d+$/.test(r.answer), `T3 GA5 tracker lost the ball (seed ${seed}).`);
+  }
+  const sim = simulate({ seed: 5, frames: 12 });
+  const run = (options, at) => tracker.trackBall({ count: sim.count, targets: [1, 2, 3], frameAt: (f) => sim.render(f, f === at ? options : {}) });
+  const refused = async (promise, pattern) => { try { await promise; return false; } catch (error) { return pattern.test(error.message); } };
+  assert(await refused(run({ noRed: true }, 0), /No red ball/) && await refused(run({ skip: 3 }, 6), /balls instead of 100/) && await refused(run({ noNumbers: true }, 11), /could not be read/), 'T3 GA5 the tracker must refuse, never guess, when a frame is wrong.');
+  const shape = (n) => tracker.numberShapes(String(n))[0];
+  for (const n of [1, 7, 10, 42, 77, 100]) {
+    const rgb = new Uint8Array(60 * 60 * 3).fill(140);
+    const g = shape(n);
+    for (const [x, y] of g.pixels) rgb.set([255, 255, 255], ((y + 25) * 60 + x + Math.round(30 - g.width / 2)) * 3);
+    assert(tracker.readNumber({ width: 60, height: 60, rgb }, [30, 30]) === n, `T3 GA5 digit reader failed on ${n}.`);
+  }
+
+  const blob = new Uint8Array(60 * 60 * 3).fill(140);
+  for (let y = 25; y < 35; y += 1) for (let x = 24; x < 36; x += 1) blob.set([255, 255, 255], (y * 60 + x) * 3);
+  assert(tracker.readNumber({ width: 60, height: 60, rgb: blob }, [30, 30]) === null && tracker.readNumber({ width: 60, height: 60, rgb: new Uint8Array(60 * 60 * 3).fill(140) }, [30, 30]) === null, 'T3 GA5 the digit reader must return nothing for marks that are not a number.');
+  assert((await api.wakeApi({ fetchImpl: async () => ({ ok: true, json: async () => ({ ok: true, service: 't3ga5' }) }), sleep: async () => {}, tries: 1 })).ok, 'T3 GA5 wake-up must accept the health reply the integration guide describes as well as the live one.');
+
+  // The exam-page helper: fills what it can, one failure never stops the others, nothing is submitted.
+  assert(helper.readUser({ getItem: () => JSON.stringify({ email: me, quizSign: 's' }) }).email === me && helper.readUser({ getItem: () => 'junk' }) === null && helper.readUser({ getItem: () => null }) === null, 'T3 GA5 helper must read the signed-in student safely.');
+  const makeDoc = (locked = []) => { const fields = Object.fromEntries(Object.values(helper.IDS).map((k) => [k, { value: '', disabled: locked.includes(k), readOnly: false, events: [], dispatchEvent(e) { this.events.push(e.type); } }])); return { fields, getElementById: (k) => fields[k] || null }; };
+  class Ev { constructor(type) { this.type = type; } }
+  const clip = simulate({ seed: 31, frames: 12 });
+  const u32 = (n) => { const b = Buffer.alloc(4); b.writeUInt32BE(n); return b; };
+  const stub = (i) => Buffer.concat([Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]), u32(i)]);
+  const binary = Buffer.concat([u32(25), u32(clip.count), u32(2), u32(5), u32(9), ...Array.from({ length: clip.count }, (_, i) => Buffer.concat([u32(stub(i).length), stub(i)]))]);
+  const requested = [];
+  const env = (doc, fetchImpl) => ({ doc, user: { email: me, quizSign: 'sig+/=' }, origin: 'https://exam.sanand.workers.dev', random: seedrandom, fetchImpl, EventClass: Ev, wake: async () => ({ ok: true }), decode: async (bytes) => clip.render(Buffer.from(bytes).readUInt32BE(8)) });
+  const doc = makeDoc();
+  const done = await helper.fillAll(env(doc, async (url) => { requested.push(url); return { ok: true, status: 200, arrayBuffer: async () => binary.buffer.slice(binary.byteOffset, binary.byteOffset + binary.length) }; }));
+  assert(doc.fields[helper.IDS.rag].value === api.t3ga5Url(me) && doc.fields[helper.IDS.harness].value === api.t3ga5Url(me, '/harness') && doc.fields[helper.IDS.ollama].value === built.text && doc.fields[helper.IDS.ball].value.startsWith(`${clip.number}; `) && doc.fields[helper.IDS.review].value === '' && Object.keys(done).length === 4 && doc.fields[helper.IDS.rag].events.join() === 'input,change', 'T3 GA5 the helper must fill Q1-Q4 and leave Q5 alone.');
+  assert(requested.length === 1 && new URL(requested[0]).origin === 'https://exam.sanand.workers.dev' && new URL(requested[0]).searchParams.get('quizSign') === 'sig+/=' && new URL(requested[0]).searchParams.get('questionId') === helper.IDS.ball, 'T3 GA5 the helper must send sign-in data only to the exam site.');
+  const states = {};
+  const partial = makeDoc([helper.IDS.rag]);
+  await helper.fillAll({ ...env(partial, async () => ({ ok: false, status: 403 })), report: (k, st, t) => { states[k] = [st, t]; } });
+  assert(states.rag[0] === 'failed' && states.ball[0] === 'failed' && /403/.test(states.ball[1]) && states.ollama[0] === 'done' && states.harness[0] === 'done' && states.review[0] === 'manual' && partial.fields[helper.IDS.ball].value === '', 'T3 GA5 one failing question must not stop the others.');
+  assert(await refused(helper.run({ document: { getElementById: () => null }, location: { hostname: 'evil.example' }, localStorage: { getItem: () => JSON.stringify({ email: me, quizSign: 's' }) } }), /exam\.sanand\.workers\.dev/), 'T3 GA5 the helper must refuse to run anywhere but the exam site.');
+  const source = fs.readFileSync(path.join(rootDir, 'solvers/T32026/ga5/exam-page.js'), 'utf8');
+  assert(!/backendVerify|\.click\(|check-answer|\/submit/.test(source), 'T3 GA5 the helper must never press Check or Save.');
+}
+
 async function checkT3Ga5(solvers, metadata) {
   const official = fs.readFileSync(path.join(rootDir, 'solvers/T32026/ga5/exam-source.js'), 'utf8');
   const officialIds = [...official.matchAll(/^\s+(?:let )?[a-z] = "(q-[a-z0-9-]+)"/gm)].map((m) => m[1]);
-  assert(solvers.length === 4 && metadata.questionCount === 4 && metadata.exam === 'ga5' && metadata.term === 'T32026', 'T3 GA5 must register its four official questions.');
-  assert(JSON.stringify(solvers.map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 4, `T3 GA5 ids/order differ from the official bundle: ${officialIds.join(', ')}`);
+  assert(solvers.length === 5 && metadata.questionCount === 5 && metadata.exam === 'ga5' && metadata.term === 'T32026', 'T3 GA5 must register its five official questions.');
+  assert(JSON.stringify(solvers.map((s) => s.id)) === JSON.stringify(officialIds) && officialIds.length === 5, `T3 GA5 ids/order differ from the official bundle: ${officialIds.join(', ')}`);
   const api = await importFresh('solvers/T32026/ga5/api-client.js');
   const tools = await importFresh('solvers/T32026/ga5/ga5-tools.js');
+  const { default: seedrandom } = await import('seedrandom');
+  (await import(pathToFileURL(path.join(rootDir, 'solvers/T32026/ga1/utils.js')).href)).setSeedrandom(seedrandom);
   const me = 'student.one@ds.study.iitm.ac.in';
   const enc = 'student.one%40ds.study.iitm.ac.in';
 
@@ -784,7 +854,9 @@ async function checkT3Ga5(solvers, metadata) {
   const red = tools.findRedBall(rgba, 60, 40);
   assert(red && Math.abs(red.x - 34.5) <= 1 && Math.abs(red.y - 14.5) <= 1 && red.pixels === 100 && tools.findRedBall(new Uint8ClampedArray(60 * 40 * 4).fill(128), 60, 40) === null, 'T3 GA5 the red ball must be located (and absent when there is none).');
 
-  // Solvers: direct URLs for Q1/Q4, guides for Q2/Q3, no network, clean HTML.
+  await checkT3Ga5Direct(solvers, api, tools, seedrandom);
+
+  // Solvers: direct URLs for Q1/Q4, matrix for Q2, guides for Q3/Q5, no network, clean HTML.
   const savedFetch = globalThis.fetch;
   let networkCalls = 0;
   globalThis.fetch = async () => { networkCalls += 1; throw new Error('network is not allowed while preparing'); };
@@ -793,7 +865,8 @@ async function checkT3Ga5(solvers, metadata) {
     for (const solver of solvers) results.push(await solver.solve('  Student.One@DS.Study.IITM.AC.IN  '));
     assert(networkCalls === 0, 'T3 GA5 solvers must not make network requests while preparing.');
     assert(results[0].type === 'solved' && results[0].answer === `${api.T3_API_ORIGIN}/t3ga5/${enc}` && !results[0].answer.endsWith('/query') && results[3].type === 'solved' && results[3].answer === `${api.T3_API_ORIGIN}/t3ga5/${enc}/harness` && results[0].usesHostedApi && results[3].usesHostedApi, 'T3 GA5 Q1/Q4 must give the exact base URL and /harness route for the lower-cased email.');
-    assert(results[1].type === 'guide' && results[1].guide.includes(`--email ${me}`) && results[1].guide.includes('ollama pull nomic-embed-text') && results[1].guide.includes('t3ga5MatrixText') && results[1].guide.includes('ollama_matrix.py') && results[2].type === 'guide' && results[2].guide.includes('t3ga5BallFile') && results[2].guide.includes('ball_frames.py') && results[2].guide.includes('number; x,y'), 'T3 GA5 Q2/Q3 must carry their commands, checker and viewer.');
+    assert(results[1].type === 'solved' && tools.validateMatrix(JSON.parse(results[1].answer)).ok && results[1].guide.includes(`--email ${me}`) && results[1].guide.includes('ollama pull nomic-embed-text') && results[1].guide.includes('t3ga5MatrixText') && results[1].guide.includes('ollama_matrix.py') && results[2].type === 'guide' && results[2].guide.includes('t3ga5BallFile') && results[2].guide.includes('ball_frames.py') && results[2].guide.includes('number; x,y') && results[2].guide.includes('Track my ball automatically') && results[4].type === 'guide' && results[4].guide.includes('t3g4R-review') && results[4].answer.includes('yourself'), 'T3 GA5 Q2/Q3/Q5 must carry the matrix, tracker and manual review guide.');
+    for (const i of [0, 1, 2, 3]) assert(results[i].guide.includes('exam-page.js'), `T3 GA5 Q${i + 1} must offer the one-line exam-page helper.`);
     results.forEach((r, i) => {
       assert(!/\n\s*\n/.test(r.guide) && r.guide.includes('class="p1"') && /Step by step for beginners/.test(r.guide) && !/eyJ[A-Za-z0-9_-]{10,}/.test(r.guide + r.answer), `T3 GA5 Q${i + 1} guide must be clean, contiguous and beginner-friendly.`);
     });
@@ -810,7 +883,7 @@ async function checkT3Ga5(solvers, metadata) {
       assert(!/<img.src=x/i.test(hostile.guide ?? ''), `T3 GA5 Q${i + 1} must not echo a hostile email unescaped.`);
     }
     const noEmail = await (await importFresh('solvers/T32026/ga5/q02-ollama-faiss.js')).solve('');
-    assert(noEmail.type === 'guide' && /Enter your full exam email/.test(noEmail.guide) && !noEmail.guide.includes('--email'), 'T3 GA5 Q2 must not print commands without an email.');
+    assert(noEmail.type === 'guide' && /exam email/.test(noEmail.guide) && !noEmail.guide.includes('--email') && !/\[\[\d+,\d+,\d+/.test(noEmail.guide), 'T3 GA5 Q2 must not show a matrix or commands without an email.');
   } finally {
     globalThis.fetch = savedFetch;
   }

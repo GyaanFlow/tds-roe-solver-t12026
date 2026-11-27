@@ -1,6 +1,7 @@
 // Shared page chrome and the live-endpoint widget for the two hosted GA5 questions (Q1 RAG Colosseum, Q4 harness router).
 import { page, card, details, escapeHtml } from '../p1/ui.js';
 import { T3_API_ORIGIN, examEmail, healthUrl, probeHarness, probeRag, summarizeProbes, t3ga5Url, wakeApi } from './api-client.js';
+import { helperCard } from './helper-card.js';
 
 export { page, card, details, escapeHtml };
 
@@ -40,6 +41,7 @@ export function endpointResult({ id, title, kind, email, suffix, question, steps
       card('What the exam wants', question),
       card('Step by step for beginners', list([`Check that the Answer box shows the URL above, exactly. ${suffix ? '' : 'Do not add /query: the grader adds it.'}`, `Open <a href="${escapeHtml(healthUrl(origin))}" target="_blank" rel="noopener noreferrer">the server health link</a> and wait until it shows <code>"status":"ok"</code>. The free server can take up to a minute to wake.`, ...steps])),
       card('Wake and test your endpoint', widgetHtml(kind), 'accent'),
+      helperCard(),
       details('Good to know', `<ul>${tips.map((t) => `<li>${t}</li>`).join('')}<li>Each Check or Save uses one of your daily tries and only your latest Save counts.</li><li>A Check result is the authority: the exam's cases are unseen, so a green test here means "the contract is right", not "full marks".</li></ul>`),
     ],
   });
@@ -58,6 +60,15 @@ export function renderChecks(results) {
   const summary = summarizeProbes(results);
   const rows = results.map((r) => `<tr><td>${r.ok ? '✅' : '❌'}</td><td>${escapeHtml(r.label)}</td><td class="mono">${escapeHtml(r.detail)}</td></tr>`).join('');
   return `<p><strong>${summary.allPassed ? 'All checks passed' : `${summary.passed}/${summary.total} passed`}</strong>${summary.allPassed ? ' — your endpoint answers the first things the grader asks. You can use a Check.' : ' — fix the red rows first (the detail column says what came back).'}</p><table><tbody>${rows}</tbody></table>`;
+}
+
+let woke = false;
+/** In a real browser, start waking the free server as soon as a GA5 endpoint question is prepared (once per page). */
+export function wakeInBackground(wake = wakeApi) {
+  if (woke || !isRealBrowser()) return false;
+  woke = true;
+  Promise.resolve(wake({ tries: 8, delayMs: 5000 })).catch(() => { woke = false; });
+  return true;
 }
 
 export function registerEndpointWidgets() {

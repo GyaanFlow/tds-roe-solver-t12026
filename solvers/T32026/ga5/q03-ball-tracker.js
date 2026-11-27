@@ -1,5 +1,7 @@
 import { page, card, details, escapeHtml } from '../p1/ui.js';
 import { clickToPixel, composeAnswer, findRedBall, parseFrames } from './ga5-tools.js';
+import { decodePng, trackBall } from './tracker.js';
+import { helperCard } from './helper-card.js';
 
 export const id = 'q-ball-tracker-server';
 export const title = 'Track the red ball';
@@ -43,6 +45,8 @@ function widgetHtml() {
     '<input type="file" id="t3ga5BallFile" onchange="window._t3ga5Ball.load()">',
     '<div id="t3ga5BallStatus" class="p1-status" role="status"></div>',
     '<div id="t3ga5BallBox" style="display:none">',
+    '<div class="p1-actions"><button type="button" class="p1-btn" id="t3ga5BallAuto" onclick="window._t3ga5Ball.auto()">Track my ball automatically</button></div>',
+    '<div id="t3ga5BallAutoStatus" class="p1-status" role="status"></div>',
     '<div class="p1-actions"><button type="button" class="p1-btn ghost" onclick="window._t3ga5Ball.step(-10)">−10</button><button type="button" class="p1-btn ghost" onclick="window._t3ga5Ball.step(-1)">−1</button><button type="button" class="p1-btn ghost" onclick="window._t3ga5Ball.step(1)">+1</button><button type="button" class="p1-btn ghost" onclick="window._t3ga5Ball.step(10)">+10</button><span id="t3ga5BallFrame" class="mono"></span></div>',
     '<input type="range" id="t3ga5BallSlider" min="0" max="0" value="0" style="width:100%" oninput="window._t3ga5Ball.go(Number(this.value))">',
     '<div class="p1-actions" id="t3ga5BallTargets"></div>',
@@ -119,6 +123,34 @@ function register() {
         say(error?.message || 'That file could not be read.', false);
       }
     },
+    async auto() {
+      if (!loaded) return;
+      const button = $('t3ga5BallAuto');
+      const status = $('t3ga5BallAutoStatus');
+      const tell = (text, ok) => { if (status) { status.textContent = text; status.style.color = ok === false ? '#f87171' : ok ? '#34d399' : '#93c5fd'; } };
+      const job = loaded;
+      try {
+        button.disabled = true;
+        tell('Tracking (a minute or two; keep this tab open)…');
+        const result = await trackBall({
+          count: job.parsed.count,
+          targets: job.parsed.targets,
+          frameAt: (i) => decodePng(job.bytes.subarray(job.parsed.frames[i][0], job.parsed.frames[i][0] + job.parsed.frames[i][1])),
+          onProgress: (f, n) => tell(`Tracking: frame ${f} of ${n}`),
+        });
+        if (loaded !== job) return;
+        result.positions.forEach((point, i) => { marks[i] = { x: Math.round(point[0]), y: Math.round(point[1]) }; });
+        $('t3ga5BallNumber').value = String(result.number);
+        renderTargets();
+        window._t3ga5Ball.compose();
+        await window._t3ga5Ball.go(job.parsed.targets[0]);
+        tell(`Done: ball number ${result.number}. The line is below.${result.margin < 3 ? ' Two balls came very close once, so check the three marks by eye.' : ' You can step through the frames to check it.'}`, true);
+      } catch (error) {
+        tell(error?.message || 'Tracking failed.', false);
+      } finally {
+        button.disabled = false;
+      }
+    },
     async go(frame) { if (!loaded) return; current = Math.max(0, Math.min(loaded.parsed.count - 1, Math.round(frame))); await draw(); },
     step(delta) { return window._t3ga5Ball.go(current + delta); },
     zoom() { return draw(); },
@@ -163,10 +195,11 @@ function register() {
 function buildGuide() {
   return page({
     title: '🔴 Track the red ball',
-    chips: [{ text: 'Needs your own video', tone: 'warn' }, { text: '2 marks', tone: '' }, { text: 'Viewer and helper ready', tone: 'ok' }],
+    chips: [{ text: 'Needs your own video', tone: 'warn' }, { text: '2 marks', tone: '' }, { text: 'Automatic tracking', tone: 'ok' }],
     sections: [
-      card('What this is', '<p class="p1-note"><strong>100 balls bounce in a circle. Your ball is red at the start, then turns grey like the others and the balls start colliding. When they stop, every ball shows a number. You report the number on YOUR ball and your ball\'s centre (x, y) in three target frames.</strong></p><p>The video is unique to you and is built from frames only the exam page can give you, so no website can produce the answer for you. This page helps you read it accurately.</p>', 'accent'),
-      card('Step by step for beginners', '<ol><li>On the exam page press <strong>Make my video</strong> and wait. It shows your <strong>three target frame numbers</strong>. (Frames count from 0; pixels count from the top-left corner.)</li><li><strong>Save your frames file:</strong> open the browser\'s developer tools (right-click → Inspect), go to <strong>Network</strong>, reload the exam page and press Make my video again, find the request named <code>questionData…q-ball-tracker-server</code>, right-click it → <strong>Save response as…</strong> (or Copy → Save as file) and keep the file.</li><li>Choose that file in the viewer below. Press <strong>Find my red ball</strong> to see where yours starts.</li><li><strong>Follow your ball</strong> with the frame buttons or the slider: it turns grey, so keep watching where it goes, especially at collisions (two balls swap directions when they touch). Use zoom 2× to 4× and step 1 frame at a time through collisions.</li><li>Jump to <strong>Target 1</strong>, click the exact centre of your ball, then do the same for Target 2 and Target 3. A cyan cross shows each mark.</li><li>Go to the <strong>last frame</strong>, zoom in on your ball and read the number written on it. Type it in.</li><li>Press <strong>Put my answer in the answer box</strong>, then on the exam page press <strong>Check</strong> and <strong>Save</strong>. The format is <code>number; x,y; x,y; x,y</code>.</li></ol>'),
+      card('What this is', '<p class="p1-note"><strong>100 balls bounce in a circle. Your ball is red at the start, then turns grey like the others and the balls start colliding. When they stop, every ball shows a number. You report the number on YOUR ball and your ball\'s centre (x, y) in three target frames.</strong></p><p>The video is unique to you and only your signed-in exam page can download its frames. The one-line helper below tracks it there for you; or save the frames file and use the tracker on this page.</p>', 'accent'),
+      helperCard(),
+      card('Step by step for beginners', '<p>Only needed if you do not use the helper above.</p><ol><li>On the exam page press <strong>Make my video</strong> and wait. It shows your <strong>three target frame numbers</strong>. (Frames count from 0; pixels count from the top-left corner.)</li><li><strong>Save your frames file:</strong> open the browser\'s developer tools (right-click → Inspect), go to <strong>Network</strong>, reload the exam page and press Make my video again, find the request named <code>questionData…q-ball-tracker-server</code>, right-click it → <strong>Save response as…</strong> (or Copy → Save as file) and keep the file.</li><li>Choose that file in the viewer below and press <strong>Track my ball automatically</strong>. If it succeeds, skip to the last step.</li><li>If it cannot track it, press <strong>Find my red ball</strong> and follow it by hand:</li><li><strong>Follow your ball</strong> with the frame buttons or the slider: it turns grey, so keep watching where it goes, especially at collisions (two balls swap directions when they touch). Use zoom 2× to 4× and step 1 frame at a time through collisions.</li><li>Jump to <strong>Target 1</strong>, click the exact centre of your ball, then do the same for Target 2 and Target 3. A cyan cross shows each mark.</li><li>Go to the <strong>last frame</strong>, zoom in on your ball and read the number written on it. Type it in.</li><li>Press <strong>Put my answer in the answer box</strong>, then on the exam page press <strong>Check</strong> and <strong>Save</strong>. The format is <code>number; x,y; x,y; x,y</code>.</li></ol>'),
       card('Frame viewer and answer maker', widgetHtml(), 'accent'),
       card('Want to automate it? (for Python users and coding assistants)', `<p>Following one of 100 identical balls through many collisions by eye is slow. If you would rather write a tracker (AI help is allowed), this small script unpacks the file into numbered pictures first. Save it as <code>ball_frames.py</code> and run <code>python ball_frames.py frames.bin frames_out</code>.</p><p><a class="p1-btn ghost" href="data:text/x-python;charset=utf-8,${encodeURIComponent(EXTRACTOR_PY)}" download="ball_frames.py">Download ball_frames.py</a></p><pre class="mono" style="white-space:pre-wrap;max-height:260px;overflow:auto">${escapeHtml(EXTRACTOR_PY).split('\n').map((line) => (line.trim() === '' ? '&#8203;' : line)).join('\n')}</pre><p class="p1-foot">Idea for a tracker: find the red blob in frame 0, detect all ball centres in every frame, and link each ball to the nearest predicted position (position plus velocity), taking care when two balls touch. Check the three target frames with the viewer above before you submit.</p>`),
       details('If something goes wrong', '<ul><li><strong>“not the frames file”:</strong> you saved a web page instead of the response. Save the request named <code>questionData</code> itself, unchanged.</li><li><strong>“file stops early”:</strong> the download was cut short; reload and save it again.</li><li><strong>The ball turned grey and I lost it:</strong> go back to the last frame where you were sure and step one frame at a time through the next collision.</li><li><strong>Marks are off by a little:</strong> click the centre of the ball, not its edge, and use zoom 4×.</li></ul>'),
@@ -180,10 +213,10 @@ export async function solve() {
   register();
   return {
     type: 'guide',
-    answer: 'Use your own frames file in the viewer to read the number on your ball and its centre in the three target frames, then submit: number; x,y; x,y; x,y',
-    variant: 'Your own video · viewer + guide',
+    answer: 'Run the one-line helper on your exam page (it tracks your ball and fills Q3), or load your frames file here and press Track my ball automatically. Format: number; x,y; x,y; x,y',
+    variant: 'Your own video · automatic tracker',
     guide: buildGuide(),
-    answerDisplay: '### Read your ball, then paste the line\n\nSave your frames file from the exam page, open it in the viewer in the Implementation Guide, mark your ball at the three target frames, read the number on it at the end, and submit the line it builds: `number; x,y; x,y; x,y`.',
+    answerDisplay: '### Track your ball\n\nEasiest: run the one-line helper (Implementation Guide) on your signed-in exam page; it downloads your frames, tracks the ball and fills Q3.\n\nOr save your frames file, load it in the viewer here and press **Track my ball automatically**. Format: `number; x,y; x,y; x,y`.',
     debug: { question: 'Q3', needsUserInput: true },
   };
 }
