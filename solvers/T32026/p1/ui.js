@@ -41,10 +41,21 @@ export const P1_CSS = `<style>
 @media (max-width:480px){.p1-card{padding:12px}.p1-btn{width:100%}}
 </style>`;
 
+/**
+ * The portal's markdown parser ends the HTML block at </style>, so a newline anywhere after it would be read as markdown.
+ * Newlines inside code blocks become the entity &#10; (still shown as line breaks); other newlines become spaces.
+ */
+export function oneLine(html) {
+  return html
+    .replace(/<pre([^>]*)>([\s\S]*?)<\/pre>/g, (_match, attributes, inner) => `<pre${attributes}>${inner.replace(/\r?\n/g, '&#10;')}</pre>`)
+    .replace(/\r?\n/g, ' ');
+}
+
 /** Wraps sections in the shared page chrome. `chips` is [{text, tone}]. */
 export function page({ title, chips = [], sections = [] }) {
   const chipHtml = chips.map((chip) => `<span class="p1-chip ${escapeHtml(chip.tone || '')}">${escapeHtml(chip.text)}</span>`).join('');
-  return [P1_CSS, '<div class="p1">', `<div class="p1-head"><h2 class="p1-title">${escapeHtml(title)}</h2>${chipHtml}</div>`, ...sections, '</div>'].join('');
+  const body = ['<div class="p1">', `<div class="p1-head"><h2 class="p1-title">${escapeHtml(title)}</h2>${chipHtml}</div>`, ...sections, '</div>'].join('');
+  return P1_CSS + oneLine(body);
 }
 
 export const card = (kicker, body, tone = '') => `<div class="p1-card ${tone}">${kicker ? `<div class="p1-kicker">${escapeHtml(kicker)}</div>` : ''}${body}</div>`;

@@ -897,11 +897,12 @@ function renderNotesPanel(data) {
   });
 }
 
-// Wraps every rendered <pre><code>...</code></pre> block with a "Copy" button so users
-// never have to manually select code (e.g. multi-cell Colab snippets in P1/GA guides).
+// Wraps every rendered <pre> block (markdown code and the HTML guides alike) with a "Copy" button so users never have to
+// select text by hand.
 function addCodeCopyButtons(html) {
-  return html.replace(/<pre>(<code[^>]*>[\s\S]*?<\/code>)<\/pre>/g, (_match, codeInner) => {
-    return `<div class="code-block-wrapper"><pre>${codeInner}</pre><button type="button" class="code-copy-btn" title="Copy code">Copy</button></div>`;
+  return html.replace(/<pre([^>]*)>([\s\S]*?)<\/pre>/g, (_match, attributes, inner) => {
+    const code = /^\s*<code[\s>]/.test(inner) ? inner : `<code>${inner}</code>`;
+    return `<div class="code-block-wrapper"><pre${attributes}>${code}</pre><button type="button" class="code-copy-btn" title="Copy">Copy</button></div>`;
   });
 }
 
@@ -3819,8 +3820,10 @@ document.addEventListener('click', async (event) => {
 
   if (event.target.classList?.contains('code-copy-btn')) {
     const wrapper = event.target.closest('.code-block-wrapper');
-    const codeEl = wrapper?.querySelector('code');
-    if (codeEl) copyToClipboard(codeEl.innerText, event.target);
+    // A widget may have refilled the <pre> after rendering, which removes the <code> inside it.
+    const codeEl = wrapper?.querySelector('code') || wrapper?.querySelector('pre');
+    // textContent also works inside closed sections; zero-width spaces never belong on the clipboard.
+    if (codeEl) copyToClipboard(codeEl.textContent.replace(/\u200b/g, ''), event.target);
     return;
   }
 

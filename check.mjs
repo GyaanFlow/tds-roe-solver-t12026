@@ -719,6 +719,29 @@ function checkSessionTokenPolicy() {
   assert(/termSelect\.addEventListener\('change'[\s\S]{0,200}toggleSessionTokenField|toggleSessionTokenField\(\)\)/.test(app), 'Changing the term must refresh the token box.');
 }
 
+// Every guide code block gets one Copy button, and no T3 guide may be broken apart by the portal's markdown parser.
+async function checkGuideCodeBlocks() {
+  const app = fs.readFileSync(path.join(rootDir, 'app.js'), 'utf8').replace(/\r\n/g, '\n');
+  const source = app.match(/function addCodeCopyButtons\(html\) \{[\s\S]*?\n\}/);
+  assert(source, 'app.js must define addCodeCopyButtons.');
+  const add = new Function(`${source[0]}\nreturn addCodeCopyButtons;`)();
+  const count = (html, needle) => html.split(needle).length - 1;
+  const markdown = add('<pre><code class="language-sh">ls</code></pre>');
+  const guide = add('<p>x</p><pre class="mono" style="a:b">hello</pre><pre class="mono">two</pre>');
+  assert(count(markdown, 'code-copy-btn') === 1 && count(markdown, '<code') === 1 && count(guide, 'code-copy-btn') === 2 && guide.includes('<pre class="mono" style="a:b"><code>hello</code></pre>') && add('<p>none</p>') === '<p>none</p>', 'Every guide code block must get exactly one Copy button.');
+  assert(app.includes("wrapper?.querySelector('code') || wrapper?.querySelector('pre')") && app.includes("replace(/\\u200b/g, '')"), 'Copy must work on refilled boxes and strip zero-width spaces.');
+  const ui = await importFresh('solvers/T32026/p1/ui.js');
+  assert(ui.oneLine('<p>a\nb</p><pre class="x"><code>l1\r\n\r\nl3</code></pre>') === '<p>a b</p><pre class="x"><code>l1&#10;&#10;l3</code></pre>', 'Guide code blocks must keep their line breaks as entities.');
+  for (const exam of ['ga3', 'ga4', 'ga5', 'p1']) {
+    const registry = await importFresh(`solvers/T32026/${exam}/registry.js`);
+    for (const solver of registry.solvers) {
+      const html = (await solver.solve('student.one@ds.study.iitm.ac.in')).guide || '';
+      if (!html.includes('class="p1"')) continue;
+      assert(!/[\r\n]/.test(html.slice(html.lastIndexOf('</style>') + 8)), `${exam} ${solver.id}: guide has a newline after its style block.`);
+    }
+  }
+}
+
 async function checkT3Ga5Direct(solvers, api, tools, seedrandom) {
   const mx = await importFresh('solvers/T32026/ga5/matrix.js');
   const data = await importFresh('solvers/T32026/ga5/embedding-data.js');
@@ -892,6 +915,7 @@ async function checkT3Ga5(solvers, metadata) {
   assert(red && Math.abs(red.x - 34.5) <= 1 && Math.abs(red.y - 14.5) <= 1 && red.pixels === 100 && tools.findRedBall(new Uint8ClampedArray(60 * 40 * 4).fill(128), 60, 40) === null, 'T3 GA5 the red ball must be located (and absent when there is none).');
 
   checkSessionTokenPolicy();
+  await checkGuideCodeBlocks();
   await checkT3Ga5Direct(solvers, api, tools, seedrandom);
 
   // Solvers: direct URLs for Q1/Q4, matrix for Q2, guides for Q3/Q5, no network, clean HTML.

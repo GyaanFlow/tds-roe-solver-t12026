@@ -1020,6 +1020,17 @@ body {
   position: relative;
 }
 
+/* The Copy button gets its own row, so it never covers code that scrolls sideways. */
+.styled-output .code-block-wrapper > pre {
+  padding-top: 44px;
+}
+
+/* Code inside a block must not look like inline code. */
+.styled-output pre code {
+  background: none;
+  padding: 0;
+}
+
 .code-block-wrapper .code-copy-btn {
   position: absolute;
   top: 20px;
